@@ -83,7 +83,7 @@ public class Board
     private int numMoves;
 
     // Who's turn is it?
-    private Winner turn;
+    public Winner Turn { get; private set; }
 
     // Creates a new board
     public Board(int rows, int cols, int piecesInSequence)
@@ -103,7 +103,7 @@ public class Board
         numMoves = 0;
 
         // Initially, it's player 1 turn
-        turn = Winner.Player1;
+        Turn = Winner.Player1;
 
         // Keep number of pieces in sequence to find winner
         PiecesInSequence = piecesInSequence;
@@ -234,10 +234,20 @@ public class Board
     }
 
     // Make a move
-    public bool DoMove(Piece piece, int col)
+    public bool DoMove(Shape shape, int col)
     {
         // The row were to place the piece, initially assumed to be the top row
         int row = Rows - 1;
+
+        // The color of the piece to place, depends on who's playing
+        Color color = Turn == Winner.Player1 ? Color.White : Color.Red;
+
+        // If the column is not a valid column, there is a client code bug,
+        // so let's throw an exception
+        if (col < 0 || col >= Cols)
+        {
+            throw new InvalidOperationException($"Invalid board column: {col}");
+        }
 
         // If we already found a winner, there is a client code bug, so let's
         // throw an exception
@@ -245,22 +255,6 @@ public class Board
         {
             throw new InvalidOperationException(
                 "Game is over, unable to make further moves.");
-        }
-
-        // If the column is not a valid column, there is a client code bug,
-        // so let's throw an exception
-        if (col < 0 || col >= Cols)
-        {
-            throw new InvalidOperationException(
-                $"Invalid board column: {col}");
-        }
-
-        // Does the piece belong to the correct player?
-        if (piece.Player != turn)
-        {
-            throw new InvalidOperationException(
-                $"It's {turn} turn, but piece {piece} " +
-                "belongs to {piece.Player}");
         }
 
         // If column is already full, return false, indicating the move is
@@ -278,15 +272,15 @@ public class Board
         }
 
         // Place the piece
-        board[col, row] = piece;
+        board[col, row] = new Piece(color, shape);
 
         // Increment number of moves
         numMoves++;
 
         // Update turn
-        turn = (numMoves == Cols * Rows)
+        Turn = (numMoves == Cols * Rows)
             ? Winner.None
-            : (turn == Winner.Player1) ? Winner.Player2 : Winner.Player1;
+            : (Turn == Winner.Player1) ? Winner.Player2 : Winner.Player1;
 
         // Return true, indicating the move was successful
         return true;
@@ -324,7 +318,7 @@ public class Board
         numMoves--;
 
         // Swap turns
-        turn = turn == Winner.Player1 ? Winner.Player2 : Winner.Player1;
+        Turn = Turn == Winner.Player1 ? Winner.Player2 : Winner.Player1;
 
         // Return piece
         return piece;
