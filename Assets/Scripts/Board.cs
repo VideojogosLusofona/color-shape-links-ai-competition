@@ -25,11 +25,23 @@ public class Board
         }
     }
 
+    // Internal struct for representing a board position
+    private struct Pos
+    {
+        public readonly int row;
+        public readonly int col;
+        public Pos(int row, int col)
+        {
+            this.row = row;
+            this.col = col;
+        }
+    }
+
     // Number of rows in the board
-    public int Rows =>  board.GetLength(1);
+    public int Rows => board.GetLength(1);
 
     // Number of columns in the board
-    public int Cols =>  board.GetLength(0);
+    public int Cols => board.GetLength(0);
 
     // How many pieces in sequence to find a winner
     public int PiecesInSequence { get; }
@@ -40,12 +52,26 @@ public class Board
     // Array of pairs (piece check function, player associated with piece)
     private readonly PieceFuncPlayer[] pieceFuncsPlayers;
 
+    // Array of win corridors
+    private readonly IEnumerable<IEnumerable<Pos>> winCorridors;
+
     // Number of moves performed so far
     private int numMoves;
 
     // Creates a new board
     public Board(int rows, int cols, int piecesInSequence)
     {
+        // Aux. variables for determining win corridors
+        List<Pos> aCorridor;
+        List<IEnumerable<Pos>> corridors;
+
+        // Is it possible to win?
+        if (rows < piecesInSequence && cols < piecesInSequence)
+        {
+            throw new InvalidOperationException(
+                "Invalid parameters, since it is not possible to win");
+        }
+
         // Number of moves initially zero
         numMoves = 0;
 
@@ -64,6 +90,113 @@ public class Board
             new PieceFuncPlayer(p => p.color == Color.White, Winner.Player1),
             new PieceFuncPlayer(p => p.color == Color.Red, Winner.Player2)
         };
+
+        // Create and populate array of win corridors
+        corridors = new List<IEnumerable<Pos>>();
+        aCorridor = new List<Pos>(Math.Max(rows, cols));
+
+        //
+        // Horizontal corridors
+        //
+        if (cols >= piecesInSequence)
+        {
+            for (int r = 0; r < rows; r++)
+            {
+                for (int c = 0; c < cols; c++)
+                {
+                    aCorridor.Add(new Pos(c, r));
+                }
+                corridors.Add(aCorridor.ToArray());
+                aCorridor.Clear();
+            }
+        }
+
+        //
+        // Vertical corridors
+        //
+        if (rows >= piecesInSequence)
+        {
+            for (int c = 0; c < cols; c++)
+            {
+                for (int r = 0; r < rows; r++)
+                {
+                    aCorridor.Add(new Pos(c, r));
+                }
+                corridors.Add(aCorridor.ToArray());
+                aCorridor.Clear();
+            }
+        }
+
+        //
+        // Diagonal corridors /
+        //
+        // Down
+        for (int row = rows - 1; row >= 0; row--)
+        {
+            int r = row;
+            int c = 0;
+            while (r < rows && c < cols)
+            {
+                aCorridor.Add(new Pos(r, c));
+                r++;
+                c++;
+            }
+            if (aCorridor.Count >= PiecesInSequence)
+                corridors.Add(aCorridor.ToArray());
+            aCorridor.Clear();
+        }
+        // Right
+        for (int col = 1; col < cols; col++)
+        {
+            int r = 0;
+            int c = col;
+            while (r < rows && c < cols)
+            {
+                aCorridor.Add(new Pos(r, c));
+                r++;
+                c++;
+            }
+            if (aCorridor.Count >= PiecesInSequence)
+                corridors.Add(aCorridor.ToArray());
+            aCorridor.Clear();
+        }
+
+        //
+        // Diagonal corridors \
+        //
+        // Down
+        for (int row = rows - 1; row >= 0; row--)
+        {
+            int r = row;
+            int c = cols - 1;
+            while (r < rows && c >= 0)
+            {
+                aCorridor.Add(new Pos(r, c));
+                r++;
+                c--;
+            }
+            if (aCorridor.Count >= PiecesInSequence)
+                corridors.Add(aCorridor.ToArray());
+            aCorridor.Clear();
+        }
+        // Left
+        for (int col = cols - 2; col >= 0; col--)
+        {
+            int r = 0;
+            int c = col;
+            while (r < rows && c >= 0)
+            {
+                aCorridor.Add(new Pos(r, c));
+                r++;
+                c--;
+            }
+            if (aCorridor.Count >= PiecesInSequence)
+                corridors.Add(aCorridor.ToArray());
+            aCorridor.Clear();
+        }
+
+        // Keep the final list of win corridors
+        winCorridors = corridors.ToArray();
     }
 
     // Make a move
@@ -118,33 +251,34 @@ public class Board
         if (numMoves == Cols * Rows) return Winner.Draw;
 
         // Check for all different pieces
-        foreach (PieceFuncPlayer funcPlayer in  pieceFuncsPlayers)
+        foreach (PieceFuncPlayer funcPlayer in pieceFuncsPlayers)
         {
-            // Check horizontally
-            for (int r = 0; r < Rows; r++)
+            // Check all possible corridors
+            foreach (IEnumerable<Pos> corridor in winCorridors)
             {
+                // Reset count for this corridor
                 int count = 0;
-                for (int c = 0; c < Cols; c++)
+
+                // Check positions in this corridor
+                foreach (Pos p in corridor)
                 {
-
-
+                    // Does position contain the appropriate piece?
+                    if (board[p.col, p.row].HasValue &&
+                        funcPlayer.checkPieceFunc(board[p.col, p.row].Value))
+                        // Yes it does, increment counter
+                        count++;
+                    else
+                        // No it doesn't, reset count
+                        count = 0;
+                    // Did we find enough pieces in a row?
+                    if (count == PiecesInSequence)
+                        // If so, return winner
+                        return funcPlayer.player;
                 }
             }
-
-            // Check vertically
-            for (int c = 0; c < Cols; c++)
-            {
-                int count = 0;
-                for (int r = 0; r < Rows; r++)
-                {
-
-
-                }
-            }
-
-            // Check diagonally
         }
 
+        // No winner found
         return Winner.None;
     }
 }
