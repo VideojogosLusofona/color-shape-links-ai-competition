@@ -58,6 +58,9 @@ public class Board
     // Number of moves performed so far
     private int numMoves;
 
+    // Who's turn is it?
+    private Winner turn;
+
     // Creates a new board
     public Board(int rows, int cols, int piecesInSequence)
     {
@@ -74,6 +77,9 @@ public class Board
 
         // Number of moves initially zero
         numMoves = 0;
+
+        // Initially, it's player 1 turn
+        turn = Winner.Player1;
 
         // Keep number of pieces in sequence to find winner
         PiecesInSequence = piecesInSequence;
@@ -221,6 +227,14 @@ public class Board
                 $"Invalid board column: {col}");
         }
 
+        // Does the piece belong to the correct player?
+        if (piece.Player != turn)
+        {
+            throw new InvalidOperationException(
+                $"It's {turn} turn, but piece {piece} " +
+                "belongs to {piece.Player}");
+        }
+
         // If column is already full, return false, indicating the move is
         // invalid
         if (board[col, row].HasValue) return false;
@@ -238,9 +252,15 @@ public class Board
         // Place the piece
         board[col, row] = piece;
 
-        // Increment number of moves and return true, indicating the move was
-        // successful
+        // Increment number of moves
         numMoves++;
+
+        // Update turn
+        turn = (numMoves == Cols * Rows)
+            ? Winner.None
+            : (turn == Winner.Player1) ? Winner.Player2 : Winner.Player1;
+
+        // Return true, indicating the move was successful
         return true;
     }
 
