@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private int cols = 7;
     [SerializeField] private int winSequence = 4;
 
+    public Board Board => board;
+
     private Board board;
 
     private const string rules =
@@ -27,11 +29,15 @@ public class GameController : MonoBehaviour
 
     private StringBuilder boardText;
 
-    // Start is called before the first frame update
-    private void Start()
+    private void Awake()
     {
         boardText = new StringBuilder(rows * cols + rows + 1);
         board = new Board(rows, cols, winSequence);
+    }
+
+    // Start is called before the first frame update
+    private void Start()
+    {
         Debug.Log(rules);
         DrawBoard();
         Debug.Log($"It's {board.Turn} turn");

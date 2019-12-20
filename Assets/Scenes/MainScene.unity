@@ -213,6 +213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 663931742}
   - component: {fileID: 663931741}
+  - component: {fileID: 663931743}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -232,6 +233,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c3489d4ea933b779f1acc29a5fb051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rows: 7
+  cols: 7
+  winSequence: 4
 --- !u!4 &663931742
 Transform:
   m_ObjectHideFlags: 0
@@ -246,3 +250,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &663931743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663931740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e6cfeb669b15423b210143667deb40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whiteRoundPiece: {fileID: 3812577129307145506, guid: 64982576a108c67b3b15534e7f9467fc,
+    type: 3}
+  whiteSquarePiece: {fileID: 5341886970750748266, guid: 84122eb0a33de061585b4e78e4ddfa11,
+    type: 3}
+  redRoundPiece: {fileID: 3888103270701355725, guid: 24cb4a783a066cb168fa876b84627f42,
+    type: 3}
+  redSquarePiece: {fileID: 777436916904859070, guid: f2dee9aefe6ff72c8afee6bed5243daa,
+    type: 3}
+  pole: {fileID: 4559725111956385493, guid: 4671b866a1ace7413bb3604c5d624c6c, type: 3}
+  ground: {fileID: 6481176687460712943, guid: d09ba8e27100fbfcc9f07c3d58e9a0f9, type: 3}
