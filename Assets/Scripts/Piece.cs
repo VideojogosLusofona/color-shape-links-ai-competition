@@ -30,5 +30,8 @@ public struct Piece
         this.shape = shape;
     }
 
+    public bool Is(Color color, Shape shape) =>
+        this.color == color && this.shape == shape;
+
     public override string ToString() => $"{color}{shape}";
 }
