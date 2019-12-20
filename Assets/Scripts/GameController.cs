@@ -79,6 +79,7 @@ public class GameController : MonoBehaviour
         {
             board.UndoMove();
             DrawBoard();
+            Debug.Log("Undid last move");
             Debug.Log($"It's {board.Turn} turn");
         }
     }

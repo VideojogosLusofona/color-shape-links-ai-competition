@@ -274,6 +274,9 @@ public class Board
         // Place the piece
         board[col, row] = new Piece(color, shape);
 
+        // Remember the move
+        moveSequence.Push(new Pos(row, col));
+
         // Increment number of moves
         numMoves++;
 
