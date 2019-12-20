@@ -39,17 +39,36 @@ public class Board
         public override string ToString() => $"({row},{col})";
     }
 
+    // Internal representation of the game board
+    private readonly Piece?[,] board;
+
     // Number of rows in the board
     public int Rows => board.GetLength(1);
 
     // Number of columns in the board
     public int Cols => board.GetLength(0);
 
+    // Read-only indexer for client code to see the board
+    public Piece? this[int row, int col]
+    {
+        get
+        {
+            // If client requested an invalid position, this is a bug in
+            // client code, so let's throw an exception
+            if (row < 0 || row >= Rows || col < 0 || col >= Cols)
+            {
+                throw new IndexOutOfRangeException(
+                    $"Position {new Pos(row, col)} is out of bounds. " +
+                    $"Board dimensions are {new Pos(Rows, Cols)}.");
+            }
+
+            // Return piece
+            return board[col, row];
+        }
+    }
+
     // How many pieces in sequence to find a winner
     public int PiecesInSequence { get; }
-
-    // Internal representation of the game board
-    private readonly Piece?[,] board;
 
     // Array of pairs (piece check function, player associated with piece)
     private readonly PieceFuncPlayer[] pieceFuncsPlayers;
