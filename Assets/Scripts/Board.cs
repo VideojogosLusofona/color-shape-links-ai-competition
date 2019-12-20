@@ -35,6 +35,8 @@ public class Board
             this.row = row;
             this.col = col;
         }
+
+        public override string ToString() => $"({row},{col})";
     }
 
     // Number of rows in the board
@@ -54,6 +56,9 @@ public class Board
 
     // Array of win corridors
     private readonly IEnumerable<IEnumerable<Pos>> winCorridors;
+
+    // Sequence of moves (for undo purposes)
+    private readonly Stack<Pos> moveSequence;
 
     // Number of moves performed so far
     private int numMoves;
@@ -100,6 +105,10 @@ public class Board
         // Create and populate array of win corridors
         corridors = new List<IEnumerable<Pos>>();
         aCorridor = new List<Pos>(Math.Max(rows, cols));
+
+        // Initialize move sequence with initial capacity for all possible
+        // moves
+        moveSequence = new Stack<Pos>(rows * cols);
 
         //
         // Horizontal corridors
@@ -206,7 +215,7 @@ public class Board
     }
 
     // Make a move
-    public bool MakeAMove(Piece piece, int col)
+    public bool DoMove(Piece piece, int col)
     {
         // The row were to place the piece, initially assumed to be the top row
         int row = Rows - 1;
@@ -262,6 +271,44 @@ public class Board
 
         // Return true, indicating the move was successful
         return true;
+    }
+
+    // Undo last move
+    public Piece UndoMove()
+    {
+        Pos pos;
+        Piece piece;
+
+        // If no undo is possible, there is a bug in client code, so let's
+        // throw an exception
+        if (moveSequence.Count == 0)
+        {
+            throw new InvalidOperationException("No moves to undo.");
+        }
+
+        // Get last move position
+        pos = moveSequence.Pop();
+
+        // If there is no piece in last moves' position, there is a bug
+        // somewhere
+        if (!board[pos.col, pos.row].HasValue)
+        {
+            throw new InvalidOperationException(
+                $"No piece in undo position {pos}. Board in invalid state.");
+        }
+
+        // Get the piece from the board
+        piece = board[pos.col, pos.row].Value;
+        board[pos.col, pos.row] = null;
+
+        // Decrement number of moves
+        numMoves--;
+
+        // Swap turns
+        turn = turn == Winner.Player1 ? Winner.Player2 : Winner.Player1;
+
+        // Return piece
+        return piece;
     }
 
     // Is there a winner?
