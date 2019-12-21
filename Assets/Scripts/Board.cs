@@ -115,10 +115,10 @@ public class Board
         pieceFuncsPlayers = new PieceFuncPlayer[]
         {
             // Shape must come before color
-            new PieceFuncPlayer(p => p.shape == Shape.Round, Winner.Player1),
-            new PieceFuncPlayer(p => p.shape == Shape.Square, Winner.Player2),
-            new PieceFuncPlayer(p => p.color == Color.White, Winner.Player1),
-            new PieceFuncPlayer(p => p.color == Color.Red, Winner.Player2)
+            new PieceFuncPlayer(p => p.shape == PShape.Round, Winner.Player1),
+            new PieceFuncPlayer(p => p.shape == PShape.Square, Winner.Player2),
+            new PieceFuncPlayer(p => p.color == PColor.White, Winner.Player1),
+            new PieceFuncPlayer(p => p.color == PColor.Red, Winner.Player2)
         };
 
         // Create and populate array of win corridors
@@ -234,13 +234,13 @@ public class Board
     }
 
     // Make a move, return row where piece was place or -1 if move invalid
-    public int DoMove(Shape shape, int col)
+    public int DoMove(PShape shape, int col)
     {
         // The row were to place the piece, initially assumed to be the top row
         int row = Rows - 1;
 
         // The color of the piece to place, depends on who's playing
-        Color color = Turn == Winner.Player1 ? Color.White : Color.Red;
+        PColor color = Turn == Winner.Player1 ? PColor.White : PColor.Red;
 
         // If the column is not a valid column, there is a client code bug,
         // so let's throw an exception

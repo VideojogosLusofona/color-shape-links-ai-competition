@@ -7,8 +7,6 @@
 
 using System;
 using System.Text;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -26,7 +24,7 @@ public class GameController : MonoBehaviour
         "Keys 1-7 make a move with the selected piece. " +
         "Key U undoes the last move.";
 
-    private Shape selectedShape;
+    private PShape selectedShape;
 
     private StringBuilder boardText;
 
@@ -77,9 +75,9 @@ public class GameController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.T))
         {
-            selectedShape = selectedShape == Shape.Round
-                ? Shape.Square
-                : Shape.Round;
+            selectedShape = selectedShape == PShape.Round
+                ? PShape.Square
+                : PShape.Round;
             Debug.Log($"Selected shape is {selectedShape}");
         }
         else if (Input.GetKeyDown(KeyCode.U))
@@ -129,13 +127,13 @@ public class GameController : MonoBehaviour
                 Piece? p = board[r, c];
                 if (p.HasValue)
                 {
-                    if (p.Value.Is(Color.White, Shape.Round))
+                    if (p.Value.Is(PColor.White, PShape.Round))
                         pc = 'w';
-                    else if (p.Value.Is(Color.White, Shape.Square))
+                    else if (p.Value.Is(PColor.White, PShape.Square))
                         pc = 'W';
-                    else if (p.Value.Is(Color.Red, Shape.Round))
+                    else if (p.Value.Is(PColor.Red, PShape.Round))
                         pc = 'r';
-                    else if (p.Value.Is(Color.Red, Shape.Square))
+                    else if (p.Value.Is(PColor.Red, PShape.Square))
                         pc = 'R';
                     else
                         Debug.LogError($"Invalid piece {p.Value}");

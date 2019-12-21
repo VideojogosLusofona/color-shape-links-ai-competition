@@ -5,8 +5,8 @@
  * Author: Nuno Fachada
  * */
 
-public enum Color
+public enum PShape
 {
-    White,
-    Red
+    Round,
+    Square
 }

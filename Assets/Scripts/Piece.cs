@@ -5,32 +5,32 @@
  * Author: Nuno Fachada
  * */
 
- using System;
+using System;
 
 public struct Piece
 {
-    public readonly Color color;
-    public readonly Shape shape;
+    public readonly PColor color;
+    public readonly PShape shape;
 
     public Winner Player
     {
         get
         {
-            if (color == Color.White) return Winner.Player1;
-            if (color == Color.Red) return Winner.Player2;
+            if (color == PColor.White) return Winner.Player1;
+            if (color == PColor.Red) return Winner.Player2;
 
             // If we get here, there is a bug
             throw new InvalidOperationException("Piece has invalid color");
         }
     }
 
-    public Piece(Color color, Shape shape)
+    public Piece(PColor color, PShape shape)
     {
         this.color = color;
         this.shape = shape;
     }
 
-    public bool Is(Color color, Shape shape) =>
+    public bool Is(PColor color, PShape shape) =>
         this.color == color && this.shape == shape;
 
     public override string ToString() => $"{color}{shape}";

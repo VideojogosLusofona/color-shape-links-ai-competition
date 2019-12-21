@@ -1,9 +1,14 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ *
+ * Author: Nuno Fachada
+ * */
+
+using System;
 using UnityEngine;
 
-public class View : MonoBehaviour
+public class UIView : MonoBehaviour
 {
     [SerializeField] private GameObject whiteRoundPiece = null;
     [SerializeField] private GameObject whiteSquarePiece = null;
@@ -11,6 +16,7 @@ public class View : MonoBehaviour
     [SerializeField] private GameObject redSquarePiece = null;
     [SerializeField] private GameObject pole = null;
     [SerializeField] private GameObject ground = null;
+    [SerializeField] private GameObject arrowButton = null;
 
     private GameController gameController = null;
     private Board board = null;
@@ -34,7 +40,7 @@ public class View : MonoBehaviour
     private void Start()
     {
         // Instantiate ground
-        GameObject groundInst = Instantiate(ground);
+        GameObject groundInst = Instantiate(ground, transform);
 
         // Determine where ground starts, since everything will be placed with
         // respect to the ground
@@ -43,6 +49,9 @@ public class View : MonoBehaviour
 
         // Get pole bounds
         Bounds plBounds = pole.GetComponent<SpriteRenderer>().bounds;
+
+        // Get arrow bounds
+        Bounds aBounds = arrowButton.GetComponent<SpriteRenderer>().bounds;
 
         // Get piece bounds (any will do)
         Bounds pcBounds = redRoundPiece.GetComponent<SpriteRenderer>().bounds;
@@ -53,17 +62,32 @@ public class View : MonoBehaviour
         // Create matrix for placing game objects representing pieces
         pieces = new GameObject[board.Rows, board.Cols];
 
-        // Instantiate poles
+        // Instantiate poles and arrows
         for (int c = 0; c < board.Cols; c++)
         {
-            GameObject currPole = Instantiate(
+            GameObject currPole, currArrow;
+
+            // Instantiate current pole
+            currPole = Instantiate(
                 pole,
                 new Vector3(
                     gTopLeft.x + (c + 1) * (gBounds.size.x / (board.Cols + 1)),
                     gTopLeft.y + plBounds.extents.y - polePadding,
                     1),
-                Quaternion.identity);
+                Quaternion.identity,
+                transform);
             currPole.name = $"Pole{c}";
+
+            // Instantiate current arrow
+            currArrow = Instantiate(
+                arrowButton,
+                new Vector3(
+                    gTopLeft.x + (c + 1) * (gBounds.size.x / (board.Cols + 1)),
+                    gTopLeft.y + plBounds.size.y + polePadding + aBounds.extents.y,
+                    4),
+                Quaternion.identity,
+                transform);
+            currArrow.name = $"Arrow{c}";
         }
 
         // These will be necessary for calculating the positions of the pieces
@@ -101,13 +125,13 @@ public class View : MonoBehaviour
             Piece piece = board[row, col].Value;
 
             // Determine the piece prefab to use based on the board piece
-            if (piece.Is(Color.White, Shape.Round))
+            if (piece.Is(PColor.White, PShape.Round))
                 piecePrefab = whiteRoundPiece;
-            else if (piece.Is(Color.White, Shape.Square))
+            else if (piece.Is(PColor.White, PShape.Square))
                 piecePrefab = whiteSquarePiece;
-            else if (piece.Is(Color.Red, Shape.Round))
+            else if (piece.Is(PColor.Red, PShape.Round))
                 piecePrefab = redRoundPiece;
-            else if (piece.Is(Color.Red, Shape.Square))
+            else if (piece.Is(PColor.Red, PShape.Square))
                 piecePrefab = redSquarePiece;
             else
                 throw new InvalidOperationException(
@@ -124,7 +148,8 @@ public class View : MonoBehaviour
                          + piecesLength / 2,
                     // Z-axis
                     2),
-                Quaternion.identity);
+                Quaternion.identity,
+                transform);
             // Correct scale of screen piece
             pieces[row, col].transform.localScale = piecesScale * Vector3.one;
         }

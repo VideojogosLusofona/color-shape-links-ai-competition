@@ -5,8 +5,8 @@
  * Author: Nuno Fachada
  * */
 
-public enum Shape
+public enum PColor
 {
-    Round,
-    Square
+    White,
+    Red
 }
