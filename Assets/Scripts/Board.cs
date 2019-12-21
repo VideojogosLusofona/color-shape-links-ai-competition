@@ -364,4 +364,7 @@ public class Board
         // No winner found
         return Winner.None;
     }
+
+    // Is the specified column full?
+    public bool IsColumnFull(int col) => board[col, Rows - 1].HasValue;
 }

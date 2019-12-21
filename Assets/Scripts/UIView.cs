@@ -21,6 +21,7 @@ public class UIView : MonoBehaviour
     private GameController gameController = null;
     private Board board = null;
     private GameObject[,] pieces;
+    private UIArrow[] uiArrows;
 
     private readonly float polePadding = 0.1f;
     private Vector2 leftPoleBase;
@@ -62,6 +63,9 @@ public class UIView : MonoBehaviour
         // Create matrix for placing game objects representing pieces
         pieces = new GameObject[board.Rows, board.Cols];
 
+        // Create array for UI arrow script objects
+        uiArrows = new UIArrow[board.Cols];
+
         // Instantiate poles and arrows
         for (int c = 0; c < board.Cols; c++)
         {
@@ -88,6 +92,9 @@ public class UIView : MonoBehaviour
                 Quaternion.identity,
                 transform);
             currArrow.name = $"Arrow{c}";
+
+            // Keep reference to the UI arrow script
+            uiArrows[c] = currArrow.GetComponent<UIArrow>();
         }
 
         // These will be necessary for calculating the positions of the pieces
@@ -150,8 +157,16 @@ public class UIView : MonoBehaviour
                     2),
                 Quaternion.identity,
                 transform);
+
             // Correct scale of screen piece
             pieces[row, col].transform.localScale = piecesScale * Vector3.one;
+
+            // Is the column now full?
+            if (board.IsColumnFull(col))
+            {
+                // If so, close the arrow
+                uiArrows[col].IsOpen = false;
+            }
         }
         // Or is the screen board position occupied while the game board
         // position is empty?
@@ -160,6 +175,9 @@ public class UIView : MonoBehaviour
             // In such case, destroy the screen board piece
             Destroy(pieces[row, col]);
             pieces[row, col] = null;
+
+            // Open the arrow
+            uiArrows[col].IsOpen = true;
         }
         // Otherwise it's an impossible situation and we have a bug
         else
