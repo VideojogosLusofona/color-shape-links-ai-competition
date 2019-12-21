@@ -14,10 +14,15 @@ public class GameController : MonoBehaviour
     [SerializeField] private int rows = 7;
     [SerializeField] private int cols = 7;
     [SerializeField] private int winSequence = 4;
+    [SerializeField] private int squarePiecesPerPlayer = 11;
+    [SerializeField] private int roundPiecesPerPlayer = 10;
 
-    public Board Board => board;
+    public Board Board { get; private set; }
 
-    private Board board;
+    private int player1SquarePieces;
+    private int player1RoundPieces;
+    private int player2SquarePieces;
+    private int player2RoundPieces;
 
     private const string rules =
         "Key T toggles the piece/shape to play. " +
@@ -25,19 +30,23 @@ public class GameController : MonoBehaviour
 
     private PShape selectedShape;
 
-    private StringBuilder boardText;
+    public bool IsOver { get; set; }
 
     private void Awake()
     {
-        boardText = new StringBuilder(rows * cols + rows + 1);
-        board = new Board(rows, cols, winSequence);
+        IsOver = false;
+        Board = new Board(rows, cols, winSequence);
+        player1SquarePieces = squarePiecesPerPlayer;
+        player1RoundPieces = roundPiecesPerPlayer;
+        player2SquarePieces = squarePiecesPerPlayer;
+        player2RoundPieces = roundPiecesPerPlayer;
     }
 
     // Start is called before the first frame update
     private void Start()
     {
         Debug.Log(rules);
-        Debug.Log($"It's {board.Turn} turn");
+        Debug.Log($"It's {Board.Turn} turn");
     }
 
     // Update is called once per frame
@@ -52,28 +61,28 @@ public class GameController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.U))
         {
-            Move move = board.UndoMove();
+            Move move = Board.UndoMove();
             Debug.Log("Undid last move");
-            Debug.Log($"It's {board.Turn} turn");
+            Debug.Log($"It's {Board.Turn} turn");
             OnBoardUpdate(move.row, move.col);
         }
     }
 
     public void MakeAMove(int col)
     {
-        int row = board.DoMove(selectedShape, col);
+        int row = Board.DoMove(selectedShape, col);
         if (row >= 0)
         {
-            Winner winner = board.CheckWinner();
+            Winner winner = Board.CheckWinner();
             if (winner != Winner.None)
             {
                 Debug.Log("Game Over, " +
                     (winner == Winner.Draw ? "it's a draw" : winner + " won"));
-                UnityEditor.EditorApplication.isPlaying = false;
+                IsOver = true;
             }
             else
             {
-                Debug.Log($"It's {board.Turn} turn");
+                Debug.Log($"It's {Board.Turn} turn");
             }
             OnBoardUpdate(row, col);
         }
