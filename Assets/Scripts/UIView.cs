@@ -95,6 +95,12 @@ public class UIView : MonoBehaviour
 
             // Keep reference to the UI arrow script
             uiArrows[c] = currArrow.GetComponent<UIArrow>();
+
+            // Set the arrow's column
+            uiArrows[c].Column = c;
+
+            // Make the controller listen to arrow clicks
+            uiArrows[c].Click += gameController.MakeAMove;
         }
 
         // These will be necessary for calculating the positions of the pieces

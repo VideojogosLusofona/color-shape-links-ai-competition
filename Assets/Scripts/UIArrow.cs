@@ -5,6 +5,7 @@
  * Author: Nuno Fachada
  * */
 
+using System;
 using UnityEngine;
 
 public class UIArrow : MonoBehaviour
@@ -17,6 +18,8 @@ public class UIArrow : MonoBehaviour
     private Collider2D collider2d;
     private SpriteRenderer spriteRenderer;
     private Color color;
+
+    public int Column { get; set; }
 
     public bool IsOpen
     {
@@ -49,7 +52,7 @@ public class UIArrow : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("Cliked the arrow");
+        Click?.Invoke(Column);
     }
 
     private void Update()
@@ -62,4 +65,5 @@ public class UIArrow : MonoBehaviour
         }
     }
 
+    public event Action<int> Click;
 }

@@ -21,7 +21,6 @@ public class GameController : MonoBehaviour
 
     private const string rules =
         "Key T toggles the piece/shape to play. " +
-        "Keys 1-7 make a move with the selected piece. " +
         "Key U undoes the last move.";
 
     private PShape selectedShape;
@@ -38,42 +37,13 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         Debug.Log(rules);
-        DrawBoard();
         Debug.Log($"It's {board.Turn} turn");
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            MakeAMove(0);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            MakeAMove(1);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            MakeAMove(2);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            MakeAMove(3);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            MakeAMove(4);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            MakeAMove(5);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            MakeAMove(6);
-        }
-        else if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             selectedShape = selectedShape == PShape.Round
                 ? PShape.Square
@@ -83,20 +53,18 @@ public class GameController : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.U))
         {
             Move move = board.UndoMove();
-            DrawBoard();
             Debug.Log("Undid last move");
             Debug.Log($"It's {board.Turn} turn");
             OnBoardUpdate(move.row, move.col);
         }
     }
 
-    private void MakeAMove(int col)
+    public void MakeAMove(int col)
     {
         int row = board.DoMove(selectedShape, col);
         if (row >= 0)
         {
             Winner winner = board.CheckWinner();
-            DrawBoard();
             if (winner != Winner.None)
             {
                 Debug.Log("Game Over, " +
@@ -113,36 +81,6 @@ public class GameController : MonoBehaviour
         {
             Debug.Log($"Column {col + 1} is full, try another one.");
         }
-    }
-
-    private void DrawBoard()
-    {
-        boardText.Clear();
-        boardText.Append('\n');
-        for (int r = rows - 1; r >= 0; r--)
-        {
-            for (int c = 0; c < cols; c++)
-            {
-                char pc = '.';
-                Piece? p = board[r, c];
-                if (p.HasValue)
-                {
-                    if (p.Value.Is(PColor.White, PShape.Round))
-                        pc = 'w';
-                    else if (p.Value.Is(PColor.White, PShape.Square))
-                        pc = 'W';
-                    else if (p.Value.Is(PColor.Red, PShape.Round))
-                        pc = 'r';
-                    else if (p.Value.Is(PColor.Red, PShape.Square))
-                        pc = 'R';
-                    else
-                        Debug.LogError($"Invalid piece {p.Value}");
-                }
-                boardText.Append(pc);
-            }
-            boardText.Append('\n');
-        }
-        Debug.Log(boardText.ToString());
     }
 
     private void OnBoardUpdate(int row, int col)
