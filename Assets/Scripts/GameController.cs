@@ -30,11 +30,8 @@ public class GameController : MonoBehaviour
 
     private PShape selectedShape;
 
-    public bool IsOver { get; set; }
-
     private void Awake()
     {
-        IsOver = false;
         Board = new Board(rows, cols, winSequence);
         player1SquarePieces = squarePiecesPerPlayer;
         player1RoundPieces = roundPiecesPerPlayer;
@@ -78,7 +75,7 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log("Game Over, " +
                     (winner == Winner.Draw ? "it's a draw" : winner + " won"));
-                IsOver = true;
+                OnGameOver();
             }
             else
             {
@@ -97,5 +94,11 @@ public class GameController : MonoBehaviour
         BoardUpdate?.Invoke(row, col);
     }
 
+    private void OnGameOver()
+    {
+        GameOver?.Invoke();
+    }
+
     public event Action<int, int> BoardUpdate;
+    public event Action GameOver;
 }

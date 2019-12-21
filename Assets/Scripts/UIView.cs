@@ -32,14 +32,16 @@ public class UIView : MonoBehaviour
 
     private void Awake()
     {
-        gameController =
-            GameObject.Find("Game")?.GetComponent<GameController>();
-        gameController.BoardUpdate += UpdateBoard;
     }
 
     // Start is called before the first frame update
     private void Start()
     {
+        // Get reference to the game controller
+        gameController =
+            GameObject.Find("Game")?.GetComponent<GameController>();
+        gameController.BoardUpdate += UpdateBoard;
+
         // Instantiate ground
         GameObject groundInst = Instantiate(ground, transform);
 
@@ -100,6 +102,7 @@ public class UIView : MonoBehaviour
             uiArrows[c].Column = c;
 
             // Make the controller listen to arrow clicks
+            // TODO this should go to OnEnable
             uiArrows[c].Click += gameController.MakeAMove;
         }
 

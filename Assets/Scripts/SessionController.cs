@@ -5,29 +5,101 @@
  * Author: Nuno Fachada
  * */
 
+using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class SessionController : MonoBehaviour
 {
+    private enum Status { Init, InGame, BtwGames, Finish }
+    private enum SessionType { HumanVsHuman, PlayerVsPlayer, AllVsAll }
 
+    [SerializeField] private GameObject gamePrefab = null;
+
+    private GameObject gameInstance = null;
     private GameController gameController = null;
+
+    private Status status;
+    private SessionType sessionType;
+
+    private IList<IAI> listOfAIs = null;
+
+    private string namePlayerA, namePlayerB;
 
     private void Awake()
     {
-        gameController =
-            GameObject.Find("Game")?.GetComponent<GameController>();
+        status = Status.Init;
+        listOfAIs = new List<IAI>();
+        // TODO Find AIs
+    }
+
+    private void Start()
+    {
+        if (listOfAIs.Count == 0)
+        {
+            // A game between human players, ask user to press OK to start
+            namePlayerA = "Human";
+            namePlayerB = "Human";
+            sessionType = SessionType.HumanVsHuman;
+        }
+        else if (listOfAIs.Count == 1)
+        {
+            // A game between a human and an AI, ask who plays first
+            namePlayerA = "Human";
+            namePlayerB = listOfAIs[0].NameOfAI;
+            sessionType = SessionType.PlayerVsPlayer;
+        }
+        else if (listOfAIs.Count == 2)
+        {
+            // A game between two AIs, ask who plays first
+            namePlayerA = listOfAIs[0].NameOfAI;
+            namePlayerB = listOfAIs[1].NameOfAI;
+            sessionType = SessionType.PlayerVsPlayer;
+        }
+        else
+        {
+            // Multiple AIs, run a competition, show the list of AIs and
+            // ask user to press OK to start
+            sessionType = SessionType.AllVsAll;
+        }
     }
 
     private void OnGUI()
     {
-        if (gameController.IsOver)
+        if (status == Status.Init)
+        {
+            if (sessionType == SessionType.HumanVsHuman)
+            {
+                // Press OK to continue
+                GUI.Window(0,
+                    new Rect(
+                        Screen.width / 2 - 100,
+                        Screen.height / 2 - 50, 200, 100),
+                    DrawOkLetsStartWindow,
+                    "Human vs Human");
+            }
+            else if (sessionType == SessionType.PlayerVsPlayer)
+            {
+                // Ask who plays first
+                throw new NotImplementedException(
+                    "Player vs Player not implemented yet");
+            }
+            else if (sessionType == SessionType.AllVsAll)
+            {
+                // Show list and press OK to continue
+                throw new NotImplementedException(
+                    "All vs All not implemented yet");
+            }
+        }
+        else if (status == Status.Finish)
         {
             GUI.Window(0,
                 new Rect(
                     Screen.width / 2 - 100,
                     Screen.height / 2 - 50, 200, 100),
                 DrawGameOverWindow,
-                "Game Over!");
+                sessionType == SessionType.AllVsAll
+                    ? "Session Over!" : "Game Over!");
         }
     }
 
@@ -45,4 +117,32 @@ public class SessionController : MonoBehaviour
             }
         }
     }
+
+
+    // Draw window contents
+    private void DrawOkLetsStartWindow(int id)
+    {
+        // Is this the correct window?
+        if (id == 0)
+        {
+            // Draw OK button
+            if (GUI.Button(new Rect(50, 40, 100, 30), "Start Game"))
+            {
+                // If button is clicked, create game
+                gameInstance = Instantiate(gamePrefab);
+                gameInstance.name = "Game";
+                gameController = gameInstance.GetComponent<GameController>();
+                // TODO this should go to OnEnable
+                gameController.GameOver += EndCurrentGame;
+                status = Status.InGame;
+            }
+        }
+    }
+
+    private void EndCurrentGame()
+    {
+        // TODO Consider all vs all situation
+        status = Status.Finish;
+    }
+
 }
