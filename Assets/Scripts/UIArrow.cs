@@ -11,6 +11,7 @@ using UnityEngine;
 public class UIArrow : MonoBehaviour
 {
     [SerializeField] private float fadeDuration = 1f;
+    [SerializeField] [Range(0f, 1f)] private float fadeMinTransparency = 0.2f;
     [SerializeField] private Sprite arrowOpen = null;
     [SerializeField] private Sprite arrowClosed = null;
     [SerializeField] private Sprite arrowDrop = null;
@@ -60,7 +61,7 @@ public class UIArrow : MonoBehaviour
         if (collider2d.enabled && spriteRenderer.sprite == arrowOpen)
         {
             color.a = Mathf.Cos(Time.time * Mathf.PI * 2 / fadeDuration)
-                * 0.25f + 0.75f;
+                * (1 - fadeMinTransparency) / 2 + (1 + fadeMinTransparency) / 2;
             spriteRenderer.color = color;
         }
     }
