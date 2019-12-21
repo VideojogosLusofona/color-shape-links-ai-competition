@@ -21,9 +21,8 @@ public class UIArrow : MonoBehaviour
 
     public int Column { get; set; }
 
-    public bool IsOpen
+    public bool Open
     {
-        get => collider2d.enabled;
         set
         {
             collider2d.enabled = value;
@@ -47,7 +46,8 @@ public class UIArrow : MonoBehaviour
 
     private void OnMouseExit()
     {
-        spriteRenderer.sprite = arrowOpen;
+        if (collider2d.enabled)
+            spriteRenderer.sprite = arrowOpen;
     }
 
     private void OnMouseDown()
@@ -57,7 +57,7 @@ public class UIArrow : MonoBehaviour
 
     private void Update()
     {
-        if (IsOpen && spriteRenderer.sprite == arrowOpen)
+        if (collider2d.enabled && spriteRenderer.sprite == arrowOpen)
         {
             color.a = Mathf.Cos(Time.time * Mathf.PI * 2 / fadeDuration)
                 * 0.25f + 0.75f;

@@ -171,7 +171,7 @@ public class UIView : MonoBehaviour
             if (board.IsColumnFull(col))
             {
                 // If so, close the arrow
-                uiArrows[col].IsOpen = false;
+                uiArrows[col].Open = false;
             }
         }
         // Or is the screen board position occupied while the game board
@@ -183,7 +183,7 @@ public class UIView : MonoBehaviour
             pieces[row, col] = null;
 
             // Open the arrow
-            uiArrows[col].IsOpen = true;
+            uiArrows[col].Open = true;
         }
         // Otherwise it's an impossible situation and we have a bug
         else
