@@ -5,6 +5,7 @@
  * Author: Nuno Fachada
  * */
 
+using System;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
@@ -83,16 +84,18 @@ public class GameController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.U))
         {
-            board.UndoMove();
+            Move move = board.UndoMove();
             DrawBoard();
             Debug.Log("Undid last move");
             Debug.Log($"It's {board.Turn} turn");
+            OnBoardUpdate(move.row, move.col);
         }
     }
 
     private void MakeAMove(int col)
     {
-        if (board.DoMove(selectedShape, col))
+        int row = board.DoMove(selectedShape, col);
+        if (row >= 0)
         {
             Winner winner = board.CheckWinner();
             DrawBoard();
@@ -106,6 +109,7 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log($"It's {board.Turn} turn");
             }
+            OnBoardUpdate(row, col);
         }
         else
         {
@@ -142,4 +146,11 @@ public class GameController : MonoBehaviour
         }
         Debug.Log(boardText.ToString());
     }
+
+    private void OnBoardUpdate(int row, int col)
+    {
+        BoardUpdate?.Invoke(row, col);
+    }
+
+    public event Action<int, int> BoardUpdate;
 }

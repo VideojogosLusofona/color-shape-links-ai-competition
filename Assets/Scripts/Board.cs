@@ -138,7 +138,7 @@ public class Board
             {
                 for (int c = 0; c < cols; c++)
                 {
-                    aCorridor.Add(new Pos(c, r));
+                    aCorridor.Add(new Pos(r, c));
                 }
                 corridors.Add(aCorridor.ToArray());
                 aCorridor.Clear();
@@ -154,7 +154,7 @@ public class Board
             {
                 for (int r = 0; r < rows; r++)
                 {
-                    aCorridor.Add(new Pos(c, r));
+                    aCorridor.Add(new Pos(r, c));
                 }
                 corridors.Add(aCorridor.ToArray());
                 aCorridor.Clear();
@@ -233,8 +233,8 @@ public class Board
         winCorridors = corridors.ToArray();
     }
 
-    // Make a move
-    public bool DoMove(Shape shape, int col)
+    // Make a move, return row where piece was place or -1 if move invalid
+    public int DoMove(Shape shape, int col)
     {
         // The row were to place the piece, initially assumed to be the top row
         int row = Rows - 1;
@@ -257,9 +257,9 @@ public class Board
                 "Game is over, unable to make further moves.");
         }
 
-        // If column is already full, return false, indicating the move is
-        // invalid
-        if (board[col, row].HasValue) return false;
+        // If column is already full, return negative value, indicating the
+        // move is invalid
+        if (board[col, row].HasValue) return -1;
 
         //
         // If we get here, move is valid, so let's do it
@@ -286,11 +286,11 @@ public class Board
             : (Turn == Winner.Player1) ? Winner.Player2 : Winner.Player1;
 
         // Return true, indicating the move was successful
-        return true;
+        return row;
     }
 
     // Undo last move
-    public Piece UndoMove()
+    public Move UndoMove()
     {
         Pos pos;
         Piece piece;
@@ -323,8 +323,8 @@ public class Board
         // Swap turns
         Turn = Turn == Winner.Player1 ? Winner.Player2 : Winner.Player1;
 
-        // Return piece
-        return piece;
+        // Return move that was undone
+        return new Move(pos.row, pos.col, piece);
     }
 
     // Is there a winner?
