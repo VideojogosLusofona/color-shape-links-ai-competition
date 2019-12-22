@@ -79,7 +79,7 @@ public class SessionController : MonoBehaviour
         gameInstance.name = "Game";
         gameController = gameInstance.GetComponent<GameController>();
         // TODO this should go to OnEnable
-        gameController.SetupGame(nextPlayerA, nextPlayerB,
+        gameController.SetupController(nextPlayerA, nextPlayerB,
             rows, cols, winSequence,
             squarePiecesPerPlayer, roundPiecesPerPlayer);
         gameController.GameOver += EndCurrentGame;

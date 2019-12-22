@@ -6,9 +6,10 @@
  * */
 
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class UIView : MonoBehaviour
+public class GameView : MonoBehaviour
 {
     [SerializeField] private GameObject whiteRoundPiece = null;
     [SerializeField] private GameObject whiteSquarePiece = null;
@@ -18,8 +19,10 @@ public class UIView : MonoBehaviour
     [SerializeField] private GameObject ground = null;
     [SerializeField] private GameObject arrowButton = null;
 
-    private GameController gameController = null;
-    private Board board = null;
+    private Board board;
+    private IReadOnlyList<IPlayer> players;
+    private bool[] enabledPlayers;
+    private PShape[] selectedShapes;
     private GameObject[,] pieces;
     private UIArrow[] uiArrows;
 
@@ -30,17 +33,30 @@ public class UIView : MonoBehaviour
     private float piecesLength;
     private float piecesScale;
 
-    private void Awake()
+    private bool setupDone = false;
+
+    internal void SetupView(
+        Board board, IReadOnlyList<IPlayer> players)
     {
+        if (setupDone)
+            throw new InvalidOperationException(
+                "Game view setup can only be performed once");
+
+        selectedShapes = new PShape[] { PShape.Round, PShape.Round };
+        enabledPlayers = new bool[] { players[0].IsHuman, false };
+
+        this.players = players;
+        this.board = board;
+
+        setupDone = true;
     }
 
     // Start is called before the first frame update
     private void Start()
     {
-        // Get reference to the game controller
-        gameController =
-            GameObject.Find("Game")?.GetComponent<GameController>();
-        gameController.BoardUpdate += UpdateBoard;
+        if (!setupDone)
+            throw new InvalidOperationException(
+                "Game view setup needs to be performed before Start()");
 
         // Instantiate ground
         GameObject groundInst = Instantiate(ground, transform);
@@ -58,9 +74,6 @@ public class UIView : MonoBehaviour
 
         // Get piece bounds (any will do)
         Bounds pcBounds = redRoundPiece.GetComponent<SpriteRenderer>().bounds;
-
-        // Get a reference to the game board
-        board = gameController.Board;
 
         // Create matrix for placing game objects representing pieces
         pieces = new GameObject[board.rows, board.cols];
@@ -102,8 +115,7 @@ public class UIView : MonoBehaviour
             uiArrows[c].Column = c;
 
             // Make the controller listen to arrow clicks
-            // TODO this should go to OnEnable
-            uiArrows[c].Click += gameController.MakeAMove;
+            uiArrows[c].Click.AddListener(OnMoveSelected);
         }
 
         // These will be necessary for calculating the positions of the pieces
@@ -127,10 +139,11 @@ public class UIView : MonoBehaviour
     }
 
     // Update a position in the board shown on screen
-    private void UpdateBoard(int row, int col)
+    internal void UpdateBoard(Move move)
     {
         // Is the screen board position empty and the game board has a piece?
-        if (pieces[row, col] == null && board[row, col].HasValue)
+        if (pieces[move.row, move.col] == null
+            && board[move.row, move.col].HasValue)
         {
             // Then also place that piece in the screen board
 
@@ -138,7 +151,7 @@ public class UIView : MonoBehaviour
             GameObject piecePrefab;
 
             // The piece on the game board to also put in the screen board
-            Piece piece = board[row, col].Value;
+            Piece piece = board[move.row, move.col].Value;
 
             // Determine the piece prefab to use based on the board piece
             if (piece.Is(PColor.White, PShape.Round))
@@ -154,39 +167,42 @@ public class UIView : MonoBehaviour
                     "Trying to instantiate an invalid piece");
 
             // Instantiate the screen piece
-            pieces[row, col] = Instantiate(
+            pieces[move.row, move.col] = Instantiate(
                 piecePrefab,
                 new Vector3(
                     // Horizontal position
-                    leftPoleBase.x + col * distBtwPoles,
+                    leftPoleBase.x + move.col * distBtwPoles,
                     // Vertical position
-                    leftPoleBase.y + row * (totalHeightForPieces / board.rows)
-                         + piecesLength / 2,
+                    leftPoleBase.y
+                        + move.row * (totalHeightForPieces / board.rows)
+                        + piecesLength / 2,
                     // Z-axis
                     2),
                 Quaternion.identity,
                 transform);
 
             // Correct scale of screen piece
-            pieces[row, col].transform.localScale = piecesScale * Vector3.one;
+            pieces[move.row, move.col].transform.localScale =
+                piecesScale * Vector3.one;
 
             // Is the column now full?
-            if (board.IsColumnFull(col))
+            if (board.IsColumnFull(move.col))
             {
                 // If so, close the arrow
-                uiArrows[col].Open = false;
+                uiArrows[move.col].Open = false;
             }
         }
         // Or is the screen board position occupied while the game board
         // position is empty?
-        else if (pieces[row, col] != null && !board[row, col].HasValue)
+        else if (pieces[move.row, move.col] != null
+            && !board[move.row, move.col].HasValue)
         {
             // In such case, destroy the screen board piece
-            Destroy(pieces[row, col]);
-            pieces[row, col] = null;
+            Destroy(pieces[move.row, move.col]);
+            pieces[move.row, move.col] = null;
 
             // Open the arrow
-            uiArrows[col].Open = true;
+            uiArrows[move.col].Open = true;
         }
         // Otherwise it's an impossible situation and we have a bug
         else
@@ -194,5 +210,25 @@ public class UIView : MonoBehaviour
             throw new InvalidOperationException(
                 "Board view representation not in sync with board model");
         }
+
+        // Disable previous player and update its shape choice
+        enabledPlayers[(int)move.piece.color] = false;
+        selectedShapes[(int)move.piece.color] = move.piece.shape;
+
+        // Enable next player if human
+        enabledPlayers[(int)board.Turn] = players[(int)board.Turn].IsHuman;
     }
+
+    private void OnGUI()
+    {
+
+    }
+
+    private void OnMoveSelected(int col)
+    {
+        MoveSelected?.Invoke(
+            new FutureMove(col, selectedShapes[(int)board.Turn]));
+    }
+
+    public event Action<FutureMove> MoveSelected;
 }

@@ -7,6 +7,7 @@
 
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UIArrow : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class UIArrow : MonoBehaviour
 
     private void Awake()
     {
+        Click = new IntEvent();
         collider2d = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         color = spriteRenderer.color;
@@ -67,5 +69,8 @@ public class UIArrow : MonoBehaviour
         }
     }
 
-    public event Action<int> Click;
+    public IntEvent Click { get; private set; }
+
+    [Serializable] public class IntEvent : UnityEvent<int> {}
+
 }

@@ -18,23 +18,25 @@ public class GameController : MonoBehaviour
     private int squarePiecesPerPlayer;
     private int roundPiecesPerPlayer;
 
-    private const string rules =
-        "Key T toggles the piece/shape to play. " +
-        "Key U undoes the last move.";
+    private const string rules = "Key B shows the board in the console.";
 
-    private PShape selectedShape;
+    private GameView view;
 
     private bool setupDone = false;
     private bool gameOver = false;
 
-    public Board Board { get; private set; }
+    private Board board;
 
-    public void Awake()
+    // TODO Remove this
+    private StringBuilder boardText = new StringBuilder();
+
+    private void Awake()
     {
         players = new IPlayer[2];
+        view = GameObject.Find("UI")?.GetComponent<GameView>();
     }
 
-    public void SetupGame(IPlayer player1White, IPlayer player2Red,
+    internal void SetupController(IPlayer player1White, IPlayer player2Red,
         int rows, int cols, int winSequence,
         int squarePiecesPerPlayer, int roundPiecesPerPlayer)
     {
@@ -46,11 +48,23 @@ public class GameController : MonoBehaviour
         players[(int)PColor.Red] = player2Red;
         this.rows = rows;
         this.cols = cols;
-        this.winSequence = winSequence;
-        this.squarePiecesPerPlayer = squarePiecesPerPlayer;
-        this.roundPiecesPerPlayer = roundPiecesPerPlayer;
+
+        board = new Board(rows, cols, winSequence,
+            roundPiecesPerPlayer, squarePiecesPerPlayer);
+
+        view.SetupView(board, players);
 
         setupDone = true;
+    }
+
+    private void OnEnable()
+    {
+        view.MoveSelected += MakeAMove;
+    }
+
+    private void OnDisable()
+    {
+        view.MoveSelected -= MakeAMove;
     }
 
     // Start is called before the first frame update
@@ -60,11 +74,8 @@ public class GameController : MonoBehaviour
             throw new InvalidOperationException(
                 "Game controller setup needs to be performed before Start()");
 
-        Board = new Board(rows, cols, winSequence,
-            roundPiecesPerPlayer, squarePiecesPerPlayer);
-
         Debug.Log(rules);
-        Debug.Log($"It's {Board.Turn} turn");
+        Debug.Log($"It's {board.Turn} turn");
     }
 
     // Update is called once per frame
@@ -72,40 +83,26 @@ public class GameController : MonoBehaviour
     {
         if (gameOver) return;
 
-        if (players[(int)Board.Turn].IsHuman)
+        if (!players[(int)board.Turn].IsHuman)
         {
-            if (Input.GetKeyDown(KeyCode.T))
-            {
-                selectedShape = selectedShape == PShape.Round
-                    ? PShape.Square
-                    : PShape.Round;
-                Debug.Log($"Selected shape is {selectedShape}");
-            }
-            else if (Input.GetKeyDown(KeyCode.U))
-            {
-                Move move = Board.UndoMove();
-                Debug.Log("Undid last move");
-                Debug.Log($"It's {Board.Turn} turn");
-                OnBoardUpdate(move.row, move.col);
-            }
+            IThinker thinker = players[(int)board.Turn].Thinker;
+            FutureMove futureMove = thinker.Think(board);
+            MakeAMove(futureMove);
         }
-        else
+
+        if (Input.GetKeyDown(KeyCode.B))
         {
-            IThinker thinker = players[(int)Board.Turn].Thinker;
-            FutureMove futureMove = thinker.Think(Board);
-            PShape aux = selectedShape;
-            selectedShape = futureMove.shape;
-            MakeAMove(futureMove.column);
-            selectedShape = aux;
+            DrawBoard();
         }
     }
 
-    public void MakeAMove(int col)
+    public void MakeAMove(FutureMove move)
     {
-        int row = Board.DoMove(selectedShape, col);
+        PColor whoPlayed = board.Turn;
+        int row = board.DoMove(move.shape, move.column);
         if (row >= 0)
         {
-            Winner winner = Board.CheckWinner();
+            Winner winner = board.CheckWinner();
             if (winner != Winner.None)
             {
                 Debug.Log("Game Over, " +
@@ -114,19 +111,15 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                Debug.Log($"It's {Board.Turn} turn");
+                Debug.Log($"It's {board.Turn} turn");
             }
-            OnBoardUpdate(row, col);
+            view.UpdateBoard(
+                new Move(row, move.column, new Piece(whoPlayed, move.shape)));
         }
         else
         {
-            Debug.Log($"Column {col + 1} is full, try another one.");
+            Debug.Log($"Column {move.column + 1} is full, try another one.");
         }
-    }
-
-    private void OnBoardUpdate(int row, int col)
-    {
-        BoardUpdate?.Invoke(row, col);
     }
 
     private void OnGameOver()
@@ -135,6 +128,36 @@ public class GameController : MonoBehaviour
         GameOver?.Invoke();
     }
 
-    public event Action<int, int> BoardUpdate;
+    // TODO Remove this
+    private void DrawBoard()
+    {
+        boardText.Clear();
+        boardText.Append('\n');
+        for (int r = rows - 1; r >= 0; r--)
+        {
+            for (int c = 0; c < cols; c++)
+            {
+                char pc = '.';
+                Piece? p = board[r, c];
+                if (p.HasValue)
+                {
+                    if (p.Value.Is(PColor.White, PShape.Round))
+                        pc = 'w';
+                    else if (p.Value.Is(PColor.White, PShape.Square))
+                        pc = 'W';
+                    else if (p.Value.Is(PColor.Red, PShape.Round))
+                        pc = 'r';
+                    else if (p.Value.Is(PColor.Red, PShape.Square))
+                        pc = 'R';
+                    else
+                        Debug.LogError($"Invalid piece {p.Value}");
+                }
+                boardText.Append(pc);
+            }
+            boardText.Append('\n');
+        }
+        Debug.Log(boardText.ToString());
+    }
+
     public event Action GameOver;
 }
