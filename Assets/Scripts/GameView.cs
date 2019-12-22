@@ -221,7 +221,41 @@ public class GameView : MonoBehaviour
 
     private void OnGUI()
     {
+        DrawPlayerPanel(PColor.White);
+        DrawPlayerPanel(PColor.Red);
+    }
 
+    private void DrawPlayerPanel(PColor player)
+    {
+        float boxWidth = 150;
+        float boxHeight = 100;
+        float distFromSide = 20;
+
+        float posFromLeft =
+            player == PColor.White
+                ? distFromSide
+                : Screen.width - boxWidth - distFromSide;
+
+        PShape selectedShape = selectedShapes[(int)player];
+        string playerName = players[(int)player].PlayerName;
+        bool uiEnabled = enabledPlayers[(int)player];
+
+        GUI.Box(
+            new Rect(
+                posFromLeft,
+                Screen.height / 2 - boxHeight / 2,
+                boxWidth, boxHeight),
+            playerName);
+
+        selectedShapes[(int)player] = (PShape)GUI.SelectionGrid(
+            new Rect (
+                posFromLeft + 10,
+                Screen.height / 2 - boxHeight / 2 + 20,
+                boxWidth - 20,
+                boxHeight - 40),
+            (int)selectedShape,
+            new string[] { "Round", "Square" },
+            1);
     }
 
     private void OnMoveSelected(int col)
