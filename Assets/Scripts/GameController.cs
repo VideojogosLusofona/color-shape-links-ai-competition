@@ -11,8 +11,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    private IPlayer player1White;
-    private IPlayer player2Red;
+    private IPlayer[] players;
     private int rows;
     private int cols;
     private int winSequence;
@@ -26,8 +25,14 @@ public class GameController : MonoBehaviour
     private PShape selectedShape;
 
     private bool setupDone = false;
+    private bool gameOver = false;
 
     public Board Board { get; private set; }
+
+    public void Awake()
+    {
+        players = new IPlayer[2];
+    }
 
     public void SetupGame(IPlayer player1White, IPlayer player2Red,
         int rows, int cols, int winSequence,
@@ -37,8 +42,8 @@ public class GameController : MonoBehaviour
             throw new InvalidOperationException(
                 "Game controller setup can only be performed once");
 
-        this.player1White = player1White;
-        this.player2Red = player2Red;
+        players[(int)PColor.White] = player1White;
+        players[(int)PColor.Red] = player2Red;
         this.rows = rows;
         this.cols = cols;
         this.winSequence = winSequence;
@@ -65,19 +70,33 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (gameOver) return;
+
+        if (players[(int)Board.Turn].IsHuman)
         {
-            selectedShape = selectedShape == PShape.Round
-                ? PShape.Square
-                : PShape.Round;
-            Debug.Log($"Selected shape is {selectedShape}");
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                selectedShape = selectedShape == PShape.Round
+                    ? PShape.Square
+                    : PShape.Round;
+                Debug.Log($"Selected shape is {selectedShape}");
+            }
+            else if (Input.GetKeyDown(KeyCode.U))
+            {
+                Move move = Board.UndoMove();
+                Debug.Log("Undid last move");
+                Debug.Log($"It's {Board.Turn} turn");
+                OnBoardUpdate(move.row, move.col);
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.U))
+        else
         {
-            Move move = Board.UndoMove();
-            Debug.Log("Undid last move");
-            Debug.Log($"It's {Board.Turn} turn");
-            OnBoardUpdate(move.row, move.col);
+            IThinker thinker = (players[(int)Board.Turn] as AIPlayer).Thinker;
+            FutureMove futureMove = thinker.Think(Board);
+            PShape aux = selectedShape;
+            selectedShape = futureMove.shape;
+            MakeAMove(futureMove.column);
+            selectedShape = aux;
         }
     }
 
@@ -112,6 +131,7 @@ public class GameController : MonoBehaviour
 
     private void OnGameOver()
     {
+        gameOver = true;
         GameOver?.Invoke();
     }
 

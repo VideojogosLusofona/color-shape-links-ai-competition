@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52622cd336e3e0ab69d66e893d84bd1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
+  isActive: 1
 --- !u!1 &366522863
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,6 +358,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gamePrefab: {fileID: 8785714994902384369, guid: b0d030fed5862354c9cc5f6a3f15b292,
     type: 3}
+  rows: 7
+  cols: 7
+  winSequence: 4
+  squarePiecesPerPlayer: 11
+  roundPiecesPerPlayer: 10
 --- !u!4 &617695835
 Transform:
   m_ObjectHideFlags: 0

@@ -197,6 +197,7 @@ public class SessionController : MonoBehaviour
             if (GUI.Button(new Rect(50, 40, 100, 30), "OK"))
             {
                 // If button is clicked, exit
+                Destroy(gameInstance);
                 UnityEditor.EditorApplication.isPlaying = false;
             }
         }
