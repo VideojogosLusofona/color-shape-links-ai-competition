@@ -91,7 +91,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            IThinker thinker = (players[(int)Board.Turn] as AIPlayer).Thinker;
+            IThinker thinker = players[(int)Board.Turn].Thinker;
             FutureMove futureMove = thinker.Think(Board);
             PShape aux = selectedShape;
             selectedShape = futureMove.shape;

@@ -9,4 +9,5 @@ public interface IPlayer
 {
     bool IsHuman { get; }
     string PlayerName { get; }
+    IThinker Thinker { get; }
 }
