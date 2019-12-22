@@ -42,12 +42,6 @@ public class Board
     // Internal representation of the game board
     private readonly Piece?[,] board;
 
-    // Number of rows in the board
-    public int Rows => board.GetLength(1);
-
-    // Number of columns in the board
-    public int Cols => board.GetLength(0);
-
     // Read-only indexer for client code to see the board
     public Piece? this[int row, int col]
     {
@@ -55,11 +49,11 @@ public class Board
         {
             // If client requested an invalid position, this is a bug in
             // client code, so let's throw an exception
-            if (row < 0 || row >= Rows || col < 0 || col >= Cols)
+            if (row < 0 || row >= rows || col < 0 || col >= cols)
             {
                 throw new IndexOutOfRangeException(
                     $"Position {new Pos(row, col)} is out of bounds. " +
-                    $"Board dimensions are {new Pos(Rows, Cols)}.");
+                    $"Board dimensions are {new Pos(rows, cols)}.");
             }
 
             // Return piece
@@ -67,8 +61,20 @@ public class Board
         }
     }
 
+    // Number of rows in the board
+    public readonly int rows;
+
+    // Number of columns in the board
+    public readonly int cols;
+
     // How many pieces in sequence to find a winner
-    public int PiecesInSequence { get; }
+    public readonly int piecesInSequence;
+
+    // Initial number of round pieces for each player
+    public readonly int roundPieces;
+
+    // Initial number of square pieces for each player
+    public readonly int squarePieces;
 
     // Array of pairs (piece check function, player associated with piece)
     private readonly PieceFuncPlayer[] pieceFuncsPlayers;
@@ -79,6 +85,9 @@ public class Board
     // Sequence of moves (for undo purposes)
     private readonly Stack<Pos> moveSequence;
 
+    // Number of pieces
+    private readonly IDictionary<Piece, int> numberOfPieces;
+
     // Number of moves performed so far
     private int numMoves;
 
@@ -86,7 +95,8 @@ public class Board
     public Winner Turn { get; private set; }
 
     // Creates a new board
-    public Board(int rows, int cols, int piecesInSequence)
+    public Board(int rows = 7, int cols = 7, int piecesInSequence = 4,
+        int roundPieces = 10, int squarePieces = 11)
     {
         // Aux. variables for determining win corridors
         List<Pos> aCorridor;
@@ -99,14 +109,26 @@ public class Board
                 "Invalid parameters, since it is not possible to win");
         }
 
+        // Keep number of rows
+        this.rows = rows;
+
+        // Keep number of columns
+        this.cols = cols;
+
+        // Keep number of pieces in sequence to find winner
+        this.piecesInSequence = piecesInSequence;
+
+        // Keep initial number of round pieces
+        this.roundPieces = roundPieces;
+
+        // Keep initial number of square pieces
+        this.squarePieces = squarePieces;
+
         // Number of moves initially zero
         numMoves = 0;
 
         // Initially, it's player 1 turn
         Turn = Winner.Player1;
-
-        // Keep number of pieces in sequence to find winner
-        PiecesInSequence = piecesInSequence;
 
         // Instantiate the array representing the board
         board = new Piece?[cols, rows];
@@ -128,6 +150,15 @@ public class Board
         // Initialize move sequence with initial capacity for all possible
         // moves
         moveSequence = new Stack<Pos>(rows * cols);
+
+        // Setup initial number of pieces
+        numberOfPieces = new Dictionary<Piece, int>()
+        {
+            { new Piece(PColor.White, PShape.Round), roundPieces },
+            { new Piece(PColor.White, PShape.Square), squarePieces },
+            { new Piece(PColor.Red, PShape.Round), roundPieces },
+            { new Piece(PColor.Red, PShape.Square), squarePieces },
+        };
 
         //
         // Horizontal corridors
@@ -175,7 +206,7 @@ public class Board
                 r++;
                 c++;
             }
-            if (aCorridor.Count >= PiecesInSequence)
+            if (aCorridor.Count >= this.piecesInSequence)
                 corridors.Add(aCorridor.ToArray());
             aCorridor.Clear();
         }
@@ -190,7 +221,7 @@ public class Board
                 r++;
                 c++;
             }
-            if (aCorridor.Count >= PiecesInSequence)
+            if (aCorridor.Count >= this.piecesInSequence)
                 corridors.Add(aCorridor.ToArray());
             aCorridor.Clear();
         }
@@ -209,7 +240,7 @@ public class Board
                 r++;
                 c--;
             }
-            if (aCorridor.Count >= PiecesInSequence)
+            if (aCorridor.Count >= this.piecesInSequence)
                 corridors.Add(aCorridor.ToArray());
             aCorridor.Clear();
         }
@@ -224,7 +255,7 @@ public class Board
                 r++;
                 c--;
             }
-            if (aCorridor.Count >= PiecesInSequence)
+            if (aCorridor.Count >= this.piecesInSequence)
                 corridors.Add(aCorridor.ToArray());
             aCorridor.Clear();
         }
@@ -237,14 +268,17 @@ public class Board
     public int DoMove(PShape shape, int col)
     {
         // The row were to place the piece, initially assumed to be the top row
-        int row = Rows - 1;
+        int row = rows - 1;
 
         // The color of the piece to place, depends on who's playing
         PColor color = Turn == Winner.Player1 ? PColor.White : PColor.Red;
 
+        // The piece to place
+        Piece piece = new Piece(color, shape);
+
         // If the column is not a valid column, there is a client code bug,
         // so let's throw an exception
-        if (col < 0 || col >= Cols)
+        if (col < 0 || col >= cols)
         {
             throw new InvalidOperationException($"Invalid board column: {col}");
         }
@@ -255,6 +289,14 @@ public class Board
         {
             throw new InvalidOperationException(
                 "Game is over, unable to make further moves.");
+        }
+
+        // If there are no more pieces of the specified kind, there is a client
+        // bug, so let's throw an exception
+        if (numberOfPieces[piece] == 0)
+        {
+            throw new InvalidOperationException(
+                $"No more {piece} pieces available");
         }
 
         // If column is already full, return negative value, indicating the
@@ -272,7 +314,10 @@ public class Board
         }
 
         // Place the piece
-        board[col, row] = new Piece(color, shape);
+        board[col, row] = piece;
+
+        // Decrease the piece count
+        numberOfPieces[piece]--;
 
         // Remember the move
         moveSequence.Push(new Pos(row, col));
@@ -281,7 +326,7 @@ public class Board
         numMoves++;
 
         // Update turn
-        Turn = (numMoves == Cols * Rows)
+        Turn = (numMoves == cols * rows)
             ? Winner.None
             : (Turn == Winner.Player1) ? Winner.Player2 : Winner.Player1;
 
@@ -331,7 +376,7 @@ public class Board
     public Winner CheckWinner()
     {
         // Is the board full? Then we have a draw
-        if (numMoves == Cols * Rows) return Winner.Draw;
+        if (numMoves == cols * rows) return Winner.Draw;
 
         // Check for all different pieces
         foreach (PieceFuncPlayer funcPlayer in pieceFuncsPlayers)
@@ -354,7 +399,7 @@ public class Board
                         // No it doesn't, reset count
                         count = 0;
                     // Did we find enough pieces in a row?
-                    if (count == PiecesInSequence)
+                    if (count == piecesInSequence)
                         // If so, return winner
                         return funcPlayer.player;
                 }
@@ -366,5 +411,5 @@ public class Board
     }
 
     // Is the specified column full?
-    public bool IsColumnFull(int col) => board[col, Rows - 1].HasValue;
+    public bool IsColumnFull(int col) => board[col, rows - 1].HasValue;
 }

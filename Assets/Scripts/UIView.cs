@@ -63,13 +63,13 @@ public class UIView : MonoBehaviour
         board = gameController.Board;
 
         // Create matrix for placing game objects representing pieces
-        pieces = new GameObject[board.Rows, board.Cols];
+        pieces = new GameObject[board.rows, board.cols];
 
         // Create array for UI arrow script objects
-        uiArrows = new UIArrow[board.Cols];
+        uiArrows = new UIArrow[board.cols];
 
         // Instantiate poles and arrows
-        for (int c = 0; c < board.Cols; c++)
+        for (int c = 0; c < board.cols; c++)
         {
             GameObject currPole, currArrow;
 
@@ -77,7 +77,7 @@ public class UIView : MonoBehaviour
             currPole = Instantiate(
                 pole,
                 new Vector3(
-                    gTopLeft.x + (c + 1) * (gBounds.size.x / (board.Cols + 1)),
+                    gTopLeft.x + (c + 1) * (gBounds.size.x / (board.cols + 1)),
                     gTopLeft.y + plBounds.extents.y - polePadding,
                     1),
                 Quaternion.identity,
@@ -88,7 +88,7 @@ public class UIView : MonoBehaviour
             currArrow = Instantiate(
                 arrowButton,
                 new Vector3(
-                    gTopLeft.x + (c + 1) * (gBounds.size.x / (board.Cols + 1)),
+                    gTopLeft.x + (c + 1) * (gBounds.size.x / (board.cols + 1)),
                     gTopLeft.y + plBounds.size.y + polePadding + aBounds.extents.y,
                     4),
                 Quaternion.identity,
@@ -108,9 +108,9 @@ public class UIView : MonoBehaviour
 
         // These will be necessary for calculating the positions of the pieces
         leftPoleBase = new Vector2(
-            gTopLeft.x + gBounds.size.x / (board.Cols + 1),
+            gTopLeft.x + gBounds.size.x / (board.cols + 1),
             gTopLeft.y);
-        distBtwPoles = gBounds.size.x / (board.Cols + 1);
+        distBtwPoles = gBounds.size.x / (board.cols + 1);
         totalHeightForPieces = plBounds.size.y - 2 * polePadding;
 
         // The scale of the pieces will the minimum between...
@@ -120,7 +120,7 @@ public class UIView : MonoBehaviour
             (distBtwPoles / 2) / pcBounds.size.x,
             // ...and the available space for each piece in a pole, divided by
             // the original height of the prefabs
-            (totalHeightForPieces / board.Rows) / pcBounds.size.y);
+            (totalHeightForPieces / board.rows) / pcBounds.size.y);
 
         // Keep the length of the pieces (equal in x and y directions)
         piecesLength = piecesScale * pcBounds.size.y;
@@ -160,7 +160,7 @@ public class UIView : MonoBehaviour
                     // Horizontal position
                     leftPoleBase.x + col * distBtwPoles,
                     // Vertical position
-                    leftPoleBase.y + row * (totalHeightForPieces / board.Rows)
+                    leftPoleBase.y + row * (totalHeightForPieces / board.rows)
                          + piecesLength / 2,
                     // Z-axis
                     2),
