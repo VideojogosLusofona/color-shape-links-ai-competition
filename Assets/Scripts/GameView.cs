@@ -25,6 +25,7 @@ public class GameView : MonoBehaviour
     private PShape[] selectedShapes;
     private GameObject[,] pieces;
     private UIArrow[] uiArrows;
+    private Texture[][] pieceTextures;
 
     private readonly float polePadding = 0.1f;
     private Vector2 leftPoleBase;
@@ -35,6 +36,19 @@ public class GameView : MonoBehaviour
 
     private bool setupDone = false;
 
+    private void Awake()
+    {
+        selectedShapes = new PShape[] { PShape.Round, PShape.Round };
+        pieceTextures = new Texture[][] {
+            new Texture[] {
+                whiteRoundPiece?.GetComponent<SpriteRenderer>().sprite.texture,
+                whiteSquarePiece?.GetComponent<SpriteRenderer>().sprite.texture
+            },
+            new Texture[] {
+                redRoundPiece?.GetComponent<SpriteRenderer>().sprite.texture,
+                redSquarePiece?.GetComponent<SpriteRenderer>().sprite.texture}};
+    }
+
     internal void SetupView(
         Board board, IReadOnlyList<IPlayer> players)
     {
@@ -42,7 +56,6 @@ public class GameView : MonoBehaviour
             throw new InvalidOperationException(
                 "Game view setup can only be performed once");
 
-        selectedShapes = new PShape[] { PShape.Round, PShape.Round };
         enabledPlayers = new bool[] { players[0].IsHuman, false };
 
         this.players = players;
@@ -254,7 +267,7 @@ public class GameView : MonoBehaviour
                 boxWidth - 20,
                 boxHeight - 40),
             (int)selectedShape,
-            new string[] { "Round", "Square" },
+            pieceTextures[(int)player],
             1);
     }
 
