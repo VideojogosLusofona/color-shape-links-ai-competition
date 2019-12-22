@@ -39,9 +39,6 @@ public class Board
         public override string ToString() => $"({row},{col})";
     }
 
-    // Internal representation of the game board
-    private readonly Piece?[,] board;
-
     // Read-only indexer for client code to see the board
     public Piece? this[int row, int col]
     {
@@ -61,6 +58,9 @@ public class Board
         }
     }
 
+    // Who's turn is it?
+    public PColor Turn { get; private set; }
+
     // Number of rows in the board
     public readonly int rows;
 
@@ -76,6 +76,21 @@ public class Board
     // Initial number of square pieces for each player
     public readonly int squarePieces;
 
+    // How many pieces left?
+    private int PiecesLeft
+    {
+        get
+        {
+            int total = 0;
+            IEnumerable<int> counts = numberOfPieces.Values;
+            foreach (int count in counts) total += count;
+            return total;
+        }
+    }
+
+    // Internal representation of the game board
+    private readonly Piece?[,] board;
+
     // Array of pairs (piece check function, player associated with piece)
     private readonly PieceFuncPlayer[] pieceFuncsPlayers;
 
@@ -90,9 +105,6 @@ public class Board
 
     // Number of moves performed so far
     private int numMoves;
-
-    // Who's turn is it?
-    public Winner Turn { get; private set; }
 
     // Creates a new board
     public Board(int rows = 7, int cols = 7, int piecesInSequence = 4,
@@ -128,7 +140,7 @@ public class Board
         numMoves = 0;
 
         // Initially, it's player 1 turn
-        Turn = Winner.Player1;
+        Turn = PColor.White;
 
         // Instantiate the array representing the board
         board = new Piece?[cols, rows];
@@ -137,10 +149,10 @@ public class Board
         pieceFuncsPlayers = new PieceFuncPlayer[]
         {
             // Shape must come before color
-            new PieceFuncPlayer(p => p.shape == PShape.Round, Winner.Player1),
-            new PieceFuncPlayer(p => p.shape == PShape.Square, Winner.Player2),
-            new PieceFuncPlayer(p => p.color == PColor.White, Winner.Player1),
-            new PieceFuncPlayer(p => p.color == PColor.Red, Winner.Player2)
+            new PieceFuncPlayer(p => p.shape == PShape.Round, Winner.White),
+            new PieceFuncPlayer(p => p.shape == PShape.Square, Winner.Red),
+            new PieceFuncPlayer(p => p.color == PColor.White, Winner.White),
+            new PieceFuncPlayer(p => p.color == PColor.Red, Winner.Red)
         };
 
         // Create and populate array of win corridors
@@ -271,7 +283,7 @@ public class Board
         int row = rows - 1;
 
         // The color of the piece to place, depends on who's playing
-        PColor color = Turn == Winner.Player1 ? PColor.White : PColor.Red;
+        PColor color = Turn;
 
         // The piece to place
         Piece piece = new Piece(color, shape);
@@ -326,9 +338,7 @@ public class Board
         numMoves++;
 
         // Update turn
-        Turn = (numMoves == cols * rows)
-            ? Winner.None
-            : (Turn == Winner.Player1) ? Winner.Player2 : Winner.Player1;
+        Turn = Turn == PColor.White ? PColor.Red : PColor.White;
 
         // Return true, indicating the move was successful
         return row;
@@ -366,7 +376,7 @@ public class Board
         numMoves--;
 
         // Swap turns
-        Turn = Turn == Winner.Player1 ? Winner.Player2 : Winner.Player1;
+        Turn = Turn == PColor.White ? PColor.Red : PColor.White;
 
         // Return move that was undone
         return new Move(pos.row, pos.col, piece);
@@ -376,7 +386,7 @@ public class Board
     public Winner CheckWinner()
     {
         // Is the board full? Then we have a draw
-        if (numMoves == cols * rows) return Winner.Draw;
+        if (numMoves == cols * rows || PiecesLeft == 0) return Winner.Draw;
 
         // Check for all different pieces
         foreach (PieceFuncPlayer funcPlayer in pieceFuncsPlayers)
@@ -409,6 +419,9 @@ public class Board
         // No winner found
         return Winner.None;
     }
+
+    public int PieceCount(PColor color, PShape shape) =>
+        numberOfPieces[new Piece(color, shape)];
 
     // Is the specified column full?
     public bool IsColumnFull(int col) => board[col, rows - 1].HasValue;

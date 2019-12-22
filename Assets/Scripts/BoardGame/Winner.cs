@@ -9,6 +9,6 @@ public enum Winner
 {
     None,
     Draw,
-    Player1,
-    Player2
+    White,
+    Red
 }

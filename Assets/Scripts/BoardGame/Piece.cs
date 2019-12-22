@@ -16,8 +16,8 @@ public struct Piece
     {
         get
         {
-            if (color == PColor.White) return Winner.Player1;
-            if (color == PColor.Red) return Winner.Player2;
+            if (color == PColor.White) return Winner.White;
+            if (color == PColor.Red) return Winner.Red;
 
             // If we get here, there is a bug
             throw new InvalidOperationException("Piece has invalid color");
