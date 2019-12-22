@@ -15,6 +15,11 @@ public class SessionController : MonoBehaviour
     private enum SessionType { HumanVsHuman, PlayerVsPlayer, AllVsAll }
 
     [SerializeField] private GameObject gamePrefab = null;
+    [SerializeField] private int rows = 7;
+    [SerializeField] private int cols = 7;
+    [SerializeField] private int winSequence = 4;
+    [SerializeField] private int squarePiecesPerPlayer = 11;
+    [SerializeField] private int roundPiecesPerPlayer = 10;
 
     private GameObject gameInstance = null;
     private GameController gameController = null;
@@ -68,6 +73,19 @@ public class SessionController : MonoBehaviour
         }
     }
 
+    private void StartGame()
+    {
+        gameInstance = Instantiate(gamePrefab);
+        gameInstance.name = "Game";
+        gameController = gameInstance.GetComponent<GameController>();
+        // TODO this should go to OnEnable
+        gameController.SetupGame(nextPlayerA, nextPlayerB,
+            rows, cols, winSequence,
+            squarePiecesPerPlayer, roundPiecesPerPlayer);
+        gameController.GameOver += EndCurrentGame;
+        status = Status.InGame;
+    }
+
     private void OnGUI()
     {
         if (status == Status.Init)
@@ -85,40 +103,33 @@ public class SessionController : MonoBehaviour
             else if (sessionType == SessionType.PlayerVsPlayer)
             {
                 // Ask who plays first
-                throw new NotImplementedException(
-                    "Player vs Player not implemented yet");
+                GUI.Window(1,
+                    new Rect(
+                        Screen.width / 2 - 200,
+                        Screen.height / 2 - 50, 400, 100),
+                    DrawWhoPlaysFirstWindow,
+                    "Who plays first (white)?");
             }
             else if (sessionType == SessionType.AllVsAll)
             {
                 // Show list and press OK to continue
-                throw new NotImplementedException(
-                    "All vs All not implemented yet");
+                GUI.Window(2,
+                    new Rect(
+                        Screen.width / 2 - 100,
+                        Screen.height / 2 - 50, 200, 100),
+                    DrawCompetitionWindow,
+                    "Competition");
             }
         }
         else if (status == Status.Finish)
         {
-            GUI.Window(0,
+            GUI.Window(3,
                 new Rect(
                     Screen.width / 2 - 100,
                     Screen.height / 2 - 50, 200, 100),
                 DrawGameOverWindow,
                 sessionType == SessionType.AllVsAll
                     ? "Session Over!" : "Game Over!");
-        }
-    }
-
-    // Draw window contents
-    private void DrawGameOverWindow(int id)
-    {
-        // Is this the correct window?
-        if (id == 0)
-        {
-            // Draw OK button
-            if (GUI.Button(new Rect(50, 40, 100, 30), "OK"))
-            {
-                // If button is clicked, exit
-                UnityEditor.EditorApplication.isPlaying = false;
-            }
         }
     }
 
@@ -131,15 +142,62 @@ public class SessionController : MonoBehaviour
             // Draw OK button
             if (GUI.Button(new Rect(50, 40, 100, 30), "Start Game"))
             {
-                // If button is clicked, create game
-                gameInstance = Instantiate(gamePrefab);
-                gameInstance.name = "Game";
-                gameController = gameInstance.GetComponent<GameController>();
-                // TODO this should go to OnEnable
-                gameController.GameOver += EndCurrentGame;
+                // If button is clicked, start game
+                StartGame();
+            }
+        }
+    }
 
+    // Draw window contents
+    private void DrawWhoPlaysFirstWindow(int id)
+    {
+        // Is this the correct window?
+        if (id == 1)
+        {
+            // Draw buttons to ask who plays first
+            if (GUI.Button(new Rect(50, 40, 140, 30), nextPlayerA.PlayerName))
+            {
+                // No need to swap players, just start the game
+                StartGame();
+            }
+            if (GUI.Button(new Rect(200, 40, 140, 30), nextPlayerB.PlayerName))
+            {
+                // Swap players...
+                IPlayer aux = nextPlayerA;
+                nextPlayerA = nextPlayerB;
+                nextPlayerB = aux;
+                // ...and then start game
+                StartGame();
+            }
+        }
+    }
 
-                status = Status.InGame;
+    // Draw window contents
+    private void DrawCompetitionWindow(int id)
+    {
+        // Is this the correct window?
+        if (id == 2)
+        {
+            // Draw OK button
+            if (GUI.Button(new Rect(50, 40, 140, 30), "Not implemented yet"))
+            {
+                throw new NotImplementedException(
+                    "All vs All not implemented yet");
+            }
+        }
+    }
+
+    // Draw window contents
+    private void DrawGameOverWindow(int id)
+    {
+        // Is this the correct window?
+        if (id == 3)
+        {
+            // Draw OK button
+            if (GUI.Button(new Rect(50, 40, 100, 30), "OK"))
+            {
+                // If button is clicked, exit
+                UnityEditor.EditorApplication.isPlaying = false;
             }
         }
     }

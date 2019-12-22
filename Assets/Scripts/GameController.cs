@@ -11,18 +11,13 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] private int rows = 7;
-    [SerializeField] private int cols = 7;
-    [SerializeField] private int winSequence = 4;
-    [SerializeField] private int squarePiecesPerPlayer = 11;
-    [SerializeField] private int roundPiecesPerPlayer = 10;
-
-    public Board Board { get; private set; }
-
-    private int player1SquarePieces;
-    private int player1RoundPieces;
-    private int player2SquarePieces;
-    private int player2RoundPieces;
+    private IPlayer player1White;
+    private IPlayer player2Red;
+    private int rows;
+    private int cols;
+    private int winSequence;
+    private int squarePiecesPerPlayer;
+    private int roundPiecesPerPlayer;
 
     private const string rules =
         "Key T toggles the piece/shape to play. " +
@@ -30,18 +25,39 @@ public class GameController : MonoBehaviour
 
     private PShape selectedShape;
 
-    private void Awake()
+    private bool setupDone = false;
+
+    public Board Board { get; private set; }
+
+    public void SetupGame(IPlayer player1White, IPlayer player2Red,
+        int rows, int cols, int winSequence,
+        int squarePiecesPerPlayer, int roundPiecesPerPlayer)
     {
-        Board = new Board(rows, cols, winSequence);
-        player1SquarePieces = squarePiecesPerPlayer;
-        player1RoundPieces = roundPiecesPerPlayer;
-        player2SquarePieces = squarePiecesPerPlayer;
-        player2RoundPieces = roundPiecesPerPlayer;
+        if (setupDone)
+            throw new InvalidOperationException(
+                "Game controller setup can only be performed once");
+
+        this.player1White = player1White;
+        this.player2Red = player2Red;
+        this.rows = rows;
+        this.cols = cols;
+        this.winSequence = winSequence;
+        this.squarePiecesPerPlayer = squarePiecesPerPlayer;
+        this.roundPiecesPerPlayer = roundPiecesPerPlayer;
+
+        setupDone = true;
     }
 
     // Start is called before the first frame update
     private void Start()
     {
+        if (!setupDone)
+            throw new InvalidOperationException(
+                "Game controller setup needs to be performed before Start()");
+
+        Board = new Board(rows, cols, winSequence,
+            roundPiecesPerPlayer, squarePiecesPerPlayer);
+
         Debug.Log(rules);
         Debug.Log($"It's {Board.Turn} turn");
     }
