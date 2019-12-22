@@ -22,15 +22,19 @@ public class SessionController : MonoBehaviour
     private Status status;
     private SessionType sessionType;
 
-    private IList<IAI> listOfAIs = null;
+    private IList<AIPlayer> listOfAIs = null;
 
-    private string namePlayerA, namePlayerB;
+    private IPlayer nextPlayerA, nextPlayerB;
+
+    private IPlayer humanPlayer;
 
     private void Awake()
     {
         status = Status.Init;
-        listOfAIs = new List<IAI>();
+        listOfAIs = new List<AIPlayer>();
         // TODO Find AIs
+
+        humanPlayer = new HumanPlayer();
     }
 
     private void Start()
@@ -38,22 +42,22 @@ public class SessionController : MonoBehaviour
         if (listOfAIs.Count == 0)
         {
             // A game between human players, ask user to press OK to start
-            namePlayerA = "Human";
-            namePlayerB = "Human";
+            nextPlayerA = humanPlayer;
+            nextPlayerB = humanPlayer;
             sessionType = SessionType.HumanVsHuman;
         }
         else if (listOfAIs.Count == 1)
         {
             // A game between a human and an AI, ask who plays first
-            namePlayerA = "Human";
-            namePlayerB = listOfAIs[0].NameOfAI;
+            nextPlayerA = humanPlayer;
+            nextPlayerB = listOfAIs[0];
             sessionType = SessionType.PlayerVsPlayer;
         }
         else if (listOfAIs.Count == 2)
         {
             // A game between two AIs, ask who plays first
-            namePlayerA = listOfAIs[0].NameOfAI;
-            namePlayerB = listOfAIs[1].NameOfAI;
+            nextPlayerA = listOfAIs[0];
+            nextPlayerB = listOfAIs[1];
             sessionType = SessionType.PlayerVsPlayer;
         }
         else
@@ -134,6 +138,8 @@ public class SessionController : MonoBehaviour
                 gameController = gameInstance.GetComponent<GameController>();
                 // TODO this should go to OnEnable
                 gameController.GameOver += EndCurrentGame;
+
+
                 status = Status.InGame;
             }
         }

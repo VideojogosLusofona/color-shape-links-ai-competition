@@ -5,7 +5,8 @@
  * Author: Nuno Fachada
  * */
 
-public interface IAI
+public class HumanPlayer : IPlayer
 {
-    string NameOfAI { get; }
+    public bool IsHuman => true;
+    public string PlayerName => "Human";
 }
