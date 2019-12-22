@@ -22,7 +22,7 @@ public class SessionController : MonoBehaviour
     private Status status;
     private SessionType sessionType;
 
-    private IList<AIPlayer> listOfAIs = null;
+    private IList<AIPlayer> activeAIs = null;
 
     private IPlayer nextPlayerA, nextPlayerB;
 
@@ -30,34 +30,34 @@ public class SessionController : MonoBehaviour
 
     private void Awake()
     {
+        List<AIPlayer> allAIs = new List<AIPlayer>();
+        GameObject.Find("AIs")?.GetComponents(allAIs);
+        activeAIs = allAIs.FindAll(ai => ai.IsActive);
         status = Status.Init;
-        listOfAIs = new List<AIPlayer>();
-        // TODO Find AIs
-
         humanPlayer = new HumanPlayer();
     }
 
     private void Start()
     {
-        if (listOfAIs.Count == 0)
+        if (activeAIs.Count == 0)
         {
             // A game between human players, ask user to press OK to start
             nextPlayerA = humanPlayer;
             nextPlayerB = humanPlayer;
             sessionType = SessionType.HumanVsHuman;
         }
-        else if (listOfAIs.Count == 1)
+        else if (activeAIs.Count == 1)
         {
             // A game between a human and an AI, ask who plays first
             nextPlayerA = humanPlayer;
-            nextPlayerB = listOfAIs[0];
+            nextPlayerB = activeAIs[0];
             sessionType = SessionType.PlayerVsPlayer;
         }
-        else if (listOfAIs.Count == 2)
+        else if (activeAIs.Count == 2)
         {
             // A game between two AIs, ask who plays first
-            nextPlayerA = listOfAIs[0];
-            nextPlayerB = listOfAIs[1];
+            nextPlayerA = activeAIs[0];
+            nextPlayerB = activeAIs[1];
             sessionType = SessionType.PlayerVsPlayer;
         }
         else
@@ -122,7 +122,6 @@ public class SessionController : MonoBehaviour
         }
     }
 
-
     // Draw window contents
     private void DrawOkLetsStartWindow(int id)
     {
@@ -150,5 +149,4 @@ public class SessionController : MonoBehaviour
         // TODO Consider all vs all situation
         status = Status.Finish;
     }
-
 }

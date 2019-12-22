@@ -9,6 +9,10 @@ using UnityEngine;
 
 public abstract class AIPlayer : MonoBehaviour, IPlayer
 {
+    [SerializeField] private bool isActive = true;
+
+    public bool IsActive => isActive;
+
     public bool IsHuman => false;
     public abstract string PlayerName { get; }
     public abstract IThinker Thinker { get; }

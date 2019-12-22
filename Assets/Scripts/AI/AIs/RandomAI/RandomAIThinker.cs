@@ -5,17 +5,36 @@
  * Author: Nuno Fachada
  * */
 
+using System;
+
 public class RandomAIThinker : IThinker
 {
+    private Random random;
+
+    public RandomAIThinker()
+    {
+        random = new Random();
+    }
+
     public FutureMove Think(Board board)
     {
         // Check how many pieces current player has
+        int roundPieces = board.PieceCount(board.Turn, PShape.Round);
+        int squarePieces = board.PieceCount(board.Turn, PShape.Square);
 
         // Chose a random piece
+        int pieceRand = random.Next(roundPieces + squarePieces);
+        PShape shape = pieceRand < roundPieces ? PShape.Round : PShape.Square;
 
         // Chose a random free position
+        int col;
+        do
+        {
+            col = random.Next(board.cols);
+        }
+        while (board.IsColumnFull(col));
 
         // Return it
-        return new FutureMove();
+        return new FutureMove(col, shape);
     }
 }
