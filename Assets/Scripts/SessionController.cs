@@ -36,7 +36,7 @@ public class SessionController : MonoBehaviour
     private void Awake()
     {
         List<AIPlayer> allAIs = new List<AIPlayer>();
-        GameObject.Find("AIs")?.GetComponents(allAIs);
+        GetComponents(allAIs);
         activeAIs = allAIs.FindAll(ai => ai.IsActive);
         status = Status.Init;
         humanPlayer = new HumanPlayer();
