@@ -16,9 +16,9 @@ public class Board
     private struct PieceFuncPlayer
     {
         public readonly Func<Piece, bool> checkPieceFunc;
-        public readonly Winner player;
+        public readonly PColor player;
         public PieceFuncPlayer(
-            Func<Piece, bool> checkPieceFunc, Winner player)
+            Func<Piece, bool> checkPieceFunc, PColor player)
         {
             this.checkPieceFunc = checkPieceFunc;
             this.player = player;
@@ -149,10 +149,10 @@ public class Board
         pieceFuncsPlayers = new PieceFuncPlayer[]
         {
             // Shape must come before color
-            new PieceFuncPlayer(p => p.shape == PShape.Round, Winner.White),
-            new PieceFuncPlayer(p => p.shape == PShape.Square, Winner.Red),
-            new PieceFuncPlayer(p => p.color == PColor.White, Winner.White),
-            new PieceFuncPlayer(p => p.color == PColor.Red, Winner.Red)
+            new PieceFuncPlayer(p => p.shape == PShape.Round, PColor.White),
+            new PieceFuncPlayer(p => p.shape == PShape.Square, PColor.Red),
+            new PieceFuncPlayer(p => p.color == PColor.White, PColor.White),
+            new PieceFuncPlayer(p => p.color == PColor.Red, PColor.Red)
         };
 
         // Create and populate array of win corridors
@@ -411,7 +411,9 @@ public class Board
                     // Did we find enough pieces in a row?
                     if (count == piecesInSequence)
                         // If so, return winner
-                        return funcPlayer.player;
+                        return funcPlayer.player == PColor.White
+                            ? Winner.White
+                            : Winner.Red;
                 }
             }
         }
