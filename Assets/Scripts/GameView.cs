@@ -176,6 +176,12 @@ public class GameView : MonoBehaviour
                 // Current shape
                 PShape shape = (PShape)j;
 
+                // Get current toggle's label for counting pieces and set it
+                // to current piece count
+                Text tLabel =
+                    toggles[(int)shape].GetComponentInChildren<Text>();
+                tLabel.text = board.PieceCount(player, shape).ToString();
+
                 // Wire up method for listening to piece swap events
                 toggles[j].onValueChanged.AddListener(
                     b => { if (b) SelectShape(player, shape); });
@@ -192,8 +198,7 @@ public class GameView : MonoBehaviour
                 // current player's toggle UI widget
                 BoardUpdated.AddListener(() => {
                     int count = board.PieceCount(player, shape);
-                    toggles[(int)shape].GetComponentInChildren<Text>().text =
-                        count.ToString();
+                    tLabel.text = count.ToString();
                     if (count == 0)
                     {
                         SelectShape(
