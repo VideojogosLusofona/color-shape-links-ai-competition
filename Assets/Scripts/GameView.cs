@@ -8,6 +8,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameView : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class GameView : MonoBehaviour
     [SerializeField] private GameObject pole = null;
     [SerializeField] private GameObject ground = null;
     [SerializeField] private GameObject arrowButton = null;
+    [SerializeField] private GameObject playerPanel = null;
 
     private Board board;
     private IReadOnlyList<IPlayer> players;
@@ -136,6 +138,54 @@ public class GameView : MonoBehaviour
 
         // Keep the length of the pieces (equal in x and y directions)
         piecesLength = piecesScale * pcBounds.size.y;
+
+        // Wire up player panels
+        GameObject panelWhite = Instantiate(playerPanel, transform);
+        GameObject panelRed = Instantiate(playerPanel, transform);
+        RectTransform rtPanelWhite = panelWhite.GetComponent<RectTransform>();
+        RectTransform rtPanelRed = panelRed.GetComponent<RectTransform>();
+
+        Camera camera = GameObject.Find("Main Camera").GetComponent<Camera>();
+
+        panelWhite.GetComponent<Canvas>().worldCamera = camera;
+        panelRed.GetComponent<Canvas>().worldCamera = camera;
+
+        rtPanelWhite.position = new Vector3(
+            gBounds.center.x - gBounds.extents.x / 2,
+            gBounds.min.y - rtPanelWhite.rect.height / 2 * rtPanelWhite.localScale.y,
+            rtPanelWhite.position.z
+        );
+        panelWhite.GetComponentInChildren<Text>().text =
+            players[(int)PColor.White].PlayerName;
+
+        rtPanelRed.position = new Vector3(
+            gBounds.center.x + gBounds.extents.x / 2,
+            gBounds.min.y - rtPanelRed.rect.height / 2 * rtPanelRed.localScale.y,
+            rtPanelRed.position.z
+        );
+        panelRed.GetComponentInChildren<Text>().text =
+            players[(int)PColor.Red].PlayerName;
+
+        Image[] images = panelWhite.GetComponentsInChildren<Image>();
+        foreach (Image image in images)
+        {
+            if (image.name == "SelectRound")
+                image.sprite =
+                    whiteRoundPiece.GetComponent<SpriteRenderer>().sprite;
+            if (image.name == "SelectSquare")
+                image.sprite =
+                    whiteSquarePiece.GetComponent<SpriteRenderer>().sprite;
+        }
+        images = panelRed.GetComponentsInChildren<Image>();
+        foreach (Image image in images)
+        {
+            if (image.name == "SelectRound")
+                image.sprite =
+                    redRoundPiece.GetComponent<SpriteRenderer>().sprite;
+            if (image.name == "SelectSquare")
+                image.sprite =
+                    redSquarePiece.GetComponent<SpriteRenderer>().sprite;
+        }
     }
 
     // Update a position in the board shown on screen
@@ -219,44 +269,44 @@ public class GameView : MonoBehaviour
         enabledPlayers[(int)board.Turn] = players[(int)board.Turn].IsHuman;
     }
 
-    private void OnGUI()
-    {
-        DrawPlayerPanel(PColor.White);
-        DrawPlayerPanel(PColor.Red);
-    }
+    // private void OnGUI()
+    // {
+    //     DrawPlayerPanel(PColor.White);
+    //     DrawPlayerPanel(PColor.Red);
+    // }
 
-    private void DrawPlayerPanel(PColor player)
-    {
-        float boxWidth = 150;
-        float boxHeight = 100;
-        float distFromSide = 20;
+    // private void DrawPlayerPanel(PColor player)
+    // {
+    //     float boxWidth = 150;
+    //     float boxHeight = 100;
+    //     float distFromSide = 20;
 
-        float posFromLeft =
-            player == PColor.White
-                ? distFromSide
-                : Screen.width - boxWidth - distFromSide;
+    //     float posFromLeft =
+    //         player == PColor.White
+    //             ? distFromSide
+    //             : Screen.width - boxWidth - distFromSide;
 
-        PShape selectedShape = selectedShapes[(int)player];
-        string playerName = players[(int)player].PlayerName;
-        bool uiEnabled = enabledPlayers[(int)player];
+    //     PShape selectedShape = selectedShapes[(int)player];
+    //     string playerName = players[(int)player].PlayerName;
+    //     bool uiEnabled = enabledPlayers[(int)player];
 
-        GUI.Box(
-            new Rect(
-                posFromLeft,
-                Screen.height / 2 - boxHeight / 2,
-                boxWidth, boxHeight),
-            playerName);
+    //     GUI.Box(
+    //         new Rect(
+    //             posFromLeft,
+    //             Screen.height / 2 - boxHeight / 2,
+    //             boxWidth, boxHeight),
+    //         playerName);
 
-        selectedShapes[(int)player] = (PShape)GUI.SelectionGrid(
-            new Rect (
-                posFromLeft + 10,
-                Screen.height / 2 - boxHeight / 2 + 20,
-                boxWidth - 20,
-                boxHeight - 40),
-            (int)selectedShape,
-            new string[] { "Round", "Square" },
-            1);
-    }
+    //     selectedShapes[(int)player] = (PShape)GUI.SelectionGrid(
+    //         new Rect (
+    //             posFromLeft + 10,
+    //             Screen.height / 2 - boxHeight / 2 + 20,
+    //             boxWidth - 20,
+    //             boxHeight - 40),
+    //         (int)selectedShape,
+    //         new string[] { "Round", "Square" },
+    //         1);
+    // }
 
     private void OnMoveSelected(int col)
     {
