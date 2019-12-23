@@ -190,9 +190,20 @@ public class GameView : MonoBehaviour
 
                 // Wire up listener for programatically changing piece count in
                 // current player's toggle UI widget
-                BoardUpdated.AddListener(() =>
-                    { toggles[(int)shape].GetComponentInChildren<Text>().text =
-                        board.PieceCount(player, shape).ToString(); });
+                BoardUpdated.AddListener(() => {
+                    int count = board.PieceCount(player, shape);
+                    toggles[(int)shape].GetComponentInChildren<Text>().text =
+                        count.ToString();
+                    if (count == 0)
+                    {
+                        SelectShape(
+                            player,
+                            shape == PShape.Round
+                                ? PShape.Square
+                                : PShape.Round );
+                        toggles[(int)shape].interactable = false;
+                    }
+                });
             }
 
             // Wire up listener for programatically changing selected shape in
