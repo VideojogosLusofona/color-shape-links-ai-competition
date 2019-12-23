@@ -44,6 +44,7 @@ public class GameView : MonoBehaviour
                 sessionData.CurrentPlayer.IsHuman, false };
 
         ShapeSelected = new ColorShapeEvent();
+        BoardUpdated = new UnityEvent();
 
         // Create matrix for placing game objects representing pieces
         pieces = new GameObject[board.rows, board.cols];
@@ -186,6 +187,12 @@ public class GameView : MonoBehaviour
                 // Setup correct sprite for the toggle
                 toggles[j].transform.GetChild(1).GetComponent<Image>().sprite =
                     pieceSprites[i, j];
+
+                // Wire up listener for programatically changing piece count in
+                // current player's toggle UI widget
+                BoardUpdated.AddListener(() =>
+                    { toggles[(int)shape].GetComponentInChildren<Text>().text =
+                        board.PieceCount(player, shape).ToString(); });
             }
 
             // Wire up listener for programatically changing selected shape in
@@ -198,7 +205,7 @@ public class GameView : MonoBehaviour
     private void SelectShape(PColor player, PShape shape)
     {
         selectedShapes[(int)player] = shape;
-        ShapeSelected?.Invoke(player, shape);
+        ShapeSelected.Invoke(player, shape);
     }
 
     // Update a position in the board shown on screen
@@ -281,6 +288,9 @@ public class GameView : MonoBehaviour
         // Enable next player if human
         enabledPlayers[(int)board.Turn] =
             sessionData.CurrentPlayer.IsHuman;
+
+        // Notify listeners that board was updated
+        BoardUpdated.Invoke();
     }
 
     private void OnMoveSelected(int col)
@@ -292,6 +302,7 @@ public class GameView : MonoBehaviour
     [Serializable]
     private class ColorShapeEvent : UnityEvent<PColor, PShape> {}
 
+    private UnityEvent BoardUpdated;
     private ColorShapeEvent ShapeSelected;
     public event Action<FutureMove> MoveSelected;
 }
