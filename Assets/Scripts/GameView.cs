@@ -6,8 +6,8 @@
  * */
 
 using System;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class GameView : MonoBehaviour
@@ -42,6 +42,8 @@ public class GameView : MonoBehaviour
         selectedShapes = new PShape[] { PShape.Round, PShape.Round };
         enabledPlayers = new bool[] {
                 sessionData.CurrentPlayer.IsHuman, false };
+
+        ShapeSelected = new ColorShapeEvent();
 
         // Create matrix for placing game objects representing pieces
         pieces = new GameObject[board.rows, board.cols];
@@ -175,7 +177,7 @@ public class GameView : MonoBehaviour
 
                 // Wire up method for listening to piece swap events
                 toggles[j].onValueChanged.AddListener(
-                    b => { if (b) SelectPiece(player, shape); });
+                    b => { if (b) SelectShape(player, shape); });
 
                 // If player not human, disable toggle interaction
                 if (!sessionData.GetPlayer(player).IsHuman)
@@ -186,12 +188,17 @@ public class GameView : MonoBehaviour
                     pieceSprites[i, j];
             }
 
+            // Wire up listener for programatically changing selected shape in
+            // current player's toggle
+            ShapeSelected.AddListener((PColor p, PShape s) =>
+                { if (p == player) toggles[(int)s].isOn = true; });
         }
     }
 
-    private void SelectPiece(PColor player, PShape shape)
+    private void SelectShape(PColor player, PShape shape)
     {
-        Debug.Log($"{player} -> {shape}");
+        selectedShapes[(int)player] = shape;
+        ShapeSelected?.Invoke(player, shape);
     }
 
     // Update a position in the board shown on screen
@@ -269,7 +276,7 @@ public class GameView : MonoBehaviour
 
         // Disable previous player and update its shape choice
         enabledPlayers[(int)move.piece.color] = false;
-        selectedShapes[(int)move.piece.color] = move.piece.shape;
+        SelectShape(move.piece.color, move.piece.shape);
 
         // Enable next player if human
         enabledPlayers[(int)board.Turn] =
@@ -282,5 +289,9 @@ public class GameView : MonoBehaviour
             new FutureMove(col, selectedShapes[(int)board.Turn]));
     }
 
+    [Serializable]
+    private class ColorShapeEvent : UnityEvent<PColor, PShape> {}
+
+    private ColorShapeEvent ShapeSelected;
     public event Action<FutureMove> MoveSelected;
 }
