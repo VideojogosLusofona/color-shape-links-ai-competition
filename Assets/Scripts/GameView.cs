@@ -10,6 +10,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+// Class responsible for the game UI
 public class GameView : MonoBehaviour
 {
     [SerializeField] private GameObject whiteRoundPiece = null;
@@ -23,12 +24,10 @@ public class GameView : MonoBehaviour
 
     private Board board;
     private ISessionDataProvider sessionData;
-    // private bool[] enabledPlayers;
     private PShape[] selectedShapes;
     private GameObject[,] pieces;
     private UIArrow[] uiArrows;
 
-    private readonly float polePadding = 0.1f;
     private Vector2 leftPoleBase;
     private float distBtwPoles;
     private float totalHeightForPieces;
@@ -36,14 +35,36 @@ public class GameView : MonoBehaviour
     private float piecesScale;
     private bool finished;
 
+    // Awake is called when the script instance is being loaded.
     private void Awake()
     {
+        // Top and bottom pole padding
+        const float polePadding = 0.1f;
+
+        // Ground instance
+        GameObject groundInst;
+
+        // Top-left of ground sprite renderer
+        Vector3 gTopLeft;
+
+        // Bounds of different sprite renderers
+        Bounds gBounds, plBounds, aBounds, pcBounds;
+
+        // ///////////////////////////// //
+        // Initialize required variables //
+        // ///////////////////////////// //
+
+        // We just started, so game is not finished yet
         finished = false;
 
+        // Get reference to the session data and the game board
         sessionData = GetComponentInParent<ISessionDataProvider>();
         board = sessionData.Board;
+
+        // Both players have the round shapes initially selected by default
         selectedShapes = new PShape[] { PShape.Round, PShape.Round };
 
+        // Instantiate Unity events for shape selection and board updating
         ShapeSelected = new ColorShapeEvent();
         BoardUpdated = new UnityEvent();
 
@@ -53,22 +74,26 @@ public class GameView : MonoBehaviour
         // Create array for UI arrow script objects
         uiArrows = new UIArrow[board.cols];
 
+        // /////////////////////////////////////// //
+        // Initialize and place game board objects //
+        // /////////////////////////////////////// //
+
         // Instantiate ground
-        GameObject groundInst = Instantiate(ground, transform);
+        groundInst = Instantiate(ground, transform);
 
         // Determine where ground starts, since everything will be placed with
         // respect to the ground
-        Bounds gBounds = groundInst.GetComponent<SpriteRenderer>().bounds;
-        Vector3 gTopLeft = new Vector3(gBounds.min.x, gBounds.max.y, 0);
+        gBounds = groundInst.GetComponent<SpriteRenderer>().bounds;
+        gTopLeft = new Vector3(gBounds.min.x, gBounds.max.y, 0);
 
         // Get pole bounds
-        Bounds plBounds = pole.GetComponent<SpriteRenderer>().bounds;
+        plBounds = pole.GetComponent<SpriteRenderer>().bounds;
 
         // Get arrow bounds
-        Bounds aBounds = arrowButton.GetComponent<SpriteRenderer>().bounds;
+        aBounds = arrowButton.GetComponent<SpriteRenderer>().bounds;
 
         // Get piece bounds (any will do)
-        Bounds pcBounds = redRoundPiece.GetComponent<SpriteRenderer>().bounds;
+        pcBounds = redRoundPiece.GetComponent<SpriteRenderer>().bounds;
 
         // Instantiate poles and arrows
         for (int c = 0; c < board.cols; c++)
@@ -103,7 +128,7 @@ public class GameView : MonoBehaviour
             // Set the arrow's column
             uiArrows[c].Column = c;
 
-            // Make the controller listen to arrow clicks
+            // Listen to arrow clicks in order to perform move selection
             uiArrows[c].Click.AddListener(OnMoveSelected);
 
             // Enable or disable arrow depending on who's playing
@@ -129,14 +154,20 @@ public class GameView : MonoBehaviour
         // Keep the length of the pieces (equal in x and y directions)
         piecesLength = piecesScale * pcBounds.size.y;
 
-        //
-        // Setup player panels
-        //
+        // /////////////////// //
+        // Setup player panels //
+        // /////////////////// //
+
+        // Instantiate player panels
         GameObject[] playerPanels = {
             Instantiate(playerPanel, transform),
             Instantiate(playerPanel, transform) };
+
+        // Get reference to the camera
         Camera camera = GameObject.Find("Main Camera").GetComponent<Camera>();
 
+        // Initialize an array of piece sprites, which will simplify
+        // passing the correct sprite for each shape in each player panel
         Sprite[,] pieceSprites = {
             {
                 whiteRoundPiece.GetComponent<SpriteRenderer>().sprite,
@@ -148,6 +179,7 @@ public class GameView : MonoBehaviour
             }
         };
 
+        // Initialize panels for each player
         for (int i = 0; i < 2; i++)
         {
             // Current player
@@ -341,16 +373,23 @@ public class GameView : MonoBehaviour
         BoardUpdated.Invoke();
     }
 
+    // Method that invokes event indicating a move was selected via the GUI
     private void OnMoveSelected(int col)
     {
         MoveSelected?.Invoke(
             new FutureMove(col, selectedShapes[(int)board.Turn]));
     }
 
+    // Definition of a Unity event class which accepts a color and a shape
     [Serializable]
     private class ColorShapeEvent : UnityEvent<PColor, PShape> { }
 
+    // Unity event which will be invoked when the board is updated
     private UnityEvent BoardUpdated;
+
+    // Unity event which will be invoked when a shape is selected
     private ColorShapeEvent ShapeSelected;
+
+    // Native C# event which will be invoked when a move is selected
     public event Action<FutureMove> MoveSelected;
 }
