@@ -122,53 +122,76 @@ public class GameView : MonoBehaviour
         // Keep the length of the pieces (equal in x and y directions)
         piecesLength = piecesScale * pcBounds.size.y;
 
-        // Wire up player panels
-        GameObject panelWhite = Instantiate(playerPanel, transform);
-        GameObject panelRed = Instantiate(playerPanel, transform);
-        RectTransform rtPanelWhite = panelWhite.GetComponent<RectTransform>();
-        RectTransform rtPanelRed = panelRed.GetComponent<RectTransform>();
-
+        //
+        // Setup player panels
+        //
+        GameObject[] playerPanels = {
+            Instantiate(playerPanel, transform),
+            Instantiate(playerPanel, transform) };
         Camera camera = GameObject.Find("Main Camera").GetComponent<Camera>();
 
-        panelWhite.GetComponent<Canvas>().worldCamera = camera;
-        panelRed.GetComponent<Canvas>().worldCamera = camera;
+        Sprite[,] pieceSprites = {
+            {
+                whiteRoundPiece.GetComponent<SpriteRenderer>().sprite,
+                whiteSquarePiece.GetComponent<SpriteRenderer>().sprite,
+            },
+            {
+                redRoundPiece.GetComponent<SpriteRenderer>().sprite,
+                redSquarePiece.GetComponent<SpriteRenderer>().sprite,
+            }
+        };
 
-        rtPanelWhite.position = new Vector3(
-            gBounds.center.x - gBounds.extents.x / 2,
-            gBounds.min.y - rtPanelWhite.rect.height / 2 * rtPanelWhite.localScale.y,
-            rtPanelWhite.position.z
-        );
-        panelWhite.GetComponentInChildren<Text>().text =
-            sessionData.GetPlayer(PColor.White).PlayerName;
+        for (int i = 0; i < 2; i++)
+        {
+            // Current player
+            PColor player = (PColor)i;
+            // Get current panel
+            GameObject panel = playerPanels[i];
+            // Get current panel's rect transform
+            RectTransform rtPanel = panel.GetComponent<RectTransform>();
+            // Get current panel toggles for selecting shape
+            Toggle[] toggles = panel.GetComponentsInChildren<Toggle>();
+            // Setup event camera in panel
+            panel.GetComponent<Canvas>().worldCamera = camera;
+            // Position panel
+            rtPanel.position = new Vector3(
+                i == 0
+                    // First panel to the right
+                    ? gBounds.center.x - gBounds.extents.x / 2
+                    // Second panel to the left
+                    : gBounds.center.x + gBounds.extents.x / 2,
+                gBounds.min.y - rtPanel.rect.height / 2 * rtPanel.localScale.y,
+                rtPanel.position.z
+            );
+            // Set player name in panel
+            panel.GetComponentInChildren<Text>().text =
+                sessionData.GetPlayer(player).PlayerName;
 
-        rtPanelRed.position = new Vector3(
-            gBounds.center.x + gBounds.extents.x / 2,
-            gBounds.min.y - rtPanelRed.rect.height / 2 * rtPanelRed.localScale.y,
-            rtPanelRed.position.z
-        );
-        panelRed.GetComponentInChildren<Text>().text =
-            sessionData.GetPlayer(PColor.Red).PlayerName;
+            // Configure toggles for selecting shape
+            for (int j = 0; j < 2; j++)
+            {
+                // Current shape
+                PShape shape = (PShape)j;
 
-        // Image[] images = panelWhite.GetComponentsInChildren<Image>();
-        // foreach (Image image in images)
-        // {
-        //     if (image.name == "SelectRound")
-        //         image.sprite =
-        //             whiteRoundPiece.GetComponent<SpriteRenderer>().sprite;
-        //     if (image.name == "SelectSquare")
-        //         image.sprite =
-        //             whiteSquarePiece.GetComponent<SpriteRenderer>().sprite;
-        // }
-        // images = panelRed.GetComponentsInChildren<Image>();
-        // foreach (Image image in images)
-        // {
-        //     if (image.name == "SelectRound")
-        //         image.sprite =
-        //             redRoundPiece.GetComponent<SpriteRenderer>().sprite;
-        //     if (image.name == "SelectSquare")
-        //         image.sprite =
-        //             redSquarePiece.GetComponent<SpriteRenderer>().sprite;
-        // }
+                // Wire up method for listening to piece swap events
+                toggles[j].onValueChanged.AddListener(
+                    b => { if (b) SelectPiece(player, shape); });
+
+                // If player not human, disable toggle interaction
+                if (!sessionData.GetPlayer(player).IsHuman)
+                    toggles[j].interactable = false;
+
+                // Setup correct sprite for the toggle
+                toggles[j].transform.GetChild(1).GetComponent<Image>().sprite =
+                    pieceSprites[i, j];
+            }
+
+        }
+    }
+
+    private void SelectPiece(PColor player, PShape shape)
+    {
+        Debug.Log($"{player} -> {shape}");
     }
 
     // Update a position in the board shown on screen
