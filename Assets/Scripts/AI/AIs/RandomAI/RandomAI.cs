@@ -5,8 +5,6 @@
  * Author: Nuno Fachada
  * */
 
-using UnityEngine;
-
 public class RandomAI : AIPlayer
 {
     public override string PlayerName => "RandomAI";

@@ -7,6 +7,8 @@
 
 using System;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -19,15 +21,23 @@ public class GameController : MonoBehaviour
     private ISessionDataProvider sessionData;
     private Board board;
 
+    private Task<FutureMove> aiTask;
+    private DateTime taskStart;
+    private TimeSpan aiTimeLimit;
+    private CancellationTokenSource ts;
 
     // TODO Remove this
     private StringBuilder boardText = new StringBuilder();
+
+    public Winner Result { get; private set; }
 
     private void Awake()
     {
         sessionData = GetComponentInParent<ISessionDataProvider>();
         board = sessionData.Board;
         view = GameObject.Find("UI")?.GetComponent<GameView>();
+        aiTimeLimit = new TimeSpan(
+            (long)(sessionData.AITimeLimit * TimeSpan.TicksPerSecond));
     }
 
     private void OnEnable()
@@ -54,9 +64,34 @@ public class GameController : MonoBehaviour
 
         if (!sessionData.CurrentPlayer.IsHuman)
         {
-            IThinker thinker = sessionData.CurrentPlayer.Thinker;
-            FutureMove futureMove = thinker.Think(board);
-            MakeAMove(futureMove);
+            if (aiTask == null)
+            {
+                taskStart = DateTime.Now;
+                ts = new CancellationTokenSource();
+                IThinker thinker = sessionData.CurrentPlayer.Thinker;
+                aiTask = Task.Run(() => thinker.Think(board, ts.Token));
+            }
+            else
+            {
+                if (aiTask.IsCompleted)
+                {
+                    MakeAMove(aiTask.Result);
+                    aiTask = null;
+                }
+                else if (aiTask.IsFaulted)
+                {
+                    Debug.LogError(aiTask.Exception.InnerException.Message);
+                    aiTask = null;
+                }
+                else if (DateTime.Now - taskStart > aiTimeLimit)
+                {
+                    ts.Cancel();
+                    aiTask = null;
+                    this.Result = board.Turn == PColor.White
+                        ? Winner.Red : Winner.White;
+                    OnGameOver();
+                }
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.B))

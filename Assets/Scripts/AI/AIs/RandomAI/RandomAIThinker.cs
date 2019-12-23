@@ -6,6 +6,7 @@
  * */
 
 using System;
+using System.Threading;
 
 public class RandomAIThinker : IThinker
 {
@@ -16,8 +17,11 @@ public class RandomAIThinker : IThinker
         random = new Random();
     }
 
-    public FutureMove Think(Board board)
+    public FutureMove Think(Board board, CancellationToken ct)
     {
+        // Is this task to be cancelled?
+        if (ct.IsCancellationRequested) return FutureMove.NoMove;
+
         // Check how many pieces current player has
         int roundPieces = board.PieceCount(board.Turn, PShape.Round);
         int squarePieces = board.PieceCount(board.Turn, PShape.Square);

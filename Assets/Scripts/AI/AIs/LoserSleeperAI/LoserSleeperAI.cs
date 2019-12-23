@@ -5,10 +5,8 @@
  * Author: Nuno Fachada
  * */
 
-public interface ISessionDataProvider
+public class LoserSleeperAI : AIPlayer
 {
-    Board Board { get; }
-    IPlayer CurrentPlayer { get; }
-    float AITimeLimit { get; }
-    IPlayer GetPlayer(PColor player);
+    public override string PlayerName => "LoserSleeperAI";
+    public override IThinker Thinker => new LoserSleeperAIThinker();
 }

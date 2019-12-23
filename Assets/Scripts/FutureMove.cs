@@ -10,6 +10,8 @@ public struct FutureMove
     public readonly int column;
     public readonly PShape shape;
 
+    public static FutureMove NoMove => new FutureMove(-1, (PShape)(-1));
+
     public FutureMove(int column, PShape shape)
     {
         this.column = column;

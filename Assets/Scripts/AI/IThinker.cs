@@ -5,7 +5,9 @@
  * Author: Nuno Fachada
  * */
 
+using System.Threading;
+
 public interface IThinker
 {
-    FutureMove Think(Board board);
+    FutureMove Think(Board board, CancellationToken ct);
 }

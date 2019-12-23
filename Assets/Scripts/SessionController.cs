@@ -20,6 +20,7 @@ public class SessionController : MonoBehaviour,  ISessionDataProvider
     [SerializeField] private int winSequence = 4;
     [SerializeField] private int squarePiecesPerPlayer = 11;
     [SerializeField] private int roundPiecesPerPlayer = 10;
+    [SerializeField] private float aiTimeLimit = 0.5f;
 
     private IPlayer[] players;
     private Board board;
@@ -133,7 +134,11 @@ public class SessionController : MonoBehaviour,  ISessionDataProvider
                     Screen.height / 2 - 50, 200, 100),
                 DrawGameOverWindow,
                 sessionType == SessionType.AllVsAll
-                    ? "Session Over!" : "Game Over!");
+                    ? "Session Over!"
+                    : "Game Over! " + (
+                        gameController.Result == Winner.Draw
+                            ? "It's a draw"
+                            : $"Winner is {gameController.Result}"));
         }
     }
 
@@ -217,5 +222,6 @@ public class SessionController : MonoBehaviour,  ISessionDataProvider
     // Implementation of ISessionDataProvider
     public Board Board => board;
     public IPlayer CurrentPlayer => players[(int)board.Turn];
+    public float AITimeLimit => aiTimeLimit;
     public IPlayer GetPlayer(PColor player) => players[(int)player];
 }
