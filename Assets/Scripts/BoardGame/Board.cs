@@ -62,6 +62,9 @@ public class Board
     // Initial number of square pieces for each player
     public readonly int squarePieces;
 
+    // Array of win corridors, which can be used for building an heuristic
+    public readonly IEnumerable<IEnumerable<Pos>> winCorridors;
+
     // How many pieces left?
     private int PiecesLeft
     {
@@ -79,9 +82,6 @@ public class Board
 
     // Array of pairs (piece check function, player associated with piece)
     private readonly PieceFuncPlayer[] pieceFuncsPlayers;
-
-    // Array of win corridors
-    private readonly IEnumerable<IEnumerable<Pos>> winCorridors;
 
     // Sequence of moves (for undo purposes)
     private readonly Stack<Pos> moveSequence;
