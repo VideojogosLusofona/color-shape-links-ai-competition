@@ -9,7 +9,7 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 
-public class SessionController : MonoBehaviour
+public class SessionController : MonoBehaviour,  ISessionDataProvider
 {
     private enum Status { Init, InGame, BtwGames, Finish }
     private enum SessionType { HumanVsHuman, PlayerVsPlayer, AllVsAll }
@@ -21,6 +21,9 @@ public class SessionController : MonoBehaviour
     [SerializeField] private int squarePiecesPerPlayer = 11;
     [SerializeField] private int roundPiecesPerPlayer = 10;
 
+    private IPlayer[] players;
+    private Board board;
+
     private GameObject gameInstance = null;
     private GameController gameController = null;
 
@@ -28,8 +31,6 @@ public class SessionController : MonoBehaviour
     private SessionType sessionType;
 
     private IList<AIPlayer> activeAIs = null;
-
-    private IPlayer nextPlayerA, nextPlayerB;
 
     private IPlayer humanPlayer;
 
@@ -40,6 +41,11 @@ public class SessionController : MonoBehaviour
         activeAIs = allAIs.FindAll(ai => ai.IsActive);
         status = Status.Init;
         humanPlayer = new HumanPlayer();
+
+        players = new IPlayer[2];
+
+        board = new Board(rows, cols, winSequence,
+            roundPiecesPerPlayer, squarePiecesPerPlayer);
     }
 
     private void Start()
@@ -47,22 +53,22 @@ public class SessionController : MonoBehaviour
         if (activeAIs.Count == 0)
         {
             // A game between human players, ask user to press OK to start
-            nextPlayerA = humanPlayer;
-            nextPlayerB = humanPlayer;
+            players[(int)PColor.White] = humanPlayer;
+            players[(int)PColor.Red] = humanPlayer;
             sessionType = SessionType.HumanVsHuman;
         }
         else if (activeAIs.Count == 1)
         {
             // A game between a human and an AI, ask who plays first
-            nextPlayerA = humanPlayer;
-            nextPlayerB = activeAIs[0];
+            players[(int)PColor.White] = humanPlayer;
+            players[(int)PColor.Red] = activeAIs[0];
             sessionType = SessionType.PlayerVsPlayer;
         }
         else if (activeAIs.Count == 2)
         {
             // A game between two AIs, ask who plays first
-            nextPlayerA = activeAIs[0];
-            nextPlayerB = activeAIs[1];
+            players[(int)PColor.White] = activeAIs[0];
+            players[(int)PColor.Red] = activeAIs[1];
             sessionType = SessionType.PlayerVsPlayer;
         }
         else
@@ -75,13 +81,11 @@ public class SessionController : MonoBehaviour
 
     private void StartGame()
     {
-        gameInstance = Instantiate(gamePrefab);
+        gameInstance = Instantiate(gamePrefab, transform);
         gameInstance.name = "Game";
         gameController = gameInstance.GetComponent<GameController>();
+
         // TODO this should go to OnEnable
-        gameController.SetupController(nextPlayerA, nextPlayerB,
-            rows, cols, winSequence,
-            squarePiecesPerPlayer, roundPiecesPerPlayer);
         gameController.GameOver += EndCurrentGame;
         status = Status.InGame;
     }
@@ -155,17 +159,17 @@ public class SessionController : MonoBehaviour
         if (id == 1)
         {
             // Draw buttons to ask who plays first
-            if (GUI.Button(new Rect(50, 40, 140, 30), nextPlayerA.PlayerName))
+            if (GUI.Button(new Rect(50, 40, 140, 30), players[0].PlayerName))
             {
                 // No need to swap players, just start the game
                 StartGame();
             }
-            if (GUI.Button(new Rect(200, 40, 140, 30), nextPlayerB.PlayerName))
+            if (GUI.Button(new Rect(200, 40, 140, 30), players[1].PlayerName))
             {
                 // Swap players...
-                IPlayer aux = nextPlayerA;
-                nextPlayerA = nextPlayerB;
-                nextPlayerB = aux;
+                IPlayer aux = players[0];
+                players[0] = players[1];
+                players[1] = aux;
                 // ...and then start game
                 StartGame();
             }
@@ -208,4 +212,10 @@ public class SessionController : MonoBehaviour
         // TODO Consider all vs all situation
         status = Status.Finish;
     }
+
+
+    // Implementation of ISessionDataProvider
+    public Board Board => board;
+    public IPlayer CurrentPlayer => players[(int)board.Turn];
+    public IPlayer GetPlayer(PColor player) => players[(int)player];
 }

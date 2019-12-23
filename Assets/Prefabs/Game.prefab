@@ -55,7 +55,7 @@ MonoBehaviour:
   ground: {fileID: 6481176687460712943, guid: d09ba8e27100fbfcc9f07c3d58e9a0f9, type: 3}
   arrowButton: {fileID: 1755172974688375734, guid: f290809d5175bfec28d459297aaf8972,
     type: 3}
-  playerPanel: {fileID: 2802893912805341679, guid: be9f6b4e594d14eae9c9133962e23502,
+  playerPanel: {fileID: 6406855918009440268, guid: 8871f790b192f964fb03c70b697cc531,
     type: 3}
 --- !u!1 &8785714994902384369
 GameObject:

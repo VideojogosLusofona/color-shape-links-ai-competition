@@ -11,50 +11,23 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    private IPlayer[] players;
-    private int rows;
-    private int cols;
-    private int winSequence;
-    private int squarePiecesPerPlayer;
-    private int roundPiecesPerPlayer;
-
     private const string rules = "Key B shows the board in the console.";
 
     private GameView view;
 
-    private bool setupDone = false;
     private bool gameOver = false;
-
+    private ISessionDataProvider sessionData;
     private Board board;
+
 
     // TODO Remove this
     private StringBuilder boardText = new StringBuilder();
 
     private void Awake()
     {
-        players = new IPlayer[2];
+        sessionData = GetComponentInParent<ISessionDataProvider>();
+        board = sessionData.Board;
         view = GameObject.Find("UI")?.GetComponent<GameView>();
-    }
-
-    internal void SetupController(IPlayer player1White, IPlayer player2Red,
-        int rows, int cols, int winSequence,
-        int squarePiecesPerPlayer, int roundPiecesPerPlayer)
-    {
-        if (setupDone)
-            throw new InvalidOperationException(
-                "Game controller setup can only be performed once");
-
-        players[(int)PColor.White] = player1White;
-        players[(int)PColor.Red] = player2Red;
-        this.rows = rows;
-        this.cols = cols;
-
-        board = new Board(rows, cols, winSequence,
-            roundPiecesPerPlayer, squarePiecesPerPlayer);
-
-        view.SetupView(board, players);
-
-        setupDone = true;
     }
 
     private void OnEnable()
@@ -70,12 +43,8 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        if (!setupDone)
-            throw new InvalidOperationException(
-                "Game controller setup needs to be performed before Start()");
-
         Debug.Log(rules);
-        Debug.Log($"It's {board.Turn} turn");
+        Debug.Log($"It's {sessionData.Board.Turn} turn");
     }
 
     // Update is called once per frame
@@ -83,9 +52,9 @@ public class GameController : MonoBehaviour
     {
         if (gameOver) return;
 
-        if (!players[(int)board.Turn].IsHuman)
+        if (!sessionData.CurrentPlayer.IsHuman)
         {
-            IThinker thinker = players[(int)board.Turn].Thinker;
+            IThinker thinker = sessionData.CurrentPlayer.Thinker;
             FutureMove futureMove = thinker.Think(board);
             MakeAMove(futureMove);
         }
@@ -133,9 +102,9 @@ public class GameController : MonoBehaviour
     {
         boardText.Clear();
         boardText.Append('\n');
-        for (int r = rows - 1; r >= 0; r--)
+        for (int r = board.rows - 1; r >= 0; r--)
         {
-            for (int c = 0; c < cols; c++)
+            for (int c = 0; c < board.cols; c++)
             {
                 char pc = '.';
                 Piece? p = board[r, c];
