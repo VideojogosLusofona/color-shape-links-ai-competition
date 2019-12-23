@@ -25,20 +25,6 @@ public class Board
         }
     }
 
-    // Internal struct for representing a board position
-    private struct Pos
-    {
-        public readonly int row;
-        public readonly int col;
-        public Pos(int row, int col)
-        {
-            this.row = row;
-            this.col = col;
-        }
-
-        public override string ToString() => $"({row},{col})";
-    }
-
     // Read-only indexer for client code to see the board
     public Piece? this[int row, int col]
     {
@@ -383,8 +369,14 @@ public class Board
     }
 
     // Is there a winner?
-    public Winner CheckWinner()
+    public Winner CheckWinner(Pos[] solution = null)
     {
+        // If an array for placing the solution was given, make sure it has
+        // the required capacity
+        if (solution != null && solution.Length < piecesInSequence)
+            throw new InvalidOperationException("Array for placing solution " +
+                $"must have at least length {piecesInSequence}");
+
         // Is the board full? Then we have a draw
         if (numMoves == cols * rows || PiecesLeft == 0) return Winner.Draw;
 
@@ -400,6 +392,9 @@ public class Board
                 // Check positions in this corridor
                 foreach (Pos p in corridor)
                 {
+                    // Update solution array
+                    if (solution != null) solution[count] = p;
+
                     // Does position contain the appropriate piece?
                     if (board[p.col, p.row].HasValue &&
                         funcPlayer.checkPieceFunc(board[p.col, p.row].Value))

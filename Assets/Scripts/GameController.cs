@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     private bool gameOver = false;
     private ISessionDataProvider sessionData;
     private Board board;
+    private Pos[] solution;
 
     private Task<FutureMove> aiTask;
     private DateTime taskStart;
@@ -35,6 +36,7 @@ public class GameController : MonoBehaviour
     {
         sessionData = GetComponentInParent<ISessionDataProvider>();
         board = sessionData.Board;
+        solution = new Pos[board.piecesInSequence];
         view = GameObject.Find("UI")?.GetComponent<GameView>();
         aiTimeLimit = new TimeSpan(
             (long)(sessionData.AITimeLimit * TimeSpan.TicksPerSecond));
@@ -129,12 +131,21 @@ public class GameController : MonoBehaviour
         int row = board.DoMove(move.shape, move.column);
         if (row >= 0)
         {
-            Winner winner = board.CheckWinner();
+            Winner winner = board.CheckWinner(solution);
             if (winner != Winner.None)
             {
                 Result = winner;
                 Debug.Log("Game Over, " +
                     (winner == Winner.Draw ? "it's a draw" : winner + " won"));
+                if (winner != Winner.Draw)
+                {
+                    StringBuilder sb = new StringBuilder("Solution: ");
+                    foreach (Pos p in solution)
+                    {
+                        sb.Append($"{p} ");
+                    }
+                    Debug.Log(sb.ToString());
+                }
                 OnGameOver();
             }
             else
