@@ -100,7 +100,30 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void MakeAMove(FutureMove move)
+    private void OnGUI()
+    {
+        void DrawAIThinkingWindow(int id)
+        {
+            if (id == 0)
+            {
+                GUIStyle guiLabelStyle = new GUIStyle(GUI.skin.label);
+                guiLabelStyle.alignment = TextAnchor.MiddleCenter;
+                GUI.Label(new Rect(0, 0, 200, 100), "AI thinking", guiLabelStyle);
+            }
+        }
+
+        if (aiTask?.Status == TaskStatus.Running)
+        {
+            GUI.ModalWindow(0,
+                new Rect(
+                    Screen.width / 2 - 100,
+                    Screen.height / 2 - 50, 200, 100),
+                DrawAIThinkingWindow,
+                "AI thinking");
+        }
+    }
+
+    private void MakeAMove(FutureMove move)
     {
         PColor whoPlayed = board.Turn;
         int row = board.DoMove(move.shape, move.column);
@@ -109,6 +132,7 @@ public class GameController : MonoBehaviour
             Winner winner = board.CheckWinner();
             if (winner != Winner.None)
             {
+                Result = winner;
                 Debug.Log("Game Over, " +
                     (winner == Winner.Draw ? "it's a draw" : winner + " won"));
                 OnGameOver();
@@ -118,7 +142,8 @@ public class GameController : MonoBehaviour
                 Debug.Log($"It's {board.Turn} turn");
             }
             view.UpdateBoard(
-                new Move(row, move.column, new Piece(whoPlayed, move.shape)));
+                new Move(row, move.column, new Piece(whoPlayed, move.shape)),
+                winner != Winner.None);
         }
         else
         {

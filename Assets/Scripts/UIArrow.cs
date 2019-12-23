@@ -72,5 +72,4 @@ public class UIArrow : MonoBehaviour
     public IntEvent Click { get; private set; }
 
     [Serializable] public class IntEvent : UnityEvent<int> {}
-
 }

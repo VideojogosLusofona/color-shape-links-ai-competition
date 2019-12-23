@@ -23,7 +23,7 @@ public class GameView : MonoBehaviour
 
     private Board board;
     private ISessionDataProvider sessionData;
-    private bool[] enabledPlayers;
+    // private bool[] enabledPlayers;
     private PShape[] selectedShapes;
     private GameObject[,] pieces;
     private UIArrow[] uiArrows;
@@ -34,14 +34,15 @@ public class GameView : MonoBehaviour
     private float totalHeightForPieces;
     private float piecesLength;
     private float piecesScale;
+    private bool finished;
 
     private void Awake()
     {
+        finished = false;
+
         sessionData = GetComponentInParent<ISessionDataProvider>();
         board = sessionData.Board;
         selectedShapes = new PShape[] { PShape.Round, PShape.Round };
-        enabledPlayers = new bool[] {
-                sessionData.CurrentPlayer.IsHuman, false };
 
         ShapeSelected = new ColorShapeEvent();
         BoardUpdated = new UnityEvent();
@@ -104,6 +105,9 @@ public class GameView : MonoBehaviour
 
             // Make the controller listen to arrow clicks
             uiArrows[c].Click.AddListener(OnMoveSelected);
+
+            // Enable or disable arrow depending on who's playing
+            currArrow.SetActive(sessionData.CurrentPlayer.IsHuman);
         }
 
         // These will be necessary for calculating the positions of the pieces
@@ -176,39 +180,59 @@ public class GameView : MonoBehaviour
                 // Current shape
                 PShape shape = (PShape)j;
 
-                // Get current toggle's label for counting pieces and set it
-                // to current piece count
-                Text tLabel =
-                    toggles[(int)shape].GetComponentInChildren<Text>();
-                tLabel.text = board.PieceCount(player, shape).ToString();
-
-                // Wire up method for listening to piece swap events
-                toggles[j].onValueChanged.AddListener(
-                    b => { if (b) SelectShape(player, shape); });
-
-                // If player not human, disable toggle interaction
-                if (!sessionData.GetPlayer(player).IsHuman)
-                    toggles[j].interactable = false;
-
                 // Setup correct sprite for the toggle
                 toggles[j].transform.GetChild(1).GetComponent<Image>().sprite =
                     pieceSprites[i, j];
 
-                // Wire up listener for programatically changing piece count in
-                // current player's toggle UI widget
-                BoardUpdated.AddListener(() => {
+                // Delegate to be called at start and after each move, which:
+                // 1. Updates piece count in current player's toggle UI widget
+                // 2. Enables/disables toggle interaction depending on who's
+                // playing
+                UnityAction setToggles = () =>
+                {
+                    // 1.
+                    // Count for current player and shape
                     int count = board.PieceCount(player, shape);
-                    tLabel.text = count.ToString();
+                    // Update label to update with shape count
+                    toggles[(int)shape].GetComponentInChildren<Text>().text =
+                        count.ToString();
+                    // If count reached zero, swap shape selection
                     if (count == 0)
                     {
                         SelectShape(
                             player,
                             shape == PShape.Round
                                 ? PShape.Square
-                                : PShape.Round );
+                                : PShape.Round);
                         toggles[(int)shape].interactable = false;
                     }
-                });
+                    // 2.
+                    else
+                    {
+                        // Player is human, is its turn and game not over,
+                        // enable toggle
+                        if (sessionData.GetPlayer(player).IsHuman
+                            && player == board.Turn && !finished)
+                        {
+                            toggles[(int)shape].interactable = true;
+                        }
+                        // Otherwise disable toggle
+                        else
+                        {
+                            toggles[(int)shape].interactable = false;
+                        }
+                    }
+                };
+
+                // Invoke delegate to initialize toggles
+                setToggles.Invoke();
+
+                // Make this delegate be called after each move
+                BoardUpdated.AddListener(setToggles);
+
+                // Wire up method for listening to piece swap events
+                toggles[j].onValueChanged.AddListener(
+                    b => { if (b) SelectShape(player, shape); });
             }
 
             // Wire up listener for programatically changing selected shape in
@@ -218,15 +242,21 @@ public class GameView : MonoBehaviour
         }
     }
 
+    // Make shape selection visible in the UI
     private void SelectShape(PColor player, PShape shape)
     {
+        // Keep the currently selected shape
         selectedShapes[(int)player] = shape;
+        // Update UI widgets which depend on the shape selection
         ShapeSelected.Invoke(player, shape);
     }
 
     // Update a position in the board shown on screen
-    internal void UpdateBoard(Move move)
+    internal void UpdateBoard(Move move, bool finished)
     {
+        // Update finished flag
+        this.finished = finished;
+
         // Is the screen board position empty and the game board has a piece?
         if (pieces[move.row, move.col] == null
             && board[move.row, move.col].HasValue)
@@ -297,13 +327,15 @@ public class GameView : MonoBehaviour
                 "Board view representation not in sync with board model");
         }
 
-        // Disable previous player and update its shape choice
-        enabledPlayers[(int)move.piece.color] = false;
+        // Update previous player shape choice
         SelectShape(move.piece.color, move.piece.shape);
 
-        // Enable next player if human
-        enabledPlayers[(int)board.Turn] =
-            sessionData.CurrentPlayer.IsHuman;
+        // Disable or enable GUI stuff depending on who's playing next
+        foreach (UIArrow arrow in uiArrows)
+        {
+            arrow.gameObject.SetActive(
+                !finished && sessionData.CurrentPlayer.IsHuman);
+        }
 
         // Notify listeners that board was updated
         BoardUpdated.Invoke();
@@ -316,7 +348,7 @@ public class GameView : MonoBehaviour
     }
 
     [Serializable]
-    private class ColorShapeEvent : UnityEvent<PColor, PShape> {}
+    private class ColorShapeEvent : UnityEvent<PColor, PShape> { }
 
     private UnityEvent BoardUpdated;
     private ColorShapeEvent ShapeSelected;
