@@ -413,7 +413,7 @@ public class GameView : MonoBehaviour
             LineRenderer linRend;
 
             // Game object which will hold the line renderer
-            GameObject winLine = new GameObject();
+            GameObject winLine = new GameObject("WinLine");
 
             // Determine initial and final line positions
             Vector3 start =
@@ -424,6 +424,9 @@ public class GameView : MonoBehaviour
                     .transform.position;
             start.z = -2;
             end.z = -2;
+
+            // Set the UI as the parent of the line game object
+            winLine.transform.SetParent(transform);
 
             // Position the game object which will hold the line renderer
             winLine.transform.position = start;
