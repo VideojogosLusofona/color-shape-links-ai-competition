@@ -284,10 +284,10 @@ public class GameView : MonoBehaviour
     }
 
     // Update a position in the board shown on screen
-    internal void UpdateBoard(Move move, bool finished)
+    internal void UpdateBoard(Move move, Winner result, Pos[] solution)
     {
         // Update finished flag
-        this.finished = finished;
+        this.finished = result != Winner.None;
 
         // Is the screen board position empty and the game board has a piece?
         if (pieces[move.row, move.col] == null
@@ -371,6 +371,54 @@ public class GameView : MonoBehaviour
 
         // Notify listeners that board was updated
         BoardUpdated.Invoke();
+
+        // If finished and not drawn, draw a line marking the solution
+        if (result == Winner.Red || result == Winner.White)
+        {
+            // The variable where we'll place the line renderer
+            LineRenderer linRend;
+
+            // Game object which will hold the line renderer
+            GameObject winLine = new GameObject();
+
+            // Determine initial and final line positions
+            Vector3 start =
+                pieces[solution[0].row, solution[0].col].transform.position;
+            Vector3 end = pieces[
+                solution[solution.Length - 1].row,
+                solution[solution.Length - 1].col]
+                    .transform.position;
+            start.z = -2;
+            end.z = -2;
+
+            // Position the game object which will hold the line renderer
+            winLine.transform.position = start;
+
+            // Add the line renderer to the game object and retrieve it
+            winLine.AddComponent<LineRenderer>();
+            linRend = winLine.GetComponent<LineRenderer>();
+
+            // Set line material (use same shader as used for sprites)
+            linRend.material = new Material(Shader.Find("Sprites/Default"));
+
+            // Set line width
+            linRend.startWidth = 0.3f;
+            linRend.endWidth = 0.3f;
+
+            // Set line color
+            linRend.startColor = new Color(1f, 0f, 0f, 0.75f);
+            linRend.endColor = new Color(1f, 0f, 0f, 0.75f);
+
+            // Set line position
+            linRend.SetPosition(0, start);
+            linRend.SetPosition(1, end);
+
+            // Specify that positions are in world space
+            linRend.useWorldSpace = true;
+
+            // Make sure line appears in the correct sorting order
+            linRend.sortingOrder = 5;
+        }
     }
 
     // Method that invokes event indicating a move was selected via the GUI

@@ -154,7 +154,8 @@ public class GameController : MonoBehaviour
             }
             view.UpdateBoard(
                 new Move(row, move.column, new Piece(whoPlayed, move.shape)),
-                winner != Winner.None);
+                winner,
+                solution);
         }
         else
         {
