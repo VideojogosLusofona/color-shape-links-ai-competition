@@ -37,6 +37,8 @@ public class GameView : MonoBehaviour
     private float piecesScale;
     private bool finished;
 
+    internal bool IsAIThinking { private get; set; } = false;
+
     // Awake is called when the script instance is being loaded.
     private void Awake()
     {
@@ -463,6 +465,46 @@ public class GameView : MonoBehaviour
     {
         MoveSelected?.Invoke(
             new FutureMove(col, selectedShapes[(int)board.Turn]));
+    }
+
+    // Use IMGUI to create an overlay window when AI is playing
+    private void OnGUI()
+    {
+        // Local function for drawing window contents, which consist of a
+        // label indicating that AI such and such is thinking
+        void DrawAIThinkingWindow(int id)
+        {
+            if (id == 0)
+            {
+                int winW = Screen.width * 2 / 3;
+                int winH = Screen.height * 2 / 3;
+                GUIStyle guiLabelStyle = new GUIStyle(GUI.skin.label);
+                guiLabelStyle.alignment = TextAnchor.MiddleCenter;
+                guiLabelStyle.fontSize = Screen.width / 30;
+                GUI.contentColor = Color.red;
+                GUI.Label(
+                    new Rect(
+                        winW / 2 - winW / 3,
+                        winH / 2 - winH / 3,
+                        winW * 2 / 3,
+                        winH * 2 / 3),
+                    $"{sessionData.CurrentPlayer.PlayerName} is thinking...",
+                    guiLabelStyle);
+            }
+        }
+
+        // Draw window only if AI is thinking
+        if (IsAIThinking)
+        {
+            GUI.ModalWindow(0,
+                new Rect(
+                    Screen.width / 2 - Screen.width / 3,
+                    Screen.height / 2 - Screen.height / 3,
+                    Screen.width * 2 / 3,
+                    Screen.height * 2 / 3),
+                DrawAIThinkingWindow,
+                "Wait a moment please");
+        }
     }
 
     // Definition of a Unity event class which accepts a color and a shape

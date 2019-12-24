@@ -69,6 +69,7 @@ public class GameController : MonoBehaviour
             {
                 if (Time.time > timeLastAIMove + sessionData.TimeBetweenAIMoves)
                 {
+                    view.IsAIThinking = true;
                     taskStart = DateTime.Now;
                     ts = new CancellationTokenSource();
                     IThinker thinker = sessionData.CurrentPlayer.Thinker;
@@ -79,17 +80,20 @@ public class GameController : MonoBehaviour
             {
                 if (aiTask.IsCompleted)
                 {
+                    view.IsAIThinking = false;
                     MakeAMove(aiTask.Result);
                     aiTask = null;
                     timeLastAIMove = Time.time;
                 }
                 else if (aiTask.IsFaulted)
                 {
+                    view.IsAIThinking = false;
                     Debug.LogError(aiTask.Exception.InnerException.Message);
                     aiTask = null;
                 }
                 else if (DateTime.Now - taskStart > aiTimeLimit)
                 {
+                    view.IsAIThinking = false;
                     ts.Cancel();
                     aiTask = null;
                     this.Result = board.Turn == PColor.White
@@ -97,29 +101,6 @@ public class GameController : MonoBehaviour
                     OnGameOver();
                 }
             }
-        }
-    }
-
-    private void OnGUI()
-    {
-        void DrawAIThinkingWindow(int id)
-        {
-            if (id == 0)
-            {
-                GUIStyle guiLabelStyle = new GUIStyle(GUI.skin.label);
-                guiLabelStyle.alignment = TextAnchor.MiddleCenter;
-                GUI.Label(new Rect(0, 0, 200, 100), "AI thinking", guiLabelStyle);
-            }
-        }
-
-        if (aiTask?.Status == TaskStatus.Running)
-        {
-            GUI.ModalWindow(0,
-                new Rect(
-                    Screen.width / 2 - 100,
-                    Screen.height / 2 - 50, 200, 100),
-                DrawAIThinkingWindow,
-                "AI thinking");
         }
     }
 
