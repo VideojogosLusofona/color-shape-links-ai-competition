@@ -8,5 +8,12 @@
 public class LoserSleeperAI : AIPlayer
 {
     public override string PlayerName => "LoserSleeperAI";
-    public override IThinker Thinker => new LoserSleeperAIThinker();
+    public override IThinker Thinker => thinker;
+
+    private IThinker thinker;
+    private void Awake()
+    {
+        thinker = new LoserSleeperAIThinker();
+    }
+
 }

@@ -19,9 +19,6 @@ public class RandomAIThinker : IThinker
 
     public FutureMove Think(Board board, CancellationToken ct)
     {
-        // Is this task to be cancelled?
-        if (ct.IsCancellationRequested) return FutureMove.NoMove;
-
         // Check how many pieces current player has
         int roundPieces = board.PieceCount(board.Turn, PShape.Round);
         int squarePieces = board.PieceCount(board.Turn, PShape.Square);
@@ -34,11 +31,14 @@ public class RandomAIThinker : IThinker
         int col;
         do
         {
+            // Get a random position
             col = random.Next(board.cols);
+            // Is this task to be cancelled?
+            if (ct.IsCancellationRequested) return FutureMove.NoMove;
         }
         while (board.IsColumnFull(col));
 
-        // Return it
+        // Return the random move
         return new FutureMove(col, shape);
     }
 }
