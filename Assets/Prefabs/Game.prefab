@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e6cfeb669b15423b210143667deb40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastMoveAnimLen: 1.5
   whiteRoundPiece: {fileID: 3812577129307145506, guid: 64982576a108c67b3b15534e7f9467fc,
     type: 3}
   whiteSquarePiece: {fileID: 5341886970750748266, guid: 84122eb0a33de061585b4e78e4ddfa11,

@@ -288,35 +288,30 @@ public class GameView : MonoBehaviour
     // Co-routine which animates last move
     private IEnumerator AnimateLastMove(Move lastMove)
     {
-        // Determine duration of animation based on instance variable
-        float duration = sessionData.GetPlayer(lastMove.piece.color).IsHuman
-            ? lastMoveAnimLen / 4 // Much faster animation for humans
-            : lastMoveAnimLen;    // than for AIs
         // Keep track of time which animation started and time that it should
         // end
         float timeStarted = Time.time;
-        float timeToEnd = timeStarted + duration;
+        float timeToEnd = timeStarted + lastMoveAnimLen;
         // Get the game object to animate
         GameObject piece = pieces[lastMove.row, lastMove.col];
-        // Animate while we have time
-        while (Time.time < timeToEnd)
+        // Get the sprite renderer to fade in and out
+        SpriteRenderer spriteRenderer = piece.GetComponent<SpriteRenderer>();
+        // Original color of the sprite renderer
+        Color color = spriteRenderer.color;
+
+        // Animate while we have time, avoiding sudden breaks in the animation
+        while (Time.time < timeToEnd || color.a < 0.95f)
         {
-            // What's completion percentage of the animation?
-            float percent =
-                Mathf.InverseLerp(timeStarted, timeToEnd, Time.time);
-            // Determine the rotation for current percentage of animation
-            float rotation = Mathf.Lerp(0, 360, percent);
-            // Determine rotation vector (different axis for different players)
-            Vector3 rotVec = lastMove.piece.color != PColor.White
-                ? new Vector3(0f, rotation, 0f)
-                : new Vector3(rotation, 0f, 0f);
-            // Apply rotation
-            piece.transform.eulerAngles = rotVec;
+            color.a = Mathf.Cos(Time.time * Mathf.PI * 2 / lastMoveAnimLen)
+                * 1f / 2f + 1f / 2f;
+            spriteRenderer.color = color;
+
             // See you next frame
             yield return null;
         }
-        // Make sure piece has no rotation when coroutine finishes
-        piece.transform.eulerAngles = Vector3.zero;
+        // Make sure piece shows when coroutine finishes
+        color.a = 1f;
+        spriteRenderer.color = color;
     }
 
     // Update a position in the board shown on screen
