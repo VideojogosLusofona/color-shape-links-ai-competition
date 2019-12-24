@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d6715cc6a22c0a08563253fff76fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 2
+  fadeDuration: 1
   fadeMinTransparency: 0.2
   arrowOpen: {fileID: 67926103340967526, guid: 6f1f1ecea053aff1cb1f646d29a20f4c, type: 3}
   arrowClosed: {fileID: -2938970880757876879, guid: 6f1f1ecea053aff1cb1f646d29a20f4c,
