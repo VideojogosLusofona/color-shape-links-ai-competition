@@ -29,6 +29,7 @@ public class GameView : MonoBehaviour
     private PShape[] selectedShapes;
     private GameObject[,] pieces;
     private UIArrow[] uiArrows;
+    private GameObject isThinkingCanvas;
 
     private Vector2 leftPoleBase;
     private float distBtwPoles;
@@ -37,9 +38,15 @@ public class GameView : MonoBehaviour
     private float piecesScale;
     private bool finished;
 
-    internal bool IsAIThinking { private get; set; } = false;
+    internal bool IsAIThinking
+    {
+        set
+        {
+            isThinkingCanvas?.SetActive(value);
+        }
+    }
 
-    // Awake is called when the script instance is being loaded.
+    // Awake is called when the script instance is being loaded
     private void Awake()
     {
         // Top and bottom pole padding
@@ -53,6 +60,9 @@ public class GameView : MonoBehaviour
 
         // Bounds of different sprite renderers
         Bounds gBounds, plBounds, aBounds, pcBounds;
+
+        // Get reference to the camera
+        Camera camera = GameObject.Find("Main Camera").GetComponent<Camera>();
 
         // ///////////////////////////// //
         // Initialize required variables //
@@ -77,6 +87,13 @@ public class GameView : MonoBehaviour
 
         // Create array for UI arrow script objects
         uiArrows = new UIArrow[board.cols];
+
+        // Get reference to the "is thinking" canvas game object, set the
+        // reference to the main camera and disable the object via the
+        // IsAIThinking property
+        isThinkingCanvas = GameObject.Find("IsThinkingCanvas");
+        isThinkingCanvas.GetComponent<Canvas>().worldCamera = camera;
+        IsAIThinking = false;
 
         // /////////////////////////////////////// //
         // Initialize and place game board objects //
@@ -166,9 +183,6 @@ public class GameView : MonoBehaviour
         GameObject[] playerPanels = {
             Instantiate(playerPanel, transform),
             Instantiate(playerPanel, transform) };
-
-        // Get reference to the camera
-        Camera camera = GameObject.Find("Main Camera").GetComponent<Camera>();
 
         // Initialize an array of piece sprites, which will simplify
         // passing the correct sprite for each shape in each player panel
@@ -465,46 +479,6 @@ public class GameView : MonoBehaviour
     {
         MoveSelected?.Invoke(
             new FutureMove(col, selectedShapes[(int)board.Turn]));
-    }
-
-    // Use IMGUI to create an overlay window when AI is playing
-    private void OnGUI()
-    {
-        // Local function for drawing window contents, which consist of a
-        // label indicating that AI such and such is thinking
-        void DrawAIThinkingWindow(int id)
-        {
-            if (id == 0)
-            {
-                int winW = Screen.width * 2 / 3;
-                int winH = Screen.height * 2 / 3;
-                GUIStyle guiLabelStyle = new GUIStyle(GUI.skin.label);
-                guiLabelStyle.alignment = TextAnchor.MiddleCenter;
-                guiLabelStyle.fontSize = Screen.width / 30;
-                GUI.contentColor = Color.red;
-                GUI.Label(
-                    new Rect(
-                        winW / 2 - winW / 3,
-                        winH / 2 - winH / 3,
-                        winW * 2 / 3,
-                        winH * 2 / 3),
-                    $"{sessionData.CurrentPlayer.PlayerName} is thinking...",
-                    guiLabelStyle);
-            }
-        }
-
-        // Draw window only if AI is thinking
-        if (IsAIThinking)
-        {
-            GUI.ModalWindow(0,
-                new Rect(
-                    Screen.width / 2 - Screen.width / 3,
-                    Screen.height / 2 - Screen.height / 3,
-                    Screen.width * 2 / 3,
-                    Screen.height * 2 / 3),
-                DrawAIThinkingWindow,
-                "Wait a moment please");
-        }
     }
 
     // Definition of a Unity event class which accepts a color and a shape

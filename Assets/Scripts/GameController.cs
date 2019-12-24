@@ -6,7 +6,6 @@
  * */
 
 using System;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -14,8 +13,6 @@ using UnityEngine.Events;
 
 public class GameController : MonoBehaviour
 {
-    private const string rules = "Key B shows the board in the console.";
-
     private GameView view;
 
     private bool gameOver = false;
@@ -30,6 +27,7 @@ public class GameController : MonoBehaviour
     private float timeLastAIMove;
     public Winner Result { get; private set; }
 
+    // Awake is called when the script instance is being loaded
     private void Awake()
     {
         GameOver = new UnityEvent();
@@ -54,7 +52,6 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        Debug.Log(rules);
         Debug.Log($"It's {sessionData.Board.Turn} turn");
     }
 
