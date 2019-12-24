@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour
     private DateTime taskStart;
     private TimeSpan aiTimeLimit;
     private CancellationTokenSource ts;
+    private float timeLastAIMove;
 
     // TODO Remove this
     private StringBuilder boardText = new StringBuilder();
@@ -68,10 +69,13 @@ public class GameController : MonoBehaviour
         {
             if (aiTask == null)
             {
-                taskStart = DateTime.Now;
-                ts = new CancellationTokenSource();
-                IThinker thinker = sessionData.CurrentPlayer.Thinker;
-                aiTask = Task.Run(() => thinker.Think(board, ts.Token));
+                if (Time.time > timeLastAIMove + sessionData.TimeBetweenAIMoves)
+                {
+                    taskStart = DateTime.Now;
+                    ts = new CancellationTokenSource();
+                    IThinker thinker = sessionData.CurrentPlayer.Thinker;
+                    aiTask = Task.Run(() => thinker.Think(board, ts.Token));
+                }
             }
             else
             {
@@ -79,6 +83,7 @@ public class GameController : MonoBehaviour
                 {
                     MakeAMove(aiTask.Result);
                     aiTask = null;
+                    timeLastAIMove = Time.time;
                 }
                 else if (aiTask.IsFaulted)
                 {

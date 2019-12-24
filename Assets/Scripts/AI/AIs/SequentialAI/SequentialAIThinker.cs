@@ -10,7 +10,7 @@ using System.Threading;
 
 public class SequentialAIThinker : IThinker
 {
-    private int lastCol = 0;
+    private int lastCol = -1;
 
     public FutureMove Think(Board board, CancellationToken ct)
     {

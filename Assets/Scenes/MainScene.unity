@@ -323,6 +323,7 @@ MonoBehaviour:
   squarePiecesPerPlayer: 11
   roundPiecesPerPlayer: 10
   aiTimeLimit: 10
+  timeBetweenAIMoves: 2
 --- !u!4 &617695835
 Transform:
   m_ObjectHideFlags: 0

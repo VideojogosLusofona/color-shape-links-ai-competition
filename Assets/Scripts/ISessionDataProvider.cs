@@ -10,5 +10,6 @@ public interface ISessionDataProvider
     Board Board { get; }
     IPlayer CurrentPlayer { get; }
     float AITimeLimit { get; }
+    float TimeBetweenAIMoves { get; }
     IPlayer GetPlayer(PColor player);
 }

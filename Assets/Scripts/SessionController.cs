@@ -21,6 +21,7 @@ public class SessionController : MonoBehaviour,  ISessionDataProvider
     [SerializeField] private int squarePiecesPerPlayer = 11;
     [SerializeField] private int roundPiecesPerPlayer = 10;
     [SerializeField] private float aiTimeLimit = 0.5f;
+    [SerializeField] private float timeBetweenAIMoves = 0f;
 
     private IPlayer[] players;
     private Board board;
@@ -223,5 +224,6 @@ public class SessionController : MonoBehaviour,  ISessionDataProvider
     public Board Board => board;
     public IPlayer CurrentPlayer => players[(int)board.Turn];
     public float AITimeLimit => aiTimeLimit;
+    public float TimeBetweenAIMoves => timeBetweenAIMoves;
     public IPlayer GetPlayer(PColor player) => players[(int)player];
 }
