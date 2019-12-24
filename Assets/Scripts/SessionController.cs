@@ -86,9 +86,7 @@ public class SessionController : MonoBehaviour,  ISessionDataProvider
         gameInstance = Instantiate(gamePrefab, transform);
         gameInstance.name = "Game";
         gameController = gameInstance.GetComponent<GameController>();
-
-        // TODO this should go to OnEnable
-        gameController.GameOver += EndCurrentGame;
+        gameController.GameOver.AddListener(EndCurrentGame);
         status = Status.InGame;
     }
 

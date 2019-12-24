@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameController : MonoBehaviour
 {
@@ -27,14 +28,11 @@ public class GameController : MonoBehaviour
     private TimeSpan aiTimeLimit;
     private CancellationTokenSource ts;
     private float timeLastAIMove;
-
-    // TODO Remove this
-    private StringBuilder boardText = new StringBuilder();
-
     public Winner Result { get; private set; }
 
     private void Awake()
     {
+        GameOver = new UnityEvent();
         sessionData = GetComponentInParent<ISessionDataProvider>();
         board = sessionData.Board;
         solution = new Pos[board.piecesInSequence];
@@ -100,11 +98,6 @@ public class GameController : MonoBehaviour
                 }
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            DrawBoard();
-        }
     }
 
     private void OnGUI()
@@ -142,15 +135,6 @@ public class GameController : MonoBehaviour
                 Result = winner;
                 Debug.Log("Game Over, " +
                     (winner == Winner.Draw ? "it's a draw" : winner + " won"));
-                if (winner != Winner.Draw)
-                {
-                    StringBuilder sb = new StringBuilder("Solution: ");
-                    foreach (Pos p in solution)
-                    {
-                        sb.Append($"{p} ");
-                    }
-                    Debug.Log(sb.ToString());
-                }
                 OnGameOver();
             }
             else
@@ -174,36 +158,5 @@ public class GameController : MonoBehaviour
         GameOver?.Invoke();
     }
 
-    // TODO Remove this
-    private void DrawBoard()
-    {
-        boardText.Clear();
-        boardText.Append('\n');
-        for (int r = board.rows - 1; r >= 0; r--)
-        {
-            for (int c = 0; c < board.cols; c++)
-            {
-                char pc = '.';
-                Piece? p = board[r, c];
-                if (p.HasValue)
-                {
-                    if (p.Value.Is(PColor.White, PShape.Round))
-                        pc = 'w';
-                    else if (p.Value.Is(PColor.White, PShape.Square))
-                        pc = 'W';
-                    else if (p.Value.Is(PColor.Red, PShape.Round))
-                        pc = 'r';
-                    else if (p.Value.Is(PColor.Red, PShape.Square))
-                        pc = 'R';
-                    else
-                        Debug.LogError($"Invalid piece {p.Value}");
-                }
-                boardText.Append(pc);
-            }
-            boardText.Append('\n');
-        }
-        Debug.Log(boardText.ToString());
-    }
-
-    public event Action GameOver;
+    public UnityEvent GameOver { get; private set; }
 }
