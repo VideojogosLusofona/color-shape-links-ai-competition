@@ -12,9 +12,31 @@ work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 
 An assignment for the Artificial Intelligence course unit
 
+*Under construction*
+
 ## Introduction
 
 *Under construction*
+
+## Goals
+
+The main goal of this project is to implement a competitive AI for the
+board game included in this repository, the rules of which are similar to the
+[Simplexity] board game. However, this board game can played with arbitrary
+number of rows and columns, as well as accepting different number of pieces for
+achieving victory.
+
+## How to
+
+Students should implement a minimum of two classes. If your AI is called
+*VerySmart*, the classes are as follows:
+
+* `VerySmartAI`, which extends [`AIPlayer`].
+* `VerySmartAIThinker`, which implements [`IThinker`].
+
+These classes should be in their own folder, which in turn should be placed at
+[`Assets/Scripts/AI/AIs/`]. This folder contains some examples of dumb AIs to
+demonstrate how this works.
 
 ## Licenses
 
@@ -34,3 +56,7 @@ License][CC BY-NC-SA 4.0].
 [licvideo]:https://www.ulusofona.pt/en/undergraduate/videogames
 [Nuno Fachada]:https://github.com/fakenmc
 [ULHT]:https://www.ulusofona.pt/
+[Simplexity]:https://boardgamegeek.com/boardgame/55810/simplexity
+[`AIPlayer`]:Assets/Scripts/AI/AIPlayer.cs
+[`IThinker`]:Assets/Scripts/AI/IThinker.cs
+[`Assets/Scripts/AI/AIs/`]:Assets/Scripts/AI/AIs/
