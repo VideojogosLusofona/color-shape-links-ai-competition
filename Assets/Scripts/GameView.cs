@@ -6,6 +6,7 @@
  * */
 
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -13,6 +14,7 @@ using UnityEngine.UI;
 // Class responsible for the game UI
 public class GameView : MonoBehaviour
 {
+    [SerializeField] private float lastMoveAnimLen = 1f;
     [SerializeField] private GameObject whiteRoundPiece = null;
     [SerializeField] private GameObject whiteSquarePiece = null;
     [SerializeField] private GameObject redRoundPiece = null;
@@ -283,6 +285,40 @@ public class GameView : MonoBehaviour
         ShapeSelected.Invoke(player, shape);
     }
 
+    // Co-routine which animates last move
+    private IEnumerator AnimateLastMove(Move lastMove)
+    {
+        // Determine duration of animation based on instance variable
+        float duration = sessionData.GetPlayer(lastMove.piece.color).IsHuman
+            ? lastMoveAnimLen / 4 // Much faster animation for humans
+            : lastMoveAnimLen;    // than for AIs
+        // Keep track of time which animation started and time that it should
+        // end
+        float timeStarted = Time.time;
+        float timeToEnd = timeStarted + duration;
+        // Get the game object to animate
+        GameObject piece = pieces[lastMove.row, lastMove.col];
+        // Animate while we have time
+        while (Time.time < timeToEnd)
+        {
+            // What's completion percentage of the animation?
+            float percent =
+                Mathf.InverseLerp(timeStarted, timeToEnd, Time.time);
+            // Determine the rotation for current percentage of animation
+            float rotation = Mathf.Lerp(0, 360, percent);
+            // Determine rotation vector (different axis for different players)
+            Vector3 rotVec = lastMove.piece.color != PColor.White
+                ? new Vector3(0f, rotation, 0f)
+                : new Vector3(rotation, 0f, 0f);
+            // Apply rotation
+            piece.transform.eulerAngles = rotVec;
+            // See you next frame
+            yield return null;
+        }
+        // Make sure piece has no rotation when coroutine finishes
+        piece.transform.eulerAngles = Vector3.zero;
+    }
+
     // Update a position in the board shown on screen
     internal void UpdateBoard(Move move, Winner result, Pos[] solution)
     {
@@ -339,6 +375,9 @@ public class GameView : MonoBehaviour
                 // If so, close the arrow
                 uiArrows[move.col].Open = false;
             }
+
+            // Animation last move
+            StartCoroutine(AnimateLastMove(move));
         }
         // Or is the screen board position occupied while the game board
         // position is empty?
