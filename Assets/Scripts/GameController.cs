@@ -52,7 +52,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        Debug.Log($"It's {sessionData.Board.Turn} turn");
+        view.SubmitMessage($"It's {sessionData.Board.Turn} turn");
     }
 
     // Update is called once per frame
@@ -111,13 +111,13 @@ public class GameController : MonoBehaviour
             if (winner != Winner.None)
             {
                 Result = winner;
-                Debug.Log("Game Over, " +
+                view.SubmitMessage("Game Over, " +
                     (winner == Winner.Draw ? "it's a draw" : winner + " won"));
                 OnGameOver();
             }
             else
             {
-                Debug.Log($"It's {board.Turn} turn");
+                view.SubmitMessage($"It's {board.Turn} turn");
             }
             view.UpdateBoard(
                 new Move(row, move.column, new Piece(whoPlayed, move.shape)),
@@ -126,7 +126,8 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            Debug.Log($"Column {move.column + 1} is full, try another one.");
+            view.SubmitMessage(
+                $"Column {move.column + 1} is full, try another one.");
         }
     }
 

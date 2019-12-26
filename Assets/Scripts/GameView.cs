@@ -6,6 +6,7 @@
  * */
 
 using System;
+using System.Text;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -30,7 +31,9 @@ public class GameView : MonoBehaviour
     private GameObject[,] pieces;
     private UIArrow[] uiArrows;
     private GameObject isThinkingCanvas;
+    private Text messageBoxText;
 
+    private StringBuilder messages;
     private Vector2 leftPoleBase;
     private float distBtwPoles;
     private float totalHeightForPieces;
@@ -53,7 +56,7 @@ public class GameView : MonoBehaviour
         const float polePadding = 0.1f;
 
         // Ground instance
-        GameObject groundInst;
+        GameObject groundInst, messageBox;
 
         // Top-left of ground sprite renderer
         Vector3 gTopLeft;
@@ -67,6 +70,9 @@ public class GameView : MonoBehaviour
         // ///////////////////////////// //
         // Initialize required variables //
         // ///////////////////////////// //
+
+        // Instantiate a string builder, used for keeping messages
+        messages = new StringBuilder();
 
         // We just started, so game is not finished yet
         finished = false;
@@ -94,6 +100,10 @@ public class GameView : MonoBehaviour
         isThinkingCanvas = GameObject.Find("IsThinkingCanvas");
         isThinkingCanvas.GetComponent<Canvas>().worldCamera = camera;
         IsAIThinking = false;
+
+        messageBox = GameObject.Find("MessageBox").gameObject;
+        messageBox.GetComponent<Canvas>().worldCamera = camera;
+        messageBoxText = messageBox.GetComponentInChildren<Text>();
 
         // /////////////////////////////////////// //
         // Initialize and place game board objects //
@@ -479,6 +489,14 @@ public class GameView : MonoBehaviour
     {
         MoveSelected?.Invoke(
             new FutureMove(col, selectedShapes[(int)board.Turn]));
+    }
+
+    // Present a message in the message box
+    internal void SubmitMessage(string str)
+    {
+        messages.Append($"\n- {str}");
+        messageBoxText.text = messages.ToString();
+        Debug.Log(messages.ToString());
     }
 
     // Definition of a Unity event class which accepts a color and a shape
