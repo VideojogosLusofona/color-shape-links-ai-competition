@@ -9,7 +9,7 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 
-public class SessionController : MonoBehaviour,  ISessionDataProvider
+public class SessionController : MonoBehaviour, ISessionDataProvider
 {
     private enum Status { Init, InGame, BtwGames, Finish }
     private enum SessionType { HumanVsHuman, PlayerVsPlayer, AllVsAll }
@@ -97,15 +97,15 @@ public class SessionController : MonoBehaviour,  ISessionDataProvider
 
     private void OnGUI()
     {
+
+
         if (status == Status.Init)
         {
             if (sessionType == SessionType.HumanVsHuman)
             {
                 // Press OK to continue
                 GUI.Window(0,
-                    new Rect(
-                        Screen.width / 2 - 100,
-                        Screen.height / 2 - 50, 200, 100),
+                    new Rect(0, 0, Screen.width, Screen.height),
                     DrawOkLetsStartWindow,
                     "Human vs Human");
             }
@@ -113,9 +113,7 @@ public class SessionController : MonoBehaviour,  ISessionDataProvider
             {
                 // Ask who plays first
                 GUI.Window(1,
-                    new Rect(
-                        Screen.width / 2 - 200,
-                        Screen.height / 2 - 50, 400, 100),
+                    new Rect(0, 0, Screen.width, Screen.height),
                     DrawWhoPlaysFirstWindow,
                     "Who plays first (white)?");
             }
@@ -123,9 +121,7 @@ public class SessionController : MonoBehaviour,  ISessionDataProvider
             {
                 // Show list and press OK to continue
                 GUI.Window(2,
-                    new Rect(
-                        Screen.width / 2 - 100,
-                        Screen.height / 2 - 50, 200, 100),
+                    new Rect(0, 0, Screen.width, Screen.height),
                     DrawCompetitionWindow,
                     "Competition");
             }
@@ -135,9 +131,7 @@ public class SessionController : MonoBehaviour,  ISessionDataProvider
             string winStr =
                 gameController.PlrNameColor(gameController.Result.ToPColor());
             GUI.Window(3,
-                new Rect(
-                    Screen.width / 2 - 100,
-                    Screen.height / 2 - 50, 200, 100),
+                new Rect(0, 0, Screen.width, Screen.height),
                 DrawGameOverWindow,
                 sessionType == SessionType.AllVsAll
                     ? "Session Over!"
@@ -155,7 +149,10 @@ public class SessionController : MonoBehaviour,  ISessionDataProvider
         if (id == 0)
         {
             // Draw OK button
-            if (GUI.Button(new Rect(50, 40, 100, 30), "Start Game"))
+            if (GUI.Button(
+                new Rect(
+                    Screen.width / 2 - 50, Screen.height / 2 - 25, 100, 50),
+                "Start Game"))
             {
                 // If button is clicked, start game
                 StartGame();
@@ -170,12 +167,24 @@ public class SessionController : MonoBehaviour,  ISessionDataProvider
         if (id == 1)
         {
             // Draw buttons to ask who plays first
-            if (GUI.Button(new Rect(50, 40, 140, 30), players[0].PlayerName))
+            if (GUI.Button(
+                new Rect(
+                    Screen.width / 2 - 150,
+                    Screen.height / 2 - 25,
+                    140,
+                    50),
+                players[0].PlayerName))
             {
                 // No need to swap players, just start the game
                 StartGame();
             }
-            if (GUI.Button(new Rect(200, 40, 140, 30), players[1].PlayerName))
+            if (GUI.Button(
+                new Rect(
+                    Screen.width / 2 + 10,
+                    Screen.height / 2 - 25,
+                    140,
+                    50),
+                players[1].PlayerName))
             {
                 // Swap players...
                 IPlayer aux = players[0];
@@ -194,7 +203,10 @@ public class SessionController : MonoBehaviour,  ISessionDataProvider
         if (id == 2)
         {
             // Draw OK button
-            if (GUI.Button(new Rect(50, 40, 140, 30), "Not implemented yet"))
+            if (GUI.Button(
+                new Rect(
+                    Screen.width / 2 - 50, Screen.height / 2 - 25, 100, 50),
+                "Not implemented yet"))
             {
                 throw new NotImplementedException(
                     "All vs All not implemented yet");
@@ -209,7 +221,10 @@ public class SessionController : MonoBehaviour,  ISessionDataProvider
         if (id == 3)
         {
             // Draw OK button
-            if (GUI.Button(new Rect(50, 40, 100, 30), "OK"))
+            if (GUI.Button(
+                new Rect(
+                    Screen.width / 2 - 50, Screen.height / 2 - 25, 100, 50),
+                "OK"))
             {
                 // If button is clicked, exit
                 Destroy(gameInstance);

@@ -497,15 +497,37 @@ public class GameView : MonoBehaviour
     // Present messages with some delay between them
     private IEnumerator UpdateMessageBox()
     {
-        YieldInstruction wfs = new WaitForSeconds(0.25f);
+        // This coroutine till be called at least once per AI move
+        YieldInstruction timeAImoves = new WaitForSeconds(
+            sessionData.TimeBetweenAIMoves);
+
+        // When there are more messages, the coroutine is called in a tenth
+        // of that time, giving the illusion of scrolling
+        YieldInstruction minTimMsgs = new WaitForSeconds(
+            sessionData.TimeBetweenAIMoves / 10);
+
+        // Enter the infinite loop
         while (true)
         {
+            // Are there messages in the queue?
             if (messageQueue.Count > 0)
             {
-                messages.Append($"\n- {messageQueue.Dequeue()}");
-                messageBoxText.text = messages.ToString();
+                // If so, let's post them
+                while (messageQueue.Count > 0)
+                {
+                    // Get message out of the queue and into the string builder
+                    messages.Append($"\n- {messageQueue.Dequeue()}");
+                    // Update the text UI widget
+                    messageBoxText.text = messages.ToString();
+                    // We'll return in a moment
+                    yield return minTimMsgs;
+                }
             }
-            yield return wfs;
+            else
+            {
+                // If there are no messages in the queue, come back later
+                yield return timeAImoves;
+            }
         }
     }
 
