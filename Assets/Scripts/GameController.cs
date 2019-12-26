@@ -25,8 +25,10 @@ public class GameController : MonoBehaviour
     private TimeSpan aiTimeLimit;
     private CancellationTokenSource ts;
     private float taskStartGameTime;
-    private string PlNameColor =>
-        $"{sessionData.CurrentPlayer.PlayerName} ({board.Turn})";
+    private string CurrPlrNameColor => PlrNameColor(board.Turn);
+
+    public string PlrNameColor(PColor color) =>
+        $"{sessionData.GetPlayer(color).PlayerName} ({color})";
 
     public Winner Result { get; private set; }
 
@@ -55,7 +57,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        view.SubmitMessage($"It's {PlNameColor} turn");
+        view.SubmitMessage($"It's {CurrPlrNameColor} turn");
     }
 
     // Update is called once per frame
@@ -68,7 +70,7 @@ public class GameController : MonoBehaviour
             if (aiTask == null)
             {
                 view.SubmitMessage(
-                    $"{PlNameColor} is thinking, please wait...");
+                    $"{CurrPlrNameColor} is thinking, please wait...");
                 taskStart = DateTime.Now;
                 taskStartGameTime = Time.time;
                 ts = new CancellationTokenSource();
@@ -82,9 +84,9 @@ public class GameController : MonoBehaviour
                     if (Time.time >
                         taskStartGameTime + sessionData.TimeBetweenAIMoves)
                     {
-                        view.SubmitMessage(String.Format(
+                        view.SubmitMessage(string.Format(
                             "{0} placed a {1} piece at column {2}",
-                            PlNameColor,
+                            CurrPlrNameColor,
                             aiTask.Result.shape.ToString().ToLower(),
                             aiTask.Result.column));
                         MakeAMove(aiTask.Result);
@@ -101,7 +103,7 @@ public class GameController : MonoBehaviour
                 else if (DateTime.Now - taskStart > aiTimeLimit)
                 {
                     view.SubmitMessage(
-                        $"Time limite excceded for {PlNameColor}!");
+                        $"Time limit exceeded for {CurrPlrNameColor}!");
                     ts.Cancel();
                     aiTask = null;
                     this.Result = board.Turn == PColor.White
@@ -121,14 +123,13 @@ public class GameController : MonoBehaviour
             Winner winner = board.CheckWinner(solution);
             if (winner != Winner.None)
             {
+                PColor winColor = winner.ToPColor();
                 Result = winner;
-                view.SubmitMessage("Game Over, " +
-                    (winner == Winner.Draw ? "it's a draw" : winner + " won"));
                 OnGameOver();
             }
             else
             {
-                view.SubmitMessage($"It's {PlNameColor} turn");
+                view.SubmitMessage($"It's {CurrPlrNameColor} turn");
             }
             view.UpdateBoard(
                 new Move(row, move.column, new Piece(whoPlayed, move.shape)),
@@ -144,6 +145,10 @@ public class GameController : MonoBehaviour
 
     private void OnGameOver()
     {
+        view.SubmitMessage(string.Format("Game Over, {0}",
+            Result == Winner.Draw
+                ? "it's a draw"
+                : $"{PlrNameColor(Result.ToPColor())} won"));
         gameOver = true;
         GameOver?.Invoke();
     }

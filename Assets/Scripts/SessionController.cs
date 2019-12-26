@@ -132,6 +132,8 @@ public class SessionController : MonoBehaviour,  ISessionDataProvider
         }
         else if (status == Status.Finish)
         {
+            string winStr =
+                gameController.PlrNameColor(gameController.Result.ToPColor());
             GUI.Window(3,
                 new Rect(
                     Screen.width / 2 - 100,
@@ -142,7 +144,7 @@ public class SessionController : MonoBehaviour,  ISessionDataProvider
                     : "Game Over! " + (
                         gameController.Result == Winner.Draw
                             ? "It's a draw"
-                            : $"Winner is {gameController.Result}"));
+                            : $"Winner is {winStr}"));
         }
     }
 
