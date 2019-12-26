@@ -128,17 +128,20 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
         }
         else if (status == Status.Finish)
         {
-            string winStr =
-                gameController.PlrNameColor(gameController.Result.ToPColor());
-            GUI.Window(3,
-                new Rect(0, 0, Screen.width, Screen.height),
-                DrawGameOverWindow,
-                sessionType == SessionType.AllVsAll
-                    ? "Session Over!"
-                    : "Game Over! " + (
-                        gameController.Result == Winner.Draw
-                            ? "It's a draw"
-                            : $"Winner is {winStr}"));
+            if (sessionType == SessionType.AllVsAll)
+            {
+                GUI.Window(3,
+                    new Rect(0, 0, Screen.width, Screen.height),
+                    DrawSessionOverWindow,
+                    "Session over");
+            }
+            else
+            {
+                GUI.Window(4,
+                    new Rect(0, 0, Screen.width, Screen.height),
+                    DrawGameOverWindow,
+                    "Game Over!");
+            }
         }
     }
 
@@ -215,12 +218,60 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
     }
 
     // Draw window contents
-    private void DrawGameOverWindow(int id)
+    private void DrawSessionOverWindow(int id)
     {
         // Is this the correct window?
         if (id == 3)
         {
             // Draw OK button
+            if (GUI.Button(
+                new Rect(
+                    Screen.width / 2 - 50, Screen.height / 2 - 25, 100, 50),
+                "OK"))
+            {
+                // If button is clicked, exit
+                Destroy(gameInstance);
+                UnityEditor.EditorApplication.isPlaying = false;
+            }
+        }
+    }
+
+
+    // Draw window contents
+    private void DrawGameOverWindow(int id)
+    {
+        // Is this the correct window?
+        if (id == 4)
+        {
+            string winStr =
+                gameController.Result != Winner.Draw
+                    ? gameController.PlrNameColor(
+                        gameController.Result.ToPColor())
+                    : "";
+            int winW = Screen.width * 2 / 3;
+            int winH = Screen.height * 2 / 3;
+            Color originalColor = GUI.contentColor;
+            Color color = gameController.Result == Winner.Draw
+                ? Color.yellow
+                : gameController.Result == Winner.White
+                    ? Color.white
+                    : Color.red;
+            GUIStyle guiLabelStyle = new GUIStyle(GUI.skin.label);
+            guiLabelStyle.alignment = TextAnchor.MiddleCenter;
+            guiLabelStyle.fontSize = Screen.width / 30;
+            GUI.contentColor = color;
+            GUI.Label(
+                new Rect(
+                    winW / 2 - winW / 3,
+                    winH / 2 - winH / 3,
+                    winW * 2 / 3,
+                    winH * 2 / 3),
+                gameController.Result == Winner.Draw
+                    ? "It's a draw"
+                    : $"Winner is {winStr}",
+                guiLabelStyle);
+            // Draw OK button
+            GUI.contentColor = originalColor;
             if (GUI.Button(
                 new Rect(
                     Screen.width / 2 - 50, Screen.height / 2 - 25, 100, 50),
