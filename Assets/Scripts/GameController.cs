@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
     private DateTime taskStart;
     private TimeSpan aiTimeLimit;
     private CancellationTokenSource ts;
-    private float timeLastAIMove;
+    private float taskStartGameTime;
     private string PlNameColor =>
         $"{sessionData.CurrentPlayer.PlayerName} ({board.Turn})";
 
@@ -67,28 +67,29 @@ public class GameController : MonoBehaviour
         {
             if (aiTask == null)
             {
-                if (Time.time > timeLastAIMove + sessionData.TimeBetweenAIMoves)
-                {
-                    view.SubmitMessage(
-                        $"{PlNameColor} is thinking, please wait...");
-                    taskStart = DateTime.Now;
-                    ts = new CancellationTokenSource();
-                    IThinker thinker = sessionData.CurrentPlayer.Thinker;
-                    aiTask = Task.Run(() => thinker.Think(board, ts.Token));
-                }
+                view.SubmitMessage(
+                    $"{PlNameColor} is thinking, please wait...");
+                taskStart = DateTime.Now;
+                taskStartGameTime = Time.time;
+                ts = new CancellationTokenSource();
+                IThinker thinker = sessionData.CurrentPlayer.Thinker;
+                aiTask = Task.Run(() => thinker.Think(board, ts.Token));
             }
             else
             {
                 if (aiTask.IsCompleted)
                 {
-                    view.SubmitMessage(String.Format(
-                        "{0} placed a {1} piece at column {2}",
-                        PlNameColor,
-                        aiTask.Result.shape.ToString().ToLower(),
-                        aiTask.Result.column));
-                    MakeAMove(aiTask.Result);
-                    aiTask = null;
-                    timeLastAIMove = Time.time;
+                    if (Time.time >
+                        taskStartGameTime + sessionData.TimeBetweenAIMoves)
+                    {
+                        view.SubmitMessage(String.Format(
+                            "{0} placed a {1} piece at column {2}",
+                            PlNameColor,
+                            aiTask.Result.shape.ToString().ToLower(),
+                            aiTask.Result.column));
+                        MakeAMove(aiTask.Result);
+                        aiTask = null;
+                    }
                 }
                 else if (aiTask.IsFaulted)
                 {

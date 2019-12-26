@@ -20,8 +20,13 @@ public class SessionController : MonoBehaviour,  ISessionDataProvider
     [SerializeField] private int winSequence = 4;
     [SerializeField] private int squarePiecesPerPlayer = 11;
     [SerializeField] private int roundPiecesPerPlayer = 10;
-    [SerializeField] private float aiTimeLimit = 0.5f;
-    [SerializeField] private float timeBetweenAIMoves = 0f;
+
+    [Tooltip("Maximum real time that AI can take to play")]
+    [SerializeField] private float aITimeLimit = 0.5f;
+
+    [Tooltip("Even if the AI plays immediately, this time gives the "
+        + "illusion that the AI took some minimum time to play")]
+    [SerializeField] private float minAIGameMoveTime = 0.25f;
 
     private IPlayer[] players;
     private Board board;
@@ -221,7 +226,7 @@ public class SessionController : MonoBehaviour,  ISessionDataProvider
     // Implementation of ISessionDataProvider
     public Board Board => board;
     public IPlayer CurrentPlayer => players[(int)board.Turn];
-    public float AITimeLimit => aiTimeLimit;
-    public float TimeBetweenAIMoves => timeBetweenAIMoves;
+    public float AITimeLimit => aITimeLimit;
+    public float TimeBetweenAIMoves => minAIGameMoveTime;
     public IPlayer GetPlayer(PColor player) => players[(int)player];
 }
