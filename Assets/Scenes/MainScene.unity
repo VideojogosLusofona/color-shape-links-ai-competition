@@ -323,7 +323,7 @@ MonoBehaviour:
   squarePiecesPerPlayer: 11
   roundPiecesPerPlayer: 10
   aiTimeLimit: 10
-  timeBetweenAIMoves: 2
+  timeBetweenAIMoves: 0.5
 --- !u!4 &617695835
 Transform:
   m_ObjectHideFlags: 0
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52622cd336e3e0ab69d66e893d84bd1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
+  isActive: 1
 --- !u!114 &617695837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be76f395fd22c64ab2604efe5c35fbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  isActive: 0
 --- !u!114 &617695838
 MonoBehaviour:
   m_ObjectHideFlags: 0

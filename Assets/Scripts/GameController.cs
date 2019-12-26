@@ -66,7 +66,9 @@ public class GameController : MonoBehaviour
             {
                 if (Time.time > timeLastAIMove + sessionData.TimeBetweenAIMoves)
                 {
-                    view.IsAIThinking = true;
+                    view.SubmitMessage(String.Format(
+                        "{0} is thinking, please wait...",
+                        sessionData.CurrentPlayer.PlayerName));
                     taskStart = DateTime.Now;
                     ts = new CancellationTokenSource();
                     IThinker thinker = sessionData.CurrentPlayer.Thinker;
@@ -77,20 +79,28 @@ public class GameController : MonoBehaviour
             {
                 if (aiTask.IsCompleted)
                 {
-                    view.IsAIThinking = false;
+                    view.SubmitMessage(String.Format(
+                        "{0} + ({1}) placed a {2} piece at column {3}",
+                        sessionData.CurrentPlayer.PlayerName,
+                        board.Turn,
+                        aiTask.Result.shape.ToString().ToLower(),
+                        aiTask.Result.column));
                     MakeAMove(aiTask.Result);
                     aiTask = null;
                     timeLastAIMove = Time.time;
                 }
                 else if (aiTask.IsFaulted)
                 {
-                    view.IsAIThinking = false;
+                    view.SubmitMessage(
+                        aiTask.Exception.InnerException.Message);
                     Debug.LogError(aiTask.Exception.InnerException.Message);
                     aiTask = null;
                 }
                 else if (DateTime.Now - taskStart > aiTimeLimit)
                 {
-                    view.IsAIThinking = false;
+                    view.SubmitMessage(String.Format(
+                        "Time limite excceded for {0}",
+                        sessionData.CurrentPlayer.PlayerName));
                     ts.Cancel();
                     aiTask = null;
                     this.Result = board.Turn == PColor.White

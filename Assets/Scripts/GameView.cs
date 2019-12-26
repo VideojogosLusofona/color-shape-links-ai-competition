@@ -41,14 +41,6 @@ public class GameView : MonoBehaviour
     private float piecesScale;
     private bool finished;
 
-    internal bool IsAIThinking
-    {
-        set
-        {
-            isThinkingCanvas?.SetActive(value);
-        }
-    }
-
     // Awake is called when the script instance is being loaded
     private void Awake()
     {
@@ -94,13 +86,9 @@ public class GameView : MonoBehaviour
         // Create array for UI arrow script objects
         uiArrows = new UIArrow[board.cols];
 
-        // Get reference to the "is thinking" canvas game object, set the
-        // reference to the main camera and disable the object via the
-        // IsAIThinking property
-        isThinkingCanvas = GameObject.Find("IsThinkingCanvas");
-        isThinkingCanvas.GetComponent<Canvas>().worldCamera = camera;
-        IsAIThinking = false;
-
+        // Get reference to the "Message Box" canvas game object, set the
+        // reference to the main camera, and get a reference to the UI text to
+        // display the messages
         messageBox = GameObject.Find("MessageBox").gameObject;
         messageBox.GetComponent<Canvas>().worldCamera = camera;
         messageBoxText = messageBox.GetComponentInChildren<Text>();
