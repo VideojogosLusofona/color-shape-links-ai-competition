@@ -25,6 +25,9 @@ public class GameController : MonoBehaviour
     private TimeSpan aiTimeLimit;
     private CancellationTokenSource ts;
     private float timeLastAIMove;
+    private string PlNameColor =>
+        $"{sessionData.CurrentPlayer.PlayerName} ({board.Turn})";
+
     public Winner Result { get; private set; }
 
     // Awake is called when the script instance is being loaded
@@ -52,7 +55,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        view.SubmitMessage($"It's {sessionData.Board.Turn} turn");
+        view.SubmitMessage($"It's {PlNameColor} turn");
     }
 
     // Update is called once per frame
@@ -66,9 +69,8 @@ public class GameController : MonoBehaviour
             {
                 if (Time.time > timeLastAIMove + sessionData.TimeBetweenAIMoves)
                 {
-                    view.SubmitMessage(String.Format(
-                        "{0} is thinking, please wait...",
-                        sessionData.CurrentPlayer.PlayerName));
+                    view.SubmitMessage(
+                        $"{PlNameColor} is thinking, please wait...");
                     taskStart = DateTime.Now;
                     ts = new CancellationTokenSource();
                     IThinker thinker = sessionData.CurrentPlayer.Thinker;
@@ -80,9 +82,8 @@ public class GameController : MonoBehaviour
                 if (aiTask.IsCompleted)
                 {
                     view.SubmitMessage(String.Format(
-                        "{0} + ({1}) placed a {2} piece at column {3}",
-                        sessionData.CurrentPlayer.PlayerName,
-                        board.Turn,
+                        "{0} placed a {1} piece at column {2}",
+                        PlNameColor,
                         aiTask.Result.shape.ToString().ToLower(),
                         aiTask.Result.column));
                     MakeAMove(aiTask.Result);
@@ -98,9 +99,8 @@ public class GameController : MonoBehaviour
                 }
                 else if (DateTime.Now - taskStart > aiTimeLimit)
                 {
-                    view.SubmitMessage(String.Format(
-                        "Time limite excceded for {0}",
-                        sessionData.CurrentPlayer.PlayerName));
+                    view.SubmitMessage(
+                        $"Time limite excceded for {PlNameColor}!");
                     ts.Cancel();
                     aiTask = null;
                     this.Result = board.Turn == PColor.White
@@ -127,7 +127,7 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                view.SubmitMessage($"It's {board.Turn} turn");
+                view.SubmitMessage($"It's {PlNameColor} turn");
             }
             view.UpdateBoard(
                 new Move(row, move.column, new Piece(whoPlayed, move.shape)),

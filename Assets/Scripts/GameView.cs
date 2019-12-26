@@ -8,6 +8,7 @@
 using System;
 using System.Text;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -33,6 +34,7 @@ public class GameView : MonoBehaviour
     private GameObject isThinkingCanvas;
     private Text messageBoxText;
 
+    private Queue<string> messageQueue;
     private StringBuilder messages;
     private Vector2 leftPoleBase;
     private float distBtwPoles;
@@ -59,9 +61,9 @@ public class GameView : MonoBehaviour
         // Get reference to the camera
         Camera camera = GameObject.Find("Main Camera").GetComponent<Camera>();
 
-        // ///////////////////////////// //
-        // Initialize required variables //
-        // ///////////////////////////// //
+        // //////////////////////////////////////////// //
+        // Initialize required variables and coroutines //
+        // //////////////////////////////////////////// //
 
         // Instantiate a string builder, used for keeping messages
         messages = new StringBuilder();
@@ -86,12 +88,18 @@ public class GameView : MonoBehaviour
         // Create array for UI arrow script objects
         uiArrows = new UIArrow[board.cols];
 
+        // Instantiate the message queue
+        messageQueue = new Queue<string>();
+
         // Get reference to the "Message Box" canvas game object, set the
         // reference to the main camera, and get a reference to the UI text to
         // display the messages
         messageBox = GameObject.Find("MessageBox").gameObject;
         messageBox.GetComponent<Canvas>().worldCamera = camera;
         messageBoxText = messageBox.GetComponentInChildren<Text>();
+
+        // Initialize message box coroutine
+        StartCoroutine(UpdateMessageBox());
 
         // /////////////////////////////////////// //
         // Initialize and place game board objects //
@@ -482,9 +490,23 @@ public class GameView : MonoBehaviour
     // Present a message in the message box
     internal void SubmitMessage(string str)
     {
-        messages.Append($"\n- {str}");
-        messageBoxText.text = messages.ToString();
-        Debug.Log(messages.ToString());
+        messageQueue.Enqueue(str);
+        Debug.Log(str);
+    }
+
+    // Present messages with some delay between them
+    private IEnumerator UpdateMessageBox()
+    {
+        YieldInstruction wfs = new WaitForSeconds(0.25f);
+        while (true)
+        {
+            if (messageQueue.Count > 0)
+            {
+                messages.Append($"\n- {messageQueue.Dequeue()}");
+                messageBoxText.text = messages.ToString();
+            }
+            yield return wfs;
+        }
     }
 
     // Definition of a Unity event class which accepts a color and a shape
