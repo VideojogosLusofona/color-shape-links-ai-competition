@@ -40,6 +40,16 @@ public class UIArrow : MonoBehaviour
         color = spriteRenderer.color;
     }
 
+    private void OnEnable()
+    {
+        // When the arrow is enabled, make sure it doesn't get stuck with the
+        // arrowDrop sprite
+        if (spriteRenderer.sprite == arrowDrop)
+        {
+            spriteRenderer.sprite = arrowOpen;
+        }
+    }
+
     private void OnMouseEnter()
     {
         spriteRenderer.sprite = arrowDrop;
