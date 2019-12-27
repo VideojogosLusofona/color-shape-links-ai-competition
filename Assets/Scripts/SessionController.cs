@@ -248,8 +248,6 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
                     ? gameController.PlrNameColor(
                         gameController.Result.ToPColor())
                     : "";
-            int winW = Screen.width * 2 / 3;
-            int winH = Screen.height * 2 / 3;
             Color originalColor = GUI.contentColor;
             Color color = gameController.Result == Winner.Draw
                 ? Color.yellow
@@ -262,10 +260,10 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
             GUI.contentColor = color;
             GUI.Label(
                 new Rect(
-                    winW / 2 - winW / 3,
-                    winH / 2 - winH / 3,
-                    winW * 2 / 3,
-                    winH * 2 / 3),
+                    Screen.width / 2 - Screen.width / 3,
+                    Screen.height / 4,
+                    Screen.width * 2 / 3,
+                    Screen.height / 8),
                 gameController.Result == Winner.Draw
                     ? "It's a draw"
                     : $"Winner is {winStr}",
