@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     private GameView view;
 
     private bool gameOver = false;
+    private bool showHumanTurnMessage = true;
     private ISessionDataProvider sessionData;
     private Board board;
     private Pos[] solution;
@@ -24,7 +25,7 @@ public class GameController : MonoBehaviour
     private TimeSpan aiTimeLimit;
     private CancellationTokenSource ts;
     private DateTime taskStartSysTime;
-    private float taskStartGameTime, lastTaskDuration;
+    private float taskStartGameTime, lastTaskDuration = float.NaN;
     private string CurrPlrNameColor => PlrNameColor(board.Turn);
 
     public string PlrNameColor(PColor color) =>
@@ -37,7 +38,6 @@ public class GameController : MonoBehaviour
     // Awake is called when the script instance is being loaded
     private void Awake()
     {
-        lastTaskDuration = float.NaN;
         GameOver = new UnityEvent();
         sessionData = GetComponentInParent<ISessionDataProvider>();
         board = sessionData.Board;
@@ -49,18 +49,12 @@ public class GameController : MonoBehaviour
 
     private void OnEnable()
     {
-        view.MoveSelected += MakeAMove;
+        view.MoveSelected += HumanMove;
     }
 
     private void OnDisable()
     {
-        view.MoveSelected -= MakeAMove;
-    }
-
-    // Start is called before the first frame update
-    private void Start()
-    {
-        view.SubmitMessage($"It's {CurrPlrNameColor} turn");
+        view.MoveSelected -= HumanMove;
     }
 
     // Update is called once per frame
@@ -69,9 +63,20 @@ public class GameController : MonoBehaviour
         // Don't run update if the game's over
         if (gameOver) return;
 
-        // Is the current player an AI? If so, let's see if we're supposed to
-        // start the AI thinking task
-        if (!sessionData.CurrentPlayer.IsHuman)
+        // Is the current player human? If so, let's see if we're supposed to
+        // show him a message or if we've done so already
+        if (sessionData.CurrentPlayer.IsHuman)
+        {
+            if (showHumanTurnMessage)
+            {
+                view.SubmitMessage(
+                    $"Attention {CurrPlrNameColor}, it's your turn");
+                showHumanTurnMessage = false;
+            };
+        }
+        // If the current player is an AI, let's see if we have to start
+        // the AI thinking task, if the task is running, if it's completed, etc.
+        else
         {
             // If the AI task is null, we need to start an AI thinking task
             if (aiTask == null)
@@ -111,17 +116,17 @@ public class GameController : MonoBehaviour
                     if (Time.time >
                         taskStartGameTime + sessionData.TimeBetweenAIMoves)
                     {
-                        // If so, do the move
-                        MakeAMove(aiTask.Result);
-
-                        // Submit a message informing of the move performed
-                        // and the system time it took the AI to think
+                        // If so, submit a message informing of the move
+                        // chosen and the system time it took the AI to think
                         view.SubmitMessage(string.Format(
                             "{0} placed a {1} piece at column {2} after {3}",
                             CurrPlrNameColor,
                             aiTask.Result.shape.ToString().ToLower(),
                             aiTask.Result.column,
                             $"thinking for {lastTaskDuration:f4}s"));
+
+                        // Perform the actual move
+                        MakeAMove(aiTask.Result);
 
                         // Set the task to null, so it can be started again
                         aiTask = null;
@@ -168,6 +173,21 @@ public class GameController : MonoBehaviour
         }
     }
 
+    // Callback method to perform a human move
+    private void HumanMove(FutureMove move)
+    {
+        // Show message indicating what move the human chose
+        view.SubmitMessage(string.Format(
+            "{0} placed a {1} piece at column {2}",
+            CurrPlrNameColor,
+            move.shape.ToString().ToLower(),
+            move.column));
+        // Make the move
+        MakeAMove(move);
+        // In the next human turn, show the human a message for him to play
+        showHumanTurnMessage = true;
+    }
+
     private void MakeAMove(FutureMove move)
     {
         PColor whoPlayed = board.Turn;
@@ -180,10 +200,6 @@ public class GameController : MonoBehaviour
                 PColor winColor = winner.ToPColor();
                 Result = winner;
                 OnGameOver();
-            }
-            else
-            {
-                view.SubmitMessage($"It's {CurrPlrNameColor} turn");
             }
             view.UpdateBoard(
                 new Move(row, move.column, new Piece(whoPlayed, move.shape)),
