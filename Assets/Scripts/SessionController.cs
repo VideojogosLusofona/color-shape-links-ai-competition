@@ -11,7 +11,7 @@ using System.Collections.Generic;
 
 public class SessionController : MonoBehaviour, ISessionDataProvider
 {
-    private enum Status { Init, InGame, BtwGames, Finish }
+    private enum Status { Init, InMatch, InBtwMatches, Finish }
     private enum SessionType { HumanVsHuman, PlayerVsPlayer, AllVsAll }
     private struct Match
     {
@@ -29,12 +29,12 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
         public Match Swap() => new Match(player2, player1);
     }
 
-    [SerializeField] private GameObject gamePrefab = null;
+    [SerializeField] private GameObject matchPrefab = null;
     [SerializeField] private int rows = 7;
     [SerializeField] private int cols = 7;
     [SerializeField] private int winSequence = 4;
-    [SerializeField] private int squarePiecesPerPlayer = 11;
     [SerializeField] private int roundPiecesPerPlayer = 10;
+    [SerializeField] private int squarePiecesPerPlayer = 11;
 
     [Tooltip("Maximum real time that AI can take to play")]
     [SerializeField] private float aITimeLimit = 0.5f;
@@ -47,8 +47,8 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
     private Match nextMatch;
     private IEnumerable<Match> allMatches;
 
-    private GameObject gameInstance = null;
-    private GameController gameController = null;
+    private GameObject matchInstance = null;
+    private MatchController matchController = null;
 
     private Status status;
     private SessionType sessionType;
@@ -57,18 +57,24 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
 
     private IPlayer humanPlayer;
 
+    // Awake is called when the script instance is being loaded
     private void Awake()
     {
+        // Get all active AIs and put them in a list
         List<AIPlayer> allAIs = new List<AIPlayer>();
         GetComponents(allAIs);
         activeAIs = allAIs.FindAll(ai => ai.IsActive);
-        status = Status.Init;
-        humanPlayer = new HumanPlayer();
 
-        board = new Board(rows, cols, winSequence,
-            roundPiecesPerPlayer, squarePiecesPerPlayer);
+        // Set the init status, before any matches begin
+        status = Status.Init;
+
+        // Instantiate a human player if there are not enough AIs to do a match
+        if (activeAIs.Count < 2)
+            humanPlayer = new HumanPlayer();
     }
 
+    // Start is called on the frame when a script is enabled just before any
+    // of the Update methods are called the first time.
     private void Start()
     {
         if (activeAIs.Count == 0)
@@ -94,23 +100,33 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
             // Multiple AIs, run a competition, show the list of AIs and
             // ask user to press OK to start
             sessionType = SessionType.AllVsAll;
+
             // Prepare matches
         }
     }
 
-    private void StartGame()
+    private void StartNextMatch()
     {
-        gameInstance = Instantiate(gamePrefab, transform);
-        gameInstance.name = "Game";
-        gameController = gameInstance.GetComponent<GameController>();
-        gameController.GameOver.AddListener(EndCurrentGame);
-        status = Status.InGame;
+        // Instantiate a board for the next match
+        board = new Board(rows, cols, winSequence,
+            roundPiecesPerPlayer, squarePiecesPerPlayer);
+
+        // Instantiate the next match
+        matchInstance = Instantiate(matchPrefab, transform);
+        matchInstance.name = "Match";
+
+        // Get a reference to the match controller of the next match
+        matchController = matchInstance.GetComponent<MatchController>();
+
+        // Add a listener for the match over event
+        matchController.MatchOver.AddListener(EndCurrentMatch);
+
+        // Set status as in match
+        status = Status.InMatch;
     }
 
     private void OnGUI()
     {
-
-
         if (status == Status.Init)
         {
             if (sessionType == SessionType.HumanVsHuman)
@@ -151,8 +167,8 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
             {
                 GUI.Window(4,
                     new Rect(0, 0, Screen.width, Screen.height),
-                    DrawGameOverWindow,
-                    "Game Over!");
+                    DrawMatchOverWindow,
+                    "Match Over!");
             }
         }
     }
@@ -167,10 +183,10 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
             if (GUI.Button(
                 new Rect(
                     Screen.width / 2 - 50, Screen.height / 2 - 25, 100, 50),
-                "Start Game"))
+                "Start Match"))
             {
                 // If button is clicked, start game
-                StartGame();
+                StartNextMatch();
             }
         }
     }
@@ -191,7 +207,7 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
                 nextMatch[PColor.White].PlayerName))
             {
                 // No need to swap players, just start the game
-                StartGame();
+                StartNextMatch();
             }
             if (GUI.Button(
                 new Rect(
@@ -204,7 +220,7 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
                 // Swap players...
                 nextMatch = nextMatch.Swap();
                 // ...and then start game
-                StartGame();
+                StartNextMatch();
             }
         }
     }
@@ -226,11 +242,11 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
                 {
                     // Change status, so next screen is information about
                     // first match
-                    status = Status.BtwGames;
+                    status = Status.InBtwMatches;
                 }
             }
             // Show information about next match
-            else if (status == Status.BtwGames)
+            else if (status == Status.InBtwMatches)
             {
 
             }
@@ -250,15 +266,14 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
                 "OK"))
             {
                 // If button is clicked, exit
-                Destroy(gameInstance);
+                Destroy(matchInstance);
                 UnityEditor.EditorApplication.isPlaying = false;
             }
         }
     }
 
-
     // Draw window contents
-    private void DrawGameOverWindow(int id)
+    private void DrawMatchOverWindow(int id)
     {
         // Is this the correct window?
         if (id == 4)
@@ -266,9 +281,9 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
             // Keep original content color
             Color originalColor = GUI.contentColor;
             // Determine new content color depending on the result
-            Color color = gameController.Result == Winner.Draw
+            Color color = matchController.Result == Winner.Draw
                 ? Color.yellow
-                : gameController.Result == Winner.White
+                : matchController.Result == Winner.White
                     ? Color.white
                     : Color.red;
             // Define a text-centered gui style
@@ -284,9 +299,9 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
                     Screen.height / 4,
                     Screen.width * 2 / 3,
                     Screen.height / 8),
-                gameController.Result == Winner.Draw
+                matchController.Result == Winner.Draw
                     ? "It's a draw"
-                    : $"Winner is {gameController.WinnerString}",
+                    : $"Winner is {matchController.WinnerString}",
                 guiLabelStyle);
             // Set content color back to the original color
             GUI.contentColor = originalColor;
@@ -297,13 +312,13 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
                 "OK"))
             {
                 // If button is clicked, exit
-                Destroy(gameInstance);
+                Destroy(matchInstance);
                 UnityEditor.EditorApplication.isPlaying = false;
             }
         }
     }
 
-    private void EndCurrentGame()
+    private void EndCurrentMatch()
     {
         // TODO Consider all vs all situation
         status = Status.Finish;

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameController : MonoBehaviour
+public class MatchController : MonoBehaviour
 {
     private GameView view;
 
@@ -38,7 +38,7 @@ public class GameController : MonoBehaviour
     // Awake is called when the script instance is being loaded
     private void Awake()
     {
-        GameOver = new UnityEvent();
+        MatchOver = new UnityEvent();
         sessionData = GetComponentInParent<ISessionDataProvider>();
         board = sessionData.Board;
         solution = new Pos[board.piecesInSequence];
@@ -152,7 +152,7 @@ public class GameController : MonoBehaviour
                     // game, sorry
                     this.Result = board.Turn == PColor.White
                         ? Winner.Red : Winner.White;
-                    OnGameOver();
+                    OnMatchOver();
                 }
                 // Is the task overdue?
                 else if (DateTime.Now - taskStartSysTime > aiTimeLimit)
@@ -167,7 +167,7 @@ public class GameController : MonoBehaviour
                     // The AI player that was overdue loses the game
                     this.Result = board.Turn == PColor.White
                         ? Winner.Red : Winner.White;
-                    OnGameOver();
+                    OnMatchOver();
                 }
             }
         }
@@ -199,7 +199,7 @@ public class GameController : MonoBehaviour
             {
                 PColor winColor = winner.ToPColor();
                 Result = winner;
-                OnGameOver();
+                OnMatchOver();
             }
             view.UpdateBoard(
                 new Move(row, move.column, new Piece(whoPlayed, move.shape)),
@@ -213,15 +213,15 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void OnGameOver()
+    private void OnMatchOver()
     {
         view.SubmitMessage(string.Format("Game Over, {0}",
             Result == Winner.Draw
                 ? "it's a draw"
                 : $"{PlrNameColor(Result.ToPColor())} won"));
         gameOver = true;
-        GameOver?.Invoke();
+        MatchOver?.Invoke();
     }
 
-    public UnityEvent GameOver { get; private set; }
+    public UnityEvent MatchOver { get; private set; }
 }

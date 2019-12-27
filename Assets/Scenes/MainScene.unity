@@ -315,13 +315,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 505a1c9a208273b9c9f96cff93c38eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gamePrefab: {fileID: 8785714994902384369, guid: b0d030fed5862354c9cc5f6a3f15b292,
+  matchPrefab: {fileID: 8785714994902384369, guid: b0d030fed5862354c9cc5f6a3f15b292,
     type: 3}
   rows: 7
   cols: 7
   winSequence: 4
-  squarePiecesPerPlayer: 11
   roundPiecesPerPlayer: 10
+  squarePiecesPerPlayer: 11
   aITimeLimit: 0.5
   minAIGameMoveTime: 0.25
 --- !u!4 &617695835
