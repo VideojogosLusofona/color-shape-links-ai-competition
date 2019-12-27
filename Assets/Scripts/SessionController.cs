@@ -243,21 +243,21 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
         // Is this the correct window?
         if (id == 4)
         {
-            string winStr =
-                gameController.Result != Winner.Draw
-                    ? gameController.PlrNameColor(
-                        gameController.Result.ToPColor())
-                    : "";
+            // Keep original content color
             Color originalColor = GUI.contentColor;
+            // Determine new content color depending on the result
             Color color = gameController.Result == Winner.Draw
                 ? Color.yellow
                 : gameController.Result == Winner.White
                     ? Color.white
                     : Color.red;
+            // Define a text-centered gui style
             GUIStyle guiLabelStyle = new GUIStyle(GUI.skin.label);
             guiLabelStyle.alignment = TextAnchor.MiddleCenter;
             guiLabelStyle.fontSize = Screen.width / 30;
+            // Set content color
             GUI.contentColor = color;
+            // Show the label indicating the final result of the game
             GUI.Label(
                 new Rect(
                     Screen.width / 2 - Screen.width / 3,
@@ -266,10 +266,11 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
                     Screen.height / 8),
                 gameController.Result == Winner.Draw
                     ? "It's a draw"
-                    : $"Winner is {winStr}",
+                    : $"Winner is {gameController.WinnerString}",
                 guiLabelStyle);
-            // Draw OK button
+            // Set content color back to the original color
             GUI.contentColor = originalColor;
+            // Draw OK button
             if (GUI.Button(
                 new Rect(
                     Screen.width / 2 - 50, Screen.height / 2 - 25, 100, 50),
