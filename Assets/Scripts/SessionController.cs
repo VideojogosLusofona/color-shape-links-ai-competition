@@ -13,6 +13,21 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
 {
     private enum Status { Init, InGame, BtwGames, Finish }
     private enum SessionType { HumanVsHuman, PlayerVsPlayer, AllVsAll }
+    private struct Match
+    {
+        public readonly IPlayer player1;
+        public readonly IPlayer player2;
+        public IPlayer this[PColor color] => color == PColor.White ? player1
+                : color == PColor.Red ? player2
+                    : throw new InvalidOperationException(
+                        $"Invalid player color");
+        public Match(IPlayer player1, IPlayer player2)
+        {
+            this.player1 = player1;
+            this.player2 = player2;
+        }
+        public Match Swap() => new Match(player2, player1);
+    }
 
     [SerializeField] private GameObject gamePrefab = null;
     [SerializeField] private int rows = 7;
@@ -28,8 +43,9 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
         + "illusion that the AI took some minimum time to play")]
     [SerializeField] private float minAIGameMoveTime = 0.25f;
 
-    private IPlayer[] players;
     private Board board;
+    private Match nextMatch;
+    private IEnumerable<Match> allMatches;
 
     private GameObject gameInstance = null;
     private GameController gameController = null;
@@ -49,8 +65,6 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
         status = Status.Init;
         humanPlayer = new HumanPlayer();
 
-        players = new IPlayer[2];
-
         board = new Board(rows, cols, winSequence,
             roundPiecesPerPlayer, squarePiecesPerPlayer);
     }
@@ -60,29 +74,27 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
         if (activeAIs.Count == 0)
         {
             // A game between human players, ask user to press OK to start
-            players[(int)PColor.White] = humanPlayer;
-            players[(int)PColor.Red] = humanPlayer;
             sessionType = SessionType.HumanVsHuman;
+            nextMatch = new Match(humanPlayer, humanPlayer);
         }
         else if (activeAIs.Count == 1)
         {
             // A game between a human and an AI, ask who plays first
-            players[(int)PColor.White] = humanPlayer;
-            players[(int)PColor.Red] = activeAIs[0];
             sessionType = SessionType.PlayerVsPlayer;
+            nextMatch = new Match(humanPlayer, activeAIs[0]);
         }
         else if (activeAIs.Count == 2)
         {
             // A game between two AIs, ask who plays first
-            players[(int)PColor.White] = activeAIs[0];
-            players[(int)PColor.Red] = activeAIs[1];
             sessionType = SessionType.PlayerVsPlayer;
+            nextMatch = new Match(activeAIs[0], activeAIs[1]);
         }
         else
         {
             // Multiple AIs, run a competition, show the list of AIs and
             // ask user to press OK to start
             sessionType = SessionType.AllVsAll;
+            // Prepare matches
         }
     }
 
@@ -176,7 +188,7 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
                     Screen.height / 2 - 25,
                     140,
                     50),
-                players[0].PlayerName))
+                nextMatch[PColor.White].PlayerName))
             {
                 // No need to swap players, just start the game
                 StartGame();
@@ -187,12 +199,10 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
                     Screen.height / 2 - 25,
                     140,
                     50),
-                players[1].PlayerName))
+                nextMatch[PColor.Red].PlayerName))
             {
                 // Swap players...
-                IPlayer aux = players[0];
-                players[0] = players[1];
-                players[1] = aux;
+                nextMatch = nextMatch.Swap();
                 // ...and then start game
                 StartGame();
             }
@@ -205,14 +215,24 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
         // Is this the correct window?
         if (id == 2)
         {
-            // Draw OK button
-            if (GUI.Button(
-                new Rect(
-                    Screen.width / 2 - 50, Screen.height / 2 - 25, 100, 50),
-                "Not implemented yet"))
+            // If competition hasn't started yet, list all the teams
+            if (status == Status.Init)
             {
-                throw new NotImplementedException(
-                    "All vs All not implemented yet");
+                // Draw OK button
+                if (GUI.Button(
+                    new Rect(
+                        Screen.width / 2 - 50, Screen.height / 2 - 25, 100, 50),
+                    "Go to first match"))
+                {
+                    // Change status, so next screen is information about
+                    // first match
+                    status = Status.BtwGames;
+                }
+            }
+            // Show information about next match
+            else if (status == Status.BtwGames)
+            {
+
             }
         }
     }
@@ -292,8 +312,8 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
 
     // Implementation of ISessionDataProvider
     public Board Board => board;
-    public IPlayer CurrentPlayer => players[(int)board.Turn];
+    public IPlayer CurrentPlayer => nextMatch[board.Turn];
     public float AITimeLimit => aITimeLimit;
     public float TimeBetweenAIMoves => minAIGameMoveTime;
-    public IPlayer GetPlayer(PColor player) => players[(int)player];
+    public IPlayer GetPlayer(PColor player) => nextMatch[player];
 }
