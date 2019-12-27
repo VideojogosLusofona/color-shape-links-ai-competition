@@ -65,6 +65,9 @@ public class Board
     // Array of win corridors, which can be used for building an heuristic
     public readonly IEnumerable<IEnumerable<Pos>> winCorridors;
 
+    // Array of pairs (piece check function, player associated with piece)
+    private readonly PieceFuncPlayer[] pieceFuncsPlayers;
+
     // How many pieces left?
     private int PiecesLeft
     {
@@ -78,16 +81,13 @@ public class Board
     }
 
     // Internal representation of the game board
-    private readonly Piece?[,] board;
-
-    // Array of pairs (piece check function, player associated with piece)
-    private readonly PieceFuncPlayer[] pieceFuncsPlayers;
+    private Piece?[,] board;
 
     // Sequence of moves (for undo purposes)
-    private readonly Stack<Pos> moveSequence;
+    private Stack<Pos> moveSequence;
 
     // Number of pieces
-    private readonly IDictionary<Piece, int> numberOfPieces;
+    private IDictionary<Piece, int> numberOfPieces;
 
     // Number of moves performed so far
     private int numMoves;
@@ -415,6 +415,31 @@ public class Board
 
         // No winner found
         return Winner.None;
+    }
+
+    // Returns a copy of this board which can be freely modified by the AI
+    // in a different thread
+    public Board Copy()
+    {
+        // The move sequence in the new board
+        Pos[] newBoardMoveSequence;
+
+        // Create a shallow copy of the board
+        Board newBoard = (Board)MemberwiseClone();
+
+        // Deep-clone the board array
+        newBoard.board = board.Clone() as Piece?[,];
+
+        // Deep-clone the move sequence
+        newBoardMoveSequence = moveSequence.ToArray();
+        Array.Reverse(newBoardMoveSequence);
+        newBoard.moveSequence = new Stack<Pos>(newBoardMoveSequence);
+
+        // Deep-clone the number of pieces
+        newBoard.numberOfPieces = new Dictionary<Piece, int>(numberOfPieces);
+
+        // Return a deep copy of the board
+        return newBoard;
     }
 
     public int PieceCount(PColor color, PShape shape) =>

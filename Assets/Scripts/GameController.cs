@@ -91,8 +91,8 @@ public class GameController : MonoBehaviour
                 // Get this AI's thinker
                 IThinker thinker = sessionData.CurrentPlayer.Thinker;
 
-                // Start task in a separate thread
-                aiTask = Task.Run(() => thinker.Think(board, ts.Token));
+                // Start task in a separate thread using a copy of the board
+                aiTask = Task.Run(() => thinker.Think(board.Copy(), ts.Token));
             }
             else // This else will run if the task is not null
             {
