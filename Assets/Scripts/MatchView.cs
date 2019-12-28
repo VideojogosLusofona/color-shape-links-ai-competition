@@ -14,7 +14,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 // Class responsible for the game UI
-public class GameView : MonoBehaviour
+public class MatchView : MonoBehaviour
 {
     [SerializeField] private float lastMoveAnimLen = 1f;
     [SerializeField] private GameObject whiteRoundPiece = null;

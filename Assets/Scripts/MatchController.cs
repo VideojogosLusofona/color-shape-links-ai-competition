@@ -13,7 +13,7 @@ using UnityEngine.Events;
 
 public class MatchController : MonoBehaviour
 {
-    private GameView view;
+    private MatchView view;
 
     private bool gameOver = false;
     private bool showHumanTurnMessage = true;
@@ -42,7 +42,7 @@ public class MatchController : MonoBehaviour
         sessionData = GetComponentInParent<ISessionDataProvider>();
         board = sessionData.Board;
         solution = new Pos[board.piecesInSequence];
-        view = GameObject.Find("UI")?.GetComponent<GameView>();
+        view = GameObject.Find("UI")?.GetComponent<MatchView>();
         aiTimeLimit = new TimeSpan(
             (long)(sessionData.AITimeLimit * TimeSpan.TicksPerSecond));
     }
