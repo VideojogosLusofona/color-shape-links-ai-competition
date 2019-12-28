@@ -7,9 +7,14 @@
 
 public interface ISessionDataProvider
 {
-    Board Board { get; }
-    IPlayer CurrentPlayer { get; }
-    float AITimeLimit { get; }
-    float TimeBetweenAIMoves { get; }
-    IPlayer GetPlayer(PColor player);
+    SessionState State { get; }
+    string PlayerWhite { get; }
+    string PlayerRed { get; }
+    Winner LastMatchResult { get; }
+    string WinnerString { get; }
+    bool ShowListOfMatches { get; }
+    bool ShowTournamentStandings { get; }
+    bool WhoPlaysFirst { get; }
+    bool BlockStartNextMatch { get; }
+    bool BlockShowResult { get; }
 }

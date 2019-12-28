@@ -17,7 +17,7 @@ public class MatchController : MonoBehaviour
 
     private bool gameOver = false;
     private bool showHumanTurnMessage = true;
-    private ISessionDataProvider sessionData;
+    private IMatchDataProvider matchData;
     private Board board;
     private Pos[] solution;
 
@@ -29,7 +29,7 @@ public class MatchController : MonoBehaviour
     private string CurrPlrNameColor => PlrNameColor(board.Turn);
 
     public string PlrNameColor(PColor color) =>
-        $"{sessionData.GetPlayer(color).PlayerName} ({color})";
+        $"{matchData.GetPlayer(color).PlayerName} ({color})";
 
     public string WinnerString => PlrNameColor(Result.ToPColor());
 
@@ -39,12 +39,12 @@ public class MatchController : MonoBehaviour
     private void Awake()
     {
         MatchOver = new UnityEvent();
-        sessionData = GetComponentInParent<ISessionDataProvider>();
-        board = sessionData.Board;
+        matchData = GetComponentInParent<IMatchDataProvider>();
+        board = matchData.Board;
         solution = new Pos[board.piecesInSequence];
         view = GameObject.Find("UI")?.GetComponent<MatchView>();
         aiTimeLimit = new TimeSpan(
-            (long)(sessionData.AITimeLimit * TimeSpan.TicksPerSecond));
+            (long)(matchData.AITimeLimit * TimeSpan.TicksPerSecond));
     }
 
     private void OnEnable()
@@ -65,7 +65,7 @@ public class MatchController : MonoBehaviour
 
         // Is the current player human? If so, let's see if we're supposed to
         // show him a message or if we've done so already
-        if (sessionData.CurrentPlayer.IsHuman)
+        if (matchData.CurrentPlayer.IsHuman)
         {
             if (showHumanTurnMessage)
             {
@@ -94,7 +94,7 @@ public class MatchController : MonoBehaviour
                 ts = new CancellationTokenSource();
 
                 // Get this AI's thinker
-                IThinker thinker = sessionData.CurrentPlayer.Thinker;
+                IThinker thinker = matchData.CurrentPlayer.Thinker;
 
                 // Start task in a separate thread using a copy of the board
                 aiTask = Task.Run(() => thinker.Think(board.Copy(), ts.Token));
@@ -114,7 +114,7 @@ public class MatchController : MonoBehaviour
 
                     // Did we pass the minimum time between AI moves?
                     if (Time.time >
-                        taskStartGameTime + sessionData.TimeBetweenAIMoves)
+                        taskStartGameTime + matchData.TimeBetweenAIMoves)
                     {
                         // If so, submit a message informing of the move
                         // chosen and the system time it took the AI to think

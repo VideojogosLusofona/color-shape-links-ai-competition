@@ -12,14 +12,14 @@ using UnityEngine.UI;
 public class WhoIsThinking : MonoBehaviour
 {
     // Reference to the session data
-    private ISessionDataProvider sessionData;
+    private IMatchDataProvider sessionData;
     // The UI text label to update
     private Text label;
 
     // Awake is called when the script instance is being loaded
     private void Awake()
     {
-        sessionData = GetComponentInParent<ISessionDataProvider>();
+        sessionData = GetComponentInParent<IMatchDataProvider>();
         label = GetComponent<Text>();
         label.text = sessionData.CurrentPlayer.PlayerName;
     }

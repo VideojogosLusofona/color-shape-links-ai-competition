@@ -27,7 +27,7 @@ public class MatchView : MonoBehaviour
     [SerializeField] private GameObject playerPanel = null;
 
     private Board board;
-    private ISessionDataProvider sessionData;
+    private IMatchDataProvider matchData;
     private PShape[] selectedShapes;
     private GameObject[,] pieces;
     private UIArrow[] uiArrows;
@@ -72,8 +72,8 @@ public class MatchView : MonoBehaviour
         finished = false;
 
         // Get reference to the session data and the game board
-        sessionData = GetComponentInParent<ISessionDataProvider>();
-        board = sessionData.Board;
+        matchData = GetComponentInParent<IMatchDataProvider>();
+        board = matchData.Board;
 
         // Both players have the round shapes initially selected by default
         selectedShapes = new PShape[] { PShape.Round, PShape.Round };
@@ -159,7 +159,7 @@ public class MatchView : MonoBehaviour
             uiArrows[c].Click.AddListener(OnMoveSelected);
 
             // Enable or disable arrow depending on who's playing
-            currArrow.SetActive(sessionData.CurrentPlayer.IsHuman);
+            currArrow.SetActive(matchData.CurrentPlayer.IsHuman);
         }
 
         // These will be necessary for calculating the positions of the pieces
@@ -228,7 +228,7 @@ public class MatchView : MonoBehaviour
             );
             // Set player name in panel
             panel.GetComponentInChildren<Text>().text =
-                sessionData.GetPlayer(player).PlayerName;
+                matchData.GetPlayer(player).PlayerName;
 
             // Configure toggles for selecting shape
             for (int j = 0; j < 2; j++)
@@ -267,7 +267,7 @@ public class MatchView : MonoBehaviour
                     {
                         // Player is human, is its turn and game not over,
                         // enable toggle
-                        if (sessionData.GetPlayer(player).IsHuman
+                        if (matchData.GetPlayer(player).IsHuman
                             && player == board.Turn && !finished)
                         {
                             toggles[(int)shape].interactable = true;
@@ -422,7 +422,7 @@ public class MatchView : MonoBehaviour
         foreach (UIArrow arrow in uiArrows)
         {
             arrow.gameObject.SetActive(
-                !finished && sessionData.CurrentPlayer.IsHuman);
+                !finished && matchData.CurrentPlayer.IsHuman);
         }
 
         // Notify listeners that board was updated
@@ -499,12 +499,12 @@ public class MatchView : MonoBehaviour
     {
         // This coroutine till be called at least once per AI move
         YieldInstruction timeAImoves = new WaitForSeconds(
-            sessionData.TimeBetweenAIMoves);
+            matchData.TimeBetweenAIMoves);
 
         // When there are more messages, the coroutine is called in a tenth
         // of that time, giving the illusion of scrolling
         YieldInstruction minTimMsgs = new WaitForSeconds(
-            sessionData.TimeBetweenAIMoves / 10);
+            matchData.TimeBetweenAIMoves / 10);
 
         // Enter the infinite loop
         while (true)
