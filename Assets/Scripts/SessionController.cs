@@ -112,7 +112,7 @@ public class SessionController
             uiShowListOfMatches = false;
             uiShowTournamentStandings = false;
             uiWhoPlaysFirst = true;
-            uiBlockStartNextMatch = false;
+            uiBlockStartNextMatch = true;
             uiBlockShowResult = true;
             allMatches.Add(new Match(humanPlayer, activeAIs[0]));
         }
@@ -122,7 +122,7 @@ public class SessionController
             uiShowListOfMatches = false;
             uiShowTournamentStandings = false;
             uiWhoPlaysFirst = true;
-            uiBlockStartNextMatch = false;
+            uiBlockStartNextMatch = true;
             uiBlockShowResult = true;
             allMatches.Add(new Match(activeAIs[0], activeAIs[1]));
         }

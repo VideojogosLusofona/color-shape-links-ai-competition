@@ -59,7 +59,7 @@ public class SessionView : MonoBehaviour
                     GUI.Window(2,
                         new Rect(0, 0, Screen.width, Screen.height),
                         WindowStartNextMatch,
-                        "Start next match");
+                        "Next match");
                 }
                 break;
             case SessionState.InMatch:
@@ -151,7 +151,57 @@ public class SessionView : MonoBehaviour
         // Is this the correct window?
         if (id == 2)
         {
-            // TODO Show what the next match is
+            // Keep original content color
+            Color originalColor = GUI.contentColor;
+
+            // Get the default style for labels
+            GUIStyle guiLabelStyle = new GUIStyle(GUI.skin.label);
+
+            // Define a text-centered gui style
+            guiLabelStyle.alignment = TextAnchor.MiddleCenter;
+            guiLabelStyle.fontSize = Screen.width / 30;
+
+            // Set content color for player 1 (white)
+            GUI.contentColor = Color.white;
+
+            // Show the label for player 1 (white)
+            GUI.Label(
+                new Rect(
+                    Screen.width / 2 - Screen.width / 3,
+                    Screen.height * 1 / 8,
+                    Screen.width * 2 / 3,
+                    Screen.height / 8),
+                sessionData.PlayerWhite,
+                guiLabelStyle);
+
+            // Set content color for VS word
+            GUI.contentColor = Color.gray;
+
+            // Show the label for VS word
+            GUI.Label(
+                new Rect(
+                    Screen.width / 2 - Screen.width / 3,
+                    Screen.height * 2 / 8,
+                    Screen.width * 2 / 3,
+                    Screen.height / 8),
+                "vs",
+                guiLabelStyle);
+
+            // Set content color for player 2 (red)
+            GUI.contentColor = Color.red;
+
+            // Show the label for player 2 (red)
+            GUI.Label(
+                new Rect(
+                    Screen.width / 2 - Screen.width / 3,
+                    Screen.height * 3 / 8,
+                    Screen.width * 2 / 3,
+                    Screen.height / 8),
+                sessionData.PlayerRed,
+                guiLabelStyle);
+
+            // Set content color back to the original color
+            GUI.contentColor = originalColor;
 
             // Is this a blocking screen?
             if (sessionData.BlockStartNextMatch)
@@ -161,10 +211,10 @@ public class SessionView : MonoBehaviour
                 // Draw next match button
                 if (GUI.Button(
                     new Rect(
-                        Screen.width / 2 - 100,
-                        Screen.height / 2 - 25,
-                        200,
-                        50),
+                        Screen.width / 2 - Screen.width / 7,
+                        Screen.height * 5 / 8,
+                        Screen.width * 2 / 7,
+                        Screen.height / 8),
                     "Start"))
                 {
                     // Notify start of next match
@@ -193,18 +243,22 @@ public class SessionView : MonoBehaviour
         {
             // Keep original content color
             Color originalColor = GUI.contentColor;
+
             // Determine new content color depending on the result
             Color color = sessionData.LastMatchResult == Winner.Draw
                 ? Color.yellow
                 : sessionData.LastMatchResult == Winner.White
                     ? Color.white
                     : Color.red;
+
             // Define a text-centered gui style
             GUIStyle guiLabelStyle = new GUIStyle(GUI.skin.label);
             guiLabelStyle.alignment = TextAnchor.MiddleCenter;
             guiLabelStyle.fontSize = Screen.width / 30;
+
             // Set content color
             GUI.contentColor = color;
+
             // Show the label indicating the final result of the game
             GUI.Label(
                 new Rect(
@@ -216,6 +270,7 @@ public class SessionView : MonoBehaviour
                     ? "It's a draw"
                     : $"Winner is {sessionData.WinnerString}",
                 guiLabelStyle);
+
             // Set content color back to the original color
             GUI.contentColor = originalColor;
 
@@ -227,7 +282,10 @@ public class SessionView : MonoBehaviour
                 // Draw unlock button
                 if (GUI.Button(
                     new Rect(
-                        Screen.width / 2 - 100, Screen.height / 2 - 25, 200, 50),
+                        Screen.width / 2 - 100,
+                        Screen.height / 2 - 25,
+                        200,
+                        50),
                     "OK"))
                 {
                     // Notify result shown
