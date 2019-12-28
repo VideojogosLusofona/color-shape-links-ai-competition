@@ -101,7 +101,10 @@ public class SessionView : MonoBehaviour
             // Draw go to first match button
             if (GUI.Button(
                 new Rect(
-                    Screen.width / 2 - 100, Screen.height / 2 - 25, 200, 50),
+                    Screen.width / 2 - 100,
+                    Screen.height / 2 - 25,
+                    200,
+                    50),
                 "Go to first match"))
             {
                 // Notify we should pass to pre-match state
@@ -119,10 +122,10 @@ public class SessionView : MonoBehaviour
             // Draw buttons to ask who plays first
             if (GUI.Button(
                 new Rect(
-                    Screen.width / 2 - 150,
-                    Screen.height / 2 - 25,
-                    140,
-                    50),
+                    Screen.width / 2 - Screen.width * 6 / 20,
+                    Screen.height / 2 - Screen.height / 16,
+                    Screen.width / 4,
+                    Screen.height / 8),
                 sessionData.PlayerWhite))
             {
                 // No need to swap players, just disable this menu next frame
@@ -130,10 +133,10 @@ public class SessionView : MonoBehaviour
             }
             if (GUI.Button(
                 new Rect(
-                    Screen.width / 2 + 10,
-                    Screen.height / 2 - 25,
-                    140,
-                    50),
+                    Screen.width / 2 + Screen.width / 20,
+                    Screen.height / 2 - Screen.height / 16,
+                    Screen.width / 4,
+                    Screen.height / 8),
                 sessionData.PlayerRed))
             {
                 // Notify player swap
@@ -168,9 +171,9 @@ public class SessionView : MonoBehaviour
             GUI.Label(
                 new Rect(
                     Screen.width / 2 - Screen.width / 3,
-                    Screen.height * 1 / 8,
+                    Screen.height * 1 / 10,
                     Screen.width * 2 / 3,
-                    Screen.height / 8),
+                    Screen.height / 10),
                 sessionData.PlayerWhite,
                 guiLabelStyle);
 
@@ -181,9 +184,9 @@ public class SessionView : MonoBehaviour
             GUI.Label(
                 new Rect(
                     Screen.width / 2 - Screen.width / 3,
-                    Screen.height * 2 / 8,
+                    Screen.height * 2 / 10,
                     Screen.width * 2 / 3,
-                    Screen.height / 8),
+                    Screen.height / 10),
                 "vs",
                 guiLabelStyle);
 
@@ -194,9 +197,9 @@ public class SessionView : MonoBehaviour
             GUI.Label(
                 new Rect(
                     Screen.width / 2 - Screen.width / 3,
-                    Screen.height * 3 / 8,
+                    Screen.height * 3 / 10,
                     Screen.width * 2 / 3,
-                    Screen.height / 8),
+                    Screen.height / 10),
                 sessionData.PlayerRed,
                 guiLabelStyle);
 
@@ -212,7 +215,7 @@ public class SessionView : MonoBehaviour
                 if (GUI.Button(
                     new Rect(
                         Screen.width / 2 - Screen.width / 7,
-                        Screen.height * 5 / 8,
+                        Screen.height * 9 / 20,
                         Screen.width * 2 / 7,
                         Screen.height / 8),
                     "Start"))
@@ -282,10 +285,10 @@ public class SessionView : MonoBehaviour
                 // Draw unlock button
                 if (GUI.Button(
                     new Rect(
-                        Screen.width / 2 - 100,
-                        Screen.height / 2 - 25,
-                        200,
-                        50),
+                        Screen.width / 2 - Screen.width / 10,
+                        Screen.height / 2 - Screen.height / 14,
+                        Screen.width * 2 / 10,
+                        Screen.height / 8),
                     "OK"))
                 {
                     // Notify result shown
