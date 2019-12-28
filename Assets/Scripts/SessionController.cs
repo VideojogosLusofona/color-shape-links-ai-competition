@@ -74,10 +74,6 @@ public class SessionController
     private bool uiBlockStartNextMatch;
     private bool uiBlockShowResult;
 
-    // UI listener methods
-    private Action preMatchAction;
-    private Action swapPlayersAction;
-
     // Awake is called when the script instance is being loaded
     private void Awake()
     {
@@ -88,10 +84,6 @@ public class SessionController
 
         // Get reference to the UI (session view)
         view = GetComponent<SessionView>();
-
-        // Setup the UI listener methods
-        preMatchAction = () => state = SessionState.PreMatch;
-        swapPlayersAction = () => nextMatch = nextMatch.Swapped;
 
         // Set the session state to Begin
         state = SessionState.Begin;
@@ -184,25 +176,34 @@ public class SessionController
 
     private void OnEnable()
     {
-        // Register state change methods with UI events
-        view.PreMatch += preMatchAction;
-        view.SwapPlayers += swapPlayersAction;
-        view.StartNextMatch += StartNextMatch;
-        view.MatchClear += DestroyAndIterateMatch;
-        view.EndSession += EndSession;
+        // Register listener methods to UI events
+        view.PreMatch += PreMatchCallback;
+        view.SwapPlayers += SwapPlayersCallback;
+        view.StartNextMatch += StartNextMatchCallback;
+        view.MatchClear += DestroyAndIterateMatchCallback;
+        view.EndSession += EndSessionCallback;
     }
 
     private void OnDisable()
     {
-        // Unregister state change methods with UI events
-        view.PreMatch -= preMatchAction;
-        view.SwapPlayers -= swapPlayersAction;
-        view.StartNextMatch -= StartNextMatch;
-        view.MatchClear -= DestroyAndIterateMatch;
-        view.EndSession -= EndSession;
+        // Unregister listener methods from UI events
+        view.PreMatch -= PreMatchCallback;
+        view.SwapPlayers -= SwapPlayersCallback;
+        view.StartNextMatch -= StartNextMatchCallback;
+        view.MatchClear -= DestroyAndIterateMatchCallback;
+        view.EndSession -= EndSessionCallback;
     }
 
-    private void StartNextMatch()
+    private void PreMatchCallback()
+    {
+        state = SessionState.PreMatch;
+    }
+    private void SwapPlayersCallback()
+    {
+        nextMatch = nextMatch.Swapped;
+    }
+
+    private void StartNextMatchCallback()
     {
         // Instantiate a board for the next match
         board = new Board(rows, cols, winSequence,
@@ -216,23 +217,24 @@ public class SessionController
         matchController = matchInstance.GetComponent<MatchController>();
 
         // Add a listener for the match over event
-        matchController.MatchOver.AddListener(EndCurrentMatch);
+        matchController.MatchOver.AddListener(EndCurrentMatchCallback);
 
         // Set state to InMatch
         state = SessionState.InMatch;
     }
 
-    private void EndCurrentMatch()
+    private void EndCurrentMatchCallback()
     {
         state = SessionState.PostMatch;
     }
 
-    private void DestroyAndIterateMatch()
+    private void DestroyAndIterateMatchCallback()
     {
         Destroy(matchInstance);
         if (matchEnumerator.MoveNext())
         {
             nextMatch = matchEnumerator.Current;
+            state = SessionState.PreMatch;
         }
         else
         {
@@ -240,7 +242,7 @@ public class SessionController
         }
     }
 
-    private void EndSession()
+    private void EndSessionCallback()
     {
         UnityEditor.EditorApplication.isPlaying = false;
     }
