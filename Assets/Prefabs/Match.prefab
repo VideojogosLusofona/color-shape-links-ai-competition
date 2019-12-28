@@ -77,7 +77,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1.25
-  m_Text: '- Game starts'
+  m_Text: 
 --- !u!114 &3608401472951565756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -687,7 +687,7 @@ GameObject:
   - component: {fileID: 8785714994902384371}
   - component: {fileID: 8785714994902384368}
   m_Layer: 0
-  m_Name: Game
+  m_Name: Match
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

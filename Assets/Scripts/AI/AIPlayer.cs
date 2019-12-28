@@ -16,4 +16,5 @@ public abstract class AIPlayer : MonoBehaviour, IPlayer
     public bool IsHuman => false;
     public abstract string PlayerName { get; }
     public abstract IThinker Thinker { get; }
+    public override string ToString() => PlayerName;
 }

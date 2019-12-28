@@ -195,16 +195,16 @@ public class MatchController : MonoBehaviour
         if (row >= 0)
         {
             Winner winner = board.CheckWinner(solution);
+            view.UpdateBoard(
+                new Move(row, move.column, new Piece(whoPlayed, move.shape)),
+                winner,
+                solution);
             if (winner != Winner.None)
             {
                 PColor winColor = winner.ToPColor();
                 Result = winner;
                 OnMatchOver();
             }
-            view.UpdateBoard(
-                new Move(row, move.column, new Piece(whoPlayed, move.shape)),
-                winner,
-                solution);
         }
         else
         {

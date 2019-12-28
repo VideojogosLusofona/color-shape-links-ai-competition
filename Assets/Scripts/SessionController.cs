@@ -21,12 +21,22 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
                 : color == PColor.Red ? player2
                     : throw new InvalidOperationException(
                         $"Invalid player color");
+
+        public Match Swapped => new Match(player2, player1);
+        public bool IsDummy => player1 is DummyPlayer || player2 is DummyPlayer;
         public Match(IPlayer player1, IPlayer player2)
         {
             this.player1 = player1;
             this.player2 = player2;
         }
-        public Match Swap() => new Match(player2, player1);
+        public override string ToString() => $"{player1} vs {player2}";
+    }
+
+    private struct DummyPlayer : IPlayer
+    {
+        public bool IsHuman => false;
+        public string PlayerName => "Dummy";
+        public IThinker Thinker => null;
     }
 
     [SerializeField] private GameObject matchPrefab = null;
@@ -45,7 +55,8 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
 
     private Board board;
     private Match nextMatch;
-    private IEnumerable<Match> allMatches;
+    private ICollection<Match> allMatches;
+    private IEnumerator<Match> matchEnumerator;
 
     private GameObject matchInstance = null;
     private MatchController matchController = null;
@@ -53,7 +64,7 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
     private Status status;
     private SessionType sessionType;
 
-    private IList<AIPlayer> activeAIs = null;
+    private IList<IPlayer> activeAIs = null;
 
     private IPlayer humanPlayer;
 
@@ -61,9 +72,9 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
     private void Awake()
     {
         // Get all active AIs and put them in a list
-        List<AIPlayer> allAIs = new List<AIPlayer>();
+        List<IPlayer> allAIs = new List<IPlayer>();
         GetComponents(allAIs);
-        activeAIs = allAIs.FindAll(ai => ai.IsActive);
+        activeAIs = allAIs.FindAll(ai => (ai as AIPlayer).IsActive);
 
         // Set the init status, before any matches begin
         status = Status.Init;
@@ -97,11 +108,52 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
         }
         else
         {
-            // Multiple AIs, run a competition, show the list of AIs and
-            // ask user to press OK to start
+            // Multiple AIs, run a competition
+
+            // Set session type to all vs all (competition)
             sessionType = SessionType.AllVsAll;
 
-            // Prepare matches
+            // In this mode we need an even number of players to set up the
+            // matches, so add a fake one if necessary
+            if (activeAIs.Count % 2 != 0) activeAIs.Add(new DummyPlayer());
+
+            // Instantiate the matches collection
+            allMatches = new List<Match>();
+
+            // Setup matches using the round-robin method
+            // https://en.wikipedia.org/wiki/Round-robin_tournament
+            for (int i = 1; i < activeAIs.Count; i++)
+            {
+                // This will be the AI to swap position after each round
+                IPlayer aiToSwapPosition;
+
+                // Set up matches for current round i
+                for (int j = 0; j < activeAIs.Count / 2; j++)
+                {
+                    // This is match j for current round i
+                    Match match = new Match(
+                        activeAIs[j], activeAIs[j + activeAIs.Count / 2]);
+                    // Only add match to match list if it's not a dummy match
+                    if (!match.IsDummy)
+                    {
+                        // Each match is in practice two matches, so both AIs
+                        // can have a match where they are the first to play
+                        allMatches.Add(match);
+                        allMatches.Add(match.Swapped);
+                    }
+                }
+                // Swap AI positions for next round
+                aiToSwapPosition = activeAIs[activeAIs.Count - 1];
+                activeAIs.RemoveAt(activeAIs.Count - 1);
+                activeAIs.Insert(1, aiToSwapPosition);
+            }
+
+            // Get the match enumerator and initialize it
+            matchEnumerator = allMatches.GetEnumerator();
+            matchEnumerator.MoveNext();
+
+            // And get the first match
+            nextMatch = matchEnumerator.Current;
         }
     }
 
@@ -110,6 +162,9 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
         // Instantiate a board for the next match
         board = new Board(rows, cols, winSequence,
             roundPiecesPerPlayer, squarePiecesPerPlayer);
+
+        // Destroy previous match instances if any
+        if (matchInstance != null) Destroy(matchInstance);
 
         // Instantiate the next match
         matchInstance = Instantiate(matchPrefab, transform);
@@ -150,22 +205,29 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
                 // Show list and press OK to continue
                 GUI.Window(2,
                     new Rect(0, 0, Screen.width, Screen.height),
-                    DrawCompetitionWindow,
-                    "Competition");
+                    DrawMatchListWindow,
+                    "Tournament");
             }
+        }
+        else if (status == Status.InBtwMatches)
+        {
+            GUI.Window(3,
+                new Rect(0, 0, Screen.width, Screen.height),
+                DrawNextMatchWindow,
+                "Tournament");
         }
         else if (status == Status.Finish)
         {
             if (sessionType == SessionType.AllVsAll)
             {
-                GUI.Window(3,
+                GUI.Window(4,
                     new Rect(0, 0, Screen.width, Screen.height),
                     DrawSessionOverWindow,
                     "Session over");
             }
             else
             {
-                GUI.Window(4,
+                GUI.Window(5,
                     new Rect(0, 0, Screen.width, Screen.height),
                     DrawMatchOverWindow,
                     "Match Over!");
@@ -218,37 +280,50 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
                 nextMatch[PColor.Red].PlayerName))
             {
                 // Swap players...
-                nextMatch = nextMatch.Swap();
-                // ...and then start game
+                nextMatch = nextMatch.Swapped;
+                // ...and then start match
                 StartNextMatch();
             }
         }
     }
 
     // Draw window contents
-    private void DrawCompetitionWindow(int id)
+    private void DrawMatchListWindow(int id)
     {
         // Is this the correct window?
         if (id == 2)
         {
-            // If competition hasn't started yet, list all the teams
-            if (status == Status.Init)
-            {
-                // Draw OK button
-                if (GUI.Button(
-                    new Rect(
-                        Screen.width / 2 - 50, Screen.height / 2 - 25, 100, 50),
-                    "Go to first match"))
-                {
-                    // Change status, so next screen is information about
-                    // first match
-                    status = Status.InBtwMatches;
-                }
-            }
-            // Show information about next match
-            else if (status == Status.InBtwMatches)
-            {
+            // TODO Show match list
 
+            // Draw go to first match button
+            if (GUI.Button(
+                new Rect(
+                    Screen.width / 2 - 100, Screen.height / 2 - 25, 200, 50),
+                "Go to first match"))
+            {
+                // Change status, so next screen is information about
+                // first match
+                status = Status.InBtwMatches;
+            }
+        }
+    }
+
+    // Draw window contents
+    private void DrawNextMatchWindow(int id)
+    {
+        // Is this the correct window?
+        if (id == 3)
+        {
+            // TODO Show what the next match is
+
+            // Draw next match button
+            if (GUI.Button(
+                new Rect(
+                    Screen.width / 2 - 100, Screen.height / 2 - 25, 200, 50),
+                "Next match"))
+            {
+                // Start next match in tournament...
+                StartNextMatch();
             }
         }
     }
@@ -256,8 +331,10 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
     // Draw window contents
     private void DrawSessionOverWindow(int id)
     {
+        // TODO Show tournament results
+
         // Is this the correct window?
-        if (id == 3)
+        if (id == 4)
         {
             // Draw OK button
             if (GUI.Button(
@@ -266,7 +343,6 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
                 "OK"))
             {
                 // If button is clicked, exit
-                Destroy(matchInstance);
                 UnityEditor.EditorApplication.isPlaying = false;
             }
         }
@@ -276,7 +352,7 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
     private void DrawMatchOverWindow(int id)
     {
         // Is this the correct window?
-        if (id == 4)
+        if (id == 5)
         {
             // Keep original content color
             Color originalColor = GUI.contentColor;
@@ -320,10 +396,16 @@ public class SessionController : MonoBehaviour, ISessionDataProvider
 
     private void EndCurrentMatch()
     {
-        // TODO Consider all vs all situation
-        status = Status.Finish;
+        if (sessionType == SessionType.AllVsAll && matchEnumerator.MoveNext())
+        {
+            nextMatch = matchEnumerator.Current;
+            status = Status.InBtwMatches;
+        }
+        else
+        {
+            status = Status.Finish;
+        }
     }
-
 
     // Implementation of ISessionDataProvider
     public Board Board => board;
