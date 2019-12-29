@@ -62,7 +62,7 @@ during its instantiation in `Awake()`.
 
 ### The class that implements `IThinker`
 
-This class is where is AI should be implemented. The [`IThinker`] interface
+This class is where the AI should be implemented. The [`IThinker`] interface
 defines the `Think()` method, which accepts the [game board][`Board`] and a
 [cancellation token][`CancellationToken`], returning a [`FutureMove`]. Simply
 put, the method accepts the game board, the AI decides the best move to

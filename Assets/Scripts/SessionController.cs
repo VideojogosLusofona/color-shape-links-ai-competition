@@ -43,20 +43,27 @@ public class SessionController
         public IThinker Thinker => null;
     }
 
-    [SerializeField] private GameObject matchPrefab = null;
+    [Header("Match properties")]
     [SerializeField] private int rows = 7;
     [SerializeField] private int cols = 7;
     [SerializeField] private int winSequence = 4;
     [SerializeField] private int roundPiecesPerPlayer = 10;
     [SerializeField] private int squarePiecesPerPlayer = 11;
 
-    [Tooltip("Maximum real time that AI can take to play")]
+    [Header("AI properties")]
+    [Tooltip("Maximum real time in seconds that AI can take to play")]
     [SerializeField] private float aITimeLimit = 0.5f;
 
-    [Tooltip("Even if the AI plays immediately, this time gives the "
-        + "illusion that the AI took some minimum time to play")]
+    [Tooltip("Even if the AI plays immediately, this time (in seconds) gives "
+        + "the illusion that the AI took some minimum time to play")]
     [SerializeField] private float minAIGameMoveTime = 0.25f;
 
+    [Header("Tournament properties")]
+    [SerializeField] private int pointsPerWin = 3;
+    [SerializeField] private int pointsPerDraw = 1;
+    [SerializeField] private int pointsPerLoss = 0;
+
+    private GameObject matchPrefab = null;
     private SessionView view;
     private Board board;
     private Match nextMatch;
@@ -86,6 +93,9 @@ public class SessionController
         List<IPlayer> allAIs = new List<IPlayer>();
         GetComponents(allAIs);
         activeAIs = allAIs.FindAll(ai => (ai as AIPlayer).IsActive);
+
+        // Load the match prefab
+        matchPrefab = Resources.Load<GameObject>("Prefabs/Match");
 
         // Get reference to the UI (session view)
         view = GetComponent<SessionView>();
