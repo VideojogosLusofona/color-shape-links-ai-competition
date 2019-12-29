@@ -344,25 +344,25 @@ public class SessionView : MonoBehaviour
         // Is this the correct window?
         if (id == 4)
         {
-            // The labels dimensions are determined based on number of results,
-            // not on number of players, since there will always be more
-            // results than players
-
-            // Determine an appropriate number of pixels per match
-            int vPixelsPerMatch =
-                Screen.height / Math.Max(results.Count, 20);
-
-            // Determine an appropriate vertical position for the first match
-            int firstMatchVertPos = Screen.height / 2 - Mathf.Min(
-                Screen.height * 9 / 20,
-                results.Count * vPixelsPerMatch / 2);
-
-            // Set text size depending on number of matches
-            int fontSize = Screen.height / Mathf.Max(results.Count, 35);
+            // Label dimensions, which depend on either the number of standings
+            // and number of results
+            int vPixelsPerMatch, firstMatchVertPos, fontSize;
 
             // ////////////// //
             // SHOW STANDINGS //
             // ////////////// //
+
+            // Determine an appropriate number of pixels per match
+            vPixelsPerMatch =
+                Screen.height / Math.Max(standings.Count, 20);
+
+            // Determine an appropriate vertical position for the first match
+            firstMatchVertPos = Screen.height / 2 - Mathf.Min(
+                Screen.height * 9 / 20,
+                standings.Count * vPixelsPerMatch / 2);
+
+            // Set text size depending on number of matches
+            fontSize = Screen.height / Mathf.Max(standings.Count, 35);
 
             // Show "Standings" label, above the list of standings
             GUI.Label(
@@ -382,28 +382,59 @@ public class SessionView : MonoBehaviour
                     Screen.width * 2 / 6,
                     vPixelsPerMatch),
                 string.Format("<size={0}><color={1}><b>{2}</b></color></size>",
-                    fontSize, "olive", "Player\tPoints"));
+                    fontSize, "olive", "Player"));
+
+            GUI.Label(
+                new Rect(
+                    Screen.width * 2 / 6,
+                    firstMatchVertPos - vPixelsPerMatch,
+                    Screen.width * 2 / 6,
+                    vPixelsPerMatch),
+                string.Format("<size={0}><color={1}><b>{2}</b></color></size>",
+                    fontSize, "olive", "Points"));
 
             // Show standings
             for (int i = 0; i < standings.Count; i++)
             {
-                // Set alternating color for each match
+                // Set alternating color for each player
                 string color = i % 2 == 0 ? "white" : "grey";
 
-                // Show match
+                // Show player name
                 GUI.Label(
                     new Rect(
                         Screen.width / 6,
                         firstMatchVertPos + i * vPixelsPerMatch,
                         Screen.width * 2 / 6,
                         vPixelsPerMatch),
-                    string.Format("<size={0}><color={1}>{2}\t{3}</color></size>",
-                        fontSize, color, standings[i].Key, standings[i].Value));
+                    string.Format("<size={0}><color={1}>{2}</color></size>",
+                        fontSize, color, $"{i + 1,2}. {standings[i].Key}"));
+
+                // Show player points
+                GUI.Label(
+                    new Rect(
+                        Screen.width * 2 / 6,
+                        firstMatchVertPos + i * vPixelsPerMatch,
+                        Screen.width * 2 / 6,
+                        vPixelsPerMatch),
+                    string.Format("<size={0}><color={1}>    {2,2}</color></size>",
+                        fontSize, color, standings[i].Value));
             }
 
             // //////////// //
             // SHOW RESULTS //
             // //////////// //
+
+            // Determine an appropriate number of pixels per match
+            vPixelsPerMatch =
+                Screen.height / Math.Max(results.Count, 20);
+
+            // Determine an appropriate vertical position for the first match
+            firstMatchVertPos = Screen.height / 2 - Mathf.Min(
+                Screen.height * 9 / 20,
+                results.Count * vPixelsPerMatch / 2);
+
+            // Set text size depending on number of matches
+            fontSize = Screen.height / Mathf.Max(results.Count, 35);
 
             // Show "Results" label, above the list of results
             GUI.Label(
