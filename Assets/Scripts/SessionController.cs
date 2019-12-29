@@ -247,23 +247,26 @@ public class SessionController
     private void EndCurrentMatchCallback()
     {
         allMatches[nextMatch] = matchController.Result;
-        switch (matchController.Result)
+        if (activeAIs.Count > 2)
         {
-            case Winner.White:
-                standings[nextMatch.player1] += pointsPerWin;
-                standings[nextMatch.player2] += pointsPerLoss;
-                break;
-            case Winner.Red:
-                standings[nextMatch.player2] += pointsPerWin;
-                standings[nextMatch.player1] += pointsPerLoss;
-                break;
-            case Winner.Draw:
-                standings[nextMatch.player1] += pointsPerDraw;
-                standings[nextMatch.player2] += pointsPerDraw;
-                break;
-            default:
-                throw new InvalidOperationException(
-                    "Invalid end of match result");
+            switch (matchController.Result)
+            {
+                case Winner.White:
+                    standings[nextMatch.player1] += pointsPerWin;
+                    standings[nextMatch.player2] += pointsPerLoss;
+                    break;
+                case Winner.Red:
+                    standings[nextMatch.player2] += pointsPerWin;
+                    standings[nextMatch.player1] += pointsPerLoss;
+                    break;
+                case Winner.Draw:
+                    standings[nextMatch.player1] += pointsPerDraw;
+                    standings[nextMatch.player2] += pointsPerDraw;
+                    break;
+                default:
+                    throw new InvalidOperationException(
+                        "Invalid end of match result");
+            }
         }
         state = SessionState.PostMatch;
     }
