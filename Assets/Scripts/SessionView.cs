@@ -344,6 +344,10 @@ public class SessionView : MonoBehaviour
         // Is this the correct window?
         if (id == 4)
         {
+            // Variable for determining player standing when it has the
+            // same points as previous player
+            int pos = 0;
+
             // Label dimensions, which depend on either the number of standings
             // and number of results
             int vPixelsPerMatch, firstMatchVertPos, fontSize;
@@ -399,6 +403,17 @@ public class SessionView : MonoBehaviour
                 // Set alternating color for each player
                 string color = i % 2 == 0 ? "white" : "grey";
 
+                // If player has the same points as the previous player, then
+                // it should have the same standing
+                if (i == 0)
+                {
+                    pos = 1;
+                }
+                else if (standings[i].Value != standings[i - 1].Value)
+                {
+                    pos = i + 1;
+                }
+
                 // Show player name
                 GUI.Label(
                     new Rect(
@@ -407,7 +422,7 @@ public class SessionView : MonoBehaviour
                         Screen.width * 2 / 6,
                         vPixelsPerMatch),
                     string.Format("<size={0}><color={1}>{2}</color></size>",
-                        fontSize, color, $"{i + 1,2}. {standings[i].Key}"));
+                        fontSize, color, $"{pos,2}. {standings[i].Key}"));
 
                 // Show player points
                 GUI.Label(
