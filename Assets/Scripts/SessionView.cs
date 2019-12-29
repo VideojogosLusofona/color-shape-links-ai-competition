@@ -87,6 +87,8 @@ public class SessionView : MonoBehaviour
                     {
                         results = new List<KeyValuePair<string, Winner>>(
                             sessionData.Matches);
+                        standings = new List<KeyValuePair<IPlayer, int>>(
+                            sessionData.Standings);
                     }
                     GUI.Window(4,
                         new Rect(0, 0, Screen.width, Screen.height),
@@ -110,9 +112,6 @@ public class SessionView : MonoBehaviour
         // Is this the correct window?
         if (id == 0)
         {
-            // Get the default style for labels
-            GUIStyle guiLabelStyle = new GUIStyle(GUI.skin.label);
-
             // Determine an appropriate number of pixels per match
             int vPixelsPerMatch =
                 Screen.height / Math.Max(matches.Count, 20);
@@ -123,20 +122,33 @@ public class SessionView : MonoBehaviour
                 matches.Count * vPixelsPerMatch / 2);
 
             // Set text size depending on number of matches
-            guiLabelStyle.fontSize =
-                Screen.height / Mathf.Max(matches.Count, 35);
+            int fontSize = Screen.height / Mathf.Max(matches.Count, 35);
+
+            // Show "Matches to play" label, above the list of matches
+            GUI.Label(
+                new Rect(
+                    Screen.width / 7,
+                    firstMatchVertPos - vPixelsPerMatch,
+                    Screen.width * 2 / 6,
+                    vPixelsPerMatch),
+                string.Format("<size={0}><color={1}><b>{2}</b></color></size>",
+                    fontSize, "orange", "Matches to play"));
 
             // Show match list
             for (int i = 0; i < matches.Count; i++)
             {
+                // Set alternating color for each match
+                string color = i % 2 == 0 ? "white" : "grey";
+
+                // Show match
                 GUI.Label(
                     new Rect(
                         Screen.width / 6,
                         firstMatchVertPos + i * vPixelsPerMatch,
                         Screen.width * 2 / 6,
                         vPixelsPerMatch),
-                    matches[i],
-                    guiLabelStyle);
+                    string.Format("<size={0}><color={1}>{2}</color></size>",
+                        fontSize, color, matches[i]));
             }
 
             // Draw go to first match button
@@ -194,18 +206,12 @@ public class SessionView : MonoBehaviour
         // Is this the correct window?
         if (id == 2)
         {
-            // Keep original content color
-            Color originalColor = GUI.contentColor;
-
             // Get the default style for labels
             GUIStyle guiLabelStyle = new GUIStyle(GUI.skin.label);
 
             // Define a text-centered gui style
             guiLabelStyle.alignment = TextAnchor.MiddleCenter;
             guiLabelStyle.fontSize = Screen.width / 30;
-
-            // Set content color for player 1 (white)
-            GUI.contentColor = Color.white;
 
             // Show the label for player 1 (white)
             GUI.Label(
@@ -214,11 +220,8 @@ public class SessionView : MonoBehaviour
                     Screen.height * 1 / 10,
                     Screen.width * 2 / 3,
                     Screen.height / 10),
-                sessionData.PlayerWhite,
+                $"<color=white>{sessionData.PlayerWhite}</color>",
                 guiLabelStyle);
-
-            // Set content color for VS word
-            GUI.contentColor = Color.gray;
 
             // Show the label for VS word
             GUI.Label(
@@ -227,11 +230,8 @@ public class SessionView : MonoBehaviour
                     Screen.height * 2 / 10,
                     Screen.width * 2 / 3,
                     Screen.height / 10),
-                "vs",
+                "<color=grey>vs</color>",
                 guiLabelStyle);
-
-            // Set content color for player 2 (red)
-            GUI.contentColor = Color.red;
 
             // Show the label for player 2 (red)
             GUI.Label(
@@ -240,11 +240,8 @@ public class SessionView : MonoBehaviour
                     Screen.height * 3 / 10,
                     Screen.width * 2 / 3,
                     Screen.height / 10),
-                sessionData.PlayerRed,
+                $"<color=red>{sessionData.PlayerRed}</color>",
                 guiLabelStyle);
-
-            // Set content color back to the original color
-            GUI.contentColor = originalColor;
 
             // Is this a blocking screen?
             if (sessionData.BlockStartNextMatch)
@@ -284,23 +281,20 @@ public class SessionView : MonoBehaviour
         // Is this the correct window?
         if (id == 3)
         {
-            // Keep original content color
-            Color originalColor = GUI.contentColor;
-
             // Determine new content color depending on the result
-            Color color = sessionData.LastMatchResult == Winner.Draw
-                ? Color.yellow
+            string color = sessionData.LastMatchResult == Winner.Draw
+                ? "grey"
                 : sessionData.LastMatchResult == Winner.White
-                    ? Color.white
-                    : Color.red;
+                    ? "white"
+                    : "red";
+            string result = sessionData.LastMatchResult == Winner.Draw
+                    ? "It's a draw"
+                    : $"Winner is {sessionData.WinnerString}";
 
             // Define a text-centered gui style
             GUIStyle guiLabelStyle = new GUIStyle(GUI.skin.label);
             guiLabelStyle.alignment = TextAnchor.MiddleCenter;
             guiLabelStyle.fontSize = Screen.width / 30;
-
-            // Set content color
-            GUI.contentColor = color;
 
             // Show the label indicating the final result of the game
             GUI.Label(
@@ -309,13 +303,8 @@ public class SessionView : MonoBehaviour
                     Screen.height / 4,
                     Screen.width * 2 / 3,
                     Screen.height / 8),
-                sessionData.LastMatchResult == Winner.Draw
-                    ? "It's a draw"
-                    : $"Winner is {sessionData.WinnerString}",
+                $"<color={color}>{result}</color>",
                 guiLabelStyle);
-
-            // Set content color back to the original color
-            GUI.contentColor = originalColor;
 
             // Is this a blocking screen?
             if (sessionData.BlockShowResult)
@@ -355,9 +344,9 @@ public class SessionView : MonoBehaviour
         // Is this the correct window?
         if (id == 4)
         {
-
-            // Get the default style for labels
-            GUIStyle guiLabelStyle = new GUIStyle(GUI.skin.label);
+            // The labels dimensions are determined based on number of results,
+            // not on number of players, since there will always be more
+            // results than players
 
             // Determine an appropriate number of pixels per match
             int vPixelsPerMatch =
@@ -369,40 +358,89 @@ public class SessionView : MonoBehaviour
                 results.Count * vPixelsPerMatch / 2);
 
             // Set text size depending on number of matches
-            guiLabelStyle.fontSize =
-                Screen.height / Mathf.Max(results.Count, 35);
+            int fontSize = Screen.height / Mathf.Max(results.Count, 35);
 
-            // Show match results
-            for (int i = 0; i < results.Count; i++)
+            // ////////////// //
+            // SHOW STANDINGS //
+            // ////////////// //
+
+            // Show "Standings" label, above the list of standings
+            GUI.Label(
+                new Rect(
+                    Screen.width / 7,
+                    firstMatchVertPos - 2 * vPixelsPerMatch,
+                    Screen.width * 2 / 6,
+                    vPixelsPerMatch),
+                string.Format("<size={0}><color={1}><b>{2}</b></color></size>",
+                    fontSize, "orange", "Standings"));
+
+            // Show "Player" and "Points" labels, above the list of standings
+            GUI.Label(
+                new Rect(
+                    Screen.width / 6,
+                    firstMatchVertPos - vPixelsPerMatch,
+                    Screen.width * 2 / 6,
+                    vPixelsPerMatch),
+                string.Format("<size={0}><color={1}><b>{2}</b></color></size>",
+                    fontSize, "olive", "Player\tPoints"));
+
+            // Show standings
+            for (int i = 0; i < standings.Count; i++)
             {
-                // Match
+                // Set alternating color for each match
+                string color = i % 2 == 0 ? "white" : "grey";
+
+                // Show match
                 GUI.Label(
                     new Rect(
                         Screen.width / 6,
                         firstMatchVertPos + i * vPixelsPerMatch,
                         Screen.width * 2 / 6,
                         vPixelsPerMatch),
-                    results[i].Key,
-                    guiLabelStyle);
-                // Result
+                    string.Format("<size={0}><color={1}>{2}\t{3}</color></size>",
+                        fontSize, color, standings[i].Key, standings[i].Value));
+            }
+
+            // //////////// //
+            // SHOW RESULTS //
+            // //////////// //
+
+            // Show "Results" label, above the list of results
+            GUI.Label(
+                new Rect(
+                    Screen.width * 4 / 6 - Screen.width / 42,
+                    firstMatchVertPos - vPixelsPerMatch,
+                    Screen.width * 2 / 6,
+                    vPixelsPerMatch),
+                string.Format("<size={0}><color={1}><b>{2}</b></color></size>",
+                    fontSize, "orange", "Results"));
+
+            // Show match results
+            for (int i = 0; i < results.Count; i++)
+            {
+                // Color for current result
+                string color = results[i].Value == Winner.White
+                    ? "white"
+                    : results[i].Value == Winner.Red ? "red" : "grey";
+
+                // Show match, result is based on color
                 GUI.Label(
                     new Rect(
-                        Screen.width * 3 / 6,
+                        Screen.width * 4 / 6,
                         firstMatchVertPos + i * vPixelsPerMatch,
-                        Screen.width * 1 / 6,
+                        Screen.width * 2 / 6,
                         vPixelsPerMatch),
-                    results[i].Value == Winner.White
-                        ? "1" : results[i].Value == Winner.Red ? "2" : "X",
-                    guiLabelStyle);
+                    string.Format("<size={0}><color={1}>{2}</color></size>",
+                        fontSize, color, results[i].Key));
             }
 
             // Draw "Finish" button
             if (GUI.Button(
                 new Rect(
-                    Screen.width / 2 + Screen.width / 8,
-                    Screen.height / 2 - Screen.height / 16,
+                    Screen.width / 2 - Screen.width / 8,
+                    Screen.height * 7 / 8,
                     Screen.width / 4,
-                    Screen.height / 8),
+                    Screen.height / 10),
                 "Finish"))
             {
                 // If button is clicked, notify session end

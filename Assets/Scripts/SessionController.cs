@@ -304,7 +304,7 @@ public class SessionController
             kvp => new KeyValuePair<string, Winner>(
                 kvp.Key.ToString(), kvp.Value));
     public IEnumerable<KeyValuePair<IPlayer, int>> Standings =>
-        standings.OrderBy(kvp => kvp.Value);
+        standings.OrderByDescending(kvp => kvp.Value);
     public Winner LastMatchResult => matchController?.Result ?? Winner.None;
     public string WinnerString => matchController?.WinnerString;
     public bool ShowListOfMatches => uiShowListOfMatches;
