@@ -13,6 +13,7 @@ public interface ISessionDataProvider
     string PlayerWhite { get; }
     string PlayerRed { get; }
     IEnumerable<string> Matches { get; }
+    IEnumerable<Winner> Results { get; }
     Winner LastMatchResult { get; }
     string WinnerString { get; }
     bool ShowListOfMatches { get; }

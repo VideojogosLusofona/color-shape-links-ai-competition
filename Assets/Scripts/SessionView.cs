@@ -17,6 +17,7 @@ public class SessionView : MonoBehaviour
     private ISessionDataProvider sessionData;
     private Coroutine nonBlockingScreenTimer;
     private IReadOnlyList<string> allMatches;
+    private IReadOnlyList<Winner> results;
 
     private bool nextWhoPlaysFirst;
 
@@ -81,6 +82,10 @@ public class SessionView : MonoBehaviour
             case SessionState.End:
                 if (sessionData.ShowTournamentStandings)
                 {
+                    if (results == null)
+                    {
+                        results = new List<Winner>(sessionData.Results);
+                    }
                     GUI.Window(4,
                         new Rect(0, 0, Screen.width, Screen.height),
                         WindowFinalStandings,
@@ -106,9 +111,11 @@ public class SessionView : MonoBehaviour
             // Get the default style for labels
             GUIStyle guiLabelStyle = new GUIStyle(GUI.skin.label);
 
+            // Determine an appropriate number of pixels per match
             int vPixelsPerMatch =
                 Screen.height / Math.Max(allMatches.Count, 20);
 
+            // Determine an appropriate vertical position for the first match
             int firstMatchVertPos = Screen.height / 2 - Mathf.Min(
                 Screen.height * 9 / 20,
                 allMatches.Count * vPixelsPerMatch / 2);
@@ -340,19 +347,61 @@ public class SessionView : MonoBehaviour
         }
     }
 
-    // Draw window contents
+    // Draw contents of final standings window
     private void WindowFinalStandings(int id)
     {
-        // TODO Show tournament results
-
         // Is this the correct window?
         if (id == 4)
         {
-            // Draw OK button
+
+            // Get the default style for labels
+            GUIStyle guiLabelStyle = new GUIStyle(GUI.skin.label);
+
+            // Determine an appropriate number of pixels per match
+            int vPixelsPerMatch =
+                Screen.height / Math.Max(allMatches.Count, 20);
+
+            // Determine an appropriate vertical position for the first match
+            int firstMatchVertPos = Screen.height / 2 - Mathf.Min(
+                Screen.height * 9 / 20,
+                allMatches.Count * vPixelsPerMatch / 2);
+
+            // Set text size depending on number of matches
+            guiLabelStyle.fontSize =
+                Screen.height / Mathf.Max(allMatches.Count, 35);
+
+            // Show match results
+            for (int i = 0; i < allMatches.Count; i++)
+            {
+                // Match
+                GUI.Label(
+                    new Rect(
+                        Screen.width / 6,
+                        firstMatchVertPos + i * vPixelsPerMatch,
+                        Screen.width * 2 / 6,
+                        vPixelsPerMatch),
+                    allMatches[i],
+                    guiLabelStyle);
+                // Result
+                GUI.Label(
+                    new Rect(
+                        Screen.width * 3 / 6,
+                        firstMatchVertPos + i * vPixelsPerMatch,
+                        Screen.width * 1 / 6,
+                        vPixelsPerMatch),
+                    results[i] == Winner.White
+                        ? "1" : results[i] == Winner.Red ? "2" : "X",
+                    guiLabelStyle);
+            }
+
+            // Draw "Finish" button
             if (GUI.Button(
                 new Rect(
-                    Screen.width / 2 - 50, Screen.height / 2 - 25, 100, 50),
-                "OK"))
+                    Screen.width / 2 + Screen.width / 8,
+                    Screen.height / 2 - Screen.height / 16,
+                    Screen.width / 4,
+                    Screen.height / 8),
+                "Finish"))
             {
                 // If button is clicked, notify session end
                 OnEndSession();

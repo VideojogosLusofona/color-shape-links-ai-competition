@@ -13,8 +13,10 @@ using UnityEngine;
 public class SessionController
     : MonoBehaviour, IMatchDataProvider, ISessionDataProvider
 {
-    private struct Match
+    private struct Match : IComparable<Match>
     {
+        private static int nextId = 0;
+        private readonly int id;
         public readonly IPlayer player1;
         public readonly IPlayer player2;
         public IPlayer this[PColor color] => color == PColor.White ? player1
@@ -26,10 +28,12 @@ public class SessionController
         public bool IsDummy => player1 is DummyPlayer || player2 is DummyPlayer;
         public Match(IPlayer player1, IPlayer player2)
         {
+            id = nextId++;
             this.player1 = player1;
             this.player2 = player2;
         }
         public override string ToString() => $"{player1} vs {player2}";
+        public int CompareTo(Match other) => id - other.id;
     }
 
     private struct DummyPlayer : IPlayer
@@ -56,7 +60,7 @@ public class SessionController
     private SessionView view;
     private Board board;
     private Match nextMatch;
-    private ICollection<Match> allMatches;
+    private IDictionary<Match, Winner> allMatches;
     private IEnumerator<Match> matchEnumerator;
 
     private GameObject matchInstance = null;
@@ -93,8 +97,8 @@ public class SessionController
         if (activeAIs.Count < 2)
             humanPlayer = new HumanPlayer();
 
-        // Instantiate the matches list
-        allMatches = new List<Match>();
+        // Instantiate the matches table
+        allMatches = new SortedList<Match, Winner>();
 
         // Setup session depending on how many AIs will play
         if (activeAIs.Count == 0)
@@ -105,7 +109,7 @@ public class SessionController
             uiWhoPlaysFirst = false;
             uiBlockStartNextMatch = true;
             uiBlockShowResult = true;
-            allMatches.Add(new Match(humanPlayer, humanPlayer));
+            allMatches.Add(new Match(humanPlayer, humanPlayer), Winner.None);
         }
         else if (activeAIs.Count == 1)
         {
@@ -115,7 +119,7 @@ public class SessionController
             uiWhoPlaysFirst = true;
             uiBlockStartNextMatch = true;
             uiBlockShowResult = true;
-            allMatches.Add(new Match(humanPlayer, activeAIs[0]));
+            allMatches.Add(new Match(humanPlayer, activeAIs[0]), Winner.None);
         }
         else if (activeAIs.Count == 2)
         {
@@ -125,7 +129,7 @@ public class SessionController
             uiWhoPlaysFirst = true;
             uiBlockStartNextMatch = true;
             uiBlockShowResult = true;
-            allMatches.Add(new Match(activeAIs[0], activeAIs[1]));
+            allMatches.Add(new Match(activeAIs[0], activeAIs[1]), Winner.None);
         }
         else
         {
@@ -158,8 +162,8 @@ public class SessionController
                     {
                         // Each match is in practice two matches, so both AIs
                         // can have a match where they are the first to play
-                        allMatches.Add(match);
-                        allMatches.Add(match.Swapped);
+                        allMatches.Add(match, Winner.None);
+                        allMatches.Add(match.Swapped, Winner.None);
                     }
                 }
                 // Swap AI positions for next round
@@ -170,7 +174,7 @@ public class SessionController
         }
 
         // Get the match enumerator and initialize it
-        matchEnumerator = allMatches.GetEnumerator();
+        matchEnumerator = allMatches.Keys.ToList().GetEnumerator();
         matchEnumerator.MoveNext();
         nextMatch = matchEnumerator.Current;
     }
@@ -226,6 +230,7 @@ public class SessionController
 
     private void EndCurrentMatchCallback()
     {
+        allMatches[nextMatch] = matchController.Result;
         state = SessionState.PostMatch;
     }
 
@@ -259,7 +264,9 @@ public class SessionController
     public SessionState State => state;
     public string PlayerWhite => nextMatch[PColor.White].PlayerName;
     public string PlayerRed => nextMatch[PColor.Red].PlayerName;
-    public IEnumerable<string> Matches => allMatches.Select(m => m.ToString());
+    public IEnumerable<string> Matches =>
+        allMatches.Select(m => m.Key.ToString());
+    public IEnumerable<Winner> Results => allMatches.Values;
     public Winner LastMatchResult => matchController?.Result ?? Winner.None;
     public string WinnerString => matchController?.WinnerString;
     public bool ShowListOfMatches => uiShowListOfMatches;
