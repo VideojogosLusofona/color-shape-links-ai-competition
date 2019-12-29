@@ -5,11 +5,14 @@
  * Author: Nuno Fachada
  * */
 
+using System.Collections.Generic;
+
 public interface ISessionDataProvider
 {
     SessionState State { get; }
     string PlayerWhite { get; }
     string PlayerRed { get; }
+    IEnumerable<string> Matches { get; }
     Winner LastMatchResult { get; }
     string WinnerString { get; }
     bool ShowListOfMatches { get; }

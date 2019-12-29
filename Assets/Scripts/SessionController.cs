@@ -6,8 +6,9 @@
  * */
 
 using System;
-using UnityEngine;
+using System.Linq;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class SessionController
     : MonoBehaviour, IMatchDataProvider, ISessionDataProvider
@@ -258,6 +259,7 @@ public class SessionController
     public SessionState State => state;
     public string PlayerWhite => nextMatch[PColor.White].PlayerName;
     public string PlayerRed => nextMatch[PColor.Red].PlayerName;
+    public IEnumerable<string> Matches => allMatches.Select(m => m.ToString());
     public Winner LastMatchResult => matchController?.Result ?? Winner.None;
     public string WinnerString => matchController?.WinnerString;
     public bool ShowListOfMatches => uiShowListOfMatches;

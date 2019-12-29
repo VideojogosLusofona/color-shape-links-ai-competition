@@ -6,7 +6,9 @@
  * */
 
 using System;
+using System.Text;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SessionView : MonoBehaviour
@@ -14,6 +16,7 @@ public class SessionView : MonoBehaviour
     [SerializeField] private float nonBlockingScreenDuration = 1.5f;
     private ISessionDataProvider sessionData;
     private Coroutine nonBlockingScreenTimer;
+    private IReadOnlyList<string> allMatches;
 
     private bool nextWhoPlaysFirst;
 
@@ -24,6 +27,10 @@ public class SessionView : MonoBehaviour
 
     private void Start()
     {
+        // Keep a record of all matches
+        allMatches = new List<string>(sessionData.Matches);
+
+        // Show "who plays first" menu?
         nextWhoPlaysFirst = sessionData.WhoPlaysFirst;
     }
 
@@ -96,16 +103,41 @@ public class SessionView : MonoBehaviour
         // Is this the correct window?
         if (id == 0)
         {
-            // TODO Show match list
+            // Get the default style for labels
+            GUIStyle guiLabelStyle = new GUIStyle(GUI.skin.label);
+
+            int vPixelsPerMatch =
+                Screen.height / Math.Max(allMatches.Count, 20);
+
+            int firstMatchVertPos = Screen.height / 2 - Mathf.Min(
+                Screen.height * 9 / 20,
+                allMatches.Count * vPixelsPerMatch / 2);
+
+            // Set text size depending on number of matches
+            guiLabelStyle.fontSize =
+                Screen.height / Mathf.Max(allMatches.Count, 35);
+
+            // Show match list
+            for (int i = 0; i < allMatches.Count; i++)
+            {
+                GUI.Label(
+                    new Rect(
+                        Screen.width / 6,
+                        firstMatchVertPos + i * vPixelsPerMatch,
+                        Screen.width * 2 / 6,
+                        vPixelsPerMatch),
+                    allMatches[i],
+                    guiLabelStyle);
+            }
 
             // Draw go to first match button
             if (GUI.Button(
                 new Rect(
-                    Screen.width / 2 - 100,
-                    Screen.height / 2 - 25,
-                    200,
-                    50),
-                "Go to first match"))
+                    Screen.width / 2 + Screen.width / 8,
+                    Screen.height / 2 - Screen.height / 16,
+                    Screen.width / 4,
+                    Screen.height / 8),
+                "Start tournament"))
             {
                 // Notify we should pass to pre-match state
                 OnPreMatch();
@@ -146,7 +178,6 @@ public class SessionView : MonoBehaviour
             }
         }
     }
-
 
     // Draw contents of the start next match window
     private void WindowStartNextMatch(int id)
