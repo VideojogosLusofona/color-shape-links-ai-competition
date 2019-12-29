@@ -6,7 +6,7 @@
  * */
 
 using System;
-using System.Text;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,8 +16,9 @@ public class SessionView : MonoBehaviour
     [SerializeField] private float nonBlockingScreenDuration = 1.5f;
     private ISessionDataProvider sessionData;
     private Coroutine nonBlockingScreenTimer;
-    private IReadOnlyList<string> allMatches;
-    private IReadOnlyList<Winner> results;
+    private IReadOnlyList<string> matches;
+    private IReadOnlyList<KeyValuePair<string, Winner>> results;
+    private IReadOnlyList<KeyValuePair<IPlayer, int>> standings;
 
     private bool nextWhoPlaysFirst;
 
@@ -28,8 +29,8 @@ public class SessionView : MonoBehaviour
 
     private void Start()
     {
-        // Keep a record of all matches
-        allMatches = new List<string>(sessionData.Matches);
+        // Get a list of all matches to be performed
+        matches = new List<string>(sessionData.Matches.Select(kvp => kvp.Key));
 
         // Show "who plays first" menu?
         nextWhoPlaysFirst = sessionData.WhoPlaysFirst;
@@ -84,7 +85,8 @@ public class SessionView : MonoBehaviour
                 {
                     if (results == null)
                     {
-                        results = new List<Winner>(sessionData.Results);
+                        results = new List<KeyValuePair<string, Winner>>(
+                            sessionData.Matches);
                     }
                     GUI.Window(4,
                         new Rect(0, 0, Screen.width, Screen.height),
@@ -113,19 +115,19 @@ public class SessionView : MonoBehaviour
 
             // Determine an appropriate number of pixels per match
             int vPixelsPerMatch =
-                Screen.height / Math.Max(allMatches.Count, 20);
+                Screen.height / Math.Max(matches.Count, 20);
 
             // Determine an appropriate vertical position for the first match
             int firstMatchVertPos = Screen.height / 2 - Mathf.Min(
                 Screen.height * 9 / 20,
-                allMatches.Count * vPixelsPerMatch / 2);
+                matches.Count * vPixelsPerMatch / 2);
 
             // Set text size depending on number of matches
             guiLabelStyle.fontSize =
-                Screen.height / Mathf.Max(allMatches.Count, 35);
+                Screen.height / Mathf.Max(matches.Count, 35);
 
             // Show match list
-            for (int i = 0; i < allMatches.Count; i++)
+            for (int i = 0; i < matches.Count; i++)
             {
                 GUI.Label(
                     new Rect(
@@ -133,7 +135,7 @@ public class SessionView : MonoBehaviour
                         firstMatchVertPos + i * vPixelsPerMatch,
                         Screen.width * 2 / 6,
                         vPixelsPerMatch),
-                    allMatches[i],
+                    matches[i],
                     guiLabelStyle);
             }
 
@@ -359,19 +361,19 @@ public class SessionView : MonoBehaviour
 
             // Determine an appropriate number of pixels per match
             int vPixelsPerMatch =
-                Screen.height / Math.Max(allMatches.Count, 20);
+                Screen.height / Math.Max(results.Count, 20);
 
             // Determine an appropriate vertical position for the first match
             int firstMatchVertPos = Screen.height / 2 - Mathf.Min(
                 Screen.height * 9 / 20,
-                allMatches.Count * vPixelsPerMatch / 2);
+                results.Count * vPixelsPerMatch / 2);
 
             // Set text size depending on number of matches
             guiLabelStyle.fontSize =
-                Screen.height / Mathf.Max(allMatches.Count, 35);
+                Screen.height / Mathf.Max(results.Count, 35);
 
             // Show match results
-            for (int i = 0; i < allMatches.Count; i++)
+            for (int i = 0; i < results.Count; i++)
             {
                 // Match
                 GUI.Label(
@@ -380,7 +382,7 @@ public class SessionView : MonoBehaviour
                         firstMatchVertPos + i * vPixelsPerMatch,
                         Screen.width * 2 / 6,
                         vPixelsPerMatch),
-                    allMatches[i],
+                    results[i].Key,
                     guiLabelStyle);
                 // Result
                 GUI.Label(
@@ -389,8 +391,8 @@ public class SessionView : MonoBehaviour
                         firstMatchVertPos + i * vPixelsPerMatch,
                         Screen.width * 1 / 6,
                         vPixelsPerMatch),
-                    results[i] == Winner.White
-                        ? "1" : results[i] == Winner.Red ? "2" : "X",
+                    results[i].Value == Winner.White
+                        ? "1" : results[i].Value == Winner.Red ? "2" : "X",
                     guiLabelStyle);
             }
 

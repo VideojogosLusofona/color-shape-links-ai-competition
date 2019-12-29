@@ -12,8 +12,8 @@ public interface ISessionDataProvider
     SessionState State { get; }
     string PlayerWhite { get; }
     string PlayerRed { get; }
-    IEnumerable<string> Matches { get; }
-    IEnumerable<Winner> Results { get; }
+    IEnumerable<KeyValuePair<string, Winner>> Matches { get; }
+    IEnumerable<KeyValuePair<IPlayer, int>> Standings { get; }
     Winner LastMatchResult { get; }
     string WinnerString { get; }
     bool ShowListOfMatches { get; }

@@ -68,6 +68,7 @@ public class SessionController
     private Board board;
     private Match nextMatch;
     private IDictionary<Match, Winner> allMatches;
+    private IDictionary<IPlayer, int> standings;
     private IEnumerator<Match> matchEnumerator;
 
     private GameObject matchInstance = null;
@@ -109,6 +110,11 @@ public class SessionController
 
         // Instantiate the matches table
         allMatches = new SortedList<Match, Winner>();
+
+        // Instantiate the standings table and populate it with all AIs with
+        // zero points
+        standings = new Dictionary<IPlayer, int>();
+        foreach (IPlayer ai in activeAIs) standings.Add(ai, 0);
 
         // Setup session depending on how many AIs will play
         if (activeAIs.Count == 0)
@@ -241,6 +247,24 @@ public class SessionController
     private void EndCurrentMatchCallback()
     {
         allMatches[nextMatch] = matchController.Result;
+        switch (matchController.Result)
+        {
+            case Winner.White:
+                standings[nextMatch.player1] += pointsPerWin;
+                standings[nextMatch.player2] += pointsPerLoss;
+                break;
+            case Winner.Red:
+                standings[nextMatch.player2] += pointsPerWin;
+                standings[nextMatch.player1] += pointsPerLoss;
+                break;
+            case Winner.Draw:
+                standings[nextMatch.player1] += pointsPerDraw;
+                standings[nextMatch.player2] += pointsPerDraw;
+                break;
+            default:
+                throw new InvalidOperationException(
+                    "Invalid end of match result");
+        }
         state = SessionState.PostMatch;
     }
 
@@ -254,6 +278,7 @@ public class SessionController
         }
         else
         {
+            matchEnumerator.Dispose();
             state = SessionState.End;
         }
     }
@@ -274,9 +299,12 @@ public class SessionController
     public SessionState State => state;
     public string PlayerWhite => nextMatch[PColor.White].PlayerName;
     public string PlayerRed => nextMatch[PColor.Red].PlayerName;
-    public IEnumerable<string> Matches =>
-        allMatches.Select(m => m.Key.ToString());
-    public IEnumerable<Winner> Results => allMatches.Values;
+    public IEnumerable<KeyValuePair<string, Winner>> Matches =>
+        allMatches.Select(
+            kvp => new KeyValuePair<string, Winner>(
+                kvp.Key.ToString(), kvp.Value));
+    public IEnumerable<KeyValuePair<IPlayer, int>> Standings =>
+        standings.OrderBy(kvp => kvp.Value);
     public Winner LastMatchResult => matchController?.Result ?? Winner.None;
     public string WinnerString => matchController?.WinnerString;
     public bool ShowListOfMatches => uiShowListOfMatches;
