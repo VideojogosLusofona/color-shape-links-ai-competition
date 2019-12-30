@@ -13,7 +13,6 @@ using UnityEngine;
 
 public class SessionView : MonoBehaviour
 {
-    [SerializeField] private float nonBlockingScreenDuration = 1.5f;
     private ISessionDataProvider sessionData;
     private Coroutine nonBlockingScreenTimer;
     private IReadOnlyList<Match> matches;
@@ -569,7 +568,7 @@ public class SessionView : MonoBehaviour
 
     private IEnumerator NonBlockingScreenTimer(Action eventToInvoke)
     {
-        yield return new WaitForSeconds(nonBlockingScreenDuration);
+        yield return new WaitForSeconds(sessionData.NoMatchScreenDuration);
         eventToInvoke?.Invoke();
         nonBlockingScreenTimer = null;
     }

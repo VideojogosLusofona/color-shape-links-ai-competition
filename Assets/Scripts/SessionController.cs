@@ -39,6 +39,9 @@ public class SessionController
     [SerializeField] private int pointsPerWin = 3;
     [SerializeField] private int pointsPerDraw = 1;
     [SerializeField] private int pointsPerLoss = 0;
+    [SerializeField] private bool pressButtonBeforeMatch = false;
+    [SerializeField] private bool pressButtonAfterMatch = false;
+    [SerializeField] private float noMatchScreenDuration = 1.5f;
 
     private GameObject matchPrefab = null;
     private SessionView view;
@@ -130,8 +133,8 @@ public class SessionController
             uiShowListOfMatches = true;
             uiShowTournamentStandings = true;
             uiWhoPlaysFirst = false;
-            uiBlockStartNextMatch = false;
-            uiBlockShowResult = false;
+            uiBlockStartNextMatch = pressButtonBeforeMatch;
+            uiBlockShowResult = pressButtonAfterMatch;
 
             // In this mode we need an even number of players to set up the
             // matches, so add a fake one if necessary
@@ -291,4 +294,5 @@ public class SessionController
     public bool WhoPlaysFirst => uiWhoPlaysFirst;
     public bool BlockStartNextMatch => uiBlockStartNextMatch;
     public bool BlockShowResult => uiBlockShowResult;
+    public float NoMatchScreenDuration =>  noMatchScreenDuration;
 }

@@ -21,4 +21,5 @@ public interface ISessionDataProvider
     bool WhoPlaysFirst { get; }
     bool BlockStartNextMatch { get; }
     bool BlockShowResult { get; }
+    float NoMatchScreenDuration { get; }
 }
