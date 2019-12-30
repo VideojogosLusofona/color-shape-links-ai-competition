@@ -20,6 +20,10 @@ public class SessionView : MonoBehaviour
     private IReadOnlyList<KeyValuePair<string, Winner>> results;
     private IReadOnlyList<KeyValuePair<IPlayer, int>> standings;
 
+    // Vectors for holding the scrollviews
+    private Vector2 scrollViewVector1 = Vector2.zero;
+    private Vector2 scrollViewVector2 = Vector2.zero;
+
     private bool nextWhoPlaysFirst;
 
     private void Awake()
@@ -112,27 +116,46 @@ public class SessionView : MonoBehaviour
         // Is this the correct window?
         if (id == 0)
         {
-            // Determine an appropriate number of pixels per match
-            int vPixelsPerMatch =
-                Screen.height / Math.Max(matches.Count, 20);
 
-            // Determine an appropriate vertical position for the first match
-            int firstMatchVertPos = Screen.height / 2 - Mathf.Min(
-                Screen.height * 9 / 20,
-                matches.Count * vPixelsPerMatch / 2);
+            // Determine an appropriate number of pixels per match
+            int vPixelsPerMatch = Mathf.Max(18, Screen.height / 30);
 
             // Set text size depending on number of matches
-            int fontSize = Screen.height / Mathf.Max(matches.Count, 35);
+            int fontSize = Mathf.Max(10, Screen.height / 50);
 
             // Show "Matches to play" label, above the list of matches
             GUI.Label(
                 new Rect(
-                    Screen.width / 7,
-                    firstMatchVertPos - vPixelsPerMatch,
+                    Screen.width / 6,
+                    Screen.height / 6 - vPixelsPerMatch * 3 / 2,
                     Screen.width * 2 / 6,
                     vPixelsPerMatch),
                 string.Format("<size={0}><color={1}><b>{2}</b></color></size>",
                     fontSize, "orange", "Matches to play"));
+
+            // Begin the ScrollView
+            scrollViewVector1 = GUI.BeginScrollView(
+                new Rect(
+                    Screen.width / 6,
+                    Screen.height / 6,
+                    Screen.width * 3 / 12,
+                    Screen.height * 4 / 6),
+                scrollViewVector1,
+                new Rect(
+                    0,
+                    0,
+                    Screen.width * 1 / 6,
+                    vPixelsPerMatch * matches.Count));
+
+            // Draw a box for the scrollview contents
+            GUI.Box(
+                new Rect(
+                    0,
+                    0,
+                    Screen.width * 3 /12
+                        - GUI.skin.verticalScrollbar.fixedWidth - 1,
+                    vPixelsPerMatch * matches.Count),
+                "");
 
             // Show match list
             for (int i = 0; i < matches.Count; i++)
@@ -143,19 +166,23 @@ public class SessionView : MonoBehaviour
                 // Show match
                 GUI.Label(
                     new Rect(
-                        Screen.width / 6,
-                        firstMatchVertPos + i * vPixelsPerMatch,
-                        Screen.width * 2 / 6,
+                        0,
+                        i * vPixelsPerMatch,
+                        Screen.width * 1 / 6,
                         vPixelsPerMatch),
-                    string.Format("<size={0}><color={1}>{2}</color></size>",
-                        fontSize, color, matches[i]));
+                    string.Format(
+                        "<size={0}><color={1}><i>{2,4}.</i>  {3}</color></size>",
+                        fontSize, color, i + 1, matches[i]));
             }
+
+            // End the ScrollView
+            GUI.EndScrollView();
 
             // Draw go to first match button
             if (GUI.Button(
                 new Rect(
-                    Screen.width / 2 + Screen.width / 8,
-                    Screen.height / 2 - Screen.height / 16,
+                    Screen.width / 2,
+                    Screen.height / 6,
                     Screen.width / 4,
                     Screen.height / 8),
                 "Start tournament"))
@@ -348,51 +375,65 @@ public class SessionView : MonoBehaviour
             // same points as previous player
             int pos = 0;
 
-            // Label dimensions, which depend on either the number of standings
-            // and number of results
-            int vPixelsPerMatch, firstMatchVertPos, fontSize;
+            // Determine an appropriate number of pixels per match
+            int vPixelsPerMatch = Mathf.Max(18, Screen.height / 30);
+
+            // Set text size depending on number of matches
+            int fontSize = Mathf.Max(10, Screen.height / 50);
 
             // ////////////// //
             // SHOW STANDINGS //
             // ////////////// //
 
-            // Determine an appropriate number of pixels per match
-            vPixelsPerMatch =
-                Screen.height / Math.Max(standings.Count, 20);
-
-            // Determine an appropriate vertical position for the first match
-            firstMatchVertPos = Screen.height / 2 - Mathf.Min(
-                Screen.height * 9 / 20,
-                standings.Count * vPixelsPerMatch / 2);
-
-            // Set text size depending on number of matches
-            fontSize = Screen.height / Mathf.Max(standings.Count, 35);
-
             // Show "Standings" label, above the list of standings
             GUI.Label(
                 new Rect(
-                    Screen.width / 7,
-                    firstMatchVertPos - 2 * vPixelsPerMatch,
+                    Screen.width / 6,
+                    Screen.height / 6 - vPixelsPerMatch * 6 / 2,
                     Screen.width * 2 / 6,
                     vPixelsPerMatch),
                 string.Format("<size={0}><color={1}><b>{2}</b></color></size>",
                     fontSize, "orange", "Standings"));
 
+            // Begin the ScrollView
+            scrollViewVector1 = GUI.BeginScrollView(
+                new Rect(
+                    Screen.width / 6,
+                    Screen.height / 6 - vPixelsPerMatch * 3 / 2,
+                    Screen.width * 3 / 12,
+                    Screen.height * 4 / 6),
+                scrollViewVector1,
+                new Rect(
+                    0,
+                    0,
+                    Screen.width * 1 / 6,
+                    vPixelsPerMatch * (standings.Count + 1)));
+
+            // Draw a box for the scrollview contents
+            GUI.Box(
+                new Rect(
+                    0,
+                    0,
+                    Screen.width * 3 /12
+                        - GUI.skin.verticalScrollbar.fixedWidth - 1,
+                    vPixelsPerMatch * (standings.Count + 1)),
+                "");
+
             // Show "Player" and "Points" labels, above the list of standings
             GUI.Label(
                 new Rect(
-                    Screen.width / 6,
-                    firstMatchVertPos - vPixelsPerMatch,
+                    0,
+                    0,
                     Screen.width * 2 / 6,
                     vPixelsPerMatch),
                 string.Format("<size={0}><color={1}><b>{2}</b></color></size>",
-                    fontSize, "olive", "Player"));
+                    fontSize, "olive", "  Player"));
 
             GUI.Label(
                 new Rect(
-                    Screen.width * 2 / 6,
-                    firstMatchVertPos - vPixelsPerMatch,
-                    Screen.width * 2 / 6,
+                    Screen.width * 1 / 6,
+                    0,
+                    Screen.width * 1 / 6,
                     vPixelsPerMatch),
                 string.Format("<size={0}><color={1}><b>{2}</b></color></size>",
                     fontSize, "olive", "Points"));
@@ -417,49 +458,64 @@ public class SessionView : MonoBehaviour
                 // Show player name
                 GUI.Label(
                     new Rect(
-                        Screen.width / 6,
-                        firstMatchVertPos + i * vPixelsPerMatch,
-                        Screen.width * 2 / 6,
+                        0,
+                        (i + 1) * vPixelsPerMatch,
+                        Screen.width * 1 / 6,
                         vPixelsPerMatch),
                     string.Format("<size={0}><color={1}>{2}</color></size>",
-                        fontSize, color, $"{pos,2}. {standings[i].Key}"));
+                        fontSize, color, $"{pos,3}. {standings[i].Key}"));
 
                 // Show player points
                 GUI.Label(
                     new Rect(
-                        Screen.width * 2 / 6,
-                        firstMatchVertPos + i * vPixelsPerMatch,
-                        Screen.width * 2 / 6,
+                        Screen.width * 1 / 6,
+                        (i + 1) * vPixelsPerMatch,
+                        Screen.width * 1 / 6,
                         vPixelsPerMatch),
                     string.Format("<size={0}><color={1}>    {2,2}</color></size>",
                         fontSize, color, standings[i].Value));
             }
 
+            // End the ScrollView
+            GUI.EndScrollView();
+
             // //////////// //
             // SHOW RESULTS //
             // //////////// //
 
-            // Determine an appropriate number of pixels per match
-            vPixelsPerMatch =
-                Screen.height / Math.Max(results.Count, 20);
-
-            // Determine an appropriate vertical position for the first match
-            firstMatchVertPos = Screen.height / 2 - Mathf.Min(
-                Screen.height * 9 / 20,
-                results.Count * vPixelsPerMatch / 2);
-
-            // Set text size depending on number of matches
-            fontSize = Screen.height / Mathf.Max(results.Count, 35);
-
             // Show "Results" label, above the list of results
             GUI.Label(
                 new Rect(
-                    Screen.width * 4 / 6 - Screen.width / 42,
-                    firstMatchVertPos - vPixelsPerMatch,
-                    Screen.width * 2 / 6,
+                    Screen.width / 2,
+                    Screen.height / 6 - vPixelsPerMatch * 6 / 2,
+                    Screen.width * 3 / 12,
                     vPixelsPerMatch),
                 string.Format("<size={0}><color={1}><b>{2}</b></color></size>",
                     fontSize, "orange", "Results"));
+
+            // Begin the ScrollView
+            scrollViewVector2 = GUI.BeginScrollView(
+                new Rect(
+                    Screen.width / 2,
+                    Screen.height / 6 - vPixelsPerMatch * 3 / 2,
+                    Screen.width * 3 / 12,
+                    Screen.height * 4 / 6),
+                scrollViewVector2,
+                new Rect(
+                    0,
+                    0,
+                    Screen.width * 1 / 6,
+                    vPixelsPerMatch * results.Count));
+
+            // Draw a box for the scrollview contents
+            GUI.Box(
+                new Rect(
+                    0,
+                    0,
+                    Screen.width * 3 /12
+                        - GUI.skin.verticalScrollbar.fixedWidth - 1,
+                    vPixelsPerMatch * results.Count),
+                "");
 
             // Show match results
             for (int i = 0; i < results.Count; i++)
@@ -472,22 +528,25 @@ public class SessionView : MonoBehaviour
                 // Show match, result is based on color
                 GUI.Label(
                     new Rect(
-                        Screen.width * 4 / 6,
-                        firstMatchVertPos + i * vPixelsPerMatch,
-                        Screen.width * 2 / 6,
+                        0,
+                        i * vPixelsPerMatch,
+                        Screen.width * 1 / 6,
                         vPixelsPerMatch),
-                    string.Format("<size={0}><color={1}>{2}</color></size>",
+                    string.Format("<size={0}><color={1}> {2}</color></size>",
                         fontSize, color, results[i].Key));
             }
+
+            // End the ScrollView
+            GUI.EndScrollView();
 
             // Draw "Finish" button
             if (GUI.Button(
                 new Rect(
-                    Screen.width / 2 - Screen.width / 8,
-                    Screen.height * 7 / 8,
-                    Screen.width / 4,
+                    Screen.width * 5 / 6,
+                    Screen.height / 6 - vPixelsPerMatch * 3 / 2,
+                    Screen.width / 12,
                     Screen.height / 10),
-                "Finish"))
+                "Quit"))
             {
                 // If button is clicked, notify session end
                 OnEndSession();
