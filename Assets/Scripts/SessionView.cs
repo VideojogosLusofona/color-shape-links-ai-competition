@@ -76,7 +76,8 @@ public class SessionView : MonoBehaviour
                 }
                 break;
             case SessionState.InMatch:
-                // TODO In game tournament info
+                // We don't do anything in this case, everything is done by the
+                // match controller
                 break;
             case SessionState.PostMatch:
                 GUI.Window(3,
@@ -238,36 +239,28 @@ public class SessionView : MonoBehaviour
 
             // Define a text-centered gui style
             guiLabelStyle.alignment = TextAnchor.MiddleCenter;
-            guiLabelStyle.fontSize = Screen.width / 30;
+            guiLabelStyle.fontSize = Screen.width / 35;
 
-            // Show the label for player 1 (white)
-            GUI.Label(
+            // Draw a box under the label
+            GUI.Box(
                 new Rect(
-                    Screen.width / 2 - Screen.width / 3,
+                    Screen.width / 2 - Screen.width / 5,
                     Screen.height * 1 / 10,
-                    Screen.width * 2 / 3,
-                    Screen.height / 10),
-                $"<color=white>{sessionData.PlayerWhite}</color>",
-                guiLabelStyle);
+                    Screen.width * 2 / 5,
+                    Screen.height / 4),
+                "");
 
-            // Show the label for VS word
+            // Show the label for next match
             GUI.Label(
                 new Rect(
-                    Screen.width / 2 - Screen.width / 3,
-                    Screen.height * 2 / 10,
-                    Screen.width * 2 / 3,
-                    Screen.height / 10),
-                "<color=grey>vs</color>",
-                guiLabelStyle);
-
-            // Show the label for player 2 (red)
-            GUI.Label(
-                new Rect(
-                    Screen.width / 2 - Screen.width / 3,
-                    Screen.height * 3 / 10,
-                    Screen.width * 2 / 3,
-                    Screen.height / 10),
-                $"<color=red>{sessionData.PlayerRed}</color>",
+                    Screen.width / 2 - Screen.width / 5,
+                    Screen.height * 1 / 10,
+                    Screen.width * 2 / 5,
+                    Screen.height / 4),
+                string.Format("{0}{1}{2}",
+                    $"<color=white>{sessionData.PlayerWhite}</color>\n",
+                    "<color=grey>vs</color>\n",
+                    $"<color=red>{sessionData.PlayerRed}</color>"),
                 guiLabelStyle);
 
             // Is this a blocking screen?
@@ -279,7 +272,7 @@ public class SessionView : MonoBehaviour
                 if (GUI.Button(
                     new Rect(
                         Screen.width / 2 - Screen.width / 7,
-                        Screen.height * 9 / 20,
+                        Screen.height / 2,
                         Screen.width * 2 / 7,
                         Screen.height / 8),
                     "Start"))
@@ -321,13 +314,22 @@ public class SessionView : MonoBehaviour
             // Define a text-centered gui style
             GUIStyle guiLabelStyle = new GUIStyle(GUI.skin.label);
             guiLabelStyle.alignment = TextAnchor.MiddleCenter;
-            guiLabelStyle.fontSize = Screen.width / 30;
+            guiLabelStyle.fontSize = Screen.width / 35;
+
+            // Draw a box under the label
+            GUI.Box(
+                new Rect(
+                    Screen.width / 2 - Screen.width / 3,
+                    Screen.height * 7 / 8 - Screen.height / 16,
+                    Screen.width * 2 / 3,
+                    Screen.height / 8),
+                "");
 
             // Show the label indicating the final result of the game
             GUI.Label(
                 new Rect(
                     Screen.width / 2 - Screen.width / 3,
-                    Screen.height / 4,
+                    Screen.height * 7 / 8 - Screen.height / 16,
                     Screen.width * 2 / 3,
                     Screen.height / 8),
                 $"<color={color}>{result}</color>",
