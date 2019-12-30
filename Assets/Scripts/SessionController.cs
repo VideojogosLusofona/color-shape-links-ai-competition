@@ -33,7 +33,16 @@ public class SessionController
             this.player2 = player2;
         }
         public override string ToString() => $"{player1} vs {player2}";
-        public int CompareTo(Match other) => id - other.id;
+        public int CompareTo(Match other) => Equals(other) ? 0 : id - other.id;
+        public override int GetHashCode() =>
+            (player1.ToString() + player2.ToString()).GetHashCode();
+        public override bool Equals(object obj)
+        {
+            Match other;
+            if (obj == null || !(obj is Match)) return false;
+            other = (Match)obj;
+            return player1 == other.player1 && player2 == other.player2;
+        }
     }
 
     private struct DummyPlayer : IPlayer
@@ -172,7 +181,7 @@ public class SessionController
                 {
                     // This is match j for current round i
                     Match match = new Match(
-                        activeAIs[j], activeAIs[j + activeAIs.Count / 2]);
+                        activeAIs[j], activeAIs[activeAIs.Count - 1 - j]);
                     // Only add match to match list if it's not a dummy match
                     if (!match.IsDummy)
                     {

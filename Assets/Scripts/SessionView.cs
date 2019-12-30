@@ -168,7 +168,7 @@ public class SessionView : MonoBehaviour
                     new Rect(
                         0,
                         i * vPixelsPerMatch,
-                        Screen.width * 1 / 6,
+                        Screen.width * 3 / 12,
                         vPixelsPerMatch),
                     string.Format(
                         "<size={0}><color={1}><i>{2,4}.</i>  {3}</color></size>",
@@ -530,7 +530,7 @@ public class SessionView : MonoBehaviour
                     new Rect(
                         0,
                         i * vPixelsPerMatch,
-                        Screen.width * 1 / 6,
+                        Screen.width * 3 / 12,
                         vPixelsPerMatch),
                     string.Format("<size={0}><color={1}> {2}</color></size>",
                         fontSize, color, results[i].Key));
