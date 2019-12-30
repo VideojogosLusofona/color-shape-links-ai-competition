@@ -12,7 +12,7 @@ public interface ISessionDataProvider
     SessionState State { get; }
     string PlayerWhite { get; }
     string PlayerRed { get; }
-    IEnumerable<KeyValuePair<string, Winner>> Matches { get; }
+    IEnumerable<KeyValuePair<Match, Winner>> Matches { get; }
     IEnumerable<KeyValuePair<IPlayer, int>> Standings { get; }
     Winner LastMatchResult { get; }
     string WinnerString { get; }

@@ -16,8 +16,8 @@ public class SessionView : MonoBehaviour
     [SerializeField] private float nonBlockingScreenDuration = 1.5f;
     private ISessionDataProvider sessionData;
     private Coroutine nonBlockingScreenTimer;
-    private IReadOnlyList<string> matches;
-    private IReadOnlyList<KeyValuePair<string, Winner>> results;
+    private IReadOnlyList<Match> matches;
+    private IReadOnlyList<KeyValuePair<Match, Winner>> results;
     private IReadOnlyList<KeyValuePair<IPlayer, int>> standings;
 
     // Vectors for holding the scrollviews
@@ -34,7 +34,7 @@ public class SessionView : MonoBehaviour
     private void Start()
     {
         // Get a list of all matches to be performed
-        matches = new List<string>(sessionData.Matches.Select(kvp => kvp.Key));
+        matches = new List<Match>(sessionData.Matches.Select(kvp => kvp.Key));
 
         // Show "who plays first" menu?
         nextWhoPlaysFirst = sessionData.WhoPlaysFirst;
@@ -89,7 +89,7 @@ public class SessionView : MonoBehaviour
                 {
                     if (results == null)
                     {
-                        results = new List<KeyValuePair<string, Winner>>(
+                        results = new List<KeyValuePair<Match, Winner>>(
                             sessionData.Matches);
                         standings = new List<KeyValuePair<IPlayer, int>>(
                             sessionData.Standings);
@@ -525,6 +525,16 @@ public class SessionView : MonoBehaviour
                     ? "white"
                     : results[i].Value == Winner.Red ? "red" : "grey";
 
+                // Is first player bold (winner)?
+                string player1 = results[i].Value == Winner.White
+                    ? $"<b>{results[i].Key.player1}</b>"
+                    : results[i].Key.player1.ToString();
+
+                // Is second player bold (winner)?
+                string player2 = results[i].Value == Winner.Red
+                    ? $"<b>{results[i].Key.player2}</b>"
+                    : results[i].Key.player2.ToString();
+
                 // Show match, result is based on color
                 GUI.Label(
                     new Rect(
@@ -533,7 +543,8 @@ public class SessionView : MonoBehaviour
                         Screen.width * 3 / 12,
                         vPixelsPerMatch),
                     string.Format("<size={0}><color={1}> {2}</color></size>",
-                        fontSize, color, results[i].Key));
+                        fontSize, color,
+                        $"{player1} vs {player2}"));
             }
 
             // End the ScrollView

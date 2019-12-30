@@ -13,38 +13,6 @@ using UnityEngine;
 public class SessionController
     : MonoBehaviour, IMatchDataProvider, ISessionDataProvider
 {
-    private struct Match : IComparable<Match>
-    {
-        private static int nextId = 0;
-        private readonly int id;
-        public readonly IPlayer player1;
-        public readonly IPlayer player2;
-        public IPlayer this[PColor color] => color == PColor.White ? player1
-                : color == PColor.Red ? player2
-                    : throw new InvalidOperationException(
-                        $"Invalid player color");
-
-        public Match Swapped => new Match(player2, player1);
-        public bool IsDummy => player1 is DummyPlayer || player2 is DummyPlayer;
-        public Match(IPlayer player1, IPlayer player2)
-        {
-            id = nextId++;
-            this.player1 = player1;
-            this.player2 = player2;
-        }
-        public override string ToString() => $"{player1} vs {player2}";
-        public int CompareTo(Match other) => Equals(other) ? 0 : id - other.id;
-        public override int GetHashCode() =>
-            (player1.ToString() + player2.ToString()).GetHashCode();
-        public override bool Equals(object obj)
-        {
-            Match other;
-            if (obj == null || !(obj is Match)) return false;
-            other = (Match)obj;
-            return player1 == other.player1 && player2 == other.player2;
-        }
-    }
-
     private struct DummyPlayer : IPlayer
     {
         public bool IsHuman => false;
@@ -183,7 +151,8 @@ public class SessionController
                     Match match = new Match(
                         activeAIs[j], activeAIs[activeAIs.Count - 1 - j]);
                     // Only add match to match list if it's not a dummy match
-                    if (!match.IsDummy)
+                    if (!(match.player1 is DummyPlayer
+                        || match.player2 is DummyPlayer))
                     {
                         // Each match is in practice two matches, so both AIs
                         // can have a match where they are the first to play
@@ -311,10 +280,8 @@ public class SessionController
     public SessionState State => state;
     public string PlayerWhite => nextMatch[PColor.White].PlayerName;
     public string PlayerRed => nextMatch[PColor.Red].PlayerName;
-    public IEnumerable<KeyValuePair<string, Winner>> Matches =>
-        allMatches.Select(
-            kvp => new KeyValuePair<string, Winner>(
-                kvp.Key.ToString(), kvp.Value));
+    public IEnumerable<KeyValuePair<Match, Winner>> Matches =>
+        allMatches.ToList();
     public IEnumerable<KeyValuePair<IPlayer, int>> Standings =>
         standings.OrderByDescending(kvp => kvp.Value);
     public Winner LastMatchResult => matchController?.Result ?? Winner.None;
