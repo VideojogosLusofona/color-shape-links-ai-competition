@@ -20,7 +20,7 @@ public abstract class AIPlayer : MonoBehaviour, IPlayer
 
     public abstract void Setup();
 
-    private void Awake()
+    protected virtual void Awake()
     {
         AITimeLimit = GetComponentInParent<SessionController>().AITimeLimit;
     }
