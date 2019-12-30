@@ -10,23 +10,31 @@ work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 
 # Board Game AI
 
-An assignment for the Artificial Intelligence course unit
-
-*Under construction*
+An assignment for the Artificial Intelligence course unit of the [Bachelor in
+Videogames][licvideo] at [Universidade Lusófona de Humanidades e
+Tecnologias][ULHT], Lisbon, Portugal.
 
 ## Introduction
 
-*Under construction*
+The goal of this assignment is to implement a competitive AI for the board game
+included in this repository, the rules of which are similar to the [Simplexity]
+board game. However, this board game can played with arbitrary number of rows
+and columns, as well as accepting different number of pieces in a row for
+achieving victory. For the purpose of this assignment, we will refer to this
+board game as *ColorShapeLinks*.
 
-## Goals
+## The included Unity project
 
-The main goal of this project is to implement a competitive AI for the
-board game included in this repository, the rules of which are similar to the
-[Simplexity] board game. However, this board game can played with arbitrary
-number of rows and columns, as well as accepting different number of pieces in
-a row for achieving victory.
+TODO Describe the included Unity project
 
-## How to
+## Assignment tasks
+
+This project has two tasks, namely, 1) the [implementation of a competitive
+AI](#ai-implementation) for the *ColorShapeLinks* board game, and, 2) [writing
+of a report](#report). These tasks are discussed in further detail in the next
+sections.
+
+### AI implementation
 
 Students should implement a minimum of two classes. For example, if your AI is
 called *G03VerySmart*, these classes are as follows:
@@ -41,9 +49,9 @@ These classes should be in their own folder, `G03VerySmart`, which in turn
 should be placed at [`Assets/Scripts/AI/AIs/`]. This folder contains some
 examples of dumb AIs to demonstrate how your project should be organized.
 
-### The class that extends `AIPlayer`
+#### The class that extends `AIPlayer`
 
-This class allows your AI to be found by the game. For that purpose, it must
+This class allows an AI to be found by the game. For that purpose, it must
 be added as a component of the `SessionConfiguration` game object, and
 implement the following read-only properties:
 
@@ -53,14 +61,14 @@ implement the following read-only properties:
 
 The instance of the class that implements [`IThinker`] should be created in the
 `Setup()` method, which needs to be overridden when extending [`AIPlayer`].
-Take a look at the [example AIs][`Assets/Scripts/AI/AIs/`] to check how this
-should be done.
+The [example AIs][`Assets/Scripts/AI/AIs/`] demonstrate how this should be
+done.
 
 For AIs that really want to search as long as possible, the time limit is
 available in the `AITimeLimit` property, and can be passed to the thinker
 during its instantiation in the `Setup()` method.
 
-### The class that implements `IThinker`
+#### The class that implements `IThinker`
 
 This class is where the AI should be implemented. The [`IThinker`] interface
 defines the `Think()` method, which accepts the [game board][`Board`] and a
@@ -69,7 +77,7 @@ put, the method accepts the game board, the AI decides the best move to
 perform, and returns that move, which will eventually be executed by the game
 engine.
 
-#### Cancellation requests
+##### Cancellation requests
 
 The main thread may ask the AI to stop *thinking*, for example if the thinking
 time limit has expired. Thus, while *thinking*, the AI should frequently test
@@ -81,7 +89,7 @@ with no move performed, as exemplified in the following code:
 if (ct.IsCancellationRequested) return FutureMove.NoMove;
 ```
 
-#### Thinker code limitations
+##### Thinker code limitations
 
 The `Think()` method is called in a separate thread from the main Unity thread.
 As such, most Unity classes and objects cannot be used by the thinker,
@@ -93,7 +101,7 @@ Timing and random number generation functionality, useful or even mandatory for
 the thinker, can be obtained with native C# types such as [`DateTime`],
 [`TimeSpan`] and [`Random`].
 
-#### Game board functionality inside the thinker
+##### Game board functionality inside the thinker
 
 The thinker can freely modify the [game board][`Board`], since this is a copy
 and not the original game board being used in the main Unity thread. More
@@ -105,14 +113,43 @@ afterwards.
 The `CheckWinner()` method is useful to determine if there is a winner. If
 there is one, the solution is placed in the method's `out` parameter.
 
-For building heuristics, the public read-only variable `winCorridors` is your
-friend. This variable is a collection containing all corridors (sequences of
-positions) where good or winning piece sequences may exist.
+For building heuristics, the public read-only variable `winCorridors` might be
+important. This variable is a collection containing all corridors (sequences of
+positions) where promising or winning piece sequences may exist.
 
-### Project submission
+### Report
 
-The project should be submitted by groups of 2 or 3 students, via Moodle,
-before January 7, 23:00.
+TODO Report
+
+## Evaluation criteria
+
+TODO Evaluation criteria
+
+## Assignment submission
+
+The assignment should be submitted by groups of 2 or 3 students, via Moodle,
+before January 7, 23:00, and must include the following items:
+
+* The class that extends [`AIPlayer`]
+* The class that implements [`IThinker`]
+* _(Optional)_ Other classes required by the two mandatory classes.
+* The Markdown-formatted report in the `README.md` file.
+* _(Optional)_ Images used in the report.
+
+## Academic honesty
+
+Academic dishonesty is unacceptable and will not be tolerated. Cheating,
+forgery, plagiarism and collusion in dishonest acts undermine the University's
+educational mission and the students' personal and intellectual growth.
+[Lusófona][ULHT] students are expected to bear individual responsibility for
+their work, to learn the rules and definitions that underlie the practice of
+academic integrity, and to uphold its ideals. Ignorance of the rules is not an
+acceptable excuse for disobeying them. Any student who attempts to compromise
+or devalue the academic process will be sanctioned according to
+[Lusófona][ULHT] regulations.
+
+_Text adapted from
+[Baruch College](https://www.baruch.cuny.edu/academic/academic_honesty.html)_.
 
 ## Licenses
 
