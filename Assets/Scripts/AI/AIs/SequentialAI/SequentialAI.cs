@@ -5,15 +5,17 @@
  * Author: Nuno Fachada
  * */
 
+using System;
+
 public class SequentialAI : AIPlayer
 {
     public override string PlayerName => "SequentialAI";
     public override IThinker Thinker => thinker;
 
     private IThinker thinker;
-    protected override void Awake()
+
+    public override void Setup()
     {
-        base.Awake();
         thinker = new SequentialAIThinker();
     }
 

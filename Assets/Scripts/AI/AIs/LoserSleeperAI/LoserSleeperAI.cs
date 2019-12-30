@@ -11,9 +11,8 @@ public class LoserSleeperAI : AIPlayer
     public override IThinker Thinker => thinker;
 
     private IThinker thinker;
-    protected override void Awake()
+    public override void Setup()
     {
-        base.Awake();
         thinker = new LoserSleeperAIThinker();
     }
 

@@ -45,6 +45,8 @@ public class MatchController : MonoBehaviour
         view = GameObject.Find("UI")?.GetComponent<MatchView>();
         aiTimeLimit = new TimeSpan(
             (long)(matchData.AITimeLimit * TimeSpan.TicksPerSecond));
+        (matchData.GetPlayer(PColor.White) as AIPlayer)?.Setup();
+        (matchData.GetPlayer(PColor.Red) as AIPlayer)?.Setup();
     }
 
     private void OnEnable()

@@ -51,14 +51,14 @@ implement the following read-only properties:
 2. `Thinker`, which should return an instance of the class that implements
    [`IThinker`].
 
-The instance of the class that implements [`IThinker`] should be created in
-`Awake()`. However, the `Awake()` in the base class [`AIPlayer`], which is a
-`protected virtual` method, must also be called. Take a look at the [example
-AIs][`Assets/Scripts/AI/AIs/`] to check how this should be implemented.
+The instance of the class that implements [`IThinker`] should be created in the
+`Setup()` method, which needs to be overridden when extending [`AIPlayer`].
+Take a look at the [example AIs][`Assets/Scripts/AI/AIs/`] to check how this
+should be done.
 
 For AIs that really want to search as long as possible, the time limit is
 available in the `AITimeLimit` property, and can be passed to the thinker
-during its instantiation in `Awake()`.
+during its instantiation in the `Setup()` method.
 
 ### The class that implements `IThinker`
 
@@ -90,7 +90,8 @@ The [`Mathf`] functions can be used without problems, since they do not depend
 on anything other than the input they are given.
 
 Timing and random number generation functionality, useful or even mandatory for
-the thinker, can be obtained with native C# types such as [`DateTime`], [`TimeSpan`] and [`Random`].
+the thinker, can be obtained with native C# types such as [`DateTime`],
+[`TimeSpan`] and [`Random`].
 
 #### Game board functionality inside the thinker
 
