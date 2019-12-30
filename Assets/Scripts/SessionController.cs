@@ -283,8 +283,9 @@ public class SessionController
     public SessionState State => state;
     public string PlayerWhite => nextMatch[PColor.White].PlayerName;
     public string PlayerRed => nextMatch[PColor.Red].PlayerName;
-    public IEnumerable<KeyValuePair<Match, Winner>> Matches =>
-        allMatches.ToList();
+    public IEnumerable<Match> Matches => allMatches.Keys;
+    public IEnumerable<KeyValuePair<Match, Winner>> Results =>
+        allMatches.Where(kvp => kvp.Value != Winner.None);
     public IEnumerable<KeyValuePair<IPlayer, int>> Standings =>
         standings.OrderByDescending(kvp => kvp.Value);
     public Winner LastMatchResult => matchController?.Result ?? Winner.None;

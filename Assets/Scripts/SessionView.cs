@@ -33,7 +33,7 @@ public class SessionView : MonoBehaviour
     private void Start()
     {
         // Get a list of all matches to be performed
-        matches = new List<Match>(sessionData.Matches.Select(kvp => kvp.Key));
+        matches = new List<Match>(sessionData.Matches);
 
         // Show "who plays first" menu?
         nextWhoPlaysFirst = sessionData.WhoPlaysFirst;
@@ -75,10 +75,24 @@ public class SessionView : MonoBehaviour
                 }
                 break;
             case SessionState.InMatch:
-                // We don't do anything in this case, everything is done by the
-                // match controller
+                // Here we simply set results to null, so that when we go to
+                // the next state (PostMatch), results and standings are
+                // updated
+                if (results != null)
+                {
+                    results = null;
+                }
                 break;
             case SessionState.PostMatch:
+                // If results is null, let's retrieve them together with the
+                // updated standings
+                if (results == null)
+                {
+                    results = new List<KeyValuePair<Match, Winner>>(
+                        sessionData.Results);
+                    standings = new List<KeyValuePair<IPlayer, int>>(
+                        sessionData.Standings);
+                }
                 GUI.Window(3,
                     new Rect(0, 0, Screen.width, Screen.height),
                     WindowMatchResult,
@@ -87,13 +101,6 @@ public class SessionView : MonoBehaviour
             case SessionState.End:
                 if (sessionData.ShowTournamentStandings)
                 {
-                    if (results == null)
-                    {
-                        results = new List<KeyValuePair<Match, Winner>>(
-                            sessionData.Matches);
-                        standings = new List<KeyValuePair<IPlayer, int>>(
-                            sessionData.Standings);
-                    }
                     GUI.Window(4,
                         new Rect(0, 0, Screen.width, Screen.height),
                         WindowFinalStandings,
@@ -152,7 +159,7 @@ public class SessionView : MonoBehaviour
                 new Rect(
                     0,
                     0,
-                    Screen.width * 3 /12
+                    Screen.width * 3 / 12
                         - GUI.skin.verticalScrollbar.fixedWidth - 1,
                     vPixelsPerMatch * matches.Count),
                 "");
@@ -261,6 +268,34 @@ public class SessionView : MonoBehaviour
                     "<color=grey>vs</color>\n",
                     $"<color=red>{sessionData.PlayerRed}</color>"),
                 guiLabelStyle);
+
+            // Is this a tournament and is this not the first game?
+            if (results?.Count >= 1)
+            {
+                // Determine an appropriate number of pixels per match
+                int vPixelsPerMatch = Mathf.Max(16, Screen.height / 40);
+
+                // Set text size depending on number of matches
+                int fontSize = Mathf.Max(8, Screen.height / 65);
+
+                // The rect for the standings
+                Rect rectStd = new Rect(
+                    Screen.width / 12,
+                    Screen.height * 1 / 10,
+                    Screen.width / 6,
+                    Screen.height * 4 / 6);
+
+                // The rect for the results
+                Rect rectRes = new Rect(
+                    Screen.width * 9 / 12,
+                    Screen.height * 1 / 10,
+                    Screen.width / 6,
+                    Screen.height * 4 / 6);
+
+                // If so, show standings and results
+                ShowStandingsAndResults(
+                    vPixelsPerMatch, fontSize, rectStd, rectRes);
+            }
 
             // Is this a blocking screen?
             if (sessionData.BlockStartNextMatch)
@@ -372,184 +407,29 @@ public class SessionView : MonoBehaviour
         // Is this the correct window?
         if (id == 4)
         {
-            // Variable for determining player standing when it has the
-            // same points as previous player
-            int pos = 0;
-
             // Determine an appropriate number of pixels per match
             int vPixelsPerMatch = Mathf.Max(18, Screen.height / 30);
 
             // Set text size depending on number of matches
             int fontSize = Mathf.Max(10, Screen.height / 50);
 
-            // ////////////// //
-            // SHOW STANDINGS //
-            // ////////////// //
+            // The rect for the standings
+            Rect rectStd = new Rect(
+                Screen.width / 6,
+                Screen.height / 6 - vPixelsPerMatch * 3 / 2,
+                Screen.width * 3 / 12,
+                Screen.height * 4 / 6);
 
-            // Show "Standings" label, above the list of standings
-            GUI.Label(
-                new Rect(
-                    Screen.width / 6,
-                    Screen.height / 6 - vPixelsPerMatch * 6 / 2,
-                    Screen.width * 2 / 6,
-                    vPixelsPerMatch),
-                string.Format("<size={0}><color={1}><b>{2}</b></color></size>",
-                    fontSize, "orange", "Standings"));
+            // The rect for the results
+            Rect rectRes = new Rect(
+                Screen.width / 2,
+                Screen.height / 6 - vPixelsPerMatch * 3 / 2,
+                Screen.width * 3 / 12,
+                Screen.height * 4 / 6);
 
-            // Begin the ScrollView
-            scrollViewVector1 = GUI.BeginScrollView(
-                new Rect(
-                    Screen.width / 6,
-                    Screen.height / 6 - vPixelsPerMatch * 3 / 2,
-                    Screen.width * 3 / 12,
-                    Screen.height * 4 / 6),
-                scrollViewVector1,
-                new Rect(
-                    0,
-                    0,
-                    Screen.width * 1 / 6,
-                    vPixelsPerMatch * (standings.Count + 1)));
-
-            // Draw a box for the scrollview contents
-            GUI.Box(
-                new Rect(
-                    0,
-                    0,
-                    Screen.width * 3 /12
-                        - GUI.skin.verticalScrollbar.fixedWidth - 1,
-                    vPixelsPerMatch * (standings.Count + 1)),
-                "");
-
-            // Show "Player" and "Points" labels, above the list of standings
-            GUI.Label(
-                new Rect(
-                    0,
-                    0,
-                    Screen.width * 2 / 6,
-                    vPixelsPerMatch),
-                string.Format("<size={0}><color={1}><b>{2}</b></color></size>",
-                    fontSize, "olive", "  Player"));
-
-            GUI.Label(
-                new Rect(
-                    Screen.width * 1 / 6,
-                    0,
-                    Screen.width * 1 / 6,
-                    vPixelsPerMatch),
-                string.Format("<size={0}><color={1}><b>{2}</b></color></size>",
-                    fontSize, "olive", "Points"));
-
-            // Show standings
-            for (int i = 0; i < standings.Count; i++)
-            {
-                // Set alternating color for each player
-                string color = i % 2 == 0 ? "white" : "grey";
-
-                // If player has the same points as the previous player, then
-                // it should have the same standing
-                if (i == 0)
-                {
-                    pos = 1;
-                }
-                else if (standings[i].Value != standings[i - 1].Value)
-                {
-                    pos = i + 1;
-                }
-
-                // Show player name
-                GUI.Label(
-                    new Rect(
-                        0,
-                        (i + 1) * vPixelsPerMatch,
-                        Screen.width * 1 / 6,
-                        vPixelsPerMatch),
-                    string.Format("<size={0}><color={1}>{2}</color></size>",
-                        fontSize, color, $"{pos,3}. {standings[i].Key}"));
-
-                // Show player points
-                GUI.Label(
-                    new Rect(
-                        Screen.width * 1 / 6,
-                        (i + 1) * vPixelsPerMatch,
-                        Screen.width * 1 / 6,
-                        vPixelsPerMatch),
-                    string.Format("<size={0}><color={1}>    {2,2}</color></size>",
-                        fontSize, color, standings[i].Value));
-            }
-
-            // End the ScrollView
-            GUI.EndScrollView();
-
-            // //////////// //
-            // SHOW RESULTS //
-            // //////////// //
-
-            // Show "Results" label, above the list of results
-            GUI.Label(
-                new Rect(
-                    Screen.width / 2,
-                    Screen.height / 6 - vPixelsPerMatch * 6 / 2,
-                    Screen.width * 3 / 12,
-                    vPixelsPerMatch),
-                string.Format("<size={0}><color={1}><b>{2}</b></color></size>",
-                    fontSize, "orange", "Results"));
-
-            // Begin the ScrollView
-            scrollViewVector2 = GUI.BeginScrollView(
-                new Rect(
-                    Screen.width / 2,
-                    Screen.height / 6 - vPixelsPerMatch * 3 / 2,
-                    Screen.width * 3 / 12,
-                    Screen.height * 4 / 6),
-                scrollViewVector2,
-                new Rect(
-                    0,
-                    0,
-                    Screen.width * 1 / 6,
-                    vPixelsPerMatch * results.Count));
-
-            // Draw a box for the scrollview contents
-            GUI.Box(
-                new Rect(
-                    0,
-                    0,
-                    Screen.width * 3 /12
-                        - GUI.skin.verticalScrollbar.fixedWidth - 1,
-                    vPixelsPerMatch * results.Count),
-                "");
-
-            // Show match results
-            for (int i = 0; i < results.Count; i++)
-            {
-                // Color for current result
-                string color = results[i].Value == Winner.White
-                    ? "white"
-                    : results[i].Value == Winner.Red ? "red" : "grey";
-
-                // Is first player bold (winner)?
-                string player1 = results[i].Value == Winner.White
-                    ? $"<b>{results[i].Key.player1}</b>"
-                    : results[i].Key.player1.ToString();
-
-                // Is second player bold (winner)?
-                string player2 = results[i].Value == Winner.Red
-                    ? $"<b>{results[i].Key.player2}</b>"
-                    : results[i].Key.player2.ToString();
-
-                // Show match, result is based on color
-                GUI.Label(
-                    new Rect(
-                        0,
-                        i * vPixelsPerMatch,
-                        Screen.width * 3 / 12,
-                        vPixelsPerMatch),
-                    string.Format("<size={0}><color={1}> {2}</color></size>",
-                        fontSize, color,
-                        $"{player1} vs {player2}"));
-            }
-
-            // End the ScrollView
-            GUI.EndScrollView();
+            // Show standings and results
+            ShowStandingsAndResults(
+                vPixelsPerMatch, fontSize, rectStd, rectRes);
 
             // Draw "Finish" button
             if (GUI.Button(
@@ -564,6 +444,173 @@ public class SessionView : MonoBehaviour
                 OnEndSession();
             }
         }
+    }
+
+    private void ShowStandingsAndResults(
+        int vPixelsPerMatch, int fontSize, Rect rectStd, Rect rectRes)
+    {
+        // Variable for determining player standing when it has the
+        // same points as previous player
+        int pos = 0;
+
+        // ////////////// //
+        // SHOW STANDINGS //
+        // ////////////// //
+
+        // Show "Standings" label, above the list of standings
+        GUI.Label(
+            new Rect(
+                rectStd.x,
+                rectStd.y - vPixelsPerMatch * 3 / 2,
+                rectStd.width,
+                vPixelsPerMatch),
+            string.Format("<size={0}><color={1}><b>{2}</b></color></size>",
+                fontSize, "orange", "Standings"));
+
+        // Begin the ScrollView
+        scrollViewVector1 = GUI.BeginScrollView(
+            rectStd,
+            scrollViewVector1,
+            new Rect(
+                0,
+                0,
+                rectStd.width - Screen.width * 1 / 12,
+                vPixelsPerMatch * (standings.Count + 1) + 2));
+
+        // Draw a box for the scrollview contents
+        GUI.Box(
+            new Rect(
+                0,
+                0,
+                rectStd.width - GUI.skin.verticalScrollbar.fixedWidth - 1,
+                vPixelsPerMatch * (standings.Count + 1) + 2),
+            "");
+
+        // Show "Player" and "Points" labels, above the list of standings
+        GUI.Label(
+            new Rect(
+                0,
+                0,
+                rectStd.width + Screen.width * 1 / 12,
+                vPixelsPerMatch),
+            string.Format("<size={0}><color={1}><b>{2}</b></color></size>",
+                fontSize, "olive", "  Player"));
+
+        GUI.Label(
+            new Rect(
+                rectStd.width * 3 / 5,
+                0,
+                rectStd.width - Screen.width * 1 / 12,
+                vPixelsPerMatch),
+            string.Format("<size={0}><color={1}><b>{2}</b></color></size>",
+                fontSize, "olive", "Points"));
+
+        // Show standings
+        for (int i = 0; i < standings.Count; i++)
+        {
+            // Set alternating color for each player
+            string color = i % 2 == 0 ? "white" : "grey";
+
+            // If player has the same points as the previous player, then
+            // it should have the same standing
+            if (i == 0)
+            {
+                pos = 1;
+            }
+            else if (standings[i].Value != standings[i - 1].Value)
+            {
+                pos = i + 1;
+            }
+
+            // Show player name
+            GUI.Label(
+                new Rect(
+                    0,
+                    (i + 1) * vPixelsPerMatch,
+                    rectStd.width - Screen.width * 1 / 12,
+                    vPixelsPerMatch),
+                string.Format("<size={0}><color={1}>{2}</color></size>",
+                    fontSize, color, $"{pos,3}. {standings[i].Key}"));
+
+            // Show player points
+            GUI.Label(
+                new Rect(
+                    rectStd.width * 3 / 5,
+                    (i + 1) * vPixelsPerMatch,
+                    rectStd.width - Screen.width * 1 / 12,
+                    vPixelsPerMatch),
+                string.Format("<size={0}><color={1}>    {2,2}</color></size>",
+                    fontSize, color, standings[i].Value));
+        }
+
+        // End the ScrollView
+        GUI.EndScrollView();
+
+        // //////////// //
+        // SHOW RESULTS //
+        // //////////// //
+
+        // Show "Results" label, above the list of results
+        GUI.Label(
+            new Rect(
+                rectRes.x,
+                rectRes.y - vPixelsPerMatch * 3 / 2,
+                rectRes.width,
+                vPixelsPerMatch),
+            string.Format("<size={0}><color={1}><b>{2}</b></color></size>",
+                fontSize, "orange", "Results"));
+
+        // Begin the ScrollView
+        scrollViewVector2 = GUI.BeginScrollView(
+            rectRes,
+            scrollViewVector2,
+            new Rect(
+                0,
+                0,
+                rectRes.width - Screen.width * 1 / 12,
+                vPixelsPerMatch * results.Count + 2));
+
+        // Draw a box for the scrollview contents
+        GUI.Box(
+            new Rect(
+                0,
+                0,
+                rectRes.width - GUI.skin.verticalScrollbar.fixedWidth - 1,
+                vPixelsPerMatch * results.Count + 2),
+            "");
+
+        // Show match results
+        for (int i = 0; i < results.Count; i++)
+        {
+            // Color for current result
+            string color = results[i].Value == Winner.White
+                ? "white"
+                : results[i].Value == Winner.Red ? "red" : "grey";
+
+            // Is first player bold (winner)?
+            string player1 = results[i].Value == Winner.White
+                ? $"<b>{results[i].Key.player1}</b>"
+                : results[i].Key.player1.ToString();
+
+            // Is second player bold (winner)?
+            string player2 = results[i].Value == Winner.Red
+                ? $"<b>{results[i].Key.player2}</b>"
+                : results[i].Key.player2.ToString();
+
+            // Show match, result is based on color
+            GUI.Label(
+                new Rect(
+                    0,
+                    i * vPixelsPerMatch,
+                    rectRes.width,
+                    vPixelsPerMatch),
+                string.Format("<size={0}><color={1}> {2}</color></size>",
+                    fontSize, color,
+                    $"{player1} vs {player2}"));
+        }
+
+        // End the ScrollView
+        GUI.EndScrollView();
     }
 
     private IEnumerator NonBlockingScreenTimer(Action eventToInvoke)

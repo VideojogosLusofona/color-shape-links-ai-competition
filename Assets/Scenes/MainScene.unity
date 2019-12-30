@@ -316,15 +316,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 505a1c9a208273b9c9f96cff93c38eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  matchPrefab: {fileID: 8785714994902384369, guid: b0d030fed5862354c9cc5f6a3f15b292,
-    type: 3}
   rows: 7
   cols: 7
   winSequence: 4
   roundPiecesPerPlayer: 10
   squarePiecesPerPlayer: 11
-  aITimeLimit: 0.5
-  minAIGameMoveTime: 0.25
+  aITimeLimit: 0.2
+  minAIGameMoveTime: 1
+  pointsPerWin: 3
+  pointsPerDraw: 1
+  pointsPerLoss: 0
+  pressButtonBeforeMatch: 0
+  pressButtonAfterMatch: 0
+  noMatchScreenDuration: 2
 --- !u!4 &617695835
 Transform:
   m_ObjectHideFlags: 0
@@ -390,7 +394,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b143fee73cc82072cb94631d4fb11395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nonBlockingScreenDuration: 1
 --- !u!1 &1037412112
 GameObject:
   m_ObjectHideFlags: 0
