@@ -111,7 +111,7 @@ so the thinker can perform any sequence of moves, and roll them back
 afterwards.
 
 The `CheckWinner()` method is useful to determine if there is a winner. If
-there is one, the solution is placed in the method's `out` parameter.
+there is one, the solution is placed in the method's optional parameter.
 
 For building heuristics, the public read-only variable `winCorridors` might be
 important. This variable is a collection containing all corridors (sequences of
@@ -132,9 +132,9 @@ before January 7, 23:00, and must include the following items:
 
 * The class that extends [`AIPlayer`]
 * The class that implements [`IThinker`]
-* _(Optional)_ Other classes required by the two mandatory classes.
+* *(Optional)* Other classes required by the two mandatory classes.
 * The Markdown-formatted report in the `README.md` file.
-* _(Optional)_ Images used in the report.
+* *(Optional)* Images used in the report.
 
 ## Academic honesty
 

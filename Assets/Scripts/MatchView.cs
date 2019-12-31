@@ -1,9 +1,9 @@
-﻿/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/.
- *
- * Author: Nuno Fachada
- * */
+﻿/// @file
+/// @brief This file contains the ::MatchView class.
+///
+/// @author Nuno Fachada
+/// @date 2019
+/// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using System;
 using System.Text;
@@ -30,7 +30,7 @@ public class MatchView : MonoBehaviour
     private IMatchDataProvider matchData;
     private PShape[] selectedShapes;
     private GameObject[,] pieces;
-    private UIArrow[] uiArrows;
+    private HumanMoveButton[] uiArrows;
     private GameObject isThinkingCanvas;
     private Text messageBoxText;
 
@@ -86,7 +86,7 @@ public class MatchView : MonoBehaviour
         pieces = new GameObject[board.rows, board.cols];
 
         // Create array for UI arrow script objects
-        uiArrows = new UIArrow[board.cols];
+        uiArrows = new HumanMoveButton[board.cols];
 
         // Instantiate the message queue
         messageQueue = new Queue<string>();
@@ -150,7 +150,7 @@ public class MatchView : MonoBehaviour
             currArrow.name = $"Arrow{c}";
 
             // Keep reference to the UI arrow script
-            uiArrows[c] = currArrow.GetComponent<UIArrow>();
+            uiArrows[c] = currArrow.GetComponent<HumanMoveButton>();
 
             // Set the arrow's column
             uiArrows[c].Column = c;
@@ -419,7 +419,7 @@ public class MatchView : MonoBehaviour
         SelectShape(move.piece.color, move.piece.shape);
 
         // Disable or enable GUI stuff depending on who's playing next
-        foreach (UIArrow arrow in uiArrows)
+        foreach (HumanMoveButton arrow in uiArrows)
         {
             arrow.gameObject.SetActive(
                 !finished && matchData.CurrentPlayer.IsHuman);
@@ -499,12 +499,12 @@ public class MatchView : MonoBehaviour
     {
         // This coroutine till be called at least once per AI move
         YieldInstruction timeAImoves = new WaitForSeconds(
-            matchData.TimeBetweenAIMoves);
+            matchData.MinAIGameMoveTime);
 
         // When there are more messages, the coroutine is called in a tenth
         // of that time, giving the illusion of scrolling
         YieldInstruction minTimMsgs = new WaitForSeconds(
-            matchData.TimeBetweenAIMoves / 10);
+            matchData.MinAIGameMoveTime / 10);
 
         // Enter the infinite loop
         while (true)

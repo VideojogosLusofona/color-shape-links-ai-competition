@@ -1,9 +1,9 @@
-﻿/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/.
- *
- * Author: Nuno Fachada
- * */
+﻿/// @file
+/// @brief This file contains the ::SessionController class.
+///
+/// @author Nuno Fachada
+/// @date 2019
+/// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using System;
 using System.Linq;
@@ -22,6 +22,8 @@ public class SessionController
 
     [Header("Match properties")]
     [SerializeField] private int rows = 7;
+
+    /// <summary>Number of columns in game board.</summary>
     [SerializeField] private int cols = 7;
     [SerializeField] private int winSequence = 4;
     [SerializeField] private int roundPiecesPerPlayer = 10;
@@ -41,7 +43,7 @@ public class SessionController
     [SerializeField] private int pointsPerLoss = 0;
     [SerializeField] private bool pressButtonBeforeMatch = false;
     [SerializeField] private bool pressButtonAfterMatch = false;
-    [SerializeField] private float noMatchScreenDuration = 1.5f;
+    [SerializeField] private float unblockedScreenDuration = 1.5f;
 
     private GameObject matchPrefab = null;
     private SessionView view;
@@ -100,8 +102,6 @@ public class SessionController
         if (activeAIs.Count == 0)
         {
             // A game between human players
-            uiShowListOfMatches = false;
-            uiShowTournamentStandings = false;
             uiWhoPlaysFirst = false;
             uiBlockStartNextMatch = true;
             uiBlockShowResult = true;
@@ -110,8 +110,6 @@ public class SessionController
         else if (activeAIs.Count == 1)
         {
             // A game between a human and an AI
-            uiShowListOfMatches = false;
-            uiShowTournamentStandings = false;
             uiWhoPlaysFirst = true;
             uiBlockStartNextMatch = true;
             uiBlockShowResult = true;
@@ -120,8 +118,6 @@ public class SessionController
         else if (activeAIs.Count == 2)
         {
             // A game between two AIs, ask who plays first
-            uiShowListOfMatches = false;
-            uiShowTournamentStandings = false;
             uiWhoPlaysFirst = true;
             uiBlockStartNextMatch = true;
             uiBlockShowResult = true;
@@ -130,8 +126,6 @@ public class SessionController
         else
         {
             // Multiple AIs, run a tournament
-            uiShowListOfMatches = true;
-            uiShowTournamentStandings = true;
             uiWhoPlaysFirst = false;
             uiBlockStartNextMatch = pressButtonBeforeMatch;
             uiBlockShowResult = pressButtonAfterMatch;
@@ -276,7 +270,7 @@ public class SessionController
     public Board Board => board;
     public IPlayer CurrentPlayer => nextMatch[board.Turn];
     public float AITimeLimit => aITimeLimit;
-    public float TimeBetweenAIMoves => minAIGameMoveTime;
+    public float MinAIGameMoveTime => minAIGameMoveTime;
     public IPlayer GetPlayer(PColor player) => nextMatch[player];
 
     // Implementation of ISessionDataProvider
@@ -290,10 +284,8 @@ public class SessionController
         standings.OrderByDescending(kvp => kvp.Value);
     public Winner LastMatchResult => matchController?.Result ?? Winner.None;
     public string WinnerString => matchController?.WinnerString;
-    public bool ShowListOfMatches => uiShowListOfMatches;
-    public bool ShowTournamentStandings => uiShowTournamentStandings;
     public bool WhoPlaysFirst => uiWhoPlaysFirst;
     public bool BlockStartNextMatch => uiBlockStartNextMatch;
     public bool BlockShowResult => uiBlockShowResult;
-    public float NoMatchScreenDuration =>  noMatchScreenDuration;
+    public float UnblockedScreenDuration =>  unblockedScreenDuration;
 }

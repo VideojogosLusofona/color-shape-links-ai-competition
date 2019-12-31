@@ -1,12 +1,11 @@
-﻿/* This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/.
- *
- * Author: Nuno Fachada
- * */
+﻿/// @file
+/// @brief This file contains the ::SessionView class.
+///
+/// @author Nuno Fachada
+/// @date 2019
+/// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using System;
-using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -44,7 +43,7 @@ public class SessionView : MonoBehaviour
         switch (sessionData.State)
         {
             case SessionState.Begin:
-                if (sessionData.ShowListOfMatches)
+                if (matches.Count > 1)
                 {
                     GUI.Window(0,
                         new Rect(0, 0, Screen.width, Screen.height),
@@ -99,7 +98,7 @@ public class SessionView : MonoBehaviour
                     "Match result");
                 break;
             case SessionState.End:
-                if (sessionData.ShowTournamentStandings)
+                if (matches.Count > 1)
                 {
                     GUI.Window(4,
                         new Rect(0, 0, Screen.width, Screen.height),
@@ -615,7 +614,7 @@ public class SessionView : MonoBehaviour
 
     private IEnumerator NonBlockingScreenTimer(Action eventToInvoke)
     {
-        yield return new WaitForSeconds(sessionData.NoMatchScreenDuration);
+        yield return new WaitForSeconds(sessionData.UnblockedScreenDuration);
         eventToInvoke?.Invoke();
         nonBlockingScreenTimer = null;
     }
