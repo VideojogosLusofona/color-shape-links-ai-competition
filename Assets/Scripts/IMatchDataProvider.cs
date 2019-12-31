@@ -10,15 +10,11 @@
 /// </summary>
 public interface IMatchDataProvider
 {
-    /// <summary>
-    /// The game board.
-    /// </summary>
+    /// <summary>The game board.</summary>
     /// <value>The game board.</value>
     Board Board { get; }
 
-    /// <summary>
-    /// The current player.
-    /// </summary>
+    /// <summary>The current player.</summary>
     /// <value>The current player.</value>
     IPlayer CurrentPlayer { get; }
 
@@ -35,9 +31,11 @@ public interface IMatchDataProvider
     /// <value>Minimum apparent AI play time.</value>
     float MinAIGameMoveTime { get; }
 
-    /// <summary>
-    /// Get player of the specified color.
-    /// </summary>
+    /// <summary>Last move animation length in seconds.</summary>
+    /// <value>Last move animation length in seconds.</value>
+    float LastMoveAnimLength { get; }
+
+    /// <summary>Get player of the specified color.</summary>
     /// <param name="player">Color of the player to get.</param>
     /// <returns>Player of the specified color.</returns>
     IPlayer GetPlayer(PColor player);

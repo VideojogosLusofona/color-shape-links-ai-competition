@@ -17,8 +17,8 @@ using UnityEngine.Events;
 /// <remarks>
 /// Based on the MVC design pattern, composed in this case by the following
 /// classes:
-/// * *Model* - <see cref="Board"/>
-/// * *View* - <see cref="MatchView"/>
+/// * *Model* - <see cref="Board"/>.
+/// * *View* - <see cref="MatchView"/>.
 /// * *Controller* - This class.
 /// </remarks>
 public class MatchController : MonoBehaviour

@@ -10,41 +10,74 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script which renders the session UI.
+/// </summary>
+/// <remarks>
+/// Based on the MVC design pattern, composed in this case by the following
+/// classes:
+/// * *Model* - A list of <see cref="Match"/> instances can be considered the
+/// model, although there isn't a well defined model in this case.
+/// * *View* - This class.
+/// * *Controller* - <see cref="SessionController"/>.
+/// </remarks>
 public class SessionView : MonoBehaviour
 {
+    // Reference to the session data provider
     private ISessionDataProvider sessionData;
+
+    // Reference to the coroutine that provides a timer for non-blocking
+    // session UI screens (next match screen and match results screen)
     private Coroutine nonBlockingScreenTimer;
+
+    // List of all matches to be played
     private IReadOnlyList<Match> matches;
+
+    // List of results of matches played so far (match-result pairs)
     private IReadOnlyList<KeyValuePair<Match, Winner>> results;
+
+    // List of current standings (player-points pairs)
     private IReadOnlyList<KeyValuePair<IPlayer, int>> standings;
 
     // Vectors for holding the scrollviews
     private Vector2 scrollViewVector1 = Vector2.zero;
     private Vector2 scrollViewVector2 = Vector2.zero;
 
+    // Ask who plays first in the next frame?
     private bool nextWhoPlaysFirst;
 
+    // Awake is called when the script instance is being loaded
     private void Awake()
     {
+        // Get reference to the session data
         sessionData = GetComponent<ISessionDataProvider>();
     }
 
+    // Start is called on the frame when a script is enabled just before any of
+    // the Update methods are called the first time
     private void Start()
     {
-        // Get a list of all matches to be performed
+        // Get a list of all matches to be played
         matches = new List<Match>(sessionData.Matches);
 
         // Show "who plays first" menu?
         nextWhoPlaysFirst = sessionData.WhoPlaysFirst;
     }
 
+    // OnGUI is called for rendering and handling GUI events. This means that
+    // OnGUI might be called several times per frame (one call per event).
     private void OnGUI()
     {
+        // The UI to present depends on the session state
         switch (sessionData.State)
         {
+            // We're in the session Begin state
             case SessionState.Begin:
+
+                // Are we in tournament mode?
                 if (matches.Count > 1)
                 {
+                    // If so, present a list of matches
                     GUI.Window(0,
                         new Rect(0, 0, Screen.width, Screen.height),
                         WindowListOfMatches,
@@ -52,10 +85,16 @@ public class SessionView : MonoBehaviour
                 }
                 else
                 {
+                    // Otherwise, notify listeners that we should move to the
+                    // PreMatch state
                     OnPreMatch();
                 }
                 break;
+
+            // We're in the session PreMatch state
             case SessionState.PreMatch:
+
+                // Should we ask who plays first or do we already know?
                 if (nextWhoPlaysFirst)
                 {
                     // Ask who plays first
@@ -66,23 +105,28 @@ public class SessionView : MonoBehaviour
                 }
                 else
                 {
-                    // Start next match window
+                    // Show "Start next match" window
                     GUI.Window(2,
                         new Rect(0, 0, Screen.width, Screen.height),
                         WindowStartNextMatch,
                         "Next match");
                 }
                 break;
+
+            // We're in the session InMatch state
             case SessionState.InMatch:
-                // Here we simply set results to null, so that when we go to
-                // the next state (PostMatch), results and standings are
+                // Here we simply set results to null, so that when we move to
+                // the next state (PostMatch), results and standings get
                 // updated
                 if (results != null)
                 {
                     results = null;
                 }
                 break;
+
+            // We're in the session PostMatch state
             case SessionState.PostMatch:
+
                 // If results is null, let's retrieve them together with the
                 // updated standings
                 if (results == null)
@@ -97,9 +141,14 @@ public class SessionView : MonoBehaviour
                     WindowMatchResult,
                     "Match result");
                 break;
+
+            // We're in the session End state
             case SessionState.End:
+
+                // Are we in tournament mode?
                 if (matches.Count > 1)
                 {
+                    // If so, show final standings and results
                     GUI.Window(4,
                         new Rect(0, 0, Screen.width, Screen.height),
                         WindowFinalStandings,
@@ -107,9 +156,13 @@ public class SessionView : MonoBehaviour
                 }
                 else
                 {
+                    // Otherwise, just notify listeners that session may be
+                    // effectively terminated
                     OnEndSession();
                 }
                 break;
+
+            // Invalid state, thrown exception
             default:
                 throw new InvalidOperationException(
                     $"Unknown session state: {sessionData.State}");
@@ -445,6 +498,7 @@ public class SessionView : MonoBehaviour
         }
     }
 
+    // Method for showing standings and results
     private void ShowStandingsAndResults(
         int vPixelsPerMatch, int fontSize, Rect rectStd, Rect rectRes)
     {
@@ -612,42 +666,78 @@ public class SessionView : MonoBehaviour
         GUI.EndScrollView();
     }
 
+    // Coroutine that invokes a delegate after a certain amount of time
+    // In practice, it's used as a timer for non-blocking session UI screens,
+    // namely the "next match" screen and the "match results" screen
     private IEnumerator NonBlockingScreenTimer(Action eventToInvoke)
     {
+        // We'll get back in a moment
         yield return new WaitForSeconds(sessionData.UnblockedScreenDuration);
+
+        // Invoke delegate
         eventToInvoke?.Invoke();
+
+        // Set coroutine reference to null, so others know that no timer is
+        // currently set
         nonBlockingScreenTimer = null;
     }
 
+    // Invoke the PreMatch notification event
     private void OnPreMatch()
     {
         nextWhoPlaysFirst = sessionData.WhoPlaysFirst;
         PreMatch?.Invoke();
     }
 
+    // Invoke the SwapPlayers notification event
     private void OnSwapPlayers()
     {
         SwapPlayers?.Invoke();
     }
 
+    // Invoke the StartNextMatch notification event
     private void OnStartNextMatch()
     {
         StartNextMatch?.Invoke();
     }
 
+    // Invoke the MatchClear notification event
     private void OnMatchClear()
     {
         MatchClear?.Invoke();
     }
 
+    // Invoke the EndSession notification event
     private void OnEndSession()
     {
         EndSession?.Invoke();
     }
 
+    /// <summary>
+    /// Event which notifies listeners that the session should move to the
+    /// PreMatch state.
+    /// </summary>
     public event Action PreMatch;
+
+    /// <summary>
+    /// Event which notifies listeners that current match players should be
+    /// swapped.
+    /// </summary>
     public event Action SwapPlayers;
+
+    /// <summary>
+    /// Event which notifies listeners that the next match should be started.
+    /// </summary>
     public event Action StartNextMatch;
+
+    /// <summary>
+    /// Event which notifies listeners that the current match should be
+    /// destroyed / cleared.
+    /// </summary>
     public event Action MatchClear;
+
+    /// <summary>
+    /// Event which notifies listeners that the session terminate.
+    /// </summary>
     public event Action EndSession;
 }

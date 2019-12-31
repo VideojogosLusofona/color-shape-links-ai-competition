@@ -7,31 +7,37 @@
 
 using System;
 
+/// <summary>Represents a board piece.</summary>
 public struct Piece
 {
+    /// <summary>The piece color.</summary>
     public readonly PColor color;
+
+    /// <summary>The piece shape.</summary>
     public readonly PShape shape;
 
-    public Winner Player
-    {
-        get
-        {
-            if (color == PColor.White) return Winner.White;
-            if (color == PColor.Red) return Winner.Red;
-
-            // If we get here, there is a bug
-            throw new InvalidOperationException("Piece has invalid color");
-        }
-    }
-
+    /// <summary>Create a new piece.</summary>
+    /// <param name="color">The piece color.</param>
+    /// <param name="shape">The piece shape.</param>
     public Piece(PColor color, PShape shape)
     {
         this.color = color;
         this.shape = shape;
     }
 
+    /// <summary>Is the piece of the specified color and shape?</summary>
+    /// <param name="color">The piece color.</param>
+    /// <param name="shape">The piece shape.</param>
+    /// <returns>
+    /// `true` if the piece has the specified color and shape, `false`
+    /// otherwise.
+    /// </returns>
     public bool Is(PColor color, PShape shape) =>
         this.color == color && this.shape == shape;
 
+    /// <summary>
+    /// Provides a string representation of the piece in the form "ColorShape".
+    /// </summary>
+    /// <returns>A string representation of the piece.</returns>
     public override string ToString() => $"{color}{shape}";
 }

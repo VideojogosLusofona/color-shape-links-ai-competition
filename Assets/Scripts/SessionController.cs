@@ -10,9 +10,23 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script which controls *ColorShapeLinks* sessions, which can include one or
+/// more matches.
+/// </summary>
+/// <remarks>
+/// Based on the MVC design pattern, composed in this case by the following
+/// classes:
+/// * *Model* - A list of <see cref="Match"/> instances can be considered the
+/// model, although there isn't a well defined model in this case.
+/// * *View* - <see cref="SessionView"/>.
+/// * *Controller* - This class.
+/// </remarks>
 public class SessionController
     : MonoBehaviour, IMatchDataProvider, ISessionDataProvider
 {
+
+    // Internal auxiliary struct used for match making
     private struct DummyPlayer : IPlayer
     {
         public bool IsHuman => false;
@@ -20,51 +34,113 @@ public class SessionController
         public IThinker Thinker => null;
     }
 
+    // ///////////////////////////////////////////////// //
+    // Match properties configurable in the Unity editor //
+    // ///////////////////////////////////////////////// //
     [Header("Match properties")]
+
+    /// <summary>Number of rows in the game board.</summary>
     [SerializeField] private int rows = 7;
 
-    /// <summary>Number of columns in game board.</summary>
+    /// <summary>Number of columns in the game board.</summary>
     [SerializeField] private int cols = 7;
+
+    /// <summary>How many pieces in a row are required to win.</summary>
     [SerializeField] private int winSequence = 4;
+
+    /// <summary>Initial number of round pieces per player.</summary>
     [SerializeField] private int roundPiecesPerPlayer = 10;
+
+    /// <summary>Initial number of square pieces per player.</summary>
     [SerializeField] private int squarePiecesPerPlayer = 11;
 
+    /// <summary>Last move animation length in seconds.</summary>
+    [SerializeField] private float lastMoveAnimLength = 1f;
+
+    // ////////////////////////////////////////////// //
+    // AI properties configurable in the Unity editor //
+    // ////////////////////////////////////////////// //
     [Header("AI properties")]
+
+    /// <summary>Maximum time in seconds that AI can take to play.</summary>
     [Tooltip("Maximum real time in seconds that AI can take to play")]
     [SerializeField] private float aITimeLimit = 0.5f;
 
+    /// <summary>Minimum apparent AI move time.</summary>
+    /// <remarks>
+    /// Even if the AI plays immediately, this time (in seconds) gives
+    /// the illusion that the AI took some minimum time to play.
+    /// </remarks>
     [Tooltip("Even if the AI plays immediately, this time (in seconds) gives "
         + "the illusion that the AI took some minimum time to play")]
     [SerializeField] private float minAIGameMoveTime = 0.25f;
 
+    // ////////////////////////////////////////////////////// //
+    // Tournament properties configurable in the Unity editor //
+    // ////////////////////////////////////////////////////// //
     [Header("Tournament properties")]
+
+    /// <summary>Tournament points per win.</summary>
     [SerializeField] private int pointsPerWin = 3;
+
+    /// <summary>Tournament points per draw.</summary>
     [SerializeField] private int pointsPerDraw = 1;
+
+    /// <summary>Tournament points per loss.</summary>
     [SerializeField] private int pointsPerLoss = 0;
+
+    /// <summary>Press a button before tournament match starts?</summary>
     [SerializeField] private bool pressButtonBeforeMatch = false;
+
+    /// <summary>Press a button after tournament match ends?</summary>
     [SerializeField] private bool pressButtonAfterMatch = false;
+
+    /// <summary>
+    /// Duration of a screen if no button needs to be pressed in order
+    /// to continue.
+    /// </summary>
     [SerializeField] private float unblockedScreenDuration = 1.5f;
 
-    private GameObject matchPrefab = null;
-    private SessionView view;
-    private Board board;
-    private Match nextMatch;
-    private IDictionary<Match, Winner> allMatches;
-    private IDictionary<IPlayer, int> standings;
-    private IEnumerator<Match> matchEnumerator;
-
-    private GameObject matchInstance = null;
-    private MatchController matchController = null;
-
+    // The session state of the session state machine
     private SessionState state;
 
+    // Reference to the session view
+    private SessionView view;
+
+    // Reference to the match prefab (match controller + view + board model)
+    private GameObject matchPrefab = null;
+
+    // Reference to the current match instance, created from the match prefab
+    private GameObject matchInstance = null;
+
+    // Reference to the match controller associated with the current match
+    // instance
+    private MatchController matchController = null;
+
+    // Reference to the current match (player 1 + player 2)
+    private Match currentMatch;
+
+    // Reference to the game board in the current match instance
+    private Board currentBoard;
+
+    // Dictionary of all matches played and to be player, each match being
+    // associated with a result
+    private IDictionary<Match, Winner> allMatches;
+
+    // Current standings / classification (important for tournament mode only)
+    private IDictionary<IPlayer, int> standings;
+
+    // Match enumerator, for going through each match one by one
+    private IEnumerator<Match> matchEnumerator;
+
+    // List of active AIs
     private IList<IPlayer> activeAIs = null;
 
+    // Reference to a human player, in case there aren't enough AIs to create a
+    // match
     private IPlayer humanPlayer;
 
-    // Variables which define how the UI will behave
-    private bool uiShowListOfMatches;
-    private bool uiShowTournamentStandings;
+    // Variables which define how several session UI screens will behave
     private bool uiWhoPlaysFirst;
     private bool uiBlockStartNextMatch;
     private bool uiBlockShowResult;
@@ -167,9 +243,10 @@ public class SessionController
         // Get the match enumerator and initialize it
         matchEnumerator = allMatches.Keys.ToList().GetEnumerator();
         matchEnumerator.MoveNext();
-        nextMatch = matchEnumerator.Current;
+        currentMatch = matchEnumerator.Current;
     }
 
+    // This function is called when the object becomes enabled and active
     private void OnEnable()
     {
         // Register listener methods to UI events
@@ -180,6 +257,7 @@ public class SessionController
         view.EndSession += EndSessionCallback;
     }
 
+    // This function is called when the behaviour becomes disabled
     private void OnDisable()
     {
         // Unregister listener methods from UI events
@@ -190,19 +268,23 @@ public class SessionController
         view.EndSession -= EndSessionCallback;
     }
 
+    // Change the session state to PreMatch
     private void PreMatchCallback()
     {
         state = SessionState.PreMatch;
     }
+
+    // Swap current match players
     private void SwapPlayersCallback()
     {
-        nextMatch = nextMatch.Swapped;
+        currentMatch = currentMatch.Swapped;
     }
 
+    // Start next match, changing session state to InMatch
     private void StartNextMatchCallback()
     {
         // Instantiate a board for the next match
-        board = new Board(rows, cols, winSequence,
+        currentBoard = new Board(rows, cols, winSequence,
             roundPiecesPerPlayer, squarePiecesPerPlayer);
 
         // Instantiate the next match
@@ -215,77 +297,156 @@ public class SessionController
         // Add a listener for the match over event
         matchController.MatchOver.AddListener(EndCurrentMatchCallback);
 
-        // Set state to InMatch
+        // Set session state to InMatch
         state = SessionState.InMatch;
     }
 
+    // End current match an change session state to PostMatch
     private void EndCurrentMatchCallback()
     {
-        allMatches[nextMatch] = matchController.Result;
+        // Keep result of current match
+        allMatches[currentMatch] = matchController.Result;
+
+        // If we are in tournament mode, update standings / classification
         if (activeAIs.Count > 2)
         {
             switch (matchController.Result)
             {
+                // White won
                 case Winner.White:
-                    standings[nextMatch.player1] += pointsPerWin;
-                    standings[nextMatch.player2] += pointsPerLoss;
+                    standings[currentMatch.player1] += pointsPerWin;
+                    standings[currentMatch.player2] += pointsPerLoss;
                     break;
+                // Red won
                 case Winner.Red:
-                    standings[nextMatch.player2] += pointsPerWin;
-                    standings[nextMatch.player1] += pointsPerLoss;
+                    standings[currentMatch.player2] += pointsPerWin;
+                    standings[currentMatch.player1] += pointsPerLoss;
                     break;
+                // Game ended in a draw
                 case Winner.Draw:
-                    standings[nextMatch.player1] += pointsPerDraw;
-                    standings[nextMatch.player2] += pointsPerDraw;
+                    standings[currentMatch.player1] += pointsPerDraw;
+                    standings[currentMatch.player2] += pointsPerDraw;
                     break;
+                // Invalid situation
                 default:
                     throw new InvalidOperationException(
                         "Invalid end of match result");
             }
         }
+
+        // Set session state to PostMatch
         state = SessionState.PostMatch;
     }
 
+    // Destroy old match instance and check if there are more matches to
+    // play. If so, get next match and update state to PreMatch. Otherwise,
+    // dispose of the match enumerator and update session state to End.
     private void DestroyAndIterateMatchCallback()
     {
+        // Destroy old match instance
         Destroy(matchInstance);
+
+        // Are there more matches to play?
         if (matchEnumerator.MoveNext())
         {
-            nextMatch = matchEnumerator.Current;
+            // If so, get next match and set session state to PreMatch
+            currentMatch = matchEnumerator.Current;
             state = SessionState.PreMatch;
         }
         else
         {
+            // Otherwise, dispose of the match enumerator and set session state
+            // to End
             matchEnumerator.Dispose();
             state = SessionState.End;
         }
     }
 
+    // Terminate the session
     private void EndSessionCallback()
     {
         UnityEditor.EditorApplication.isPlaying = false;
     }
 
-    // Implementation of IMatchDataProvider
-    public Board Board => board;
-    public IPlayer CurrentPlayer => nextMatch[board.Turn];
-    public float AITimeLimit => aITimeLimit;
-    public float MinAIGameMoveTime => minAIGameMoveTime;
-    public IPlayer GetPlayer(PColor player) => nextMatch[player];
+    // //////////////////////////////////// //
+    // Implementation of IMatchDataProvider //
+    // //////////////////////////////////// //
 
-    // Implementation of ISessionDataProvider
+    /// @copydoc IMatchDataProvider.Board
+    /// <seealso cref="IMatchDataProvider.Board"/>
+    public Board Board => currentBoard;
+
+    /// @copydoc IMatchDataProvider.CurrentPlayer
+    /// <seealso cref="IMatchDataProvider.CurrentPlayer"/>
+    public IPlayer CurrentPlayer => currentMatch[currentBoard.Turn];
+
+    /// @copydoc IMatchDataProvider.AITimeLimit
+    /// <seealso cref="IMatchDataProvider.AITimeLimit"/>
+    public float AITimeLimit => aITimeLimit;
+
+    /// @copydoc IMatchDataProvider.MinAIGameMoveTime
+    /// <seealso cref="IMatchDataProvider.MinAIGameMoveTime"/>
+    public float MinAIGameMoveTime => minAIGameMoveTime;
+
+    /// @copydoc IMatchDataProvider.LastMoveAnimLength
+    /// <seealso cref="IMatchDataProvider.LastMoveAnimLength"/>
+    public float LastMoveAnimLength => lastMoveAnimLength;
+
+    /// @copydoc IMatchDataProvider.GetPlayer
+    /// <seealso cref="IMatchDataProvider.GetPlayer(PColor)"/>
+    public IPlayer GetPlayer(PColor player) => currentMatch[player];
+
+    // ////////////////////////////////////// //
+    // Implementation of ISessionDataProvider //
+    // ////////////////////////////////////// //
+
+    /// @copydoc ISessionDataProvider.State
+    /// <seealso cref="ISessionDataProvider.State"/>
     public SessionState State => state;
-    public string PlayerWhite => nextMatch[PColor.White].PlayerName;
-    public string PlayerRed => nextMatch[PColor.Red].PlayerName;
+
+    /// @copydoc ISessionDataProvider.PlayerWhite
+    /// <seealso cref="ISessionDataProvider.PlayerWhite"/>
+    public string PlayerWhite => currentMatch[PColor.White].PlayerName;
+
+    /// @copydoc ISessionDataProvider.PlayerRed
+    /// <seealso cref="ISessionDataProvider.PlayerRed"/>
+    public string PlayerRed => currentMatch[PColor.Red].PlayerName;
+
+    /// @copydoc ISessionDataProvider.Matches
+    /// <seealso cref="ISessionDataProvider.Matches"/>
     public IEnumerable<Match> Matches => allMatches.Keys;
+
+    /// @copydoc ISessionDataProvider.Results
+    /// <seealso cref="ISessionDataProvider.Results"/>
     public IEnumerable<KeyValuePair<Match, Winner>> Results =>
         allMatches.Where(kvp => kvp.Value != Winner.None);
+
+    /// @copydoc ISessionDataProvider.Standings
+    /// <seealso cref="ISessionDataProvider.Standings"/>
     public IEnumerable<KeyValuePair<IPlayer, int>> Standings =>
         standings.OrderByDescending(kvp => kvp.Value);
+
+    /// @copydoc ISessionDataProvider.LastMatchResult
+    /// <seealso cref="ISessionDataProvider.LastMatchResult"/>
     public Winner LastMatchResult => matchController?.Result ?? Winner.None;
+
+    /// @copydoc ISessionDataProvider.WinnerString
+    /// <seealso cref="ISessionDataProvider.WinnerString"/>
     public string WinnerString => matchController?.WinnerString;
+
+    /// @copydoc ISessionDataProvider.WhoPlaysFirst
+    /// <seealso cref="ISessionDataProvider.WhoPlaysFirst"/>
     public bool WhoPlaysFirst => uiWhoPlaysFirst;
+
+    /// @copydoc ISessionDataProvider.BlockStartNextMatch
+    /// <seealso cref="ISessionDataProvider.BlockStartNextMatch"/>
     public bool BlockStartNextMatch => uiBlockStartNextMatch;
+
+    /// @copydoc ISessionDataProvider.BlockShowResult
+    /// <seealso cref="ISessionDataProvider.BlockShowResult"/>
     public bool BlockShowResult => uiBlockShowResult;
+
+    /// @copydoc ISessionDataProvider.UnblockedScreenDuration
+    /// <seealso cref="ISessionDataProvider.UnblockedScreenDuration"/>
     public float UnblockedScreenDuration =>  unblockedScreenDuration;
 }

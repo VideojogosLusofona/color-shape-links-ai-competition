@@ -8,6 +8,9 @@
 using System;
 using System.Threading;
 
+/// <summary>
+/// Implementation of an AI that will play randomly.
+/// </summary>
 public class RandomAIThinker : IThinker
 {
     private Random random;

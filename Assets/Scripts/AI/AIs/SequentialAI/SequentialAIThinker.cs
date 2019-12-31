@@ -5,9 +5,13 @@
 /// @date 2019
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
-using UnityEngine;
 using System.Threading;
 
+/// <summary>
+/// Implementation of an AI that will always play in sequence, from the first
+/// to the last column. It will start by spending all round pieces, and only
+/// then start using the square pieces.
+/// </summary>
 public class SequentialAIThinker : IThinker
 {
     private int lastCol = -1;

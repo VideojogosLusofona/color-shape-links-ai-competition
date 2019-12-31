@@ -10,21 +10,15 @@
 /// </summary>
 public interface IPlayer
 {
-    /// <summary>
-    /// Is the player human?
-    /// </summary>
+    /// <summary>Is the player human?</summary>
     /// <value>`true` if the player is human, `false` otherwise.</value>
     bool IsHuman { get; }
 
-    /// <summary>
-    /// Name of the player.
-    /// </summary>
+    /// <summary>Name of the player.</summary>
     /// <value>A string containing the name of the player.</value>
     string PlayerName { get; }
 
-    /// <summary>
-    /// The player's thinker.
-    /// </summary>
+    /// <summary>The player's thinker.</summary>
     /// <value>An instance of <see cref="IThinker"/>.</value>
     IThinker Thinker { get; }
 }

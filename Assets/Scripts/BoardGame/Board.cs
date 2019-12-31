@@ -8,24 +8,22 @@
 using System;
 using System.Collections.Generic;
 
-// Represents the game board
+/// <summary>Represents the game board.</summary>
 public class Board
 {
-    // Internal struct for representing the pair
-    // (piece check function, player associated with piece)
-    private struct PieceFuncPlayer
-    {
-        public readonly Func<Piece, bool> checkPieceFunc;
-        public readonly PColor player;
-        public PieceFuncPlayer(
-            Func<Piece, bool> checkPieceFunc, PColor player)
-        {
-            this.checkPieceFunc = checkPieceFunc;
-            this.player = player;
-        }
-    }
-
-    // Read-only indexer for client code to see the board
+    /// <summary>
+    /// Read-only indexer for allowing the board contents to be accessed by
+    /// external code.
+    /// </summary>
+    /// <param name="row">Board row to access.</param>
+    /// <param name="col">Board column to access.</param>
+    /// <returns>
+    /// The piece in the specified board position, or `null` if no piece is in
+    /// the given position.
+    /// </returns>
+    /// <exception cref="System.IndexOutOfRangeException">
+    /// Thrown when the given position is invalid (outside the board).
+    /// </exception>
     public Piece? this[int row, int col]
     {
         get
@@ -44,26 +42,46 @@ public class Board
         }
     }
 
-    // Who's turn is it?
+    /// <summary>Who's turn is it?</summary>
+    /// <value>The color of the player who's currently playing.</value>
     public PColor Turn { get; private set; }
 
-    // Number of rows in the board
+    /// <summary>Number of rows in the board.</summary>
     public readonly int rows;
 
-    // Number of columns in the board
+    /// <summary>Number of columns in the board.</summary>
     public readonly int cols;
 
-    // How many pieces in sequence to find a winner
+    /// <summary>How many pieces in sequence to find a winner.</summary>
     public readonly int piecesInSequence;
 
-    // Initial number of round pieces for each player
+    /// <summary>Initial number of round pieces for each player.</summary>
     public readonly int roundPieces;
 
-    // Initial number of square pieces for each player
+    /// <summary>Initial number of square pieces for each player.</summary>
     public readonly int squarePieces;
 
-    // Array of win corridors, which can be used for building an heuristic
+    /// <summary>
+    /// Array of win corridors, which can be used for building an heuristic.
+    /// </summary>
     public readonly IEnumerable<IEnumerable<Pos>> winCorridors;
+
+    // Internal struct for representing the pair
+    // (piece check function, player associated with piece)
+    private struct PieceFuncPlayer
+    {
+        // Function that checks if a piece belong to a player
+        public readonly Func<Piece, bool> checkPieceFunc;
+        // The player to be associated with a piece
+        public readonly PColor player;
+        // Create an new pair (piece check function, associated player)
+        public PieceFuncPlayer(
+            Func<Piece, bool> checkPieceFunc, PColor player)
+        {
+            this.checkPieceFunc = checkPieceFunc;
+            this.player = player;
+        }
+    }
 
     // Array of pairs (piece check function, player associated with piece)
     private readonly PieceFuncPlayer[] pieceFuncsPlayers;
@@ -92,7 +110,20 @@ public class Board
     // Number of moves performed so far
     private int numMoves;
 
-    // Creates a new board
+    /// <summary>
+    /// Creates a new board.
+    /// </summary>
+    /// <param name="rows">Number of rows.</param>
+    /// <param name="cols">Number of columns.</param>
+    /// <param name="piecesInSequence">
+    /// Number of required pieces in a row for player to win.
+    /// </param>
+    /// <param name="roundPieces">
+    /// Initial number of round pieces per player.
+    /// </param>
+    /// <param name="squarePieces">
+    /// Initial number of square pieces per player.
+    /// </param>
     public Board(int rows = 7, int cols = 7, int piecesInSequence = 4,
         int roundPieces = 10, int squarePieces = 11)
     {
@@ -262,7 +293,15 @@ public class Board
         winCorridors = corridors.ToArray();
     }
 
-    // Make a move, return row where piece was place or -1 if move invalid
+    /// <summary>
+    /// Make a move, return row
+    /// </summary>
+    /// <param name="shape">
+    /// Shape of piece used in move (color is obtained from
+    /// <see cref="Board.Turn"/>).
+    /// </param>
+    /// <param name="col">Column where to drop piece.</param>
+    /// <returns>Row where piece was placed or -1 if move is invalid.</returns>
     public int DoMove(PShape shape, int col)
     {
         // The row were to place the piece, initially assumed to be the top row
@@ -330,7 +369,8 @@ public class Board
         return row;
     }
 
-    // Undo last move
+    /// <summary>Undo last move.</summary>
+    /// <returns>The <see cref="Move"/> that was undone.</returns>
     public Move UndoMove()
     {
         Pos pos;
@@ -368,7 +408,13 @@ public class Board
         return new Move(pos.row, pos.col, piece);
     }
 
-    // Is there a winner?
+    /// <summary>
+    /// Check if there is a winner.
+    /// </summary>
+    /// <param name="solution">
+    /// Optional parameter where solution will be placed if there is a winner.
+    /// </param>
+    /// <returns>The <see cref="Winner"/> of the current game, if any.</returns>
     public Winner CheckWinner(Pos[] solution = null)
     {
         // If an array for placing the solution was given, make sure it has
@@ -417,8 +463,11 @@ public class Board
         return Winner.None;
     }
 
-    // Returns a copy of this board which can be freely modified by the AI
-    // in a different thread
+    /// <summary>
+    /// Returns a copy of this board which can be freely modified by the AI
+    /// in a different thread.
+    /// </summary>
+    /// <returns>A copy of this board.</returns>
     public Board Copy()
     {
         // The move sequence in the new board
@@ -442,9 +491,21 @@ public class Board
         return newBoard;
     }
 
+    /// <summary>
+    /// Get number of remaining pieces with the given color and shape.
+    /// </summary>
+    /// <param name="color">Pieces color.</param>
+    /// <param name="shape">Pieces shape.</param>
+    /// <returns>
+    /// Number of remaining pieces with the given color and shape.
+    /// </returns>
     public int PieceCount(PColor color, PShape shape) =>
         numberOfPieces[new Piece(color, shape)];
 
-    // Is the specified column full?
+    /// <summary>
+    /// Is the specified column full?
+    /// </summary>
+    /// <param name="col">The column to check if it's full.</param>
+    /// <returns>`true` if the column is full, `false` otherwise.</returns>
     public bool IsColumnFull(int col) => board[col, rows - 1].HasValue;
 }

@@ -5,8 +5,9 @@
 /// @date 2019
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
-using System;
-
+/// <summary>
+/// Configuration class for the <see cref="SequentialAIThinker"/>.
+/// </summary>
 public class SequentialAI : AIPlayer
 {
     public override string PlayerName => "SequentialAI";

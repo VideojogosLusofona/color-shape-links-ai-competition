@@ -7,9 +7,12 @@
 
 using System.Threading;
 
+/// <summary>
+/// Implementation of an AI that will always lose because it takes too long to
+/// play.
+/// </summary>
 public class LoserSleeperAIThinker : IThinker
 {
-
     public FutureMove Think(Board board, CancellationToken ct)
     {
         // Is this task to be cancelled?
