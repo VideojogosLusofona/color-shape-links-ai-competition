@@ -142,10 +142,13 @@ The assignment will be evaluated with a grade from 0 to 20, according to the
 following criteria:
 
 * Up to 11: a basic functional Minimax/Negamax search, with a well thought-out
-  heuristic and capable of stop searching when the cancellation token is
-  activated.
-* Up to 14: the search is optimized with alpha-beta pruning.
-* Over 14: the search is optimized with one or more of the following
+  heuristic for a game of *ColorShapeLinks* with standard [Simplexity] rules
+  (7x7 board, 4 in a row win condition), and capable of stop searching when the
+  cancellation token is activated.
+* Up to 13: the search is optimized with alpha-beta pruning.
+* Up to 15: the search can be used for games of *ColorShapeLinks* with any
+  board board size and win condition.
+* Over 17: the search is optimized with one or more of the following
   approaches:
   * Move ordering (moves with best potential are searched first).
   * Iterative deepening, which returns best solution found before the AI time
@@ -159,11 +162,25 @@ Within these criteria, the following items will also be considered:
 * Report: quality of writing, organization of ideas, references, auxiliary
   diagrams and schemes.
 
-All the AIs will face against each other in a tournament (see next section).
-The top 3 AIs will receive a bonus of 3, 2 and 1 points in their grade (up to
-20 points). AIs not competent enough to enter the tournament (i.e., they crash
-or freeze the Unity project, or do not respond to cancellation requests), will
-be penalized with 1 point in the final grade.
+All the AIs will face against each other in two tournaments:
+
+1. The first tournament will be played using standard [Simplexity] rules
+   (7x7 board, 4 in a row win condition) and with a time limit of 0.2 seconds.
+   * The top 3 AIs will receive a bonus of 1.5, 1 and 0.5 points in their
+     grade.
+   * AIs not competent enough to enter the tournament (i.e., they crash or
+     freeze the Unity project, or do not respond to cancellation requests),
+     will be penalized with 1 point in the final grade.
+2. The second tournament will be played using an arbitrary board size, win
+   condition and time limit. These will only be revealed immediately before
+   the tournament starts.
+   * AIs capable of simply playing in this tournament will receive 1 bonus
+     point in their grade.
+   * The top 3 AIs will receive a bonus of 1.5, 1 and 0.5 points in their
+     grade.
+
+The bonuses and penalties are cumulative, but the final grade cannot be lower
+than 0 or higher than 20.
 
 ## Assignment submission
 
@@ -176,8 +193,8 @@ before January 7, 23:00, and must include the following items:
 * The Markdown-formatted report in the `README.md` file.
 * *(Optional)* Images used in the report.
 
-A discussion will be performed on January 8, during class, as well as the
-tournament referred in the previous section.
+A discussion will be performed on January 8, during class, as well as the two
+tournaments referred in the previous section.
 
 ## Academic honesty
 
