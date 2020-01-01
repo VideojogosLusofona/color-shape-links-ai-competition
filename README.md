@@ -25,7 +25,45 @@ board game as *ColorShapeLinks*.
 
 ## The included Unity project
 
-TODO Describe the included Unity project
+A Unity project implementing *ColorShapeLinks* is included in this assignment.
+The game should be executed within the Unity editor, not as a standalone build.
+Project execution can be configured by manipulating the **SessionConfiguration**
+game object in the Unity Editor. This is done by: 1) editing the fields of
+the [`SessionController`] script; and, 2) adding or removing AI scripts, i.e., scripts which extend [`AIPlayer`], see section
+[AI implementation](ai-implementation)).
+
+### Fields of the `SessionController` game object
+
+Fields of the [`SessionController`] script are divided in three sections:
+
+1. **Match properties** - Board dimensions, win conditions or initial number of
+   pieces per player and last move animation length in seconds.
+2. **AI properties** - AI time limit in seconds and minimum AI game move time.
+3. **Tournament properties** - Points per win, draw, loss, and information
+   screen blocking and duration options.
+
+Tournaments occur automatically if there are more than two AI scripts active in
+the **SessionConfiguration** game object. Otherwise a single match is played,
+as discussed in the next section.
+
+### Adding and removing AI scripts
+
+Zero or more AI scripts can be added to the **SessionConfiguration** game
+object. These scripts extend the [`AIPlayer`] class, as discussed in the
+[AI implementation](ai-implementation) section. The number of active AI scripts
+in the **SessionConfiguration** game object determines what type of session
+will run:
+
+* Zero active AI scripts: a match between human players will take place.
+* One active AI script: a game between the AI and a human player will take
+  place.
+* Two active AI scripts: a game between the two AIs will take place.
+* More than two active AI scripts: a **tournament session** will take place,
+  where each AI plays against all other AIs twice, one as the first player
+  (white), another as the second player (red).
+
+During and after the tournament session, all match results as well as current
+standings / classifications, are presented.
 
 ## Assignment tasks
 
@@ -40,17 +78,17 @@ Students should implement a minimum of two classes. For example, if your AI is
 called *G03VerySmart*, these classes are as follows:
 
 1. **`G03VerySmartAI`**, which extends [`AIPlayer`]. This class should be added
-   as a component of the `SessionConfiguration` game object, and allows your AI
+   as a component of the `SessionConfiguration` game object, and allows the AI
    to be found by the game.
 2. **`G03VerySmartAIThinker`**, which implements the [`IThinker`] interface.
-   This is were you should actually implement the AI.
+   This is were the AI should actually be implemented.
 
 These classes should be in their own folder, `G03VerySmart`, which in turn
 should be placed at [`Assets/Scripts/AI/AIs/`]. This folder contains some
-examples of dumb AIs to demonstrate how your project should be organized.
+examples of dumb AIs to demonstrate how the code should be organized.
 
-Students should not modify existing code. If a bug is found in the Unity
-project, please submit a fix using a
+Students should not modify existing code. If a bug is found in the included
+Unity project, a fix should be submitted through a
 [pull request](https://github.com/VideojogosLusofona/ia_2019_board_game_ai/compare),
 so it becomes available to everyone.
 
@@ -162,7 +200,7 @@ Within these criteria, the following items will also be considered:
 * Report: quality of writing, organization of ideas, references, auxiliary
   diagrams and schemes.
 
-All the AIs will face against each other in two tournaments:
+All AIs will face each other in two tournaments:
 
 1. The first tournament will be played using standard [Simplexity] rules
    (7x7 board, 4 in a row win condition) and with a time limit of 0.2 seconds.
@@ -234,6 +272,7 @@ License][CC BY-NC-SA 4.0].
 [`IThinker`]:Assets/Scripts/AI/IThinker.cs
 [`Board`]:Assets/Scripts/BoardGame/Board.cs
 [`FutureMove`]:Assets/Scripts/FutureMove.cs
+[`SessionController`]:Assets/Scripts/SessionController.cs
 [`Assets/Scripts/AI/AIs/`]:Assets/Scripts/AI/AIs/
 [`CancellationToken`]:https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken
 [`DateTime`]:https://docs.microsoft.com/dotnet/api/system.datetime
