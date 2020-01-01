@@ -13,13 +13,19 @@ using System.Threading;
 /// </summary>
 public class RandomAIThinker : IThinker
 {
+    // A random number generator instance
     private Random random;
 
+    /// <summary>
+    /// Create a new instance of RandomIAThinker.
+    /// </summary>
     public RandomAIThinker()
     {
         random = new Random();
     }
 
+    /// @copydoc IThinker.Think
+    /// <seealso cref="IThinker.Think"/>
     public FutureMove Think(Board board, CancellationToken ct)
     {
         // Check how many pieces current player has

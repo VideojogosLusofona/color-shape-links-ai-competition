@@ -14,8 +14,11 @@ using System.Threading;
 /// </summary>
 public class SequentialAIThinker : IThinker
 {
+    // Last column played
     private int lastCol = -1;
 
+    /// @copydoc IThinker.Think
+    /// <seealso cref="IThinker.Think"/>
     public FutureMove Think(Board board, CancellationToken ct)
     {
         // The move to perform

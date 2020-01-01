@@ -13,14 +13,21 @@ using System.Threading;
 /// </summary>
 public class LoserSleeperAIThinker : IThinker
 {
+    /// @copydoc IThinker.Think
+    /// <seealso cref="IThinker.Think"/>
     public FutureMove Think(Board board, CancellationToken ct)
     {
         // Is this task to be cancelled?
         while (true)
         {
+            // Wait a few millisseconds
             Thread.Sleep(100);
+
+            // The task will eventually be cancelled due to a timeout
             if (ct.IsCancellationRequested) break;
         }
+
+        // Eventually return a "no move"
         return FutureMove.NoMove;
     }
 }
