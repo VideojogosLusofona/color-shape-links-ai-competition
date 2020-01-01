@@ -8,7 +8,7 @@ You should have received a copy of the license along with this
 work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 -->
 
-# Board Game AI
+# ColorShapeLinks AI
 
 An assignment for the Artificial Intelligence course unit of the [Bachelor in
 Videogames][licvideo] at [Universidade Lusófona de Humanidades e
