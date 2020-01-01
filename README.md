@@ -49,6 +49,11 @@ These classes should be in their own folder, `G03VerySmart`, which in turn
 should be placed at [`Assets/Scripts/AI/AIs/`]. This folder contains some
 examples of dumb AIs to demonstrate how your project should be organized.
 
+Students should not modify existing code. If a bug is found in the Unity
+project, please submit a fix using a
+[pull request](https://github.com/VideojogosLusofona/ia_2019_board_game_ai/compare),
+so it becomes available to everyone.
+
 #### The class that extends `AIPlayer`
 
 This class allows an AI to be found by the game. For that purpose, it must
@@ -119,11 +124,46 @@ positions) where promising or winning piece sequences may exist.
 
 ### Report
 
-TODO Report
+The report should be in the form of a properly formatted Markdown file named
+`README.md`, and contain the following information:
+
+* Author names (first and last), and respective student numbers.
+* Information of who did what in the assignment.
+* Description of the developed solution, namely the implemented algorithm and
+  the chosen static evaluation function (heuristic).
+  * Diagrams or schemes that aid, enhance and/or simplify the description will
+    have positive influence in the final grade.
+* References, including books, papers, websites, discussions with colleagues,
+  reutilized open source code (e.g. from StackOverflow).
 
 ## Evaluation criteria
 
-TODO Evaluation criteria
+The assignment will be evaluated with a grade from 0 to 20, according to the
+following criteria:
+
+* Up to 11: a basic functional Minimax/Negamax search, with a well thought-out
+  heuristic and capable of stop searching when the cancellation token is
+  activated.
+* Up to 14: the search is optimized with alpha-beta pruning.
+* Over 14: the search is optimized with one or more of the following
+  approaches:
+  * Move ordering (moves with best potential are searched first).
+  * Iterative deepening, which returns best solution found before the AI time
+    limit expires.
+  * Other approaches not discussed in class: Negascout, transposition tables,
+    etc.
+
+Within these criteria, the following items will also be considered:
+
+* Code: quality, readability, comments and organization.
+* Report: quality of writing, organization of ideas, references, auxiliary
+  diagrams and schemes.
+
+All the AIs will face against each other in a tournament (see next section).
+The top 3 AIs will receive a bonus of 3, 2 and 1 points in their grade (up to
+20 points). AIs not competent enough to enter the tournament (i.e., they crash
+or freeze the Unity project, or do not respond to cancellation requests), will
+be penalized with 1 point in the final grade.
 
 ## Assignment submission
 
@@ -135,6 +175,9 @@ before January 7, 23:00, and must include the following items:
 * *(Optional)* Other classes required by the two mandatory classes.
 * The Markdown-formatted report in the `README.md` file.
 * *(Optional)* Images used in the report.
+
+A discussion will be performed on January 8, during class, as well as the
+tournament referred in the previous section.
 
 ## Academic honesty
 
