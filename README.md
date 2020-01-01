@@ -26,11 +26,12 @@ board game as *ColorShapeLinks*.
 ## The included Unity project
 
 A Unity project implementing *ColorShapeLinks* is included in this assignment.
-The game should be executed within the Unity editor, not as a standalone build.
-Project execution can be configured by manipulating the **SessionConfiguration**
-game object in the Unity Editor. This is done by: 1) editing the fields of
-the [`SessionController`] script; and, 2) adding or removing AI scripts, i.e., scripts which extend [`AIPlayer`], see section
-[AI implementation](ai-implementation)).
+The project should be executed within the Unity editor, not as a standalone
+build. Project execution can be configured by manipulating the
+`SessionConfiguration` game object in the Unity Editor. This is done by: 1)
+editing the fields of the [`SessionController`] script; and, 2) adding or
+removing AI scripts, i.e., scripts which extend [`AIPlayer`] (see the [AI
+implementation](#ai-implementation)) section.
 
 ### Fields of the `SessionController` game object
 
@@ -43,16 +44,16 @@ Fields of the [`SessionController`] script are divided in three sections:
    screen blocking and duration options.
 
 Tournaments occur automatically if there are more than two AI scripts active in
-the **SessionConfiguration** game object. Otherwise a single match is played,
+the `SessionConfiguration` game object. Otherwise a single match is played,
 as discussed in the next section.
 
 ### Adding and removing AI scripts
 
-Zero or more AI scripts can be added to the **SessionConfiguration** game
+Zero or more AI scripts can be added to the `SessionConfiguration` game
 object. These scripts extend the [`AIPlayer`] class, as discussed in the
-[AI implementation](ai-implementation) section. The number of active AI scripts
-in the **SessionConfiguration** game object determines what type of session
-will run:
+[AI implementation](#ai-implementation) section. The number of active AI
+scripts in the `SessionConfiguration` game object determines what type of
+session will run:
 
 * Zero active AI scripts: a match between human players will take place.
 * One active AI script: a game between the AI and a human player will take
