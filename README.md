@@ -37,7 +37,7 @@ implementation](#ai-implementation)) section.
 
 Fields of the [`SessionController`] script are divided in three sections:
 
-1. **Match properties** - Board dimensions, win conditions or initial number of
+1. **Match properties** - Board dimensions, win conditions, initial number of
    pieces per player and last move animation length in seconds.
 2. **AI properties** - AI time limit in seconds and minimum AI game move time.
 3. **Tournament properties** - Points per win, draw, loss, and information
@@ -80,9 +80,9 @@ called *G03VerySmart*, these classes are as follows:
 
 1. **`G03VerySmartAI`**, which extends [`AIPlayer`]. This class should be added
    as a component of the `SessionConfiguration` game object, and allows the AI
-   to be found by the game.
+   to be found by the game and optionally configured in the Unity editor.
 2. **`G03VerySmartAIThinker`**, which implements the [`IThinker`] interface.
-   This is were the AI should actually be implemented.
+   This is where the AI should actually be implemented.
 
 These classes should be in their own folder, `G03VerySmart`, which in turn
 should be placed at [`Assets/Scripts/AI/AIs/`]. This folder contains some
@@ -211,17 +211,17 @@ All AIs will face each other in two tournaments:
 1. The first tournament will be played using standard [Simplexity] rules
    (7x7 board, 4 in a row win condition) and with a time limit of 0.2 seconds.
    * The top 3 AIs will receive a bonus of 1.5, 1 and 0.5 points in their
-     grade.
+     grade, respectively.
    * AIs not competent enough to enter the tournament (i.e., they crash or
      freeze the Unity project, or do not respond to cancellation requests),
      will be penalized with 1 point in the final grade.
 2. The second tournament will be played using an arbitrary board size, win
    condition and time limit. These will only be revealed immediately before
    the tournament starts.
-   * AIs capable of simply playing in this tournament will receive 1 bonus
+   * AIs capable of simply playing this tournament will receive 1 bonus
      point in their grade.
    * The top 3 AIs will receive a bonus of 1.5, 1 and 0.5 points in their
-     grade.
+     grade, respectively.
 
 The bonuses and penalties are cumulative, but the final grade cannot be lower
 than 0 or higher than 20.
