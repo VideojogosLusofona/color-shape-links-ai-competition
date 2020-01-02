@@ -95,7 +95,8 @@ so it becomes available to everyone.
 
 #### The class that extends `AIPlayer`
 
-This class allows an AI to be found by the game. For that purpose, it must
+This class allows an AI to be found by the game, and for the AI to be
+optionally configured in the Unity editor. For that purpose, it must
 be added as a component of the `SessionConfiguration` game object, and
 implement the following read-only properties:
 
@@ -108,8 +109,12 @@ The instance of the class that implements [`IThinker`] should be created in the
 The [example AIs][`Assets/Scripts/AI/AIs/`] demonstrate how this should be
 done.
 
-For AIs that really want to search as long as possible, the time limit is
-available in the `AITimeLimit` property, and can be passed to the thinker
+For configuring the AI in the Unity editor, the class that extends [`AIPlayer`]
+can have editable fields (e.g. maximum search depth). Following best practices,
+these fields should be private and have the [\[`SerializeField`\]] attribute.
+
+For AIs that really want to search as long and deep as possible, the time limit
+is available in the `AITimeLimit` property, and can be passed to the thinker
 during its instantiation in the `Setup()` method.
 
 #### The class that implements `IThinker`
@@ -187,7 +192,7 @@ following criteria:
 * Up to 13: the search is optimized with alpha-beta pruning.
 * Up to 15: the search can be used for games of *ColorShapeLinks* with any
   board board size and win condition.
-* Over 17: the search is optimized with one or more of the following
+* Over 15: the search is optimized with one or more of the following
   approaches:
   * Move ordering (moves with best potential are searched first).
   * Iterative deepening, which returns best solution found before the AI time
@@ -282,3 +287,4 @@ License][CC BY-NC-SA 4.0].
 [urnd]:https://docs.unity3d.com/ScriptReference/Random.html
 [`Time`]:https://docs.unity3d.com/ScriptReference/Time.html
 [`Mathf`]:https://docs.unity3d.com/ScriptReference/Mathf.html
+[\[`SerializeField`\]]:https://docs.unity3d.com/ScriptReference/SerializeField.html
