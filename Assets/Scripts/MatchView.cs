@@ -564,10 +564,24 @@ public class MatchView : MonoBehaviour
                 // If so, let's post them
                 while (messageQueue.Count > 0)
                 {
+                    // Maximum message length
+                    int maxMsgLen = 5000;
+                    // The messages to display in the text UI
+                    string messagesToDisplay;
                     // Get message out of the queue and into the string builder
                     messages.Append($"\n- {messageQueue.Dequeue()}");
+                    // If the string is too long, this may cause an exception
+                    // in Unity, so we make sure it isn't
+                    // This is not the best solution, but it works as long as
+                    // the user doesn't want to scroll back to the beginning
+                    // Better solutions here:
+                    // https://stackoverflow.com/questions/40660868/unity-ui-text-with-markup-tags-string-too-long-for-textmeshgenerator
+                    if (messages.Length > maxMsgLen)
+                        messages.Remove(0, messages.Length - maxMsgLen);
+                    // Get the messages to display in string format
+                    messagesToDisplay = messages.ToString();
                     // Update the text UI widget
-                    messageBoxText.text = messages.ToString();
+                    messageBoxText.text = messagesToDisplay;
                     // We'll return in a moment
                     yield return minTimMsgs;
                 }
