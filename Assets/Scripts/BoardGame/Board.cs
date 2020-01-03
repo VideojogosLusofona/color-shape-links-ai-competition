@@ -404,6 +404,9 @@ public class Board
         // Swap turns
         Turn = Turn == PColor.White ? PColor.Red : PColor.White;
 
+        // Increase piece count
+        numberOfPieces[piece]++;
+		
         // Return move that was undone
         return new Move(pos.row, pos.col, piece);
     }
