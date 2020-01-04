@@ -229,7 +229,7 @@ than 0 or higher than 20.
 ## Assignment submission
 
 The assignment should be submitted by groups of 2 or 3 students, via Moodle,
-before January 7, 23:00, and must include the following items:
+before January 12, 23:00, and must include the following items:
 
 * The class that extends [`AIPlayer`]
 * The class that implements [`IThinker`]
@@ -237,7 +237,7 @@ before January 7, 23:00, and must include the following items:
 * The Markdown-formatted report in the `README.md` file.
 * *(Optional)* Images used in the report.
 
-A discussion will be performed on January 8, during class, as well as the two
+A discussion will be performed on January 15, during class, as well as the two
 tournaments referred in the previous section.
 
 ## Academic honesty
