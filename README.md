@@ -229,7 +229,7 @@ than 0 or higher than 20.
 ## Assignment submission
 
 The assignment should be submitted by groups of 2 or 3 students, via Moodle,
-before January 12, 23:00, and must include the following items:
+before January 14, 23:00, and must include the following items:
 
 * The class that extends [`AIPlayer`]
 * The class that implements [`IThinker`]
