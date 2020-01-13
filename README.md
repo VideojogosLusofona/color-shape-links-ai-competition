@@ -129,6 +129,8 @@ editing the fields of the [`SessionController`] script; and, 2) adding or
 removing AI scripts, i.e., scripts which extend [`AIPlayer`] (see the [AI
 implementation](#ai-implementation)) section.
 
+![game](https://user-images.githubusercontent.com/3018963/72279861-f250d280-362e-11ea-9c8a-9244dad16f11.jpg)
+
 #### Fields of the `SessionController` game object
 
 Fields of the [`SessionController`] script are divided in three sections:
