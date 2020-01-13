@@ -126,8 +126,8 @@ The project should be executed within the Unity editor, not as a standalone
 build. Project execution can be configured by manipulating the
 `SessionConfiguration` game object in the Unity Editor. This is done by: 1)
 editing the fields of the [`SessionController`] script; and, 2) adding or
-removing AI scripts, i.e., scripts which extend [`AIPlayer`] (see the [AI
-implementation](#ai-implementation)) section.
+removing AI scripts, i.e., scripts which extend [`AIPlayer`] (see the
+[An additional class for Unity](#an-additional-class-for-unity) section).
 
 ![game](https://user-images.githubusercontent.com/3018963/72279861-f250d280-362e-11ea-9c8a-9244dad16f11.jpg)
 
@@ -149,7 +149,7 @@ as discussed in the next section.
 
 Zero or more AI scripts can be added to the `SessionConfiguration` game
 object. These scripts extend the [`AIPlayer`] class, as discussed in the
-[AI implementation](#ai-implementation) section. The number of active AI
+following section. The number of active AI
 scripts in the `SessionConfiguration` game object determines what type of
 session will run:
 
@@ -164,7 +164,7 @@ session will run:
 During and after the tournament session, all match results as well as current
 standings / classifications, are presented.
 
-#### How to test the AI in Unity
+#### An additional class for Unity
 
 For the AI to be tested in Unity, an additional class, which extends
 [`AIPlayer`], must be implemented. This class allows an AI to be found and
