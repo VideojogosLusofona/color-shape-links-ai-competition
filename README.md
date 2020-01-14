@@ -14,17 +14,18 @@ work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 
 ## Description
 
-ColorShapeLinks is an AI competition for a [Simplexity] board game with
-arbitrary board size, winning sequence length and number of initial pieces per
-player. The first player to place *n* pieces of the same type in a row, and in
-this regard, the base game (6x7 board, 4 pieces in a row for victory) is
-similar to [Connect Four]. However, the type of piece is defined not only by
-color, but also by shape. The shape can be round (player 1 wins) or square
-(player 2 wins). Contrary to color, players start with pieces of both shapes, meaning that a less observant player can lose in its turn, especially since
-shape has priority over color as a winning condition. Given this fact, as well
-as the arbitrary board size and winning sequence length, the challenges for
-the AI, namely at the level of the heuristic evaluation function, are
-multifold.
+ColorShapeLinks is an AI competition for the [Simplexity] board game with
+arbitrary game dimensions. The first player to place *n* pieces of the same
+type in a row wins. In this regard, the base game, with a 6 x 7 board and
+_n_ = 4, is similar to [Connect Four]. However, the type of piece is defined
+not only by color, but also by shape. Shape can be round or square. Round
+or white pieces offer the win to player 1, while square or red pieces
+do the same for player 2. Contrary to color, players start the game with
+pieces of both shapes. This means that a less observant player
+can lose in its turn, especially since shape has priority over color as a
+winning condition. Given this fact, as well as the arbitrary game dimensions,
+the challenges for the AI, namely at the level of the heuristic evaluation
+function, are multifold.
 
 ## The competition
 
@@ -35,13 +36,14 @@ The competition runs on two distinct tracks:
 1. The **Base Track** competition will be played using standard [Simplexity]
    rules (6x7 board, 4 pieces in a row for victory) and with a time limit of
    0.2 seconds.
-2. The **Unknown Track** competition will be played under the following
-   conditions, obtained from the first [EuroMillions] draw after the
-   competition deadline, which will most likely take place May 19, 2020:
+2. The **Unknown Track** competition will be played under conditions that will
+   only be revealed after the competition deadline. These conditions will be
+   derived from the first [EuroMillions] draw that takes place after the
+   deadline, most likely at May 19, 2020, as follows:
    * NumberOfRows = Lowest [EuroMillions] ball number higher than 6
      (ascending order).
    * NumberOfCols = Next [EuroMillions] ball (ascending order).
-   * WiningSequenceLength = Ceil(NumberOfRows / 2).
+   * WiningSequenceLength = Ceil(NumberOfRows / 2.0).
    * InitialNumberOfRoundPiecesPerPlayer = Floor(NumberOfRows * NumberOfCols / 4.0)
    * InitialNumberOfSquarePiecesPerPlayer = Ceil(NumberOfRows * NumberOfCols / 4.0)
    * TimeLimit (milliseconds) = 25 * Max(NumberOfRows, NumberOfCols)
@@ -53,16 +55,16 @@ to play first. Players will be awarded 3 points per win, 1 point per draw and
 0 points per loss. The classification for each track will be based on the total
 number of points obtained per AI, sorted in descending order.
 
-Tie-breaks are performed only in there are more than one AI with the same
-points in first place. In such a case, ties are solved according to the
+Tie-breaks are performed only when there are two or more AIs with the same
+points in first place. In such cases, ties are solved according to the
 following criteria (from most to least important):
 
 1. Greatest number of points obtained in the matches between AIs with the same
    points.
-2. Double the TimeLimit and perform a tie-break tournament between the AIs
-   still tied. Repeat the process at most 10 times until the tie is broken.
-3. Halve the original TimeLimit and perform a tie-break tournament between the
-   AIs still tied. Repeat the process at most 10 times until the tie is broken.
+2. Perform a tie-break tournament between the AIs still tied with the time
+   limit doubled. Repeat the process at most 10 times until the tie is broken.
+3. Perform a tie-break tournament between the AIs still tied with the time
+   limit halved. Repeat the process at most 10 times until the tie is broken.
 4. If the tie persists, the AIs are considered officially tied and *ex aequo*
    winners of the competition.
 
