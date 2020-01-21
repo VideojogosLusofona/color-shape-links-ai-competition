@@ -116,9 +116,10 @@ which are discussed in the next sections.
 ### Testing the AI in the console
 
 ***TO DO*** if the proposal is accepted in [IEEE CoG 2020]:
-* All the [game code](Assets/Scripts/BoardGame) is Unity-independent. However,
-  automated testing of AIs via console is not yet implemented (and will only
-  be so if the proposal is accepted).
+* All the
+  [game code](https://github.com/VideojogosLusofona/color-shape-links-ai-competition/tree/master/Assets/Scripts/BoardGame)
+  is Unity-independent. However, automated testing of AIs via console is
+  not yet implemented (and will only be so if the proposal is accepted).
 
 ### Testing the AI in Unity
 
