@@ -220,6 +220,6 @@ License][CC BY-NC-SA 4.0].
 [`Board`]:Assets/Scripts/BoardGame/Board.cs
 [`FutureMove`]:Assets/Scripts/FutureMove.cs
 [`SessionController`]:Assets/Scripts/SessionController.cs
-[`Assets/Scripts/AI/AIs/`]:Assets/Scripts/AI/AIs/
+[`Assets/Scripts/AI/AIs/`]:https://github.com/VideojogosLusofona/color-shape-links-ai-competition/tree/master/Assets/Scripts/AI/AIs
 [`CancellationToken`]:https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken
 [`SerializeField`]:https://docs.unity3d.com/ScriptReference/SerializeField.html
