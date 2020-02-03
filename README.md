@@ -10,7 +10,8 @@ work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 
 # ColorShapeLinks AI competition
 
-*A competition proposal for the [IEEE CoG 2020] conference*
+This competition has been accepted for the [IEEE CoG 2020] conference,
+and will be up and running by February 15 2020.
 
 ## Description
 
@@ -115,7 +116,7 @@ which are discussed in the next sections.
 
 ### Testing the AI in the console
 
-***TO DO*** if the proposal is accepted in [IEEE CoG 2020]:
+***TO DO*** before February 15:
 * All the
   [game code](https://github.com/VideojogosLusofona/color-shape-links-ai-competition/tree/master/Assets/Scripts/BoardGame)
   is Unity-independent. However, automated testing of AIs via console is
