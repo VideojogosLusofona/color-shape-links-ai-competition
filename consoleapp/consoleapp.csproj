@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\unityapp\Assets\Scripts\Common\Common.csproj" />
+    <ProjectReference Include="..\commonlib\commonlib.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
