@@ -1,6 +1,7 @@
 ﻿using System;
+using ColorShapeLinks.Common;
 
-namespace consoleapp
+namespace ColorShapeLinks.ConsoleApp
 {
     class Program
     {

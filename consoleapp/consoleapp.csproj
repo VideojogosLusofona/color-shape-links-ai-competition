@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\unityapp\Assets\Scripts\BoardGame\BoardGame.csproj" />
+    <ProjectReference Include="..\unityapp\Assets\Scripts\Common\Common.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
