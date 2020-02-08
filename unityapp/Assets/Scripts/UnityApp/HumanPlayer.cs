@@ -6,8 +6,9 @@
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using System;
+using ColorShapeLinks.Common.AI;
 
-namespace ColorShapeLinks.Common.AI
+namespace ColorShapeLinks.UnityApp
 {
     /// <summary>
     /// Represents a human player, for testing purposes.
