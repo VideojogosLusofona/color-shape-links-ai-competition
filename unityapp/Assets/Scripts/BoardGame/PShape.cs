@@ -2,15 +2,18 @@
 /// @brief This file contains the ::PShape enum.
 ///
 /// @author Nuno Fachada
-/// @date 2019
+/// @date 2019, 2020
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
-/// <summary>Piece shapes.</summary>
-public enum PShape
+namespace ColorShapeLinks.BoardGame
 {
-    /// <summary>Round piece.</summary>
-    Round,
+    /// <summary>Piece shapes.</summary>
+    public enum PShape
+    {
+        /// <summary>Round piece.</summary>
+        Round,
 
-    /// <summary>Square piece.</summary>
-    Square
+        /// <summary>Square piece.</summary>
+        Square
+    }
 }

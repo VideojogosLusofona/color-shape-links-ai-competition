@@ -2,8 +2,10 @@
 /// @brief This file contains the ::FutureMove struct.
 ///
 /// @author Nuno Fachada
-/// @date 2019
+/// @date 2019, 2020
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
+
+using ColorShapeLinks.BoardGame;
 
 /// <summary>
 /// Represents a move to be performed in the future.

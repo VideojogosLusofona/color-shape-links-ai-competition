@@ -2,10 +2,11 @@
 /// @brief This file contains the ::SequentialAIThinker class.
 ///
 /// @author Nuno Fachada
-/// @date 2019
+/// @date 2019, 2020
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using System.Threading;
+using ColorShapeLinks.BoardGame;
 
 /// <summary>
 /// Implementation of an AI that will always play in sequence, from the first

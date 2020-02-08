@@ -2,10 +2,11 @@
 /// @brief This file contains the ::Match struct.
 ///
 /// @author Nuno Fachada
-/// @date 2019
+/// @date 2019, 2020
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using System;
+using ColorShapeLinks.BoardGame;
 
 /// <summary>
 /// Represents one match in a session.

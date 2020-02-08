@@ -2,15 +2,18 @@
 /// @brief This file contains the ::PColor enum.
 ///
 /// @author Nuno Fachada
-/// @date 2019
+/// @date 2019, 2020
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
-/// <summary>Piece colors.</summary>
-public enum PColor
+namespace ColorShapeLinks.BoardGame
 {
-    /// <summary>White piece.</summary>
-    White,
+    /// <summary>Piece colors.</summary>
+    public enum PColor
+    {
+        /// <summary>White piece.</summary>
+        White,
 
-    /// <summary>Red piece.</summary>
-    Red
+        /// <summary>Red piece.</summary>
+        Red
+    }
 }
