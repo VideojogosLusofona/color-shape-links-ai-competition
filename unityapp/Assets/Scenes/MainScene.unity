@@ -316,11 +316,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 505a1c9a208273b9c9f96cff93c38eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rows: 7
+  rows: 6
   cols: 7
   winSequence: 4
   roundPiecesPerPlayer: 10
   squarePiecesPerPlayer: 11
+  lastMoveAnimLength: 1
   aITimeLimit: 0.2
   minAIGameMoveTime: 0.5
   pointsPerWin: 3
@@ -328,7 +329,7 @@ MonoBehaviour:
   pointsPerLoss: 0
   pressButtonBeforeMatch: 0
   pressButtonAfterMatch: 0
-  noMatchScreenDuration: 1
+  unblockedScreenDuration: 1.5
 --- !u!4 &617695835
 Transform:
   m_ObjectHideFlags: 0
