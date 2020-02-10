@@ -33,9 +33,9 @@ namespace ColorShapeLinks.ConsoleApp
 
         private void Run()
         {
-            IThinker thinker1 = AIManager.Instance.NewInstance(
+            IThinker thinker1 = AIManager.Instance.NewThinker(
                 typeof(RandomAIThinker).FullName, this, "");
-            IThinker thinker2 = AIManager.Instance.NewInstance(
+            IThinker thinker2 = AIManager.Instance.NewThinker(
                 typeof(SequentialAIThinker).FullName, this, "");
 
             Board board = new Board(
