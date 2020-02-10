@@ -18,10 +18,6 @@ namespace ColorShapeLinks.UnityApp
         /// <value>`true` if the player is human, `false` otherwise.</value>
         bool IsHuman { get; }
 
-        /// <summary>Name of the player.</summary>
-        /// <value>A string containing the name of the player.</value>
-        string PlayerName { get; }
-
         /// <summary>The player's thinker.</summary>
         /// <value>An instance of <see cref="IThinker"/>.</value>
         IThinker Thinker { get; }

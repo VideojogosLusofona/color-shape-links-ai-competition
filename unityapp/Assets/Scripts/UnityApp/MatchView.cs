@@ -286,7 +286,7 @@ namespace ColorShapeLinks.UnityApp
                 );
                 // Set player name in panel
                 panel.GetComponentInChildren<Text>().text =
-                    matchData.GetPlayer(player).PlayerName;
+                    matchData.GetPlayer(player).ToString();
 
                 // Configure toggles for selecting shape
                 for (int j = 0; j < 2; j++)

@@ -27,7 +27,7 @@ namespace ColorShapeLinks.UnityApp
     /// * *Controller* - This class.
     /// </remarks>
     public class SessionController
-        : MonoBehaviour, IMatchDataProvider, ISessionDataProvider
+        : MonoBehaviour, IMatchDataProvider, ISessionDataProvider, IGameConfig
     {
 
         // Internal auxiliary struct used for match making
@@ -418,11 +418,11 @@ namespace ColorShapeLinks.UnityApp
 
         /// @copydoc ISessionDataProvider.PlayerWhite
         /// <seealso cref="ISessionDataProvider.PlayerWhite"/>
-        public string PlayerWhite => currentMatch[PColor.White].PlayerName;
+        public string PlayerWhite => currentMatch[PColor.White].ToString();
 
         /// @copydoc ISessionDataProvider.PlayerRed
         /// <seealso cref="ISessionDataProvider.PlayerRed"/>
-        public string PlayerRed => currentMatch[PColor.Red].PlayerName;
+        public string PlayerRed => currentMatch[PColor.Red].ToString();
 
         /// @copydoc ISessionDataProvider.Matches
         /// <seealso cref="ISessionDataProvider.Matches"/>
@@ -461,5 +461,33 @@ namespace ColorShapeLinks.UnityApp
         /// @copydoc ISessionDataProvider.UnblockedScreenDuration
         /// <seealso cref="ISessionDataProvider.UnblockedScreenDuration"/>
         public float UnblockedScreenDuration => unblockedScreenDuration;
+
+        // ///////////////////////////// //
+        // Implementation of IGameConfig //
+        // ///////////////////////////// //
+
+        /// @copydoc IGameConfig.Rows
+        /// <seealso cref="IGameConfig.Rows"/>
+        public int Rows => rows;
+
+        /// @copydoc IGameConfig.Cols
+        /// <seealso cref="IGameConfig.Cols"/>
+        public int Cols => cols;
+
+        /// @copydoc IGameConfig.WinSequence
+        /// <seealso cref="IGameConfig.WinSequence"/>
+        public int WinSequence => winSequence;
+
+        /// @copydoc IGameConfig.RoundPiecesPerPlayer
+        /// <seealso cref="IGameConfig.RoundPiecesPerPlayer"/>
+        public int RoundPiecesPerPlayer => roundPiecesPerPlayer;
+
+        /// @copydoc IGameConfig.SquarePiecesPerPlayer
+        /// <seealso cref="IGameConfig.SquarePiecesPerPlayer"/>
+        public int SquarePiecesPerPlayer => squarePiecesPerPlayer;
+
+        /// @copydoc IGameConfig.TimeLimitMillis
+        /// <seealso cref="IGameConfig.TimeLimitMillis"/>
+        public int TimeLimitMillis => (int)(aITimeLimit * 1000);
     }
 }

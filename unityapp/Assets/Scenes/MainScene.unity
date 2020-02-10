@@ -294,9 +294,9 @@ GameObject:
   - component: {fileID: 617695835}
   - component: {fileID: 617695834}
   - component: {fileID: 617695839}
-  - component: {fileID: 617695836}
-  - component: {fileID: 617695837}
   - component: {fileID: 617695838}
+  - component: {fileID: 617695837}
+  - component: {fileID: 617695836}
   m_Layer: 0
   m_Name: SessionConfiguration
   m_TagString: Untagged
@@ -353,10 +353,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 617695833}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52622cd336e3e0ab69d66e893d84bd1f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3dcb4d3020b72515595763554fd5779a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
+  selectedAI: ColorShapeLinks.Common.AI.Examples.SequentialAIThinker
+  aiConfig: 
 --- !u!114 &617695837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,10 +368,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 617695833}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6be76f395fd22c64ab2604efe5c35fbb, type: 3}
+  m_Script: {fileID: 11500000, guid: 3dcb4d3020b72515595763554fd5779a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
+  selectedAI: ColorShapeLinks.Common.AI.Examples.RandomAIThinker
+  aiConfig: 
 --- !u!114 &617695838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,10 +383,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 617695833}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af4d4e13f7b2fd18dace3aa6c650000e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3dcb4d3020b72515595763554fd5779a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
+  selectedAI: ColorShapeLinks.Common.AI.Examples.LoserSleeperAIThinker
+  aiConfig: 
 --- !u!114 &617695839
 MonoBehaviour:
   m_ObjectHideFlags: 0

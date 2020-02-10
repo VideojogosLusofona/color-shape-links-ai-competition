@@ -27,7 +27,7 @@ namespace ColorShapeLinks.UnityApp
         /// Name of the human player.
         /// </summary>
         /// <value>The string "Human".</value>
-        public string PlayerName => "Human";
+        public override string ToString() => "Human";
 
         /// <summary>
         /// Humans don't have a thinker, so accessing this property will result

@@ -67,7 +67,7 @@ namespace ColorShapeLinks.UnityApp
         /// <param name="color">Color of player to get name/color of.</param>
         /// <returns>A string with the name and color of player.</returns>
         public string PlrNameColor(PColor color) =>
-            $"{matchData.GetPlayer(color).PlayerName} ({color})";
+            $"{matchData.GetPlayer(color)} ({color})";
 
         /// <summary>Name and color of winner.</summary>
         /// <returns>A string with the name and color of the winner.</returns>
@@ -98,10 +98,6 @@ namespace ColorShapeLinks.UnityApp
             // Get the AI time limit as a native C# TimeSpan
             aiTimeLimit = new TimeSpan(
                 (long)(matchData.AITimeLimit * TimeSpan.TicksPerSecond));
-
-            // Setup the two players, if they are AIs
-            (matchData.GetPlayer(PColor.White) as AIPlayer)?.Setup();
-            (matchData.GetPlayer(PColor.Red) as AIPlayer)?.Setup();
         }
 
         // This function is called when the object becomes enabled and active
