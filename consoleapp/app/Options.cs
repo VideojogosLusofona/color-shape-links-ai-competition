@@ -3,7 +3,7 @@ using CommandLine;
 
 namespace ColorShapeLinks.ConsoleApp
 {
-    class Options : IGameConfig
+    public class Options : IGameConfig
     {
         private readonly int rows;
         private readonly int cols;
