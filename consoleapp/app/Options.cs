@@ -59,7 +59,7 @@ namespace ColorShapeLinks.ConsoleApp
             HelpText = "Number of initial square pieces per player")]
         public int SquarePiecesPerPlayer => squarePiecesPerPlayer;
 
-        [Option('t', "time-limit", Default = int.MaxValue, SetName = "game",
+        [Option('t', "time-limit", Default = int.MaxValue / 2, SetName = "game",
             HelpText = "Time limit (ms) for making move")]
         public int TimeLimitMillis => timeLimitMillis;
 

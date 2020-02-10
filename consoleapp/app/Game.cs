@@ -7,6 +7,7 @@
 
 using System;
 using System.Threading;
+using System.Threading.Tasks;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
 
@@ -38,6 +39,9 @@ namespace ColorShapeLinks.ConsoleApp
 
             CancellationTokenSource ts = new CancellationTokenSource();
 
+            // Task to execute the thinker in a separate thread
+            Task<FutureMove> thinkTask;
+
             while (true)
             {
                 int row;
@@ -49,8 +53,18 @@ namespace ColorShapeLinks.ConsoleApp
                 Console.WriteLine(
                     $"Player 1 turn ({PColor.White}, {thinker1})");
 
-                // Determine move for current
-                move = thinker1.Think(board, ts.Token);
+                thinkTask = Task.Run(
+                        () => thinker1.Think(board.Copy(), ts.Token));
+
+                if (!thinkTask.Wait(options.TimeLimitMillis))
+                {
+                    ts.Cancel();
+                    winner = Winner.Red;
+                    break;
+                }
+
+                // Get move for current player
+                move = thinkTask.Result;
 
                 // Perform move in game board, get column where move was
                 // performed
@@ -76,10 +90,17 @@ namespace ColorShapeLinks.ConsoleApp
                 Render(board);
 
                 Console.WriteLine(
-                    $"Player 1 turn ({PColor.White}, {thinker1})");
+                    $"Player 2 turn ({PColor.Red}, {thinker2})");
 
-                // Determine move for current
-                move = thinker2.Think(board, ts.Token);
+                thinkTask = Task.Run(
+                        () => thinker2.Think(board.Copy(), ts.Token));
+
+                if (!thinkTask.Wait(options.TimeLimitMillis))
+                {
+                    ts.Cancel();
+                    winner = Winner.White;
+                    break;
+                }
 
                 // Perform move in game board, get column where move was
                 // performed
@@ -101,6 +122,8 @@ namespace ColorShapeLinks.ConsoleApp
                     throw new InvalidOperationException("Invalid move");
                 }
             }
+
+            Render(board);
 
             if (winner == Winner.Draw)
             {
