@@ -4,9 +4,17 @@
     <ProjectReference Include="..\commonlib\commonlib.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.7.82" />
+  </ItemGroup>
+
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Copyright>Mozilla Public License, version 2.0</Copyright>
+    <Company>Nuno Fachada</Company>
+    <Version>1.0.0-beta</Version>
+    <AssemblyTitle>ColorShapeLinks Console App</AssemblyTitle>
   </PropertyGroup>
 
 </Project>

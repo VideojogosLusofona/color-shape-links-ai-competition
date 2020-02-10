@@ -2,50 +2,62 @@
 using System.Threading;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
-using ColorShapeLinks.Common.AI.Examples;
+using CommandLine;
 
 namespace ColorShapeLinks.ConsoleApp
 {
-    class Program : IGameConfig
-    {
-        private int rows = 6;
-        private int cols = 7;
-        private int winSequence = 4;
-        private int roundPiecesPerPlayer = 10;
-        private int squarePiecesPerPlayer = 11;
-        private int timeLimitMillis = int.MaxValue;
-        private double minAIMoveTime = 0.5;
-        private IThinker player1;
-        private IThinker player2;
 
-        public int Rows => rows;
-        public int Cols => cols;
-        public int WinSequence => winSequence;
-        public int SquarePiecesPerPlayer => squarePiecesPerPlayer;
-        public int RoundPiecesPerPlayer => roundPiecesPerPlayer;
-        public int TimeLimitMillis => timeLimitMillis;
+    class Program
+    {
+        private Options options;
 
         static void Main(string[] args)
         {
-            Program p = new Program();
-            p.Run();
+            Program p;
+            Parser.Default
+                .ParseArguments<Options>(args)
+                .WithParsed<Options>(o =>
+                {
+                    if (o.ListPlayers)
+                    {
+                        foreach (string thinkerName in AIManager.Instance.AIs)
+                        {
+                            Console.WriteLine(thinkerName);
+                        }
+                    }
+                    else
+                    {
+                        p = new Program(o);
+                        p.Run();
+                    }
+
+                });
+        }
+
+        private Program(Options options)
+        {
+            this.options = options;
         }
 
         private void Run()
         {
             IThinker thinker1 = AIManager.Instance.NewThinker(
-                typeof(RandomAIThinker).FullName, this, "");
+                options.Player1, options, options.Player1Params);
             IThinker thinker2 = AIManager.Instance.NewThinker(
-                typeof(SequentialAIThinker).FullName, this, "");
+                options.Player2, options, options.Player2Params);
 
-            Board board = new Board(
-                rows, cols, winSequence, roundPiecesPerPlayer, squarePiecesPerPlayer);
+            Board board = new Board(options.Rows, options.Cols,
+                options.WinSequence, options.RoundPiecesPerPlayer,
+                options.SquarePiecesPerPlayer);
 
             Winner winner = Winner.None;
 
-            Pos[] solution = new Pos[winSequence];
+            Pos[] solution = new Pos[options.WinSequence];
 
             CancellationTokenSource ts = new CancellationTokenSource();
+
+            Console.Clear();
+            Render(board);
 
             while (true)
             {
