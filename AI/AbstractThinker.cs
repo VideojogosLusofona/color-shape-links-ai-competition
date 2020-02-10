@@ -15,18 +15,46 @@ namespace ColorShapeLinks.Common.AI
     /// </summary>
     public abstract class AbstractThinker : IThinker
     {
+        // Number of board rows
         private int rows;
+
+        // Number of board columns
         private int cols;
+
+        // How many pieces in sequence to find a winner
         private int winSequence;
+
+        // Number of initial round pieces per player
         private int roundPiecesPerPlayer;
+
+        // Number of initial square round pieces per player
         private int squarePiecesPerPlayer;
+
+        // Time limit for the AI to play
         private int timeLimitMillis;
 
+        /// <summary>Number of board rows.</summary>
+        /// <value>Number of board rows.</value>
         protected int Rows =>  rows;
+
+        /// <summary>Number of board columns.</summary>
+        /// <value>Number of board columns.</value>
         protected int Cols =>  cols;
+
+        /// <summary>How many pieces in sequence to find a winner.</summary>
+        /// <value>How many pieces in sequence to find a winner.</value>
         protected int WinSequence => winSequence;
+
+        /// <summary>Number of initial round pieces per player.</summary>
+        /// <value>Number of initial round pieces per player.</value>
         protected int RoundsPerPlayer => roundPiecesPerPlayer;
+
+        /// <summary>Number of initial square round pieces per player</summary>
+        /// <value>Number of initial square round pieces per player</value>
         protected int SquaresPerPlayer => squarePiecesPerPlayer;
+
+        /// <summary>Time limit for the AI to play.</summary>
+        /// <value>Time limit for the AI to play.</value>
         protected int TimeLimitMillis => timeLimitMillis;
 
         /// <summary>
@@ -46,10 +74,20 @@ namespace ColorShapeLinks.Common.AI
         /// <seealso cref="IThinker.Think"/>
         public abstract FutureMove Think(Board board, CancellationToken ct);
 
+        /// <summary>
+        /// Returns a short string description of the AI.
+        /// </summary>
+        /// <remarks>
+        /// By default, the namespace is removed, as well as the "thinker" or
+        /// "aithinker" or "thinkerai" suffixes.
+        /// </remarks>
+        /// <returns>A short string description of the AI.</returns>
         public override string ToString()
         {
+            // Get base name, without namespace
             string name = GetType().Name;
 
+            // Remove "aithinker" or "thinkerai" suffixes, if they exist
             if (name.Length > "aithinker".Length
                 && (name.ToLower().EndsWith("aithinker")
                     || name.ToLower().EndsWith("thinkerai")))
@@ -57,12 +95,14 @@ namespace ColorShapeLinks.Common.AI
                 return name.Substring(0, name.Length - "aithinker".Length);
             }
 
+            // Remove "thinker" suffix if it exists
             if (name.Length > "thinker".Length
                 && name.ToLower().EndsWith("thinker"))
             {
                 return name.Substring(0, name.Length - "thinker".Length);
             }
 
+            // Return unchanged name
             return name;
         }
     }
