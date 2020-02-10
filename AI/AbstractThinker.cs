@@ -16,22 +16,22 @@ namespace ColorShapeLinks.Common.AI
     public abstract class AbstractThinker : IThinker
     {
         // Number of board rows
-        private int rows;
+        private int rows = 0;
 
         // Number of board columns
-        private int cols;
+        private int cols = 0;
 
         // How many pieces in sequence to find a winner
-        private int winSequence;
+        private int winSequence = 0;
 
         // Number of initial round pieces per player
-        private int roundPiecesPerPlayer;
+        private int roundPiecesPerPlayer = 0;
 
         // Number of initial square round pieces per player
-        private int squarePiecesPerPlayer;
+        private int squarePiecesPerPlayer = 0;
 
         // Time limit for the AI to play
-        private int timeLimitMillis;
+        private int timeLimitMillis = 0;
 
         /// <summary>Number of board rows.</summary>
         /// <value>Number of board rows.</value>
