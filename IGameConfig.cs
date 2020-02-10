@@ -5,7 +5,7 @@
 /// @date 2020
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
-namespace ColorShapeLinks.Common.AI
+namespace ColorShapeLinks.Common
 {
     /// <summary>
     /// Defines a game configuration, such as number of rows, number of
