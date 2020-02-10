@@ -13,17 +13,17 @@ namespace ColorShapeLinks.Common.AI.Examples
     /// Implementation of an AI that will always lose because it takes too long
     /// to play.
     /// </summary>
-    public class LoserSleeperAIThinker : IThinker
+    public class LoserSleeperAIThinker : AbstractThinker
     {
         /// @copydoc IThinker.Think
         /// <seealso cref="IThinker.Think"/>
-        public FutureMove Think(Board board, CancellationToken ct)
+        public override FutureMove Think(Board board, CancellationToken ct)
         {
             // Is this task to be cancelled?
             while (true)
             {
-                // Wait a few millisseconds
-                Thread.Sleep(100);
+                // Wait enough millisseconds to lose
+                Thread.Sleep(TimeLimitMillis + 1);
 
                 // The task will eventually be cancelled due to a timeout
                 if (ct.IsCancellationRequested) break;

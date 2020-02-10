@@ -14,14 +14,14 @@ namespace ColorShapeLinks.Common.AI.Examples
     /// first to the last column. It will start by spending all round pieces,
     /// and only then start using the square pieces.
     /// </summary>
-    public class SequentialAIThinker : IThinker
+    public class SequentialAIThinker : AbstractThinker
     {
         // Last column played
         private int lastCol = -1;
 
         /// @copydoc IThinker.Think
         /// <seealso cref="IThinker.Think"/>
-        public FutureMove Think(Board board, CancellationToken ct)
+        public override FutureMove Think(Board board, CancellationToken ct)
         {
             // The move to perform
             FutureMove move;

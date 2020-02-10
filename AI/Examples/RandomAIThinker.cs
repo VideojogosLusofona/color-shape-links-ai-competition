@@ -13,7 +13,7 @@ namespace ColorShapeLinks.Common.AI.Examples
     /// <summary>
     /// Implementation of an AI that will play randomly.
     /// </summary>
-    public class RandomAIThinker : IThinker
+    public class RandomAIThinker : AbstractThinker
     {
         // A random number generator instance
         private Random random;
@@ -28,7 +28,7 @@ namespace ColorShapeLinks.Common.AI.Examples
 
         /// @copydoc IThinker.Think
         /// <seealso cref="IThinker.Think"/>
-        public FutureMove Think(Board board, CancellationToken ct)
+        public override FutureMove Think(Board board, CancellationToken ct)
         {
             // Check how many pieces current player has
             int roundPieces = board.PieceCount(board.Turn, PShape.Round);
