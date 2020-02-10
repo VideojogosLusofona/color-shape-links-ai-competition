@@ -58,7 +58,7 @@ namespace ColorShapeLinks.UnityApp
         {
             IGameConfig gameConfig = GetComponent<IGameConfig>();
 
-            Thinker = AIManager.Instance.NewInstance(
+            Thinker = AIManager.Instance.NewThinker(
                 selectedAI, gameConfig, aiConfig);
         }
 
