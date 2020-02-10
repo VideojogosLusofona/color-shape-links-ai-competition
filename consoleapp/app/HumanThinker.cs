@@ -39,6 +39,8 @@ namespace ColorShapeLinks.ConsoleApp
                 + "T to toggle shape, "
                 + "ENTER to make move");
 
+            RenderInfo(timeLimit - DateTime.Now);
+
             vertCursorPos = Console.CursorTop;
 
             if (board.PieceCount(board.Turn, PShape.Round) == 0)
@@ -46,28 +48,39 @@ namespace ColorShapeLinks.ConsoleApp
             if (board.PieceCount(board.Turn, PShape.Square) == 0)
                 selectedShape = PShape.Round;
 
+            while (board.IsColumnFull(selectedCol))
+            {
+                selectedCol++;
+                if (selectedCol >= Cols)
+                    selectedCol = 0;
+            }
+
             while (true)
             {
                 if (Console.KeyAvailable)
                 {
                     ConsoleKey key = Console.ReadKey().Key;
-                    if (key == ConsoleKey.UpArrow
-                        || key == ConsoleKey.W
-                        || key == ConsoleKey.NumPad8
-                        || key == ConsoleKey.PageUp)
+                    if (key == ConsoleKey.RightArrow
+                        || key == ConsoleKey.D
+                        || key == ConsoleKey.NumPad6)
                     {
-                        selectedCol++;
-                        if (selectedCol >= Cols)
-                            selectedCol = 0;
+                        do
+                        {
+                            selectedCol++;
+                            if (selectedCol >= Cols)
+                                selectedCol = 0;
+                        } while (board.IsColumnFull(selectedCol));
                     }
-                    else if (key == ConsoleKey.DownArrow
-                        || key == ConsoleKey.S
-                        || key == ConsoleKey.NumPad2
-                        || key == ConsoleKey.PageDown)
+                    else if (key == ConsoleKey.LeftArrow
+                        || key == ConsoleKey.A
+                        || key == ConsoleKey.NumPad4)
                     {
-                        selectedCol--;
-                        if (selectedCol < 0)
-                            selectedCol = Cols - 1;
+                        do
+                        {
+                            selectedCol--;
+                            if (selectedCol < 0)
+                                selectedCol = Cols - 1;
+                        } while (board.IsColumnFull(selectedCol));
                     }
                     else if (key == ConsoleKey.T)
                     {
@@ -96,16 +109,20 @@ namespace ColorShapeLinks.ConsoleApp
 
                 if (DateTime.Now > lastUpdateTime + frameUpdate)
                 {
-                    Console.SetCursorPosition(0, vertCursorPos);
-                    Console.WriteLine($" -> Column {selectedCol} selected");
-                    Console.WriteLine($" -> {selectedShape} piece selected");
-                    Console.WriteLine(
-                        $" -> Time to play: {timeLimit - DateTime.Now}");
+                    Console.SetCursorPosition(0, vertCursorPos - 3);
+                    RenderInfo(timeLimit - DateTime.Now);
                     lastUpdateTime = DateTime.Now;
                 }
             }
 
             return move;
+        }
+
+        private void RenderInfo(TimeSpan timeToPlay)
+        {
+            Console.WriteLine($" -> Column {selectedCol} selected   ");
+            Console.WriteLine($" -> {selectedShape} piece selected  ");
+            Console.WriteLine($" -> Time to play: {timeToPlay}      ");
         }
 
     }

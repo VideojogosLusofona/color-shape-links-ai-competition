@@ -6,7 +6,6 @@ using CommandLine;
 
 namespace ColorShapeLinks.ConsoleApp
 {
-
     class Program
     {
         private Options options;
@@ -56,25 +55,29 @@ namespace ColorShapeLinks.ConsoleApp
 
             CancellationTokenSource ts = new CancellationTokenSource();
 
-            Console.Clear();
-            Render(board);
-
             while (true)
             {
                 int row;
                 FutureMove move;
 
+                // Update board view
+                Render(board);
+
+                Console.WriteLine(
+                    $"Player 1 turn ({PColor.White}, {thinker1})");
+
                 // Determine move for current
                 move = thinker1.Think(board, ts.Token);
 
-                // Perform move in game board, get column where move was performed
+                // Perform move in game board, get column where move was
+                // performed
                 row = board.DoMove(move.shape, move.column);
 
                 // If the column had space for the move...
                 if (row >= 0)
                 {
-                    // Update board view
-                    Render(board);
+                    Console.WriteLine(
+                        $"Player 1 placed a {move.shape} piece at column {move.column}");
 
                     // Get possible winner and solution
                     winner = board.CheckWinner(solution);
@@ -86,17 +89,24 @@ namespace ColorShapeLinks.ConsoleApp
                     throw new InvalidOperationException("Invalid move");
                 }
 
+                // Update board view
+                Render(board);
+
+                Console.WriteLine(
+                    $"Player 1 turn ({PColor.White}, {thinker1})");
+
                 // Determine move for current
                 move = thinker2.Think(board, ts.Token);
 
-                // Perform move in game board, get column where move was performed
+                // Perform move in game board, get column where move was
+                // performed
                 row = board.DoMove(move.shape, move.column);
 
                 // If the column had space for the move...
                 if (row >= 0)
                 {
-                    // Update board view
-                    Render(board);
+                    Console.WriteLine(
+                        $"Player 2 placed a {move.shape} piece at column {move.column}");
 
                     // Get possible winner and solution
                     winner = board.CheckWinner(solution);
@@ -109,7 +119,22 @@ namespace ColorShapeLinks.ConsoleApp
                 }
             }
 
-            Console.WriteLine("Winner is " + winner);
+            if (winner == Winner.Draw)
+            {
+                Console.WriteLine("Game ended in a draw");
+            }
+            else if (winner == Winner.White)
+            {
+                Console.WriteLine($"Winner is {thinker1} ({winner})");
+            }
+            else if (winner == Winner.Red)
+            {
+                Console.WriteLine($"Winner is {thinker2} ({winner})");
+            }
+            else
+            {
+                throw new InvalidOperationException("Invalid winner!");
+            }
         }
 
         private void Render(Board board)
