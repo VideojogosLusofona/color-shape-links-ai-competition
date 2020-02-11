@@ -15,6 +15,7 @@
     <Company>Nuno Fachada</Company>
     <Version>1.0.0-beta</Version>
     <AssemblyTitle>ColorShapeLinks Console App</AssemblyTitle>
+    <DefineConstants>CSL_CONSOLEAPP</DefineConstants>
   </PropertyGroup>
 
 </Project>

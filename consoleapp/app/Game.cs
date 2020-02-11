@@ -19,13 +19,16 @@ namespace ColorShapeLinks.ConsoleApp
         private int minMoveTimeMillis;
         private Board board;
         private IThinker[] thinkers;
-        private IRenderer renderer;
+        private static Lazy<IRenderer> renderer;
+
+        public static IRenderer Renderer => renderer.Value;
 
         public Game(Options options)
         {
             Type rendererType = Type.GetType(options.Renderer);
 
-            renderer = (IRenderer)Activator.CreateInstance(rendererType);
+            renderer = new Lazy<IRenderer>(
+                () => (IRenderer)Activator.CreateInstance(rendererType));
 
             timeLimitMillis = options.TimeLimitMillis;
             minMoveTimeMillis = options.MinMoveTimeMillis;
@@ -40,14 +43,11 @@ namespace ColorShapeLinks.ConsoleApp
             board = new Board(options.Rows, options.Cols,
                 options.WinSequence, options.RoundPiecesPerPlayer,
                 options.SquarePiecesPerPlayer);
-
         }
 
         public void Run()
         {
-
             Winner winner = Winner.None;
-            PColor winColor;
             Pos[] solution;
 
             while (true)
@@ -58,27 +58,13 @@ namespace ColorShapeLinks.ConsoleApp
                 if (winner != Winner.None) break;
             }
 
-            renderer.RenderBoard(board);
+            Renderer.UpdateBoard(board);
 
-            if (winner == Winner.Draw)
-            {
-                Console.WriteLine("Game ended in a draw");
-            }
-            else
-            {
-                int winPlayer = (int)winner.ToPColor();
-                winColor = winner.ToPColor();
-                Console.WriteLine($"Winner is player {winPlayer + 1} ({winner}, {thinkers[winPlayer]})");
-                if (solution != null)
-                {
-                    Console.Write("Solution=");
-                    foreach (Pos pos in solution)
-                    {
-                        Console.Write(pos);
-                    }
-                    Console.WriteLine();
-                }
-            }
+            Renderer.Result(
+                winner,
+                solution,
+                new string[] { thinkers[0].ToString(), thinkers[1].ToString() }
+            );
         }
 
         private (Winner, Pos[]) Play(PColor color)
@@ -95,12 +81,10 @@ namespace ColorShapeLinks.ConsoleApp
             // Task to execute the thinker in a separate thread
             Task<FutureMove> thinkTask;
 
-            string player = $"Player {(int)color + 1} ({color}, {thinker})";
-
             // Update board view
-            renderer.RenderBoard(board);
+            Renderer.UpdateBoard(board);
 
-            Console.WriteLine($"{player} turn");
+            Renderer.NextTurn(color, thinker.ToString());
 
             thinkTask = Task.Run(
                     () => thinker.Think(board.Copy(), ts.Token));
@@ -110,7 +94,7 @@ namespace ColorShapeLinks.ConsoleApp
                 ts.Cancel();
                 winner = color == PColor.Red ? Winner.White : Winner.Red;
                 solution = null;
-                Console.WriteLine($"{player} took too long to play!");
+                Renderer.TooLong(color, thinker.ToString());
             }
             else
             {
@@ -124,8 +108,7 @@ namespace ColorShapeLinks.ConsoleApp
                 // If the column had space for the move...
                 if (row >= 0)
                 {
-                    Console.WriteLine(
-                        $"{player} placed a {move.shape} piece at column {move.column}");
+                    Renderer.Move(color, thinker.ToString(), move);
 
                     // Get possible winner and solution
                     winner = board.CheckWinner(solution);

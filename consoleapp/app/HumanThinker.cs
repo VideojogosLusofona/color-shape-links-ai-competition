@@ -33,15 +33,6 @@ namespace ColorShapeLinks.ConsoleApp
                 DateTime.Now + TimeSpan.FromMilliseconds(TimeLimitMillis);
             DateTime lastUpdateTime = DateTime.MinValue;
             TimeSpan frameUpdate = TimeSpan.FromMilliseconds(20);
-            int vertCursorPos;
-
-            Console.WriteLine("Up/Down to chose column, "
-                + "T to toggle shape, "
-                + "ENTER to make move");
-
-            RenderInfo(timeLimit - DateTime.Now);
-
-            vertCursorPos = Console.CursorTop;
 
             if (board.PieceCount(board.Turn, PShape.Round) == 0)
                 selectedShape = PShape.Square;
@@ -109,8 +100,13 @@ namespace ColorShapeLinks.ConsoleApp
 
                 if (DateTime.Now > lastUpdateTime + frameUpdate)
                 {
-                    Console.SetCursorPosition(0, vertCursorPos - 3);
-                    RenderInfo(timeLimit - DateTime.Now);
+
+                    Game.Renderer.UpdateTurnInfo(new string[] {
+                        $"< > : Column [{selectedCol,8}] selected   ",
+                        $" T  : Piece  [{selectedShape,8}] selected  ",
+                        $"    : Time to play: {timeLimit - DateTime.Now, 14}"
+                    });
+
                     lastUpdateTime = DateTime.Now;
                 }
             }
@@ -120,9 +116,16 @@ namespace ColorShapeLinks.ConsoleApp
 
         private void RenderInfo(TimeSpan timeToPlay)
         {
+            #if CSL_CONSOLEAPP
+            Console.WriteLine("Up/Down to chose column, "
+                + "T to toggle shape, "
+                + "ENTER to make move");
+
+
             Console.WriteLine($" -> Column {selectedCol} selected   ");
             Console.WriteLine($" -> {selectedShape} piece selected  ");
             Console.WriteLine($" -> Time to play: {timeToPlay}      ");
+            #endif
         }
 
     }
