@@ -16,6 +16,7 @@ namespace ColorShapeLinks.ConsoleApp
     public class Game
     {
         private int timeLimitMillis;
+        private int minMoveTimeMillis;
         private Board board;
         private IThinker[] thinkers;
         private IRenderer renderer;
@@ -27,6 +28,7 @@ namespace ColorShapeLinks.ConsoleApp
             renderer = (IRenderer)Activator.CreateInstance(rendererType);
 
             timeLimitMillis = options.TimeLimitMillis;
+            minMoveTimeMillis = options.MinMoveTimeMillis;
 
             thinkers = new IThinker[2];
 
@@ -87,6 +89,8 @@ namespace ColorShapeLinks.ConsoleApp
             IThinker thinker = thinkers[(int)color];
             Winner winner = Winner.None;
             Pos[] solution = new Pos[board.piecesInSequence];
+            DateTime startTime = DateTime.Now;
+            int timeLeftMillis;
 
             // Task to execute the thinker in a separate thread
             Task<FutureMove> thinkTask;
@@ -131,6 +135,14 @@ namespace ColorShapeLinks.ConsoleApp
                     throw new InvalidOperationException("Invalid move");
                 }
             }
+
+            timeLeftMillis = minMoveTimeMillis
+                - (int)(DateTime.Now - startTime).TotalMilliseconds;
+            if (timeLeftMillis > 0)
+            {
+                Thread.Sleep(timeLeftMillis);
+            }
+
             return (winner, solution);
         }
 
