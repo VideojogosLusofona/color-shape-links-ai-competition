@@ -5,8 +5,8 @@
 /// @date 2019, 2020
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
-using System;
 using UnityEngine;
+using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
 
 namespace ColorShapeLinks.UnityApp
