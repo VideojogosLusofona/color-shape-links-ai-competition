@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app", "app\app.csproj", "{D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "commonlib", "commonlib\commonlib.csproj", "{2E270CC5-66E1-426D-8A00-9E9128F4CFE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "applib", "applib\applib.csproj", "{68712FB3-C3A8-406A-B380-B6D7CAB4077C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{2E270CC5-66E1-426D-8A00-9E9128F4CFE7}.Release|x64.Build.0 = Release|Any CPU
 		{2E270CC5-66E1-426D-8A00-9E9128F4CFE7}.Release|x86.ActiveCfg = Release|Any CPU
 		{2E270CC5-66E1-426D-8A00-9E9128F4CFE7}.Release|x86.Build.0 = Release|Any CPU
+		{68712FB3-C3A8-406A-B380-B6D7CAB4077C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68712FB3-C3A8-406A-B380-B6D7CAB4077C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68712FB3-C3A8-406A-B380-B6D7CAB4077C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{68712FB3-C3A8-406A-B380-B6D7CAB4077C}.Debug|x64.Build.0 = Debug|Any CPU
+		{68712FB3-C3A8-406A-B380-B6D7CAB4077C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{68712FB3-C3A8-406A-B380-B6D7CAB4077C}.Debug|x86.Build.0 = Debug|Any CPU
+		{68712FB3-C3A8-406A-B380-B6D7CAB4077C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68712FB3-C3A8-406A-B380-B6D7CAB4077C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68712FB3-C3A8-406A-B380-B6D7CAB4077C}.Release|x64.ActiveCfg = Release|Any CPU
+		{68712FB3-C3A8-406A-B380-B6D7CAB4077C}.Release|x64.Build.0 = Release|Any CPU
+		{68712FB3-C3A8-406A-B380-B6D7CAB4077C}.Release|x86.ActiveCfg = Release|Any CPU
+		{68712FB3-C3A8-406A-B380-B6D7CAB4077C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

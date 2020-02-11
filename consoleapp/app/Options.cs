@@ -1,3 +1,11 @@
+/// @file
+/// @brief This file contains the ::Options class.
+///
+/// @author Nuno Fachada
+/// @date 2020
+/// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
+
+using System.Collections.Generic;
 using ColorShapeLinks.Common;
 using CommandLine;
 
@@ -16,15 +24,17 @@ namespace ColorShapeLinks.ConsoleApp
         private readonly string player2;
         private readonly string player1params;
         private readonly string player2params;
-        private readonly bool listPlayers;
         private readonly string renderer;
+        private readonly IEnumerable<string> assemblies;
+        private readonly bool listPlayers;
 
         public Options(int rows, int cols, int winSequence,
             int roundPiecesPerPlayer, int squarePiecesPerPlayer,
             int timeLimitMillis, int minMoveTimeMillis,
             string player1, string player2,
             string player1params, string player2params,
-            bool listPlayers, string renderer)
+            string renderer, IEnumerable<string> assemblies,
+            bool listPlayers)
         {
             this.rows = rows;
             this.cols = cols;
@@ -37,8 +47,9 @@ namespace ColorShapeLinks.ConsoleApp
             this.player2 = player2;
             this.player1params = player1params;
             this.player2params = player2params;
-            this.listPlayers = listPlayers;
             this.renderer = renderer;
+            this.assemblies = assemblies;
+            this.listPlayers = listPlayers;
         }
 
         [Option('r', "rows", Default = 6, SetName = "game",
@@ -89,15 +100,20 @@ namespace ColorShapeLinks.ConsoleApp
             HelpText = "Parameters for setting up player 2 thinker instance")]
         public string Player2Params => player2params;
 
-        [Option('l', "list", Default = false, SetName = "list",
-            HelpText = "List all known players and AIs")]
-        public bool ListPlayers => listPlayers;
-
         [Option("renderer",
             Default = "ColorShapeLinks.ConsoleApp.PlainRenderer",
             SetName = "game",
-            HelpText = "Game renderer",
-            Hidden = true)]
+            HelpText = "Specify an alternative game renderer")]
         public string Renderer => renderer;
+
+        [Option('a', "assemblies",
+            HelpText = ".NET Standard 2.0 DLLs containing thinkers and/or "
+                + "renderers (space separated)")]
+        public IEnumerable<string> Assemblies => assemblies;
+
+        [Option('l', "list", Default = false, SetName = "list",
+            HelpText = "List all known thinkers")]
+        public bool ListPlayers => listPlayers;
+
     }
 }

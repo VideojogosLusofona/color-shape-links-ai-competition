@@ -1,7 +1,15 @@
+/// @file
+/// @brief This file contains the ::PlainRenderer class.
+///
+/// @author Nuno Fachada
+/// @date 2020
+/// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
+
 using System;
 using System.Collections.Generic;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
+using ColorShapeLinks.ConsoleAppLib;
 
 namespace ColorShapeLinks.ConsoleApp
 {

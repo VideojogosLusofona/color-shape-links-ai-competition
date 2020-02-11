@@ -6,10 +6,13 @@
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using System;
+using System.Linq;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
+using ColorShapeLinks.ConsoleAppLib;
 
 namespace ColorShapeLinks.ConsoleApp
 {
@@ -25,10 +28,13 @@ namespace ColorShapeLinks.ConsoleApp
 
         public Game(Options options)
         {
-            Type rendererType = Type.GetType(options.Renderer);
+            foreach (System.Reflection.Assembly a in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                Console.WriteLine(a);
+            }
+            Console.WriteLine();
 
-            renderer = new Lazy<IRenderer>(
-                () => (IRenderer)Activator.CreateInstance(rendererType));
+            InitRenderer(options.Renderer);
 
             timeLimitMillis = options.TimeLimitMillis;
             minMoveTimeMillis = options.MinMoveTimeMillis;
@@ -127,6 +133,27 @@ namespace ColorShapeLinks.ConsoleApp
             }
 
             return (winner, solution);
+        }
+        private void InitRenderer(string rendererName)
+        {
+            Type type = typeof(IRenderer);
+            IDictionary<string, Type> rends =
+                AppDomain.CurrentDomain.GetAssemblies()
+                    .SelectMany(a => a.GetTypes())
+                    .Where(t => type.IsAssignableFrom(t)
+                        && !t.IsAbstract
+                        && t.GetConstructor(Type.EmptyTypes) != null)
+                    .ToDictionary(t => t.FullName, t => t);
+            if (rends.ContainsKey(rendererName))
+            {
+                renderer = new Lazy<IRenderer>(() =>
+                    (IRenderer)Activator.CreateInstance(rends[rendererName]));
+            }
+            else
+            {
+                throw new ArgumentException(
+                    $"Unknown renderer '{rendererName}'");
+            }
         }
 
     }

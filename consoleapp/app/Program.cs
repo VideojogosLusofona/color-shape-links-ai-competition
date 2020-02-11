@@ -19,6 +19,10 @@ namespace ColorShapeLinks.ConsoleApp
                 .ParseArguments<Options>(args)
                 .WithParsed<Options>(o =>
                 {
+                    foreach (string a in o.Assemblies)
+                    {
+                        System.Reflection.Assembly.LoadFile(a);
+                    }
                     if (o.ListPlayers)
                     {
                         foreach (string thinkerName in AIManager.Instance.AIs)
@@ -31,7 +35,6 @@ namespace ColorShapeLinks.ConsoleApp
                         Game game = new Game(o);
                         game.Run();
                     }
-
                 });
         }
     }
