@@ -15,21 +15,18 @@ namespace ColorShapeLinks.ConsoleApp
 {
     public class Game
     {
-        private Options options;
+        private int timeLimitMillis;
         private Board board;
         private IThinker[] thinkers;
+        private IRenderer renderer;
 
         public Game(Options options)
         {
-            this.options = options;
-        }
+            Type rendererType = Type.GetType(options.Renderer);
 
-        public void Run()
-        {
+            renderer = (IRenderer)Activator.CreateInstance(rendererType);
 
-            Winner winner = Winner.None;
-            PColor winColor;
-            Pos[] solution;
+            timeLimitMillis = options.TimeLimitMillis;
 
             thinkers = new IThinker[2];
 
@@ -42,6 +39,15 @@ namespace ColorShapeLinks.ConsoleApp
                 options.WinSequence, options.RoundPiecesPerPlayer,
                 options.SquarePiecesPerPlayer);
 
+        }
+
+        public void Run()
+        {
+
+            Winner winner = Winner.None;
+            PColor winColor;
+            Pos[] solution;
+
             while (true)
             {
                 (winner, solution) = Play(PColor.White);
@@ -50,7 +56,7 @@ namespace ColorShapeLinks.ConsoleApp
                 if (winner != Winner.None) break;
             }
 
-            Render(board);
+            renderer.RenderBoard(board);
 
             if (winner == Winner.Draw)
             {
@@ -80,7 +86,7 @@ namespace ColorShapeLinks.ConsoleApp
             CancellationTokenSource ts = new CancellationTokenSource();
             IThinker thinker = thinkers[(int)color];
             Winner winner = Winner.None;
-            Pos[] solution = new Pos[options.WinSequence];
+            Pos[] solution = new Pos[board.piecesInSequence];
 
             // Task to execute the thinker in a separate thread
             Task<FutureMove> thinkTask;
@@ -88,14 +94,14 @@ namespace ColorShapeLinks.ConsoleApp
             string player = $"Player {(int)color + 1} ({color}, {thinker})";
 
             // Update board view
-            Render(board);
+            renderer.RenderBoard(board);
 
             Console.WriteLine($"{player} turn");
 
             thinkTask = Task.Run(
                     () => thinker.Think(board.Copy(), ts.Token));
 
-            if (!thinkTask.Wait(options.TimeLimitMillis))
+            if (!thinkTask.Wait(timeLimitMillis))
             {
                 ts.Cancel();
                 winner = color == PColor.Red ? Winner.White : Winner.Red;
@@ -126,34 +132,6 @@ namespace ColorShapeLinks.ConsoleApp
                 }
             }
             return (winner, solution);
-        }
-
-        private void Render(Board board)
-        {
-            for (int r = board.rows - 1; r >= 0; r--)
-            {
-                for (int c = 0; c < board.cols; c++)
-                {
-                    char pc = '.';
-                    Piece? p = board[r, c];
-                    if (p.HasValue)
-                    {
-                        if (p.Value.Is(PColor.White, PShape.Round))
-                            pc = 'w';
-                        else if (p.Value.Is(PColor.White, PShape.Square))
-                            pc = 'W';
-                        else if (p.Value.Is(PColor.Red, PShape.Round))
-                            pc = 'r';
-                        else if (p.Value.Is(PColor.Red, PShape.Square))
-                            pc = 'R';
-                        else
-                            Console.Error.WriteLine($"Invalid piece {p.Value}");
-                    }
-                    Console.Write(pc);
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine();
         }
 
     }
