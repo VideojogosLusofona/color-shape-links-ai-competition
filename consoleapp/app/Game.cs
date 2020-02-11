@@ -16,6 +16,8 @@ namespace ColorShapeLinks.ConsoleApp
     public class Game
     {
         private Options options;
+        private Board board;
+        private IThinker[] thinkers;
 
         public Game(Options options)
         {
@@ -24,45 +26,84 @@ namespace ColorShapeLinks.ConsoleApp
 
         public void Run()
         {
-            IThinker thinker1 = AIManager.Instance.NewThinker(
+
+            Winner winner = Winner.None;
+            PColor winColor;
+            Pos[] solution;
+
+            thinkers = new IThinker[2];
+
+            thinkers[0] = AIManager.Instance.NewThinker(
                 options.Player1, options, options.Player1Params);
-            IThinker thinker2 = AIManager.Instance.NewThinker(
+            thinkers[1] = AIManager.Instance.NewThinker(
                 options.Player2, options, options.Player2Params);
 
-            Board board = new Board(options.Rows, options.Cols,
+            board = new Board(options.Rows, options.Cols,
                 options.WinSequence, options.RoundPiecesPerPlayer,
                 options.SquarePiecesPerPlayer);
 
-            Winner winner = Winner.None;
+            while (true)
+            {
+                (winner, solution) = Play(PColor.White);
+                if (winner != Winner.None) break;
+                (winner, solution) = Play(PColor.Red);
+                if (winner != Winner.None) break;
+            }
 
-            Pos[] solution = new Pos[options.WinSequence];
+            Render(board);
 
+            if (winner == Winner.Draw)
+            {
+                Console.WriteLine("Game ended in a draw");
+            }
+            else
+            {
+                int winPlayer = (int)winner.ToPColor();
+                winColor = winner.ToPColor();
+                Console.WriteLine($"Winner is player {winPlayer + 1} ({winner}, {thinkers[winPlayer]})");
+                if (solution != null)
+                {
+                    Console.Write("Solution=");
+                    foreach (Pos pos in solution)
+                    {
+                        Console.Write(pos);
+                    }
+                    Console.WriteLine();
+                }
+            }
+        }
+
+        private (Winner, Pos[]) Play(PColor color)
+        {
+            int row;
+            FutureMove move;
             CancellationTokenSource ts = new CancellationTokenSource();
+            IThinker thinker = thinkers[(int)color];
+            Winner winner = Winner.None;
+            Pos[] solution = new Pos[options.WinSequence];
 
             // Task to execute the thinker in a separate thread
             Task<FutureMove> thinkTask;
 
-            while (true)
+            string player = $"Player {(int)color + 1} ({color}, {thinker})";
+
+            // Update board view
+            Render(board);
+
+            Console.WriteLine($"{player} turn");
+
+            thinkTask = Task.Run(
+                    () => thinker.Think(board.Copy(), ts.Token));
+
+            if (!thinkTask.Wait(options.TimeLimitMillis))
             {
-                int row;
-                FutureMove move;
-
-                // Update board view
-                Render(board);
-
-                Console.WriteLine(
-                    $"Player 1 turn ({PColor.White}, {thinker1})");
-
-                thinkTask = Task.Run(
-                        () => thinker1.Think(board.Copy(), ts.Token));
-
-                if (!thinkTask.Wait(options.TimeLimitMillis))
-                {
-                    ts.Cancel();
-                    winner = Winner.Red;
-                    break;
-                }
-
+                ts.Cancel();
+                winner = color == PColor.Red ? Winner.White : Winner.Red;
+                solution = null;
+                Console.WriteLine($"{player} took too long to play!");
+            }
+            else
+            {
                 // Get move for current player
                 move = thinkTask.Result;
 
@@ -74,73 +115,17 @@ namespace ColorShapeLinks.ConsoleApp
                 if (row >= 0)
                 {
                     Console.WriteLine(
-                        $"Player 1 placed a {move.shape} piece at column {move.column}");
+                        $"{player} placed a {move.shape} piece at column {move.column}");
 
                     // Get possible winner and solution
                     winner = board.CheckWinner(solution);
-
-                    if (winner != Winner.None) break;
-                }
-                else // If we get here, column didn't have space for the move
-                {
-                    throw new InvalidOperationException("Invalid move");
-                }
-
-                // Update board view
-                Render(board);
-
-                Console.WriteLine(
-                    $"Player 2 turn ({PColor.Red}, {thinker2})");
-
-                thinkTask = Task.Run(
-                        () => thinker2.Think(board.Copy(), ts.Token));
-
-                if (!thinkTask.Wait(options.TimeLimitMillis))
-                {
-                    ts.Cancel();
-                    winner = Winner.White;
-                    break;
-                }
-
-                // Perform move in game board, get column where move was
-                // performed
-                row = board.DoMove(move.shape, move.column);
-
-                // If the column had space for the move...
-                if (row >= 0)
-                {
-                    Console.WriteLine(
-                        $"Player 2 placed a {move.shape} piece at column {move.column}");
-
-                    // Get possible winner and solution
-                    winner = board.CheckWinner(solution);
-
-                    if (winner != Winner.None) break;
                 }
                 else // If we get here, column didn't have space for the move
                 {
                     throw new InvalidOperationException("Invalid move");
                 }
             }
-
-            Render(board);
-
-            if (winner == Winner.Draw)
-            {
-                Console.WriteLine("Game ended in a draw");
-            }
-            else if (winner == Winner.White)
-            {
-                Console.WriteLine($"Winner is {thinker1} ({winner})");
-            }
-            else if (winner == Winner.Red)
-            {
-                Console.WriteLine($"Winner is {thinker2} ({winner})");
-            }
-            else
-            {
-                throw new InvalidOperationException("Invalid winner!");
-            }
+            return (winner, solution);
         }
 
         private void Render(Board board)
