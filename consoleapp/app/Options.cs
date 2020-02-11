@@ -69,23 +69,23 @@ namespace ColorShapeLinks.ConsoleApp
             HelpText = "Minimum time (ms) between moves")]
         public int MinMoveTimeMillis => minMoveTimeMillis;
 
-        [Option('a', "player1",
+        [Option('W', "white",
             Default = "ColorShapeLinks.ConsoleApp.HumanThinker",
             SetName = "game",
             HelpText = "Fully qualified name of player 1 thinker class")]
         public string Player1 => player1;
 
-        [Option('b', "player2",
+        [Option('R', "red",
             Default = "ColorShapeLinks.ConsoleApp.HumanThinker",
             SetName = "game",
             HelpText = "Fully qualified name of player 2 thinker class")]
         public string Player2 => player2;
 
-        [Option("p1params", Default = "", SetName = "game",
+        [Option("white-params", Default = "", SetName = "game",
             HelpText = "Parameters for setting up player 1 thinker instance")]
         public string Player1Params => player1params;
 
-        [Option("p2params", Default = "", SetName = "game",
+        [Option("red-params", Default = "", SetName = "game",
             HelpText = "Parameters for setting up player 2 thinker instance")]
         public string Player2Params => player2params;
 
