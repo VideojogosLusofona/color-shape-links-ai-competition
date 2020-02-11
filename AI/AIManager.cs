@@ -39,9 +39,6 @@ namespace ColorShapeLinks.Common.AI
         // Private constructor
         private AIManager()
         {
-            // Initialize table of AIs
-            aiTable = new Dictionary<string, Type>();
-
             // Get a reference to the IThinker type
             Type type = typeof(IThinker);
 
