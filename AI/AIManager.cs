@@ -40,7 +40,7 @@ namespace ColorShapeLinks.Common.AI
         private AIManager()
         {
             // Get a reference to the IThinker type
-            Type type = typeof(IThinker);
+            Type type = typeof(AbstractThinker);
 
             // Get known AIs, i.e. AIs which implement IThinker, are not
             // abstract and have an empty constructor
