@@ -74,7 +74,7 @@ namespace ColorShapeLinks.ConsoleApp
             Console.WriteLine(PlayerString(playerColor, playerName)
                 + $" placed a {move.shape} piece at column {move.column}");
         }
-        public void Result(
+        public void MatchOver(
             Winner winner, ICollection<Pos> solution, IList<string> playerNames)
         {
             if (winner == Winner.Draw)

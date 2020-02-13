@@ -66,7 +66,7 @@ namespace ColorShapeLinks.ConsoleApp
 
             Renderer.UpdateBoard(board);
 
-            Renderer.Result(
+            Renderer.MatchOver(
                 winner,
                 solution,
                 new string[] { thinkers[0].ToString(), thinkers[1].ToString() }
