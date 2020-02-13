@@ -39,9 +39,11 @@ namespace ColorShapeLinks.ConsoleApp
                     }
                     else
                     {
-                        Game game = new Game(o);
+                        Match game = new Match(o);
                         RegisterListeners(game, o.Listeners);
-                        exitStatus = game.Run();
+                        exitStatus = game
+                            .Run()
+                            .ToExitStatus();
                     }
                 });
             return (int)exitStatus;
