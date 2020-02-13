@@ -5,7 +5,9 @@
 /// @date 2020
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
+using System;
 using System.Threading;
+using System.Collections.Generic;
 
 namespace ColorShapeLinks.Common.AI
 {
@@ -105,5 +107,20 @@ namespace ColorShapeLinks.Common.AI
             // Return unchanged name
             return name;
         }
+
+        /// <summary>
+        /// Thinker should raise the thinking info event using this method.
+        /// </summary>
+        /// <param name="info">
+        /// Collection of strings containing the thinking information.
+        /// </param>
+        protected void OnThinkingInfo(ICollection<string> info)
+        {
+            ThinkingInfo?.Invoke(info);
+        }
+
+        /// @copydoc IThinker.ThinkingInfo
+        /// <seealso cref="IThinker.ThinkingInfo"/>
+        public event Action<ICollection<string>> ThinkingInfo;
     }
 }
