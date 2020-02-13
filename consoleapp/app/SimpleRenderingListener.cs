@@ -13,7 +13,7 @@ using ColorShapeLinks.ConsoleAppLib;
 
 namespace ColorShapeLinks.ConsoleApp
 {
-    public class PlainRenderer : IRenderer
+    public class SimpleRenderingListener : IMatchListener
     {
         private int turn;
         private bool turnInfoShown;
@@ -22,13 +22,23 @@ namespace ColorShapeLinks.ConsoleApp
         private string PlayerString(PColor playerColor, string playerName) =>
             $"Player {(int)playerColor + 1} ({playerColor}, {playerName})";
 
-        public PlainRenderer()
+        public SimpleRenderingListener()
         {
             turn = 0;
             turnInfoShown = false;
         }
 
-        public void UpdateBoard(Board board)
+        public void ListenTo(IMatchSubject subject)
+        {
+            subject.BoardUpdate += UpdateBoard;
+            subject.NextTurn += NextTurn;
+            subject.TooLong += TooLong;
+            subject.MovePerformed += Move;
+            subject.MatchOver += MatchOver;
+            subject.TurnInfo += TurnInfo;
+        }
+
+        private void UpdateBoard(Board board)
         {
             for (int r = board.rows - 1; r >= 0; r--)
             {
@@ -56,25 +66,25 @@ namespace ColorShapeLinks.ConsoleApp
             Console.WriteLine();
         }
 
-        public void NextTurn(PColor playerColor, string playerName)
+        private void NextTurn(PColor playerColor, string playerName)
         {
             Console.WriteLine($"{PlayerString(playerColor, playerName)} turn");
             turn++;
             turnInfoShown = false;
         }
 
-        public void TooLong(PColor playerColor, string playerName)
+        private void TooLong(PColor playerColor, string playerName)
         {
             Console.WriteLine(PlayerString(playerColor, playerName)
                 + " took too long to play!");
         }
 
-        public void Move(PColor playerColor, string playerName, FutureMove move)
+        private void Move(PColor playerColor, string playerName, FutureMove move)
         {
             Console.WriteLine(PlayerString(playerColor, playerName)
                 + $" placed a {move.shape} piece at column {move.column}");
         }
-        public void MatchOver(
+        private void MatchOver(
             Winner winner, ICollection<Pos> solution, IList<string> playerNames)
         {
             if (winner == Winner.Draw)
@@ -101,7 +111,7 @@ namespace ColorShapeLinks.ConsoleApp
             }
         }
 
-        public void UpdateTurnInfo(ICollection<string> turnInfo)
+        private void TurnInfo(ICollection<string> turnInfo)
         {
             if (turnInfoShown)
             {

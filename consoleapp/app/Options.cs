@@ -24,17 +24,17 @@ namespace ColorShapeLinks.ConsoleApp
         private readonly string player2;
         private readonly string player1params;
         private readonly string player2params;
-        private readonly string renderer;
+        private readonly IEnumerable<string> listeners;
         private readonly IEnumerable<string> assemblies;
-        private readonly bool listPlayers;
+        private readonly bool showDebugInfoAndExit;
 
         public Options(int rows, int cols, int winSequence,
             int roundPiecesPerPlayer, int squarePiecesPerPlayer,
             int timeLimitMillis, int minMoveTimeMillis,
             string player1, string player2,
             string player1params, string player2params,
-            string renderer, IEnumerable<string> assemblies,
-            bool listPlayers)
+            IEnumerable<string> listeners, IEnumerable<string> assemblies,
+            bool showDebugInfoAndExit)
         {
             this.rows = rows;
             this.cols = cols;
@@ -47,9 +47,9 @@ namespace ColorShapeLinks.ConsoleApp
             this.player2 = player2;
             this.player1params = player1params;
             this.player2params = player2params;
-            this.renderer = renderer;
+            this.listeners = listeners;
             this.assemblies = assemblies;
-            this.listPlayers = listPlayers;
+            this.showDebugInfoAndExit = showDebugInfoAndExit;
         }
 
         [Option('r', "rows", Default = 6, SetName = "game",
@@ -100,20 +100,22 @@ namespace ColorShapeLinks.ConsoleApp
             HelpText = "Parameters for setting up player 2 thinker instance")]
         public string Player2Params => player2params;
 
-        [Option("renderer",
-            Default = "ColorShapeLinks.ConsoleApp.PlainRenderer",
+        [Option('l', "listeners",
+            Default = new string[] {
+                "ColorShapeLinks.ConsoleApp.SimpleRenderingListener" },
             SetName = "game",
-            HelpText = "Specify an alternative game renderer")]
-        public string Renderer => renderer;
+            HelpText = "Match event listeners (space separated)")]
+        public IEnumerable<string> Listeners => listeners;
 
         [Option('a', "assemblies",
             HelpText = ".NET Standard 2.0 DLLs containing thinkers and/or "
-                + "renderers (space separated)")]
+                + "listeners (space separated)")]
         public IEnumerable<string> Assemblies => assemblies;
 
-        [Option('l', "list", Default = false, SetName = "list",
-            HelpText = "List all known thinkers")]
-        public bool ListPlayers => listPlayers;
+        [Option('d', "debug", Default = false, SetName = "debug",
+            HelpText = "Show debug info (known assemblies, thinkers and "
+                + "listeners) and exit")]
+        public bool ShowDebugInfoAndExit => showDebugInfoAndExit;
 
     }
 }

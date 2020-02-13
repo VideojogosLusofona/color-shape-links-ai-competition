@@ -16,26 +16,15 @@ using ColorShapeLinks.ConsoleAppLib;
 
 namespace ColorShapeLinks.ConsoleApp
 {
-    public class Game
+    public class Game : IMatchSubject
     {
         private int timeLimitMillis;
         private int minMoveTimeMillis;
         private Board board;
         private IThinker[] thinkers;
-        private static Lazy<IRenderer> renderer;
-
-        public static IRenderer Renderer => renderer.Value;
 
         public Game(Options options)
         {
-            foreach (System.Reflection.Assembly a in AppDomain.CurrentDomain.GetAssemblies())
-            {
-                Console.WriteLine(a);
-            }
-            Console.WriteLine();
-
-            InitRenderer(options.Renderer);
-
             timeLimitMillis = options.TimeLimitMillis;
             minMoveTimeMillis = options.MinMoveTimeMillis;
 
@@ -46,12 +35,14 @@ namespace ColorShapeLinks.ConsoleApp
             thinkers[1] = AIManager.Instance.NewThinker(
                 options.Player2, options, options.Player2Params);
 
+            foreach (IThinker t in thinkers) t.ThinkingInfo += OnThinkingInfo;
+
             board = new Board(options.Rows, options.Cols,
                 options.WinSequence, options.RoundPiecesPerPlayer,
                 options.SquarePiecesPerPlayer);
         }
 
-        public void Run()
+        public ExitStatus Run()
         {
             Winner winner = Winner.None;
             Pos[] solution;
@@ -64,13 +55,15 @@ namespace ColorShapeLinks.ConsoleApp
                 if (winner != Winner.None) break;
             }
 
-            Renderer.UpdateBoard(board);
+            BoardUpdate?.Invoke(board);
 
-            Renderer.MatchOver(
+            MatchOver?.Invoke(
                 winner,
                 solution,
                 new string[] { thinkers[0].ToString(), thinkers[1].ToString() }
             );
+
+            return winner.ToExitStatus();
         }
 
         private (Winner, Pos[]) Play(PColor color)
@@ -88,9 +81,9 @@ namespace ColorShapeLinks.ConsoleApp
             Task<FutureMove> thinkTask;
 
             // Update board view
-            Renderer.UpdateBoard(board);
+            BoardUpdate?.Invoke(board);
 
-            Renderer.NextTurn(color, thinker.ToString());
+            NextTurn?.Invoke(color, thinker.ToString());
 
             thinkTask = Task.Run(
                     () => thinker.Think(board.Copy(), ts.Token));
@@ -100,7 +93,7 @@ namespace ColorShapeLinks.ConsoleApp
                 ts.Cancel();
                 winner = color == PColor.Red ? Winner.White : Winner.Red;
                 solution = null;
-                Renderer.TooLong(color, thinker.ToString());
+                TooLong?.Invoke(color, thinker.ToString());
             }
             else
             {
@@ -114,7 +107,7 @@ namespace ColorShapeLinks.ConsoleApp
                 // If the column had space for the move...
                 if (row >= 0)
                 {
-                    Renderer.Move(color, thinker.ToString(), move);
+                    MovePerformed?.Invoke(color, thinker.ToString(), move);
 
                     // Get possible winner and solution
                     winner = board.CheckWinner(solution);
@@ -134,27 +127,18 @@ namespace ColorShapeLinks.ConsoleApp
 
             return (winner, solution);
         }
-        private void InitRenderer(string rendererName)
+
+        private void OnThinkingInfo(ICollection<string> info)
         {
-            Type type = typeof(IRenderer);
-            IDictionary<string, Type> rends =
-                AppDomain.CurrentDomain.GetAssemblies()
-                    .SelectMany(a => a.GetTypes())
-                    .Where(t => type.IsAssignableFrom(t)
-                        && !t.IsAbstract
-                        && t.GetConstructor(Type.EmptyTypes) != null)
-                    .ToDictionary(t => t.FullName, t => t);
-            if (rends.ContainsKey(rendererName))
-            {
-                renderer = new Lazy<IRenderer>(() =>
-                    (IRenderer)Activator.CreateInstance(rends[rendererName]));
-            }
-            else
-            {
-                throw new ArgumentException(
-                    $"Unknown renderer '{rendererName}'");
-            }
+            TurnInfo?.Invoke(info);
         }
+
+        public event Action<Board> BoardUpdate;
+        public event Action<PColor, string> NextTurn;
+        public event Action<ICollection<string>> TurnInfo;
+        public event Action<PColor, string> TooLong;
+        public event Action<PColor, string, FutureMove> MovePerformed;
+        public event Action<Winner, ICollection<Pos>, IList<string>> MatchOver;
 
     }
 }

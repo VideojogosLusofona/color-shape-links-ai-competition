@@ -6,6 +6,9 @@
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using System;
+using System.Linq;
+using System.Collections.Generic;
+using ColorShapeLinks.ConsoleAppLib;
 using ColorShapeLinks.Common.AI;
 using CommandLine;
 
@@ -13,7 +16,10 @@ namespace ColorShapeLinks.ConsoleApp
 {
     class Program
     {
-        static void Main(string[] args)
+        private static ExitStatus exitStatus;
+        private static IDictionary<string, Type> knownListeners;
+
+        private static int Main(string[] args)
         {
             Parser.Default
                 .ParseArguments<Options>(args)
@@ -23,19 +29,80 @@ namespace ColorShapeLinks.ConsoleApp
                     {
                         System.Reflection.Assembly.LoadFile(a);
                     }
-                    if (o.ListPlayers)
+
+                    FindListeners();
+
+                    if (o.ShowDebugInfoAndExit)
                     {
-                        foreach (string thinkerName in AIManager.Instance.AIs)
-                        {
-                            Console.WriteLine(thinkerName);
-                        }
+                        ShowDebugInfo();
+                        exitStatus = ExitStatus.DebugInfo;
                     }
                     else
                     {
                         Game game = new Game(o);
-                        game.Run();
+                        RegisterListeners(game, o.Listeners);
+                        exitStatus = game.Run();
                     }
                 });
+            return (int)exitStatus;
         }
+
+        private static void ShowDebugInfo()
+        {
+            // Show loaded assemblies
+            Console.WriteLine("Loaded assemblies:");
+            foreach (System.Reflection.Assembly a in
+                AppDomain.CurrentDomain.GetAssemblies())
+            {
+                Console.WriteLine($"\t{a}");
+            }
+
+            // Show known thinkers
+            Console.WriteLine("Known thinkers:");
+            foreach (string thinkerName in AIManager.Instance.AIs)
+            {
+                Console.WriteLine($"\t{thinkerName}");
+            }
+
+            // Show known listeners
+            Console.WriteLine("Known listeners:");
+            foreach (string listenerName in knownListeners.Keys)
+            {
+                Console.WriteLine($"\t{listenerName}");
+            }
+        }
+
+        private static void FindListeners()
+        {
+            Type type = typeof(IMatchListener);
+            knownListeners =
+                AppDomain.CurrentDomain.GetAssemblies()
+                    .SelectMany(a => a.GetTypes())
+                    .Where(t => type.IsAssignableFrom(t)
+                        && !t.IsAbstract
+                        && t.GetConstructor(Type.EmptyTypes) != null)
+                    .ToDictionary(t => t.FullName, t => t);
+        }
+
+        private static void RegisterListeners(
+            IMatchSubject match, IEnumerable<string> listeners)
+        {
+            foreach (string listenerName in listeners)
+            {
+                if (knownListeners.ContainsKey(listenerName))
+                {
+                    IMatchListener listener =
+                        (IMatchListener)Activator.CreateInstance(
+                            knownListeners[listenerName]);
+                    listener.ListenTo(match);
+                }
+                else
+                {
+                    throw new ArgumentException(
+                        $"Unknown listener '{listenerName}'");
+                }
+            }
+        }
+
     }
 }

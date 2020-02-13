@@ -100,8 +100,7 @@ namespace ColorShapeLinks.ConsoleApp
 
                 if (DateTime.Now > lastUpdateTime + frameUpdate)
                 {
-
-                    Game.Renderer.UpdateTurnInfo(new string[] {
+                    OnThinkingInfo(new string[] {
                         $"< > : Column [{selectedCol,8}] selected   ",
                         $" T  : Piece  [{selectedShape,8}] selected  ",
                         $"    : Time to play: {timeLimit - DateTime.Now, 14}"
@@ -112,20 +111,6 @@ namespace ColorShapeLinks.ConsoleApp
             }
 
             return move;
-        }
-
-        private void RenderInfo(TimeSpan timeToPlay)
-        {
-            #if CSL_CONSOLEAPP
-            Console.WriteLine("Up/Down to chose column, "
-                + "T to toggle shape, "
-                + "ENTER to make move");
-
-
-            Console.WriteLine($" -> Column {selectedCol} selected   ");
-            Console.WriteLine($" -> {selectedShape} piece selected  ");
-            Console.WriteLine($" -> Time to play: {timeToPlay}      ");
-            #endif
         }
 
     }
