@@ -30,15 +30,15 @@ namespace ColorShapeLinks.ConsoleApp
 
         public void ListenTo(IMatchSubject subject)
         {
-            subject.BoardUpdate += UpdateBoard;
+            subject.BoardUpdate += BoardUpdate;
             subject.NextTurn += NextTurn;
-            subject.TooLong += TooLong;
-            subject.MovePerformed += Move;
+            subject.Timeout += Timeout;
+            subject.MovePerformed += MovePerformed;
             subject.MatchOver += MatchOver;
             subject.TurnInfo += TurnInfo;
         }
 
-        private void UpdateBoard(Board board)
+        private void BoardUpdate(Board board)
         {
             for (int r = board.rows - 1; r >= 0; r--)
             {
@@ -73,13 +73,13 @@ namespace ColorShapeLinks.ConsoleApp
             turnInfoShown = false;
         }
 
-        private void TooLong(PColor playerColor, string playerName)
+        private void Timeout(PColor playerColor, string playerName)
         {
             Console.WriteLine(PlayerString(playerColor, playerName)
                 + " took too long to play!");
         }
 
-        private void Move(PColor playerColor, string playerName, FutureMove move)
+        private void MovePerformed(PColor playerColor, string playerName, FutureMove move)
         {
             Console.WriteLine(PlayerString(playerColor, playerName)
                 + $" placed a {move.shape} piece at column {move.column}");

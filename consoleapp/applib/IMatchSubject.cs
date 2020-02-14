@@ -57,7 +57,7 @@ namespace ColorShapeLinks.ConsoleAppLib
         /// * The `string` type parameter is the name of the player that
         ///   took too long to play.
         /// </remarks>
-        event Action<PColor, string> TooLong;
+        event Action<PColor, string> Timeout;
 
         /// <summary>
         /// Event raised when a given player makes a move.

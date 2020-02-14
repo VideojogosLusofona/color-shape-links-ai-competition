@@ -60,9 +60,9 @@ namespace ColorShapeLinks.ConsoleApp
 
             // Instantiate the two thinkers
             thinkers[0] = AIManager.Instance.NewThinker(
-                options.Player1, options, options.Player1Params);
+                options.Thinker1, options, options.Thinker1Params);
             thinkers[1] = AIManager.Instance.NewThinker(
-                options.Player2, options, options.Player2Params);
+                options.Thinker2, options, options.Thinker2Params);
 
             // Listen to the thinking info produced by each thinker
             foreach (IThinker t in thinkers) t.ThinkingInfo += OnThinkingInfo;
@@ -138,19 +138,16 @@ namespace ColorShapeLinks.ConsoleApp
             // Notify listeners that next turn is about to start
             NextTurn?.Invoke(color, thinker.ToString());
 
+            // Ask thinker to think about its next move
             thinkTask = Task.Run(
                     () => thinker.Think(board.Copy(), ts.Token));
 
-            if (!thinkTask.Wait(timeLimitMillis))
+            // Wait for thinker to think... until the allowed time limit
+            if (thinkTask.Wait(timeLimitMillis))
             {
-                ts.Cancel();
-                winner = color == PColor.Red ? Winner.White : Winner.Red;
-                solution = null;
-                TooLong?.Invoke(color, thinker.ToString());
-            }
-            else
-            {
-                // Get move for current player
+                // Thinker successfully made a move within the time limit
+
+                // Get the move selected by the thinker
                 FutureMove move = thinkTask.Result;
 
                 // Perform move in game board, get column where move was
@@ -160,41 +157,81 @@ namespace ColorShapeLinks.ConsoleApp
                 // If the column had space for the move...
                 if (row >= 0)
                 {
+                    // Notify listeners of the move performed
                     MovePerformed?.Invoke(color, thinker.ToString(), move);
 
                     // Get possible winner and solution
                     winner = board.CheckWinner(solution);
                 }
-                else // If we get here, column didn't have space for the move
+                else
                 {
+                    // If we get here, column didn't have space for the move,
+                    // which means that thinker made an invalid move
                     throw new InvalidOperationException("Invalid move");
                 }
             }
+            else // Did the time limit expired?
+            {
+                // Notify thinker to voluntarily stop thinking
+                ts.Cancel();
 
+                // Set the other thinker as the winner of the match
+                winner = color == PColor.Red ? Winner.White : Winner.Red;
+
+                // Notify listeners that thinker took too long to play
+                Timeout?.Invoke(color, thinker.ToString());
+            }
+
+            // How much time is left for the minimum apparent move time?
             timeLeftMillis = minMoveTimeMillis
                 - (int)(DateTime.Now - startTime).TotalMilliseconds;
+
+            // Was the minimum apparent move time reached
             if (timeLeftMillis > 0)
             {
+                // If not, wait until it is reached
                 Thread.Sleep(timeLeftMillis);
             }
 
             // Notify listeners that the board was updated
             BoardUpdate?.Invoke(board);
 
+            // Return winner
             return winner;
         }
 
+        /// <summary>
+        /// This method listens for thinker's thinking info and in turn
+        /// forwards this information to match listeners.
+        /// </summary>
+        /// <param name="info">Thinking info.</param>
         private void OnThinkingInfo(ICollection<string> info)
         {
             TurnInfo?.Invoke(info);
         }
 
+        /// @copydoc IMatchSubject.BoardUpdate
+        /// <seealso cref="IMatchSubject.BoardUpdate"/>
         public event Action<Board> BoardUpdate;
-        public event Action<PColor, string> NextTurn;
-        public event Action<ICollection<string>> TurnInfo;
-        public event Action<PColor, string> TooLong;
-        public event Action<PColor, string, FutureMove> MovePerformed;
-        public event Action<Winner, ICollection<Pos>, IList<string>> MatchOver;
 
+        /// @copydoc IMatchSubject.NextTurn;
+        /// <seealso cref="IMatchSubject.NextTurn;"/>
+        public event Action<PColor, string> NextTurn;
+
+        /// @copydoc IMatchSubject.TurnInfo
+        /// <seealso cref="IMatchSubject.TurnInfo"/>
+        public event Action<ICollection<string>> TurnInfo;
+
+        /// @copydoc IMatchSubject.Timeout
+        /// <seealso cref="IMatchSubject.Timeout"/>
+        public event Action<PColor, string> Timeout;
+
+        /// @copydoc IMatchSubject.MovePerformed
+        /// <seealso cref="IMatchSubject.MovePerformed"/>
+        public event Action<PColor, string, FutureMove> MovePerformed;
+
+        /// @copydoc IMatchSubject.MatchOver
+        /// <seealso cref="IMatchSubject.MatchOver"/>
+        public event Action<Winner, ICollection<Pos>, IList<string>> MatchOver;
     }
 }
