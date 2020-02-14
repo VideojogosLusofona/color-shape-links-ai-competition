@@ -1,8 +1,8 @@
-[submodule "commonlib"]
-	path = consoleapp/commonlib
-	url = https://github.com/VideojogosLusofona/color-shape-links-ai-competition.git
-	branch = common
 [submodule "unityapp/Assets/Scripts/Common"]
 	path = unityapp/Assets/Scripts/Common
+	url = https://github.com/VideojogosLusofona/color-shape-links-ai-competition.git
+	branch = common
+[submodule "ConsoleApp/ColorShapeLinks/Common"]
+	path = ConsoleApp/ColorShapeLinks/Common
 	url = https://github.com/VideojogosLusofona/color-shape-links-ai-competition.git
 	branch = common

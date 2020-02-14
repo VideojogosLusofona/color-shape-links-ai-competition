@@ -8,11 +8,11 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using ColorShapeLinks.ConsoleAppLib;
+using ColorShapeLinks.TextBased.Lib;
 using ColorShapeLinks.Common.AI;
 using CommandLine;
 
-namespace ColorShapeLinks.ConsoleApp
+namespace ColorShapeLinks.TextBased.App
 {
     /// <summary>
     /// This class contains the `Main()` method for the ColorShapeLinks

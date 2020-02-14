@@ -5,7 +5,7 @@
 /// @date 2020
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
-namespace ColorShapeLinks.ConsoleAppLib
+namespace ColorShapeLinks.TextBased.Lib
 {
     /// <summary>
     /// Interface to be implemented by classes who wish to listen to match

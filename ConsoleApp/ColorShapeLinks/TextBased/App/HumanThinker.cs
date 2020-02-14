@@ -10,7 +10,7 @@ using System.Threading;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
 
-namespace ColorShapeLinks.ConsoleApp
+namespace ColorShapeLinks.TextBased.App
 {
     /// <summary>
     /// A human thinker for testing the console app.

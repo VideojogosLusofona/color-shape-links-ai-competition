@@ -5,7 +5,7 @@
 /// @date 2020
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
-namespace ColorShapeLinks.ConsoleApp
+namespace ColorShapeLinks.TextBased.App
 {
     /// <summary>
     /// Possible exit status of the ColorShapeLinks console app.

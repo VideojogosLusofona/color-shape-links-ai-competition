@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using ColorShapeLinks.Common;
 using CommandLine;
 
-namespace ColorShapeLinks.ConsoleApp
+namespace ColorShapeLinks.TextBased.App
 {
     /// <summary>
     /// Command line match options.
@@ -175,7 +175,7 @@ namespace ColorShapeLinks.ConsoleApp
         /// Full class name of thinker 1.
         /// </summary>
         [Option('W', "white",
-            Default = "ColorShapeLinks.ConsoleApp.HumanThinker",
+            Default = "ColorShapeLinks.TextBased.App.HumanThinker",
             SetName = "game",
             HelpText = "Fully qualified name of player 1 thinker class")]
         public string Thinker1 => thinker1;
@@ -184,7 +184,7 @@ namespace ColorShapeLinks.ConsoleApp
         /// Full class name of thinker 2.
         /// </summary>
         [Option('R', "red",
-            Default = "ColorShapeLinks.ConsoleApp.HumanThinker",
+            Default = "ColorShapeLinks.TextBased.App.HumanThinker",
             SetName = "game",
             HelpText = "Fully qualified name of player 2 thinker class")]
         public string Thinker2 => thinker2;
@@ -208,7 +208,7 @@ namespace ColorShapeLinks.ConsoleApp
         /// </summary>
         [Option('l', "listeners",
             Default = new string[] {
-                "ColorShapeLinks.ConsoleApp.SimpleRenderingListener" },
+                "ColorShapeLinks.TextBased.App.SimpleRenderingListener" },
             SetName = "game",
             HelpText = "Match event listeners (space separated)")]
         public IEnumerable<string> Listeners => listeners;

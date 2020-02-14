@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
 
-namespace ColorShapeLinks.ConsoleAppLib
+namespace ColorShapeLinks.TextBased.Lib
 {
     /// <summary>
     /// Interface defining the events raised in a match of the ColorShapeLinks

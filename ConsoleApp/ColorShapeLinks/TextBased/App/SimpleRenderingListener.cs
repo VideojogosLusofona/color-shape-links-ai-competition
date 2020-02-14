@@ -9,9 +9,9 @@ using System;
 using System.Collections.Generic;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
-using ColorShapeLinks.ConsoleAppLib;
+using ColorShapeLinks.TextBased.Lib;
 
-namespace ColorShapeLinks.ConsoleApp
+namespace ColorShapeLinks.TextBased.App
 {
     /// <summary>
     /// Simple match event listener which renders match information on the

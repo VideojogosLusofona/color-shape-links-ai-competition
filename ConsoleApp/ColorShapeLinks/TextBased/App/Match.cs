@@ -11,9 +11,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
-using ColorShapeLinks.ConsoleAppLib;
+using ColorShapeLinks.TextBased.Lib;
 
-namespace ColorShapeLinks.ConsoleApp
+namespace ColorShapeLinks.TextBased.App
 {
     /// <summary>
     /// This class runs a game-engine independent match of ColorShapeLinks.

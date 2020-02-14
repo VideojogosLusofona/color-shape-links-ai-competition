@@ -7,7 +7,7 @@
 
 using ColorShapeLinks.Common;
 
-namespace ColorShapeLinks.ConsoleApp
+namespace ColorShapeLinks.TextBased.App
 {
     /// <summary>Extension methods for the <see cref="Winner"/> enum.</summary>
     public static class WinnerExtensions
