@@ -6,7 +6,6 @@
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using ColorShapeLinks.Common;
-using ColorShapeLinks.Common.AI;
 
 namespace ColorShapeLinks.UnityApp
 {

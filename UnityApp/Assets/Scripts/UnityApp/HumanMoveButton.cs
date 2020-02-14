@@ -134,11 +134,16 @@ namespace ColorShapeLinks.UnityApp
             }
         }
 
-        // Unity event to be invoked when a button is clicked
+        /// <summary>
+        /// Unity event to be invoked when a button is clicked.
+        /// </summary>
+        /// <value>A Unity event which accepts integers.</value>
         public IntEvent Click { get; private set; }
 
-        // Type of Unity event that accepts an int, used for indicating the
-        // column associated with the clicked button
+        /// <summary>
+        /// Type of Unity event that accepts an int, used for indicating the
+        /// column associated with the clicked button.
+        /// </summary>
         [Serializable] public class IntEvent : UnityEvent<int> { }
     }
 }

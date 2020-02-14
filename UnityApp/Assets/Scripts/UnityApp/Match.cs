@@ -7,7 +7,6 @@
 
 using System;
 using ColorShapeLinks.Common;
-using ColorShapeLinks.Common.AI;
 
 namespace ColorShapeLinks.UnityApp
 {

@@ -24,8 +24,14 @@ namespace ColorShapeLinks.UnityApp
         /// </summary>
         [SerializeField] private bool isActive = true;
 
+        /// <summary>
+        /// Selected AI thinker.
+        /// </summary>
         [SerializeField][AIList] private string selectedAI = null;
 
+        /// <summary>
+        /// String containing AI thinker-specific parameters.
+        /// </summary>
         [SerializeField] private string aiConfig = "";
 
         /// <summary> Is the AI active?</summary>

@@ -10,7 +10,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using ColorShapeLinks.Common;
-using ColorShapeLinks.Common.AI;
 
 namespace ColorShapeLinks.UnityApp
 {
