@@ -21,23 +21,22 @@ namespace ColorShapeLinks.TextBased.App
     public class Match : IMatchSubject
     {
         // Maximum time a thinker has to think
-        private int timeLimitMillis;
+        private readonly int timeLimitMillis;
 
         // Minimum apparent time a thinker will take to think
-        private int minMoveTimeMillis;
+        private readonly int minMoveTimeMillis;
 
         // The game board
-        private Board board;
+        private readonly Board board;
 
         // An array containing the solution, in the game doesn't end in a draw
-        private Pos[] solution;
+        private readonly Pos[] solution;
 
         // List containing the two thinkers
-        private IList<IThinker> thinkers;
+        private readonly IList<IThinker> thinkers;
 
         // A cancellation token so thinker threads can be ordered to stop
-        private CancellationTokenSource ts;
-
+        private readonly CancellationTokenSource ts;
 
         /// <summary>
         /// Sets up a new match.

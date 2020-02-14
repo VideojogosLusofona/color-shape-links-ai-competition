@@ -19,9 +19,6 @@ namespace ColorShapeLinks.TextBased.App
     /// </summary>
     public class SimpleRenderingListener : IMatchListener
     {
-        // Current turn
-        private int turn;
-
         // As turn info shown in this turn already?
         private bool turnInfoShown;
 
@@ -34,7 +31,6 @@ namespace ColorShapeLinks.TextBased.App
         /// </summary>
         public SimpleRenderingListener()
         {
-            turn = 0;
             turnInfoShown = false;
         }
 
@@ -97,7 +93,6 @@ namespace ColorShapeLinks.TextBased.App
         private void NextTurn(PColor thinkerColor, string thinkerName)
         {
             Console.WriteLine($"{ThinkerDesc(thinkerColor, thinkerName)} turn");
-            turn++;
             turnInfoShown = false;
         }
 
