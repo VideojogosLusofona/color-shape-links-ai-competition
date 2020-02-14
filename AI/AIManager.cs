@@ -72,7 +72,7 @@ namespace ColorShapeLinks.Common.AI
             if (!aiTable.ContainsKey(aiName))
             {
                 throw new InvalidOperationException(
-                    $"No AI named '{aiName}' was found");
+                    $"No Thinker named '{aiName}' was found");
             }
 
             // Instantiate the AI thinker
