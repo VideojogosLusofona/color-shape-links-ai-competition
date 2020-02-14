@@ -1,5 +1,5 @@
 [submodule "unityapp/Assets/Scripts/Common"]
-	path = unityapp/Assets/Scripts/Common
+	path = UnityApp/Assets/Scripts/Common
 	url = https://github.com/VideojogosLusofona/color-shape-links-ai-competition.git
 	branch = common
 [submodule "ConsoleApp/ColorShapeLinks/Common"]
