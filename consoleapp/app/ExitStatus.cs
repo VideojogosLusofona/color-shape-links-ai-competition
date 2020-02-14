@@ -31,7 +31,7 @@ namespace ColorShapeLinks.ConsoleApp
         /// Exit status returned by app when debug info was requested and no
         /// game was played.
         /// </summary>
-        DebugInfo = 3,
+        Info = 3,
 
         /// <summary>
         /// Exit status returned by app when an unrecoverable exception is

@@ -55,8 +55,11 @@ namespace ColorShapeLinks.ConsoleApp
         // Third-party assemblies
         private readonly IEnumerable<string> assemblies;
 
-        // Show debug information and exit?
-        private readonly bool showDebugInfoAndExit;
+        // Show environment information and exit?
+        private readonly bool showInfoAndExit;
+
+        // Show debug information (exception stack traces)?
+        private readonly bool debugMode;
 
         /// <summary>
         /// Create a new instance of match options.
@@ -88,8 +91,11 @@ namespace ColorShapeLinks.ConsoleApp
         /// </param>
         /// <param name="listeners">Match listeners.</param>
         /// <param name="assemblies">Third-party assemblies.</param>
-        /// <param name="showDebugInfoAndExit">
-        /// Show debug information and exit?
+        /// <param name="showInfoAndExit">
+        /// Show environment information and exit?
+        /// </param>
+        /// <param name="debugMode">
+        /// Show debug information (exception stack traces)?
         /// </param>
         public Options(int rows, int cols, int winSequence,
             int roundPiecesPerPlayer, int squarePiecesPerPlayer,
@@ -97,7 +103,7 @@ namespace ColorShapeLinks.ConsoleApp
             string thinker1, string thinker2,
             string thinker1params, string thinker2params,
             IEnumerable<string> listeners, IEnumerable<string> assemblies,
-            bool showDebugInfoAndExit)
+            bool showInfoAndExit, bool debugMode)
         {
             this.rows = rows;
             this.cols = cols;
@@ -112,7 +118,8 @@ namespace ColorShapeLinks.ConsoleApp
             this.thinker2params = thinker2params;
             this.listeners = listeners;
             this.assemblies = assemblies;
-            this.showDebugInfoAndExit = showDebugInfoAndExit;
+            this.showInfoAndExit = showInfoAndExit;
+            this.debugMode = debugMode;
         }
 
         /// <summary>
@@ -153,7 +160,7 @@ namespace ColorShapeLinks.ConsoleApp
         /// <summary>
         /// Time limit for thinking in milliseconds.
         /// </summary>
-        [Option('t', "time-limit", Default = int.MaxValue / 2, SetName = "game",
+        [Option('t', "time-limit", Default = 3600000, SetName = "game",
             HelpText = "Time limit (ms) for making move")]
         public int TimeLimitMillis => timeLimitMillis;
 
@@ -210,16 +217,23 @@ namespace ColorShapeLinks.ConsoleApp
         /// Third-party assemblies.
         /// </summary>
         [Option('a', "assemblies",
-            HelpText = ".NET Standard 2.0 DLLs containing thinkers and/or "
-                + "listeners (space separated)")]
+            HelpText = "Load .NET Standard 2.0 DLLs containing thinkers "
+                + "and/or listeners (space separated)")]
         public IEnumerable<string> Assemblies => assemblies;
 
         /// <summary>
-        /// Show debug information and exit?
+        /// Show environment information and exit?
         /// </summary>
-        [Option('d', "debug", Default = false, SetName = "debug",
-            HelpText = "Show debug info (known assemblies, thinkers and "
+        [Option('i', "info", Default = false, SetName = "info",
+            HelpText = "Show environment info (known assemblies, thinkers and "
                 + "listeners) and exit")]
-        public bool ShowDebugInfoAndExit => showDebugInfoAndExit;
+        public bool ShowInfoAndExit => showInfoAndExit;
+
+        /// <summary>
+        /// Enable debug mode.
+        /// </summary>
+        [Option('d', "debug", Default = false,
+            HelpText = "Enable debug mode (shows exception stack traces)")]
+        public bool DebugMode => debugMode;
     }
 }
