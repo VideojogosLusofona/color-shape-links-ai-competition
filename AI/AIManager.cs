@@ -21,8 +21,8 @@ namespace ColorShapeLinks.Common.AI
         private static readonly Lazy<AIManager> instance =
             new Lazy<AIManager>(() => new AIManager());
 
-        // Table of known AIs
-        private IDictionary<string, Type> aiTable;
+        // Table of known AI thinkers
+        private readonly IDictionary<string, Type> aiTable;
 
         /// <summary>
         /// Returns the singleton instance of this class.
@@ -31,15 +31,15 @@ namespace ColorShapeLinks.Common.AI
         public static AIManager Instance => instance.Value;
 
         /// <summary>
-        /// Array of AI names.
+        /// Array of AI thinker names.
         /// </summary>
-        /// <value>Names of known AI.</value>
+        /// <value>Names of known AI thinkers.</value>
         public string[] AIs => aiTable.Keys.ToArray();
 
         // Private constructor
         private AIManager()
         {
-            // Get a reference to the IThinker type
+            // Get a reference to the AbstractThinker type
             Type type = typeof(AbstractThinker);
 
             // Get known AIs, i.e. AIs which implement IThinker, are not
