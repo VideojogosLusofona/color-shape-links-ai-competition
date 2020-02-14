@@ -1,5 +1,5 @@
 /// @file
-/// @brief This file contains the ::PlainRenderer class.
+/// @brief This file contains the ::SimpleRendering class.
 ///
 /// @author Nuno Fachada
 /// @date 2020
@@ -13,21 +13,38 @@ using ColorShapeLinks.ConsoleAppLib;
 
 namespace ColorShapeLinks.ConsoleApp
 {
+    /// <summary>
+    /// Simple match event listener which renders match information on the
+    /// console.
+    /// </summary>
     public class SimpleRenderingListener : IMatchListener
     {
+        // Current turn
         private int turn;
+
+        // As turn info shown in this turn already?
         private bool turnInfoShown;
+
+        // Vertical cursor position where turn info was initially posted for
+        // the current turn
         private int vertCursorPos;
 
-        private string PlayerString(PColor playerColor, string playerName) =>
-            $"Player {(int)playerColor + 1} ({playerColor}, {playerName})";
-
+        /// <summary>
+        /// Creates a new simple rendering listener.
+        /// </summary>
         public SimpleRenderingListener()
         {
             turn = 0;
             turnInfoShown = false;
         }
 
+        /// <summary>
+        /// Register the simple rendering listener with a match.
+        /// </summary>
+        /// <param name="subject">
+        /// The match to which this listener will be registered to.
+        /// </param>
+        /// <seealso cref="IMatchListener.ListenTo"/>
         public void ListenTo(IMatchSubject subject)
         {
             subject.BoardUpdate += BoardUpdate;
@@ -38,6 +55,15 @@ namespace ColorShapeLinks.ConsoleApp
             subject.TurnInfo += TurnInfo;
         }
 
+        // Helper method to create a consistent thinker description string
+        private string ThinkerDesc(PColor thinkerColor, string thinkerName) =>
+            $"Thinker {(int)thinkerColor + 1} ({thinkerColor}, {thinkerName})";
+
+        // Renders the match board as follows:
+        // w - Round white pieces
+        // W - Square white pieces
+        // r - Round red pieces
+        // R - Square red pieces
         private void BoardUpdate(Board board)
         {
             for (int r = board.rows - 1; r >= 0; r--)
@@ -57,7 +83,8 @@ namespace ColorShapeLinks.ConsoleApp
                         else if (p.Value.Is(PColor.Red, PShape.Square))
                             pc = 'R';
                         else
-                            Console.Error.WriteLine($"Invalid piece {p.Value}");
+                            throw new ArgumentException(
+                                $"Invalid piece '{p.Value}'");
                     }
                     Console.Write(pc);
                 }
@@ -66,39 +93,54 @@ namespace ColorShapeLinks.ConsoleApp
             Console.WriteLine();
         }
 
-        private void NextTurn(PColor playerColor, string playerName)
+        // Renders info about the next turn
+        private void NextTurn(PColor thinkerColor, string thinkerName)
         {
-            Console.WriteLine($"{PlayerString(playerColor, playerName)} turn");
+            Console.WriteLine($"{ThinkerDesc(thinkerColor, thinkerName)} turn");
             turn++;
             turnInfoShown = false;
         }
 
-        private void Timeout(PColor playerColor, string playerName)
+        // Displays notification that the specified thinker took too long to
+        // play
+        private void Timeout(PColor thinkerColor, string thinkerName)
         {
-            Console.WriteLine(PlayerString(playerColor, playerName)
+            Console.WriteLine(ThinkerDesc(thinkerColor, thinkerName)
                 + " took too long to play!");
         }
 
-        private void MovePerformed(PColor playerColor, string playerName, FutureMove move)
+        // Displays the move performed by the specified thinker
+        private void MovePerformed(
+            PColor thinkerColor, string thinkerName, FutureMove move)
         {
-            Console.WriteLine(PlayerString(playerColor, playerName)
+            Console.WriteLine(ThinkerDesc(thinkerColor, thinkerName)
                 + $" placed a {move.shape} piece at column {move.column}");
         }
+
+        // Renders the match over screen, showing the final result
         private void MatchOver(
-            Winner winner, ICollection<Pos> solution, IList<string> playerNames)
+            Winner winner,
+            ICollection<Pos> solution,
+            IList<string> thinkerNames)
         {
+            // Did the match end in a draw?
             if (winner == Winner.Draw)
             {
+                // If so, show that information
                 Console.WriteLine("Game ended in a draw");
             }
             else
             {
+                // Otherwise, show match results
                 PColor winnerColor = winner.ToPColor();
                 int winnerIdx = (int)winnerColor;
-                string winnerName = playerNames[winnerIdx];
+                string winnerName = thinkerNames[winnerIdx];
 
+                // Show who won
                 Console.WriteLine(
-                    $"Winner is {PlayerString(winnerColor, winnerName)}");
+                    $"Winner is {ThinkerDesc(winnerColor, winnerName)}");
+
+                // Show the solution, if available
                 if (solution != null)
                 {
                     Console.Write("Solution=");
@@ -111,22 +153,27 @@ namespace ColorShapeLinks.ConsoleApp
             }
         }
 
+        // Show thinking/turn info
         private void TurnInfo(ICollection<string> turnInfo)
         {
-            if (turnInfoShown)
-            {
-                Console.SetCursorPosition(0, vertCursorPos - turnInfo.Count);
-            }
-
-            foreach (string info in turnInfo)
-            {
-                Console.WriteLine(info);
-            }
-
+            // If turn info wasn't already shown, save the cursor position and
+            // mark it as shown
             if (!turnInfoShown)
             {
                 vertCursorPos = Console.CursorTop;
                 turnInfoShown = true;
+            }
+            else
+            {
+                // Otherwise move back the cursor to where the previous info
+                // was posted
+                Console.SetCursorPosition(0, vertCursorPos - turnInfo.Count);
+            }
+
+            // Show turn info, line by line
+            foreach (string info in turnInfo)
+            {
+                Console.WriteLine(info);
             }
         }
     }

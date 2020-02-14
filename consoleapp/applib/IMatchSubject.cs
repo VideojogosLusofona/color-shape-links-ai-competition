@@ -1,5 +1,5 @@
 /// @file
-/// @brief This file contains the ::IMatch interface.
+/// @brief This file contains the ::IMatchSubject interface.
 ///
 /// @author Nuno Fachada
 /// @date 2020

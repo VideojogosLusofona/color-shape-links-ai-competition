@@ -1,5 +1,5 @@
 /// @file
-/// @brief This file contains the ::Game class.
+/// @brief This file contains the ::Match class.
 ///
 /// @author Nuno Fachada
 /// @date 2020
@@ -215,7 +215,7 @@ namespace ColorShapeLinks.ConsoleApp
         public event Action<Board> BoardUpdate;
 
         /// @copydoc IMatchSubject.NextTurn;
-        /// <seealso cref="IMatchSubject.NextTurn;"/>
+        /// <seealso cref="IMatchSubject.NextTurn"/>
         public event Action<PColor, string> NextTurn;
 
         /// @copydoc IMatchSubject.TurnInfo
