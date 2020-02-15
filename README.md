@@ -10,8 +10,10 @@ work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 
 # ColorShapeLinks AI competition
 
-This competition has been accepted for the [IEEE CoG 2020] conference,
-and will be up and running by February 15 2020.
+This competition has been accepted for the [IEEE CoG 2020] conference!
+
+The available code is final and the documentation will be available by
+February 16.
 
 ## Description
 
@@ -74,9 +76,9 @@ following criteria (from most to least important):
 Competition code must be implemented in C# and be compatible with the
 cross-platform [.NET Standard 2.0].
 
-At least one class is required for the AI to work. This class should implement
-the [`IThinker`] interface, which defines the `Think()` method, which in turn
-accepts the [game board][`Board`] and a
+At least one class is required for the AI to work. This class should extend
+the [`AbstractThinker`] class, which defines the `Think()` method, which in
+turn accepts the [game board][`Board`] and a
 [cancellation token][`CancellationToken`], returning a [`FutureMove`]. Simply
 put, the method accepts the game board, the AI decides the best move to
 perform, and returns that move, which will eventually be executed by the game
