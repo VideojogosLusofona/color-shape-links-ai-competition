@@ -1,5 +1,5 @@
 /// @file
-/// @brief This file contains the ::SessionState enum.
+/// @brief This file contains the ::ColorShapeLinks.UnityApp.SessionState enum.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020

@@ -1,5 +1,5 @@
 ﻿/// @file
-/// @brief This file contains the ::MatchView class.
+/// @brief This file contains the ::ColorShapeLinks.UnityApp.MatchView class.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020
@@ -402,7 +402,18 @@ namespace ColorShapeLinks.UnityApp
             spriteRenderer.color = color;
         }
 
-        // Update a position in the board shown on screen
+        /// <summary>
+        /// Update a position in the board shown on screen.
+        /// </summary>
+        /// <param name="move">
+        /// Move performed, contains position to update.
+        /// </param>
+        /// <param name="result">
+        /// Match result. If match is over and someone won, a line will be
+        /// drawn over the final solution, given in the
+        /// <paramref name="solution"/> parameter.
+        /// </param>
+        /// <param name="solution">The solution, in case someone won.</param>
         internal void UpdateBoard(Move move, Winner result, Pos[] solution)
         {
             // Update finished flag

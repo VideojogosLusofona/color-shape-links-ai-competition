@@ -1,5 +1,6 @@
 ﻿/// @file
-/// @brief This file contains the ::SessionController class.
+/// @brief This file contains the
+/// ::ColorShapeLinks.UnityApp.SessionController class.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020
@@ -466,28 +467,28 @@ namespace ColorShapeLinks.UnityApp
         // Implementation of IGameConfig //
         // ///////////////////////////// //
 
-        /// @copydoc IGameConfig.Rows
-        /// <seealso cref="IGameConfig.Rows"/>
+        /// @copydoc ColorShapeLinks.Common.IGameConfig.Rows
+        /// <seealso cref="ColorShapeLinks.Common.IGameConfig.Rows"/>
         public int Rows => rows;
 
-        /// @copydoc IGameConfig.Cols
-        /// <seealso cref="IGameConfig.Cols"/>
+        /// @copydoc ColorShapeLinks.Common.IGameConfig.Cols
+        /// <seealso cref="ColorShapeLinks.Common.IGameConfig.Cols"/>
         public int Cols => cols;
 
-        /// @copydoc IGameConfig.WinSequence
-        /// <seealso cref="IGameConfig.WinSequence"/>
+        /// @copydoc ColorShapeLinks.Common.IGameConfig.WinSequence
+        /// <seealso cref="ColorShapeLinks.Common.IGameConfig.WinSequence"/>
         public int WinSequence => winSequence;
 
-        /// @copydoc IGameConfig.RoundPiecesPerPlayer
-        /// <seealso cref="IGameConfig.RoundPiecesPerPlayer"/>
+        /// @copydoc ColorShapeLinks.Common.IGameConfig.RoundPiecesPerPlayer
+        /// <seealso cref="ColorShapeLinks.Common.IGameConfig.RoundPiecesPerPlayer"/>
         public int RoundPiecesPerPlayer => roundPiecesPerPlayer;
 
-        /// @copydoc IGameConfig.SquarePiecesPerPlayer
-        /// <seealso cref="IGameConfig.SquarePiecesPerPlayer"/>
+        /// @copydoc ColorShapeLinks.Common.IGameConfig.SquarePiecesPerPlayer
+        /// <seealso cref="ColorShapeLinks.Common.IGameConfig.SquarePiecesPerPlayer"/>
         public int SquarePiecesPerPlayer => squarePiecesPerPlayer;
 
-        /// @copydoc IGameConfig.TimeLimitMillis
-        /// <seealso cref="IGameConfig.TimeLimitMillis"/>
+        /// @copydoc ColorShapeLinks.Common.IGameConfig.TimeLimitMillis
+        /// <seealso cref="ColorShapeLinks.Common.IGameConfig.TimeLimitMillis"/>
         public int TimeLimitMillis => (int)(aITimeLimit * 1000);
     }
 }

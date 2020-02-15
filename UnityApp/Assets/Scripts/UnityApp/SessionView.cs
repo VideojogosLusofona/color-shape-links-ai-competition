@@ -1,5 +1,5 @@
 ﻿/// @file
-/// @brief This file contains the ::SessionView class.
+/// @brief This file contains the ::ColorShapeLinks.UnityApp.SessionView class.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020

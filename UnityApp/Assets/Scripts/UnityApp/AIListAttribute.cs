@@ -1,5 +1,6 @@
 /// @file
-/// @brief This file contains the ::AIListAttribute class.
+/// @brief This file contains the
+/// ::ColorShapeLinks.UnityApp.AIListAttribute class.
 ///
 /// @author Nuno Fachada
 /// @date 2020

@@ -1,5 +1,6 @@
 /// @file
-/// @brief This file contains the ::ExitStatus enumeration.
+/// @brief This file contains the ::ColorShapeLinks.TextBased.App.ExitStatus
+/// enum.
 ///
 /// @author Nuno Fachada
 /// @date 2020

@@ -1,5 +1,6 @@
 /// @file
-/// @brief This file contains the ::IMatchListener interface.
+/// @brief This file contains the
+/// ::ColorShapeLinks.TextBased.Lib.IMatchListener interface.
 ///
 /// @author Nuno Fachada
 /// @date 2020

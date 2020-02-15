@@ -1,5 +1,5 @@
 /// @file
-/// @brief This file contains the ::Match struct.
+/// @brief This file contains the ::ColorShapeLinks.UnityApp.Match struct.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020

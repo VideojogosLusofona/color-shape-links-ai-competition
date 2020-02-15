@@ -1,5 +1,6 @@
 /// @file
-/// @brief This file contains the ::Options class.
+/// @brief This file contains the ::ColorShapeLinks.TextBased.App.Options
+/// class.
 ///
 /// @author Nuno Fachada
 /// @date 2020

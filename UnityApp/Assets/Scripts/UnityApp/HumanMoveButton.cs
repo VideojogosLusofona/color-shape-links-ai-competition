@@ -1,5 +1,6 @@
 ﻿/// @file
-/// @brief This file contains the ::HumanMoveButton class.
+/// @brief This file contains the ::ColorShapeLinks.UnityApp.HumanMoveButton
+/// class.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020

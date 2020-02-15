@@ -1,5 +1,6 @@
 ﻿/// @file
-/// @brief This file contains the ::Program class.
+/// @brief This file contains the ::ColorShapeLinks.TextBased.App.Program
+/// class.
 ///
 /// @author Nuno Fachada
 /// @date 2020

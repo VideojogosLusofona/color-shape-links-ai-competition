@@ -1,5 +1,6 @@
 /// @file
-/// @brief This file contains the ::HumanThinker class.
+/// @brief This file contains the ::ColorShapeLinks.TextBased.App.HumanThinker
+/// class.
 ///
 /// @author Nuno Fachada
 /// @date 2020
@@ -23,19 +24,19 @@ namespace ColorShapeLinks.TextBased.App
         // Currently selected shape
         private PShape selectedShape;
 
-        /// @copydoc AbstractThinker.Setup
-        /// <seealso cref="AbstractThinker.Setup"/>
+        /// @copydoc ColorShapeLinks.Common.AI.AbstractThinker.Setup
+        /// <seealso cref="ColorShapeLinks.Common.AI.AbstractThinker.Setup"/>
         public override void Setup(string str)
         {
             selectedCol = Cols / 2;
             selectedShape = PShape.Round;
         }
 
-        /// @copybrief IThinker.Think
+        /// @copydoc ColorShapeLinks.Common.AI.IThinker.Think
         /// <remarks>
         /// This method asks the human to play.
         /// </remarks>
-        /// <seealso cref="IThinker.Think"/>
+        /// <seealso cref="ColorShapeLinks.Common.AI.IThinker.Think"/>
         public override FutureMove Think(Board board, CancellationToken ct)
         {
             // By default, no move is performed in case of timeout

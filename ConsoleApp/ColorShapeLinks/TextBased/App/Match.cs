@@ -1,5 +1,5 @@
 /// @file
-/// @brief This file contains the ::Match class.
+/// @brief This file contains the ::ColorShapeLinks.TextBased.App.Match class.
 ///
 /// @author Nuno Fachada
 /// @date 2020
@@ -209,28 +209,28 @@ namespace ColorShapeLinks.TextBased.App
             TurnInfo?.Invoke(info);
         }
 
-        /// @copydoc IMatchSubject.BoardUpdate
-        /// <seealso cref="IMatchSubject.BoardUpdate"/>
+        /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchSubject.BoardUpdate
+        /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.BoardUpdate"/>
         public event Action<Board> BoardUpdate;
 
-        /// @copydoc IMatchSubject.NextTurn;
-        /// <seealso cref="IMatchSubject.NextTurn"/>
+        /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchSubject.NextTurn
+        /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.NextTurn"/>
         public event Action<PColor, string> NextTurn;
 
-        /// @copydoc IMatchSubject.TurnInfo
-        /// <seealso cref="IMatchSubject.TurnInfo"/>
+        /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchSubject.TurnInfo
+        /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.TurnInfo"/>
         public event Action<ICollection<string>> TurnInfo;
 
-        /// @copydoc IMatchSubject.Timeout
-        /// <seealso cref="IMatchSubject.Timeout"/>
+        /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchSubject.Timeout
+        /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.Timeout"/>
         public event Action<PColor, string> Timeout;
 
-        /// @copydoc IMatchSubject.MovePerformed
-        /// <seealso cref="IMatchSubject.MovePerformed"/>
+        /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchSubject.MovePerformed
+        /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.MovePerformed"/>
         public event Action<PColor, string, FutureMove> MovePerformed;
 
-        /// @copydoc IMatchSubject.MatchOver
-        /// <seealso cref="IMatchSubject.MatchOver"/>
+        /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchSubject.MatchOver
+        /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.MatchOver"/>
         public event Action<Winner, ICollection<Pos>, IList<string>> MatchOver;
     }
 }

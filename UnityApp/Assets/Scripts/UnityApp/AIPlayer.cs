@@ -1,5 +1,5 @@
 /// @file
-/// @brief This file contains the ::AIPlayer class.
+/// @brief This file contains the ::ColorShapeLinks.UnityApp.AIPlayer class.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020

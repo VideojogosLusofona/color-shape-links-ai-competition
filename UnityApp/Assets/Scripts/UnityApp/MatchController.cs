@@ -1,5 +1,6 @@
 ﻿/// @file
-/// @brief This file contains the ::MatchController class.
+/// @brief This file contains the ::ColorShapeLinks.UnityApp.MatchController
+/// class.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020

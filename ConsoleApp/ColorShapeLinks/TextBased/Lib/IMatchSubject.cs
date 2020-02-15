@@ -1,5 +1,6 @@
 /// @file
-/// @brief This file contains the ::IMatchSubject interface.
+/// @brief This file contains the
+/// ::ColorShapeLinks.TextBased.Lib.IMatchSubject interface.
 ///
 /// @author Nuno Fachada
 /// @date 2020
@@ -22,7 +23,8 @@ namespace ColorShapeLinks.TextBased.Lib
         /// Event raised when the board is updated.
         /// </summary>
         /// <remarks>
-        /// * The ::Board type parameter represents the game board.
+        /// * The ::ColorShapeLinks.Common.Board type parameter represents the
+        ///   game board.
         /// </remarks>
         event Action<Board> BoardUpdate;
 
@@ -30,8 +32,8 @@ namespace ColorShapeLinks.TextBased.Lib
         /// Event raised when the next turn is about to start.
         /// </summary>
         /// <remarks>
-        /// * The ::PColor type parameter is the color of the player that
-        ///   is playing in the next turn.
+        /// * The ::ColorShapeLinks.Common.PColor type parameter is the color
+        ///   of the player that is playing in the next turn.
         /// * The `string` type parameter is the name of the player that is
         ///   playing in the next turn.
         /// </remarks>
@@ -52,8 +54,8 @@ namespace ColorShapeLinks.TextBased.Lib
         /// and will therefore lose the match.
         /// </summary>
         /// <remarks>
-        /// * The ::PColor type parameter is the color of the player that
-        ///   took too long to play.
+        /// * The ::ColorShapeLinks.Common.PColor type parameter is the color
+        ///   of the player that took too long to play.
         /// * The `string` type parameter is the name of the player that
         ///   took too long to play.
         /// </remarks>
@@ -63,11 +65,12 @@ namespace ColorShapeLinks.TextBased.Lib
         /// Event raised when a given player makes a move.
         /// </summary>
         /// <remarks>
-        /// * The ::PColor type parameter is the color of the player that
-        ///   made a move.
+        /// * The ::ColorShapeLinks.Common.PColor type parameter is the color
+        ///   of the player that made a move.
         /// * The `string` type parameter is the name of the player that
         ///   made a move.
-        /// * The ::FutureMove type parameter is the move performed.
+        /// * The ::ColorShapeLinks.Common.AI.FutureMove type parameter is the
+        ///   move performed.
         /// </remarks>
         event Action<PColor, string, FutureMove> MovePerformed;
 
@@ -75,9 +78,10 @@ namespace ColorShapeLinks.TextBased.Lib
         /// Event raised when the match is over.
         /// </summary>
         /// <remarks>
-        /// * The ::Winner type parameter contains the match result.
-        /// * The `ICollection<::Pos>` type parameter contains the winning
-        ///   solution, if any.
+        /// * The ::ColorShapeLinks.Common.Winner type parameter contains the
+        ///   match result.
+        /// * The `ICollection<::ColorShapeLinks.Common.Pos>` type parameter
+        ///   contains the winning solution, if any.
         /// * The `IList<string>` type parameter contains a list of player
         ///   names, with White player at index 0, and Red player at index 1.
         /// </remarks>

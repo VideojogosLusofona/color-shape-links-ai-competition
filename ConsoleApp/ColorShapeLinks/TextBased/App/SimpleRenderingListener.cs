@@ -1,5 +1,6 @@
 /// @file
-/// @brief This file contains the ::SimpleRendering class.
+/// @brief This file contains the
+/// ::ColorShapeLinks.TextBased.App.SimpleRenderingListener class.
 ///
 /// @author Nuno Fachada
 /// @date 2020

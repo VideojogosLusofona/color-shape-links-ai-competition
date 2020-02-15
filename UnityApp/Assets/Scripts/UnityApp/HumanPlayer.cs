@@ -1,5 +1,5 @@
 /// @file
-/// @brief This file contains the ::HumanPlayer class.
+/// @brief This file contains the ::ColorShapeLinks.UnityApp.HumanPlayer class.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020
@@ -26,7 +26,7 @@ namespace ColorShapeLinks.UnityApp
         /// <summary>
         /// Name of the human player.
         /// </summary>
-        /// <value>The string "Human".</value>
+        /// <returns>The string "Human".</returns>
         public override string ToString() => "Human";
 
         /// <summary>

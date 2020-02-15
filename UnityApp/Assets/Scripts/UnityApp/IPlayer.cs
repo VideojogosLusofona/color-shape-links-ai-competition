@@ -1,5 +1,5 @@
 /// @file
-/// @brief This file contains the ::IPlayer interface.
+/// @brief This file contains the ::ColorShapeLinks.UnityApp.IPlayer interface.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020

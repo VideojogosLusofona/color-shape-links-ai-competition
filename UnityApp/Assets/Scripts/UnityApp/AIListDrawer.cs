@@ -1,5 +1,6 @@
 /// @file
-/// @brief This file contains the ::AIListDrawer class.
+/// @brief This file contains the
+/// ::ColorShapeLinks.UnityApp.AIListDrawer class.
 ///
 /// @author Nuno Fachada
 /// @date 2020

@@ -1,5 +1,6 @@
 /// @file
-/// @brief This file contains the ::ISessionDataProvider interface.
+/// @brief This file contains the
+/// ::ColorShapeLinks.UnityApp.ISessionDataProvider interface.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020
