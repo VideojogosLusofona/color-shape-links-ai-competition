@@ -1,5 +1,5 @@
 /// @file
-/// @brief This file contains the ::PColor enum.
+/// @brief This file contains the ::ColorShapeLinks.Common.PColor enum.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020

@@ -1,5 +1,6 @@
 /// @file
-/// @brief This file contains the ::FutureMove struct.
+/// @brief This file contains the ::ColorShapeLinks.Common.AI.FutureMove
+/// struct.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020

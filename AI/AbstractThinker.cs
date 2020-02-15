@@ -1,5 +1,6 @@
 /// @file
-/// @brief This file contains the ::AbstractThinker class.
+/// @brief This file contains the ::ColorShapeLinks.Common.AI.AbstractThinker
+/// class.
 ///
 /// @author Nuno Fachada
 /// @date 2020

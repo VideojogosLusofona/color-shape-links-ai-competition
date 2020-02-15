@@ -1,5 +1,6 @@
 /// @file
-/// @brief This file contains the ::LoserSleeperAIThinker class.
+/// @brief This file contains the
+/// ::ColorShapeLinks.Common.AI.Examples.LoserSleeperAIThinker class.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020

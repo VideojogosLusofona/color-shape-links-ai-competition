@@ -1,5 +1,6 @@
 /// @file
-/// @brief This file contains the ::SequentialAIThinker class.
+/// @brief This file contains the
+/// ::ColorShapeLinks.Common.AI.Examples.SequentialAIThinker class.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020

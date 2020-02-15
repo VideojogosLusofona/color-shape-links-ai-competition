@@ -1,5 +1,6 @@
 /// @file
-/// @brief This file contains the ::IThinker interface.
+/// @brief This file contains the ::ColorShapeLinks.Common.AI.IThinker
+/// interface.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020

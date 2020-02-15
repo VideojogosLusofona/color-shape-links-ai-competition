@@ -1,5 +1,5 @@
 /// @file
-/// @brief This file contains the ::PShape enum.
+/// @brief This file contains the ::ColorShapeLinks.Common.PShape enum.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020

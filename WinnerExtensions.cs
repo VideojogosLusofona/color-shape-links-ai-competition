@@ -1,5 +1,6 @@
 /// @file
-/// @brief This file contains the ::WinnerExtensions class.
+/// @brief This file contains the ::ColorShapeLinks.Common.WinnerExtensions
+/// class.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020

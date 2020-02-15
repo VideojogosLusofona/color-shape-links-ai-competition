@@ -1,5 +1,6 @@
 /// @file
-/// @brief This file contains the ::RandomAIThinker class.
+/// @brief This file contains the
+/// ::ColorShapeLinks.Common.AI.Examples.RandomAIThinker class.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020

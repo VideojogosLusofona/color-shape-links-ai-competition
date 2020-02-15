@@ -1,5 +1,5 @@
 /// @file
-/// @brief This file contains the ::Pos struct.
+/// @brief This file contains the ::ColorShapeLinks.Common.Pos struct.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020

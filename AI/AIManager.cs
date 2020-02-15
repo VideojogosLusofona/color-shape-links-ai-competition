@@ -1,5 +1,5 @@
 /// @file
-/// @brief This file contains the ::AIManager class.
+/// @brief This file contains the ::ColorShapeLinks.Common.AI.AIManager class.
 ///
 /// @author Nuno Fachada
 /// @date 2020

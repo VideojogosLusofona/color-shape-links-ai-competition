@@ -1,5 +1,5 @@
 /// @file
-/// @brief This file contains the ::Piece enum.
+/// @brief This file contains the ::ColorShapeLinks.Common.Piece enum.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020

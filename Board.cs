@@ -1,5 +1,5 @@
 /// @file
-/// @brief This file contains the ::Board class.
+/// @brief This file contains the ::ColorShapeLinks.Common.Board class.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020

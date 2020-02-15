@@ -1,5 +1,6 @@
 /// @file
-/// @brief This file contains the ::IGameConfig interface.
+/// @brief This file contains the ::ColorShapeLinks.Common.IGameConfig
+/// interface.
 ///
 /// @author Nuno Fachada
 /// @date 2020

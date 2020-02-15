@@ -1,5 +1,5 @@
 /// @file
-/// @brief This file contains the ::Winner enum.
+/// @brief This file contains the ::ColorShapeLinks.Common.Winner enum.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020
