@@ -147,7 +147,11 @@ namespace ColorShapeLinks.TextBased.App
                 {
                     // Show dialog
                     Console.CursorLeft = 0;
-                    Console.Write($"Col [{selectedCol,4}] | Shape [{selectedShape,7}] | Time [{timeLimit - DateTime.Now,14}]");
+                    Console.Write(String.Format(
+                        "Col [{0,4}] | Shape [{1,7}] | Time [{2,14}]",
+                        selectedCol,
+                        selectedShape,
+                        timeLimit - DateTime.Now));
 
                     // Update last notification time
                     lastNotificationTime = DateTime.Now;

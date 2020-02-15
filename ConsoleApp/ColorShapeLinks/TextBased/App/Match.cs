@@ -128,6 +128,9 @@ namespace ColorShapeLinks.TextBased.App
             // Thinking start time
             DateTime startTime = DateTime.Now;
 
+            // Real think time in milliseconds
+            int thinkTimeMillis;
+
             // Apparent thinking time left
             int timeLeftMillis;
 
@@ -181,9 +184,12 @@ namespace ColorShapeLinks.TextBased.App
                 Timeout?.Invoke(color, thinker.ToString());
             }
 
+            // Obtain thinking end time
+            thinkTimeMillis = (int)(DateTime.Now - startTime)
+                .TotalMilliseconds;
+
             // How much time is left for the minimum apparent move time?
-            timeLeftMillis = minMoveTimeMillis
-                - (int)(DateTime.Now - startTime).TotalMilliseconds;
+            timeLeftMillis = minMoveTimeMillis - thinkTimeMillis;
 
             // Was the minimum apparent move time reached
             if (timeLeftMillis > 0)
@@ -191,6 +197,9 @@ namespace ColorShapeLinks.TextBased.App
                 // If not, wait until it is reached
                 Thread.Sleep(timeLeftMillis);
             }
+
+            // Notify listeners of how long thinker took to think
+            OnThinkingInfo($"{color} took {thinkTimeMillis}ms to play");
 
             // Notify listeners that the board was updated
             BoardUpdate?.Invoke(board);
