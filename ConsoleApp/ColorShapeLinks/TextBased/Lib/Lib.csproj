@@ -17,7 +17,7 @@
     <RootNamespace>ColorShapeLinks.TextBased.Lib</RootNamespace>
     <Authors>Nuno Fachada</Authors>
     <Company>Lusófona University</Company>
-    <Description>Library code the Console-based app for the ColorShapeLinks AI competition and extensions</Description>
+    <Description>Library code for the ColorShapeLinks AI competition console app and third-party event listeners</Description>
     <Copyright>Copyright (c) 2019-2020 Nuno Fachada and Contributors</Copyright>
     <PackageLicenseFile>LICENSE_CODE</PackageLicenseFile>
     <PackageProjectUrl>https://videojogoslusofona.github.io/color-shape-links-ai-competition/</PackageProjectUrl>
