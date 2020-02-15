@@ -141,7 +141,7 @@ namespace ColorShapeLinks.TextBased.App
         private void ThinkingInfo(string thinkingInfo)
         {
             // Show thinking info
-            Console.WriteLine($"\t[{turn}] {thinkingInfo}");
+            Console.WriteLine($"{turn} thinker says: {thinkingInfo}");
         }
     }
 }
