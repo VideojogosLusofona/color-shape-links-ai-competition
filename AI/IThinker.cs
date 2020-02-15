@@ -39,11 +39,10 @@ namespace ColorShapeLinks.Common.AI
         /// Event raised when thinkers produce information while thinking.
         /// </summary>
         /// <remarks>
-        /// * Listeners receive a collection of strings containing the thinking
-        ///   information.
+        /// * Listeners receive a string containing the thinking information.
         /// * It is not mandatory that thinkers produce any information while
         ///   thinking.
         /// </remarks>
-        event Action<ICollection<string>> ThinkingInfo;
+        event Action<string> ThinkingInfo;
     }
 }

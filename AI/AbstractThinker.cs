@@ -113,15 +113,15 @@ namespace ColorShapeLinks.Common.AI
         /// Thinker should raise the thinking info event using this method.
         /// </summary>
         /// <param name="info">
-        /// Collection of strings containing the thinking information.
+        /// String containing the thinking information.
         /// </param>
-        protected void OnThinkingInfo(ICollection<string> info)
+        protected void OnThinkingInfo(string info)
         {
             ThinkingInfo?.Invoke(info);
         }
 
         /// @copydoc IThinker.ThinkingInfo
         /// <seealso cref="IThinker.ThinkingInfo"/>
-        public event Action<ICollection<string>> ThinkingInfo;
+        public event Action<string> ThinkingInfo;
     }
 }
