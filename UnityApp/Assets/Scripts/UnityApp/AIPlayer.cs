@@ -11,16 +11,15 @@ using ColorShapeLinks.Common.AI;
 
 namespace ColorShapeLinks.UnityApp
 {
-    /// <summary>Base class for AI player configuration classes.</summary>
+    /// <summary>Component which represents an AI thinker.</summary>
     /// <remarks>
-    /// Concrete AIs should extend this class and implement its abstract members.
-    /// The child class should then be added as a component of the
-    /// `SessionConfiguration` game object in the Unity editor.
+    /// Each AI thinker to be used in a match or tournament should be
+    /// represented by an instance of this component.
     /// </remarks>
-    public class AIPlayer : MonoBehaviour, IPlayer
+    public sealed class AIPlayer : MonoBehaviour, IPlayer
     {
         /// <summary>
-        /// Unity Editor variable which defines if the is active.
+        /// Unity Editor variable which defines if the AI thinker is active.
         /// </summary>
         [SerializeField] private bool isActive = true;
 
@@ -34,7 +33,7 @@ namespace ColorShapeLinks.UnityApp
         /// </summary>
         [SerializeField] private string aiConfig = "";
 
-        /// <summary> Is the AI active?</summary>
+        /// <summary>Is the AI thinker active?</summary>
         /// <value>`true` if the AI is active, `false` otherwise.</value>
         public bool IsActive => isActive;
 
@@ -43,7 +42,7 @@ namespace ColorShapeLinks.UnityApp
         /// <seealso cref="IPlayer.IsHuman"/>
         public bool IsHuman => false;
 
-        /// <summary>The player's thinker.</summary>
+        /// <summary>The AI thinker instance.</summary>
         /// <value>An instance of <see cref="IThinker"/>.</value>
         /// <seealso cref="IPlayer.Thinker"/>
         public IThinker Thinker { get; private set; }
@@ -51,27 +50,25 @@ namespace ColorShapeLinks.UnityApp
         /// <summary>
         /// Awake is called when the script instance is being loaded.
         /// </summary>
-        /// <remarks>
-        /// Extending classes may override this method for their own awake-time
-        /// configuration, but in doing so they must invoke the parent `Awake()`
-        /// (this method) as follows:
-        ///
-        /// ```cs
-        /// base.Awake();
-        /// ```
-        /// </remarks>
-        protected void Awake()
+        private void Awake()
         {
+            // Obtain the component holding the game configuration
             IGameConfig gameConfig = GetComponent<IGameConfig>();
 
+            // Instantiate the thinker
             Thinker = AIManager.Instance.NewThinker(
                 selectedAI, gameConfig, aiConfig);
+
+            // Thinking information is printed in the Unity console
+            Thinker.ThinkingInfo += Debug.Log;
         }
 
         /// <summary>
-        /// A string representation of this player.
+        /// A string representation of the underlying AI thinker.
         /// </summary>
-        /// <returns>A string representation of this player.</returns>
+        /// <returns>
+        /// A string representation of the underlying AI thinker.
+        /// </returns>
         public override string ToString() => Thinker.ToString();
     }
 }
