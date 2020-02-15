@@ -54,6 +54,7 @@ namespace ColorShapeLinks.TextBased.App
             DateTime timeLimit =
                 DateTime.Now + TimeSpan.FromMilliseconds(TimeLimitMillis);
 
+            // Show some info on what keys are used for input
             OnThinkingInfo("T to toggle piece, < > to change selected column");
 
             // If a certain type of piece is not available, make the other
@@ -85,7 +86,8 @@ namespace ColorShapeLinks.TextBased.App
                     // Check if it was a column increment key
                     if (key == ConsoleKey.RightArrow
                         || key == ConsoleKey.D
-                        || key == ConsoleKey.NumPad6)
+                        || key == ConsoleKey.NumPad6
+                        || key == ConsoleKey.D6)
                     {
                         // Increment column...
                         do
@@ -100,7 +102,8 @@ namespace ColorShapeLinks.TextBased.App
                     // Check if it was a column decrement key
                     else if (key == ConsoleKey.LeftArrow
                         || key == ConsoleKey.A
-                        || key == ConsoleKey.NumPad4)
+                        || key == ConsoleKey.NumPad4
+                        || key == ConsoleKey.D4)
                     {
                         // Decrement column...
                         do
@@ -152,6 +155,7 @@ namespace ColorShapeLinks.TextBased.App
                         selectedCol,
                         selectedShape,
                         timeLimit - DateTime.Now));
+                    Console.CursorLeft = 0;
 
                     // Update last notification time
                     lastNotificationTime = DateTime.Now;

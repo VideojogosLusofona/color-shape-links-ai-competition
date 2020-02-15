@@ -69,8 +69,10 @@ namespace ColorShapeLinks.TextBased.Lib
         ///   made a move.
         /// * The ::ColorShapeLinks.Common.AI.FutureMove type parameter is the
         ///   move performed.
+        /// * The `int` time parameter is the move thinking time in
+        ///   milliseconds.
         /// </remarks>
-        event Action<PColor, string, FutureMove> MovePerformed;
+        event Action<PColor, string, FutureMove, int> MovePerformed;
 
         /// <summary>
         /// Event raised when the match is over.

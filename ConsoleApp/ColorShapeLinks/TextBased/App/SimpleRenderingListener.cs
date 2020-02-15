@@ -95,10 +95,12 @@ namespace ColorShapeLinks.TextBased.App
 
         // Displays the move performed by the specified thinker
         private void MovePerformed(
-            PColor thinkerColor, string thinkerName, FutureMove move)
+            PColor thinkerColor, string thinkerName,
+            FutureMove move, int thinkingTime)
         {
             Console.WriteLine(ThinkerDesc(thinkerColor, thinkerName)
-                + $" placed a {move.shape} piece at column {move.column}");
+                + $" placed a {move.shape} piece at column {move.column}"
+                + $" after {thinkingTime}ms");
         }
 
         // Renders the match over screen, showing the final result

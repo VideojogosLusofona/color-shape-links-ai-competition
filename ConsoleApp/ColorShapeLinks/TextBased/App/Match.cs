@@ -159,8 +159,24 @@ namespace ColorShapeLinks.TextBased.App
                 // If the column had space for the move...
                 if (row >= 0)
                 {
+
+                    // Obtain thinking end time
+                    thinkTimeMillis = (int)(DateTime.Now - startTime)
+                        .TotalMilliseconds;
+
+                    // How much time left for the minimum apparent move time?
+                    timeLeftMillis = minMoveTimeMillis - thinkTimeMillis;
+
+                    // Was the minimum apparent move time reached
+                    if (timeLeftMillis > 0)
+                    {
+                        // If not, wait until it is reached
+                        Thread.Sleep(timeLeftMillis);
+                    }
+
                     // Notify listeners of the move performed
-                    MovePerformed?.Invoke(color, thinker.ToString(), move);
+                    MovePerformed?.Invoke(
+                        color, thinker.ToString(), move, thinkTimeMillis);
 
                     // Get possible winner and solution
                     winner = board.CheckWinner(solution);
@@ -183,23 +199,6 @@ namespace ColorShapeLinks.TextBased.App
                 // Notify listeners that thinker took too long to play
                 Timeout?.Invoke(color, thinker.ToString());
             }
-
-            // Obtain thinking end time
-            thinkTimeMillis = (int)(DateTime.Now - startTime)
-                .TotalMilliseconds;
-
-            // How much time is left for the minimum apparent move time?
-            timeLeftMillis = minMoveTimeMillis - thinkTimeMillis;
-
-            // Was the minimum apparent move time reached
-            if (timeLeftMillis > 0)
-            {
-                // If not, wait until it is reached
-                Thread.Sleep(timeLeftMillis);
-            }
-
-            // Notify listeners of how long thinker took to think
-            OnThinkingInfo($"{color} took {thinkTimeMillis}ms to play");
 
             // Notify listeners that the board was updated
             BoardUpdate?.Invoke(board);
@@ -226,7 +225,7 @@ namespace ColorShapeLinks.TextBased.App
         /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.NextTurn"/>
         public event Action<PColor, string> NextTurn;
 
-        /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchSubject.TurnInfo
+        /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchSubject.ThinkingInfo
         /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.ThinkingInfo"/>
         public event Action<string> ThinkingInfo;
 
@@ -236,7 +235,7 @@ namespace ColorShapeLinks.TextBased.App
 
         /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchSubject.MovePerformed
         /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.MovePerformed"/>
-        public event Action<PColor, string, FutureMove> MovePerformed;
+        public event Action<PColor, string, FutureMove, int> MovePerformed;
 
         /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchSubject.MatchOver
         /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.MatchOver"/>
