@@ -126,7 +126,7 @@ namespace ColorShapeLinks.Common
         /// <param name="squarePieces">
         /// Initial number of square pieces per player.
         /// </param>
-        public Board(int rows = 7, int cols = 7, int piecesInSequence = 4,
+        public Board(int rows = 6, int cols = 7, int piecesInSequence = 4,
             int roundPieces = 10, int squarePieces = 11)
         {
             // Aux. variables for determining win corridors
