@@ -4,8 +4,24 @@
     <ProjectReference Include="..\..\Common\Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\..\..\..\LICENSE_CODE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>ColorShapeLinks.TextBased.Lib</AssemblyName>
+    <RootNamespace>ColorShapeLinks.TextBased.Lib</RootNamespace>
+    <Authors>Nuno Fachada</Authors>
+    <Company>Lusófona University</Company>
+    <Description>Library code the Console-based app for the ColorShapeLinks AI competition and extensions</Description>
+    <Copyright>Copyright (c) 2019-2020 Nuno Fachada and Contributors</Copyright>
+    <PackageLicenseFile>LICENSE_CODE</PackageLicenseFile>
+    <PackageProjectUrl>https://videojogoslusofona.github.io/color-shape-links-ai-competition/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/VideojogosLusofona/color-shape-links-ai-competition</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
