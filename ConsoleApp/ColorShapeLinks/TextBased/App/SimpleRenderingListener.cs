@@ -20,20 +20,8 @@ namespace ColorShapeLinks.TextBased.App
     /// </summary>
     public class SimpleRenderingListener : IMatchListener
     {
-        // As turn info shown in this turn already?
-        private bool turnInfoShown;
-
-        // Vertical cursor position where turn info was initially posted for
-        // the current turn
-        private int vertCursorPos;
-
-        /// <summary>
-        /// Creates a new simple rendering listener.
-        /// </summary>
-        public SimpleRenderingListener()
-        {
-            turnInfoShown = false;
-        }
+        // Who's playing?
+        private PColor turn = PColor.White;
 
         /// <summary>
         /// Register the simple rendering listener with a match.
@@ -49,7 +37,7 @@ namespace ColorShapeLinks.TextBased.App
             subject.Timeout += Timeout;
             subject.MovePerformed += MovePerformed;
             subject.MatchOver += MatchOver;
-            subject.TurnInfo += TurnInfo;
+            subject.ThinkingInfo += ThinkingInfo;
         }
 
         // Helper method to create a consistent thinker description string
@@ -94,7 +82,7 @@ namespace ColorShapeLinks.TextBased.App
         private void NextTurn(PColor thinkerColor, string thinkerName)
         {
             Console.WriteLine($"{ThinkerDesc(thinkerColor, thinkerName)} turn");
-            turnInfoShown = false;
+            turn = thinkerColor;
         }
 
         // Displays notification that the specified thinker took too long to
@@ -149,28 +137,11 @@ namespace ColorShapeLinks.TextBased.App
             }
         }
 
-        // Show thinking/turn info
-        private void TurnInfo(ICollection<string> turnInfo)
+        // Show thinking info
+        private void ThinkingInfo(string thinkingInfo)
         {
-            // If turn info wasn't already shown, save the cursor position and
-            // mark it as shown
-            if (!turnInfoShown)
-            {
-                vertCursorPos = Console.CursorTop;
-                turnInfoShown = true;
-            }
-            else
-            {
-                // Otherwise move back the cursor to where the previous info
-                // was posted
-                Console.SetCursorPosition(0, vertCursorPos - turnInfo.Count);
-            }
-
-            // Show turn info, line by line
-            foreach (string info in turnInfo)
-            {
-                Console.WriteLine(info);
-            }
+            // Show thinking info
+            Console.WriteLine($"\t[{turn}] {thinkingInfo}");
         }
     }
 }

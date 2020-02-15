@@ -40,14 +40,12 @@ namespace ColorShapeLinks.TextBased.Lib
         event Action<PColor, string> NextTurn;
 
         /// <summary>
-        /// Event raised when there is new information regarding the current
-        /// turn.
+        /// Event raised when there is new thinking information available.
         /// </summary>
         /// <remarks>
-        /// * The `ICollection<string>` type parameter contains a collection of
-        ///   strings providing new information about the current turn.
+        /// * The `string` type parameter contains thinking information.
         /// </remarks>
-        event Action<ICollection<string>> TurnInfo;
+        event Action<string> ThinkingInfo;
 
         /// <summary>
         /// Event raised when a given player took too long to play,

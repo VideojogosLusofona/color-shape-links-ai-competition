@@ -24,12 +24,17 @@ namespace ColorShapeLinks.TextBased.App
         // Currently selected shape
         private PShape selectedShape;
 
+        // The time limit for the human to play in the current turn
+        private DateTime timeLimit;
+
         /// @copydoc ColorShapeLinks.Common.AI.AbstractThinker.Setup
         /// <seealso cref="ColorShapeLinks.Common.AI.AbstractThinker.Setup"/>
         public override void Setup(string str)
         {
             selectedCol = Cols / 2;
             selectedShape = PShape.Round;
+            Console.Clear();
+            Console.WriteLine("\n\n\n");
         }
 
         /// @copydoc ColorShapeLinks.Common.AI.IThinker.Think
@@ -42,15 +47,15 @@ namespace ColorShapeLinks.TextBased.App
             // By default, no move is performed in case of timeout
             FutureMove move = FutureMove.NoMove;
 
-            // Calculate the time limit
-            DateTime timeLimit =
-                DateTime.Now + TimeSpan.FromMilliseconds(TimeLimitMillis);
-
             // No thinking notification has taken place
             DateTime lastNotificationTime = DateTime.MinValue;
 
             // Set thinking notification interval between frames to 20ms
             TimeSpan notificationInterval = TimeSpan.FromMilliseconds(20);
+
+            // Calculate the time limit
+            timeLimit =
+                DateTime.Now + TimeSpan.FromMilliseconds(TimeLimitMillis);
 
             // If a certain type of piece is not available, make the other
             // type the selected one
@@ -128,6 +133,7 @@ namespace ColorShapeLinks.TextBased.App
                     {
                         // Drop piece and get out of the input loop
                         move = new FutureMove(selectedCol, selectedShape);
+                        Dialog(true);
                         break;
                     }
                 }
@@ -135,19 +141,15 @@ namespace ColorShapeLinks.TextBased.App
                 // If cancellation token is activated, terminate input loop
                 if (ct.IsCancellationRequested)
                 {
+                    Dialog(true);
                     break;
                 }
 
                 // Is it time for another thinking notification?
                 if (DateTime.Now > lastNotificationTime + notificationInterval)
                 {
-                    // If so, raise notification event with thinking
-                    // information
-                    OnThinkingInfo(new string[] {
-                        $"< > : Column [{selectedCol,8}] selected   ",
-                        $" T  : Piece  [{selectedShape,8}] selected  ",
-                        $"    : Time to play: {timeLimit - DateTime.Now, 14}"
-                    });
+                    // Show dialog
+                    Dialog();
 
                     // Update last notification time
                     lastNotificationTime = DateTime.Now;
@@ -156,6 +158,66 @@ namespace ColorShapeLinks.TextBased.App
 
             // Return chosen move
             return move;
+        }
+
+        // Show or clear the human input dialog
+        private void Dialog(bool clear = false)
+        {
+            // Information to show in the dialog
+            string dialog1 =
+                $"  < > : Column [{selectedCol,8}] selected  ";
+            string dialog2 =
+                $"   T  : Piece  [{selectedShape,8}] selected  ";
+            string dialog3 =
+                $"   Time to play: {timeLimit - DateTime.Now,14}   ";
+
+            // Keep where the cursor was before the dialog is shown or cleared
+            int prevPosLeft = Console.CursorLeft;
+            int prevPosTop = Console.CursorTop;
+
+            // Determine where to place the dialog
+            int dialogLeft = Console.WindowWidth / 2
+                - dialog3.Length / 2;
+            int dialogTop = Console.WindowHeight / 2 - 1;
+
+            // Show we clear the dialog or show it?
+            if (clear)
+            {
+                // Clear the dialog
+                string blank = "".PadRight(dialog1.Length);
+                for (int i = 0; i < 3; i++)
+                {
+                    Console.SetCursorPosition(dialogLeft, dialogTop + i);
+                    Console.Write(blank);
+                }
+            }
+            else
+            {
+                // Show the dialog
+
+                // Keep previous foreground and background colors
+                ConsoleColor prevFg = Console.ForegroundColor;
+                ConsoleColor prevBg = Console.BackgroundColor;
+
+                // Set dialog colors
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                // Draw the dialog
+                Console.SetCursorPosition(dialogLeft, dialogTop);
+                Console.Write(dialog1);
+                Console.SetCursorPosition(dialogLeft, dialogTop + 1);
+                Console.Write(dialog2);
+                Console.SetCursorPosition(dialogLeft, dialogTop + 2);
+                Console.Write(dialog3);
+
+                // Set the original foreground and background colors
+                Console.BackgroundColor = prevFg;
+                Console.ForegroundColor = prevBg;
+            }
+
+            // Set the cursor to its original position
+            Console.SetCursorPosition(prevPosLeft, prevPosTop);
         }
     }
 }

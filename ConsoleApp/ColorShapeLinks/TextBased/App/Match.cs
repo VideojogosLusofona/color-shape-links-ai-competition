@@ -204,9 +204,9 @@ namespace ColorShapeLinks.TextBased.App
         /// forwards this information to match listeners.
         /// </summary>
         /// <param name="info">Thinking info.</param>
-        private void OnThinkingInfo(ICollection<string> info)
+        private void OnThinkingInfo(string info)
         {
-            TurnInfo?.Invoke(info);
+            ThinkingInfo?.Invoke(info);
         }
 
         /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchSubject.BoardUpdate
@@ -218,8 +218,8 @@ namespace ColorShapeLinks.TextBased.App
         public event Action<PColor, string> NextTurn;
 
         /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchSubject.TurnInfo
-        /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.TurnInfo"/>
-        public event Action<ICollection<string>> TurnInfo;
+        /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.ThinkingInfo"/>
+        public event Action<string> ThinkingInfo;
 
         /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchSubject.Timeout
         /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.Timeout"/>
