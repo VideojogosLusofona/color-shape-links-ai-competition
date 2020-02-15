@@ -1,0 +1,6 @@
+<map id="SimpleRenderingListener" name="SimpleRenderingListener">
+<area shape="rect" id="node1" title="Simple event listener which renders thinker, match and session information on the console." alt="" coords="115,131,282,237"/>
+<area shape="rect" id="node2" href="$interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_thinker_listener.html" title="Interface to be implemented by classes who wish to listen to thinker events." alt="" coords="5,5,120,83"/>
+<area shape="rect" id="node3" href="$interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_match_listener.html" title="Interface to be implemented by classes who wish to listen to match events." alt="" coords="145,5,253,83"/>
+<area shape="rect" id="node4" href="$interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_session_listener.html" title="Interface to be implemented by classes who wish to listen to session events." alt="" coords="277,5,395,83"/>
+</map>

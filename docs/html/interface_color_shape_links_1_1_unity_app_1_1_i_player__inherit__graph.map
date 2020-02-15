@@ -1,0 +1,5 @@
+<map id="IPlayer" name="IPlayer">
+<area shape="rect" id="node1" title="Defines a player for the ColorShapeLinks board game." alt="" coords="91,5,197,83"/>
+<area shape="rect" id="node2" href="$class_color_shape_links_1_1_unity_app_1_1_a_i_player.html" title="Component which represents an AI thinker." alt="" coords="5,131,139,237"/>
+<area shape="rect" id="node3" href="$class_color_shape_links_1_1_unity_app_1_1_human_player.html" title="Represents a human player, for testing purposes." alt="" coords="163,145,269,223"/>
+</map>

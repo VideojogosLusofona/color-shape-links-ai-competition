@@ -1,0 +1,10 @@
+<map id="SessionController" name="SessionController">
+<area shape="rect" id="node1" title="Script which controls ColorShapeLinks sessions, which can include one or more matches." alt="" coords="392,491,579,964"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,307,117,384"/>
+<area shape="rect" id="node3" href="$interface_color_shape_links_1_1_common_1_1_session_1_1_i_match_data_provider.html" title="Defines a data provider for ColorShapeLinks matches." alt="" coords="141,299,280,391"/>
+<area shape="rect" id="node4" href="$interface_color_shape_links_1_1_common_1_1_session_1_1_i_match_config.html" title="Defines a match configuration, such as number of rows, number of columns, etc." alt="" coords="305,248,477,443"/>
+<area shape="rect" id="node5" href="$interface_color_shape_links_1_1_unity_app_1_1_i_match_view_config.html" title="Interface defining configuration options for match views." alt="" coords="501,307,661,384"/>
+<area shape="rect" id="node6" href="$interface_color_shape_links_1_1_unity_app_1_1_i_unity_session_data_provider.html" title="Defines a data provider for ColorShapeLinks Unity sessions, which include one or more matches." alt="" coords="685,285,872,406"/>
+<area shape="rect" id="node7" href="$interface_color_shape_links_1_1_common_1_1_session_1_1_i_session_data_provider.html" title="Defines a data provider for ColorShapeLinks sessions, which include one or more matches." alt="" coords="704,5,853,200"/>
+<area shape="rect" id="node8" href="$interface_color_shape_links_1_1_common_1_1_session_1_1_i_session_config.html" title="Defines a session configuration, points per win, per loss, etc." alt="" coords="896,292,1019,399"/>
+</map>

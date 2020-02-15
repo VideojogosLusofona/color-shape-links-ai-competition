@@ -1,0 +1,5 @@
+var class_color_shape_links_1_1_unity_app_1_1_human_player =
+[
+    [ "ToString", "class_color_shape_links_1_1_unity_app_1_1_human_player.html#aa73e7c4dd1df5fd5fbf81c7764ee1533", null ],
+    [ "ThinkerFQN", "class_color_shape_links_1_1_unity_app_1_1_human_player.html#ac9d1355149a17fbd50d3cace6fd015a7", null ]
+];

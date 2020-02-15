@@ -1,0 +1,7 @@
+<map id="GameOptions" name="GameOptions">
+<area shape="rect" id="node1" title="Command line game options, available to both the &quot;match&quot; and &quot;session&quot; verb commands." alt="" coords="71,248,243,487"/>
+<area shape="rect" id="node4" href="$class_color_shape_links_1_1_text_based_1_1_app_1_1_match_options.html" title="Command line match options, available only to the &quot;match&quot; verb command." alt="" coords="5,557,145,693"/>
+<area shape="rect" id="node5" href="$class_color_shape_links_1_1_text_based_1_1_app_1_1_session_options.html" title="Command line session options, available only to the &quot;session&quot; verb command." alt="" coords="169,535,309,715"/>
+<area shape="rect" id="node2" href="$class_color_shape_links_1_1_text_based_1_1_app_1_1_base_options.html" title="Command&#45;line base options, available to all verb commands." alt="" coords="14,57,131,149"/>
+<area shape="rect" id="node3" href="$interface_color_shape_links_1_1_common_1_1_session_1_1_i_match_config.html" title="Defines a match configuration, such as number of rows, number of columns, etc." alt="" coords="156,5,328,200"/>
+</map>

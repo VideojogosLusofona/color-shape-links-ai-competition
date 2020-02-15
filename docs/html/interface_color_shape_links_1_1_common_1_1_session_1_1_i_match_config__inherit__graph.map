@@ -1,0 +1,8 @@
+<map id="IMatchConfig" name="IMatchConfig">
+<area shape="rect" id="node1" title="Defines a match configuration, such as number of rows, number of columns, etc." alt="" coords="201,5,373,200"/>
+<area shape="rect" id="node2" href="$class_color_shape_links_1_1_common_1_1_session_1_1_match_config.html" title="Defines a match configuration, such as number of rows, number of columns, etc." alt="" coords="5,387,177,582"/>
+<area shape="rect" id="node3" href="$class_color_shape_links_1_1_text_based_1_1_app_1_1_game_options.html" title="Command line game options, available to both the &quot;match&quot; and &quot;session&quot; verb commands." alt="" coords="201,365,373,604"/>
+<area shape="rect" id="node6" href="$class_color_shape_links_1_1_unity_app_1_1_session_controller.html" title="Script which controls ColorShapeLinks sessions, which can include one or more matches." alt="" coords="398,248,585,721"/>
+<area shape="rect" id="node4" href="$class_color_shape_links_1_1_text_based_1_1_app_1_1_match_options.html" title="Command line match options, available only to the &quot;match&quot; verb command." alt="" coords="135,791,275,927"/>
+<area shape="rect" id="node5" href="$class_color_shape_links_1_1_text_based_1_1_app_1_1_session_options.html" title="Command line session options, available only to the &quot;session&quot; verb command." alt="" coords="299,769,439,949"/>
+</map>

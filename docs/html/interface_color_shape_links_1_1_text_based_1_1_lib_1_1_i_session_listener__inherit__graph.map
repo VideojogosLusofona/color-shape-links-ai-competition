@@ -1,0 +1,5 @@
+<map id="ISessionListener" name="ISessionListener">
+<area shape="rect" id="node1" title="Interface to be implemented by classes who wish to listen to session events." alt="" coords="131,5,249,83"/>
+<area shape="rect" id="node2" href="$class_color_shape_links_1_1_text_based_1_1_app_1_1_markdown_session_listener.html" title="Session event listener which outputs session information in Markdown format." alt="" coords="5,145,180,223"/>
+<area shape="rect" id="node3" href="$class_color_shape_links_1_1_text_based_1_1_app_1_1_simple_rendering_listener.html" title="Simple event listener which renders thinker, match and session information on the console." alt="" coords="204,131,371,237"/>
+</map>

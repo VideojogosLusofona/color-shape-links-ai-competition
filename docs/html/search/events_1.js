@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['beforematch_445',['BeforeMatch',['../interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_session_subject.html#a80d9bfab306283b5ad64278af59bd2aa',1,'ColorShapeLinks.TextBased.Lib.ISessionSubject.BeforeMatch()'],['../class_color_shape_links_1_1_text_based_1_1_lib_1_1_session_controller.html#a80d9bfab306283b5ad64278af59bd2aa',1,'ColorShapeLinks.TextBased.Lib.SessionController.BeforeMatch()']]],
+  ['beforesession_446',['BeforeSession',['../interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_session_subject.html#a1d0616d256c8ba00370cdf311d3e049c',1,'ColorShapeLinks.TextBased.Lib.ISessionSubject.BeforeSession()'],['../class_color_shape_links_1_1_text_based_1_1_lib_1_1_session_controller.html#a1d0616d256c8ba00370cdf311d3e049c',1,'ColorShapeLinks.TextBased.Lib.SessionController.BeforeSession()']]],
+  ['boardupdate_447',['BoardUpdate',['../interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_match_subject.html#a338e3606e88a0c70d7330d7fe4b74fc7',1,'ColorShapeLinks.TextBased.Lib.IMatchSubject.BoardUpdate()'],['../class_color_shape_links_1_1_text_based_1_1_lib_1_1_match_controller.html#a338e3606e88a0c70d7330d7fe4b74fc7',1,'ColorShapeLinks.TextBased.Lib.MatchController.BoardUpdate()']]]
+];

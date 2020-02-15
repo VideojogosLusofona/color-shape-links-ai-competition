@@ -1,0 +1,9 @@
+<map id="AbstractThinker" name="AbstractThinker">
+<area shape="rect" id="node1" title="The actual AI code of specific AIs should be placed in classes which extend this class." alt="" coords="315,131,453,325"/>
+<area shape="rect" id="node3" href="$class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_bad_move_a_i_thinker.html" title="This thinker always tries to make an invalid or illogical move. Used for testing purposes only." alt="" coords="5,381,139,473"/>
+<area shape="rect" id="node4" href="$class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_minimax_a_i_thinker.html" title="Sample AI thinker using a basic Minimax algorithm with a naive heuristic which previledges center boa..." alt="" coords="163,373,296,480"/>
+<area shape="rect" id="node5" href="$class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_random_a_i_thinker.html" title="Implementation of an AI that will play randomly." alt="" coords="321,381,447,473"/>
+<area shape="rect" id="node6" href="$class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_sequential_a_i_thinker.html" title="Implementation of an AI that will always play in sequence, from the first to the last column...." alt="" coords="472,388,611,465"/>
+<area shape="rect" id="node7" href="$class_color_shape_links_1_1_text_based_1_1_app_1_1_human_thinker.html" title="A human thinker for testing the console app." alt="" coords="635,381,741,473"/>
+<area shape="rect" id="node2" href="$interface_color_shape_links_1_1_common_1_1_a_i_1_1_i_thinker.html" title="The actual AI code of specific thinkers should be placed in classes which implement this interface." alt="" coords="347,5,421,83"/>
+</map>

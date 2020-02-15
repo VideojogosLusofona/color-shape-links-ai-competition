@@ -1,0 +1,6 @@
+<map id="BaseOptions" name="BaseOptions">
+<area shape="rect" id="node1" title="Command&#45;line base options, available to all verb commands." alt="" coords="98,5,215,97"/>
+<area shape="rect" id="node2" href="$class_color_shape_links_1_1_text_based_1_1_app_1_1_game_options.html" title="Command line game options, available to both the &quot;match&quot; and &quot;session&quot; verb commands." alt="" coords="71,145,243,384"/>
+<area shape="rect" id="node3" href="$class_color_shape_links_1_1_text_based_1_1_app_1_1_match_options.html" title="Command line match options, available only to the &quot;match&quot; verb command." alt="" coords="5,454,145,590"/>
+<area shape="rect" id="node4" href="$class_color_shape_links_1_1_text_based_1_1_app_1_1_session_options.html" title="Command line session options, available only to the &quot;session&quot; verb command." alt="" coords="169,432,309,612"/>
+</map>

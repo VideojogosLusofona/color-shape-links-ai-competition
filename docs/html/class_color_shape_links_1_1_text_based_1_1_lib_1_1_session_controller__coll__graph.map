@@ -1,0 +1,12 @@
+<map id="SessionController" name="SessionController">
+<area shape="rect" id="node1" title="Controls a session of ColorShapeLinks matches." alt="" coords="511,536,657,716"/>
+<area shape="rect" id="node2" href="$interface_color_shape_links_1_1_common_1_1_session_1_1_i_match_data_provider.html" title="Defines a data provider for ColorShapeLinks matches." alt="" coords="5,286,144,378"/>
+<area shape="rect" id="node3" href="$interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_session_subject.html" title="Interface defining the events raised in a session of ColorShapeLinks." alt="" coords="168,293,285,371"/>
+<area shape="rect" id="node4" href="$interface_color_shape_links_1_1_common_1_1_session_1_1_i_session_data_provider.html" title="Defines a data provider for ColorShapeLinks sessions, which include one or more matches." alt="" coords="309,235,459,429"/>
+<area shape="rect" id="node5" href="$interface_color_shape_links_1_1_common_1_1_a_i_1_1_i_thinker.html" title="The actual AI code of specific thinkers should be placed in classes which implement this interface." alt="" coords="483,293,557,371"/>
+<area shape="rect" id="node6" href="$class_color_shape_links_1_1_common_1_1_session_1_1_match.html" title="Represents one match in a tournament." alt="" coords="581,286,672,378"/>
+<area shape="rect" id="node7" href="$interface_color_shape_links_1_1_common_1_1_a_i_1_1_i_thinker_prototype.html" title="Interface for all thinker prototypes." alt="" coords="564,5,689,83"/>
+<area shape="rect" id="node8" href="$interface_color_shape_links_1_1_common_1_1_session_1_1_i_match_config.html" title="Defines a match configuration, such as number of rows, number of columns, etc." alt="" coords="787,235,959,429"/>
+<area shape="rect" id="node9" href="$interface_color_shape_links_1_1_common_1_1_session_1_1_i_session_config.html" title="Defines a session configuration, points per win, per loss, etc." alt="" coords="984,279,1107,385"/>
+<area shape="rect" id="node10" href="$class_color_shape_links_1_1_common_1_1_board.html" title="Represents the game board." alt="" coords="1131,191,1277,473"/>
+</map>
