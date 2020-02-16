@@ -70,7 +70,7 @@ namespace ColorShapeLinks.TextBased.App
                         {   // Play a match of ColorShapeLinks
 
                             // Create a new match with the parsed options
-                            Match match = new Match(o);
+                            MatchController match = new MatchController(o);
 
                             // Register match listeners
                             RegisterListeners(match, o.Listeners);

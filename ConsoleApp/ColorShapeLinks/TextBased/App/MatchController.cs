@@ -1,5 +1,6 @@
 /// @file
-/// @brief This file contains the ::ColorShapeLinks.TextBased.App.Match class.
+/// @brief This file contains the
+/// ::ColorShapeLinks.TextBased.App.MatchController class.
 ///
 /// @author Nuno Fachada
 /// @date 2020
@@ -18,7 +19,7 @@ namespace ColorShapeLinks.TextBased.App
     /// <summary>
     /// This class runs a game-engine independent match of ColorShapeLinks.
     /// </summary>
-    public class Match : IMatchSubject
+    public class MatchController : IMatchSubject
     {
         // Maximum time a thinker has to think
         private readonly int timeLimitMillis;
@@ -42,7 +43,7 @@ namespace ColorShapeLinks.TextBased.App
         /// Sets up a new match.
         /// </summary>
         /// <param name="options">Match options.</param>
-        public Match(Options options)
+        public MatchController(Options options)
         {
             // Initialize the solution array
             solution = new Pos[options.WinSequence];
