@@ -11,17 +11,25 @@ work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 # ColorShapeLinks AI competition
 
 This competition has been accepted for the [IEEE CoG 2020] conference!
+Important notes:
 
-The available code is final and the documentation will be available by
-February 16.
+* The development framework **must** be downloaded with the following
+ command (requires [Git] ≥ 2.13 and [Git LFS], other approaches will not work):
+  ```text
+  git clone --recurse-submodules https://github.com/VideojogosLusofona/color-shape-links-ai-competition.git
+  ```
+
+* The API documentation is finalized and available [here][APIDocs].
+* This document and a "How to" video are under development and will be
+  available in a few days.
 
 ## Description
 
 ColorShapeLinks is an AI competition for the [Simplexity] board game with
 arbitrary game dimensions. The first player to place *n* pieces of the same
 type in a row wins. In this regard, the base game, with a 6 x 7 board and
-_n_ = 4, is similar to [Connect Four]. However, the type of piece is defined
-not only by color, but also by shape. Shape can be round or square. Round
+_n_ = 4, is similar to [Connect Four]. However, pieces are defined
+not only by color, but also by shape: round or square. Round
 or white pieces offer the win to player 1, while square or red pieces
 do the same for player 2. Contrary to color, players start the game with
 pieces of both shapes. This means that a less observant player
@@ -71,27 +79,47 @@ following criteria (from most to least important):
 4. If the tie persists, the AIs are considered officially tied and *ex aequo*
    winners of the competition.
 
+### Submitting your AI
+
+_Work in progress_
+
 ## The AI code
 
-Competition code must be implemented in C# and be compatible with the
-cross-platform [.NET Standard 2.0].
+<!--* [Downloading the development framework](#downloading-the-development-framework)-->
+* [Overview](#overview)
+* [Rules](#rules)
+* [Testing the AI in the console](testing-the-ai-in-the-console)
+* [Testing the AI in Unity](testing-the-ai-in-unity)
+
+<!--### Downloading the development framework
+
+To download/clone the development framework, i.e., the code in this repository,
+use the following Git command:
+
+```text
+git clone --recurse-submodules https://github.com/VideojogosLusofona/color-shape-links-ai-competition.git
+```
+
+Note that downloading the ZIP file or performing a regular clone will not work.
+Additionally, it requires [Git] 2.13 or later and [Git LFS].
+-->
+
+### Overview
+
+Competition code must be implemented in C# and restrict itself to
+cross-platform [.NET Standard 2.0] API calls.
 
 At least one class is required for the AI to work. This class should extend
-the [`AbstractThinker`] class, which defines the `Think()` method, which in
-turn accepts the [game board][`Board`] and a
-[cancellation token][`CancellationToken`], returning a [`FutureMove`]. Simply
-put, the method accepts the game board, the AI decides the best move to
-perform, and returns that move, which will eventually be executed by the game
-engine.
+[`AbstractThinker`] and implement the [`Think()`] method. This method accepts
+the [game board][`Board`] and a [cancellation token][`CancellationToken`],
+returning a [`FutureMove`]. Simply put, the method accepts the game board,
+the AI decides the best move to perform, and returns that move, which will
+eventually be executed by the match engine.
 
-The `Think()` method is called in a separate thread. As such, it should not try
-to access shared data and restrict itself to the [.NET Standard 2.0] API.
-Third-party libraries can be used if cross-platform and compatible with
-[.NET Standard 2.0]. The AI code and libraries used must be open-source.
-
-The main thread may ask the AI to stop *thinking*, for example if the thinking
-time limit has expired. Thus, while *thinking*, the AI should frequently test
-if a cancellation request was made to the
+The [`Think()`] method is called in a separate thread. As such, it should not
+try to access shared data. The main thread may ask the AI to stop *thinking*,
+for example if the thinking time limit has expired. Thus, while *thinking*,
+the AI should frequently test if a cancellation request was made to the
 [cancellation token][`CancellationToken`]. If so, it should return immediately
 with no move performed, as exemplified in the following code:
 
@@ -101,28 +129,37 @@ if (ct.IsCancellationRequested) return FutureMove.NoMove;
 
 The thinker can freely modify the [game board][`Board`], since this is a copy
 and not the original game board being used in the main thread. More
-specifically, the thinker can try moves with the `DoMove()` method, and cancel
-them with the `UndoMove()` method. The board keeps track of the move history,
-so the thinker can perform any sequence of moves, and roll them back
+specifically, the thinker can try moves with the [`DoMove()`] method, and
+cancel them with the [`UndoMove()`] method. The board keeps track of the move
+history, so the thinker can perform any sequence of moves, and roll them back
 afterwards.
 
-The `CheckWinner()` method is useful to determine if there is a winner. If
+The [`CheckWinner()`] method is useful to determine if there is a winner. If
 there is one, the solution is placed in the method's optional parameter.
 
-For building heuristics, the public read-only variable `winCorridors` might be
-important. This variable is a collection containing all corridors (sequences of
-positions) where promising or winning piece sequences may exist.
+For building heuristics, the public read-only variable [`winCorridors`] might
+be important. This variable is a collection containing all corridors
+(sequences of positions) where promising or winning piece sequences may exist.
 
-The AI code can be tested using the console or the [Unity] game engine, both of
-which are discussed in the next sections.
+### Rules for the AI code
+
+* Can only use cross-platform [.NET Standard 2.0] API calls in C#.
+* Can use additional libraries which abide by these same rules.
+* Both the AI code and libraries must be made available under a
+  [valid open source license][ossl], although AI codes can be open-sourced
+  only after the competition deadline.
+* Must run in the same process that invokes it.
+* Can be multithreaded and use [`unsafe`] contexts.
+* Cannot *think* in its opponent time (e.g., by using a background thread).
+* Can only probe the environment for the number of processor cores. It cannot
+  search or use any other information, besides what is already available in the
+  [`AbstractThinker`] class or passed to the [`Think()`] method, e.g., such as
+  using reflection to probe the capabilities of its opponents.
+* Cannot use more than 2GB of memory during the course of a match.
 
 ### Testing the AI in the console
 
-***TO DO*** before February 15:
-* All the
-  [game code](https://github.com/VideojogosLusofona/color-shape-links-ai-competition/tree/master/Assets/Scripts/BoardGame)
-  is Unity-independent. However, automated testing of AIs via console is
-  not yet implemented (and will only be so if the proposal is accepted).
+_Work in progress_
 
 ### Testing the AI in Unity
 
@@ -132,8 +169,7 @@ The project should be executed within the Unity editor, not as a standalone
 build. Project execution can be configured by manipulating the
 `SessionConfiguration` game object in the Unity Editor. This is done by: 1)
 editing the fields of the [`SessionController`] script; and, 2) adding or
-removing AI scripts, i.e., scripts which extend [`AIPlayer`] (see the
-[An additional class for Unity](#an-additional-class-for-unity) section).
+removing instances of the [`AIPlayer`] component.
 
 ![game](https://user-images.githubusercontent.com/3018963/72279861-f250d280-362e-11ea-9c8a-9244dad16f11.jpg)
 
@@ -151,48 +187,33 @@ Tournaments occur automatically if there are more than two AI scripts active in
 the `SessionConfiguration` game object. Otherwise a single match is played,
 as discussed in the next section.
 
-#### Adding and removing AI scripts
+#### Adding and removing `AIPlayer` instances
 
-Zero or more AI scripts can be added to the `SessionConfiguration` game
-object. These scripts extend the [`AIPlayer`] class, as discussed in the
-following section. The number of active AI
-scripts in the `SessionConfiguration` game object determines what type of
-session will run:
+An instance of the [`AIPlayer`] component represents one AI thinker. Zero or
+more instances of this component can be added to the `SessionConfiguration`
+game object. Instances of this component has the following configurable
+fields:
 
-* Zero active AI scripts: a match between human players will take place.
-* One active AI script: a game between the AI and a human player will take
+* **Is Active**: specifies if the selected AI thinker is active.
+* **Selected AI**: the AI thinker represented by this component instance,
+  selected from a list of known AI thinkers (i.e., classes extending
+  [`AbstractThinker`]).
+* **AI Config**: optional thinker-specific parameters (e.g. maximum search
+  depth).
+
+The number of active [`AIPlayer`] component instances attached to the
+`SessionConfiguration` game object determines what type of session will run:
+
+* Zero active instances: a match between human players will take place.
+* One active instance: a game between the AI and a human player will take
   place.
-* Two active AI scripts: a game between the two AIs will take place.
-* More than two active AI scripts: a **tournament session** will take place,
+* Two active instances: a game between the two AIs will take place.
+* More than two active instances: a **tournament session** will take place,
   where each AI plays against all other AIs twice, one as the first player
   (white), another as the second player (red).
 
 During and after the tournament session, all match results as well as current
 standings / classifications, are presented.
-
-#### An additional class for Unity
-
-For the AI to be tested in Unity, an additional class, which extends
-[`AIPlayer`], must be implemented. This class allows an AI to be found and
-optionally configured in the Unity editor. For that purpose, it must
-be added as a component of the `SessionConfiguration` game object, and
-implement the following read-only properties:
-
-1. `PlayerName`, which should return the _string_ with the AI's name.
-2. `Thinker`, which should return an instance of the class that implements
-   [`IThinker`].
-
-The instance of the class that implements [`IThinker`] should be created in the
-`Setup()` method, which needs to be overridden when extending [`AIPlayer`].
-The [example AIs][`Assets/Scripts/AI/AIs/`] demonstrate how this should be
-done.
-
-For configuring the AI in the Unity editor, the class that extends [`AIPlayer`]
-can have editable fields (e.g. maximum search depth). Following best practices,
-these fields should be private and have the [`SerializeField`] attribute.
-
-The time limit is available in the `AITimeLimit` property, and can be passed to
-the thinker during its instantiation in the `Setup()` method.
 
 ## Licenses
 
@@ -204,8 +225,11 @@ License][CC BY-NC-SA 4.0].
 ## Metadata
 
 * Author: [Nuno Fachada]
-* Institution: [Universidade Lusófona de Humanidades e Tecnologias][ULHT]
+* Institution: [Lusófona University][ULHT]
 
+[Git]:https://git-scm.com/downloads
+[Git LFS]:https://git-lfs.github.com/
+[APIDocs]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/index.html
 [MPLv2]:https://opensource.org/licenses/MPL-2.0
 [CC BY-NC-SA 4.0]:https://creativecommons.org/licenses/by-nc-sa/4.0/
 [licvideo]:https://www.ulusofona.pt/en/undergraduate/videogames
@@ -218,11 +242,18 @@ License][CC BY-NC-SA 4.0].
 [.NET Standard 2.0]:https://docs.microsoft.com/en-us/dotnet/standard/net-standard
 [.NET Core 2.0]:https://dotnet.microsoft.com/download
 [Unity]:https://unity.com/
-[`AIPlayer`]:Assets/Scripts/AI/AIPlayer.cs
-[`IThinker`]:Assets/Scripts/AI/IThinker.cs
-[`Board`]:Assets/Scripts/BoardGame/Board.cs
-[`FutureMove`]:Assets/Scripts/FutureMove.cs
-[`SessionController`]:Assets/Scripts/SessionController.cs
+[`AbstractThinker`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html
+[`Think()`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#ac8039cba1e4ececb04322fb8e7610f0e
+[`Board`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/class_color_shape_links_1_1_common_1_1_board.html
+[`FutureMove`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/struct_color_shape_links_1_1_common_1_1_a_i_1_1_future_move.html
+[ossl]:https://opensource.org/licenses
+[`unsafe`]:https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/unsafe-code-pointers/
+[`SessionController`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/class_color_shape_links_1_1_unity_app_1_1_session_controller.html
+[`DoMove()`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/class_color_shape_links_1_1_common_1_1_board.html#af97ec0281f2420e4594b1000b609ab73
+[`UndoMove()`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/class_color_shape_links_1_1_common_1_1_board.html#a4f5022f3b6c72a4bba9fad39f631beee
+[`CheckWinner()`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/class_color_shape_links_1_1_common_1_1_board.html#a7088451ab7b87b7cac15be65ea521306
+[`winCorridors`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/class_color_shape_links_1_1_common_1_1_board.html#a518b85b41ceb010c4f7104395977ff85
+[`AIPlayer`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/class_color_shape_links_1_1_unity_app_1_1_a_i_player.html
 [`Assets/Scripts/AI/AIs/`]:https://github.com/VideojogosLusofona/color-shape-links-ai-competition/tree/master/Assets/Scripts/AI/AIs
 [`CancellationToken`]:https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken
 [`SerializeField`]:https://docs.unity3d.com/ScriptReference/SerializeField.html
