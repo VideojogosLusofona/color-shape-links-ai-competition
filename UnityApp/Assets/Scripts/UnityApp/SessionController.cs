@@ -8,7 +8,6 @@
 
 using System;
 using System.Linq;
-using System.Threading;
 using System.Collections.Generic;
 using UnityEngine;
 using ColorShapeLinks.Common;
@@ -32,14 +31,6 @@ namespace ColorShapeLinks.UnityApp
     public class SessionController
         : MonoBehaviour, IMatchDataProvider, ISessionDataProvider, IGameConfig
     {
-
-        // Internal auxiliary class used for match making
-        private struct DummyThinker : IThinker
-        {
-            public FutureMove Think(Board board, CancellationToken ct)
-                => throw new InvalidOperationException(
-                    "This is just a dummy thinker");
-        }
 
         // ///////////////////////////////////////////////// //
         // Match properties configurable in the Unity editor //
@@ -131,20 +122,16 @@ namespace ColorShapeLinks.UnityApp
         // Reference to the game board in the current match instance
         private Board currentBoard;
 
-        // Dictionary of all matches played and to be player, each match being
-        // associated with a result
-        private IDictionary<Match, Winner> allMatches;
-
-        // Current standings / classification (important for tournament mode
-        // only)
-        private IDictionary<IThinker, int> standings;
-
         // Match enumerator, for going through each match one by one
         private IEnumerator<Match> matchEnumerator;
 
         // Reference to a human player, in case there aren't enough AIs to
         // create a match
         private IPlayer humanPlayer;
+
+        // The tournament instance manages the matches to be played and the
+        // tournament standings
+        private Tournament tournament;
 
         // Variables which define how several session UI screens will behave
         private bool uiWhoPlaysFirst;
@@ -178,14 +165,6 @@ namespace ColorShapeLinks.UnityApp
             if (activeThinkers.Count < 2)
                 humanPlayer = new HumanPlayer();
 
-            // Instantiate the matches table
-            allMatches = new SortedList<Match, Winner>();
-
-            // Instantiate the standings table and populate it with all
-            // thinkers with zero points
-            standings = new Dictionary<IThinker, int>();
-            foreach (IThinker t in activeThinkers) standings.Add(t, 0);
-
             // Setup session depending on how many AIs will play
             if (activeThinkers.Count == 0)
             {
@@ -193,9 +172,9 @@ namespace ColorShapeLinks.UnityApp
                 uiWhoPlaysFirst = false;
                 uiBlockStartNextMatch = true;
                 uiBlockShowResult = true;
-                allMatches.Add(
-                    new Match(humanPlayer.Thinker, humanPlayer.Thinker),
-                    Winner.None);
+                tournament = new Tournament(
+                    new IThinker[] { humanPlayer.Thinker, humanPlayer.Thinker},
+                    pointsPerWin, pointsPerLoss, pointsPerDraw);
             }
             else if (activeThinkers.Count == 1)
             {
@@ -203,9 +182,9 @@ namespace ColorShapeLinks.UnityApp
                 uiWhoPlaysFirst = true;
                 uiBlockStartNextMatch = true;
                 uiBlockShowResult = true;
-                allMatches.Add(
-                    new Match(humanPlayer.Thinker, activeThinkers[0]),
-                    Winner.None);
+                tournament = new Tournament(
+                    new IThinker[] { humanPlayer.Thinker, activeThinkers[0]},
+                    pointsPerWin, pointsPerLoss, pointsPerDraw);
             }
             else if (activeThinkers.Count == 2)
             {
@@ -213,61 +192,22 @@ namespace ColorShapeLinks.UnityApp
                 uiWhoPlaysFirst = true;
                 uiBlockStartNextMatch = true;
                 uiBlockShowResult = true;
-                allMatches.Add(
-                    new Match(
-                        activeThinkers[0],
-                        activeThinkers[1]),
-                        Winner.None);
+                tournament = new Tournament(
+                    new IThinker[] { activeThinkers[0], activeThinkers[1] },
+                    pointsPerWin, pointsPerLoss, pointsPerDraw);
             }
             else
             {
-                // Multiple AIs, run a tournament
+                // Multiple AIs, run a complete tournament
                 uiWhoPlaysFirst = false;
                 uiBlockStartNextMatch = pressButtonBeforeMatch;
                 uiBlockShowResult = pressButtonAfterMatch;
-
-                // In this mode we need an even number of players to set up the
-                // matches, so add a fake one if necessary
-                if (activeThinkers.Count % 2 != 0)
-                    activeThinkers.Add(new DummyThinker());
-
-                // Setup matches using the round-robin method
-                // https://en.wikipedia.org/wiki/Round-robin_tournament
-                for (int i = 1; i < activeThinkers.Count; i++)
-                {
-                    // This will be the thinker to swap position after each
-                    // round
-                    IThinker thinkerToSwapPosition;
-
-                    // Set up matches for current round i
-                    for (int j = 0; j < activeThinkers.Count / 2; j++)
-                    {
-                        // This is match j for current round i
-                        Match match = new Match(
-                            activeThinkers[j],
-                            activeThinkers[activeThinkers.Count - 1 - j]);
-                        // Only add match to match list if it's not a dummy
-                        // match
-                        if (!(match.thinker1 is DummyThinker
-                            || match.thinker2 is DummyThinker))
-                        {
-                            // Each match is in practice two matches, so both
-                            // AIs can have a match where they are the first to
-                            // play
-                            allMatches.Add(match, Winner.None);
-                            allMatches.Add(match.Swapped, Winner.None);
-                        }
-                    }
-                    // Swap AI positions for next round
-                    thinkerToSwapPosition =
-                        activeThinkers[activeThinkers.Count - 1];
-                    activeThinkers.RemoveAt(activeThinkers.Count - 1);
-                    activeThinkers.Insert(1, thinkerToSwapPosition);
-                }
+                tournament = new Tournament(activeThinkers,
+                    pointsPerWin, pointsPerLoss, pointsPerDraw, true);
             }
 
             // Get the match enumerator and initialize it
-            matchEnumerator = allMatches.Keys.ToList().GetEnumerator();
+            matchEnumerator = tournament.GetEnumerator();
             matchEnumerator.MoveNext();
             currentMatch = matchEnumerator.Current;
         }
@@ -331,34 +271,7 @@ namespace ColorShapeLinks.UnityApp
         private void EndCurrentMatchCallback()
         {
             // Keep result of current match
-            allMatches[currentMatch] = matchController.Result;
-
-            // If we are in tournament mode, update standings / classification
-            if (standings.Count > 2)
-            {
-                switch (matchController.Result)
-                {
-                    // White won
-                    case Winner.White:
-                        standings[currentMatch.thinker1] += pointsPerWin;
-                        standings[currentMatch.thinker2] += pointsPerLoss;
-                        break;
-                    // Red won
-                    case Winner.Red:
-                        standings[currentMatch.thinker2] += pointsPerWin;
-                        standings[currentMatch.thinker1] += pointsPerLoss;
-                        break;
-                    // Game ended in a draw
-                    case Winner.Draw:
-                        standings[currentMatch.thinker1] += pointsPerDraw;
-                        standings[currentMatch.thinker2] += pointsPerDraw;
-                        break;
-                    // Invalid situation
-                    default:
-                        throw new InvalidOperationException(
-                            "Invalid end of match result");
-                }
-            }
+            tournament.SetResult(currentMatch, matchController.Result);
 
             // Set session state to PostMatch
             state = SessionState.PostMatch;
@@ -440,17 +353,17 @@ namespace ColorShapeLinks.UnityApp
 
         /// @copydoc ISessionDataProvider.Matches
         /// <seealso cref="ISessionDataProvider.Matches"/>
-        public IEnumerable<Match> Matches => allMatches.Keys;
+        public IEnumerable<Match> Matches => tournament;
 
         /// @copydoc ISessionDataProvider.Results
         /// <seealso cref="ISessionDataProvider.Results"/>
         public IEnumerable<KeyValuePair<Match, Winner>> Results =>
-            allMatches.Where(kvp => kvp.Value != Winner.None);
+            tournament.GetResults();
 
         /// @copydoc ISessionDataProvider.Standings
         /// <seealso cref="ISessionDataProvider.Standings"/>
         public IEnumerable<KeyValuePair<IThinker, int>> Standings =>
-            standings.OrderByDescending(kvp => kvp.Value);
+            tournament.GetStandings();
 
         /// @copydoc ISessionDataProvider.LastMatchResult
         /// <seealso cref="ISessionDataProvider.LastMatchResult"/>
