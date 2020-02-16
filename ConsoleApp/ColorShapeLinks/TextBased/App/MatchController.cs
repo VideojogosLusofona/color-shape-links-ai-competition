@@ -65,7 +65,8 @@ namespace ColorShapeLinks.TextBased.App
                 options.Thinker2, options, options.Thinker2Params);
 
             // Listen to the thinking info produced by each thinker
-            foreach (IThinker t in thinkers) t.ThinkingInfo += OnThinkingInfo;
+            foreach (IThinker t in thinkers)
+                (t as AbstractThinker).ThinkingInfo += OnThinkingInfo;
 
             // Instantiate a new game board
             board = new Board(options.Rows, options.Cols,
