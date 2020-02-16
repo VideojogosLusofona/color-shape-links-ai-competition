@@ -34,15 +34,5 @@ namespace ColorShapeLinks.Common.AI
         /// ```
         /// </remarks>
         FutureMove Think(Board board, CancellationToken ct);
-
-        /// <summary>
-        /// Event raised when thinkers produce information while thinking.
-        /// </summary>
-        /// <remarks>
-        /// * Listeners receive a string containing the thinking information.
-        /// * It is not mandatory that thinkers produce any information while
-        ///   thinking.
-        /// </remarks>
-        event Action<string> ThinkingInfo;
     }
 }
