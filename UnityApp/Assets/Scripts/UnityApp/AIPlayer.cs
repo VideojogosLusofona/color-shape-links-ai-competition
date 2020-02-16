@@ -26,7 +26,7 @@ namespace ColorShapeLinks.UnityApp
         /// <summary>
         /// Selected AI thinker.
         /// </summary>
-        [SerializeField][AIList] private string selectedAI = null;
+        [SerializeField] [AIList] private string selectedAI = null;
 
         /// <summary>
         /// String containing AI thinker-specific parameters.
@@ -37,31 +37,39 @@ namespace ColorShapeLinks.UnityApp
         /// <value>`true` if the AI is active, `false` otherwise.</value>
         public bool IsActive => isActive;
 
-        /// <summary>Is the player human?</summary>
-        /// <value>Always `false`.</value>
-        /// <seealso cref="IPlayer.IsHuman"/>
-        public bool IsHuman => false;
-
         /// <summary>The AI thinker instance.</summary>
-        /// <value>An instance of <see cref="IThinker"/>.</value>
+        /// <value>
+        /// An instance of <see cref="ColorShapeLinks.Common.AI.IThinker"/>.
+        /// </value>
         /// <seealso cref="IPlayer.Thinker"/>
-        public IThinker Thinker { get; private set; }
-
-        /// <summary>
-        /// Awake is called when the script instance is being loaded.
-        /// </summary>
-        private void Awake()
+        public IThinker Thinker
         {
-            // Obtain the component holding the game configuration
-            IGameConfig gameConfig = GetComponent<IGameConfig>();
+            get
+            {
+                // The underlying thinker is lazy instantiated
+                if (thinker == null)
+                {
+                    // Obtain the component holding the game configuration
+                    IGameConfig gameConfig = GetComponent<IGameConfig>();
 
-            // Instantiate the thinker
-            Thinker = AIManager.Instance.NewThinker(
-                selectedAI, gameConfig, aiConfig);
+                    // Instantiate the thinker
+                    AbstractThinker aThinker = AIManager.Instance.NewThinker(
+                        selectedAI, gameConfig, aiConfig);
 
-            // Thinking information is printed in the Unity console
-            Thinker.ThinkingInfo += Debug.Log;
+                    // Thinking information is printed in the Unity console
+                    aThinker.ThinkingInfo += Debug.Log;
+
+                    // Keep the thinker in the auto property
+                    thinker = aThinker;
+                }
+
+                // Return the underlying thinker
+                return thinker;
+            }
         }
+
+        // Private reference to the underlying thinker instance
+        private IThinker thinker;
 
         /// <summary>
         /// A string representation of the underlying AI thinker.

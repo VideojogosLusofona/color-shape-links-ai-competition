@@ -7,6 +7,7 @@
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using ColorShapeLinks.Common;
+using ColorShapeLinks.Common.AI;
 
 namespace ColorShapeLinks.UnityApp
 {
@@ -19,9 +20,9 @@ namespace ColorShapeLinks.UnityApp
         /// <value>The game board.</value>
         Board Board { get; }
 
-        /// <summary>The current player.</summary>
-        /// <value>The current player.</value>
-        IPlayer CurrentPlayer { get; }
+        /// <summary>The current thinker.</summary>
+        /// <value>The current thinker.</value>
+        IThinker CurrentThinker { get; }
 
         /// <summary>
         /// Maximum real time in seconds that AI can take to play.
@@ -42,9 +43,9 @@ namespace ColorShapeLinks.UnityApp
         /// <value>Last move animation length in seconds.</value>
         float LastMoveAnimLength { get; }
 
-        /// <summary>Get player of the specified color.</summary>
-        /// <param name="player">Color of the player to get.</param>
-        /// <returns>Player of the specified color.</returns>
-        IPlayer GetPlayer(PColor player);
+        /// <summary>Get thinker of the specified color.</summary>
+        /// <param name="thinkerColor">Color of the thinker to get.</param>
+        /// <returns>Thinker of the specified color.</returns>
+        IThinker GetThinker(PColor thinkerColor);
     }
 }

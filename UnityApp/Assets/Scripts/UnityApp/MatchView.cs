@@ -215,7 +215,7 @@ namespace ColorShapeLinks.UnityApp
                 uiArrows[c].Click.AddListener(OnMoveSelected);
 
                 // Enable or disable arrow depending on who's playing
-                currArrow.SetActive(matchData.CurrentPlayer.IsHuman);
+                currArrow.SetActive(matchData.CurrentThinker is HumanThinker);
             }
 
             // These will be necessary for calculating the positions of the
@@ -286,7 +286,7 @@ namespace ColorShapeLinks.UnityApp
                 );
                 // Set player name in panel
                 panel.GetComponentInChildren<Text>().text =
-                    matchData.GetPlayer(player).ToString();
+                    matchData.GetThinker(player).ToString();
 
                 // Configure toggles for selecting shape
                 for (int j = 0; j < 2; j++)
@@ -330,7 +330,7 @@ namespace ColorShapeLinks.UnityApp
                         {
                         // Player is human, is its turn and game not over,
                         // enable toggle
-                        if (matchData.GetPlayer(player).IsHuman
+                        if (matchData.GetThinker(player) is HumanThinker
                                 && player == board.Turn && !finished)
                             {
                                 toggles[(int)shape].interactable = true;
@@ -500,7 +500,7 @@ namespace ColorShapeLinks.UnityApp
             foreach (HumanMoveButton arrow in uiArrows)
             {
                 arrow.gameObject.SetActive(
-                    !finished && matchData.CurrentPlayer.IsHuman);
+                    !finished && matchData.CurrentThinker is HumanThinker);
             }
 
             // Notify listeners that board was updated

@@ -7,6 +7,7 @@
 
 using System;
 using ColorShapeLinks.Common;
+using ColorShapeLinks.Common.AI;
 
 namespace ColorShapeLinks.UnityApp
 {
@@ -21,46 +22,46 @@ namespace ColorShapeLinks.UnityApp
         // The match ID
         private readonly int id;
 
-        /// <summary>First player in this match (white).</summary>
-        public readonly IPlayer player1;
+        /// <summary>First thinker in this match (white).</summary>
+        public readonly IThinker thinker1;
 
-        /// <summary>Second player in this match (ref).</summary>
-        public readonly IPlayer player2;
+        /// <summary>Second thinker in this match (ref).</summary>
+        public readonly IThinker thinker2;
 
-        /// <summary>Indexer for getting a player based on his color.</summary>
-        /// <param name="color">Player color.</param>
-        /// <returns>The player associated with the given color.</returns>
+        /// <summary>Indexer for getting a thinker based on his color.</summary>
+        /// <param name="color">Thinker color.</param>
+        /// <returns>The thinker associated with the given color.</returns>
         /// <exception cref="System.InvalidOperationException">
         /// Thrown when an invalid color is given.
         /// </exception>
-        public IPlayer this[PColor color] => color == PColor.White ? player1
-                : color == PColor.Red ? player2
+        public IThinker this[PColor color] => color == PColor.White ? thinker1
+                : color == PColor.Red ? thinker2
                     : throw new InvalidOperationException(
-                        $"Invalid player color");
+                        $"Invalid thinker color");
 
-        /// <summary>A match with the players swapped.</summary>
+        /// <summary>A match with the thinkers swapped.</summary>
         /// <value>A new match instance.</value>
-        public Match Swapped => new Match(player2, player1);
+        public Match Swapped => new Match(thinker2, thinker1);
 
         /// <summary>Create a new match.</summary>
-        /// <param name="player1">First player in match (white).</param>
-        /// <param name="player2">Second player in match (red).</param>
-        public Match(IPlayer player1, IPlayer player2)
+        /// <param name="thinker1">First thinker in match (white).</param>
+        /// <param name="thinker2">Second thinker in match (red).</param>
+        public Match(IThinker thinker1, IThinker thinker2)
         {
             // Each new match will have increasing IDs
             id = nextId++;
-            // Keep references to players
-            this.player1 = player1;
-            this.player2 = player2;
+            // Keep references to thinkers
+            this.thinker1 = thinker1;
+            this.thinker2 = thinker2;
         }
 
-        /// <summary>A string representation of this match.</summary>
+        /// <summary>Returns a string representation of this match.</summary>
         /// <returns>A string representation of this match.</returns>
-        public override string ToString() => $"{player1} vs {player2}";
+        public override string ToString() => $"{thinker1} vs {thinker2}";
 
         /// <summary>
         /// Compares this match with another match. Comparisons are made using
-        /// an internal ID, except if the players are the same and in the same
+        /// an internal ID, except if the thinkers are the same and in the same
         /// order, in which case matches are considered equal, even if they
         /// have different internal IDs.
         /// </summary>
@@ -68,7 +69,7 @@ namespace ColorShapeLinks.UnityApp
         /// The match to compare the current match with.
         /// </param>
         /// <returns>
-        /// * Zero if players are the same and are in the same order.
+        /// * Zero if thinkers are the same and are in the same order.
         /// * Negative value if current match was created before match given in
         /// <paramref name="other"/>.
         /// * Positive value if current match was created after match given in
@@ -78,16 +79,15 @@ namespace ColorShapeLinks.UnityApp
 
         /// <summary>Returns a hash code for this match.</summary>
         /// <returns>
-        /// Hash code obtain from the string concatenation of the player's
+        /// Hash code obtain from the string concatenation of the thinker's
         /// names.
         /// </returns>
-        public override int GetHashCode() =>
-            (player1.ToString() + player2.ToString()).GetHashCode();
+        public override int GetHashCode() => ToString().GetHashCode();
 
         /// <summary>
         /// Is the current match equal to the given object?
         /// Equality is verified if <paramref name="obj"/> is a
-        /// <see cref="Match"/> object, and if it contains the same players in
+        /// <see cref="Match"/> object, and if it contains the same thinkers in
         /// the same positions.
         /// </summary>
         /// <param name="obj">
@@ -102,7 +102,7 @@ namespace ColorShapeLinks.UnityApp
             Match other;
             if (obj == null || !(obj is Match)) return false;
             other = (Match)obj;
-            return player1 == other.player1 && player2 == other.player2;
+            return thinker1 == other.thinker1 && thinker2 == other.thinker2;
         }
     }
 }

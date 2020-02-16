@@ -8,6 +8,7 @@
 
 using System;
 using System.Linq;
+using System.Threading;
 using System.Collections.Generic;
 using UnityEngine;
 using ColorShapeLinks.Common;
@@ -31,12 +32,12 @@ namespace ColorShapeLinks.UnityApp
         : MonoBehaviour, IMatchDataProvider, ISessionDataProvider, IGameConfig
     {
 
-        // Internal auxiliary struct used for match making
-        private struct DummyPlayer : IPlayer
+        // Internal auxiliary class used for match making
+        private struct DummyThinker : IThinker
         {
-            public bool IsHuman => false;
-            public string PlayerName => "Dummy";
-            public IThinker Thinker => null;
+            public FutureMove Think(Board board, CancellationToken ct)
+                => throw new InvalidOperationException(
+                    "This is just a dummy thinker");
         }
 
         // ///////////////////////////////////////////////// //
@@ -123,7 +124,7 @@ namespace ColorShapeLinks.UnityApp
         // instance
         private MatchController matchController = null;
 
-        // Reference to the current match (player 1 + player 2)
+        // Reference to the current match (thinker 1 + thinker 2)
         private Match currentMatch;
 
         // Reference to the game board in the current match instance
@@ -135,13 +136,10 @@ namespace ColorShapeLinks.UnityApp
 
         // Current standings / classification (important for tournament mode
         // only)
-        private IDictionary<IPlayer, int> standings;
+        private IDictionary<IThinker, int> standings;
 
         // Match enumerator, for going through each match one by one
         private IEnumerator<Match> matchEnumerator;
-
-        // List of active AIs
-        private IList<IPlayer> activeAIs = null;
 
         // Reference to a human player, in case there aren't enough AIs to
         // create a match
@@ -155,10 +153,15 @@ namespace ColorShapeLinks.UnityApp
         // Awake is called when the script instance is being loaded
         private void Awake()
         {
-            // Get all active AIs and put them in a list
+            // Get all AIs and put them in a list
             List<IPlayer> allAIs = new List<IPlayer>();
             GetComponents(allAIs);
-            activeAIs = allAIs.FindAll(ai => (ai as AIPlayer).IsActive);
+
+            // Get the thinkers associated with the active AIs
+            IList<IThinker> activeThinkers = allAIs
+                .Where(ai => (ai as AIPlayer).IsActive)
+                .Select(ai => ai.Thinker)
+                .ToList();
 
             // Load the match prefab
             matchPrefab = Resources.Load<GameObject>("Prefabs/Match");
@@ -171,44 +174,49 @@ namespace ColorShapeLinks.UnityApp
 
             // Instantiate a human player if there are not enough AIs to do
             // a match
-            if (activeAIs.Count < 2)
+            if (activeThinkers.Count < 2)
                 humanPlayer = new HumanPlayer();
 
             // Instantiate the matches table
             allMatches = new SortedList<Match, Winner>();
 
             // Instantiate the standings table and populate it with all
-            // AIs with zero points
-            standings = new Dictionary<IPlayer, int>();
-            foreach (IPlayer ai in activeAIs) standings.Add(ai, 0);
+            // thinkers with zero points
+            standings = new Dictionary<IThinker, int>();
+            foreach (IThinker t in activeThinkers) standings.Add(t, 0);
 
             // Setup session depending on how many AIs will play
-            if (activeAIs.Count == 0)
+            if (activeThinkers.Count == 0)
             {
                 // A game between human players
                 uiWhoPlaysFirst = false;
                 uiBlockStartNextMatch = true;
                 uiBlockShowResult = true;
                 allMatches.Add(
-                    new Match(humanPlayer, humanPlayer), Winner.None);
+                    new Match(humanPlayer.Thinker, humanPlayer.Thinker),
+                    Winner.None);
             }
-            else if (activeAIs.Count == 1)
+            else if (activeThinkers.Count == 1)
             {
                 // A game between a human and an AI
                 uiWhoPlaysFirst = true;
                 uiBlockStartNextMatch = true;
                 uiBlockShowResult = true;
                 allMatches.Add(
-                    new Match(humanPlayer, activeAIs[0]), Winner.None);
+                    new Match(humanPlayer.Thinker, activeThinkers[0]),
+                    Winner.None);
             }
-            else if (activeAIs.Count == 2)
+            else if (activeThinkers.Count == 2)
             {
                 // A game between two AIs, ask who plays first
                 uiWhoPlaysFirst = true;
                 uiBlockStartNextMatch = true;
                 uiBlockShowResult = true;
                 allMatches.Add(
-                    new Match(activeAIs[0], activeAIs[1]), Winner.None);
+                    new Match(
+                        activeThinkers[0],
+                        activeThinkers[1]),
+                        Winner.None);
             }
             else
             {
@@ -219,25 +227,28 @@ namespace ColorShapeLinks.UnityApp
 
                 // In this mode we need an even number of players to set up the
                 // matches, so add a fake one if necessary
-                if (activeAIs.Count % 2 != 0) activeAIs.Add(new DummyPlayer());
+                if (activeThinkers.Count % 2 != 0)
+                    activeThinkers.Add(new DummyThinker());
 
                 // Setup matches using the round-robin method
                 // https://en.wikipedia.org/wiki/Round-robin_tournament
-                for (int i = 1; i < activeAIs.Count; i++)
+                for (int i = 1; i < activeThinkers.Count; i++)
                 {
-                    // This will be the AI to swap position after each round
-                    IPlayer aiToSwapPosition;
+                    // This will be the thinker to swap position after each
+                    // round
+                    IThinker thinkerToSwapPosition;
 
                     // Set up matches for current round i
-                    for (int j = 0; j < activeAIs.Count / 2; j++)
+                    for (int j = 0; j < activeThinkers.Count / 2; j++)
                     {
                         // This is match j for current round i
                         Match match = new Match(
-                            activeAIs[j], activeAIs[activeAIs.Count - 1 - j]);
+                            activeThinkers[j],
+                            activeThinkers[activeThinkers.Count - 1 - j]);
                         // Only add match to match list if it's not a dummy
                         // match
-                        if (!(match.player1 is DummyPlayer
-                            || match.player2 is DummyPlayer))
+                        if (!(match.thinker1 is DummyThinker
+                            || match.thinker2 is DummyThinker))
                         {
                             // Each match is in practice two matches, so both
                             // AIs can have a match where they are the first to
@@ -247,9 +258,10 @@ namespace ColorShapeLinks.UnityApp
                         }
                     }
                     // Swap AI positions for next round
-                    aiToSwapPosition = activeAIs[activeAIs.Count - 1];
-                    activeAIs.RemoveAt(activeAIs.Count - 1);
-                    activeAIs.Insert(1, aiToSwapPosition);
+                    thinkerToSwapPosition =
+                        activeThinkers[activeThinkers.Count - 1];
+                    activeThinkers.RemoveAt(activeThinkers.Count - 1);
+                    activeThinkers.Insert(1, thinkerToSwapPosition);
                 }
             }
 
@@ -302,7 +314,7 @@ namespace ColorShapeLinks.UnityApp
 
             // Instantiate the next match
             matchInstance = Instantiate(matchPrefab, transform);
-            matchInstance.name = $"Match{PlayerWhite}VS{PlayerRed}";
+            matchInstance.name = $"Match{ThinkerWhite}VS{ThinkerRed}";
 
             // Get a reference to the match controller of the next match
             matchController = matchInstance.GetComponent<MatchController>();
@@ -321,24 +333,24 @@ namespace ColorShapeLinks.UnityApp
             allMatches[currentMatch] = matchController.Result;
 
             // If we are in tournament mode, update standings / classification
-            if (activeAIs.Count > 2)
+            if (standings.Count > 2)
             {
                 switch (matchController.Result)
                 {
                     // White won
                     case Winner.White:
-                        standings[currentMatch.player1] += pointsPerWin;
-                        standings[currentMatch.player2] += pointsPerLoss;
+                        standings[currentMatch.thinker1] += pointsPerWin;
+                        standings[currentMatch.thinker2] += pointsPerLoss;
                         break;
                     // Red won
                     case Winner.Red:
-                        standings[currentMatch.player2] += pointsPerWin;
-                        standings[currentMatch.player1] += pointsPerLoss;
+                        standings[currentMatch.thinker2] += pointsPerWin;
+                        standings[currentMatch.thinker1] += pointsPerLoss;
                         break;
                     // Game ended in a draw
                     case Winner.Draw:
-                        standings[currentMatch.player1] += pointsPerDraw;
-                        standings[currentMatch.player2] += pointsPerDraw;
+                        standings[currentMatch.thinker1] += pointsPerDraw;
+                        standings[currentMatch.thinker2] += pointsPerDraw;
                         break;
                     // Invalid situation
                     default:
@@ -390,8 +402,8 @@ namespace ColorShapeLinks.UnityApp
         public Board Board => currentBoard;
 
         /// @copydoc IMatchDataProvider.CurrentPlayer
-        /// <seealso cref="IMatchDataProvider.CurrentPlayer"/>
-        public IPlayer CurrentPlayer => currentMatch[currentBoard.Turn];
+        /// <seealso cref="IMatchDataProvider.CurrentThinker"/>
+        public IThinker CurrentThinker => currentMatch[currentBoard.Turn];
 
         /// @copydoc IMatchDataProvider.AITimeLimit
         /// <seealso cref="IMatchDataProvider.AITimeLimit"/>
@@ -406,8 +418,8 @@ namespace ColorShapeLinks.UnityApp
         public float LastMoveAnimLength => lastMoveAnimLength;
 
         /// @copydoc IMatchDataProvider.GetPlayer
-        /// <seealso cref="IMatchDataProvider.GetPlayer(PColor)"/>
-        public IPlayer GetPlayer(PColor player) => currentMatch[player];
+        /// <seealso cref="IMatchDataProvider.GetThinker(PColor)"/>
+        public IThinker GetThinker(PColor player) => currentMatch[player];
 
         // ////////////////////////////////////// //
         // Implementation of ISessionDataProvider //
@@ -418,12 +430,12 @@ namespace ColorShapeLinks.UnityApp
         public SessionState State => state;
 
         /// @copydoc ISessionDataProvider.PlayerWhite
-        /// <seealso cref="ISessionDataProvider.PlayerWhite"/>
-        public string PlayerWhite => currentMatch[PColor.White].ToString();
+        /// <seealso cref="ISessionDataProvider.ThinkerWhite"/>
+        public string ThinkerWhite => currentMatch[PColor.White].ToString();
 
         /// @copydoc ISessionDataProvider.PlayerRed
-        /// <seealso cref="ISessionDataProvider.PlayerRed"/>
-        public string PlayerRed => currentMatch[PColor.Red].ToString();
+        /// <seealso cref="ISessionDataProvider.ThinkerRed"/>
+        public string ThinkerRed => currentMatch[PColor.Red].ToString();
 
         /// @copydoc ISessionDataProvider.Matches
         /// <seealso cref="ISessionDataProvider.Matches"/>
@@ -436,7 +448,7 @@ namespace ColorShapeLinks.UnityApp
 
         /// @copydoc ISessionDataProvider.Standings
         /// <seealso cref="ISessionDataProvider.Standings"/>
-        public IEnumerable<KeyValuePair<IPlayer, int>> Standings =>
+        public IEnumerable<KeyValuePair<IThinker, int>> Standings =>
             standings.OrderByDescending(kvp => kvp.Value);
 
         /// @copydoc ISessionDataProvider.LastMatchResult

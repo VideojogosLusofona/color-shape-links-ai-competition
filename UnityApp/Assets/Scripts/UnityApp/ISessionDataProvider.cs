@@ -8,6 +8,7 @@
 
 using System.Collections.Generic;
 using ColorShapeLinks.Common;
+using ColorShapeLinks.Common.AI;
 
 namespace ColorShapeLinks.UnityApp
 {
@@ -24,13 +25,13 @@ namespace ColorShapeLinks.UnityApp
         /// </value>
         SessionState State { get; }
 
-        /// <summary>Name of player playing as white.</summary>
-        /// <value>A string containing the player's name.</value>
-        string PlayerWhite { get; }
+        /// <summary>Name of thinker playing as white.</summary>
+        /// <value>A string containing the thinker's name.</value>
+        string ThinkerWhite { get; }
 
-        /// <summary>Name of player playing as red.</summary>
-        /// <value>A string containing the player's name.</value>
-        string PlayerRed { get; }
+        /// <summary>Name of thinker playing as red.</summary>
+        /// <value>A string containing the thinker's name.</value>
+        string ThinkerRed { get; }
 
         /// <summary>
         /// All matches played or to be played in current session.
@@ -45,10 +46,12 @@ namespace ColorShapeLinks.UnityApp
         IEnumerable<KeyValuePair<Match, Winner>> Results { get; }
 
         /// <summary>
-        /// Standings (classification, ranking) of players in current session.
+        /// Standings (classification, ranking) of thinkers in current session.
         /// </summary>
-        /// <value>Descending ordered collection of player-points pairs.</value>
-        IEnumerable<KeyValuePair<IPlayer, int>> Standings { get; }
+        /// <value>
+        /// Descending ordered collection of thinker-points pairs.
+        /// </value>
+        IEnumerable<KeyValuePair<IThinker, int>> Standings { get; }
 
         /// <summary>Result of last match.</summary>
         /// <value>

@@ -10,16 +10,14 @@ using ColorShapeLinks.Common.AI;
 namespace ColorShapeLinks.UnityApp
 {
     /// <summary>
-    /// Defines a player for the *ColorShapeLinks* board game.
+    /// Defines a player for the ColorShapeLinks board game.
     /// </summary>
     public interface IPlayer
     {
-        /// <summary>Is the player human?</summary>
-        /// <value>`true` if the player is human, `false` otherwise.</value>
-        bool IsHuman { get; }
-
         /// <summary>The player's thinker.</summary>
-        /// <value>An instance of <see cref="IThinker"/>.</value>
+        /// <value>
+        /// An instance of <see cref="ColorShapeLinks.Common.AI.IThinker"/>.
+        /// </value>
         IThinker Thinker { get; }
     }
 }

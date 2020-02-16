@@ -5,7 +5,6 @@
 /// @date 2019, 2020
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
-using System;
 using ColorShapeLinks.Common.AI;
 
 namespace ColorShapeLinks.UnityApp
@@ -15,6 +14,9 @@ namespace ColorShapeLinks.UnityApp
     /// </summary>
     public class HumanPlayer : IPlayer
     {
+        // Reference to a human thinker
+        private IThinker thinker;
+
         /// <summary>
         /// Is the player human?
         /// </summary>
@@ -29,16 +31,18 @@ namespace ColorShapeLinks.UnityApp
         /// <returns>The string "Human".</returns>
         public override string ToString() => "Human";
 
+
         /// <summary>
-        /// Humans don't have a thinker, so accessing this property will result
-        /// in an exception.
+        /// Creates a new instance of this class.
         /// </summary>
-        /// <value>None.</value>
-        /// <exception cref="System.InvalidOperationException">
-        /// Thrown by accessing this property.
-        /// </exception>
-        public IThinker Thinker =>
-            throw new InvalidOperationException(
-                "Humans don't need an AI thinker");
+        public HumanPlayer()
+        {
+            thinker = new HumanThinker();
+        }
+
+        /// <summary>
+        /// An instance of <cref="HumanThinker"/>.
+        /// </summary>
+        public IThinker Thinker => thinker;
     }
 }

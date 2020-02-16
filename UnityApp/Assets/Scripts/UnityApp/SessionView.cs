@@ -10,6 +10,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using ColorShapeLinks.Common;
+using ColorShapeLinks.Common.AI;
 
 namespace ColorShapeLinks.UnityApp
 {
@@ -40,7 +41,7 @@ namespace ColorShapeLinks.UnityApp
         private IReadOnlyList<KeyValuePair<Match, Winner>> results;
 
         // List of current standings (player-points pairs)
-        private IReadOnlyList<KeyValuePair<IPlayer, int>> standings;
+        private IReadOnlyList<KeyValuePair<IThinker, int>> standings;
 
         // Vectors for holding the scrollviews
         private Vector2 scrollViewVector1 = Vector2.zero;
@@ -137,7 +138,7 @@ namespace ColorShapeLinks.UnityApp
                     {
                         results = new List<KeyValuePair<Match, Winner>>(
                             sessionData.Results);
-                        standings = new List<KeyValuePair<IPlayer, int>>(
+                        standings = new List<KeyValuePair<IThinker, int>>(
                             sessionData.Standings);
                     }
                     GUI.Window(3,
@@ -269,7 +270,7 @@ namespace ColorShapeLinks.UnityApp
                         Screen.height / 2 - Screen.height / 16,
                         Screen.width / 4,
                         Screen.height / 8),
-                    sessionData.PlayerWhite))
+                    sessionData.ThinkerWhite))
                 {
                     // No need to swap players, just disable this menu next
                     // frame
@@ -281,7 +282,7 @@ namespace ColorShapeLinks.UnityApp
                         Screen.height / 2 - Screen.height / 16,
                         Screen.width / 4,
                         Screen.height / 8),
-                    sessionData.PlayerRed))
+                    sessionData.ThinkerRed))
                 {
                     // Notify player swap
                     OnSwapPlayers();
@@ -321,9 +322,9 @@ namespace ColorShapeLinks.UnityApp
                         Screen.width * 2 / 5,
                         Screen.height / 4),
                     string.Format("{0}{1}{2}",
-                        $"<color=white>{sessionData.PlayerWhite}</color>\n",
+                        $"<color=white>{sessionData.ThinkerWhite}</color>\n",
                         "<color=grey>vs</color>\n",
-                        $"<color=red>{sessionData.PlayerRed}</color>"),
+                        $"<color=red>{sessionData.ThinkerRed}</color>"),
                     guiLabelStyle);
 
                 // Is this a tournament and is this not the first game?
@@ -647,13 +648,13 @@ namespace ColorShapeLinks.UnityApp
 
                 // Is first player bold (winner)?
                 string player1 = results[i].Value == Winner.White
-                    ? $"<b>{results[i].Key.player1}</b>"
-                    : results[i].Key.player1.ToString();
+                    ? $"<b>{results[i].Key.thinker1}</b>"
+                    : results[i].Key.thinker1.ToString();
 
                 // Is second player bold (winner)?
                 string player2 = results[i].Value == Winner.Red
-                    ? $"<b>{results[i].Key.player2}</b>"
-                    : results[i].Key.player2.ToString();
+                    ? $"<b>{results[i].Key.thinker2}</b>"
+                    : results[i].Key.thinker2.ToString();
 
                 // Show match, result is based on color
                 GUI.Label(
