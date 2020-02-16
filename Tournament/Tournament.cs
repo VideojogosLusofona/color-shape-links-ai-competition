@@ -14,6 +14,10 @@ using ColorShapeLinks.Common.AI;
 
 namespace ColorShapeLinks.Common.Tournament
 {
+    /// <summary>
+    /// Implements a tournament, namely sets up a list of matches, keeps track
+    /// of the results and classifications.
+    /// </summary>
     public class Tournament : IEnumerable<Match>
     {
         // Internal auxiliary class used for match making
@@ -24,15 +28,29 @@ namespace ColorShapeLinks.Common.Tournament
                     "This is just a dummy thinker");
         }
 
+        // List of matches
         private IList<Match> matches;
 
+        // Table of results
         private IDictionary<Match, Winner> results;
 
         // Current points for each thinker
         private IDictionary<IThinker, int> thinkerPoints;
 
+        // Points per win, loss and draw
         private int pointsPerWin, pointsPerLoss, pointsPerDraw;
 
+        /// <summary>
+        /// Creates a new tournament instance.
+        /// </summary>
+        /// <param name="thinkers">Thinkers entering the tournament.</param>
+        /// <param name="pointsPerWin">Points per win.</param>
+        /// <param name="pointsPerLoss">Points per loss.</param>
+        /// <param name="pointsPerDraw">Points per draw.</param>
+        /// <param name="complete">
+        /// Is this a complete tournament, i.e., do thinkers play against
+        /// opponents home and away (two games)?
+        /// </param>
         public Tournament(IEnumerable<IThinker> thinkers,
             int pointsPerWin, int pointsPerLoss, int pointsPerDraw,
             bool complete = false)
@@ -107,40 +125,71 @@ namespace ColorShapeLinks.Common.Tournament
             }
         }
 
+        /// <summary>
+        /// Returns the current results.
+        /// </summary>
+        /// <returns>The current results.</returns>
         public IEnumerable<KeyValuePair<Match, Winner>> GetResults()
         {
+            // Loop through all matches
             foreach (Match m in matches)
             {
+                // If there is a result for the current match...
                 if (results.ContainsKey(m))
+                    // ...return it
                     yield return new KeyValuePair<Match, Winner>(m, results[m]);
             }
         }
 
+        /// <summary>
+        /// Return the current standings/classification.
+        /// </summary>
+        /// <returns>The current standings/classification.</returns>
         public IEnumerable<KeyValuePair<IThinker, int>> GetStandings()
         {
+            // Create an array to place thinkers and their points
             KeyValuePair<IThinker, int>[] standings =
                 new KeyValuePair<IThinker, int>[thinkerPoints.Count];
 
+            // Populate the array with thinkers and their points
             thinkerPoints.CopyTo(standings, 0);
 
+            // Sort the array in descending order according to thinker points
             Array.Sort(standings, (a, b) => b.Value - a.Value);
 
+            // Return each thinker and its points
             foreach (KeyValuePair<IThinker, int> kvp in standings)
                 yield return kvp;
         }
 
+        /// <summary>
+        /// Return all scheduled matches, completed or otherwise.
+        /// </summary>
+        /// <returns>All scheduled matches.</returns>
         public IEnumerator<Match> GetEnumerator()
         {
             foreach (Match m in matches)
                 yield return m;
         }
 
+        /// <summary>
+        /// Explicit implementation of the
+        /// <see cref="System.Collections.IEnumerable"/> interface.
+        /// </summary>
+        /// <returns>An enumerator with all scheduled matches.</returns>
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
+        /// <summary>
+        /// Set the result of a given match.
+        /// </summary>
+        /// <param name="match">Match to set the result of.</param>
+        /// <param name="result">Result of the given match.</param>
         public void SetResult(Match match, Winner result)
         {
+            // Add to results table
             results.Add(match, result);
 
+            // Update thinker points
             switch (result)
             {
                 // White won
