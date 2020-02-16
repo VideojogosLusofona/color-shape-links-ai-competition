@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
+using ColorShapeLinks.Common.Tournament;
 
 namespace ColorShapeLinks.UnityApp
 {

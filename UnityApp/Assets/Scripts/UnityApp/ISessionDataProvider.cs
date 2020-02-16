@@ -9,6 +9,7 @@
 using System.Collections.Generic;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
+using ColorShapeLinks.Common.Tournament;
 
 namespace ColorShapeLinks.UnityApp
 {
