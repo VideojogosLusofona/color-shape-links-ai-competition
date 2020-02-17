@@ -315,7 +315,7 @@ namespace ColorShapeLinks.UnityApp
         /// <seealso cref="IMatchDataProvider.Board"/>
         public Board Board => currentBoard;
 
-        /// @copydoc IMatchDataProvider.CurrentPlayer
+        /// @copydoc IMatchDataProvider.CurrentThinker
         /// <seealso cref="IMatchDataProvider.CurrentThinker"/>
         public IThinker CurrentThinker => currentMatch[currentBoard.Turn];
 
@@ -331,9 +331,10 @@ namespace ColorShapeLinks.UnityApp
         /// <seealso cref="IMatchDataProvider.LastMoveAnimLength"/>
         public float LastMoveAnimLength => lastMoveAnimLength;
 
-        /// @copydoc IMatchDataProvider.GetPlayer
+        /// @copydoc IMatchDataProvider.GetThinker
         /// <seealso cref="IMatchDataProvider.GetThinker(PColor)"/>
-        public IThinker GetThinker(PColor player) => currentMatch[player];
+        public IThinker GetThinker(PColor thinkerColor) =>
+            currentMatch[thinkerColor];
 
         // ////////////////////////////////////// //
         // Implementation of ISessionDataProvider //
@@ -343,11 +344,11 @@ namespace ColorShapeLinks.UnityApp
         /// <seealso cref="ISessionDataProvider.State"/>
         public SessionState State => state;
 
-        /// @copydoc ISessionDataProvider.PlayerWhite
+        /// @copydoc ISessionDataProvider.ThinkerWhite
         /// <seealso cref="ISessionDataProvider.ThinkerWhite"/>
         public string ThinkerWhite => currentMatch[PColor.White].ToString();
 
-        /// @copydoc ISessionDataProvider.PlayerRed
+        /// @copydoc ISessionDataProvider.ThinkerRed
         /// <seealso cref="ISessionDataProvider.ThinkerRed"/>
         public string ThinkerRed => currentMatch[PColor.Red].ToString();
 
