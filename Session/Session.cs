@@ -21,11 +21,10 @@ namespace ColorShapeLinks.Common.Session
     public class Session : IEnumerable<Match>
     {
         // Internal auxiliary class used for match making
-        private struct DummyThinker : IThinker
+        private class DummyThinkerPrototype : IThinkerPrototype
         {
-            public FutureMove Think(Board board, CancellationToken ct)
-                => throw new InvalidOperationException(
-                    "This is just a dummy thinker");
+            public string ThinkerName => "Dummy";
+            public IThinker Create() => null;
         }
 
         // List of matches
@@ -35,7 +34,7 @@ namespace ColorShapeLinks.Common.Session
         private IDictionary<Match, Winner> results;
 
         // Current points for each thinker
-        private IDictionary<IThinker, int> thinkerPoints;
+        private IDictionary<string, int> thinkerPoints;
 
         // Points per win, loss and draw
         private int pointsPerWin, pointsPerLoss, pointsPerDraw;
@@ -46,8 +45,8 @@ namespace ColorShapeLinks.Common.Session
         /// <summary>
         /// Creates a new session.
         /// </summary>
-        /// <param name="thinkers">
-        /// Thinkers participating in the session.
+        /// <param name="thinkerPrototypes">
+        /// Prototypes of thinkers participating in the session.
         /// </param>
         /// <param name="pointsPerWin">Points per win.</param>
         /// <param name="pointsPerLoss">Points per loss.</param>
@@ -56,15 +55,16 @@ namespace ColorShapeLinks.Common.Session
         /// Is this a complete tournament, i.e., do thinkers play against
         /// opponents home and away (two games)?
         /// </param>
-        public Session(IEnumerable<IThinker> thinkers,
+        public Session(IEnumerable<IThinkerPrototype> thinkerPrototypes,
             int pointsPerWin, int pointsPerLoss, int pointsPerDraw,
             bool complete = false)
         {
             // Create a list of thinkers from the given enumerable
-            IList<IThinker> thinkersList = new List<IThinker>(thinkers);
+            IList<IThinkerPrototype> thinkerProtList =
+                new List<IThinkerPrototype>(thinkerPrototypes);
 
             // Number of thinkers
-            int numThinkers = thinkersList?.Count ?? 0;
+            int numThinkers = thinkerProtList?.Count ?? 0;
 
             // Check if there are enough thinkers
             if (numThinkers < 2)
@@ -77,9 +77,8 @@ namespace ColorShapeLinks.Common.Session
             this.pointsPerLoss = pointsPerLoss;
             this.pointsPerDraw = pointsPerDraw;
 
-            // Create and populate the list of thinker points
-            thinkerPoints = new Dictionary<IThinker, int>(numThinkers);
-            foreach (IThinker t in thinkersList) thinkerPoints.Add(t, 0);
+            // Initialize the table of thinker points
+            thinkerPoints = new Dictionary<string, int>(numThinkers);
 
             // Initialize the list of matches
             matches = new List<Match>();
@@ -87,29 +86,29 @@ namespace ColorShapeLinks.Common.Session
             // Initialize the list of results
             results = new Dictionary<Match, Winner>();
 
-            // In this mode we need an even number of players to set up the
+            // We need an even number of players to set up the
             // matches, so add a fake one if necessary
-            if (thinkersList.Count % 2 != 0)
-                thinkersList.Add(new DummyThinker());
+            if (thinkerProtList.Count % 2 != 0)
+                thinkerProtList.Add(new DummyThinkerPrototype());
 
             // Setup matches using the round-robin method
             // https://en.wikipedia.org/wiki/Round-robin_tournament
-            for (int i = 1; i < thinkersList.Count; i++)
+            for (int i = 1; i < thinkerProtList.Count; i++)
             {
                 // This will be the thinker to swap position after each round
-                IThinker thinkerToSwapPosition;
+                IThinkerPrototype thinkerToSwapPosition;
 
                 // Set up matches for current round i
-                for (int j = 0; j < thinkersList.Count / 2; j++)
+                for (int j = 0; j < thinkerProtList.Count / 2; j++)
                 {
                     // This is match j for current round i
                     Match match = new Match(
-                        thinkersList[j],
-                        thinkersList[thinkersList.Count - 1 - j]);
+                        thinkerProtList[j],
+                        thinkerProtList[thinkerProtList.Count - 1 - j]);
                     // Only add match to match list if it's not a dummy
                     // match
-                    if (!(match.thinker1 is DummyThinker
-                        || match.thinker2 is DummyThinker))
+                    if (!(match.thinker1 is DummyThinkerPrototype
+                        || match.thinker2 is DummyThinkerPrototype))
                     {
                         // Add match to match list
                         matches.Add(match);
@@ -124,9 +123,9 @@ namespace ColorShapeLinks.Common.Session
                 }
                 // Swap AI positions for next round
                 thinkerToSwapPosition =
-                    thinkersList[thinkersList.Count - 1];
-                thinkersList.RemoveAt(thinkersList.Count - 1);
-                thinkersList.Insert(1, thinkerToSwapPosition);
+                    thinkerProtList[thinkerProtList.Count - 1];
+                thinkerProtList.RemoveAt(thinkerProtList.Count - 1);
+                thinkerProtList.Insert(1, thinkerToSwapPosition);
             }
 
             // Initialize the match enumerator
@@ -153,11 +152,11 @@ namespace ColorShapeLinks.Common.Session
         /// Return the current standings/classification.
         /// </summary>
         /// <returns>The current standings/classification.</returns>
-        public IEnumerable<KeyValuePair<IThinker, int>> GetStandings()
+        public IEnumerable<KeyValuePair<string, int>> GetStandings()
         {
             // Create an array to place thinkers and their points
-            KeyValuePair<IThinker, int>[] standings =
-                new KeyValuePair<IThinker, int>[thinkerPoints.Count];
+            KeyValuePair<string, int>[] standings =
+                new KeyValuePair<string, int>[thinkerPoints.Count];
 
             // Populate the array with thinkers and their points
             thinkerPoints.CopyTo(standings, 0);
@@ -165,20 +164,15 @@ namespace ColorShapeLinks.Common.Session
             // Sort the array in descending order according to thinker points
             Array.Sort(standings, (a, b) => b.Value - a.Value);
 
-            // Return each thinker and its points
-            foreach (KeyValuePair<IThinker, int> kvp in standings)
-                yield return kvp;
+            // Return current standings/classification
+            return standings;
         }
 
         /// <summary>
         /// Return all scheduled matches, completed or otherwise.
         /// </summary>
         /// <returns>All scheduled matches.</returns>
-        public IEnumerator<Match> GetEnumerator()
-        {
-            foreach (Match m in matches)
-                yield return m;
-        }
+        public IEnumerator<Match> GetEnumerator() => matches.GetEnumerator();
 
         /// <summary>
         /// Explicit implementation of the
@@ -230,23 +224,29 @@ namespace ColorShapeLinks.Common.Session
             // Add to results table
             results.Add(match, result);
 
+            // If these thinkers are not yet in the points table, add them
+            if (!thinkerPoints.ContainsKey(match.thinker1.ThinkerName))
+                thinkerPoints.Add(match.thinker1.ThinkerName, 0);
+            if (!thinkerPoints.ContainsKey(match.thinker2.ThinkerName))
+                thinkerPoints.Add(match.thinker2.ThinkerName, 0);
+
             // Update thinker points
             switch (result)
             {
                 // White won
                 case Winner.White:
-                    thinkerPoints[match.thinker1] += pointsPerWin;
-                    thinkerPoints[match.thinker2] += pointsPerLoss;
+                    thinkerPoints[match.thinker1.ThinkerName] += pointsPerWin;
+                    thinkerPoints[match.thinker2.ThinkerName] += pointsPerLoss;
                     break;
                 // Red won
                 case Winner.Red:
-                    thinkerPoints[match.thinker2] += pointsPerWin;
-                    thinkerPoints[match.thinker1] += pointsPerLoss;
+                    thinkerPoints[match.thinker2.ThinkerName] += pointsPerWin;
+                    thinkerPoints[match.thinker1.ThinkerName] += pointsPerLoss;
                     break;
                 // Game ended in a draw
                 case Winner.Draw:
-                    thinkerPoints[match.thinker1] += pointsPerDraw;
-                    thinkerPoints[match.thinker2] += pointsPerDraw;
+                    thinkerPoints[match.thinker1.ThinkerName] += pointsPerDraw;
+                    thinkerPoints[match.thinker2.ThinkerName] += pointsPerDraw;
                     break;
                 // Invalid situation
                 default:

@@ -17,21 +17,26 @@ namespace ColorShapeLinks.Common.Session
     public class Match
     {
         /// <summary>First thinker in this match (white).</summary>
-        public readonly IThinker thinker1;
+        public readonly IThinkerPrototype thinker1;
 
         /// <summary>Second thinker in this match (red).</summary>
-        public readonly IThinker thinker2;
+        public readonly IThinkerPrototype thinker2;
 
-        /// <summary>Indexer for getting a thinker based on his color.</summary>
+        /// <summary>
+        /// Indexer for getting the thinker's prototype based on his color.
+        /// </summary>
         /// <param name="color">Thinker color.</param>
-        /// <returns>The thinker associated with the given color.</returns>
+        /// <returns>
+        /// The thinker's prototype associated with the given color.
+        /// </returns>
         /// <exception cref="System.InvalidOperationException">
         /// Thrown when an invalid color is given.
         /// </exception>
-        public IThinker this[PColor color] => color == PColor.White ? thinker1
+        public IThinkerPrototype this[PColor color] =>
+            color == PColor.White ? thinker1
                 : color == PColor.Red ? thinker2
-                    : throw new InvalidOperationException(
-                        $"Invalid thinker color");
+                : throw new InvalidOperationException(
+                    $"Invalid thinker color");
 
         /// <summary>A match with the thinkers swapped.</summary>
         /// <value>A new match instance.</value>
@@ -40,7 +45,7 @@ namespace ColorShapeLinks.Common.Session
         /// <summary>Create a new match.</summary>
         /// <param name="thinker1">First thinker in match (white).</param>
         /// <param name="thinker2">Second thinker in match (red).</param>
-        public Match(IThinker thinker1, IThinker thinker2)
+        public Match(IThinkerPrototype thinker1, IThinkerPrototype thinker2)
         {
             // Keep references to thinkers
             this.thinker1 = thinker1;
@@ -49,6 +54,7 @@ namespace ColorShapeLinks.Common.Session
 
         /// <summary>Returns a string representation of this match.</summary>
         /// <returns>A string representation of this match.</returns>
-        public override string ToString() => $"{thinker1} vs {thinker2}";
+        public override string ToString() =>
+            $"{thinker1.ThinkerName} vs {thinker2.ThinkerName}";
     }
 }
