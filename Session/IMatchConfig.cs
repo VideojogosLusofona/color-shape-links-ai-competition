@@ -6,13 +6,13 @@
 /// @date 2020
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
-namespace ColorShapeLinks.Common
+namespace ColorShapeLinks.Common.Session
 {
     /// <summary>
     /// Defines a game configuration, such as number of rows, number of
     /// columns, etc.
     /// </summary>
-    public interface IGameConfig
+    public interface IMatchConfig
     {
         /// <summary>Number of board rows.</summary>
         /// <value>Number of board rows.</value>
@@ -37,5 +37,23 @@ namespace ColorShapeLinks.Common
         /// <summary>Time limit for the AI to play in milliseconds.</summary>
         /// <value>Time limit for the AI to play in milliseconds.</value>
         int TimeLimitMillis { get; }
+
+        /// <summary>Time limit for the AI to play in seconds.</summary>
+        /// <value>Time limit for the AI to play in seconds.</value>
+        float TimeLimitSeconds { get; }
+
+        /// <summary>
+        /// Even if the AI plays immediately, this time (in seconds) gives the
+        /// illusion that the AI took some minimum time to make a move.
+        /// </summary>
+        /// <value>Minimum apparent move time in seconds.</value>
+        float MinMoveTimeSeconds { get; }
+
+        /// <summary>
+        /// Even if the AI plays immediately, this time (in milliseconds) gives
+        /// the illusion that the AI took some minimum time to make a move.
+        /// </summary>
+        /// <value>Minimum apparent move time in seconds.</value>
+        int MinMoveTimeMillis { get; }
     }
 }

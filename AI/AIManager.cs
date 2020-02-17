@@ -6,9 +6,10 @@
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using System;
-using System.Collections.Generic;
-using System.Reflection;
 using System.Linq;
+using System.Reflection;
+using System.Collections.Generic;
+using ColorShapeLinks.Common.Session;
 
 namespace ColorShapeLinks.Common.AI
 {
@@ -60,7 +61,7 @@ namespace ColorShapeLinks.Common.AI
         /// <param name="aiConfig">AI thinker configuration.</param>
         /// <returns>A new AI thinker instance.</returns>
         public AbstractThinker NewThinker(
-            string aiName, IGameConfig gameConfig, string aiConfig)
+            string aiName, IMatchConfig gameConfig, string aiConfig)
         {
             // Variable where to place the thinker instance
             AbstractThinker thinker;

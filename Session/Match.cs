@@ -9,7 +9,7 @@
 using System;
 using ColorShapeLinks.Common.AI;
 
-namespace ColorShapeLinks.Common.Tournament
+namespace ColorShapeLinks.Common.Session
 {
     /// <summary>
     /// Represents one match in a tournament.

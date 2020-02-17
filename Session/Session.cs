@@ -12,13 +12,13 @@ using System.Collections;
 using System.Collections.Generic;
 using ColorShapeLinks.Common.AI;
 
-namespace ColorShapeLinks.Common.Tournament
+namespace ColorShapeLinks.Common.Session
 {
     /// <summary>
-    /// Implements a tournament, namely sets up a list of matches, keeps track
-    /// of the results and classifications.
+    /// Implements a session of ColorShapeLinks matches, setting up matches
+    /// and keeping track of the results and classifications.
     /// </summary>
-    public class Tournament : IEnumerable<Match>
+    public class Session : IEnumerable<Match>
     {
         // Internal auxiliary class used for match making
         private struct DummyThinker : IThinker
@@ -41,9 +41,11 @@ namespace ColorShapeLinks.Common.Tournament
         private int pointsPerWin, pointsPerLoss, pointsPerDraw;
 
         /// <summary>
-        /// Creates a new tournament instance.
+        /// Creates a new session.
         /// </summary>
-        /// <param name="thinkers">Thinkers entering the tournament.</param>
+        /// <param name="thinkers">
+        /// Thinkers participating in the session.
+        /// </param>
         /// <param name="pointsPerWin">Points per win.</param>
         /// <param name="pointsPerLoss">Points per loss.</param>
         /// <param name="pointsPerDraw">Points per draw.</param>
@@ -51,7 +53,7 @@ namespace ColorShapeLinks.Common.Tournament
         /// Is this a complete tournament, i.e., do thinkers play against
         /// opponents home and away (two games)?
         /// </param>
-        public Tournament(IEnumerable<IThinker> thinkers,
+        public Session(IEnumerable<IThinker> thinkers,
             int pointsPerWin, int pointsPerLoss, int pointsPerDraw,
             bool complete = false)
         {
