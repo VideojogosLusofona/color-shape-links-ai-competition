@@ -12,7 +12,7 @@ using ColorShapeLinks.Common.AI;
 namespace ColorShapeLinks.UnityApp
 {
     /// <summary>
-    /// Defines a data provider for *ColorShapeLinks* matches.
+    /// Defines a data provider for ColorShapeLinks matches.
     /// </summary>
     public interface IMatchDataProvider
     {

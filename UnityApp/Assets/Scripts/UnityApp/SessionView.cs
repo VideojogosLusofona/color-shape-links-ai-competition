@@ -21,8 +21,9 @@ namespace ColorShapeLinks.UnityApp
     /// <remarks>
     /// Based on the MVC design pattern, composed in this case by the following
     /// classes:
-    /// * *Model* - A list of <see cref="Match"/> instances can be considered
-    /// the model, although there isn't a well defined model in this case.
+    /// * *Model* - The
+    /// <see cref="ColorShapeLinks.Common.Tournament.Tournament"/> instance,
+    /// held by the <see cref="SessionController"/>.
     /// * *View* - This class.
     /// * *Controller* - <see cref="SessionController"/>.
     /// </remarks>

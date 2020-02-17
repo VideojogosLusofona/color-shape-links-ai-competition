@@ -6,7 +6,6 @@
 /// @date 2019, 2020
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
-using System;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,8 +22,8 @@ namespace ColorShapeLinks.UnityApp
     /// <remarks>
     /// Based on the MVC design pattern, composed in this case by the following
     /// classes:
-    /// * *Model* - A list of <see cref="Match"/> instances can be considered
-    /// the model, although there isn't a well defined model in this case.
+    /// * *Model* - A <see cref="ColorShapeLinks.Common.Tournament.Tournament"/>
+    /// instance, containing all the matches, results and standings.
     /// * *View* - <see cref="SessionView"/>.
     /// * *Controller* - This class.
     /// </remarks>
@@ -131,6 +130,7 @@ namespace ColorShapeLinks.UnityApp
 
         // The tournament instance manages the matches to be played and the
         // tournament standings
+        // It's the model in this MVC implementation
         private Tournament tournament;
 
         // Variables which define how several session UI screens will behave
