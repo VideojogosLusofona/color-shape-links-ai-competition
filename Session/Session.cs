@@ -40,6 +40,9 @@ namespace ColorShapeLinks.Common.Session
         // Points per win, loss and draw
         private int pointsPerWin, pointsPerLoss, pointsPerDraw;
 
+        // Match enumerator
+        private IEnumerator<Match> matchEnumerator;
+
         /// <summary>
         /// Creates a new session.
         /// </summary>
@@ -125,6 +128,9 @@ namespace ColorShapeLinks.Common.Session
                 thinkersList.RemoveAt(thinkersList.Count - 1);
                 thinkersList.Insert(1, thinkerToSwapPosition);
             }
+
+            // Initialize the match enumerator
+            matchEnumerator = GetEnumerator();
         }
 
         /// <summary>
@@ -182,12 +188,45 @@ namespace ColorShapeLinks.Common.Session
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
         /// <summary>
-        /// Set the result of a given match.
+        /// Get next match.
         /// </summary>
-        /// <param name="match">Match to set the result of.</param>
-        /// <param name="result">Result of the given match.</param>
-        public void SetResult(Match match, Winner result)
+        /// <returns>The next match to play.</returns>
+        public bool NextMatch(out Match match)
         {
+            if (!matchEnumerator.MoveNext())
+            {
+                match = null;
+                matchEnumerator.Dispose();
+                return false;
+            }
+            else
+            {
+                match = matchEnumerator.Current;
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// Set the result of the last match.
+        /// </summary>
+        /// <param name="result">Result of the given match.</param>
+        /// <exception cref="InvalidOperationException">
+        /// Thrown when the last match already has a result or the
+        /// <paramref name="result"/> is invalid.
+        /// </exception>
+        public void SetResult(Winner result)
+        {
+            // Get current match
+            Match match = matchEnumerator.Current;
+
+            // If table already contains a result for this match,
+            // throw exception
+            if (results.ContainsKey(match))
+            {
+                throw new InvalidOperationException(
+                    $"Match '{match}' already has a result");
+            }
+
             // Add to results table
             results.Add(match, result);
 
