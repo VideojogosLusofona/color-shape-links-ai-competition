@@ -6,6 +6,7 @@
 /// @date 2019, 2020
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
+using System;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
@@ -121,17 +122,10 @@ namespace ColorShapeLinks.UnityApp
         // Reference to the game board in the current match instance
         private Board currentBoard;
 
-        // Match enumerator, for going through each match one by one
-        private IEnumerator<Match> matchEnumerator;
-
-        // Reference to a human player, in case there aren't enough AIs to
-        // create a match
-        private IPlayer humanPlayer;
-
-        // The tournament instance manages the matches to be played and the
+        // The session instance manages the matches to be played and the
         // tournament standings
         // It's the model in this MVC implementation
-        private Session tournament;
+        private Session session;
 
         // Variables which define how several session UI screens will behave
         private bool uiWhoPlaysFirst;
@@ -160,11 +154,6 @@ namespace ColorShapeLinks.UnityApp
             // Set the session state to Begin
             state = SessionState.Begin;
 
-            // Instantiate a human player if there are not enough AIs to do
-            // a match
-            if (activeThinkers.Count < 2)
-                humanPlayer = new HumanPlayer();
-
             // Setup session depending on how many AIs will play
             if (activeThinkers.Count == 0)
             {
@@ -172,8 +161,10 @@ namespace ColorShapeLinks.UnityApp
                 uiWhoPlaysFirst = false;
                 uiBlockStartNextMatch = true;
                 uiBlockShowResult = true;
-                tournament = new Session(
-                    new IThinker[] { humanPlayer.Thinker, humanPlayer.Thinker},
+                session = new Session(
+                    new IThinker[] {
+                        new HumanPlayer().Thinker,
+                        new HumanPlayer().Thinker },
                     pointsPerWin, pointsPerLoss, pointsPerDraw);
             }
             else if (activeThinkers.Count == 1)
@@ -182,8 +173,10 @@ namespace ColorShapeLinks.UnityApp
                 uiWhoPlaysFirst = true;
                 uiBlockStartNextMatch = true;
                 uiBlockShowResult = true;
-                tournament = new Session(
-                    new IThinker[] { humanPlayer.Thinker, activeThinkers[0]},
+                session = new Session(
+                    new IThinker[] {
+                        new HumanPlayer().Thinker,
+                        activeThinkers[0] },
                     pointsPerWin, pointsPerLoss, pointsPerDraw);
             }
             else if (activeThinkers.Count == 2)
@@ -192,8 +185,10 @@ namespace ColorShapeLinks.UnityApp
                 uiWhoPlaysFirst = true;
                 uiBlockStartNextMatch = true;
                 uiBlockShowResult = true;
-                tournament = new Session(
-                    new IThinker[] { activeThinkers[0], activeThinkers[1] },
+                session = new Session(
+                    new IThinker[] {
+                        activeThinkers[0],
+                        activeThinkers[1] },
                     pointsPerWin, pointsPerLoss, pointsPerDraw);
             }
             else
@@ -202,14 +197,16 @@ namespace ColorShapeLinks.UnityApp
                 uiWhoPlaysFirst = false;
                 uiBlockStartNextMatch = pressButtonBeforeMatch;
                 uiBlockShowResult = pressButtonAfterMatch;
-                tournament = new Session(activeThinkers,
+                session = new Session(activeThinkers,
                     pointsPerWin, pointsPerLoss, pointsPerDraw, true);
             }
 
-            // Get the match enumerator and initialize it
-            matchEnumerator = tournament.GetEnumerator();
-            matchEnumerator.MoveNext();
-            currentMatch = matchEnumerator.Current;
+            // Get the next match
+            if (!session.NextMatch(out currentMatch))
+            {
+                throw new InvalidOperationException(
+                    "Session does not contain matches");
+            }
         }
 
         // This function is called when the object becomes enabled and active
@@ -271,7 +268,7 @@ namespace ColorShapeLinks.UnityApp
         private void EndCurrentMatchCallback()
         {
             // Keep result of current match
-            tournament.SetResult(currentMatch, matchController.Result);
+            session.SetResult(matchController.Result);
 
             // Set session state to PostMatch
             state = SessionState.PostMatch;
@@ -286,17 +283,15 @@ namespace ColorShapeLinks.UnityApp
             Destroy(matchInstance);
 
             // Are there more matches to play?
-            if (matchEnumerator.MoveNext())
+            if (session.NextMatch(out currentMatch))
             {
                 // If so, get next match and set session state to PreMatch
-                currentMatch = matchEnumerator.Current;
                 state = SessionState.PreMatch;
             }
             else
             {
                 // Otherwise, dispose of the match enumerator and set session
                 // state to End
-                matchEnumerator.Dispose();
                 state = SessionState.End;
             }
         }
@@ -342,17 +337,17 @@ namespace ColorShapeLinks.UnityApp
 
         /// @copydoc ISessionDataProvider.Matches
         /// <seealso cref="ISessionDataProvider.Matches"/>
-        public IEnumerable<Match> Matches => tournament;
+        public IEnumerable<Match> Matches => session;
 
         /// @copydoc ISessionDataProvider.Results
         /// <seealso cref="ISessionDataProvider.Results"/>
         public IEnumerable<KeyValuePair<Match, Winner>> Results =>
-            tournament.GetResults();
+            session.GetResults();
 
         /// @copydoc ISessionDataProvider.Standings
         /// <seealso cref="ISessionDataProvider.Standings"/>
         public IEnumerable<KeyValuePair<IThinker, int>> Standings =>
-            tournament.GetStandings();
+            session.GetStandings();
 
         /// @copydoc ISessionDataProvider.LastMatchResult
         /// <seealso cref="ISessionDataProvider.LastMatchResult"/>
