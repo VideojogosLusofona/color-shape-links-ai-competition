@@ -9,12 +9,12 @@
 using System.Collections.Generic;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
-using ColorShapeLinks.Common.Tournament;
+using ColorShapeLinks.Common.Session;
 
 namespace ColorShapeLinks.UnityApp
 {
     /// <summary>
-    /// Defines a data provider for *ColorShapeLinks* sessions, which include
+    /// Defines a data provider for ColorShapeLinks sessions, which include
     /// one or more matches.
     /// </summary>
     public interface ISessionDataProvider

@@ -13,11 +13,12 @@ using UnityEngine;
 using UnityEngine.Events;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
+using ColorShapeLinks.Common.Session;
 
 namespace ColorShapeLinks.UnityApp
 {
     /// <summary>
-    /// Script which controls *ColorShapeLinks* matches.
+    /// Script which controls ColorShapeLinks matches.
     /// </summary>
     /// <remarks>
     /// Based on the MVC design pattern, composed in this case by the following
@@ -39,6 +40,9 @@ namespace ColorShapeLinks.UnityApp
 
         // Reference to the match data
         private IMatchDataProvider matchData;
+
+        // Reference to the match configuration
+        private IMatchConfig matchConfig;
 
         // Reference to the game board
         private Board board;
@@ -87,6 +91,9 @@ namespace ColorShapeLinks.UnityApp
             // Get reference to the match data provider
             matchData = GetComponentInParent<IMatchDataProvider>();
 
+            // Get reference to the match configuration
+            matchConfig = GetComponentInParent<IMatchConfig>();
+
             // Get reference to the game board
             board = matchData.Board;
 
@@ -98,7 +105,8 @@ namespace ColorShapeLinks.UnityApp
 
             // Get the AI time limit as a native C# TimeSpan
             aiTimeLimit = new TimeSpan(
-                (long)(matchData.AITimeLimit * TimeSpan.TicksPerSecond));
+                (long)(matchConfig.TimeLimitMillis
+                    * TimeSpan.TicksPerMillisecond));
         }
 
         // This function is called when the object becomes enabled and active
@@ -179,7 +187,7 @@ namespace ColorShapeLinks.UnityApp
 
                         // Did we pass the minimum time between AI moves?
                         if (Time.time >
-                            taskStartGameTime + matchData.MinAIGameMoveTime)
+                            taskStartGameTime + matchConfig.MinMoveTimeSeconds)
                         {
                             // If so, submit a message informing of the move
                             // chosen and the system time it took the AI to

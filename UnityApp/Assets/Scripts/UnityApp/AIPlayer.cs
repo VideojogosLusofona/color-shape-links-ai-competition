@@ -6,8 +6,8 @@
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using UnityEngine;
-using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
+using ColorShapeLinks.Common.Session;
 
 namespace ColorShapeLinks.UnityApp
 {
@@ -50,7 +50,7 @@ namespace ColorShapeLinks.UnityApp
                 if (thinker == null)
                 {
                     // Obtain the component holding the game configuration
-                    IGameConfig gameConfig = GetComponent<IGameConfig>();
+                    IMatchConfig gameConfig = GetComponent<IMatchConfig>();
 
                     // Instantiate the thinker
                     AbstractThinker aThinker = AIManager.Instance.NewThinker(

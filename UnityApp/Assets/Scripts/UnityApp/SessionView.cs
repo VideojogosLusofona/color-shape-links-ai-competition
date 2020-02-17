@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
-using ColorShapeLinks.Common.Tournament;
+using ColorShapeLinks.Common.Session;
 
 namespace ColorShapeLinks.UnityApp
 {
@@ -22,7 +22,7 @@ namespace ColorShapeLinks.UnityApp
     /// Based on the MVC design pattern, composed in this case by the following
     /// classes:
     /// * *Model* - The
-    /// <see cref="ColorShapeLinks.Common.Tournament.Tournament"/> instance,
+    /// <see cref="ColorShapeLinks.Common.Session.Session"/> instance,
     /// held by the <see cref="SessionController"/>.
     /// * *View* - This class.
     /// * *Controller* - <see cref="SessionController"/>.

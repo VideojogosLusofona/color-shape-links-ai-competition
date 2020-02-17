@@ -8,7 +8,7 @@
 namespace ColorShapeLinks.UnityApp
 {
     /// <summary>
-    /// State of the current session of *ColorShapeLinks* matches.
+    /// State of the current session of ColorShapeLinks matches.
     /// </summary>
     public enum SessionState
     {

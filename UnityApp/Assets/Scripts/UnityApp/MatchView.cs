@@ -14,6 +14,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
+using ColorShapeLinks.Common.Session;
 
 namespace ColorShapeLinks.UnityApp
 {
@@ -45,6 +46,9 @@ namespace ColorShapeLinks.UnityApp
 
         // Reference to the match data provider
         private IMatchDataProvider matchData;
+
+        // Reference to the match configuration
+        private IMatchConfig matchConfig;
 
         // The shapes selected by each player
         private PShape[] selectedShapes;
@@ -94,6 +98,13 @@ namespace ColorShapeLinks.UnityApp
             Camera camera =
                 GameObject.Find("Main Camera").GetComponent<Camera>();
 
+            // Get reference to the match view configuration
+            IMatchViewConfig viewConfig =
+                GetComponentInParent<IMatchViewConfig>();
+
+            // Get value of last move animation length in seconds
+            lastMoveAnimLength = viewConfig.LastMoveAnimLength;
+
             // /////////////////////////////////// //
             // Get references to essential prefabs //
             // /////////////////////////////////// //
@@ -121,12 +132,12 @@ namespace ColorShapeLinks.UnityApp
             // We just started, so game is not finished yet
             finished = false;
 
+            // Get reference to the match configuration
+            matchConfig = GetComponentInParent<IMatchConfig>();
+
             // Get reference to the session data and the game board
             matchData = GetComponentInParent<IMatchDataProvider>();
             board = matchData.Board;
-
-            // Get value of last move animation length in seconds
-            lastMoveAnimLength = matchData.LastMoveAnimLength;
 
             // Both players have the round shapes initially selected by default
             selectedShapes = new PShape[] { PShape.Round, PShape.Round };
@@ -584,12 +595,12 @@ namespace ColorShapeLinks.UnityApp
         {
             // This coroutine will be called at least once per AI move
             YieldInstruction timeAImoves = new WaitForSeconds(
-                matchData.MinAIGameMoveTime);
+                matchConfig.MinMoveTimeSeconds);
 
             // When there are more messages, the coroutine is called in a tenth
             // of that time, giving the illusion of scrolling
             YieldInstruction minTimMsgs = new WaitForSeconds(
-                matchData.MinAIGameMoveTime / 10);
+                matchConfig.MinMoveTimeSeconds / 10);
 
             // Enter the infinite loop
             while (true)

@@ -11,24 +11,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
-using ColorShapeLinks.Common.Tournament;
+using ColorShapeLinks.Common.Session;
 
 namespace ColorShapeLinks.UnityApp
 {
     /// <summary>
-    /// Script which controls *ColorShapeLinks* sessions, which can include one
+    /// Script which controls ColorShapeLinks sessions, which can include one
     /// or more matches.
     /// </summary>
     /// <remarks>
     /// Based on the MVC design pattern, composed in this case by the following
     /// classes:
-    /// * *Model* - A <see cref="ColorShapeLinks.Common.Tournament.Tournament"/>
+    /// * *Model* - A <see cref="ColorShapeLinks.Common.Session.Session"/>
     /// instance, containing all the matches, results and standings.
     /// * *View* - <see cref="SessionView"/>.
     /// * *Controller* - This class.
     /// </remarks>
-    public class SessionController
-        : MonoBehaviour, IMatchDataProvider, ISessionDataProvider, IGameConfig
+    public class SessionController : MonoBehaviour,
+        IMatchDataProvider, ISessionDataProvider, IMatchConfig, IMatchViewConfig
     {
 
         // ///////////////////////////////////////////////// //
@@ -131,7 +131,7 @@ namespace ColorShapeLinks.UnityApp
         // The tournament instance manages the matches to be played and the
         // tournament standings
         // It's the model in this MVC implementation
-        private Tournament tournament;
+        private Session tournament;
 
         // Variables which define how several session UI screens will behave
         private bool uiWhoPlaysFirst;
@@ -172,7 +172,7 @@ namespace ColorShapeLinks.UnityApp
                 uiWhoPlaysFirst = false;
                 uiBlockStartNextMatch = true;
                 uiBlockShowResult = true;
-                tournament = new Tournament(
+                tournament = new Session(
                     new IThinker[] { humanPlayer.Thinker, humanPlayer.Thinker},
                     pointsPerWin, pointsPerLoss, pointsPerDraw);
             }
@@ -182,7 +182,7 @@ namespace ColorShapeLinks.UnityApp
                 uiWhoPlaysFirst = true;
                 uiBlockStartNextMatch = true;
                 uiBlockShowResult = true;
-                tournament = new Tournament(
+                tournament = new Session(
                     new IThinker[] { humanPlayer.Thinker, activeThinkers[0]},
                     pointsPerWin, pointsPerLoss, pointsPerDraw);
             }
@@ -192,7 +192,7 @@ namespace ColorShapeLinks.UnityApp
                 uiWhoPlaysFirst = true;
                 uiBlockStartNextMatch = true;
                 uiBlockShowResult = true;
-                tournament = new Tournament(
+                tournament = new Session(
                     new IThinker[] { activeThinkers[0], activeThinkers[1] },
                     pointsPerWin, pointsPerLoss, pointsPerDraw);
             }
@@ -202,7 +202,7 @@ namespace ColorShapeLinks.UnityApp
                 uiWhoPlaysFirst = false;
                 uiBlockStartNextMatch = pressButtonBeforeMatch;
                 uiBlockShowResult = pressButtonAfterMatch;
-                tournament = new Tournament(activeThinkers,
+                tournament = new Session(activeThinkers,
                     pointsPerWin, pointsPerLoss, pointsPerDraw, true);
             }
 
@@ -319,18 +319,6 @@ namespace ColorShapeLinks.UnityApp
         /// <seealso cref="IMatchDataProvider.CurrentThinker"/>
         public IThinker CurrentThinker => currentMatch[currentBoard.Turn];
 
-        /// @copydoc IMatchDataProvider.AITimeLimit
-        /// <seealso cref="IMatchDataProvider.AITimeLimit"/>
-        public float AITimeLimit => aITimeLimit;
-
-        /// @copydoc IMatchDataProvider.MinAIGameMoveTime
-        /// <seealso cref="IMatchDataProvider.MinAIGameMoveTime"/>
-        public float MinAIGameMoveTime => minAIGameMoveTime;
-
-        /// @copydoc IMatchDataProvider.LastMoveAnimLength
-        /// <seealso cref="IMatchDataProvider.LastMoveAnimLength"/>
-        public float LastMoveAnimLength => lastMoveAnimLength;
-
         /// @copydoc IMatchDataProvider.GetThinker
         /// <seealso cref="IMatchDataProvider.GetThinker(PColor)"/>
         public IThinker GetThinker(PColor thinkerColor) =>
@@ -399,23 +387,44 @@ namespace ColorShapeLinks.UnityApp
         public int Rows => rows;
 
         /// @copydoc ColorShapeLinks.Common.IGameConfig.Cols
-        /// <seealso cref="ColorShapeLinks.Common.IGameConfig.Cols"/>
+        /// <seealso cref="ColorShapeLinks.Common.IMatchConfig.Cols"/>
         public int Cols => cols;
 
         /// @copydoc ColorShapeLinks.Common.IGameConfig.WinSequence
-        /// <seealso cref="ColorShapeLinks.Common.IGameConfig.WinSequence"/>
+        /// <seealso cref="ColorShapeLinks.Common.IMatchConfig.WinSequence"/>
         public int WinSequence => winSequence;
 
         /// @copydoc ColorShapeLinks.Common.IGameConfig.RoundPiecesPerPlayer
-        /// <seealso cref="ColorShapeLinks.Common.IGameConfig.RoundPiecesPerPlayer"/>
+        /// <seealso cref="ColorShapeLinks.Common.IMatchConfig.RoundPiecesPerPlayer"/>
         public int RoundPiecesPerPlayer => roundPiecesPerPlayer;
 
         /// @copydoc ColorShapeLinks.Common.IGameConfig.SquarePiecesPerPlayer
-        /// <seealso cref="ColorShapeLinks.Common.IGameConfig.SquarePiecesPerPlayer"/>
+        /// <seealso cref="ColorShapeLinks.Common.IMatchConfig.SquarePiecesPerPlayer"/>
         public int SquarePiecesPerPlayer => squarePiecesPerPlayer;
 
         /// @copydoc ColorShapeLinks.Common.IGameConfig.TimeLimitMillis
-        /// <seealso cref="ColorShapeLinks.Common.IGameConfig.TimeLimitMillis"/>
+        /// <seealso cref="ColorShapeLinks.Common.IMatchConfig.TimeLimitMillis"/>
         public int TimeLimitMillis => (int)(aITimeLimit * 1000);
+
+        /// @copydoc ColorShapeLinks.Common.IGameConfig.TimeLimitSeconds
+        /// <seealso cref="ColorShapeLinks.Common.IMatchConfig.TimeLimitSeconds"/>
+        public float TimeLimitSeconds => aITimeLimit;
+
+        /// @copydoc ColorShapeLinks.Common.IGameConfig.MinMoveTimeMillis
+        /// <seealso cref="ColorShapeLinks.Common.IMatchConfig.MinMoveTimeMillis"/>
+        public int MinMoveTimeMillis => (int)(minAIGameMoveTime * 1000);
+
+        /// @copydoc ColorShapeLinks.Common.IGameConfig.MinMoveTimeSeconds
+        /// <seealso cref="ColorShapeLinks.Common.IMatchConfig.MinMoveTimeSeconds"/>
+        public float MinMoveTimeSeconds => minAIGameMoveTime;
+
+        // ////////////////////////////////// //
+        // Implementation of IMatchViewConfig //
+        // ////////////////////////////////// //
+
+        /// @copydoc IMatchViewConfig.LastMoveAnimLength
+        /// <seealso cref="IMatchViewConfig.LastMoveAnimLength"/>
+        public float LastMoveAnimLength => lastMoveAnimLength;
+
     }
 }
