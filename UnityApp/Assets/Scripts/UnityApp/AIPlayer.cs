@@ -26,7 +26,7 @@ namespace ColorShapeLinks.UnityApp
         /// <summary>
         /// Selected AI thinker.
         /// </summary>
-        [SerializeField] [AIList] private string selectedThinker = null;
+        [SerializeField] [ThinkerList] private string selectedThinker = null;
 
         /// <summary>
         /// String containing AI thinker-specific configuration parameters.

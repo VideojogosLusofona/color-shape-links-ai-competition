@@ -1,6 +1,6 @@
 /// @file
 /// @brief This file contains the
-/// ::ColorShapeLinks.UnityApp.AIListAttribute class.
+/// ::ColorShapeLinks.UnityApp.ThinkerListAttribute class.
 ///
 /// @author Nuno Fachada
 /// @date 2020
@@ -13,13 +13,13 @@ namespace ColorShapeLinks.UnityApp
 {
     /// <summary>
     /// Attribute which provides a custom attribute for script variables
-    /// containing all the known AI thinkers at runtime.
+    /// containing all the known thinkers at runtime.
     /// </summary>
-    public class AIListAttribute : PropertyAttribute
+    public class ThinkerListAttribute : PropertyAttribute
     {
         /// <summary>
-        /// Property containing all the known AI thinkers at runtime.
+        /// Property containing all the known thinkers at runtime.
         /// </summary>
-        public string[] AIs => ThinkerManager.Instance.AIs;
+        public string[] Thinkers => ThinkerManager.Instance.ThinkerNames;
     }
 }

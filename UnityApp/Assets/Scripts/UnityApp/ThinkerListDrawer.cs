@@ -1,6 +1,6 @@
 /// @file
 /// @brief This file contains the
-/// ::ColorShapeLinks.UnityApp.AIListDrawer class.
+/// ::ColorShapeLinks.UnityApp.ThinkerListDrawer class.
 ///
 /// @author Nuno Fachada
 /// @date 2020
@@ -13,11 +13,11 @@ using UnityEditor;
 namespace ColorShapeLinks.UnityApp
 {
     /// <summary>
-    /// Custom property drawer for selecting an AI thinker from all
-    /// known AI thinkers at runtime.
+    /// Custom property drawer for selecting an thinker from all
+    /// known thinkers at runtime.
     /// </summary>
-    [CustomPropertyDrawer(typeof(AIListAttribute))]
-    public class AIListDrawer : PropertyDrawer
+    [CustomPropertyDrawer(typeof(ThinkerListAttribute))]
+    public class ThinkerListDrawer : PropertyDrawer
     {
 
         /// <summary>
@@ -36,22 +36,23 @@ namespace ColorShapeLinks.UnityApp
             Rect position, SerializedProperty property, GUIContent label)
         {
             // Get the PropertyAttribute for the property from the base class
-            // and convert it to an AIListAttribute
-            AIListAttribute aiList = attribute as AIListAttribute;
+            // and convert it to a ThinkerListAttribute
+            ThinkerListAttribute thinkerList =
+                attribute as ThinkerListAttribute;
 
-            // Get the known AI thinkers from the AIListAttribute instance
-            string[] aiNamesList = aiList.AIs;
+            // Get the known thinkers from the ThinkerListAttribute instance
+            string[] thinkerNamesList = thinkerList.Thinkers;
 
-            // Get the index of the previously selected AI thinker
+            // Get the index of the previously selected thinker
             int index = Mathf.Max(
-                0, Array.IndexOf(aiNamesList, property.stringValue));
+                0, Array.IndexOf(thinkerNamesList, property.stringValue));
 
             // Update index in case it changed
             index = EditorGUI.Popup(
-                position, property.displayName, index, aiNamesList);
+                position, property.displayName, index, thinkerNamesList);
 
-            // Update selected AI thinker in case index changed
-            property.stringValue = aiNamesList[index];
+            // Update selected thinker in case index changed
+            property.stringValue = thinkerNamesList[index];
         }
     }
 }
