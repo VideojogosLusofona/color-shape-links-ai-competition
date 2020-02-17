@@ -34,7 +34,7 @@ namespace ColorShapeLinks.Common.AI
         /// Array of thinker names.
         /// </summary>
         /// <value>Names of known thinkers.</value>
-        public string[] AIs => thinkerTable.Keys.ToArray();
+        public string[] ThinkerNames => thinkerTable.Keys.ToArray();
 
         /// <summary>
         /// Does the given thinker FQN correspond to a known thinker?
