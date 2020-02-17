@@ -20,6 +20,6 @@ namespace ColorShapeLinks.UnityApp
         /// <summary>
         /// Property containing all the known AI thinkers at runtime.
         /// </summary>
-        public string[] AIs => AIManager.Instance.AIs;
+        public string[] AIs => ThinkerManager.Instance.AIs;
     }
 }

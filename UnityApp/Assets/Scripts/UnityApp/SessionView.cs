@@ -43,7 +43,7 @@ namespace ColorShapeLinks.UnityApp
         private IReadOnlyList<KeyValuePair<Match, Winner>> results;
 
         // List of current standings (player-points pairs)
-        private IReadOnlyList<KeyValuePair<IThinker, int>> standings;
+        private IReadOnlyList<KeyValuePair<string, int>> standings;
 
         // Vectors for holding the scrollviews
         private Vector2 scrollViewVector1 = Vector2.zero;
@@ -140,7 +140,7 @@ namespace ColorShapeLinks.UnityApp
                     {
                         results = new List<KeyValuePair<Match, Winner>>(
                             sessionData.Results);
-                        standings = new List<KeyValuePair<IThinker, int>>(
+                        standings = new List<KeyValuePair<string, int>>(
                             sessionData.Standings);
                     }
                     GUI.Window(3,

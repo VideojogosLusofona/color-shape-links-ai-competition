@@ -14,35 +14,20 @@ namespace ColorShapeLinks.UnityApp
     /// </summary>
     public class HumanPlayer : IPlayer
     {
-        // Reference to a human thinker
-        private IThinker thinker;
-
-        /// <summary>
-        /// Is the player human?
-        /// </summary>
-        /// <value>
-        /// Always evaluates to `true`, since this is a human player.
-        /// </value>
-        public bool IsHuman => true;
+        // The fully qualified name of the human thinker class
+        private string thinker = typeof(HumanThinker).FullName;
 
         /// <summary>
         /// Name of the human player.
         /// </summary>
-        /// <returns>The string "Human".</returns>
-        public override string ToString() => "Human";
-
-
-        /// <summary>
-        /// Creates a new instance of this class.
-        /// </summary>
-        public HumanPlayer()
-        {
-            thinker = new HumanThinker();
-        }
+        /// <returns>
+        /// The fully qualified name of the human thinker class.
+        /// </returns>
+        public override string ToString() => thinker;
 
         /// <summary>
-        /// An instance of <cref="HumanThinker"/>.
+        /// The fully qualified name of the human thinker class.
         /// </summary>
-        public IThinker Thinker => thinker;
+        public string ThinkerFQN => thinker;
     }
 }

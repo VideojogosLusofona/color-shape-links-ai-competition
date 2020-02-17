@@ -357,8 +357,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
-  selectedAI: ColorShapeLinks.Common.AI.Examples.SequentialAIThinker
-  aiConfig: 
+  selectedThinker: ColorShapeLinks.Common.AI.Examples.SequentialAIThinker
+  thinkerConfig: 
 --- !u!114 &617695837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,8 +372,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
-  selectedAI: ColorShapeLinks.Common.AI.Examples.RandomAIThinker
-  aiConfig: 
+  selectedThinker: ColorShapeLinks.Common.AI.Examples.RandomAIThinker
+  thinkerConfig: 
 --- !u!114 &617695838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,8 +387,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
-  selectedAI: ColorShapeLinks.Common.AI.Examples.LoserSleeperAIThinker
-  aiConfig: 
+  selectedThinker: ColorShapeLinks.Common.AI.Examples.LoserSleeperAIThinker
+  thinkerConfig: 
 --- !u!114 &617695839
 MonoBehaviour:
   m_ObjectHideFlags: 0

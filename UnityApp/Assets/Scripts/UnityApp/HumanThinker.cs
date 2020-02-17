@@ -20,8 +20,13 @@ namespace ColorShapeLinks.UnityApp
         /// <summary>
         /// Name of the human player.
         /// </summary>
+        public const string Name = "Human";
+
+        /// <summary>
+        /// Name of the human player.
+        /// </summary>
         /// <returns>The string "Human".</returns>
-        public override string ToString() => "Human";
+        public override string ToString() => Name;
 
         /// @copydoc ColorShapeLinks.Common.AI.IThinker.Think
         /// <seealso cref="ColorShapeLinks.Common.AI.IThinker.Think"/>

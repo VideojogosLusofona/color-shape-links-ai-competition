@@ -5,8 +5,6 @@
 /// @date 2019, 2020
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
-using ColorShapeLinks.Common.AI;
-
 namespace ColorShapeLinks.UnityApp
 {
     /// <summary>
@@ -14,10 +12,7 @@ namespace ColorShapeLinks.UnityApp
     /// </summary>
     public interface IPlayer
     {
-        /// <summary>The player's thinker.</summary>
-        /// <value>
-        /// An instance of <see cref="ColorShapeLinks.Common.AI.IThinker"/>.
-        /// </value>
-        IThinker Thinker { get; }
+        /// <summary>The fully qualified name of the thinker class.</summary>
+        string ThinkerFQN { get; }
     }
 }

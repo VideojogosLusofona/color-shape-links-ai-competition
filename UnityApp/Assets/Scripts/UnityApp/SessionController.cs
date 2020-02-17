@@ -29,7 +29,8 @@ namespace ColorShapeLinks.UnityApp
     /// * *Controller* - This class.
     /// </remarks>
     public class SessionController : MonoBehaviour,
-        IMatchDataProvider, ISessionDataProvider, IMatchConfig, IMatchViewConfig
+        IMatchDataProvider, ISessionDataProvider,
+        IMatchConfig, IMatchViewConfig
     {
 
         // ///////////////////////////////////////////////// //
@@ -38,7 +39,7 @@ namespace ColorShapeLinks.UnityApp
         [Header("Match properties")]
 
         /// <summary>Number of rows in the game board.</summary>
-        [SerializeField] private int rows = 7;
+        [SerializeField] private int rows = 6;
 
         /// <summary>Number of columns in the game board.</summary>
         [SerializeField] private int cols = 7;
@@ -127,6 +128,9 @@ namespace ColorShapeLinks.UnityApp
         // It's the model in this MVC implementation
         private Session session;
 
+        // Thinkers in current match
+        private IThinker[] currentThinkers;
+
         // Variables which define how several session UI screens will behave
         private bool uiWhoPlaysFirst;
         private bool uiBlockStartNextMatch;
@@ -136,14 +140,21 @@ namespace ColorShapeLinks.UnityApp
         private void Awake()
         {
             // Get all AIs and put them in a list
-            List<IPlayer> allAIs = new List<IPlayer>();
+            List<AIPlayer> allAIs = new List<AIPlayer>();
             GetComponents(allAIs);
 
             // Get the thinkers associated with the active AIs
-            IList<IThinker> activeThinkers = allAIs
-                .Where(ai => (ai as AIPlayer).IsActive)
-                .Select(ai => ai.Thinker)
+            IList<ThinkerPrototype> activeThinkers = allAIs
+                .Where(ai => ai.IsActive)
+                .Select(ai => ai.ThinkerPrototype)
                 .ToList();
+
+            // A human thinker prototype, in case there aren't enough
+            // thinkers
+            IThinkerPrototype humanPrototype = new HumanThinkerPrototype();
+
+            // Instantiate the current thinkers array
+            currentThinkers = new IThinker[2];
 
             // Load the match prefab
             matchPrefab = Resources.Load<GameObject>("Prefabs/Match");
@@ -162,9 +173,9 @@ namespace ColorShapeLinks.UnityApp
                 uiBlockStartNextMatch = true;
                 uiBlockShowResult = true;
                 session = new Session(
-                    new IThinker[] {
-                        new HumanPlayer().Thinker,
-                        new HumanPlayer().Thinker },
+                    new IThinkerPrototype[] {
+                        humanPrototype,
+                        humanPrototype },
                     pointsPerWin, pointsPerLoss, pointsPerDraw);
             }
             else if (activeThinkers.Count == 1)
@@ -174,8 +185,8 @@ namespace ColorShapeLinks.UnityApp
                 uiBlockStartNextMatch = true;
                 uiBlockShowResult = true;
                 session = new Session(
-                    new IThinker[] {
-                        new HumanPlayer().Thinker,
+                    new IThinkerPrototype[] {
+                        humanPrototype,
                         activeThinkers[0] },
                     pointsPerWin, pointsPerLoss, pointsPerDraw);
             }
@@ -186,7 +197,7 @@ namespace ColorShapeLinks.UnityApp
                 uiBlockStartNextMatch = true;
                 uiBlockShowResult = true;
                 session = new Session(
-                    new IThinker[] {
+                    new IThinkerPrototype[] {
                         activeThinkers[0],
                         activeThinkers[1] },
                     pointsPerWin, pointsPerLoss, pointsPerDraw);
@@ -250,6 +261,12 @@ namespace ColorShapeLinks.UnityApp
             currentBoard = new Board(rows, cols, winSequence,
                 roundPiecesPerPlayer, squarePiecesPerPlayer);
 
+            // Instantiate thinkers for next match
+            currentThinkers[(int)PColor.White] =
+                currentMatch.thinker1.Create();
+            currentThinkers[(int)PColor.Red] =
+                currentMatch.thinker2.Create();
+
             // Instantiate the next match
             matchInstance = Instantiate(matchPrefab, transform);
             matchInstance.name = $"Match{ThinkerWhite}VS{ThinkerRed}";
@@ -312,12 +329,13 @@ namespace ColorShapeLinks.UnityApp
 
         /// @copydoc IMatchDataProvider.CurrentThinker
         /// <seealso cref="IMatchDataProvider.CurrentThinker"/>
-        public IThinker CurrentThinker => currentMatch[currentBoard.Turn];
+        public IThinker CurrentThinker =>
+            currentThinkers[(int)currentBoard.Turn];
 
         /// @copydoc IMatchDataProvider.GetThinker
         /// <seealso cref="IMatchDataProvider.GetThinker(PColor)"/>
         public IThinker GetThinker(PColor thinkerColor) =>
-            currentMatch[thinkerColor];
+            currentThinkers[(int)thinkerColor];
 
         // ////////////////////////////////////// //
         // Implementation of ISessionDataProvider //
@@ -329,11 +347,11 @@ namespace ColorShapeLinks.UnityApp
 
         /// @copydoc ISessionDataProvider.ThinkerWhite
         /// <seealso cref="ISessionDataProvider.ThinkerWhite"/>
-        public string ThinkerWhite => currentMatch[PColor.White].ToString();
+        public string ThinkerWhite => currentMatch[PColor.White].ThinkerName;
 
         /// @copydoc ISessionDataProvider.ThinkerRed
         /// <seealso cref="ISessionDataProvider.ThinkerRed"/>
-        public string ThinkerRed => currentMatch[PColor.Red].ToString();
+        public string ThinkerRed => currentMatch[PColor.Red].ThinkerName;
 
         /// @copydoc ISessionDataProvider.Matches
         /// <seealso cref="ISessionDataProvider.Matches"/>
@@ -346,7 +364,7 @@ namespace ColorShapeLinks.UnityApp
 
         /// @copydoc ISessionDataProvider.Standings
         /// <seealso cref="ISessionDataProvider.Standings"/>
-        public IEnumerable<KeyValuePair<IThinker, int>> Standings =>
+        public IEnumerable<KeyValuePair<string, int>> Standings =>
             session.GetStandings();
 
         /// @copydoc ISessionDataProvider.LastMatchResult

@@ -5,9 +5,9 @@
 /// @date 2019, 2020
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
-using UnityEngine;
 using ColorShapeLinks.Common.AI;
 using ColorShapeLinks.Common.Session;
+using UnityEngine;
 
 namespace ColorShapeLinks.UnityApp
 {
@@ -26,57 +26,52 @@ namespace ColorShapeLinks.UnityApp
         /// <summary>
         /// Selected AI thinker.
         /// </summary>
-        [SerializeField] [AIList] private string selectedAI = null;
+        [SerializeField] [AIList] private string selectedThinker = null;
 
         /// <summary>
-        /// String containing AI thinker-specific parameters.
+        /// String containing AI thinker-specific configuration parameters.
         /// </summary>
-        [SerializeField] private string aiConfig = "";
+        [SerializeField] private string thinkerConfig = "";
+
+        // A reference to the thinker's prototype
+        private ThinkerPrototype thinkerPrototype;
 
         /// <summary>Is the AI thinker active?</summary>
         /// <value>`true` if the AI is active, `false` otherwise.</value>
         public bool IsActive => isActive;
 
-        /// <summary>The AI thinker instance.</summary>
-        /// <value>
-        /// An instance of <see cref="ColorShapeLinks.Common.AI.IThinker"/>.
-        /// </value>
-        /// <seealso cref="IPlayer.Thinker"/>
-        public IThinker Thinker
+        /// @copydoc IPlayer.ThinkerFQN
+        /// <seealso cref="IPlayer.ThinkerFQN"/>
+        public string ThinkerFQN => selectedThinker;
+
+        /// <summary>
+        /// A reference to the thinker's prototype.
+        /// </summary>
+        public ThinkerPrototype ThinkerPrototype
         {
             get
             {
-                // The underlying thinker is lazy instantiated
-                if (thinker == null)
+                // The underlying thinker prototype is lazy instantiated
+                if (thinkerPrototype == null)
                 {
                     // Obtain the component holding the game configuration
-                    IMatchConfig gameConfig = GetComponent<IMatchConfig>();
+                    IMatchConfig matchConfig = GetComponent<IMatchConfig>();
 
-                    // Instantiate the thinker
-                    AbstractThinker aThinker = AIManager.Instance.NewThinker(
-                        selectedAI, gameConfig, aiConfig);
-
-                    // Thinking information is printed in the Unity console
-                    aThinker.ThinkingInfo += Debug.Log;
-
-                    // Keep the thinker in the auto property
-                    thinker = aThinker;
+                    thinkerPrototype = new ThinkerPrototype(
+                        selectedThinker, thinkerConfig, matchConfig);
                 }
 
-                // Return the underlying thinker
-                return thinker;
+                // Return the underlying thinker prototype
+                return thinkerPrototype;
             }
         }
-
-        // Private reference to the underlying thinker instance
-        private IThinker thinker;
 
         /// <summary>
         /// A string representation of the underlying AI thinker.
         /// </summary>
         /// <returns>
-        /// A string representation of the underlying AI thinker.
+        /// In practice, it's the fully qualified name of the thinker class.
         /// </returns>
-        public override string ToString() => Thinker.ToString();
+        public override string ToString() => selectedThinker;
     }
 }

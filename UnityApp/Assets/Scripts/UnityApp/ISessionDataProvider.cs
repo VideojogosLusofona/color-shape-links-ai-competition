@@ -52,7 +52,7 @@ namespace ColorShapeLinks.UnityApp
         /// <value>
         /// Descending ordered collection of thinker-points pairs.
         /// </value>
-        IEnumerable<KeyValuePair<IThinker, int>> Standings { get; }
+        IEnumerable<KeyValuePair<string, int>> Standings { get; }
 
         /// <summary>Result of last match.</summary>
         /// <value>
