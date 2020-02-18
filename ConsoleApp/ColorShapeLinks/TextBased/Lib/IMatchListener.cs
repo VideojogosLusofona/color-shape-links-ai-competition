@@ -11,15 +11,16 @@ namespace ColorShapeLinks.TextBased.Lib
     /// <summary>
     /// Interface to be implemented by classes who wish to listen to match
     /// events.
-    /// /// </summary>
+    /// </summary>
     public interface IMatchListener
     {
         /// <summary>
-        /// Register listener with match event producer.
+        /// Register listener with a match event producer.
         /// </summary>
         /// <param name="subject">
-        /// The match event producer.
+        /// The match event producer which this listener will be listen to.
         /// </param>
+        /// <seealso cref="IMatchListener.ListenTo"/>
         void ListenTo(IMatchSubject subject);
     }
 }

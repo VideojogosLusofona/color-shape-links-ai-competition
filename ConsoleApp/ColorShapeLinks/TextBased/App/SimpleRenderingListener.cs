@@ -18,18 +18,21 @@ namespace ColorShapeLinks.TextBased.App
     /// Simple match event listener which renders match information on the
     /// console.
     /// </summary>
-    public class SimpleRenderingListener : IMatchListener
+    public class SimpleRenderingListener :
+        IThinkerListener, IMatchListener, ISessionListener
     {
         // Who's playing?
         private PColor turn = PColor.White;
 
-        /// <summary>
-        /// Register the simple rendering listener with a match.
-        /// </summary>
-        /// <param name="subject">
-        /// The match to which this listener will be registered to.
-        /// </param>
-        /// <seealso cref="IMatchListener.ListenTo"/>
+        /// @copydoc ColorShapeLinks.TextBased.Lib.IThinkerListener.ListenTo
+        /// <seealso cref="ColorShapeLinks.TextBased.Lib.IThinkerListener.ListenTo"/>
+        public void ListenTo(AbstractThinker subject)
+        {
+            subject.ThinkingInfo += ThinkingInfo;
+        }
+
+        /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchListener.ListenTo
+        /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchListener.ListenTo"/>
         public void ListenTo(IMatchSubject subject)
         {
             subject.BoardUpdate += BoardUpdate;
@@ -37,7 +40,13 @@ namespace ColorShapeLinks.TextBased.App
             subject.Timeout += Timeout;
             subject.MovePerformed += MovePerformed;
             subject.MatchOver += MatchOver;
-            subject.ThinkingInfo += ThinkingInfo;
+        }
+
+        /// @copydoc ColorShapeLinks.TextBased.Lib.ISessionListener.ListenTo
+        /// <seealso cref="ColorShapeLinks.TextBased.Lib.ISessionListener.ListenTo"/>
+        public void ListenTo(ISessionSubject subject)
+        {
+
         }
 
         // Helper method to create a consistent thinker description string

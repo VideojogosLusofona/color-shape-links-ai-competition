@@ -7,8 +7,9 @@
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using ColorShapeLinks.Common;
+using ColorShapeLinks.TextBased.Lib;
 
-namespace ColorShapeLinks.TextBased.App
+namespace ColorShapeLinks.TextBased.Lib
 {
     /// <summary>Extension methods for the <see cref="Winner"/> enum.</summary>
     public static class WinnerExtensions

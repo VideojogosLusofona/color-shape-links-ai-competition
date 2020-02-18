@@ -11,6 +11,7 @@ using System.Linq;
 using System.Collections.Generic;
 using ColorShapeLinks.TextBased.Lib;
 using ColorShapeLinks.Common.AI;
+using ColorShapeLinks.Common.Session;
 using CommandLine;
 
 namespace ColorShapeLinks.TextBased.App
@@ -23,16 +24,32 @@ namespace ColorShapeLinks.TextBased.App
     {
         // Exit status to return to OS
         private static ExitStatus exitStatus;
-        // Known match event listeners
-        private static IDictionary<string, Type> knownListeners;
+
+        // Known event listeners
+        private static IDictionary<string, Type> knownThinkerListeners;
+        private static IDictionary<string, Type> knownMatchListeners;
+        private static IDictionary<string, Type> knownSessionListeners;
+
+        // Selected event listeners
+        private static IList<IThinkerListener> selectedThinkerListeners;
+        private static IList<IMatchListener> selectedMatchListeners;
+        private static IList<ISessionListener> selectedSessionListeners;
+
+        // Inner struct for one match sessions
+        private struct NoSessionConfig : ISessionConfig
+        {
+            public int PointsPerWin => 0;
+            public int PointsPerLoss => 0;
+            public int PointsPerDraw => 0;
+        }
 
         // The main method, where the ColorShapeLinks app starts
         // The Options class defines the command line arguments accepted in
         // the args parameter
         private static int Main(string[] args)
         {
-            // Reference to the parsed options
-            Options options = null;
+            // Base options
+            bool debug = false;
 
             // Assume there will be an error or exception
             exitStatus = ExitStatus.Exception;
@@ -42,46 +59,17 @@ namespace ColorShapeLinks.TextBased.App
             try
             {
                 // Parse command line parameters and act accordingly
-                Parser.Default
-                    .ParseArguments<Options>(args)
-                    .WithParsed<Options>(o =>
-                    {
-                        // Make sure we have a reference to the parsed options
-                        // after options parsing
-                        options = o;
-
-                        // Load assemblies
-                        foreach (string a in o.Assemblies)
-                        {
-                            System.Reflection.Assembly.LoadFile(a);
-                        }
-
-                        // Find match event listeners and place them in the
-                        // knownListeners class variable
-                        FindListeners();
-
-                        // Show info and exit?
-                        if (o.ShowInfoAndExit)
-                        {   // Yes, show info and exit
-                            ShowInfo();
-                            exitStatus = ExitStatus.Info;
-                        }
-                        else
-                        {   // Play a match of ColorShapeLinks
-
-                            // Create a new match with the parsed options
-                            MatchController match = new MatchController(o);
-
-                            // Register match listeners
-                            RegisterListeners(match, o.Listeners);
-
-                            // Run the match, converting the returned winner
-                            // to an exit status
-                            exitStatus = match
-                                .Run()
-                                .ToExitStatus();
-                        }
-                    });
+                exitStatus = Parser.Default
+                    .ParseArguments<SessionOptions, MatchOptions, BaseOptions>(
+                        args)
+                    .MapResult(
+                        (SessionOptions o) =>
+                            { debug = o.DebugMode; return RunSession(o, true); },
+                        (MatchOptions o) =>
+                            { debug = o.DebugMode; return RunSession(o, false); },
+                        (BaseOptions o) =>
+                            { debug = o.DebugMode; return ShowInfo(o); },
+                        errs => ExitStatus.Exception);
             }
             catch (Exception e)
             {   // An exception was thrown, deal with it
@@ -91,7 +79,7 @@ namespace ColorShapeLinks.TextBased.App
                     $"\nERROR ({e.GetType().Name}): {e.Message}");
 
                 // Should we print the full stack trace?
-                if (options?.DebugMode ?? true)
+                if (debug)
                 {
                     // Yes
                     Console.Error.WriteLine($"{e.StackTrace}\n");
@@ -109,10 +97,33 @@ namespace ColorShapeLinks.TextBased.App
             return (int)exitStatus;
         }
 
+        // Run session
+        private static ExitStatus RunSession(GameOptions options, bool complete)
+        {
+            // Load third-party assemblies
+            LoadAssembliesAndSelectListeners(options);
+
+            SessionController sc = new SessionController(
+                options,
+                options is ISessionConfig
+                    ? options as ISessionConfig
+                    : new NoSessionConfig(),
+                options.ThinkerPrototypes,
+                selectedThinkerListeners,
+                selectedMatchListeners,
+                selectedSessionListeners);
+
+            return sc.Run(complete);
+        }
+
+
         // Show environment info (loaded assemblies, known thinkers and known
         // listeners)
-        private static void ShowInfo()
+        private static ExitStatus ShowInfo(BaseOptions options)
         {
+            // Load third-party assemblies
+            LoadAssembliesAndSelectListeners(options);
+
             // Show loaded assemblies
             Console.WriteLine("Loaded assemblies:");
             foreach (System.Reflection.Assembly a in
@@ -123,26 +134,111 @@ namespace ColorShapeLinks.TextBased.App
 
             // Show known thinkers
             Console.WriteLine("Known thinkers:");
-            foreach (string thinkerName in AIManager.Instance.AIs)
+            foreach (string thinkerName in ThinkerManager.Instance.ThinkerNames)
             {
                 Console.WriteLine($"\t{thinkerName}");
             }
 
-            // Show known listeners
-            Console.WriteLine("Known listeners:");
-            foreach (string listenerName in knownListeners.Keys)
+            // Show known thinker listeners
+            Console.WriteLine("Known thinker listeners:");
+            foreach (string listenerName in knownThinkerListeners.Keys)
             {
                 Console.WriteLine($"\t{listenerName}");
             }
+
+            // Show known match listeners
+            Console.WriteLine("Known match listeners:");
+            foreach (string listenerName in knownMatchListeners.Keys)
+            {
+                Console.WriteLine($"\t{listenerName}");
+            }
+
+            // Show known session listeners
+            Console.WriteLine("Known session listeners:");
+            foreach (string listenerName in knownSessionListeners.Keys)
+            {
+                Console.WriteLine($"\t{listenerName}");
+            }
+
+            return ExitStatus.Info;
         }
 
-        // Find known match event listeners and populate the knownListeners
-        // class variable
-        private static void FindListeners()
+
+        // Load assemblies and select listeners
+        private static void LoadAssembliesAndSelectListeners(
+            BaseOptions options)
         {
-            Type type = typeof(IMatchListener);
-            knownListeners =
-                AppDomain.CurrentDomain.GetAssemblies()
+            // Load assemblies
+            foreach (string a in options.Assemblies)
+            {
+                if (a != null && a.Length > 0)
+                    System.Reflection.Assembly.LoadFile(a);
+            }
+
+            // Find listeners
+            knownThinkerListeners = FindListeners<IThinkerListener>();
+            knownMatchListeners = FindListeners<IMatchListener>();
+            knownSessionListeners = FindListeners<ISessionListener>();
+
+            // Filter listeners
+            selectedThinkerListeners = new List<IThinkerListener>();
+            selectedMatchListeners = new List<IMatchListener>();
+            selectedSessionListeners = new List<ISessionListener>();
+
+            if (options is GameOptions)
+            {
+                GameOptions gameOptions = options as GameOptions;
+
+                FilterListeners<IThinkerListener>(
+                    gameOptions.ThinkerListeners,
+                    knownThinkerListeners,
+                    selectedThinkerListeners);
+
+                FilterListeners<IMatchListener>(
+                    gameOptions.MatchListeners,
+                    knownMatchListeners,
+                    selectedMatchListeners);
+            }
+
+            if (options is SessionOptions)
+            {
+                SessionOptions sessionOptions = options as SessionOptions;
+
+                FilterListeners<ISessionListener>(
+                    sessionOptions.SessionListeners,
+                    knownSessionListeners,
+                    selectedSessionListeners);
+            }
+
+        }
+
+        private static void FilterListeners<T>(
+            IEnumerable<string> specified,
+            IDictionary<string, Type> known,
+            IList<T> selected)
+        {
+            foreach (string l in specified)
+            {
+                if (known.ContainsKey(l))
+                {
+                    Type t = known[l];
+                    selected.Add((T)Activator.CreateInstance(t));
+                }
+                else
+                {
+                    // Otherwise, throw an exception
+                    throw new ArgumentException(
+                        $"Unknown {typeof(T).Name} listener '{l}'");
+                }
+            }
+
+        }
+
+        // Find known listeners and place them in the specified variable
+        private static IDictionary<string, Type> FindListeners<T>()
+        {
+            Type type = typeof(T);
+            return AppDomain.CurrentDomain.GetAssemblies()
                     .SelectMany(a => a.GetTypes())
                     .Where(t => type.IsAssignableFrom(t)
                         && !t.IsAbstract
@@ -150,30 +246,5 @@ namespace ColorShapeLinks.TextBased.App
                     .ToDictionary(t => t.FullName, t => t);
         }
 
-        // Register specified match listeners with the match
-        private static void RegisterListeners(
-            IMatchSubject match, IEnumerable<string> listeners)
-        {
-            // Loop through the specified match listeners
-            foreach (string listenerName in listeners)
-            {
-                // Is the listener known?
-                if (knownListeners.ContainsKey(listenerName))
-                {
-                    // If so, create an instance...
-                    IMatchListener listener =
-                        (IMatchListener)Activator.CreateInstance(
-                            knownListeners[listenerName]);
-                    // ...and register it with the match
-                    listener.ListenTo(match);
-                }
-                else
-                {
-                    // Otherwise, throw an exception
-                    throw new ArgumentException(
-                        $"Unknown listener '{listenerName}'");
-                }
-            }
-        }
     }
 }

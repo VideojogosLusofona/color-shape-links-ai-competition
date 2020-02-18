@@ -40,14 +40,6 @@ namespace ColorShapeLinks.TextBased.Lib
         event Action<PColor, string> NextTurn;
 
         /// <summary>
-        /// Event raised when there is new thinking information available.
-        /// </summary>
-        /// <remarks>
-        /// * The `string` type parameter contains thinking information.
-        /// </remarks>
-        event Action<string> ThinkingInfo;
-
-        /// <summary>
         /// Event raised when a given player took too long to play,
         /// and will therefore lose the match.
         /// </summary>
