@@ -266,6 +266,10 @@ namespace ColorShapeLinks.UnityApp
             currentThinkers[(int)PColor.Red] =
                 currentMatch.thinker2.Create();
 
+            // Wire-up Debug.Log as thinker listener
+            currentThinkers[(int)PColor.White].ThinkingInfo += Debug.Log;
+            currentThinkers[(int)PColor.Red].ThinkingInfo += Debug.Log;
+
             // Instantiate the next match
             matchInstance = Instantiate(matchPrefab, transform);
             matchInstance.name = $"Match{ThinkerWhite}VS{ThinkerRed}";

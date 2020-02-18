@@ -38,5 +38,9 @@ namespace ColorShapeLinks.UnityApp
             throw new InvalidOperationException(
                 "Humans should think by themselves");
         }
+
+        /// @copydoc ColorShapeLinks.Common.AI.IThinker.ThinkingInfo
+        /// <seealso cref="ColorShapeLinks.Common.AI.IThinker.ThinkingInfo"/>
+        public event Action<string> ThinkingInfo;
     }
 }
