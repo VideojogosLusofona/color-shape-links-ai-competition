@@ -31,15 +31,18 @@ namespace ColorShapeLinks.TextBased.App
         private readonly string thinker2params;
 
         // A sequence of thinker prototypes
-        private readonly IEnumerable<IThinkerPrototype> thinkerPrototypes;
+        private IEnumerable<IThinkerPrototype> thinkerPrototypes;
 
         /// <summary>
         /// Create a new instance of match options.
         /// </summary>
-        /// <param name="assemblies">Third-party assemblies.</param>
-        /// <param name="debugMode">
-        /// Show debug information (exception stack traces)?
+        /// <param name="thinker1">Full class name of thinker 1.</param>
+        /// <param name="thinker2">Full class name of thinker 2.</param>
+        /// <param name="thinker1params">
+        /// Parameters for setting up thinker 1 instance.
         /// </param>
+        /// <param name="thinker2params">
+        /// Parameters for setting up thinker 2 instance.
         /// <param name="rows">Number of board rows.</param>
         /// <param name="cols">Number of board columns.</param>
         /// <param name="winSequence">
@@ -59,37 +62,30 @@ namespace ColorShapeLinks.TextBased.App
         /// </param>
         /// <param name="thinkerListeners">Thinker listeners.</param>
         /// <param name="matchListeners">Match listeners.</param>
-        /// <param name="thinker1">Full class name of thinker 1.</param>
-        /// <param name="thinker2">Full class name of thinker 2.</param>
-        /// <param name="thinker1params">
-        /// Parameters for setting up thinker 1 instance.
         /// </param>
-        /// <param name="thinker2params">
-        /// Parameters for setting up thinker 2 instance.
+        /// <param name="assemblies">Third-party assemblies.</param>
+        /// <param name="debugMode">
+        /// Show debug information (exception stack traces)?
         /// </param>
-        public MatchOptions(IEnumerable<string> assemblies, bool debugMode,
+        public MatchOptions(
+            string thinker1, string thinker2,
+            string thinker1params, string thinker2params,
             int rows, int cols, int winSequence,
             int roundPiecesPerPlayer, int squarePiecesPerPlayer,
             int timeLimitMillis, int minMoveTimeMillis,
             IEnumerable<string> thinkerListeners,
             IEnumerable<string> matchListeners,
-            string thinker1, string thinker2,
-            string thinker1params, string thinker2params)
-                : base(assemblies, debugMode, rows, cols, winSequence,
+            IEnumerable<string> assemblies, bool debugMode)
+                : base(rows, cols, winSequence,
                     roundPiecesPerPlayer, squarePiecesPerPlayer,
                     timeLimitMillis, minMoveTimeMillis,
-                    thinkerListeners, matchListeners)
+                    thinkerListeners, matchListeners,
+                    assemblies, debugMode)
         {
             this.thinker1 = thinker1;
             this.thinker2 = thinker2;
             this.thinker1params = thinker1params;
             this.thinker2params = thinker2params;
-
-            thinkerPrototypes = new IThinkerPrototype[]
-            {
-                new ThinkerPrototype(thinker1, thinker1params, this),
-                new ThinkerPrototype(thinker2, thinker2params, this),
-            };
         }
 
         /// <summary>
@@ -125,7 +121,21 @@ namespace ColorShapeLinks.TextBased.App
         /// <summary>
         /// A sequence of thinker prototypes.
         /// </summary>
-        public override IEnumerable<IThinkerPrototype> ThinkerPrototypes =>
-            thinkerPrototypes;
+        public override IEnumerable<IThinkerPrototype> ThinkerPrototypes
+        {
+            get
+            {
+                // The thinker prototypes are lazily instantiated
+                if (thinkerPrototypes == null)
+                {
+                    thinkerPrototypes = new IThinkerPrototype[]
+                    {
+                        new ThinkerPrototype(thinker1, thinker1params, this),
+                        new ThinkerPrototype(thinker2, thinker2params, this),
+                    };
+                }
+                return thinkerPrototypes;
+            }
+        }
     }
 }

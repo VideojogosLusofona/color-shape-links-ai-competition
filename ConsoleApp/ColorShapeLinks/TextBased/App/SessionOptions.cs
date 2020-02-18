@@ -38,7 +38,7 @@ namespace ColorShapeLinks.TextBased.App
         private readonly IEnumerable<string> sessionListeners;
 
         // A sequence of thinker prototypes
-        private readonly IEnumerable<IThinkerPrototype> thinkerPrototypes;
+        private IEnumerable<IThinkerPrototype> thinkerPrototypes;
 
         /// <summary>
         /// Create a new instance of session options.
@@ -71,43 +71,26 @@ namespace ColorShapeLinks.TextBased.App
         /// <param name="pointsPerDraw">Points per draw.</param>
         /// <param name="configFile">Session configuration file.</param>
         /// <param name="sessionListeners">Session listeners.</param>
-        public SessionOptions(IEnumerable<string> assemblies, bool debugMode,
+        public SessionOptions(
+            int pointsPerWin, int pointsPerLoss, int pointsPerDraw,
+            string configFile, IEnumerable<string> sessionListeners,
             int rows, int cols, int winSequence,
             int roundPiecesPerPlayer, int squarePiecesPerPlayer,
             int timeLimitMillis, int minMoveTimeMillis,
             IEnumerable<string> thinkerListeners,
             IEnumerable<string> matchListeners,
-            int pointsPerWin, int pointsPerLoss, int pointsPerDraw,
-            string configFile, IEnumerable<string> sessionListeners)
-                : base(assemblies, debugMode, rows, cols, winSequence,
+            IEnumerable<string> assemblies, bool debugMode)
+                : base(rows, cols, winSequence,
                     roundPiecesPerPlayer, squarePiecesPerPlayer,
                     timeLimitMillis, minMoveTimeMillis,
-                    thinkerListeners, matchListeners)
+                    thinkerListeners, matchListeners,
+                    assemblies, debugMode)
         {
-            ICollection<IThinkerPrototype> prototypes =
-                new List<IThinkerPrototype>();
-
             this.pointsPerWin = pointsPerWin;
             this.pointsPerLoss = pointsPerLoss;
             this.pointsPerDraw = pointsPerDraw;
             this.configFile = configFile;
             this.sessionListeners = sessionListeners;
-
-            using (StreamReader sr = new StreamReader(configFile))
-            {
-                char[] seps = { ' ' };
-                string line;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    string[] parsed = line.Split(seps, 2);
-                    string thinkerFQN = parsed.Length > 0 ? parsed[0] : "";
-                    string thinkerParams = parsed.Length > 1 ? parsed[1] : "";
-                    prototypes.Add(
-                        new ThinkerPrototype(thinkerFQN, thinkerParams, this));
-                }
-            }
-
-            thinkerPrototypes = prototypes;
         }
 
         /// <summary>
@@ -152,8 +135,50 @@ namespace ColorShapeLinks.TextBased.App
         /// <summary>
         /// A sequence of thinker prototypes.
         /// </summary>
-        public override IEnumerable<IThinkerPrototype> ThinkerPrototypes =>
-            thinkerPrototypes;
+        public override IEnumerable<IThinkerPrototype> ThinkerPrototypes
+        {
+            get
+            {
+                // Thinker prototypes are lazily instantiated
+                if (thinkerPrototypes == null)
+                {
+                    // Collection of thinker prototypes
+                    ICollection<IThinkerPrototype> prototypes =
+                        new List<IThinkerPrototype>();
 
+                    // Open file listing the thinkers and their configurations
+                    using (StreamReader sr = new StreamReader(configFile))
+                    {
+                        // Each line specifies a thinker and its configuration
+                        char[] seps = { ' ' };
+                        string line;
+                        // Loop through all the lines
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            // Split the line in two using the first space
+                            string[] parsed = line.Split(seps, 2);
+
+                            // Get the thinker fully qualified name
+                            string thinkerFQN =
+                                parsed.Length > 0 ? parsed[0] : "";
+
+                            // Get the thinker parameters
+                            string thinkerParams =
+                                parsed.Length > 1 ? parsed[1] : "";
+
+                            // Add prototype to collection
+                            prototypes.Add(
+                                new ThinkerPrototype(
+                                    thinkerFQN, thinkerParams, this));
+                        }
+                    }
+                    // Place collection in instance variable
+                    thinkerPrototypes = prototypes;
+                }
+
+                // Return the thinker prototypes
+                return thinkerPrototypes;
+            }
+        }
     }
 }

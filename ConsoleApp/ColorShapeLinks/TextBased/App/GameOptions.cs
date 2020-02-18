@@ -49,10 +49,6 @@ namespace ColorShapeLinks.TextBased.App
         /// <summary>
         /// Create a new instance of game options.
         /// </summary>
-        /// <param name="assemblies">Third-party assemblies.</param>
-        /// <param name="debugMode">
-        /// Show debug information (exception stack traces)?
-        /// </param>
         /// <param name="rows">Number of board rows.</param>
         /// <param name="cols">Number of board columns.</param>
         /// <param name="winSequence">
@@ -71,12 +67,18 @@ namespace ColorShapeLinks.TextBased.App
         /// Minimum apparent move time in milliseconds.
         /// </param>
         /// <param name="matchListeners">Match listeners.</param>
-        public GameOptions(IEnumerable<string> assemblies, bool debugMode,
+        /// <param name="assemblies">Third-party assemblies.</param>
+        /// <param name="debugMode">
+        /// Show debug information (exception stack traces)?
+        /// </param>
+        public GameOptions(
             int rows, int cols, int winSequence,
             int roundPiecesPerPlayer, int squarePiecesPerPlayer,
             int timeLimitMillis, int minMoveTimeMillis,
             IEnumerable<string> matchListeners,
-            IEnumerable<string> thinkerListeners) : base(assemblies, debugMode)
+            IEnumerable<string> thinkerListeners,
+            IEnumerable<string> assemblies, bool debugMode)
+                : base(assemblies, debugMode)
         {
             this.rows = rows;
             this.cols = cols;

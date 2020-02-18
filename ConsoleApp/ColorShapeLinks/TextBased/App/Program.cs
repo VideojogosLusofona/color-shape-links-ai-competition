@@ -35,6 +35,9 @@ namespace ColorShapeLinks.TextBased.App
         private static IList<IMatchListener> selectedMatchListeners;
         private static IList<ISessionListener> selectedSessionListeners;
 
+        // Base options
+        private static bool debug;
+
         // Inner struct for one match sessions
         private struct NoSessionConfig : ISessionConfig
         {
@@ -48,8 +51,6 @@ namespace ColorShapeLinks.TextBased.App
         // the args parameter
         private static int Main(string[] args)
         {
-            // Base options
-            bool debug = false;
 
             // Assume there will be an error or exception
             exitStatus = ExitStatus.Exception;
@@ -63,29 +64,53 @@ namespace ColorShapeLinks.TextBased.App
                     .ParseArguments<SessionOptions, MatchOptions, BaseOptions>(
                         args)
                     .MapResult(
-                        (SessionOptions o) =>
-                            { debug = o.DebugMode; return RunSession(o, true); },
-                        (MatchOptions o) =>
-                            { debug = o.DebugMode; return RunSession(o, false); },
-                        (BaseOptions o) =>
-                            { debug = o.DebugMode; return ShowInfo(o); },
+                        (SessionOptions o) => RunSession(o, true),
+                        (MatchOptions o) => RunSession(o, false),
+                        (BaseOptions o) => ShowInfo(o),
                         errs => ExitStatus.Exception);
             }
             catch (Exception e)
             {   // An exception was thrown, deal with it
 
-                // Show the exception type and message
-                Console.Error.WriteLine(
-                    $"\nERROR ({e.GetType().Name}): {e.Message}");
-
                 // Should we print the full stack trace?
-                if (debug)
+                if (debug || args.Contains("-d") || args.Contains("--debug"))
                 {
                     // Yes
-                    Console.Error.WriteLine($"{e.StackTrace}\n");
+
+                    // Local function to recursively print inner exception
+                    // stack traces
+                    void RecurseInners(Exception ie)
+                    {
+                        if (ie.InnerException != null)
+                            RecurseInners(ie.InnerException);
+                        Console.Error.WriteLine(String.Format(
+                            "\n{0} ({1})\n{2}",
+                            ie.GetType().Name, ie.Message, ie.StackTrace));
+                    }
+
+                    // Recursively print exceptions, starting with the
+                    // innermost one
+                    RecurseInners(e);
                 }
                 else
                 {
+                    // No full stack trace, just the basic error messages
+
+                    // Used for possible inner exceptions
+                    Exception ie = e;
+
+                    // Show the exception type and message
+                    Console.Error.WriteLine(
+                        $"\nERROR ({e.GetType().Name}): {e.Message}");
+
+                    // If there are inner exceptions that caused this exception,
+                    // show them also
+                    while ((ie = ie.InnerException) != null)
+                    {
+                        Console.WriteLine(
+                            $"\tcaused by a {ie.GetType().Name}: {ie.Message}");
+                    }
+
                     // No, but inform user on how to see the full stack trace
                     Console.Error.WriteLine(
                         "\nUse the `--debug` option to show the complete "
@@ -168,6 +193,8 @@ namespace ColorShapeLinks.TextBased.App
         private static void LoadAssembliesAndSelectListeners(
             BaseOptions options)
         {
+            debug = options.DebugMode;
+
             // Load assemblies
             foreach (string a in options.Assemblies)
             {
