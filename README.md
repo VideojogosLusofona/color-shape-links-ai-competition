@@ -88,8 +88,8 @@ _Work in progress_
 <!--* [Downloading the development framework](#downloading-the-development-framework)-->
 * [Overview](#overview)
 * [Rules](#rules)
-* [Testing the AI in the console](testing-the-ai-in-the-console)
-* [Testing the AI in Unity](testing-the-ai-in-unity)
+* [Testing the AI in the console](#testing-the-ai-in-the-console)
+* [Testing the AI in Unity](#testing-the-ai-in-unity)
 
 <!--### Downloading the development framework
 
@@ -137,8 +137,8 @@ afterwards.
 The [`CheckWinner()`] method is useful to determine if there is a winner. If
 there is one, the solution is placed in the method's optional parameter.
 
-For building heuristics, the public read-only variable [`winCorridors`] might
-be important. This variable is a collection containing all corridors
+For building heuristics, the public read-only variable [`winCorridors`] will
+probably be useful. This variable is a collection containing all corridors
 (sequences of positions) where promising or winning piece sequences may exist.
 
 ### Rules for the AI code
@@ -163,57 +163,35 @@ _Work in progress_
 
 ### Testing the AI in Unity
 
-A Unity project implementing this board game is included in the repository,
-and can be used as a visually friendly way to test the AI.
-The project should be executed within the Unity editor, not as a standalone
-build. Project execution can be configured by manipulating the
-`SessionConfiguration` game object in the Unity Editor. This is done by: 1)
-editing the fields of the [`SessionController`] script; and, 2) adding or
-removing instances of the [`AIPlayer`] component.
+1. Place your AI class in `UnityApp/Assets/Scripts`.
+2. Open the `UnityApp` project in Unity 2019.2.x or newer.
+3. Open the **MainScene** scene in the `Assets/Scenes` folder.
 
-![game](https://user-images.githubusercontent.com/3018963/72279861-f250d280-362e-11ea-9c8a-9244dad16f11.jpg)
+   ![unity01](https://user-images.githubusercontent.com/3018963/74774639-04580d80-528c-11ea-914a-5dab8f91b390.png)
 
-#### Fields of the `SessionController` game object
+4. In the Hierarchy tab, select the **SessionConfiguration** game object.
 
-Fields of the [`SessionController`] script are divided in three sections:
+   ![unity02](https://user-images.githubusercontent.com/3018963/74774641-04f0a400-528c-11ea-97ec-e86727de2279.png)
 
-1. **Match properties** - Board dimensions, win conditions, initial number of
-   pieces per player and last move animation length in seconds.
-2. **AI properties** - AI time limit in seconds and minimum AI game move time.
-3. **Tournament properties** - Points per win, draw, loss, and information
-   screen blocking and duration options.
+5. In the Inspector tab there will be several **AI Player** components already
+   attached to the game object. These are simple dummy players for testing
+   purposes. Either:
+   1. Change the selected thinker in one of the components to your own, or
+   2. Add a new **AI Player** component, and then select your thinker.
 
-Tournaments occur automatically if there are more than two AI scripts active in
-the `SessionConfiguration` game object. Otherwise a single match is played,
-as discussed in the next section.
+   ![unity03](https://user-images.githubusercontent.com/3018963/74774643-05893a80-528c-11ea-9b98-9f8dfbb78a02.png)
 
-#### Adding and removing `AIPlayer` instances
+6. Press the "Play" button.
 
-An instance of the [`AIPlayer`] component represents one AI thinker. Zero or
-more instances of this component can be added to the `SessionConfiguration`
-game object. Instances of this component has the following configurable
-fields:
+   ![unity04](https://user-images.githubusercontent.com/3018963/74774644-05893a80-528c-11ea-8a43-b385316563a2.png)
 
-* **Is Active**: specifies if the selected AI thinker is active.
-* **Selected AI**: the AI thinker represented by this component instance,
-  selected from a list of known AI thinkers (i.e., classes extending
-  [`AbstractThinker`]).
-* **AI Config**: optional thinker-specific parameters (e.g. maximum search
-  depth).
 
-The number of active [`AIPlayer`] component instances attached to the
-`SessionConfiguration` game object determines what type of session will run:
-
-* Zero active instances: a match between human players will take place.
-* One active instance: a game between the AI and a human player will take
-  place.
-* Two active instances: a game between the two AIs will take place.
-* More than two active instances: a **tournament session** will take place,
-  where each AI plays against all other AIs twice, one as the first player
-  (white), another as the second player (red).
-
-During and after the tournament session, all match results as well as current
-standings / classifications, are presented.
+   * If three or more **AI Player** components are active, a competition
+     between all AIs will take place.
+   * If two **AI Player** components are active, a single match between them
+     will take place.
+   * If less than two **AI Player** components are active, the missing
+     components will be replaced by human players.
 
 ## Licenses
 
