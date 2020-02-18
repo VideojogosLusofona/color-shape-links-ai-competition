@@ -180,7 +180,12 @@ namespace ColorShapeLinks.Common.Session
         /// <summary>
         /// Get next match.
         /// </summary>
-        /// <returns>The next match to play.</returns>
+        /// <param name="match">
+        /// Variable where to place the next match to play.
+        /// </param>
+        /// <returns>
+        /// `true` if there is another match to play, `false` otherwise.
+        /// </returns>
         public bool NextMatch(out Match match)
         {
             if (!matchEnumerator.MoveNext())
