@@ -35,6 +35,7 @@ namespace ColorShapeLinks.UnityApp
         /// </exception>
         public FutureMove Think(Board board, CancellationToken ct)
         {
+            ThinkingInfo?.Invoke("An exception will be thrown in a moment.");
             throw new InvalidOperationException(
                 "Humans should think by themselves");
         }

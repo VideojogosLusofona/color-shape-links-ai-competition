@@ -31,7 +31,7 @@ namespace ColorShapeLinks.UnityApp
         /// <summary>
         /// String containing AI thinker-specific configuration parameters.
         /// </summary>
-        [SerializeField] private string thinkerConfig = "";
+        [SerializeField] private string thinkerParams = "";
 
         // A reference to the thinker's prototype
         private ThinkerPrototype thinkerPrototype;
@@ -58,7 +58,7 @@ namespace ColorShapeLinks.UnityApp
                     IMatchConfig matchConfig = GetComponent<IMatchConfig>();
 
                     thinkerPrototype = new ThinkerPrototype(
-                        selectedThinker, thinkerConfig, matchConfig);
+                        selectedThinker, thinkerParams, matchConfig);
                 }
 
                 // Return the underlying thinker prototype
