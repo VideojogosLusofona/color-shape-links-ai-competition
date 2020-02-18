@@ -14,8 +14,7 @@ using ColorShapeLinks.Common.AI;
 namespace ColorShapeLinks.TextBased.Lib
 {
     /// <summary>
-    /// Interface defining the events raised in a match of the ColorShapeLinks
-    /// console app.
+    /// Interface defining the events raised in a match of ColorShapeLinks.
     /// </summary>
     public interface IMatchSubject
     {

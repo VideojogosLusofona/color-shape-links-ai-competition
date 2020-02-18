@@ -22,6 +22,6 @@ namespace ColorShapeLinks.TextBased.Lib
         /// <param name="subject">
         /// The thinker event producer which this listener will be listen to.
         /// </param>
-        void ListenTo(AbstractThinker subject);
+        void ListenTo(IThinker subject);
     }
 }

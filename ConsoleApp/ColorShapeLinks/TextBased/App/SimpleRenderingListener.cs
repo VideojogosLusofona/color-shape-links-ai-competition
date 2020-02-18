@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
+using ColorShapeLinks.Common.Session;
 using ColorShapeLinks.TextBased.Lib;
 
 namespace ColorShapeLinks.TextBased.App
@@ -26,7 +27,7 @@ namespace ColorShapeLinks.TextBased.App
 
         /// @copydoc ColorShapeLinks.TextBased.Lib.IThinkerListener.ListenTo
         /// <seealso cref="ColorShapeLinks.TextBased.Lib.IThinkerListener.ListenTo"/>
-        public void ListenTo(AbstractThinker subject)
+        public void ListenTo(IThinker subject)
         {
             subject.ThinkingInfo += ThinkingInfo;
         }
@@ -46,12 +47,26 @@ namespace ColorShapeLinks.TextBased.App
         /// <seealso cref="ColorShapeLinks.TextBased.Lib.ISessionListener.ListenTo"/>
         public void ListenTo(ISessionSubject subject)
         {
-
+            subject.BeforeSession += BeforeSession;
+            subject.AfterSession += AfterSession;
+            subject.BeforeMatch += BeforeMatch;
+            subject.AfterMatch += AfterMatch;
         }
 
-        // Helper method to create a consistent thinker description string
-        private string ThinkerDesc(PColor thinkerColor, string thinkerName) =>
-            $"Thinker {(int)thinkerColor + 1} ({thinkerColor}, {thinkerName})";
+        // ///////////////////////////////// //
+        // Methods for listening to thinkers //
+        // ///////////////////////////////// //
+
+        // Show thinking info
+        private void ThinkingInfo(string thinkingInfo)
+        {
+            // Show thinking info
+            Console.WriteLine($"{turn} thinker says: {thinkingInfo}");
+        }
+
+        // //////////////////////////////// //
+        // Methods for listening to matches //
+        // //////////////////////////////// //
 
         // Renders the match board as follows:
         // w - Round white pieces
@@ -90,7 +105,7 @@ namespace ColorShapeLinks.TextBased.App
         // Renders info about the next turn
         private void NextTurn(PColor thinkerColor, string thinkerName)
         {
-            Console.WriteLine($"{ThinkerDesc(thinkerColor, thinkerName)} turn");
+            Console.WriteLine($"{thinkerColor.FormatName(thinkerName)} turn");
             turn = thinkerColor;
         }
 
@@ -98,7 +113,7 @@ namespace ColorShapeLinks.TextBased.App
         // play
         private void Timeout(PColor thinkerColor, string thinkerName)
         {
-            Console.WriteLine(ThinkerDesc(thinkerColor, thinkerName)
+            Console.WriteLine(thinkerColor.FormatName(thinkerName)
                 + " took too long to play!");
         }
 
@@ -107,7 +122,7 @@ namespace ColorShapeLinks.TextBased.App
             PColor thinkerColor, string thinkerName,
             FutureMove move, int thinkingTime)
         {
-            Console.WriteLine(ThinkerDesc(thinkerColor, thinkerName)
+            Console.WriteLine(thinkerColor.FormatName(thinkerName)
                 + $" placed a {move.shape} piece at column {move.column}"
                 + $" after {thinkingTime}ms");
         }
@@ -133,7 +148,7 @@ namespace ColorShapeLinks.TextBased.App
 
                 // Show who won
                 Console.WriteLine(
-                    $"Winner is {ThinkerDesc(winnerColor, winnerName)}");
+                    $"Winner is {winnerColor.FormatName(winnerName)}");
 
                 // Show the solution, if available
                 if (solution != null)
@@ -148,11 +163,43 @@ namespace ColorShapeLinks.TextBased.App
             }
         }
 
-        // Show thinking info
-        private void ThinkingInfo(string thinkingInfo)
+        // ///////////////////////////////// //
+        // Methods for listening to sessions //
+        // ///////////////////////////////// //
+
+        private void BeforeSession(IEnumerable<Match> matches)
         {
-            // Show thinking info
-            Console.WriteLine($"{turn} thinker says: {thinkingInfo}");
+            Console.WriteLine("Matches to play:");
+            foreach (Match match in matches)
+            {
+                Console.WriteLine($"\t{match}");
+            }
+            Console.WriteLine();
+        }
+
+        private void AfterSession(ISessionDataProvider sessionData)
+        {
+            int i = 0;
+            Console.WriteLine("\nFinal standings:");
+            foreach (KeyValuePair<string, int> tp in sessionData.Standings)
+            {
+                Console.WriteLine($"\t{++i}. {tp.Key,-20} {tp.Value,8}");
+            }
+        }
+
+        private void BeforeMatch(Match match)
+        {
+            Console.WriteLine($"* {match} now playing...");
+        }
+
+        private void AfterMatch(Match match, ISessionDataProvider sessionData)
+        {
+            string resultStr;
+            if (sessionData.LastMatchResult == Winner.Draw)
+                resultStr = "It's a draw";
+            else
+                resultStr = $"Winner is {sessionData.WinnerString}";
+            Console.WriteLine($"  - {resultStr}");
         }
     }
 }

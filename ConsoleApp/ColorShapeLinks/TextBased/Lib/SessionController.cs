@@ -6,6 +6,7 @@
 /// @date 2020
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
+using System;
 using System.Collections.Generic;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
@@ -13,16 +14,45 @@ using ColorShapeLinks.Common.Session;
 
 namespace ColorShapeLinks.TextBased.Lib
 {
-    public class SessionController : IMatchDataProvider, ISessionSubject
+    /// <summary>
+    /// Controls a session of ColorShapeLinks matches.
+    /// </summary>
+    public class SessionController :
+        IMatchDataProvider, ISessionSubject, ISessionDataProvider
     {
-        private IMatchConfig matchConfig;
-        private ISessionConfig sessionConfig;
-        private IEnumerable<IThinkerPrototype> thinkerPrototypes;
-        private IEnumerable<IThinkerListener> thinkerListeners;
-        private IEnumerable<IMatchListener> matchListeners;
-        private IList<IThinker> currentThinkers;
-        private Board board;
+        // The session controlled by this controller (i.e., the model)
+        private Session session;
 
+        // Match configuration
+        private IMatchConfig matchConfig;
+        // Session configuration
+        private ISessionConfig sessionConfig;
+        // List of thinker prototypes for thinkers participating in
+        // this session
+        private IEnumerable<IThinkerPrototype> thinkerPrototypes;
+        // List of thinker listeners
+        private IEnumerable<IThinkerListener> thinkerListeners;
+        // List of match listeners
+        private IEnumerable<IMatchListener> matchListeners;
+        // List of thinkers in the current match
+        private IList<IThinker> currentThinkers;
+        // Reference to the game board in the current match
+        private Board board;
+        // Result of last match
+        private Winner lastMatchResult = Winner.None;
+
+        /// <summary>
+        /// Create a new session controller.
+        /// </summary>
+        /// <param name="matchConfig">Match configuration.</param>
+        /// <param name="sessionConfig">Session configuration.</param>
+        /// <param name="thinkerPrototypes">
+        /// List of thinker prototypes for thinkers participating in
+        /// this session.
+        /// </param>
+        /// <param name="thinkerListeners">List of thinker listeners.</param>
+        /// <param name="matchListeners">List of match listeners.</param>
+        /// <param name="sessionListeners">List of session listeners.</param>
         public SessionController(
             IMatchConfig matchConfig,
             ISessionConfig sessionConfig,
@@ -46,44 +76,91 @@ namespace ColorShapeLinks.TextBased.Lib
             currentThinkers = new IThinker[2];
         }
 
+        /// <summary>
+        /// Run a session of ColorShapeLinks matches.
+        /// </summary>
+        /// <param name="complete">
+        /// Is the session complete, i.e., should thinkers compete against each
+        /// other two times, home and away?
+        /// </param>
+        /// <returns>
+        /// An exit status according to what is defined in
+        /// <see cref="ExitStatus"/>.
+        /// </returns>
         public ExitStatus Run(bool complete)
         {
-            ExitStatus exitStatus = ExitStatus.Session;
-            Session session = new Session(
-                thinkerPrototypes, sessionConfig, complete);
+            // The exit status
+            ExitStatus exitStatus = default;
 
-            foreach (Match match in session)
+            // Create a new session (the model in MVC)
+            session = new Session(thinkerPrototypes, sessionConfig, complete);
+
+            // Notify listeners that session is about to start
+            BeforeSession?.Invoke(session);
+
+            // Play each match defined by the session
+            while (session.NextMatch(out Match match))
             {
+                // Create a new board for the current match
                 board = new Board(matchConfig.Rows, matchConfig.Cols,
                     matchConfig.WinSequence, matchConfig.RoundPiecesPerPlayer,
                     matchConfig.SquarePiecesPerPlayer);
 
+                // Instantiate thinkers for the current match
                 currentThinkers[(int)PColor.White] = match.thinker1.Create();
                 currentThinkers[(int)PColor.Red] = match.thinker2.Create();
 
+                // Add registered listeners to the thinker instances
                 foreach (IThinkerListener listener in thinkerListeners)
                 {
                     foreach (IThinker thinker in currentThinkers)
                     {
-                        if (thinker is AbstractThinker)
-                        {
-                            listener.ListenTo((AbstractThinker)thinker);
-                        }
+                        listener.ListenTo(thinker);
                     }
                 }
 
+                // Create a match controller for the current match
                 MatchController mc = new MatchController(matchConfig, this);
 
+                // Register match listeners with the match controller
                 foreach (IMatchListener listener in matchListeners)
                 {
                     listener.ListenTo(mc);
                 }
 
-                exitStatus = mc
-                    .Run()
-                    .ToExitStatus();
+                // Notify listeners that a match is about to start
+                BeforeMatch?.Invoke(match);
+
+                // Ask the controller to run the match and keep the result
+                lastMatchResult = mc.Run();
+
+                // Update variables and properties related to the match result
+                exitStatus = lastMatchResult.ToExitStatus();
+
+                // Update the winner string
+                if (lastMatchResult != Winner.Draw)
+                {
+                    PColor winnerColor = lastMatchResult.ToPColor();
+                    WinnerString = winnerColor.FormatName(
+                        currentThinkers[(int)winnerColor].ToString());
+                }
+                else
+                {
+                    WinnerString = lastMatchResult.ToString();
+                }
+
+                // Notify result to session
+                session.SetResult(lastMatchResult);
+
+                // Notify listeners that a match is over
+                AfterMatch?.Invoke(match, this);
             }
 
+            // Notify listeners that sessions is about to end
+            AfterSession?.Invoke(this);
+
+            // The exit status will either be for a complete session of
+            // associated with the match result
             return complete ? ExitStatus.Session : exitStatus;
         }
 
@@ -91,18 +168,74 @@ namespace ColorShapeLinks.TextBased.Lib
         // Implementation of IMatchDataProvider //
         // //////////////////////////////////// //
 
-        /// <summary>The game board.</summary>
-        /// <value>The game board.</value>
+        /// @copydoc ColorShapeLinks.Common.Session.IMatchDataProvider.Board
+        /// <seealso cref="ColorShapeLinks.Common.Session.IMatchDataProvider.Board"/>
         public Board Board => board;
 
-        /// <summary>The current thinker.</summary>
-        /// <value>The current thinker.</value>
+        /// @copydoc ColorShapeLinks.Common.Session.IMatchDataProvider.CurrentThinker
+        /// <seealso cref="ColorShapeLinks.Common.Session.IMatchDataProvider.CurrentThinker"/>
         public IThinker CurrentThinker => currentThinkers[(int)board.Turn];
 
-        /// <summary>Get thinker of the specified color.</summary>
-        /// <param name="thinkerColor">Color of the thinker to get.</param>
-        /// <returns>Thinker of the specified color.</returns>
+        /// @copydoc ColorShapeLinks.Common.Session.IMatchDataProvider.GetThinker
+        /// <seealso cref="ColorShapeLinks.Common.Session.IMatchDataProvider.GetThinker"/>
         public IThinker GetThinker(PColor thinkerColor) =>
             currentThinkers[(int)thinkerColor];
+
+        // ///////////////////////////////// //
+        // Implementation of ISessionSubject //
+        // ///////////////////////////////// //
+
+        public event Action<IEnumerable<Match>> BeforeSession;
+
+        public event Action<ISessionDataProvider> AfterSession;
+
+        public event Action<Match> BeforeMatch;
+
+        public event Action<Match, ISessionDataProvider> AfterMatch;
+
+        // ////////////////////////////////////// //
+        // Implementation of ISessionDataProvider //
+        // ////////////////////////////////////// //
+
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.State
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.State"/>
+        /// <exception cref="System.NotImplementedException">
+        /// Always thrown, since this implementation doesn't track an explicit
+        /// session state.
+        /// </exception>
+        public SessionState State =>
+            throw new NotImplementedException("Session state not implemented");
+
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.ThinkerWhite
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.ThinkerWhite"/>
+        public string ThinkerWhite =>
+            currentThinkers[(int)PColor.White].ToString();
+
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.ThinkerRed
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.ThinkerRed"/>
+        public string ThinkerRed =>
+            currentThinkers[(int)PColor.Red].ToString();
+
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.Matches
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.Matches"/>
+        public IEnumerable<Match> Matches => session;
+
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.Results
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.Results"/>
+        public IEnumerable<KeyValuePair<Match, Winner>> Results =>
+            session.GetResults();
+
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.Standings
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.Standings"/>
+        public IEnumerable<KeyValuePair<string, int>> Standings =>
+            session.GetStandings();
+
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.LastMatchResult
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.LastMatchResult"/>
+        public Winner LastMatchResult => lastMatchResult;
+
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.WinnerString
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.WinnerString"/>
+        public string WinnerString { get; private set; }
     }
 }

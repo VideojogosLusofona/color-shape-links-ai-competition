@@ -163,7 +163,7 @@ namespace ColorShapeLinks.TextBased.App
             Default = new string[] {
                 "ColorShapeLinks.TextBased.App.SimpleRenderingListener" },
             HelpText = "Thinker event listeners (space separated)")]
-        public IEnumerable<string> ThinkerListeners => thinkerListeners;
+        public virtual IEnumerable<string> ThinkerListeners => thinkerListeners;
 
         /// <summary>
         /// Match listeners.
@@ -172,7 +172,7 @@ namespace ColorShapeLinks.TextBased.App
             Default = new string[] {
                 "ColorShapeLinks.TextBased.App.SimpleRenderingListener" },
             HelpText = "Match event listeners (space separated)")]
-        public IEnumerable<string> MatchListeners => matchListeners;
+        public virtual IEnumerable<string> MatchListeners => matchListeners;
 
         /// <summary>
         /// A sequence of thinker prototypes.

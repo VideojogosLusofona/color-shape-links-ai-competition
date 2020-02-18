@@ -43,10 +43,13 @@ namespace ColorShapeLinks.TextBased.App
         /// <summary>
         /// Create a new instance of session options.
         /// </summary>
-        /// <param name="assemblies">Third-party assemblies.</param>
-        /// <param name="debugMode">
-        /// Show debug information (exception stack traces)?
-        /// </param>
+        /// <param name="pointsPerWin">Points per win.</param>
+        /// <param name="pointsPerLoss">Points per loss.</param>
+        /// <param name="pointsPerDraw">Points per draw.</param>
+        /// <param name="configFile">Session configuration file.</param>
+        /// <param name="thinkerListeners">Thinker listeners.</param>
+        /// <param name="matchListeners">Match listeners.</param>
+        /// <param name="sessionListeners">Session listeners.</param>
         /// <param name="rows">Number of board rows.</param>
         /// <param name="cols">Number of board columns.</param>
         /// <param name="winSequence">
@@ -64,21 +67,19 @@ namespace ColorShapeLinks.TextBased.App
         /// <param name="minMoveTimeMillis">
         /// Minimum apparent move time in milliseconds.
         /// </param>
-        /// <param name="thinkerListeners">Thinker listeners.</param>
-        /// <param name="matchListeners">Match listeners.</param>
-        /// <param name="pointsPerWin">Points per win.</param>
-        /// <param name="pointsPerLoss">Points per loss.</param>
-        /// <param name="pointsPerDraw">Points per draw.</param>
-        /// <param name="configFile">Session configuration file.</param>
-        /// <param name="sessionListeners">Session listeners.</param>
+        /// <param name="assemblies">Third-party assemblies.</param>
+        /// <param name="debugMode">
+        /// Show debug information (exception stack traces)?
+        /// </param>
         public SessionOptions(
             int pointsPerWin, int pointsPerLoss, int pointsPerDraw,
-            string configFile, IEnumerable<string> sessionListeners,
+            string configFile,
+            IEnumerable<string> thinkerListeners,
+            IEnumerable<string> matchListeners,
+            IEnumerable<string> sessionListeners,
             int rows, int cols, int winSequence,
             int roundPiecesPerPlayer, int squarePiecesPerPlayer,
             int timeLimitMillis, int minMoveTimeMillis,
-            IEnumerable<string> thinkerListeners,
-            IEnumerable<string> matchListeners,
             IEnumerable<string> assemblies, bool debugMode)
                 : base(rows, cols, winSequence,
                     roundPiecesPerPlayer, squarePiecesPerPlayer,
@@ -124,11 +125,29 @@ namespace ColorShapeLinks.TextBased.App
         public string ConfigFile => configFile;
 
         /// <summary>
+        /// Thinker listeners.
+        /// </summary>
+        [Option("thinker-listeners",
+            Default = new string[] { },
+            HelpText = "Thinker event listeners (space separated)")]
+        public override IEnumerable<string> ThinkerListeners =>
+            base.ThinkerListeners;
+
+        /// <summary>
+        /// Match listeners.
+        /// </summary>
+        [Option("match-listeners",
+            Default = new string[] { },
+            HelpText = "Match event listeners (space separated)")]
+        public override IEnumerable<string> MatchListeners =>
+            base.MatchListeners;
+
+        /// <summary>
         /// Session listeners.
         /// </summary>
         [Option("session-listeners",
             Default = new string[] {
-                "ColorShapeLinks.TextBased.App.SimpleSessionListener" },
+                "ColorShapeLinks.TextBased.App.SimpleRenderingListener" },
             HelpText = "Session event listeners (space separated)")]
         public IEnumerable<string> SessionListeners => sessionListeners;
 
@@ -152,24 +171,34 @@ namespace ColorShapeLinks.TextBased.App
                         // Each line specifies a thinker and its configuration
                         char[] seps = { ' ' };
                         string line;
+
                         // Loop through all the lines
                         while ((line = sr.ReadLine()) != null)
                         {
-                            // Split the line in two using the first space
-                            string[] parsed = line.Split(seps, 2);
+                            // Trim line
+                            line = line.Trim();
 
-                            // Get the thinker fully qualified name
-                            string thinkerFQN =
-                                parsed.Length > 0 ? parsed[0] : "";
+                            // Only process line if it's not empty or is
+                            // commented out
+                            if (line.Length > 0 && line[0] != '#'
+                                && line[0] != '%' && line[0] != ';')
+                            {
+                                // Split the line in two using the first space
+                                string[] parsed = line.Split(seps, 2);
 
-                            // Get the thinker parameters
-                            string thinkerParams =
-                                parsed.Length > 1 ? parsed[1] : "";
+                                // Get the thinker fully qualified name
+                                string thinkerFQN =
+                                    parsed.Length > 0 ? parsed[0] : "";
 
-                            // Add prototype to collection
-                            prototypes.Add(
-                                new ThinkerPrototype(
-                                    thinkerFQN, thinkerParams, this));
+                                // Get the thinker parameters
+                                string thinkerParams =
+                                    parsed.Length > 1 ? parsed[1] : "";
+
+                                // Add prototype to collection
+                                prototypes.Add(
+                                    new ThinkerPrototype(
+                                        thinkerFQN, thinkerParams, this));
+                            }
                         }
                     }
                     // Place collection in instance variable
