@@ -1,6 +1,6 @@
 /// @file
 /// @brief This file contains the
-/// ::ColorShapeLinks.UnityApp.IMatchDataProvider interface.
+/// ::ColorShapeLinks.Common.Session.IMatchDataProvider interface.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020

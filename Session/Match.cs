@@ -1,6 +1,5 @@
 /// @file
-/// @brief This file contains the ::ColorShapeLinks.Common.Tournament.Match
-/// class.
+/// @brief This file contains the ::ColorShapeLinks.Common.Session.Match class.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020

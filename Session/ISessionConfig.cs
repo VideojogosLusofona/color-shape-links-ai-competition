@@ -1,6 +1,6 @@
 /// @file
-/// @brief This file contains the ::ColorShapeLinks.Common.ISessionConfig
-/// interface.
+/// @brief This file contains the
+/// ::ColorShapeLinks.Common.Session.ISessionConfig interface.
 ///
 /// @author Nuno Fachada
 /// @date 2020

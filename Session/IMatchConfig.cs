@@ -1,5 +1,5 @@
 /// @file
-/// @brief This file contains the ::ColorShapeLinks.Common.IMatchConfig
+/// @brief This file contains the ::ColorShapeLinks.Common.Session.IMatchConfig
 /// interface.
 ///
 /// @author Nuno Fachada
