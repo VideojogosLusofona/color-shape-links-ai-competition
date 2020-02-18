@@ -119,7 +119,7 @@ namespace ColorShapeLinks.TextBased.App
         /// Each line of this file contains the fully qualified name of a
         /// thinker, a space, and the thinker options.
         /// </remarks>
-        [Option('g', "config",
+        [Option('g', "config", Required = true,
             HelpText = "Session configuration file, each line contains fully "
                 + "qualified name of thinker, space, thinker options")]
         public string ConfigFile => configFile;
