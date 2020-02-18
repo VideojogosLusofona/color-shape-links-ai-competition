@@ -8,7 +8,6 @@
 
 using System;
 using System.Collections.Generic;
-using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.Session;
 
 namespace ColorShapeLinks.TextBased.Lib
@@ -27,11 +26,33 @@ namespace ColorShapeLinks.TextBased.Lib
         /// </remarks>
         event Action<IEnumerable<Match>> BeforeSession;
 
+        /// <summary>
+        /// Event raised when the session is over.
+        /// </summary>
+        /// <remarks>
+        /// * The `ISessionDataProvider` type parameter provides data about the
+        ///   finished session.
+        /// </remarks>
         event Action<ISessionDataProvider> AfterSession;
 
+        /// <summary>
+        /// Event raised before a match starts in the context of a session.
+        /// </summary>
+        /// <remarks>
+        /// * The `Match` type parameter provides information about the match
+        ///   that is about to start.
+        /// </remarks>
         event Action<Match> BeforeMatch;
 
+        /// <summary>
+        /// Event raised after a match takes place in the context of a session.
+        /// </summary>
+        /// <remarks>
+        /// * The `Match` type parameter provides information about the match
+        ///   that just finished.
+        /// * The `ISessionDataProvider` type parameter provides data about the
+        ///   current state of the session.
+        /// </remarks>
         event Action<Match, ISessionDataProvider> AfterMatch;
-
     }
 }

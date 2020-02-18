@@ -1,6 +1,6 @@
 /// @file
 /// @brief This file contains the
-/// ::ColorShapeLinks.TextBased.App.SessionController class.
+/// ::ColorShapeLinks.TextBased.Lib.SessionController class.
 ///
 /// @author Nuno Fachada
 /// @date 2020
@@ -22,7 +22,6 @@ namespace ColorShapeLinks.TextBased.Lib
     {
         // The session controlled by this controller (i.e., the model)
         private Session session;
-
         // Match configuration
         private IMatchConfig matchConfig;
         // Session configuration
@@ -185,12 +184,20 @@ namespace ColorShapeLinks.TextBased.Lib
         // Implementation of ISessionSubject //
         // ///////////////////////////////// //
 
+        /// @copydoc ColorShapeLinks.TextBased.Lib.ISessionSubject.BeforeSession
+        /// <seealso cref="ColorShapeLinks.TextBased.Lib.ISessionSubject.BeforeSession"/>
         public event Action<IEnumerable<Match>> BeforeSession;
 
+        /// @copydoc ColorShapeLinks.TextBased.Lib.ISessionSubject.AfterSession
+        /// <seealso cref="ColorShapeLinks.TextBased.Lib.ISessionSubject.AfterSession"/>
         public event Action<ISessionDataProvider> AfterSession;
 
+        /// @copydoc ColorShapeLinks.TextBased.Lib.ISessionSubject.BeforeMatch
+        /// <seealso cref="ColorShapeLinks.TextBased.Lib.ISessionSubject.BeforeMatch"/>
         public event Action<Match> BeforeMatch;
 
+        /// @copydoc ColorShapeLinks.TextBased.Lib.ISessionSubject.AfterMatch
+        /// <seealso cref="ColorShapeLinks.TextBased.Lib.ISessionSubject.AfterMatch"/>
         public event Action<Match, ISessionDataProvider> AfterMatch;
 
         // ////////////////////////////////////// //

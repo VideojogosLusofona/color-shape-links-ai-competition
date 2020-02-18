@@ -123,11 +123,13 @@ namespace ColorShapeLinks.TextBased.App
         }
 
         // Run session
-        private static ExitStatus RunSession(GameOptions options, bool complete)
+        private static ExitStatus RunSession(
+            GameOptions options, bool complete)
         {
             // Load third-party assemblies
             LoadAssembliesAndSelectListeners(options);
 
+            // Initialize a session controller
             SessionController sc = new SessionController(
                 options,
                 options is ISessionConfig
@@ -138,9 +140,9 @@ namespace ColorShapeLinks.TextBased.App
                 selectedMatchListeners,
                 selectedSessionListeners);
 
+            // Run session
             return sc.Run(complete);
         }
-
 
         // Show environment info (loaded assemblies, known thinkers and known
         // listeners)
@@ -193,6 +195,7 @@ namespace ColorShapeLinks.TextBased.App
         private static void LoadAssembliesAndSelectListeners(
             BaseOptions options)
         {
+            // Get debug mode from options
             debug = options.DebugMode;
 
             // Load assemblies
@@ -212,8 +215,11 @@ namespace ColorShapeLinks.TextBased.App
             selectedMatchListeners = new List<IMatchListener>();
             selectedSessionListeners = new List<ISessionListener>();
 
+            // Will there be matches?
             if (options is GameOptions)
             {
+                // If so, filter thinker and match listeners so they can
+                // listen to thinkers and matches
                 GameOptions gameOptions = options as GameOptions;
 
                 FilterListeners<IThinkerListener>(
@@ -227,8 +233,11 @@ namespace ColorShapeLinks.TextBased.App
                     selectedMatchListeners);
             }
 
+            // Will there be a session of matches?
             if (options is SessionOptions)
             {
+                // If so, filter session listeners so they can listen to the
+                // session
                 SessionOptions sessionOptions = options as SessionOptions;
 
                 FilterListeners<ISessionListener>(
@@ -239,15 +248,36 @@ namespace ColorShapeLinks.TextBased.App
 
         }
 
+        // Helper generic method to find known listeners and place them in the
+        // specified variable
+        private static IDictionary<string, Type> FindListeners<T>()
+        {
+            // Get specific listeners type
+            Type type = typeof(T);
+
+            // Get known listeners of this type
+            return AppDomain.CurrentDomain.GetAssemblies()
+                    .SelectMany(a => a.GetTypes())
+                    .Where(t => type.IsAssignableFrom(t)
+                        && !t.IsAbstract
+                        && t.GetConstructor(Type.EmptyTypes) != null)
+                    .ToDictionary(t => t.FullName, t => t);
+        }
+
+        // Helper generic method to filter listeners
         private static void FilterListeners<T>(
             IEnumerable<string> specified,
             IDictionary<string, Type> known,
             IList<T> selected)
         {
+            // For each of the listeners specified...
             foreach (string l in specified)
             {
+                // Check if it's known (i.e. if it exists in the
+                // loaded assemblies)
                 if (known.ContainsKey(l))
                 {
+                    // If so, instantiate it and add it to the listeners list
                     Type t = known[l];
                     selected.Add((T)Activator.CreateInstance(t));
                 }
@@ -258,20 +288,6 @@ namespace ColorShapeLinks.TextBased.App
                         $"Unknown {typeof(T).Name} listener '{l}'");
                 }
             }
-
         }
-
-        // Find known listeners and place them in the specified variable
-        private static IDictionary<string, Type> FindListeners<T>()
-        {
-            Type type = typeof(T);
-            return AppDomain.CurrentDomain.GetAssemblies()
-                    .SelectMany(a => a.GetTypes())
-                    .Where(t => type.IsAssignableFrom(t)
-                        && !t.IsAbstract
-                        && t.GetConstructor(Type.EmptyTypes) != null)
-                    .ToDictionary(t => t.FullName, t => t);
-        }
-
     }
 }

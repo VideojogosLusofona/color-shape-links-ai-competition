@@ -1,6 +1,6 @@
 /// @file
 /// @brief This file contains the
-/// ::ColorShapeLinks.TextBased.App.MatchController class.
+/// ::ColorShapeLinks.TextBased.Lib.MatchController class.
 ///
 /// @author Nuno Fachada
 /// @date 2020
@@ -43,6 +43,7 @@ namespace ColorShapeLinks.TextBased.Lib
         /// Sets up a new match.
         /// </summary>
         /// <param name="matchConfig">Match configuration.</param>
+        /// <param name="matchData">Match data.</param>
         public MatchController(
             IMatchConfig matchConfig, IMatchDataProvider matchData)
         {

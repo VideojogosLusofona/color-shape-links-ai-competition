@@ -66,6 +66,7 @@ namespace ColorShapeLinks.TextBased.App
         /// <param name="minMoveTimeMillis">
         /// Minimum apparent move time in milliseconds.
         /// </param>
+        /// <param name="thinkerListeners">Thinker listeners.</param>
         /// <param name="matchListeners">Match listeners.</param>
         /// <param name="assemblies">Third-party assemblies.</param>
         /// <param name="debugMode">
@@ -75,8 +76,8 @@ namespace ColorShapeLinks.TextBased.App
             int rows, int cols, int winSequence,
             int roundPiecesPerPlayer, int squarePiecesPerPlayer,
             int timeLimitMillis, int minMoveTimeMillis,
-            IEnumerable<string> matchListeners,
             IEnumerable<string> thinkerListeners,
+            IEnumerable<string> matchListeners,
             IEnumerable<string> assemblies, bool debugMode)
                 : base(assemblies, debugMode)
         {

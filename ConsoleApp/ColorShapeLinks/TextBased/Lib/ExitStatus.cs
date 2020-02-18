@@ -1,5 +1,5 @@
 /// @file
-/// @brief This file contains the ::ColorShapeLinks.TextBased.App.ExitStatus
+/// @brief This file contains the ::ColorShapeLinks.TextBased.Lib.ExitStatus
 /// enum.
 ///
 /// @author Nuno Fachada

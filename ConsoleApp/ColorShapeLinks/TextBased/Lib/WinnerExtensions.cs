@@ -1,13 +1,12 @@
 /// @file
 /// @brief This file contains the
-/// ::ColorShapeLinks.TextBased.App.WinnerExtensions class.
+/// ::ColorShapeLinks.TextBased.Lib.WinnerExtensions class.
 ///
 /// @author Nuno Fachada
 /// @date 2020
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using ColorShapeLinks.Common;
-using ColorShapeLinks.TextBased.Lib;
 
 namespace ColorShapeLinks.TextBased.Lib
 {

@@ -326,16 +326,16 @@ namespace ColorShapeLinks.UnityApp
         // Implementation of IMatchDataProvider //
         // //////////////////////////////////// //
 
-        /// @copydoc IMatchDataProvider.Board
+        /// @copydoc Common.Session.IMatchDataProvider.Board
         /// <seealso cref="IMatchDataProvider.Board"/>
         public Board Board => currentBoard;
 
-        /// @copydoc IMatchDataProvider.CurrentThinker
+        /// @copydoc Common.Session.IMatchDataProvider.CurrentThinker
         /// <seealso cref="IMatchDataProvider.CurrentThinker"/>
         public IThinker CurrentThinker =>
             currentThinkers[(int)currentBoard.Turn];
 
-        /// @copydoc IMatchDataProvider.GetThinker
+        /// @copydoc Common.Session.IMatchDataProvider.GetThinker
         /// <seealso cref="IMatchDataProvider.GetThinker(PColor)"/>
         public IThinker GetThinker(PColor thinkerColor) =>
             currentThinkers[(int)thinkerColor];
@@ -344,40 +344,40 @@ namespace ColorShapeLinks.UnityApp
         // Implementation of IMatchConfig //
         // ///////////////////////////// //
 
-        /// @copydoc ColorShapeLinks.Common.IMatchConfig.Rows
-        /// <seealso cref="ColorShapeLinks.Common.IMatchConfig.Rows"/>
+        /// @copydoc ColorShapeLinks.Common.Session.IMatchConfig.Rows
+        /// <seealso cref="ColorShapeLinks.Common.Session.IMatchConfig.Rows"/>
         public int Rows => rows;
 
-        /// @copydoc ColorShapeLinks.Common.IMatchConfig.Cols
-        /// <seealso cref="ColorShapeLinks.Common.IMatchConfig.Cols"/>
+        /// @copydoc ColorShapeLinks.Common.Session.IMatchConfig.Cols
+        /// <seealso cref="ColorShapeLinks.Common.Session.IMatchConfig.Cols"/>
         public int Cols => cols;
 
-        /// @copydoc ColorShapeLinks.Common.IMatchConfig.WinSequence
-        /// <seealso cref="ColorShapeLinks.Common.IMatchConfig.WinSequence"/>
+        /// @copydoc ColorShapeLinks.Common.Session.IMatchConfig.WinSequence
+        /// <seealso cref="ColorShapeLinks.Common.Session.IMatchConfig.WinSequence"/>
         public int WinSequence => winSequence;
 
-        /// @copydoc ColorShapeLinks.Common.IMatchConfig.RoundPiecesPerPlayer
-        /// <seealso cref="ColorShapeLinks.Common.IMatchConfig.RoundPiecesPerPlayer"/>
+        /// @copydoc ColorShapeLinks.Common.Session.IMatchConfig.RoundPiecesPerPlayer
+        /// <seealso cref="ColorShapeLinks.Common.Session.IMatchConfig.RoundPiecesPerPlayer"/>
         public int RoundPiecesPerPlayer => roundPiecesPerPlayer;
 
-        /// @copydoc ColorShapeLinks.Common.IMatchConfig.SquarePiecesPerPlayer
-        /// <seealso cref="ColorShapeLinks.Common.IMatchConfig.SquarePiecesPerPlayer"/>
+        /// @copydoc ColorShapeLinks.Common.Session.IMatchConfig.SquarePiecesPerPlayer
+        /// <seealso cref="ColorShapeLinks.Common.Session.IMatchConfig.SquarePiecesPerPlayer"/>
         public int SquarePiecesPerPlayer => squarePiecesPerPlayer;
 
-        /// @copydoc ColorShapeLinks.Common.IMatchConfig.TimeLimitMillis
-        /// <seealso cref="ColorShapeLinks.Common.IMatchConfig.TimeLimitMillis"/>
+        /// @copydoc ColorShapeLinks.Common.Session.IMatchConfig.TimeLimitMillis
+        /// <seealso cref="ColorShapeLinks.Common.Session.IMatchConfig.TimeLimitMillis"/>
         public int TimeLimitMillis => (int)(aITimeLimit * 1000);
 
-        /// @copydoc ColorShapeLinks.Common.IMatchConfig.TimeLimitSeconds
-        /// <seealso cref="ColorShapeLinks.Common.IMatchConfig.TimeLimitSeconds"/>
+        /// @copydoc ColorShapeLinks.Common.Session.IMatchConfig.TimeLimitSeconds
+        /// <seealso cref="ColorShapeLinks.Common.Session.IMatchConfig.TimeLimitSeconds"/>
         public float TimeLimitSeconds => aITimeLimit;
 
-        /// @copydoc ColorShapeLinks.Common.IMatchConfig.MinMoveTimeMillis
-        /// <seealso cref="ColorShapeLinks.Common.IMatchConfig.MinMoveTimeMillis"/>
+        /// @copydoc ColorShapeLinks.Common.Session.IMatchConfig.MinMoveTimeMillis
+        /// <seealso cref="ColorShapeLinks.Common.Session.IMatchConfig.MinMoveTimeMillis"/>
         public int MinMoveTimeMillis => (int)(minAIGameMoveTime * 1000);
 
-        /// @copydoc ColorShapeLinks.Common.IMatchConfig.MinMoveTimeSeconds
-        /// <seealso cref="ColorShapeLinks.Common.IMatchConfig.MinMoveTimeSeconds"/>
+        /// @copydoc ColorShapeLinks.Common.Session.IMatchConfig.MinMoveTimeSeconds
+        /// <seealso cref="ColorShapeLinks.Common.Session.IMatchConfig.MinMoveTimeSeconds"/>
         public float MinMoveTimeSeconds => minAIGameMoveTime;
 
         // ////////////////////////////////// //

@@ -1,5 +1,5 @@
 /// @file
-/// @brief This file contains the ::ColorShapeLinks.UnityApp.ISessionConfig
+/// @brief This file contains the ::ColorShapeLinks.UnityApp.IMatchViewConfig
 /// interface.
 ///
 /// @author Nuno Fachada
