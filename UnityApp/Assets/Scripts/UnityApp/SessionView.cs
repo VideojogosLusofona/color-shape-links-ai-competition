@@ -30,7 +30,7 @@ namespace ColorShapeLinks.UnityApp
     public class SessionView : MonoBehaviour
     {
         // Reference to the session data provider
-        private ISessionDataProvider sessionData;
+        private IUnitySessionDataProvider sessionData;
 
         // Reference to the coroutine that provides a timer for non-blocking
         // session UI screens (next match screen and match results screen)
@@ -56,7 +56,7 @@ namespace ColorShapeLinks.UnityApp
         private void Awake()
         {
             // Get reference to the session data
-            sessionData = GetComponent<ISessionDataProvider>();
+            sessionData = GetComponent<IUnitySessionDataProvider>();
         }
 
         // Start is called on the frame when a script is enabled just before

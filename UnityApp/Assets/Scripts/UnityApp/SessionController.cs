@@ -30,7 +30,7 @@ namespace ColorShapeLinks.UnityApp
     /// </remarks>
     public class SessionController : MonoBehaviour,
         IMatchDataProvider, IMatchConfig, IMatchViewConfig,
-        ISessionDataProvider, ISessionConfig
+        IUnitySessionDataProvider, ISessionConfig
     {
 
         // ///////////////////////////////////////////////// //
@@ -388,58 +388,58 @@ namespace ColorShapeLinks.UnityApp
         /// <seealso cref="IMatchViewConfig.LastMoveAnimLength"/>
         public float LastMoveAnimLength => lastMoveAnimLength;
 
-        // ////////////////////////////////////// //
-        // Implementation of ISessionDataProvider //
-        // ////////////////////////////////////// //
+        // /////////////////////////////////////////// //
+        // Implementation of IUnitySessionDataProvider //
+        // /////////////////////////////////////////// //
 
-        /// @copydoc ISessionDataProvider.State
-        /// <seealso cref="ISessionDataProvider.State"/>
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.State
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.State"/>
         public SessionState State => state;
 
-        /// @copydoc ISessionDataProvider.ThinkerWhite
-        /// <seealso cref="ISessionDataProvider.ThinkerWhite"/>
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.ThinkerWhite
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.ThinkerWhite"/>
         public string ThinkerWhite => currentMatch[PColor.White].ThinkerName;
 
-        /// @copydoc ISessionDataProvider.ThinkerRed
-        /// <seealso cref="ISessionDataProvider.ThinkerRed"/>
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.ThinkerRed
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.ThinkerRed"/>
         public string ThinkerRed => currentMatch[PColor.Red].ThinkerName;
 
-        /// @copydoc ISessionDataProvider.Matches
-        /// <seealso cref="ISessionDataProvider.Matches"/>
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.Matches
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.Matches"/>
         public IEnumerable<Match> Matches => session;
 
-        /// @copydoc ISessionDataProvider.Results
-        /// <seealso cref="ISessionDataProvider.Results"/>
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.Results
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.Results"/>
         public IEnumerable<KeyValuePair<Match, Winner>> Results =>
             session.GetResults();
 
-        /// @copydoc ISessionDataProvider.Standings
-        /// <seealso cref="ISessionDataProvider.Standings"/>
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.Standings
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.Standings"/>
         public IEnumerable<KeyValuePair<string, int>> Standings =>
             session.GetStandings();
 
-        /// @copydoc ISessionDataProvider.LastMatchResult
-        /// <seealso cref="ISessionDataProvider.LastMatchResult"/>
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.LastMatchResult
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.LastMatchResult"/>
         public Winner LastMatchResult => matchController?.Result ?? Winner.None;
 
-        /// @copydoc ISessionDataProvider.WinnerString
-        /// <seealso cref="ISessionDataProvider.WinnerString"/>
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.WinnerString
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.WinnerString"/>
         public string WinnerString => matchController?.WinnerString;
 
-        /// @copydoc ISessionDataProvider.WhoPlaysFirst
-        /// <seealso cref="ISessionDataProvider.WhoPlaysFirst"/>
+        /// @copydoc IUnitySessionDataProvider.WhoPlaysFirst
+        /// <seealso cref="IUnitySessionDataProvider.WhoPlaysFirst"/>
         public bool WhoPlaysFirst => uiWhoPlaysFirst;
 
-        /// @copydoc ISessionDataProvider.BlockStartNextMatch
-        /// <seealso cref="ISessionDataProvider.BlockStartNextMatch"/>
+        /// @copydoc IUnitySessionDataProvider.BlockStartNextMatch
+        /// <seealso cref="IUnitySessionDataProvider.BlockStartNextMatch"/>
         public bool BlockStartNextMatch => uiBlockStartNextMatch;
 
-        /// @copydoc ISessionDataProvider.BlockShowResult
-        /// <seealso cref="ISessionDataProvider.BlockShowResult"/>
+        /// @copydoc IUnitySessionDataProvider.BlockShowResult
+        /// <seealso cref="IUnitySessionDataProvider.BlockShowResult"/>
         public bool BlockShowResult => uiBlockShowResult;
 
-        /// @copydoc ISessionDataProvider.UnblockedScreenDuration
-        /// <seealso cref="ISessionDataProvider.UnblockedScreenDuration"/>
+        /// @copydoc IUnitySessionDataProvider.UnblockedScreenDuration
+        /// <seealso cref="IUnitySessionDataProvider.UnblockedScreenDuration"/>
         public float UnblockedScreenDuration => unblockedScreenDuration;
 
         // //////////////////////////////// //
