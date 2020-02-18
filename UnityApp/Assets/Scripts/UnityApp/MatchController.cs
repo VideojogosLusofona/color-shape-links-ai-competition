@@ -72,7 +72,7 @@ namespace ColorShapeLinks.UnityApp
         /// <param name="color">Color of player to get name/color of.</param>
         /// <returns>A string with the name and color of player.</returns>
         public string PlrNameColor(PColor color) =>
-            $"{matchData.GetThinker(color)} ({color})";
+            color.FormatName(matchData.GetThinker(color).ToString());
 
         /// <summary>Name and color of winner.</summary>
         /// <returns>A string with the name and color of the winner.</returns>
