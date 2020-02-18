@@ -54,16 +54,28 @@ namespace ColorShapeLinks.Common.AI
         /// <param name="matchConfig">
         /// The configuration for matches where created thinkers will play.
         /// </param>
+        /// <exception cref="System.ArgumentException">
+        /// Thrown when the <paramref name="thinkerFQN"/> is empty or does not
+        /// correspond to a known thinker.
+        /// </exception>
         public ThinkerPrototype(
             string thinkerFQN, string thinkerParams, IMatchConfig matchConfig)
         {
+            // Check if thinkerFQN string contains anything
+            if (thinkerFQN == null || thinkerFQN.Length == 0)
+            {
+                throw new ArgumentException(
+                    $"A ThinkerPrototype requires a non-empty Thinker FQN.");
+            }
+
             // If AI is not known, thrown an exception
             if (!ThinkerManager.Instance.IsKnown(thinkerFQN))
             {
-                throw new InvalidOperationException(
+                throw new ArgumentException(
                     $"No Thinker named '{thinkerFQN}' was found");
             }
 
+            // Keep the parameters
             this.thinkerFQN = thinkerFQN;
             this.thinkerParams = thinkerParams;
             this.matchConfig = matchConfig;
