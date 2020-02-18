@@ -1,5 +1,5 @@
 /// @file
-/// @brief This file contains the ::ColorShapeLinks.Common.IGameConfig
+/// @brief This file contains the ::ColorShapeLinks.Common.IMatchConfig
 /// interface.
 ///
 /// @author Nuno Fachada
@@ -9,7 +9,7 @@
 namespace ColorShapeLinks.Common.Session
 {
     /// <summary>
-    /// Defines a game configuration, such as number of rows, number of
+    /// Defines a match configuration, such as number of rows, number of
     /// columns, etc.
     /// </summary>
     public interface IMatchConfig
