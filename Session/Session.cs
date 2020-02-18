@@ -1,13 +1,12 @@
 /// @file
 /// @brief This file contains the
-/// ::ColorShapeLinks.Common.Tournament.Tournament class.
+/// ::ColorShapeLinks.Common.Session.Session class.
 ///
 /// @author Nuno Fachada
 /// @date 2019, 2020
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using System;
-using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using ColorShapeLinks.Common.AI;
