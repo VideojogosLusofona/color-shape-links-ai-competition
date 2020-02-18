@@ -43,6 +43,5 @@ namespace ColorShapeLinks.Common.AI
         ///   thinking.
         /// </remarks>
         event Action<string> ThinkingInfo;
-
     }
 }

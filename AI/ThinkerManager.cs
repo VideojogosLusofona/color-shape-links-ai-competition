@@ -1,5 +1,6 @@
 /// @file
-/// @brief This file contains the ::ColorShapeLinks.Common.AI.ThinkerManager class.
+/// @brief This file contains the ::ColorShapeLinks.Common.AI.ThinkerManager
+/// class.
 ///
 /// @author Nuno Fachada
 /// @date 2020
