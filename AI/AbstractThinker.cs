@@ -120,14 +120,8 @@ namespace ColorShapeLinks.Common.AI
             ThinkingInfo?.Invoke(info);
         }
 
-        /// <summary>
-        /// Event raised when thinkers produce information while thinking.
-        /// </summary>
-        /// <remarks>
-        /// * Listeners receive a string containing the thinking information.
-        /// * It is not mandatory that thinkers produce any information while
-        ///   thinking.
-        /// </remarks>
+        /// @copydoc IThinker.ThinkingInfo
+        /// <seealso cref="IThinker.ThinkingInfo"/>
         public event Action<string> ThinkingInfo;
     }
 }

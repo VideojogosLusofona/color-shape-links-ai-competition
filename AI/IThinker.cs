@@ -6,6 +6,7 @@
 /// @date 2019, 2020
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
+using System;
 using System.Threading;
 
 namespace ColorShapeLinks.Common.AI
@@ -32,5 +33,16 @@ namespace ColorShapeLinks.Common.AI
         /// ```
         /// </remarks>
         FutureMove Think(Board board, CancellationToken ct);
+
+        /// <summary>
+        /// Event raised when thinkers produce information while thinking.
+        /// </summary>
+        /// <remarks>
+        /// * Listeners receive a string containing the thinking information.
+        /// * It is not mandatory that thinkers produce any information while
+        ///   thinking.
+        /// </remarks>
+        event Action<string> ThinkingInfo;
+
     }
 }
