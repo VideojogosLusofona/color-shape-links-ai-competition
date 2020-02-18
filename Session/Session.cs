@@ -48,16 +48,13 @@ namespace ColorShapeLinks.Common.Session
         /// <param name="thinkerPrototypes">
         /// Prototypes of thinkers participating in the session.
         /// </param>
-        /// <param name="pointsPerWin">Points per win.</param>
-        /// <param name="pointsPerLoss">Points per loss.</param>
-        /// <param name="pointsPerDraw">Points per draw.</param>
+        /// <param name="sessionConfig">Session configuration.</param>
         /// <param name="complete">
         /// Is this a complete tournament, i.e., do thinkers play against
         /// opponents home and away (two games)?
         /// </param>
         public Session(IEnumerable<IThinkerPrototype> thinkerPrototypes,
-            int pointsPerWin, int pointsPerLoss, int pointsPerDraw,
-            bool complete = false)
+            ISessionConfig sessionConfig, bool complete = false)
         {
             // Create a list of thinkers from the given enumerable
             IList<IThinkerPrototype> thinkerProtList =
@@ -73,9 +70,9 @@ namespace ColorShapeLinks.Common.Session
                     + $"but only {numThinkers} where specified");
 
             // Keep note of points per win, draw and loss
-            this.pointsPerWin = pointsPerWin;
-            this.pointsPerLoss = pointsPerLoss;
-            this.pointsPerDraw = pointsPerDraw;
+            this.pointsPerWin = sessionConfig.PointsPerWin;
+            this.pointsPerLoss = sessionConfig.PointsPerLoss;
+            this.pointsPerDraw = sessionConfig.PointsPerDraw;
 
             // Initialize the table of thinker points
             thinkerPoints = new Dictionary<string, int>(numThinkers);
