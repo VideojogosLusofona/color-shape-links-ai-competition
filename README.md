@@ -11,17 +11,30 @@ work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 # ColorShapeLinks AI competition
 
 This competition has been accepted for the [IEEE CoG 2020] conference!
-Important notes:
+This documentation, as well as a "how to" video, are under development and will
+be available in a few days.
 
-* The development framework **must** be downloaded with the following
- command (requires [Git] ≥ 2.13 and [Git LFS], other approaches will not work):
-  ```text
-  git clone --recurse-submodules https://github.com/VideojogosLusofona/color-shape-links-ai-competition.git
-  ```
+> **Important**: Take a look at the [Downloading the development framework](#downloading-the-development-framework) section before downloading or cloning this repository.
 
-* The API documentation is finalized and available [here][APIDocs].
-* This document and a "How to" video are under development and will be
-  available in a few days.
+## Table of contents
+
+- [ColorShapeLinks AI competition](#colorshapelinks-ai-competition)
+  - [Table of contents](#table-of-contents)
+  - [Description](#description)
+  - [The competition](#the-competition)
+    - [Tracks](#tracks)
+    - [Classification](#classification)
+    - [Submissions](#submissions)
+  - [The AI code](#the-ai-code)
+    - [Overview](#overview)
+    - [Rules for the AI code](#rules-for-the-ai-code)
+    - [Quickly testing your AI](#quickly-testing-your-ai)
+      - [Downloading the development framework](#downloading-the-development-framework)
+      - [Testing the AI in the console](#testing-the-ai-in-the-console)
+      - [Testing the AI in Unity](#testing-the-ai-in-unity)
+  - [Resources and guides](#resources-and-guides)
+  - [Licenses](#licenses)
+  - [Organization](#organization)
 
 ## Description
 
@@ -46,11 +59,12 @@ The competition runs on two distinct tracks:
 
 1. The **Base Track** competition will be played using standard [Simplexity]
    rules (6x7 board, 4 pieces in a row for victory) and with a time limit of
-   0.2 seconds.
-2. The **Unknown Track** competition will be played under conditions that will
-   only be revealed after the competition deadline. These conditions will be
-   derived from the first [EuroMillions] draw that takes place after the
-   deadline, most likely at May 19, 2020, as follows:
+   0.2 seconds. Only one processor core will be available for the AIs.
+2. The **Unknown Track** competition will be played on a 16-core/32-thread
+   processor under conditions that will only be revealed after the competition
+   deadline. These conditions will be derived from the first [EuroMillions]
+   draw that takes place after the deadline, most likely at May 19, 2020, as
+   follows:
    * NumberOfRows = Lowest [EuroMillions] ball number higher than 6
      (ascending order).
    * NumberOfCols = Next [EuroMillions] ball (ascending order).
@@ -63,8 +77,8 @@ The competition runs on two distinct tracks:
 
 All AIs will play against each other two times, so each AI has the opportunity
 to play first. Players will be awarded 3 points per win, 1 point per draw and
-0 points per loss. The classification for each track will be based on the total
-number of points obtained per AI, sorted in descending order.
+0 points per loss. The [classification][standings] for each track will be based
+on the total number of points obtained per AI, sorted in descending order.
 
 Tie-breaks are performed only when there are two or more AIs with the same
 points in first place. In such cases, ties are solved according to the
@@ -79,30 +93,26 @@ following criteria (from most to least important):
 4. If the tie persists, the AIs are considered officially tied and *ex aequo*
    winners of the competition.
 
-### Submitting your AI
+Classification for the base track is updated daily, and is available
+[here][standings].
 
-_Work in progress_
+### Submissions
+
+AIs should be submitted via email to
+[colorshapelinks@ulusofona.pt](mailto:colorshapelinks@ulusofona.pt). Only one
+AI is allowed per team, but multiple submissions are encouraged as the AI is
+being developed and improved. Upon submission, the code is:
+
+1. Checked for [rule](#rules-for-the-ai-code) compliance, though not
+   otherwise studied or analysed.
+2. Added to the base track competition, the [classification](standings) of
+   which is updated daily.
+
+All the submitted code will be made public at this repository after the
+competition deadline. The code will not be otherwise shared before this
+deadline.
 
 ## The AI code
-
-<!--* [Downloading the development framework](#downloading-the-development-framework)-->
-* [Overview](#overview)
-* [Rules](#rules)
-* [Testing the AI in the console](#testing-the-ai-in-the-console)
-* [Testing the AI in Unity](#testing-the-ai-in-unity)
-
-<!--### Downloading the development framework
-
-To download/clone the development framework, i.e., the code in this repository,
-use the following Git command:
-
-```text
-git clone --recurse-submodules https://github.com/VideojogosLusofona/color-shape-links-ai-competition.git
-```
-
-Note that downloading the ZIP file or performing a regular clone will not work.
-Additionally, it requires [Git] 2.13 or later and [Git LFS].
--->
 
 ### Overview
 
@@ -157,13 +167,58 @@ probably be useful. This variable is a collection containing all corridors
   using reflection to probe the capabilities of its opponents.
 * Cannot use more than 2GB of memory during the course of a match.
 
-### Testing the AI in the console
+### Quickly testing your AI
 
-_Work in progress_
+The following sections describe quick ways of testing your AI in the
+[console](#testing-the-ai-in-the-console) or [Unity](#testing-the-ai-in-unity).
+For proper development check the complete [console][console-guide] and
+[Unity][unity-guide] guides.
 
-### Testing the AI in Unity
+All instructions are cross-platform and work in Linux, Windows, and macOS, as
+long as either [.NET Core] or [Unity] are installed.
 
-1. Place your AI class in `UnityApp/Assets/Scripts`.
+#### Downloading the development framework
+
+The development framework **must** be downloaded with the following
+command (requires [Git] ≥ 2.13 and [Git LFS], other approaches will not work):
+```text
+git clone --recurse-submodules https://github.com/VideojogosLusofona/color-shape-links-ai-competition.git
+```
+
+#### Testing the AI in the console
+
+_For a complete console how to, check out this [guide][console-guide]._
+
+1. Place your AI class or classes in `ConsoleApp/ColorShapeLinks/TextBased/App`.
+2. Open a terminal or console and `cd` into the
+   `ConsoleApp/ColorShapeLinks/TextBased/App` folder.
+3. Execute the command `dotnet run -- info` to check if your AI is found by
+   the _ColorShapeLinks_ console app.
+   * The `dotnet run -- help` lists the high-level command line options
+     available.
+4. Assuming the fully qualified name (namespace + class name) of your AI class
+   is `MyAI.MyThinker`, the AI, playing as the first player (White), can be
+   tested against a random AI (playing as Red), with a play limit of one
+   second, with
+   `dotnet run -- match -W MyAI.MyThinker -R ColorShapeLinks.Common.AI.Examples.RandomAIThinker -t 1000`.
+   * The `dotnet run -- help match` presents all the sub-options for the
+     `match` option.
+5. To run a competition, create a text file named `competition.txt` with the
+   following contents:
+   ```text
+   MyAI.MyThinker
+   ColorShapeLinks.Common.AI.Examples.RandomAIThinker
+   ColorShapeLinks.Common.AI.Examples.SequentialAIThinker
+   ```
+   and execute `dotnet run -- session -g competition.txt`.
+   * The `dotnet run -- help session` presents all the sub-options for the
+     `session` option.
+
+#### Testing the AI in Unity
+
+_For a complete Unity how to, check out this [guide][unity-guide]._
+
+1. Place your AI class or classes in `UnityApp/Assets/Scripts`.
 2. Open the `UnityApp` project in Unity 2019.2.x or newer.
 3. Open the **MainScene** scene in the `Assets/Scenes` folder.
 
@@ -193,17 +248,26 @@ _Work in progress_
    * If less than two **AI Player** components are active, the missing
      components will be replaced by human players.
 
+## Resources and guides
+
+* [API documentation][APIDocs]
+* [Console guide](console-guide)
+* [Unity guide](unity-guide)
+* [FAQ](faq)
+* [Base track classification (updated daily)](standings)
+
 ## Licenses
 
-This assignment (the text and non-code files) are made available under the
-[Mozilla Public License 2.0][MPLv2]. The code is made available under the
-[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+The code is made available under the [Mozilla Public License 2.0][MPLv2].
+All the text and documentation (i.e., non-code files) are made available under
+the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
 License][CC BY-NC-SA 4.0].
 
-## Metadata
+## Organization
 
-* Author: [Nuno Fachada]
-* Institution: [Lusófona University][ULHT]
+* [Nuno Fachada], [HEI-Lab], [Lusófona University][ULHT], Portugal
+* Contact us by [e-mail](mailto:colorshapelinks@ulusofona.pt) or open
+  [an issue](https://github.com/VideojogosLusofona/color-shape-links-ai-competition/issues)
 
 [Git]:https://git-scm.com/downloads
 [Git LFS]:https://git-lfs.github.com/
@@ -235,3 +299,9 @@ License][CC BY-NC-SA 4.0].
 [`Assets/Scripts/AI/AIs/`]:https://github.com/VideojogosLusofona/color-shape-links-ai-competition/tree/master/Assets/Scripts/AI/AIs
 [`CancellationToken`]:https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken
 [`SerializeField`]:https://docs.unity3d.com/ScriptReference/SerializeField.html
+[unity-guide]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/01_unity
+[console-guide]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/00_console
+[faq]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/02_faq
+[standings]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/standings
+[HEI-Lab]:http://hei-lab.ulusofona.pt/
+[.NET Core]:https://dotnet.microsoft.com/download
