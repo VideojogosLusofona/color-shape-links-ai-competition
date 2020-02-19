@@ -105,7 +105,7 @@ being developed and improved. Upon submission, the submitted code is:
 
 1. Checked and tested for [rule](#rules-for-the-ai-code) compliance, though
    not otherwise studied or analysed.
-2. Added to the base track competition, the [classification](standings) of
+2. Added to the base track competition, the [classification][standings] of
    which is updated daily.
 
 All submitted codes are considered private and privileged and will not be
@@ -256,10 +256,10 @@ _For a complete Unity how to, check out this [guide][unity-guide]._
 ## Resources and guides
 
 * [API documentation][APIDocs]
-* [Console guide](console-guide)
-* [Unity guide](unity-guide)
-* [FAQ](faq)
-* [Base track classification (updated daily)](standings)
+* [Console guide][console-guide]
+* [Unity guide][unity-guide]
+* [FAQ][faq]
+* [Base track classification (updated daily)][standings]
 
 ## Licenses
 
@@ -306,7 +306,7 @@ License][CC BY-NC-SA 4.0].
 [`SerializeField`]:https://docs.unity3d.com/ScriptReference/SerializeField.html
 [unity-guide]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/unity
 [console-guide]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/console
-[faq]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/02_faq
+[faq]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/faq
 [standings]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/standings
 [HEI-Lab]:http://hei-lab.ulusofona.pt/
 [.NET Core]:https://dotnet.microsoft.com/download
