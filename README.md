@@ -101,16 +101,19 @@ Classification for the base track is updated daily, and is available
 AIs should be submitted via email to
 [colorshapelinks@ulusofona.pt](mailto:colorshapelinks@ulusofona.pt). Only one
 AI is allowed per team, but multiple submissions are encouraged as the AI is
-being developed and improved. Upon submission, the code is:
+being developed and improved. Upon submission, the submitted code is:
 
-1. Checked for [rule](#rules-for-the-ai-code) compliance, though not
-   otherwise studied or analysed.
+1. Checked and tested for [rule](#rules-for-the-ai-code) compliance, though
+   not otherwise studied or analysed.
 2. Added to the base track competition, the [classification](standings) of
    which is updated daily.
 
-All the submitted code will be made public at this repository after the
-competition deadline. The code will not be otherwise shared before this
-deadline.
+All submitted codes are considered private and privileged and will not be
+shared, discussed or analyzed by the organization before the competition
+deadline. After this deadline, all the submitted codes will be made public at
+this repository. If code authors do not specify a
+[valid open source license][ossl] upon submission, the organization will make
+the code available under the [Mozilla Public License 2.0][MPLv2].
 
 ## The AI code
 
@@ -153,19 +156,21 @@ probably be useful. This variable is a collection containing all corridors
 
 ### Rules for the AI code
 
-* Can only use cross-platform [.NET Standard 2.0] API calls in C#.
-* Can use additional libraries which abide by these same rules.
-* Both the AI code and libraries must be made available under a
+- Can only use cross-platform [.NET Standard 2.0] API calls in C#.
+- Can use additional libraries which abide by these same rules.
+- Both the AI code and libraries must be made available under a
   [valid open source license][ossl], although AI codes can be open-sourced
   only after the competition deadline.
-* Must run in the same process that invokes it.
-* Can be multithreaded and use [`unsafe`] contexts.
-* Cannot *think* in its opponent time (e.g., by using a background thread).
-* Can only probe the environment for the number of processor cores. It cannot
+- Must run in the same process that invokes it.
+- Can be multithreaded and use [`unsafe`] contexts.
+- Cannot *think* in its opponent time (e.g., by using a background thread).
+- Must acknowledge [cancellation requests][`CancellationToken`], in which case
+  it should terminate quickly and in an orderly fashion.
+- Can only probe the environment for the number of processor cores. It cannot
   search or use any other information, besides what is already available in the
   [`AbstractThinker`] class or passed to the [`Think()`] method, e.g., such as
   using reflection to probe the capabilities of its opponents.
-* Cannot use more than 2GB of memory during the course of a match.
+- Cannot use more than 2GB of memory during the course of a match.
 
 ### Quickly testing your AI
 
@@ -174,8 +179,8 @@ The following sections describe quick ways of testing your AI in the
 For proper development check the complete [console][console-guide] and
 [Unity][unity-guide] guides.
 
-All instructions are cross-platform and work in Linux, Windows, and macOS, as
-long as either [.NET Core] or [Unity] are installed.
+All instructions are cross-platform and work in Linux, Windows, and macOS,
+requiring only that [.NET Core] and/or [Unity] are installed.
 
 #### Downloading the development framework
 
@@ -299,8 +304,8 @@ License][CC BY-NC-SA 4.0].
 [`Assets/Scripts/AI/AIs/`]:https://github.com/VideojogosLusofona/color-shape-links-ai-competition/tree/master/Assets/Scripts/AI/AIs
 [`CancellationToken`]:https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken
 [`SerializeField`]:https://docs.unity3d.com/ScriptReference/SerializeField.html
-[unity-guide]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/01_unity
-[console-guide]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/00_console
+[unity-guide]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/unity
+[console-guide]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/console
 [faq]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/02_faq
 [standings]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/standings
 [HEI-Lab]:http://hei-lab.ulusofona.pt/
