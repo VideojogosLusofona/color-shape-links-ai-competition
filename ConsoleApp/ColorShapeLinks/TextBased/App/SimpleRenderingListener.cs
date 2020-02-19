@@ -16,8 +16,8 @@ using ColorShapeLinks.TextBased.Lib;
 namespace ColorShapeLinks.TextBased.App
 {
     /// <summary>
-    /// Simple match event listener which renders match information on the
-    /// console.
+    /// Simple event listener which renders thinker, match and session
+    /// information on the console.
     /// </summary>
     public class SimpleRenderingListener :
         IThinkerListener, IMatchListener, ISessionListener

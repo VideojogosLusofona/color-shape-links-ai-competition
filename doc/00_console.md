@@ -1,7 +1,3 @@
----
-title: Console how to
----
-
-# Console
+# Console guide
 
 _Work in progress_

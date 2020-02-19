@@ -1,8 +1,4 @@
----
-title: Unity how to
----
-
-# Unity
+# Unity guide
 
 A Unity project implementing this board game is included in the repository,
 and can be used as a visually friendly way to test the AI.

@@ -831,6 +831,7 @@ WARN_LOGFILE           =
 
 INPUT                  = UnityApp/Assets/Scripts \
                          ConsoleApp \
+                         doc \
                          README.md
 
 # This tag can be used to specify the character encoding of the source files
