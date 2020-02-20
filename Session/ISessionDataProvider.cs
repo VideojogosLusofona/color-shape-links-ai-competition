@@ -23,13 +23,8 @@ namespace ColorShapeLinks.Common.Session
         /// </value>
         SessionState State { get; }
 
-        /// <summary>Name of thinker playing as white.</summary>
-        /// <value>A string containing the thinker's name.</value>
-        string ThinkerWhite { get; }
-
-        /// <summary>Name of thinker playing as red.</summary>
-        /// <value>A string containing the thinker's name.</value>
-        string ThinkerRed { get; }
+        /// <summary>The match currently being played.</summary>
+        Match CurrentMatch { get; }
 
         /// <summary>
         /// All matches played or to be played in current session.
