@@ -22,21 +22,32 @@ namespace ColorShapeLinks.TextBased.Lib
     {
         // The session controlled by this controller (i.e., the model)
         private Session session;
+
         // Match configuration
         private IMatchConfig matchConfig;
+
         // Session configuration
         private ISessionConfig sessionConfig;
+
         // List of thinker prototypes for thinkers participating in
         // this session
         private IEnumerable<IThinkerPrototype> thinkerPrototypes;
+
         // List of thinker listeners
         private IEnumerable<IThinkerListener> thinkerListeners;
+
         // List of match listeners
         private IEnumerable<IMatchListener> matchListeners;
+
         // List of thinkers in the current match
         private IList<IThinker> currentThinkers;
+
+        // Reference to the current match
+        private Match currentMatch;
+
         // Reference to the game board in the current match
         private Board board;
+
         // Result of last match
         private Winner lastMatchResult = Winner.None;
 
@@ -98,7 +109,7 @@ namespace ColorShapeLinks.TextBased.Lib
             BeforeSession?.Invoke(session);
 
             // Play each match defined by the session
-            while (session.NextMatch(out Match match))
+            while (session.NextMatch(out currentMatch))
             {
                 // Create a new board for the current match
                 board = new Board(matchConfig.Rows, matchConfig.Cols,
@@ -106,8 +117,10 @@ namespace ColorShapeLinks.TextBased.Lib
                     matchConfig.SquarePiecesPerPlayer);
 
                 // Instantiate thinkers for the current match
-                currentThinkers[(int)PColor.White] = match.thinker1.Create();
-                currentThinkers[(int)PColor.Red] = match.thinker2.Create();
+                currentThinkers[(int)PColor.White] =
+                    currentMatch.thinker1.Create();
+                currentThinkers[(int)PColor.Red] =
+                    currentMatch.thinker2.Create();
 
                 // Add registered listeners to the thinker instances
                 foreach (IThinkerListener listener in thinkerListeners)
@@ -128,7 +141,7 @@ namespace ColorShapeLinks.TextBased.Lib
                 }
 
                 // Notify listeners that a match is about to start
-                BeforeMatch?.Invoke(match);
+                BeforeMatch?.Invoke(currentMatch);
 
                 // Ask the controller to run the match and keep the result
                 lastMatchResult = mc.Run();
@@ -152,7 +165,7 @@ namespace ColorShapeLinks.TextBased.Lib
                 session.SetResult(lastMatchResult);
 
                 // Notify listeners that a match is over
-                AfterMatch?.Invoke(match, this);
+                AfterMatch?.Invoke(currentMatch, this);
             }
 
             // Notify listeners that sessions is about to end
@@ -213,15 +226,9 @@ namespace ColorShapeLinks.TextBased.Lib
         public SessionState State =>
             throw new NotImplementedException("Session state not implemented");
 
-        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.ThinkerWhite
-        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.ThinkerWhite"/>
-        public string ThinkerWhite =>
-            currentThinkers[(int)PColor.White].ToString();
-
-        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.ThinkerRed
-        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.ThinkerRed"/>
-        public string ThinkerRed =>
-            currentThinkers[(int)PColor.Red].ToString();
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.CurrentMatch
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.CurrentMatch"/>
+        public Match CurrentMatch => currentMatch;
 
         /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.Matches
         /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.Matches"/>
