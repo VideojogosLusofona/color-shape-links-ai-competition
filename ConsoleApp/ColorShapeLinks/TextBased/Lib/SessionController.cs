@@ -226,6 +226,10 @@ namespace ColorShapeLinks.TextBased.Lib
         public SessionState State =>
             throw new NotImplementedException("Session state not implemented");
 
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.Config
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.Config"/>
+        public ISessionConfig Config => sessionConfig;
+
         /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.CurrentMatch
         /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.CurrentMatch"/>
         public Match CurrentMatch => currentMatch;
