@@ -28,7 +28,14 @@ namespace ColorShapeLinks.Common.Session
         /// Session configuration consists of points per win, per loss and per
         /// draw.
         /// </value>
-        ISessionConfig Config { get; }
+        ISessionConfig SessionConfig { get; }
+
+        /// <summary>Match configuration.</summary>
+        /// <value>
+        /// Match configuration consists of number of board rows and columns,
+        /// how many pieces in a row to win, initial number of pieces, etc.
+        /// </value>
+        IMatchConfig MatchConfig { get; }
 
         /// <summary>The match currently being played.</summary>
         Match CurrentMatch { get; }
