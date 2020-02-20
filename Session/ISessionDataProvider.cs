@@ -23,6 +23,13 @@ namespace ColorShapeLinks.Common.Session
         /// </value>
         SessionState State { get; }
 
+        /// <summary>Session configuration.</summary>
+        /// <value>
+        /// Session configuration consists of points per win, per loss and per
+        /// draw.
+        /// </value>
+        ISessionConfig Config { get; }
+
         /// <summary>The match currently being played.</summary>
         Match CurrentMatch { get; }
 
