@@ -71,10 +71,11 @@ namespace ColorShapeLinks.TextBased.App
 
         // Renders information about the match about to start
         private void MatchStart(
-            IMatchConfig matchConfig, string white, string red)
+            IMatchConfig matchConfig, IList<string> thinkerNames)
         {
             // Show who's playing
-            Console.WriteLine($"=> {white} (White) vs {red} (Red) <=\n");
+            Console.WriteLine(
+                $"=> {thinkerNames[0]} (White) vs {thinkerNames[1]} (Red) <=\n");
 
             // Show piece legend
             Console.WriteLine("\tw - White Round");

@@ -82,8 +82,9 @@ namespace ColorShapeLinks.TextBased.Lib
             // Notify listeners match is about to start
             MatchStart?.Invoke(
                 matchConfig,
-                matchData.GetThinker(PColor.White).ToString(),
-                matchData.GetThinker(PColor.Red).ToString());
+                new string[] {
+                    matchData.GetThinker(PColor.White).ToString(),
+                    matchData.GetThinker(PColor.Red).ToString() });
 
             // Notify listeners that we have a new empty board
             BoardUpdate?.Invoke(board);
@@ -103,8 +104,7 @@ namespace ColorShapeLinks.TextBased.Lib
                 solution,
                 new string[] {
                     matchData.GetThinker(PColor.White).ToString(),
-                    matchData.GetThinker(PColor.Red).ToString() }
-            );
+                    matchData.GetThinker(PColor.Red).ToString() });
 
             // Return match result
             return winner;
@@ -205,7 +205,7 @@ namespace ColorShapeLinks.TextBased.Lib
 
         /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchSubject.MatchStart
         /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.MatchStart"/>
-        public event Action<IMatchConfig, string, string> MatchStart;
+        public event Action<IMatchConfig, IList<string>> MatchStart;
 
         /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchSubject.BoardUpdate
         /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.BoardUpdate"/>

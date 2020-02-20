@@ -25,12 +25,10 @@ namespace ColorShapeLinks.TextBased.Lib
         /// <remarks>
         /// * The ::ColorShapeLinks.Common.Session.IMatchConfig type parameter
         ///   contains the match configuration.
-        /// * The first `string` type parameter is the name of the player
-        ///   that is playing as White.
-        /// * The second `string` type parameter is the name of the player
-        ///   that is playing as Red.
+        /// * The `IList<string>` type parameter contains a list of player
+        ///   names, with White player at index 0, and Red player at index 1.
         /// </remarks>
-        event Action<IMatchConfig, string, string> MatchStart;
+        event Action<IMatchConfig, IList<string>> MatchStart;
 
         /// <summary>
         /// Event raised when the board is updated.
