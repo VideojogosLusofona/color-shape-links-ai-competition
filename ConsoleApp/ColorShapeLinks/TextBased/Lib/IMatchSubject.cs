@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
+using ColorShapeLinks.Common.Session;
 
 namespace ColorShapeLinks.TextBased.Lib
 {
@@ -18,6 +19,19 @@ namespace ColorShapeLinks.TextBased.Lib
     /// </summary>
     public interface IMatchSubject
     {
+        /// <summary>
+        /// Event raised when the match is about to start.
+        /// </summary>
+        /// <remarks>
+        /// * The ::ColorShapeLinks.Common.Session.IMatchConfig type parameter
+        ///   contains the match configuration.
+        /// * The first `string` type parameter is the name of the player
+        ///   that is playing as White.
+        /// * The second `string` type parameter is the name of the player
+        ///   that is playing as Red.
+        /// </remarks>
+        event Action<IMatchConfig, string, string> MatchStart;
+
         /// <summary>
         /// Event raised when the board is updated.
         /// </summary>

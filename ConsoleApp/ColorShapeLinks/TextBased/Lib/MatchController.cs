@@ -30,6 +30,9 @@ namespace ColorShapeLinks.TextBased.Lib
         // An array containing the solution, in the game doesn't end in a draw
         private readonly Pos[] solution;
 
+        // Match configuration
+        private readonly IMatchConfig matchConfig;
+
         // Match data
         private readonly IMatchDataProvider matchData;
 
@@ -47,6 +50,9 @@ namespace ColorShapeLinks.TextBased.Lib
         public MatchController(
             IMatchConfig matchConfig, IMatchDataProvider matchData)
         {
+            // Keep a reference to the match config
+            this.matchConfig = matchConfig;
+
             // Keep a reference to the match data
             this.matchData = matchData;
 
@@ -72,6 +78,12 @@ namespace ColorShapeLinks.TextBased.Lib
         {
             // Initially there's no winner
             Winner winner = Winner.None;
+
+            // Notify listeners match is about to start
+            MatchStart?.Invoke(
+                matchConfig,
+                matchData.GetThinker(PColor.White).ToString(),
+                matchData.GetThinker(PColor.Red).ToString());
 
             // Notify listeners that we have a new empty board
             BoardUpdate?.Invoke(board);
@@ -190,6 +202,10 @@ namespace ColorShapeLinks.TextBased.Lib
             // Return winner
             return winner;
         }
+
+        /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchSubject.MatchStart
+        /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.MatchStart"/>
+        public event Action<IMatchConfig, string, string> MatchStart;
 
         /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchSubject.BoardUpdate
         /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.BoardUpdate"/>

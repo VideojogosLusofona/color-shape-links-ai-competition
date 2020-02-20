@@ -36,6 +36,7 @@ namespace ColorShapeLinks.TextBased.App
         /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchListener.ListenTo"/>
         public void ListenTo(IMatchSubject subject)
         {
+            subject.MatchStart += MatchStart;
             subject.BoardUpdate += BoardUpdate;
             subject.NextTurn += NextTurn;
             subject.Timeout += Timeout;
@@ -67,6 +68,21 @@ namespace ColorShapeLinks.TextBased.App
         // //////////////////////////////// //
         // Methods for listening to matches //
         // //////////////////////////////// //
+
+        // Renders information about the match about to start
+        private void MatchStart(
+            IMatchConfig matchConfig, string white, string red)
+        {
+            // Show who's playing
+            Console.WriteLine($"=> {white} (White) vs {red} (Red) <=\n");
+
+            // Show piece legend
+            Console.WriteLine("\tw - White Round");
+            Console.WriteLine("\tW - White Square");
+            Console.WriteLine("\tr - Red   Round");
+            Console.WriteLine("\tR - Red   Square");
+            Console.WriteLine();
+        }
 
         // Renders the match board as follows:
         // w - Round white pieces
@@ -167,6 +183,7 @@ namespace ColorShapeLinks.TextBased.App
         // Methods for listening to sessions //
         // ///////////////////////////////// //
 
+        // Lists matches to play before the session starts
         private void BeforeSession(IEnumerable<Match> matches)
         {
             Console.WriteLine("Matches to play:");
@@ -177,6 +194,7 @@ namespace ColorShapeLinks.TextBased.App
             Console.WriteLine();
         }
 
+        // Shows the final standings after the session is over
         private void AfterSession(ISessionDataProvider sessionData)
         {
             int i = 0;
@@ -187,11 +205,13 @@ namespace ColorShapeLinks.TextBased.App
             }
         }
 
+        // Shows what match is about to be played
         private void BeforeMatch(Match match)
         {
             Console.WriteLine($"* {match} now playing...");
         }
 
+        // Shows match result after match is over
         private void AfterMatch(Match match, ISessionDataProvider sessionData)
         {
             string resultStr;
