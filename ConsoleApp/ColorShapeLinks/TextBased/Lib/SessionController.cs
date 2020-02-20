@@ -106,7 +106,7 @@ namespace ColorShapeLinks.TextBased.Lib
             session = new Session(thinkerPrototypes, sessionConfig, complete);
 
             // Notify listeners that session is about to start
-            BeforeSession?.Invoke(session);
+            BeforeSession?.Invoke(this);
 
             // Play each match defined by the session
             while (session.NextMatch(out currentMatch))
@@ -199,7 +199,7 @@ namespace ColorShapeLinks.TextBased.Lib
 
         /// @copydoc ColorShapeLinks.TextBased.Lib.ISessionSubject.BeforeSession
         /// <seealso cref="ColorShapeLinks.TextBased.Lib.ISessionSubject.BeforeSession"/>
-        public event Action<IEnumerable<Match>> BeforeSession;
+        public event Action<ISessionDataProvider> BeforeSession;
 
         /// @copydoc ColorShapeLinks.TextBased.Lib.ISessionSubject.AfterSession
         /// <seealso cref="ColorShapeLinks.TextBased.Lib.ISessionSubject.AfterSession"/>

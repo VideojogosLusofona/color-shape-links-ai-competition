@@ -21,10 +21,10 @@ namespace ColorShapeLinks.TextBased.Lib
         /// Event raised when the session is about to start.
         /// </summary>
         /// <remarks>
-        /// * The `IEnumerable<Match>` type parameter represents the set of
-        ///   matches to be played.
+        /// * The `ISessionDataProvider` type parameter provides data about the
+        ///   session that is about to start.
         /// </remarks>
-        event Action<IEnumerable<Match>> BeforeSession;
+        event Action<ISessionDataProvider> BeforeSession;
 
         /// <summary>
         /// Event raised when the session is over.

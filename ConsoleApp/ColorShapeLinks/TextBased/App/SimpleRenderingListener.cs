@@ -185,10 +185,10 @@ namespace ColorShapeLinks.TextBased.App
         // ///////////////////////////////// //
 
         // Lists matches to play before the session starts
-        private void BeforeSession(IEnumerable<Match> matches)
+        private void BeforeSession(ISessionDataProvider sessionData)
         {
             Console.WriteLine("Matches to play:");
-            foreach (Match match in matches)
+            foreach (Match match in sessionData.Matches)
             {
                 Console.WriteLine($"\t{match}");
             }
