@@ -264,6 +264,7 @@ namespace ColorShapeLinks.UnityApp
             // Is this the correct window?
             if (id == 1)
             {
+
                 // Draw buttons to ask who plays first
                 if (GUI.Button(
                     new Rect(
@@ -271,7 +272,7 @@ namespace ColorShapeLinks.UnityApp
                         Screen.height / 2 - Screen.height / 16,
                         Screen.width / 4,
                         Screen.height / 8),
-                    sessionData.ThinkerWhite))
+                    sessionData.CurrentMatch.thinker1.ToString()))
                 {
                     // No need to swap players, just disable this menu next
                     // frame
@@ -283,7 +284,7 @@ namespace ColorShapeLinks.UnityApp
                         Screen.height / 2 - Screen.height / 16,
                         Screen.width / 4,
                         Screen.height / 8),
-                    sessionData.ThinkerRed))
+                    sessionData.CurrentMatch.thinker2.ToString()))
                 {
                     // Notify player swap
                     OnSwapPlayers();
@@ -301,6 +302,9 @@ namespace ColorShapeLinks.UnityApp
             {
                 // Get the default style for labels
                 GUIStyle guiLabelStyle = new GUIStyle(GUI.skin.label);
+
+                // Get current match
+                Match match = sessionData.CurrentMatch;
 
                 // Define a text-centered gui style
                 guiLabelStyle.alignment = TextAnchor.MiddleCenter;
@@ -323,9 +327,9 @@ namespace ColorShapeLinks.UnityApp
                         Screen.width * 2 / 5,
                         Screen.height / 4),
                     string.Format("{0}{1}{2}",
-                        $"<color=white>{sessionData.ThinkerWhite}</color>\n",
+                        $"<color=white>{match.thinker1.ToString()}</color>\n",
                         "<color=grey>vs</color>\n",
-                        $"<color=red>{sessionData.ThinkerRed}</color>"),
+                        $"<color=red>{match.thinker2.ToString()}</color>"),
                     guiLabelStyle);
 
                 // Is this a tournament and is this not the first game?

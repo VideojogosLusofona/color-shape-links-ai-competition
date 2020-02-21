@@ -272,7 +272,7 @@ namespace ColorShapeLinks.UnityApp
 
             // Instantiate the next match
             matchInstance = Instantiate(matchPrefab, transform);
-            matchInstance.name = $"Match{ThinkerWhite}VS{ThinkerRed}";
+            matchInstance.name = currentMatch.ToString();
 
             // Get a reference to the match controller of the next match
             matchController = matchInstance.GetComponent<MatchController>();
@@ -396,13 +396,17 @@ namespace ColorShapeLinks.UnityApp
         /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.State"/>
         public SessionState State => state;
 
-        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.ThinkerWhite
-        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.ThinkerWhite"/>
-        public string ThinkerWhite => currentMatch[PColor.White].ThinkerName;
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.SessionConfig
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.SessionConfig"/>
+        public ISessionConfig SessionConfig => this;
 
-        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.ThinkerRed
-        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.ThinkerRed"/>
-        public string ThinkerRed => currentMatch[PColor.Red].ThinkerName;
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.MatchConfig
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.MatchConfig"/>
+        public IMatchConfig MatchConfig => this;
+
+        /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.CurrentMatch
+        /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.CurrentMatch"/>
+        public Match CurrentMatch => currentMatch;
 
         /// @copydoc ColorShapeLinks.Common.Session.ISessionDataProvider.Matches
         /// <seealso cref="ColorShapeLinks.Common.Session.ISessionDataProvider.Matches"/>
