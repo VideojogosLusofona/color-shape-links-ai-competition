@@ -103,8 +103,8 @@ namespace ColorShapeLinks.Common.Session
                         thinkerProtList[thinkerProtList.Count - 1 - j]);
                     // Only add match to match list if it's not a dummy
                     // match
-                    if (!(match.thinker1 is DummyThinkerPrototype
-                        || match.thinker2 is DummyThinkerPrototype))
+                    if (!(match.thinkerWhite is DummyThinkerPrototype
+                        || match.thinkerRed is DummyThinkerPrototype))
                     {
                         // Add match to match list
                         matches.Add(match);
@@ -226,28 +226,34 @@ namespace ColorShapeLinks.Common.Session
             results.Add(match, result);
 
             // If these thinkers are not yet in the points table, add them
-            if (!thinkerPoints.ContainsKey(match.thinker1.ThinkerName))
-                thinkerPoints.Add(match.thinker1.ThinkerName, 0);
-            if (!thinkerPoints.ContainsKey(match.thinker2.ThinkerName))
-                thinkerPoints.Add(match.thinker2.ThinkerName, 0);
+            if (!thinkerPoints.ContainsKey(match.thinkerWhite.ThinkerName))
+                thinkerPoints.Add(match.thinkerWhite.ThinkerName, 0);
+            if (!thinkerPoints.ContainsKey(match.thinkerRed.ThinkerName))
+                thinkerPoints.Add(match.thinkerRed.ThinkerName, 0);
 
             // Update thinker points
             switch (result)
             {
                 // White won
                 case Winner.White:
-                    thinkerPoints[match.thinker1.ThinkerName] += pointsPerWin;
-                    thinkerPoints[match.thinker2.ThinkerName] += pointsPerLoss;
+                    thinkerPoints[match.thinkerWhite.ThinkerName]
+                        += pointsPerWin;
+                    thinkerPoints[match.thinkerRed.ThinkerName]
+                        += pointsPerLoss;
                     break;
                 // Red won
                 case Winner.Red:
-                    thinkerPoints[match.thinker2.ThinkerName] += pointsPerWin;
-                    thinkerPoints[match.thinker1.ThinkerName] += pointsPerLoss;
+                    thinkerPoints[match.thinkerRed.ThinkerName]
+                        += pointsPerWin;
+                    thinkerPoints[match.thinkerWhite.ThinkerName]
+                        += pointsPerLoss;
                     break;
                 // Game ended in a draw
                 case Winner.Draw:
-                    thinkerPoints[match.thinker1.ThinkerName] += pointsPerDraw;
-                    thinkerPoints[match.thinker2.ThinkerName] += pointsPerDraw;
+                    thinkerPoints[match.thinkerWhite.ThinkerName]
+                        += pointsPerDraw;
+                    thinkerPoints[match.thinkerRed.ThinkerName]
+                        += pointsPerDraw;
                     break;
                 // Invalid situation
                 default:

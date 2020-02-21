@@ -16,10 +16,10 @@ namespace ColorShapeLinks.Common.Session
     public class Match
     {
         /// <summary>First thinker in this match (white).</summary>
-        public readonly IThinkerPrototype thinker1;
+        public readonly IThinkerPrototype thinkerWhite;
 
         /// <summary>Second thinker in this match (red).</summary>
-        public readonly IThinkerPrototype thinker2;
+        public readonly IThinkerPrototype thinkerRed;
 
         /// <summary>
         /// Indexer for getting the thinker's prototype based on his color.
@@ -32,28 +32,29 @@ namespace ColorShapeLinks.Common.Session
         /// Thrown when an invalid color is given.
         /// </exception>
         public IThinkerPrototype this[PColor color] =>
-            color == PColor.White ? thinker1
-                : color == PColor.Red ? thinker2
+            color == PColor.White ? thinkerWhite
+                : color == PColor.Red ? thinkerRed
                 : throw new InvalidOperationException(
                     $"Invalid thinker color");
 
         /// <summary>A match with the thinkers swapped.</summary>
         /// <value>A new match instance.</value>
-        public Match Swapped => new Match(thinker2, thinker1);
+        public Match Swapped => new Match(thinkerRed, thinkerWhite);
 
         /// <summary>Create a new match.</summary>
-        /// <param name="thinker1">First thinker in match (white).</param>
-        /// <param name="thinker2">Second thinker in match (red).</param>
-        public Match(IThinkerPrototype thinker1, IThinkerPrototype thinker2)
+        /// <param name="thinkerWhite">First thinker in match (white).</param>
+        /// <param name="thinkerRed">Second thinker in match (red).</param>
+        public Match(
+            IThinkerPrototype thinkerWhite, IThinkerPrototype thinkerRed)
         {
             // Keep references to thinkers
-            this.thinker1 = thinker1;
-            this.thinker2 = thinker2;
+            this.thinkerWhite = thinkerWhite;
+            this.thinkerRed = thinkerRed;
         }
 
         /// <summary>Returns a string representation of this match.</summary>
         /// <returns>A string representation of this match.</returns>
         public override string ToString() =>
-            $"{thinker1.ThinkerName} vs {thinker2.ThinkerName}";
+            $"{thinkerWhite.ThinkerName} vs {thinkerRed.ThinkerName}";
     }
 }
