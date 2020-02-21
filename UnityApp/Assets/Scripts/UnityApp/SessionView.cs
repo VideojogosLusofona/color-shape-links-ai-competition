@@ -272,7 +272,7 @@ namespace ColorShapeLinks.UnityApp
                         Screen.height / 2 - Screen.height / 16,
                         Screen.width / 4,
                         Screen.height / 8),
-                    sessionData.CurrentMatch.thinker1.ToString()))
+                    sessionData.CurrentMatch.thinkerWhite.ThinkerName))
                 {
                     // No need to swap players, just disable this menu next
                     // frame
@@ -284,7 +284,7 @@ namespace ColorShapeLinks.UnityApp
                         Screen.height / 2 - Screen.height / 16,
                         Screen.width / 4,
                         Screen.height / 8),
-                    sessionData.CurrentMatch.thinker2.ToString()))
+                    sessionData.CurrentMatch.thinkerRed.ThinkerName))
                 {
                     // Notify player swap
                     OnSwapPlayers();
@@ -327,9 +327,9 @@ namespace ColorShapeLinks.UnityApp
                         Screen.width * 2 / 5,
                         Screen.height / 4),
                     string.Format("{0}{1}{2}",
-                        $"<color=white>{match.thinker1.ToString()}</color>\n",
+                        $"<color=white>{match.thinkerWhite.ThinkerName}</color>\n",
                         "<color=grey>vs</color>\n",
-                        $"<color=red>{match.thinker2.ToString()}</color>"),
+                        $"<color=red>{match.thinkerRed.ThinkerName}</color>"),
                     guiLabelStyle);
 
                 // Is this a tournament and is this not the first game?
@@ -653,13 +653,13 @@ namespace ColorShapeLinks.UnityApp
 
                 // Is first player bold (winner)?
                 string player1 = results[i].Value == Winner.White
-                    ? $"<b>{results[i].Key.thinker1}</b>"
-                    : results[i].Key.thinker1.ToString();
+                    ? $"<b>{results[i].Key.thinkerWhite}</b>"
+                    : results[i].Key.thinkerWhite.ThinkerName;
 
                 // Is second player bold (winner)?
                 string player2 = results[i].Value == Winner.Red
-                    ? $"<b>{results[i].Key.thinker2}</b>"
-                    : results[i].Key.thinker2.ToString();
+                    ? $"<b>{results[i].Key.thinkerRed}</b>"
+                    : results[i].Key.thinkerRed.ThinkerName;
 
                 // Show match, result is based on color
                 GUI.Label(

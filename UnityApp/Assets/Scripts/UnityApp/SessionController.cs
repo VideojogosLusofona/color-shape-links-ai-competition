@@ -262,9 +262,9 @@ namespace ColorShapeLinks.UnityApp
 
             // Instantiate thinkers for next match
             currentThinkers[(int)PColor.White] =
-                currentMatch.thinker1.Create();
+                currentMatch.thinkerWhite.Create();
             currentThinkers[(int)PColor.Red] =
-                currentMatch.thinker2.Create();
+                currentMatch.thinkerRed.Create();
 
             // Wire-up Debug.Log as thinker listener
             currentThinkers[(int)PColor.White].ThinkingInfo += Debug.Log;
