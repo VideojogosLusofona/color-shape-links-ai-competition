@@ -24,48 +24,48 @@ namespace ColorShapeLinks.TextBased.App
         /// <seealso cref="ColorShapeLinks.TextBased.Lib.ISessionListener.ListenTo"/>
         public void ListenTo(ISessionSubject subject)
         {
-            subject.BeforeSession += BeforeSession;
             subject.AfterSession += AfterSession;
-            subject.BeforeMatch += BeforeMatch;
-            subject.AfterMatch += AfterMatch;
         }
 
         // ///////////////////////////////// //
         // Methods for listening to sessions //
         // ///////////////////////////////// //
 
-        // Lists matches to play before the session starts
-        private void BeforeSession(ISessionDataProvider sessionData)
-        {
-            Console.WriteLine("Matches to play:");
-        }
-
-        // Shows the final standings after the session is over
+        // Outputs the final standings and results after the session is over
         private void AfterSession(ISessionDataProvider sessionData)
         {
             int i = 0;
-            Console.WriteLine("\nFinal standings:");
+
+            // Header and update time
+            Console.WriteLine("# Standings");
+            Console.WriteLine();
+            Console.WriteLine($"Last update: {DateTime.Now.ToString("R")}");
+            Console.WriteLine();
+
+            // Classification
+            Console.WriteLine("## Classification");
+            Console.WriteLine();
+            Console.WriteLine("| Pos. | AI Thinker | Points |");
+            Console.WriteLine("|:----:| ---------- | -----: |");
             foreach (KeyValuePair<string, int> tp in sessionData.Standings)
             {
-                Console.WriteLine($"\t{++i}. {tp.Key,-20} {tp.Value,8}");
+                Console.WriteLine($"| {++i} | {tp.Key} | {tp.Value} |");
             }
-        }
+            Console.WriteLine();
 
-        // Shows what match is about to be played
-        private void BeforeMatch(Match match)
-        {
-            Console.WriteLine($"* {match} now playing...");
-        }
-
-        // Shows match result after match is over
-        private void AfterMatch(Match match, ISessionDataProvider sessionData)
-        {
-            string resultStr;
-            if (sessionData.LastMatchResult == Winner.Draw)
-                resultStr = "It's a draw";
-            else
-                resultStr = $"Winner is {sessionData.WinnerString}";
-            Console.WriteLine($"  - {resultStr}");
+            // Results
+            Console.WriteLine("## Results");
+            Console.WriteLine();
+            Console.WriteLine("| White |   Red   |");
+            Console.WriteLine("| -----:|:------- |");
+            foreach (KeyValuePair<Match, Winner> mw in sessionData.Results)
+            {
+                string white = $"`{mw.Key.thinker1.ToString()}`";
+                string red = $"`{mw.Key.thinker2.ToString()}`";
+                if (mw.Value == Winner.White) white = $"**{white}**";
+                else if (mw.Value == Winner.Red) red = $"**{red}**";
+                Console.WriteLine($"| {white} | {red} |");
+            }
         }
     }
 }
