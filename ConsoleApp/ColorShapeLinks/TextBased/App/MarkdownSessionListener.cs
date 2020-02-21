@@ -56,6 +56,8 @@ namespace ColorShapeLinks.TextBased.App
             // Results
             Console.WriteLine("## Results");
             Console.WriteLine();
+            Console.WriteLine("_Winner, if any, shown in bold_");
+            Console.WriteLine();
             Console.WriteLine("| White |   Red   |");
             Console.WriteLine("| -----:|:------- |");
             foreach (KeyValuePair<Match, Winner> mw in sessionData.Results)
