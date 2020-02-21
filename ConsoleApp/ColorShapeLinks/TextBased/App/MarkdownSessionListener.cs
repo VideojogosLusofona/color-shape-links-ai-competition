@@ -60,8 +60,8 @@ namespace ColorShapeLinks.TextBased.App
             Console.WriteLine("| -----:|:------- |");
             foreach (KeyValuePair<Match, Winner> mw in sessionData.Results)
             {
-                string white = $"`{mw.Key.thinker1.ToString()}`";
-                string red = $"`{mw.Key.thinker2.ToString()}`";
+                string white = $"`{mw.Key.thinkerWhite}`";
+                string red = $"`{mw.Key.thinkerRed}`";
                 if (mw.Value == Winner.White) white = $"**{white}**";
                 else if (mw.Value == Winner.Red) red = $"**{red}**";
                 Console.WriteLine($"| {white} | {red} |");

@@ -118,9 +118,9 @@ namespace ColorShapeLinks.TextBased.Lib
 
                 // Instantiate thinkers for the current match
                 currentThinkers[(int)PColor.White] =
-                    currentMatch.thinker1.Create();
+                    currentMatch.thinkerWhite.Create();
                 currentThinkers[(int)PColor.Red] =
-                    currentMatch.thinker2.Create();
+                    currentMatch.thinkerRed.Create();
 
                 // Add registered listeners to the thinker instances
                 foreach (IThinkerListener listener in thinkerListeners)
