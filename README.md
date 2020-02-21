@@ -10,31 +10,22 @@ work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 
 # ColorShapeLinks AI competition
 
-This competition has been accepted for the [IEEE CoG 2020] conference!
-This documentation, as well as a "how to" video, are under development and will
-be available in a few days.
+This competition has been accepted for the [IEEE CoG 2020] conference and is
+officially open!
 
-> **Important**: Take a look at the [Downloading the development framework](#downloading-the-development-framework) section before downloading or cloning this repository.
-
-## Table of contents
-
-- [ColorShapeLinks AI competition](#colorshapelinks-ai-competition)
-  - [Table of contents](#table-of-contents)
-  - [Description](#description)
-  - [The competition](#the-competition)
-    - [Tracks](#tracks)
-    - [Classification](#classification)
-    - [Submissions](#submissions)
-  - [The AI code](#the-ai-code)
-    - [Overview](#overview)
-    - [Rules for the AI code](#rules-for-the-ai-code)
-    - [Quickly testing your AI](#quickly-testing-your-ai)
-      - [Downloading the development framework](#downloading-the-development-framework)
-      - [Testing the AI in the console](#testing-the-ai-in-the-console)
-      - [Testing the AI in Unity](#testing-the-ai-in-unity)
-  - [Resources and guides](#resources-and-guides)
-  - [Licenses](#licenses)
-  - [Organization](#organization)
+* What's ready:
+  * Introductory documentation (this document), with quick start tutorials for
+    testing your AI using the [console](#testing-the-ai-in-the-console) or with
+    [Unity](#testing-the-ai-in-unity).
+  * The development framework  (see
+    [how to download it](#downloading-the-development-framework)) and its
+    [API][APIDocs].
+  * Running daily competition with [Base Track](#tracks) settings and automated
+    upload of [classification and results][standings].
+* What's not:
+  * How to video.
+  * Detailed how to and best practices guides for both the
+    [console][console-guide] and [Unity][unity-guide]
 
 ## Description
 
@@ -60,7 +51,7 @@ The competition runs on two distinct tracks:
 1. The **Base Track** competition will be played using standard [Simplexity]
    rules (6x7 board, 4 pieces in a row for victory) and with a time limit of
    0.2 seconds. Only one processor core will be available for the AIs.
-2. The **Unknown Track** competition will be played on a 16-core/32-thread
+2. The **Unknown Track** competition will be played on a multi-core
    processor under conditions that will only be revealed after the competition
    deadline. These conditions will be derived from the first [EuroMillions]
    draw that takes place after the deadline, most likely at May 19, 2020, as
@@ -259,7 +250,7 @@ _For a complete Unity how to, check out this [guide][unity-guide]._
 * [Console guide][console-guide]
 * [Unity guide][unity-guide]
 * [FAQ][faq]
-* [Base track classification (updated daily)][standings]
+* [Classification and Results for the Base Track (updated daily)][standings]
 
 ## Licenses
 
