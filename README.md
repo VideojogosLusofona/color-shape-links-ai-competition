@@ -24,8 +24,9 @@ officially open!
     upload of [classification and results][standings].
 * What's not:
   * How to video.
-  * Detailed how to and best practices guides for both the
-    [console][console-guide] and [Unity][unity-guide]
+  * Detailed guide for implementing the [thinker AI][thinker-guide], as well as
+    how to and best practices guides for testing it in the
+    [console][console-guide] and [Unity][unity-guide].
 
 ## Description
 
@@ -109,6 +110,8 @@ the code available under the [Mozilla Public License 2.0][MPLv2].
 ## The AI code
 
 ### Overview
+
+_For a complete AI implementation guide, check out this [link][thinker-guide]._
 
 Competition code must be implemented in C# and restrict itself to
 cross-platform [.NET Standard 2.0] API calls.
@@ -295,9 +298,10 @@ License][CC BY-NC-SA 4.0].
 [`Assets/Scripts/AI/AIs/`]:https://github.com/VideojogosLusofona/color-shape-links-ai-competition/tree/master/Assets/Scripts/AI/AIs
 [`CancellationToken`]:https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken
 [`SerializeField`]:https://docs.unity3d.com/ScriptReference/SerializeField.html
-[unity-guide]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/unity
-[console-guide]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/console
-[faq]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/faq
+[thinker-guide]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/md_doc_00_thinker.html
+[console-guide]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/md_doc_02_console.html
+[unity-guide]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/md_doc_05_unity.html
+[faq]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/md_doc_10_faq.html
 [standings]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/standings
 [HEI-Lab]:http://hei-lab.ulusofona.pt/
 [.NET Core]:https://dotnet.microsoft.com/download
