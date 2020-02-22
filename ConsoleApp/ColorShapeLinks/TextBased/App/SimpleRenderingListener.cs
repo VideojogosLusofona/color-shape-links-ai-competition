@@ -39,7 +39,7 @@ namespace ColorShapeLinks.TextBased.App
             subject.MatchStart += MatchStart;
             subject.BoardUpdate += BoardUpdate;
             subject.NextTurn += NextTurn;
-            subject.Timeout += Timeout;
+            subject.InvalidPlay += InvalidMove;
             subject.MovePerformed += MovePerformed;
             subject.MatchOver += MatchOver;
         }
@@ -126,12 +126,13 @@ namespace ColorShapeLinks.TextBased.App
             turn = thinkerColor;
         }
 
-        // Displays notification that the specified thinker took too long to
-        // play
-        private void Timeout(PColor thinkerColor, string thinkerName)
+        // Displays notification that the specified thinker lost due to an
+        // invalid play
+        private void InvalidMove(
+            PColor thinkerColor, string thinkerName, string reason)
         {
-            Console.WriteLine(thinkerColor.FormatName(thinkerName)
-                + " took too long to play!");
+            Console.WriteLine(String.Format("{0} loses match! Reason: {1}",
+                thinkerColor.FormatName(thinkerName), reason));
         }
 
         // Displays the move performed by the specified thinker

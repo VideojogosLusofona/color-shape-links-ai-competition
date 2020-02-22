@@ -51,16 +51,19 @@ namespace ColorShapeLinks.TextBased.Lib
         event Action<PColor, string> NextTurn;
 
         /// <summary>
-        /// Event raised when a given player took too long to play,
-        /// and will therefore lose the match.
+        /// Event raised when a given player performed an invalid play, for
+        /// example taking too long to play, returning an invalid move or
+        /// causing or throwing an exception.
         /// </summary>
         /// <remarks>
         /// * The ::ColorShapeLinks.Common.PColor type parameter is the color
-        ///   of the player that took too long to play.
-        /// * The `string` type parameter is the name of the player that
-        ///   took too long to play.
+        ///   of the player that made an invalid play.
+        /// * The first `string` type parameter is the name of the player that
+        ///   made an invalid play.
+        /// * The second `string` type parameter is the description of the
+        ///   invalid play.
         /// </remarks>
-        event Action<PColor, string> Timeout;
+        event Action<PColor, string, string> InvalidPlay;
 
         /// <summary>
         /// Event raised when a given player makes a move.

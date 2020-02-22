@@ -180,8 +180,19 @@ namespace ColorShapeLinks.TextBased.Lib
                 else
                 {
                     // If we get here, column didn't have space for the move,
-                    // which means that thinker made an invalid move
-                    throw new InvalidOperationException("Invalid move");
+                    // which means that thinker made an invalid move and should
+                    // lose the game
+
+                    // Set the other thinker as the winner of the match
+                    winner = color == PColor.Red ? Winner.White : Winner.Red;
+
+                    // Notify listeners that thinker made invalid move and will
+                    // thus lose the game
+                    InvalidPlay?.Invoke(
+                        color,
+                        thinker.ToString(),
+                        $"Tried to place piece in column {move.column}, "
+                        + "which is full");
                 }
             }
             else // Did the time limit expired?
@@ -193,7 +204,10 @@ namespace ColorShapeLinks.TextBased.Lib
                 winner = color == PColor.Red ? Winner.White : Winner.Red;
 
                 // Notify listeners that thinker took too long to play
-                Timeout?.Invoke(color, thinker.ToString());
+                InvalidPlay?.Invoke(
+                    color,
+                    thinker.ToString(),
+                    "Time limit expired");
             }
 
             // Notify listeners that the board was updated
@@ -215,9 +229,9 @@ namespace ColorShapeLinks.TextBased.Lib
         /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.NextTurn"/>
         public event Action<PColor, string> NextTurn;
 
-        /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchSubject.Timeout
-        /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.Timeout"/>
-        public event Action<PColor, string> Timeout;
+        /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchSubject.InvalidPlay
+        /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.InvalidPlay"/>
+        public event Action<PColor, string, string> InvalidPlay;
 
         /// @copydoc ColorShapeLinks.TextBased.Lib.IMatchSubject.MovePerformed
         /// <seealso cref="ColorShapeLinks.TextBased.Lib.IMatchSubject.MovePerformed"/>
