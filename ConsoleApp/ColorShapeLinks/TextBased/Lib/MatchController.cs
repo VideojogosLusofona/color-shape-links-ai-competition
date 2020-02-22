@@ -141,79 +141,100 @@ namespace ColorShapeLinks.TextBased.Lib
             thinkTask = Task.Run(
                     () => thinker.Think(board.Copy(), ts.Token));
 
-            // Wait for thinker to think... until the allowed time limit
-            if (thinkTask.Wait(timeLimitMillis))
+            // The thinking process might throw an exception, so we wrap
+            // task waiting in a try/catch block
+            try
             {
-                // Thinker successfully made a move within the time limit
-
-                // Get the move selected by the thinker
-                FutureMove move = thinkTask.Result;
-
-                // Perform move in game board, get column where move was
-                // performed
-                int row = board.DoMove(move.shape, move.column);
-
-                // If the column had space for the move...
-                if (row >= 0)
+                // Wait for thinker to think... until the allowed time limit
+                if (thinkTask.Wait(timeLimitMillis))
                 {
-                    // Obtain thinking end time
-                    thinkTimeMillis = (int)(DateTime.Now - startTime)
-                        .TotalMilliseconds;
+                    // Thinker successfully made a move within the time limit
 
-                    // How much time left for the minimum apparent move time?
-                    timeLeftMillis = minMoveTimeMillis - thinkTimeMillis;
+                    // Get the move selected by the thinker
+                    FutureMove move = thinkTask.Result;
 
-                    // Was the minimum apparent move time reached
-                    if (timeLeftMillis > 0)
+                    // Perform move in game board, get column where move was
+                    // performed
+                    int row = board.DoMove(move.shape, move.column);
+
+                    // If the column had space for the move...
+                    if (row >= 0)
                     {
-                        // If not, wait until it is reached
-                        Thread.Sleep(timeLeftMillis);
+                        // Obtain thinking end time
+                        thinkTimeMillis = (int)(DateTime.Now - startTime)
+                            .TotalMilliseconds;
+
+                        // How much time left for the minimum apparent move
+                        // time?
+                        timeLeftMillis = minMoveTimeMillis - thinkTimeMillis;
+
+                        // Was the minimum apparent move time reached
+                        if (timeLeftMillis > 0)
+                        {
+                            // If not, wait until it is reached
+                            Thread.Sleep(timeLeftMillis);
+                        }
+
+                        // Notify listeners of the move performed
+                        MovePerformed?.Invoke(
+                            color, thinker.ToString(), move, thinkTimeMillis);
+
+                        // Get possible winner and solution
+                        winner = board.CheckWinner(solution);
                     }
+                    else
+                    {
+                        // If we get here, column didn't have space for the
+                        // move, which means that thinker made an invalid move
+                        // and should lose the game
 
-                    // Notify listeners of the move performed
-                    MovePerformed?.Invoke(
-                        color, thinker.ToString(), move, thinkTimeMillis);
-
-                    // Get possible winner and solution
-                    winner = board.CheckWinner(solution);
+                        // Raise an invalid play event and set the other
+                        // thinker as the winner of the match
+                        winner = OnInvalidPlay(
+                            color, thinker,
+                            $"Tried to place piece in column {move.column}, "
+                            + "which is full");
+                    }
                 }
-                else
+                else // Did the time limit expired?
                 {
-                    // If we get here, column didn't have space for the move,
-                    // which means that thinker made an invalid move and should
-                    // lose the game
+                    // Notify thinker to voluntarily stop thinking
+                    ts.Cancel();
 
-                    // Set the other thinker as the winner of the match
-                    winner = color == PColor.Red ? Winner.White : Winner.Red;
-
-                    // Notify listeners that thinker made invalid move and will
-                    // thus lose the game
-                    InvalidPlay?.Invoke(
-                        color,
-                        thinker.ToString(),
-                        $"Tried to place piece in column {move.column}, "
-                        + "which is full");
+                    // Raise an invalid play event and set the other thinker
+                    // as the winner of the match
+                    winner = OnInvalidPlay(
+                        color, thinker, "Time limit expired");
                 }
             }
-            else // Did the time limit expired?
+            catch (AggregateException ae)
             {
-                // Notify thinker to voluntarily stop thinking
-                ts.Cancel();
-
-                // Set the other thinker as the winner of the match
-                winner = color == PColor.Red ? Winner.White : Winner.Red;
-
-                // Notify listeners that thinker took too long to play
-                InvalidPlay?.Invoke(
-                    color,
-                    thinker.ToString(),
-                    "Time limit expired");
+                // Raise an invalid play event and set the other thinker as
+                // the winner of the match
+                winner = OnInvalidPlay(
+                    color, thinker,
+                    $"Thinker exception: '{ae.InnerException.Message}'");
             }
 
             // Notify listeners that the board was updated
             BoardUpdate?.Invoke(board);
 
             // Return winner
+            return winner;
+        }
+
+        // Raise and invalid play event and return the match winner (which is
+        // the opponent of the thinker that made an invalid play)
+        private Winner OnInvalidPlay(
+            PColor color, IThinker thinker, string reason)
+        {
+            // Set the other thinker as the winner of the match
+            Winner winner = color == PColor.Red ? Winner.White : Winner.Red;
+
+            // Notify listeners that thinker made an invalid play
+            InvalidPlay?.Invoke(color, thinker.ToString(), reason);
+
+            // Return the winner
             return winner;
         }
 
