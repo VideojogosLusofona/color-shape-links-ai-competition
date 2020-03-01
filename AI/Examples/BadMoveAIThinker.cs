@@ -41,7 +41,12 @@ namespace ColorShapeLinks.Common.AI.Examples
             /// <summary>
             /// Return a <see cref="FutureMove.NoMove"/>.
             /// </summary>
-            NoMove
+            NoMove,
+
+            /// <summary>
+            /// Throw an exception.
+            /// </summary>
+            Exception
         }
 
         // The type of invalid move the thinker will make
@@ -90,6 +95,10 @@ namespace ColorShapeLinks.Common.AI.Examples
                 case BadMove.NoMove:
                     futureMove = FutureMove.NoMove;
                     break;
+                case BadMove.Exception:
+                    throw new Exception(String.Format(
+                        "{0} throwing an exception for testing purposes.",
+                        nameof(BadMoveAIThinker)));
                 default:
                     throw new InvalidOperationException(
                         $"Invalid use of {nameof(BadMoveAIThinker)}");
