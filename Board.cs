@@ -375,7 +375,7 @@ namespace ColorShapeLinks.Common
             numMoves++;
 
             // Update turn
-            Turn = Turn == PColor.White ? PColor.Red : PColor.White;
+            Turn = Turn.Other();
 
             // Return true, indicating the move was successful
             return row;
@@ -414,7 +414,7 @@ namespace ColorShapeLinks.Common
             numMoves--;
 
             // Swap turns
-            Turn = Turn == PColor.White ? PColor.Red : PColor.White;
+            Turn = Turn.Other();
 
             // Increase piece count
             numberOfPieces[piece]++;
