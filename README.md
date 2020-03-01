@@ -150,6 +150,8 @@ probably be useful. This variable is a collection containing all corridors
 
 ### Rules for the AI code
 
+The AI source code must follow these rules:
+
 - Can only use cross-platform [.NET Standard 2.0] API calls in C#.
 - Can use additional libraries which abide by these same rules.
 - Both the AI code and libraries must be made available under a
@@ -165,6 +167,8 @@ probably be useful. This variable is a collection containing all corridors
   [`AbstractThinker`] class or passed to the [`Think()`] method, e.g., such as
   using reflection to probe the capabilities of its opponents.
 - Cannot use more than 2GB of memory during the course of a match.
+- Cannot be more than 250kb in size (including libraries, excluding comments).
+- Cannot save or load data from disk.
 
 ### Quickly testing your AI
 
