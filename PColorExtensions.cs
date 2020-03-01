@@ -56,5 +56,16 @@ namespace ColorShapeLinks.Common
         /// </returns>
         public static bool FriendOf(this PColor color, Piece piece) =>
             color == piece.color || color.Shape() == piece.shape;
+
+        /// <summary>
+        /// Returns the Winner associated with this color.
+        /// </summary>
+        /// <param name="color">This color.</param>
+        /// <returns>
+        /// * Winner.White if <paramref name="color"/> is PColor.White.
+        /// * Winner.Red if <paramref name="color"/> is PColor.Red.
+        /// </returns>
+        public static Winner ToWinner(this PColor color) =>
+            color == PColor.White ? Winner.White : Winner.Red;
     }
 }
