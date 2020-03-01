@@ -163,7 +163,7 @@ namespace ColorShapeLinks.TextBased.Lib
                         // thinker as the winner of the match
                         winner = OnInvalidPlay(
                             color, thinker,
-                            $"Thinker unable to perform move");
+                            "Thinker unable to perform move");
                     }
                     else
                     {
@@ -255,7 +255,7 @@ namespace ColorShapeLinks.TextBased.Lib
             PColor color, IThinker thinker, string reason)
         {
             // Set the other thinker as the winner of the match
-            Winner winner = color == PColor.Red ? Winner.White : Winner.Red;
+            Winner winner = color.Other().ToWinner();
 
             // Set solution to null
             solution = null;
