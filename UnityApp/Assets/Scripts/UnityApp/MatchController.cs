@@ -173,8 +173,30 @@ namespace ColorShapeLinks.UnityApp
                 }
                 else // This else will run if the task is not null
                 {
+                    // Did the task throw an exception?
+                    if (aiTask.IsFaulted)
+                    {
+                        // If so, notify user
+                        view.SubmitMessage(string.Format(
+                            "{0} exception: {1}",
+                            CurrPlrNameColor,
+                            aiTask.Exception.InnerException.Message));
+
+                        // Send a cancellation token to the task in the hope it
+                        // might actually terminate
+                        ts.Cancel();
+
+                        // Set task to null
+                        aiTask = null;
+
+                        // The AI player that throwed the exception will lose
+                        // the game, sorry
+                        this.Result = board.Turn == PColor.White
+                            ? Winner.Red : Winner.White;
+                        OnMatchOver();
+                    }
                     // Is the AI thinking task completed?
-                    if (aiTask.IsCompleted)
+                    else if (aiTask.IsCompleted)
                     {
                         // Register task duration, if we haven't done so yet
                         if (float.IsNaN(lastTaskDuration))
@@ -189,48 +211,67 @@ namespace ColorShapeLinks.UnityApp
                         if (Time.time >
                             taskStartGameTime + matchConfig.MinMoveTimeSeconds)
                         {
-                            // If so, submit a message informing of the move
-                            // chosen and the system time it took the AI to
-                            // think
-                            view.SubmitMessage(string.Format(
-                                "{0} placed a {1} piece at column {2} after {3}",
-                                CurrPlrNameColor,
-                                aiTask.Result.shape.ToString().ToLower(),
-                                aiTask.Result.column,
-                                $"thinking for {lastTaskDuration:f4}s"));
+                            // Get the move chosen by the thinker
+                            FutureMove move = aiTask.Result;
 
-                            // Perform the actual move
-                            MakeAMove(aiTask.Result);
+                            // Was the thinker able to chose a move?
+                            if (move.IsNoMove)
+                            {
+                                // Thinker was not able to chose a move,
+                                // submit a message informing user of this
+                                view.SubmitMessage(string.Format(
+                                    "{0} unable to perform move",
+                                    CurrPlrNameColor));
 
-                            // Set the task to null, so it can be started again
-                            aiTask = null;
+                                // The AI player unable to move will lose
+                                // the game, sorry
+                                this.Result = board.Turn == PColor.White
+                                    ? Winner.Red : Winner.White;
+                                OnMatchOver();
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    // Player was able to make a move decision,
+                                    // let's perform the actual move
+                                    MakeAMove(aiTask.Result);
 
-                            // Reset the last task duration
-                            lastTaskDuration = float.NaN;
+                                    // If so, submit a message informing of
+                                    // the move chosen and the system time it
+                                    // took the AI to think
+                                    view.SubmitMessage(string.Format(
+                                        "{0} placed a {1} piece at column {2} after {3}",
+                                        CurrPlrNameColor,
+                                        aiTask.Result.shape.ToString().ToLower(),
+                                        aiTask.Result.column,
+                                        $"thinking for {lastTaskDuration:f4}s"));
+                                }
+                                catch (Exception e)
+                                {
+                                    // The act of making an actual move caused
+                                    // an exception, which means the thinker
+                                    // chose an invalid move, as such,
+                                    // notify user of this
+                                    view.SubmitMessage(string.Format(
+                                        "{0} exception: {1}",
+                                        CurrPlrNameColor, e.Message));
+
+                                    // The AI player that caused the exception
+                                    // will lose the game, sorry
+                                    this.Result = board.Turn == PColor.White
+                                        ? Winner.Red : Winner.White;
+                                    OnMatchOver();
+                                }
+
+                                // Set the task to null, so it can be
+                                // started again
+                                aiTask = null;
+
+                                // Reset the last task duration
+                                lastTaskDuration = float.NaN;
+                            }
                         }
-                    }
-                    // Did the task throw an exception?
-                    else if (aiTask.IsFaulted)
-                    {
-                        // If so, notify user
-                        view.SubmitMessage(
-                            aiTask.Exception.InnerException.Message);
-
-                        // Log exception as an error
-                        Debug.LogError(aiTask.Exception.InnerException.Message);
-
-                        // Send a cancellation token to the task in the hope it
-                        // might actually terminate
-                        ts.Cancel();
-
-                        // Set task to null
-                        aiTask = null;
-
-                        // The AI player that throwed the exception will lose
-                        // the game, sorry
-                        this.Result = board.Turn == PColor.White
-                            ? Winner.Red : Winner.White;
-                        OnMatchOver();
                     }
                     // Is the task overdue?
                     else if (DateTime.Now - taskStartSysTime > aiTimeLimit)
@@ -306,8 +347,8 @@ namespace ColorShapeLinks.UnityApp
             }
             else // If we get here, column didn't have space for the move
             {
-                view.SubmitMessage(
-                    $"Column {move.column + 1} is full, try another one.");
+                throw new InvalidOperationException(
+                    $"Column {move.column + 1} is full.");
             }
         }
 
