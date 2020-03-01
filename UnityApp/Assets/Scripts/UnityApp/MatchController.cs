@@ -194,8 +194,7 @@ namespace ColorShapeLinks.UnityApp
 
                         // The AI player that throwed the exception will lose
                         // the game, sorry
-                        OnMatchOver(board.Turn == PColor.White
-                            ? Winner.Red : Winner.White);
+                        OnMatchOver(board.Turn.Other().ToWinner());
                     }
                     // Is the AI thinking task completed?
                     else if (aiTask.IsCompleted)
@@ -227,8 +226,7 @@ namespace ColorShapeLinks.UnityApp
 
                                 // The AI player unable to move will lose
                                 // the game, sorry
-                                OnMatchOver(board.Turn == PColor.White
-                                    ? Winner.Red : Winner.White);
+                                OnMatchOver(board.Turn.Other().ToWinner());
                             }
                             else
                             {
@@ -260,8 +258,7 @@ namespace ColorShapeLinks.UnityApp
 
                                     // The AI player that caused the exception
                                     // will lose the game, sorry
-                                    OnMatchOver(board.Turn == PColor.White
-                                        ? Winner.Red : Winner.White);
+                                    OnMatchOver(board.Turn.Other().ToWinner());
                                 }
                             }
 
@@ -287,8 +284,7 @@ namespace ColorShapeLinks.UnityApp
                         aiTask = null;
 
                         // The AI player that was overdue loses the game
-                        OnMatchOver(board.Turn == PColor.White
-                            ? Winner.Red : Winner.White);
+                        OnMatchOver(board.Turn.Other().ToWinner());
                     }
                 }
             }
