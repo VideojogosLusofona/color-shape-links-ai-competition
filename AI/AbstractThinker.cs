@@ -64,7 +64,7 @@ namespace ColorShapeLinks.Common.AI
         /// </summary>
         /// <param name="str">
         /// String containing setup parameters, should be parsed by the
-        /// concrete IA thinker.
+        /// concrete AI thinker.
         /// </param>
         /// <remarks>
         /// By default, this method does nothing and its implementation by

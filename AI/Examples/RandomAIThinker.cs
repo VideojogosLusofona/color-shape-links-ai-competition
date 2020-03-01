@@ -20,7 +20,7 @@ namespace ColorShapeLinks.Common.AI.Examples
         private Random random;
 
         /// <summary>
-        /// Create a new instance of RandomIAThinker.
+        /// Create a new instance of RandomAIThinker.
         /// </summary>
         public RandomAIThinker()
         {

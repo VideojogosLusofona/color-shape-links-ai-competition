@@ -24,7 +24,7 @@ namespace ColorShapeLinks.Common.AI
         public readonly PShape shape;
 
         /// <summary>
-        /// Represent a "no move" decision, when an IA is unable to decide
+        /// Represent a "no move" decision, when an AI is unable to decide
         /// which move to perform.
         /// </summary>
         /// <value>A "no move" decision.</value>
