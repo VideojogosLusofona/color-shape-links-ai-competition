@@ -58,7 +58,7 @@ namespace ColorShapeLinks.Common
             color == piece.color || color.Shape() == piece.shape;
 
         /// <summary>
-        /// Returns the Winner associated with this color.
+        /// Returns the ::Winner associated with this color.
         /// </summary>
         /// <param name="color">This color.</param>
         /// <returns>
