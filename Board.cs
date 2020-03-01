@@ -306,6 +306,12 @@ namespace ColorShapeLinks.Common
         /// <returns>
         /// Row where piece was placed or -1 if move is invalid.
         /// </returns>
+        /// <exception cref="InvalidOperationException">
+        /// Thrown when:
+        /// * <paramref name="col"/> is is not a valid column.
+        /// * Game is already over when this method is invoked.
+        /// * There are no more pieces of the specified type available.
+        /// </exception>
         public int DoMove(PShape shape, int col)
         {
             // The row were to place the piece, initially assumed to be the top
