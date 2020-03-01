@@ -24,11 +24,20 @@ namespace ColorShapeLinks.Common.AI
         public readonly PShape shape;
 
         /// <summary>
-        /// Represent a "no move" decision, when an IA is unable to decide which
-        /// move to perform, due to a timeout or exception.
+        /// Represent a "no move" decision, when an IA is unable to decide
+        /// which move to perform.
         /// </summary>
-        /// <returns>A "no move" decision.</returns>
+        /// <value>A "no move" decision.</value>
         public static FutureMove NoMove => new FutureMove(-1, (PShape)(-1));
+
+        /// <summary>
+        /// Is this move a <see cref="NoMove"/>?
+        /// </summary>
+        /// <value>
+        /// `true` if this is a <see cref="NoMove"/>, `false` otherwise.
+        /// </value>
+        public bool IsNoMove =>
+            column == NoMove.column && shape == NoMove.shape;
 
         /// <summary>
         /// Create a future move.
