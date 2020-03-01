@@ -85,6 +85,9 @@ namespace ColorShapeLinks.UnityApp
         // Awake is called when the script instance is being loaded
         private void Awake()
         {
+            // Set result to none when the match starts
+            Result = Winner.None;
+
             // Instantiate the unity event for notifying end of match
             MatchOver = new UnityEvent();
 
@@ -191,9 +194,8 @@ namespace ColorShapeLinks.UnityApp
 
                         // The AI player that throwed the exception will lose
                         // the game, sorry
-                        this.Result = board.Turn == PColor.White
-                            ? Winner.Red : Winner.White;
-                        OnMatchOver();
+                        OnMatchOver(board.Turn == PColor.White
+                            ? Winner.Red : Winner.White);
                     }
                     // Is the AI thinking task completed?
                     else if (aiTask.IsCompleted)
@@ -225,9 +227,8 @@ namespace ColorShapeLinks.UnityApp
 
                                 // The AI player unable to move will lose
                                 // the game, sorry
-                                this.Result = board.Turn == PColor.White
-                                    ? Winner.Red : Winner.White;
-                                OnMatchOver();
+                                OnMatchOver(board.Turn == PColor.White
+                                    ? Winner.Red : Winner.White);
                             }
                             else
                             {
@@ -259,18 +260,17 @@ namespace ColorShapeLinks.UnityApp
 
                                     // The AI player that caused the exception
                                     // will lose the game, sorry
-                                    this.Result = board.Turn == PColor.White
-                                        ? Winner.Red : Winner.White;
-                                    OnMatchOver();
+                                    OnMatchOver(board.Turn == PColor.White
+                                        ? Winner.Red : Winner.White);
                                 }
-
-                                // Set the task to null, so it can be
-                                // started again
-                                aiTask = null;
-
-                                // Reset the last task duration
-                                lastTaskDuration = float.NaN;
                             }
+
+                            // Set the task to null, so it can be
+                            // started again
+                            aiTask = null;
+
+                            // Reset the last task duration
+                            lastTaskDuration = float.NaN;
                         }
                     }
                     // Is the task overdue?
@@ -287,9 +287,8 @@ namespace ColorShapeLinks.UnityApp
                         aiTask = null;
 
                         // The AI player that was overdue loses the game
-                        this.Result = board.Turn == PColor.White
-                            ? Winner.Red : Winner.White;
-                        OnMatchOver();
+                        OnMatchOver(board.Turn == PColor.White
+                            ? Winner.Red : Winner.White);
                     }
                 }
             }
@@ -338,11 +337,8 @@ namespace ColorShapeLinks.UnityApp
                 // If the game is over...
                 if (winner != Winner.None)
                 {
-                    // Keep result
-                    Result = winner;
-
                     // Invoke MatchOver event
-                    OnMatchOver();
+                    OnMatchOver(winner);
                 }
             }
             else // If we get here, column didn't have space for the move
@@ -353,13 +349,16 @@ namespace ColorShapeLinks.UnityApp
         }
 
         // Method for invoking the MatchOver event
-        private void OnMatchOver()
+        private void OnMatchOver(Winner result)
         {
+            // Keep result
+            Result = result;
+
             // Send a message to the UI with the match result
             view.SubmitMessage(string.Format("Game Over, {0}",
-                Result == Winner.Draw
+                result == Winner.Draw
                     ? "it's a draw"
-                    : $"{PlrNameColor(Result.ToPColor())} won"));
+                    : $"{PlrNameColor(result.ToPColor())} won"));
 
             // Set internal matchOver variable to true; this will stop further
             // Update()s
