@@ -284,7 +284,7 @@ License][CC BY-NC-SA 4.0].
 [Simplexity]:https://boardgamegeek.com/boardgame/55810/simplexity
 [Connect Four]:https://www.boardgamegeek.com/boardgame/2719/connect-four
 [EuroMillions]:https://www.euro-millions.com/
-[.NET Standard 2.0]:https://docs.microsoft.com/en-us/dotnet/standard/net-standard
+[.NET Standard 2.0]:https://docs.microsoft.com/dotnet/standard/net-standard
 [.NET Core 2.0]:https://dotnet.microsoft.com/download
 [Unity]:https://unity.com/
 [`AbstractThinker`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html
@@ -292,7 +292,7 @@ License][CC BY-NC-SA 4.0].
 [`Board`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/class_color_shape_links_1_1_common_1_1_board.html
 [`FutureMove`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/struct_color_shape_links_1_1_common_1_1_a_i_1_1_future_move.html
 [ossl]:https://opensource.org/licenses
-[`unsafe`]:https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/unsafe-code-pointers/
+[`unsafe`]:https://docs.microsoft.com/dotnet/csharp/programming-guide/unsafe-code-pointers/
 [`SessionController`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/class_color_shape_links_1_1_unity_app_1_1_session_controller.html
 [`DoMove()`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/class_color_shape_links_1_1_common_1_1_board.html#af97ec0281f2420e4594b1000b609ab73
 [`UndoMove()`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/class_color_shape_links_1_1_common_1_1_board.html#a4f5022f3b6c72a4bba9fad39f631beee
