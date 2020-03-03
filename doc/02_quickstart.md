@@ -4,10 +4,9 @@
 
 [TOC]
 
-## Overview
-
-All instructions in these guides are cross-platform and work in Linux, Windows,
-and macOS, requiring only that [.NET Core] and/or [Unity] are installed.
+@remark All instructions in these guides are cross-platform and work in Linux, Windows, and macOS, requiring only that [.NET Core] and/or [Unity] are
+installed. On Windows, replace slashes `/` with backslashes `\` when
+referencing local paths.
 
 ## Downloading the development framework
 
