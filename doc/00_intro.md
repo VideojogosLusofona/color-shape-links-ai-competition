@@ -1,4 +1,4 @@
-# Overview {#overview}
+# Introduction {#introduction}
 
 Welcome to the documentation of ColorShapeLinks, a competition for the [IEEE
 Conference on Games][IEEECoG]. The documentation is divided in the following
@@ -10,7 +10,7 @@ chapters:
 4. @ref unity-guide
 5. @ref architecture
 6. @ref faq
-7. @ref ColorShapeLinks "Namespace list"
+7. [**Namespace list**](namespaces.html)
 8. [**Class list**](annotated.html)
 
 [IEEECoG]:http://ieee-cog.org/
