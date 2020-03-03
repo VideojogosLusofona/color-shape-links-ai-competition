@@ -273,6 +273,9 @@ namespace ColorShapeLinks.TextBased.App
             // For each of the listeners specified...
             foreach (string l in specified)
             {
+                // Check if it's an empty string, in which case, ignore it
+                if (l.Trim().Length == 0) continue;
+
                 // Check if it's known (i.e. if it exists in the
                 // loaded assemblies)
                 if (known.ContainsKey(l))
