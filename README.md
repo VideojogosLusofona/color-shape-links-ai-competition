@@ -33,8 +33,12 @@ function, are multifold.
 The AI must be implemented in C# ([.NET Standard 2.0]) by extending
 [one class][`AbstractThinker`] and overriding [one method][`Think()`].
 The development framework includes both console and [Unity] frontends and can
-be downloaded with `git clone --recurse-submodules https://github.com/VideojogosLusofona/color-shape-links-ai-competition.git`.
-Detailed information available in the [implementation guide][APIDocs].
+be downloaded with the following command (requires [Git] and [Git LFS]):
+
+`git clone --recurse-submodules https://github.com/VideojogosLusofona/color-shape-links-ai-competition.git`
+
+The [implementation guide][APIDocs] contains the required documentation for
+developing an AI for ColorShapeLinks.
 
 ## The competition
 
