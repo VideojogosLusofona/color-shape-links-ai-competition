@@ -30,8 +30,11 @@ namespace ColorShapeLinks.TextBased.App
         {
             selectedCol = Cols / 2;
             selectedShape = PShape.Round;
-            Console.WriteLine(
-               $"Human player ignored the following parameters: \"{str}\"");
+            if (str != null && str.Trim().Length > 0)
+            {
+                Console.WriteLine(
+                    $"Human player ignored these parameters: \"{str}\"");
+            }
         }
 
         /// @copydoc ColorShapeLinks.Common.AI.IThinker.Think
