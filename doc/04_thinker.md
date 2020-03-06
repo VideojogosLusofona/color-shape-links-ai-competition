@@ -4,6 +4,10 @@
 
 [TOC]
 
+## Introduction
+
+Basic stuff already in the quick start
+
 ## Rules for the AI thinkers
 
 The source code of AI thinkers must follow these rules:
@@ -26,8 +30,13 @@ The source code of AI thinkers must follow these rules:
 - Cannot be more than 250kb in size (including libraries, excluding comments).
 - Cannot save or load data from disk.
 
-_Work in progress_
+## Implementing an AI thinker
 
+### Setting up the development environment
+
+### Implementing a simple Minimax player
+
+Steps to create a minimax player
 
 ## Testing an AI thinker in the console app
 
