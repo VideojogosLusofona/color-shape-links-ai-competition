@@ -153,7 +153,7 @@ The AI thinker will lose the match in the following situations:
 * Returns an invalid move, such as:
   * Column out of bounds (<0 or ≥@ref ColorShapeLinks.Common.Board.cols "cols").
   * Column is already full.
-  * No more pieces with the specified shape are available.
+  * No more pieces with the `specified` shape are available.
 
 ### Overriding the ToString() method
 
@@ -291,8 +291,489 @@ additional class or struct is required when using this approach.
 
 ## Implementing a simple Minimax player {#minimax}
 
-TODO
+In this section we discuss the implementation of a basic [Minimax] AI thinker
+with a very simple heuristic. A [minimax algorithm][Minimax] is a
+"recursive algorithm for choosing the next move in (...) a two-player game".
+Essentially, the most basic version of a [minimax algorithm][Minimax]
+tries out all possible moves, branching out the game tree down to a maximum
+depth (otherwise it would take too long to play). Most board states searched
+by the algorithm, even when it reaches maximum depth, will not be final boards.
+As such, we'll need an [heuristic] function to evaluate these non-final boards
+found at the maximum depth of the search algorithm. An heuristic is "an
+educated guess, an intuitive judgment" which helps us evaluate the "goodness"
+of a board state. The better the heuristic, the better the AI will be able
+to evaluate intermediate boards, and the better it'll play. For the remainder
+of this tutorial it assumed that the reader is familiar with the concepts
+discussed thus far.
 
+Let's start with the template presented in the previous section:
+
+```cs
+using System.Threading;
+using ColorShapeLinks.Common;
+using ColorShapeLinks.Common.AI;
+
+public class MyAIThinker : AbstractThinker
+{
+    public override FutureMove Think(Board board, CancellationToken ct)
+    {
+        // Will always lose by making a "No move"
+        return FutureMove.NoMove;
+    }
+}
+```
+
+A minimax algorithm works by maximizing the heuristic score of all possible
+moves when it's the AIs' turn to play, and minimizing it when it's the
+opponents' turn. As such, a `Minimax()` function requires:
+
+* The current board state.
+* The color of the AI player.
+* The color of who's playing in the current turn.
+* The current depth.
+* The maximum depth.
+
+It will also need the [`CancellationToken`], so it can check for cancellation
+request from the main thread. As such, the code will look something like:
+
+```cs
+using System.Threading;
+using ColorShapeLinks.Common;
+using ColorShapeLinks.Common.AI;
+
+public class MyAIThinker : AbstractThinker
+{
+    // Maximum depth, set it at 3 for now
+    private int maxDepth = 3;
+
+    // The Think() (mandatory override) is invoked from the game engine
+    public override FutureMove Think(Board board, CancellationToken ct)
+    {
+        // Invoke minimax setting current depth to zero
+        (FutureMove move, float score) decision =
+            Minimax(board, ct, board.Turn, board.Turn, 0);
+
+        // Return best move
+        return decision.move;
+    }
+
+    // Our minimax implementation
+    private (FutureMove move, float score) Minimax(
+        Board board, CancellationToken ct, PColor player, PColor turn, int depth)
+    {
+        // Return invalid move, will always lose
+        return (FutureMove.NoMove, float.NaN);
+    }
+}
+```
+
+The infrastructure is all set. The following steps have to be implemented in
+the `Minimax()` function:
+
+1. If the cancellation token was activated, and if so, return immediately with
+   a "no move" (score is irrelevant).
+2. Otherwise, if the board is in a final state, return the appropriate score
+   (move is irrelevant since no moves can be mode on a final board):
+   * If the winner is the AI, return the highest possible score.
+   * If the winner is the opponent, return the lowest possible score.
+   * If the match ended in a draw, return a score of zero.
+3. Otherwise, if the maximum depth as been reached, return a score provided
+   by the heuristic function (move is irrelevant, since the game tree will not
+   be branched further below this depth, and as such, there is no move to
+   chose from).
+4. Otherwise, for each possible move, invoke `Minimax()` recursively,
+   selecting the best score and associated move (i.e., maximizing) if it's
+   the AI's turn, or selecting the worse score and associated move (i.e.,
+   minimizing) if it's the opponents' turn.
+
+Implementing this reasoning in the `Minimax()` method can be done as follows:
+
+```cs
+private (FutureMove move, float score) Minimax(
+    Board board, CancellationToken ct, PColor player, PColor turn, int depth)
+{
+    // Best movement and its heuristic value
+    (FutureMove move, float score) selectedMove;
+
+    // Current board state
+    Winner winner;
+
+    // If a cancellation request was made...
+    if (ct.IsCancellationRequested)
+    {
+        // ...set a "no move" and skip the remaining part of the algorithm
+        selectedMove = (FutureMove.NoMove, float.NaN);
+    }
+    // Otherwise, if it's a final board, return the appropriate evaluation
+    else if ((winner = board.CheckWinner()) != Winner.None)
+    {
+        if (winner.ToPColor() == player)
+        {
+            // AI player wins, return highest possible score
+            selectedMove = (FutureMove.NoMove, float.PositiveInfinity);
+        }
+        else if (winner.ToPColor() == player.Other())
+        {
+            // Opponent wins, return lowest possible score
+            selectedMove = (FutureMove.NoMove, float.NegativeInfinity);
+        }
+        else
+        {
+            // A draw, return zero
+            selectedMove = (FutureMove.NoMove, 0f);
+        }
+    }
+    // If we're at max depth and no final board, use the heuristic
+    else if (depth == maxDepth)
+    {
+        // Where did this Heuristic() function come from?
+        // We'll return to it in a moment
+        selectedMove = (FutureMove.NoMove, Heuristic(board, player));
+    }
+    else // Board not final and depth not at max...
+    {
+        //...so let's test all possible moves and recursively call Minimax()
+        // one each one of them, maximizing or minimizing depending on who's
+        // turn is this
+
+        // Initialize the selected move...
+        selectedMove = turn == player
+            // ...with negative infinity if it's the AIs' turn and we're
+            // maximizing (so anything except defeat will be better than this)
+            ? (FutureMove.NoMove, float.NegativeInfinity)
+            // ...or with positive infinity if it's the opponents turn and we're
+            // minimizing (so anything except victory will be worse than this)
+            : (FutureMove.NoMove, float.PositiveInfinity);
+
+        // Test each column
+        for (int i = 0; i < Cols; i++)
+        {
+            // Skip full columns
+            if (board.IsColumnFull(i)) continue;
+
+            // Test shapes
+            for (int j = 0; j < 2; j++)
+            {
+                // Get current shape
+                PShape shape = (PShape)j;
+
+                // Use this variable to keep the current board's score
+                float eval;
+
+                // Skip unavailable shapes
+                if (board.PieceCount(turn, shape) == 0) continue;
+
+                // Test move, call minimax and undo move
+                board.DoMove(shape, i);
+                eval = Minimax(board, ct, player, turn.Other(), depth + 1).score;
+                board.UndoMove();
+
+                // If we're maximizing, is this the best move so far?
+                if (turn == player && eval > selectedMove.score)
+                {
+                    // If so, keep it
+                    selectedMove = (new FutureMove(i, shape), eval);
+                }
+                // Otherwise, if we're minimizing, is this the worst move so far?
+                else if (turn == player.Other() && eval < selectedMove.score)
+                {
+                    // If so, keep it
+                    selectedMove = (new FutureMove(i, shape), eval);
+                }
+            }
+        }
+    }
+
+    // Return selected move and its heuristic value
+    return selectedMove;
+}
+```
+
+We're almost there, but there is still a piece missing: the heuristic function.
+This is a fundamental part of the solution, and as such, only a very basic
+approach is discussed here. Intuitively, pieces near or at the center of the
+board potentially contribute to more winning sequences than pieces near
+corners or edges. This is not a scientific claim, just a (possibly unfounded)
+guess. As such, let's build an heuristic that values pieces placed closer to
+the center of the board:
+
+```cs
+using System;
+
+// ....
+
+private float Heuristic(Board board, PColor color)
+{
+    // Distance between two points
+    float Dist(float x1, float y1, float x2, float y2)
+    {
+        return (float)Math.Sqrt(
+            Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2));
+    }
+
+    // Determine the center row
+    float centerRow = board.rows / 2;
+    float centerCol = board.cols / 2;
+
+    // Maximum points a piece can be awarded when it's at the center
+    float maxPoints = Dist(centerRow, centerCol, 0, 0);
+
+    // Current heuristic value
+    float h = 0;
+
+    // Loop through the board looking for pieces
+    for (int i = 0; i < board.rows; i++)
+    {
+        for (int j = 0; j < board.cols; j++)
+        {
+            // Get piece in current board position
+            Piece? piece = board[i, j];
+
+            // Is there any piece there?
+            if (piece.HasValue)
+            {
+                // If the piece is of our color, increment the
+                // heuristic inversely to the distance from the center
+                if (piece.Value.color == color)
+                    h += maxPoints - Dist(centerRow, centerCol, i, j);
+                // Otherwise decrement the heuristic value using the
+                // same criteria
+                else
+                    h -= maxPoints - Dist(centerRow, centerCol, i, j);
+                // If the piece is of our shape, increment the
+                // heuristic inversely to the distance from the center
+                if (piece.Value.shape == color.Shape())
+                    h += maxPoints - Dist(centerRow, centerCol, i, j);
+                // Otherwise decrement the heuristic value using the
+                // same criteria
+                else
+                    h -= maxPoints - Dist(centerRow, centerCol, i, j);
+            }
+        }
+    }
+    // Return the final heuristic score for the given board
+    return h;
+}
+```
+
+We now have a working AI thinker. We can make our thinker more flexible by
+allowing the maximum depth to be specified using the `Setup()` parameters
+string:
+
+```cs
+// The Setup() method, optional override
+public override void Setup(string str)
+{
+    // Try to get the maximum depth from the parameters
+    if (!int.TryParse(str, out maxDepth))
+    {
+        // If not possible, set it to 3 by default
+        maxDepth = 3;
+    }
+}
+```
+
+It would also be useful to differentiate between instances of our AI thinker,
+parameterized with various maximum depths, playing against each other in
+matches or tournaments. This can be accomplished by overriding the `ToString()`
+method and customizing the AI thinkers' name:
+
+```cs
+// The ToString() method, optional override
+public override string ToString()
+{
+   return base.ToString() + "D" + maxDepth;
+}
+```
+
+Although this implementation will win against a random player (unless the
+random player is really lucky), and probably some human players as well, it is
+in reality a very simple solution. Thus, while it's a good way of getting
+started in board game AI, it won't go very far in a competition. The complete
+code of this AI thinker is as follows:
+
+```cs
+using System;
+using System.Threading;
+using ColorShapeLinks.Common;
+using ColorShapeLinks.Common.AI;
+
+public class MyAIThinker : AbstractThinker
+{
+    // Maximum depth
+    protected int maxDepth;
+
+    // The Setup() method, optional override
+    public override void Setup(string str)
+    {
+        // Try to get the maximum depth from the parameters
+        if (!int.TryParse(str, out maxDepth))
+        {
+            // If not possible, set it to 3 by default
+            maxDepth = 3;
+        }
+    }
+
+    // The ToString() method, optional override
+    public override string ToString()
+    {
+        return base.ToString() + "D" + maxDepth;
+    }
+
+    // The think method
+    public override FutureMove Think(Board board, CancellationToken ct)
+    {
+
+        // Invoke minimax
+        (FutureMove move, float score) decision =
+            Minimax(board, ct, board.Turn, board.Turn, 0);
+
+        // Return best move
+        return decision.move;
+    }
+
+    // Negamax implementation
+    private (FutureMove move, float score) Minimax(
+        Board board, CancellationToken ct, PColor player, PColor turn, int depth)
+    {
+        // Best movement and its heuristic value
+        (FutureMove move, float score) selectedMove;
+
+        // Is there a winner?
+        Winner winner;
+
+        // If a cancellation request was made...
+        if (ct.IsCancellationRequested)
+        {
+            // Return immediately
+            selectedMove = (FutureMove.NoMove, float.NaN);
+        }
+        // If it's a final board, return the appropriate evaluation
+        else if ((winner = board.CheckWinner()) != Winner.None)
+        {
+            if (winner.ToPColor() == player)
+            {
+                selectedMove = (FutureMove.NoMove, float.PositiveInfinity);
+            }
+            else if (winner.ToPColor() == player.Other())
+            {
+                selectedMove = (FutureMove.NoMove, float.NegativeInfinity);
+            }
+            else
+            {
+                // Can only be a draw
+                selectedMove = (FutureMove.NoMove, 0f);
+            }
+        }
+        // If we're at max depth and no final board, use the heuristic
+        else if (depth == maxDepth)
+        {
+            selectedMove = (FutureMove.NoMove, Heuristic(board, player));
+        }
+        else // No winner, lets recurse a proper minimax
+        {
+            // Best move so far
+            selectedMove = turn == player
+                ? (FutureMove.NoMove, float.NegativeInfinity)
+                : (FutureMove.NoMove, float.PositiveInfinity);
+
+            // Test each column
+            for (int i = 0; i < Cols; i++)
+            {
+                // Skip full columns
+                if (board.IsColumnFull(i)) continue;
+
+                // Test shapes
+                for (int j = 0; j < 2; j++)
+                {
+                    float eval;
+                    PShape shape = (PShape)j;
+
+                    // Skip unavailable shapes
+                    if (board.PieceCount(turn, shape) == 0) continue;
+
+                    // Test move, call minimax and undo move
+                    board.DoMove(shape, i);
+                    eval = Minimax(board, ct, player, turn.Other(), depth + 1).score;
+                    board.UndoMove();
+
+                    // Is this the best move so far?
+                    if (turn == player && eval > selectedMove.score)
+                    {
+                        // If so, keep it
+                        selectedMove = (new FutureMove(i, shape), eval);
+                    }
+                    else if (turn == player.Other() && eval < selectedMove.score)
+                    {
+                        // If so, keep it
+                        selectedMove = (new FutureMove(i, shape), eval);
+                    }
+                }
+            }
+        }
+
+        // Return movement and its heuristic value
+        return selectedMove;
+    }
+
+    // Heuristic function
+    private float Heuristic(Board board, PColor color)
+    {
+        // Distance between two points
+        float Dist(float x1, float y1, float x2, float y2)
+        {
+            return (float)Math.Sqrt(
+                Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2));
+        }
+
+        // Determine the center row
+        float centerRow = board.rows / 2;
+        float centerCol = board.cols / 2;
+
+        // Maximum points a piece can be awarded when it's at the center
+        float maxPoints = Dist(centerRow, centerCol, 0, 0);
+
+        // Current heuristic value
+        float h = 0;
+
+        // Loop through the board looking for pieces
+        for (int i = 0; i < board.rows; i++)
+        {
+            for (int j = 0; j < board.cols; j++)
+            {
+                // Get piece in current board position
+                Piece? piece = board[i, j];
+
+                // Is there any piece there?
+                if (piece.HasValue)
+                {
+                    // If the piece is of our color, increment the
+                    // heuristic inversely to the distance from the center
+                    if (piece.Value.color == color)
+                        h += maxPoints - Dist(centerRow, centerCol, i, j);
+                    // Otherwise decrement the heuristic value using the
+                    // same criteria
+                    else
+                        h -= maxPoints - Dist(centerRow, centerCol, i, j);
+                    // If the piece is of our shape, increment the
+                    // heuristic inversely to the distance from the center
+                    if (piece.Value.shape == color.Shape())
+                        h += maxPoints - Dist(centerRow, centerCol, i, j);
+                    // Otherwise decrement the heuristic value using the
+                    // same criteria
+                    else
+                        h -= maxPoints - Dist(centerRow, centerCol, i, j);
+                }
+            }
+        }
+        // Return the final heuristic score for the given board
+        return h;
+    }
+}
+```
+
+[Minimax]:https://en.wikipedia.org/wiki/Minimax
+[heuristic]:https://en.wikipedia.org/wiki/Heuristic
 [Git]:https://git-scm.com/downloads
 [Git LFS]:https://git-lfs.github.com/
 [.NET Standard 2.0]:https://docs.microsoft.com/dotnet/standard/net-standard
