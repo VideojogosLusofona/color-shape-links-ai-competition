@@ -157,7 +157,6 @@ License][CC BY-NC-SA 4.0].
 [Connect Four]:https://www.boardgamegeek.com/boardgame/2719/connect-four
 [EuroMillions]:https://www.euro-millions.com/
 [.NET Standard 2.0]:https://docs.microsoft.com/dotnet/standard/net-standard
-[.NET Core 2.0]:https://dotnet.microsoft.com/download
 [Unity]:https://unity.com/
 [ossl]:https://opensource.org/licenses
 [`unsafe`]:https://docs.microsoft.com/dotnet/csharp/programming-guide/unsafe-code-pointers/
