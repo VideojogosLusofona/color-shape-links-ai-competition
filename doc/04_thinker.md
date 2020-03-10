@@ -151,9 +151,9 @@ The AI thinker will lose the match in the following situations:
 * Causes or throws an exception.
 * Takes too long to play.
 * Returns an invalid move, such as:
-  * Column out of bounds (<0 or ≥@ref ColorShapeLinks.Common.Board.cols "cols").
+  * Column out of bounds (<0 or >=@ref ColorShapeLinks.Common.Board.cols "cols").
   * Column is already full.
-  * No more pieces with the `specified` shape are available.
+  * No more pieces with the specified shape are available.
 
 ### Overriding the ToString() method
 
@@ -270,12 +270,12 @@ console app, in particular the ones used in the above steps.
 During development, it is crucial to be able to test the AI thinker in
 isolation, i.e., outside of running matches and sessions. This is easy to
 accomplish, requiring the creation of a test project which references
-the ColorShapeLinks.Common project, as well as the AI thinker-specific
+the [Common] project, as well as the AI thinker-specific
 project (which we called `MyAIThinkerProjectName` in the previous section).
 However, there is an important caveat to be aware of:
 
-> Properties inherited from [AbstractThinker] will not be automatically
-> initialized if the concrete thinker is instantiated directly.
+@attention Properties inherited from [AbstractThinker] will not be
+automatically initialized if the concrete thinker is instantiated directly.
 
 There are two ways to solve this problem:
 
@@ -284,27 +284,38 @@ There are two ways to solve this problem:
 2. Use a [ThinkerPrototype] to [create] an instance of the concrete AI thinker.
 
 The second option is preferred, since it not only initializes the base class
-properties, as it also invokes the [Setup()] method. The only downside is that
-the [ThinkerPrototype] constructor requires a parameter which implements the
-[IMatchConfig] interface containing the board/match specifications. Thus, an
-additional class or struct is required when using this approach.
+properties, as it also invokes the [Setup()] method. The
+[ThinkerPrototype constructor][ThinkerPrototypeCtor] requires three parameters:
+
+1. A string containing the thinker's fully qualified name.
+2. A string containing the thinker's configuration parameters.
+3. An object which implements the [IMatchConfig] interface.
+
+The last parameter is generally a frontend-dependent type. However, the
+[Common] assembly contains the [MatchConfig] helper class, a simple
+container of match properties which can be used for this purpose. As such,
+instatiating an AI thinker in isolation can be done as follows:
+
+```cs
+MatchConfig mc = new MatchConfig(); // Use default values
+ThinkerPrototype tp = new ThinkerPrototype("MyAIThinker", "", mc);
+IThinker thinker = tp.Create();
+```
 
 ## Implementing a simple Minimax player {#minimax}
 
 In this section we discuss the implementation of a basic [Minimax] AI thinker
-with a very simple heuristic. A [minimax algorithm][Minimax] is a
-"recursive algorithm for choosing the next move in (...) a two-player game".
-Essentially, the most basic version of a [minimax algorithm][Minimax]
-tries out all possible moves, branching out the game tree down to a maximum
-depth (otherwise it would take too long to play). Most board states searched
+with a very simple heuristic. A minimax algorithm is a ["recursive algorithm
+for choosing the next move in (...) a two-player game"][Minimax].
+The most basic version of this algorithm tries out all possible moves,
+branching out the game tree down to a maximum depth, since the search space
+would otherwise be too large. Most board states searched
 by the algorithm, even when it reaches maximum depth, will not be final boards.
-As such, we'll need an [heuristic] function to evaluate these non-final boards
-found at the maximum depth of the search algorithm. An heuristic is "an
-educated guess, an intuitive judgment" which helps us evaluate the "goodness"
-of a board state. The better the heuristic, the better the AI will be able
-to evaluate intermediate boards, and the better it'll play. For the remainder
-of this tutorial it assumed that the reader is familiar with the concepts
-discussed thus far.
+As such, we'll need an [heuristic] function to evaluate these non-final boards.
+An heuristic is ["an educated guess, an intuitive judgment"][heuristic]
+which helps us evaluate the "goodness" of a board state.
+The better the heuristic, the better the AI will be able
+to evaluate intermediate boards, and the better it'll play.
 
 Let's start with the template presented in the previous section:
 
@@ -324,8 +335,8 @@ public class MyAIThinker : AbstractThinker
 ```
 
 A minimax algorithm works by maximizing the heuristic score of all possible
-moves when it's the AIs' turn to play, and minimizing it when it's the
-opponents' turn. As such, a `Minimax()` function requires:
+moves when it's the AI's turn to play, and minimizing it when it's the
+opponent's turn. As such, a `Minimax()` function requires:
 
 * The current board state.
 * The color of the AI player.
@@ -334,7 +345,7 @@ opponents' turn. As such, a `Minimax()` function requires:
 * The maximum depth.
 
 It will also need the [`CancellationToken`], so it can check for cancellation
-request from the main thread. As such, the code will look something like:
+requests from the main thread. As such, the code will look something like:
 
 ```cs
 using System.Threading;
@@ -346,10 +357,10 @@ public class MyAIThinker : AbstractThinker
     // Maximum depth, set it at 3 for now
     private int maxDepth = 3;
 
-    // The Think() (mandatory override) is invoked from the game engine
+    // The Think() method (mandatory override) is invoked by the game engine
     public override FutureMove Think(Board board, CancellationToken ct)
     {
-        // Invoke minimax setting current depth to zero
+        // Invoke minimax, starting with zero depth
         (FutureMove move, float score) decision =
             Minimax(board, ct, board.Turn, board.Turn, 0);
 
@@ -370,29 +381,29 @@ public class MyAIThinker : AbstractThinker
 The infrastructure is all set. The following steps have to be implemented in
 the `Minimax()` function:
 
-1. If the cancellation token was activated, and if so, return immediately with
+1. If the cancellation token was activated, return immediately with
    a "no move" (score is irrelevant).
 2. Otherwise, if the board is in a final state, return the appropriate score
-   (move is irrelevant since no moves can be mode on a final board):
+   (move is irrelevant since no moves can be made on a final board):
    * If the winner is the AI, return the highest possible score.
    * If the winner is the opponent, return the lowest possible score.
    * If the match ended in a draw, return a score of zero.
-3. Otherwise, if the maximum depth as been reached, return a score provided
+3. Otherwise, if the maximum depth has been reached, return the score provided
    by the heuristic function (move is irrelevant, since the game tree will not
    be branched further below this depth, and as such, there is no move to
    chose from).
 4. Otherwise, for each possible move, invoke `Minimax()` recursively,
    selecting the best score and associated move (i.e., maximizing) if it's
-   the AI's turn, or selecting the worse score and associated move (i.e.,
-   minimizing) if it's the opponents' turn.
+   the AI's turn, or selecting the worst score and associated move (i.e.,
+   minimizing) if it's the opponent's turn.
 
-Implementing this reasoning in the `Minimax()` method can be done as follows:
+Implementing this reasoning in the `Minimax()` function can be done as follows:
 
 ```cs
 private (FutureMove move, float score) Minimax(
     Board board, CancellationToken ct, PColor player, PColor turn, int depth)
 {
-    // Best movement and its heuristic value
+    // Move to return and its heuristic value
     (FutureMove move, float score) selectedMove;
 
     // Current board state
@@ -423,7 +434,8 @@ private (FutureMove move, float score) Minimax(
             selectedMove = (FutureMove.NoMove, 0f);
         }
     }
-    // If we're at max depth and no final board, use the heuristic
+    // If we're at maximum depth and don't have a final board, use
+    // the heuristic
     else if (depth == maxDepth)
     {
         // Where did this Heuristic() function come from?
@@ -433,15 +445,15 @@ private (FutureMove move, float score) Minimax(
     else // Board not final and depth not at max...
     {
         //...so let's test all possible moves and recursively call Minimax()
-        // one each one of them, maximizing or minimizing depending on who's
-        // turn is this
+        // for each one of them, maximizing or minimizing depending on who's
+        // turn it is
 
         // Initialize the selected move...
         selectedMove = turn == player
-            // ...with negative infinity if it's the AIs' turn and we're
+            // ...with negative infinity if it's the AI's turn and we're
             // maximizing (so anything except defeat will be better than this)
             ? (FutureMove.NoMove, float.NegativeInfinity)
-            // ...or with positive infinity if it's the opponents turn and we're
+            // ...or with positive infinity if it's the opponent's turn and we're
             // minimizing (so anything except victory will be worse than this)
             : (FutureMove.NoMove, float.PositiveInfinity);
 
@@ -573,10 +585,10 @@ public override void Setup(string str)
 }
 ```
 
-It would also be useful to differentiate between instances of our AI thinker,
+It would also be useful to differentiate between instances of our AI thinker
 parameterized with various maximum depths, playing against each other in
 matches or tournaments. This can be accomplished by overriding the `ToString()`
-method and customizing the AI thinkers' name:
+method and customizing the AI thinker's name:
 
 ```cs
 // The ToString() method, optional override
@@ -587,7 +599,7 @@ public override string ToString()
 ```
 
 Although this implementation will win against a random player (unless the
-random player is really lucky), and probably some human players as well, it is
+random player is really lucky), and probably some human players as well, it's
 in reality a very simple solution. Thus, while it's a good way of getting
 started in board game AI, it won't go very far in a competition. The complete
 code of this AI thinker is as follows:
@@ -620,11 +632,11 @@ public class MyAIThinker : AbstractThinker
         return base.ToString() + "D" + maxDepth;
     }
 
-    // The think method
+    // The Think() method (mandatory override) is invoked by the game engine
     public override FutureMove Think(Board board, CancellationToken ct)
     {
 
-        // Invoke minimax
+        // Invoke minimax, starting with zero depth
         (FutureMove move, float score) decision =
             Minimax(board, ct, board.Turn, board.Turn, 0);
 
@@ -636,45 +648,56 @@ public class MyAIThinker : AbstractThinker
     private (FutureMove move, float score) Minimax(
         Board board, CancellationToken ct, PColor player, PColor turn, int depth)
     {
-        // Best movement and its heuristic value
+        // Move to return and its heuristic value
         (FutureMove move, float score) selectedMove;
 
-        // Is there a winner?
+        // Current board state
         Winner winner;
 
         // If a cancellation request was made...
         if (ct.IsCancellationRequested)
         {
-            // Return immediately
+            // ...set a "no move" and skip the remaining part of the algorithm
             selectedMove = (FutureMove.NoMove, float.NaN);
         }
-        // If it's a final board, return the appropriate evaluation
+        // Otherwise, if it's a final board, return the appropriate evaluation
         else if ((winner = board.CheckWinner()) != Winner.None)
         {
             if (winner.ToPColor() == player)
             {
+                // AI player wins, return highest possible score
                 selectedMove = (FutureMove.NoMove, float.PositiveInfinity);
             }
             else if (winner.ToPColor() == player.Other())
             {
+                // Opponent wins, return lowest possible score
                 selectedMove = (FutureMove.NoMove, float.NegativeInfinity);
             }
             else
             {
-                // Can only be a draw
+                // A draw, return zero
                 selectedMove = (FutureMove.NoMove, 0f);
             }
         }
-        // If we're at max depth and no final board, use the heuristic
+        // If we're at maximum depth and don't have a final board, use
+        // the heuristic
         else if (depth == maxDepth)
         {
             selectedMove = (FutureMove.NoMove, Heuristic(board, player));
         }
-        else // No winner, lets recurse a proper minimax
+        else // Board not final and depth not at max...
         {
-            // Best move so far
+            //...so let's test all possible moves and recursively call Minimax()
+            // for each one of them, maximizing or minimizing depending on who's
+            // turn it is
+
+            // Initialize the selected move...
             selectedMove = turn == player
+                // ...with negative infinity if it's the AI's turn and we're
+                // maximizing (so anything except defeat will be better than this)
                 ? (FutureMove.NoMove, float.NegativeInfinity)
+                // ...or with positive infinity if it's the opponent's turn and we're
+                // minimizing (so anything except victory will be worse than this)
                 : (FutureMove.NoMove, float.PositiveInfinity);
 
             // Test each column
@@ -686,8 +709,11 @@ public class MyAIThinker : AbstractThinker
                 // Test shapes
                 for (int j = 0; j < 2; j++)
                 {
-                    float eval;
+                    // Get current shape
                     PShape shape = (PShape)j;
+
+                    // Use this variable to keep the current board's score
+                    float eval;
 
                     // Skip unavailable shapes
                     if (board.PieceCount(turn, shape) == 0) continue;
@@ -697,12 +723,13 @@ public class MyAIThinker : AbstractThinker
                     eval = Minimax(board, ct, player, turn.Other(), depth + 1).score;
                     board.UndoMove();
 
-                    // Is this the best move so far?
+                    // If we're maximizing, is this the best move so far?
                     if (turn == player && eval > selectedMove.score)
                     {
                         // If so, keep it
                         selectedMove = (new FutureMove(i, shape), eval);
                     }
+                    // Otherwise, if we're minimizing, is this the worst move so far?
                     else if (turn == player.Other() && eval < selectedMove.score)
                     {
                         // If so, keep it
@@ -782,10 +809,16 @@ public class MyAIThinker : AbstractThinker
 [ossl]:https://opensource.org/licenses
 [`unsafe`]:https://docs.microsoft.com/dotnet/csharp/programming-guide/unsafe-code-pointers/
 [`CancellationToken`]:https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken
+[csconstruct]:https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/constructors#parameterless-constructors
+[console_folder]:https://github.com/VideojogosLusofona/color-shape-links-ai-competition/tree/master/ConsoleApp/ColorShapeLinks/TextBased
+[unity_folder]:https://github.com/VideojogosLusofona/color-shape-links-ai-competition/tree/master/UnityApp/Assets/Scripts
+[Common]:@ref ColorShapeLinks.Common
 [AbstractThinker]:@ref ColorShapeLinks.Common.AI.AbstractThinker
 [ThinkerPrototype]:@ref ColorShapeLinks.Common.AI.ThinkerPrototype
+[ThinkerPrototypeCtor]:@ref ColorShapeLinks.Common.AI.ThinkerPrototype.ThinkerPrototype
 [create]:@ref ColorShapeLinks.Common.AI.ThinkerPrototype.Create
 [IMatchConfig]:@ref ColorShapeLinks.Common.Session.IMatchConfig
+[MatchConfig]:@ref ColorShapeLinks.Common.Session.MatchConfig
 [Think()]:@ref ColorShapeLinks.Common.AI.AbstractThinker.Think
 [Setup()]:@ref ColorShapeLinks.Common.AI.AbstractThinker.Setup
 [ToString()]:@ref ColorShapeLinks.Common.AI.AbstractThinker.ToString
@@ -798,6 +831,3 @@ public class MyAIThinker : AbstractThinker
 [winCorridors]:@ref ColorShapeLinks.Common.Board.winCorridors
 [Unity]:@ref unity-guide
 [console]:@ref console-guide
-[csconstruct]:https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/constructors#parameterless-constructors
-[console_folder]:https://github.com/VideojogosLusofona/color-shape-links-ai-competition/tree/master/ConsoleApp/ColorShapeLinks/TextBased
-[unity_folder]:https://github.com/VideojogosLusofona/color-shape-links-ai-competition/tree/master/UnityApp/Assets/Scripts
