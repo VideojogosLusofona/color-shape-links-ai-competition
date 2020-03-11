@@ -139,7 +139,7 @@ main thread. More specifically, the thinker can try moves with the
 board keeps track of the move history, so the thinker can perform any
 sequence of moves, and roll them back afterwards.
 
-The [CheckWinner()] method is useful to determine if there is a winner. If
+The [CheckWinner()] method is useful to determine if there's a winner. If
 there is one, the solution is placed in the method's optional parameter.
 
 For building heuristics, the public read-only variable [winCorridors] will
@@ -390,7 +390,7 @@ the `Minimax()` function:
    * If the match ended in a draw, return a score of zero.
 3. Otherwise, if the maximum depth has been reached, return the score provided
    by the heuristic function (move is irrelevant, since the game tree will not
-   be branched further below this depth, and as such, there is no move to
+   be branched further below this depth, and as such, there's no move to
    chose from).
 4. Otherwise, for each possible move, invoke `Minimax()` recursively,
    selecting the best score and associated move (i.e., maximizing) if it's
@@ -501,7 +501,7 @@ private (FutureMove move, float score) Minimax(
 }
 ```
 
-We're almost there, but there is still a piece missing: the heuristic function.
+We're almost there, but there's still a piece missing: the heuristic function.
 This is a fundamental part of the solution, and as such, only a very basic
 approach is discussed here. Intuitively, pieces near or at the center of the
 board potentially contribute to more winning sequences than pieces near
@@ -644,7 +644,7 @@ public class MyAIThinker : AbstractThinker
         return decision.move;
     }
 
-    // Negamax implementation
+    // Minimax implementation
     private (FutureMove move, float score) Minimax(
         Board board, CancellationToken ct, PColor player, PColor turn, int depth)
     {
