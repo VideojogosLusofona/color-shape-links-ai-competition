@@ -320,14 +320,14 @@ namespace ColorShapeLinks.UnityApp
                     //    who's playing
                     UnityAction setToggles = () =>
                     {
-                    // 1.
-                    // Count for current player and shape
-                    int count = board.PieceCount(player, shape);
-                    // Update label to update with shape count
-                    toggles[(int)shape].GetComponentInChildren<Text>().text =
-                            count.ToString();
-                    // If count reached zero, swap shape selection
-                    if (count == 0)
+                        // 1.
+                        // Count for current player and shape
+                        int count = board.PieceCount(player, shape);
+                        // Update label to update with shape count
+                        toggles[(int)shape].GetComponentInChildren<Text>()
+                            .text = count.ToString();
+                        // If count reached zero, swap shape selection
+                        if (count == 0)
                         {
                             SelectShape(
                                 player,
@@ -336,18 +336,18 @@ namespace ColorShapeLinks.UnityApp
                                     : PShape.Round);
                             toggles[(int)shape].interactable = false;
                         }
-                    // 2.
-                    else
+                        // 2.
+                        else
                         {
-                        // Player is human, is its turn and game not over,
-                        // enable toggle
-                        if (matchData.GetThinker(player) is HumanThinker
+                            // Player is human, is its turn and game not over,
+                            // enable toggle
+                            if (matchData.GetThinker(player) is HumanThinker
                                 && player == board.Turn && !finished)
                             {
                                 toggles[(int)shape].interactable = true;
                             }
-                        // Otherwise disable toggle
-                        else
+                            // Otherwise disable toggle
+                            else
                             {
                                 toggles[(int)shape].interactable = false;
                             }
