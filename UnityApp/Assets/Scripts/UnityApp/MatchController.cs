@@ -232,10 +232,6 @@ namespace ColorShapeLinks.UnityApp
                             {
                                 try
                                 {
-                                    // Player was able to make a move decision,
-                                    // let's perform the actual move
-                                    MakeAMove(aiTask.Result);
-
                                     // If so, submit a message informing of
                                     // the move chosen and the system time it
                                     // took the AI to think
@@ -245,6 +241,10 @@ namespace ColorShapeLinks.UnityApp
                                         aiTask.Result.shape.ToString().ToLower(),
                                         aiTask.Result.column,
                                         $"thinking for {lastTaskDuration:f4}s"));
+
+                                    // Player was able to make a move decision,
+                                    // let's perform the actual move
+                                    MakeAMove(aiTask.Result);
                                 }
                                 catch (Exception e)
                                 {
