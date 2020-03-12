@@ -22,9 +22,6 @@ namespace ColorShapeLinks.TextBased.App
     public class SimpleRenderingListener :
         IThinkerListener, IMatchListener, ISessionListener
     {
-        // Who's playing?
-        private PColor turn = PColor.White;
-
         /// @copydoc ColorShapeLinks.TextBased.Lib.IThinkerListener.ListenTo
         /// <seealso cref="ColorShapeLinks.TextBased.Lib.IThinkerListener.ListenTo"/>
         public void ListenTo(IThinker subject)
@@ -62,7 +59,7 @@ namespace ColorShapeLinks.TextBased.App
         private void ThinkingInfo(string thinkingInfo)
         {
             // Show thinking info
-            Console.WriteLine($"{turn} thinker says: {thinkingInfo}");
+            Console.WriteLine(thinkingInfo);
         }
 
         // //////////////////////////////// //
@@ -123,7 +120,6 @@ namespace ColorShapeLinks.TextBased.App
         private void NextTurn(PColor thinkerColor, string thinkerName)
         {
             Console.WriteLine($"{thinkerColor.FormatName(thinkerName)} turn");
-            turn = thinkerColor;
         }
 
         // Displays notification that the specified thinker lost due to an
