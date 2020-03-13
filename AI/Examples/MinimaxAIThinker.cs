@@ -16,7 +16,7 @@ namespace ColorShapeLinks.Common.AI.Examples
     /// heuristic which previledges center board positions.
     /// </summary>
     /// <remarks>
-    /// This is the same implementation used in @ref minimax.
+    /// This is the same implementation used in the @ref minimax tutorial.
     /// </remarks>
     public class MinimaxAIThinker : AbstractThinker
     {
