@@ -178,7 +178,7 @@ namespace ColorShapeLinks.Common.AI.Examples
 
                         // If we're maximizing, is this the best move so far?
                         if (turn == player
-                            && eval > selectedMove.score)
+                            && eval >= selectedMove.score)
                         {
                             // If so, keep it
                             selectedMove = (new FutureMove(i, shape), eval);
@@ -186,7 +186,7 @@ namespace ColorShapeLinks.Common.AI.Examples
                         // Otherwise, if we're minimizing, is this the worst
                         // move so far?
                         else if (turn == player.Other()
-                            && eval < selectedMove.score)
+                            && eval <= selectedMove.score)
                         {
                             // If so, keep it
                             selectedMove = (new FutureMove(i, shape), eval);
