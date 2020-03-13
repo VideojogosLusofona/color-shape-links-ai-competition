@@ -44,6 +44,11 @@ namespace ColorShapeLinks.Common.AI.Examples
             NoMove,
 
             /// <summary>
+            /// Always terminates with a timeout.
+            /// </summary>
+            Timeout,
+
+            /// <summary>
             /// Throw an exception.
             /// </summary>
             Exception
@@ -56,7 +61,7 @@ namespace ColorShapeLinks.Common.AI.Examples
         /// Specify type of invalid move the thinker will make.
         /// </summary>
         /// <param name="str">
-        /// A string representation of BadMoveAIThinker.BadMove values.
+        /// A string representation of <see cref="BadMove"/> values.
         /// </param>
         /// <exception cref="ArgumentException">
         /// Thrown when an unknown option is given in <paramref name="str"/>.
@@ -83,23 +88,43 @@ namespace ColorShapeLinks.Common.AI.Examples
             switch (badMove)
             {
                 case BadMove.AboveColumn:
+                    // Make move above highest column
                     futureMove =
                         new FutureMove(board.cols, board.Turn.Shape());
                     break;
                 case BadMove.BelowColumn:
+                    // Make move below lowest column
                     futureMove = new FutureMove(-1, board.Turn.Shape());
                     break;
                 case BadMove.Repeat:
+                    // Always places the same shape in the same column
                     futureMove = new FutureMove(0, board.Turn.Shape());
                     break;
                 case BadMove.NoMove:
+                    // Return a "no move"
                     futureMove = FutureMove.NoMove;
                     break;
+                case BadMove.Timeout:
+                    // Always timeout
+                    futureMove = FutureMove.NoMove;
+                    while (true)
+                    {
+                        // Wait enough millisseconds to lose
+                        Thread.Sleep(TimeLimitMillis + 1);
+
+                        // The task will eventually be cancelled due to a
+                        // timeout
+                        if (ct.IsCancellationRequested) break;
+                    }
+                    break;
                 case BadMove.Exception:
+                    // Throw an exception on purpose
                     throw new Exception(String.Format(
                         "{0} throwing an exception for testing purposes.",
                         nameof(BadMoveAIThinker)));
                 default:
+                    // By default thrown an exception letting the caller
+                    // know this class was used unproperly
                     throw new InvalidOperationException(
                         $"Invalid use of {nameof(BadMoveAIThinker)}");
             }
