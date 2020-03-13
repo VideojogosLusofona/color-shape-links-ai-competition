@@ -20,14 +20,29 @@ namespace ColorShapeLinks.Common.AI.Examples
         private Random random;
 
         /// <summary>
-        /// Create a new instance of RandomAIThinker.
+        /// Initialize the random number generator used for this random
+        /// thinker.
         /// </summary>
-        public RandomAIThinker()
+        /// <param name="str">
+        /// If the string is convertible to `int`, this `int` value is used
+        /// as a seed for the random number generator. Otherwise, a
+        /// time-dependent default seed value is used instead.
+        /// </param>
+        /// <seealso cref="AbstractThinker.Setup"/>
+        public override void Setup(string str)
         {
-            random = new Random();
+            if (int.TryParse(str, out int seed))
+                random = new Random(seed);
+            else
+                random = new Random();
         }
 
-        /// @copydoc IThinker.Think
+        /// <summary>
+        /// This method will simply return a random valid move.
+        /// </summary>
+        /// <param name="board">The game board.</param>
+        /// <param name="ct">A cancellation token (ignored).</param>
+        /// <returns>The move to be performed.</returns>
         /// <seealso cref="IThinker.Think"/>
         public override FutureMove Think(Board board, CancellationToken ct)
         {
