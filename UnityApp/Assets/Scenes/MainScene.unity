@@ -358,7 +358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 1
   selectedThinker: ColorShapeLinks.Common.AI.Examples.SequentialAIThinker
-  thinkerConfig: 
+  thinkerParams: 
 --- !u!114 &617695837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,7 +373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 1
   selectedThinker: ColorShapeLinks.Common.AI.Examples.RandomAIThinker
-  thinkerConfig: 
+  thinkerParams: 123
 --- !u!114 &617695838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,8 +387,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
-  selectedThinker: ColorShapeLinks.Common.AI.Examples.LoserSleeperAIThinker
-  thinkerConfig: 
+  selectedThinker: ColorShapeLinks.Common.AI.Examples.MinimaxAIThinker
+  thinkerParams: 2
 --- !u!114 &617695839
 MonoBehaviour:
   m_ObjectHideFlags: 0
