@@ -602,7 +602,9 @@ Although this implementation will win against a random player (unless the
 random player is really lucky), and probably some human players as well, it's
 in reality a very simple solution. Thus, while it's a good way of getting
 started in board game AI, it won't go very far in a competition. The complete
-code of this AI thinker is as follows:
+code of this AI thinker is as follows (it's also in the
+@ref ColorShapeLinks.Common.AI.Examples.MinimaxAIThinker "MinimaxAIThinker"
+class, included with the development framework):
 
 ```cs
 using System;
@@ -613,7 +615,7 @@ using ColorShapeLinks.Common.AI;
 public class MyAIThinker : AbstractThinker
 {
     // Maximum depth
-    protected int maxDepth;
+    private int maxDepth;
 
     // The Setup() method, optional override
     public override void Setup(string str)
@@ -646,7 +648,8 @@ public class MyAIThinker : AbstractThinker
 
     // Minimax implementation
     private (FutureMove move, float score) Minimax(
-        Board board, CancellationToken ct, PColor player, PColor turn, int depth)
+        Board board, CancellationToken ct,
+        PColor player, PColor turn, int depth)
     {
         // Move to return and its heuristic value
         (FutureMove move, float score) selectedMove;
@@ -724,13 +727,15 @@ public class MyAIThinker : AbstractThinker
                     board.UndoMove();
 
                     // If we're maximizing, is this the best move so far?
-                    if (turn == player && eval > selectedMove.score)
+                    if (turn == player
+                        && eval >= selectedMove.score)
                     {
                         // If so, keep it
                         selectedMove = (new FutureMove(i, shape), eval);
                     }
                     // Otherwise, if we're minimizing, is this the worst move so far?
-                    else if (turn == player.Other() && eval < selectedMove.score)
+                    else if (turn == player.Other()
+                        && eval <= selectedMove.score)
                     {
                         // If so, keep it
                         selectedMove = (new FutureMove(i, shape), eval);
