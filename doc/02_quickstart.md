@@ -8,6 +8,10 @@
 installed. On Windows, replace slashes `/` with backslashes `\` when
 referencing local paths.
 
+@htmlonly
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ELrsLzX3qBY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+@endhtmlonly
+
 ## Downloading the development framework
 
 The development framework **must** be downloaded with the following

@@ -13,6 +13,8 @@ work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 This competition has been accepted for the [IEEE CoG 2020] conference and is
 officially open!
 
+* [Implementation guide][APIDocs] and [tutorial video](https://www.youtube.com/watch?v=ELrsLzX3qBY)
+* [Standings]
 * **Deadline**: 15th May
 
 ## Description
@@ -39,6 +41,8 @@ be downloaded with the following command (requires [Git] and [Git LFS]):
 
 The [implementation guide][APIDocs] contains the required documentation for
 developing an AI for ColorShapeLinks.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ELrsLzX3qBY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## The competition
 
