@@ -42,8 +42,6 @@ be downloaded with the following command (requires [Git] and [Git LFS]):
 The [implementation guide][APIDocs] contains the required documentation for
 developing an AI for ColorShapeLinks.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ELrsLzX3qBY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ## The competition
 
 ### Tracks
