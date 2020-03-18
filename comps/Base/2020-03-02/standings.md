@@ -39,16 +39,3 @@ _Winner, if any, shown in bold_
 | `BasicNegamax` | **`Coac`** |
 | **`Coac`** | `BasicNegamax` |
 
-## Previous days
-
-* [2020-03-01](/color-shape-links-ai-competition/daily/2020-03-01)
-* [2020-02-29](/color-shape-links-ai-competition/daily/2020-02-29)
-* [2020-02-28](/color-shape-links-ai-competition/daily/2020-02-28)
-* [2020-02-27](/color-shape-links-ai-competition/daily/2020-02-27)
-* [2020-02-26](/color-shape-links-ai-competition/daily/2020-02-26)
-* [2020-02-25](/color-shape-links-ai-competition/daily/2020-02-25)
-* [2020-02-24](/color-shape-links-ai-competition/daily/2020-02-24)
-* [2020-02-23](/color-shape-links-ai-competition/daily/2020-02-23)
-* [2020-02-22](/color-shape-links-ai-competition/daily/2020-02-22)
-* [2020-02-21](/color-shape-links-ai-competition/daily/2020-02-21)
-* [2020-02-20](/color-shape-links-ai-competition/daily/2020-02-20)

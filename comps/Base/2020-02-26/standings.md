@@ -23,11 +23,3 @@ _Winner, if any, shown in bold_
 | `LoserSleeper` | **`Random`** |
 | **`Random`** | `LoserSleeper` |
 
-## Previous days
-
-* [2020-02-25](/color-shape-links-ai-competition/daily/2020-02-25)
-* [2020-02-24](/color-shape-links-ai-competition/daily/2020-02-24)
-* [2020-02-23](/color-shape-links-ai-competition/daily/2020-02-23)
-* [2020-02-22](/color-shape-links-ai-competition/daily/2020-02-22)
-* [2020-02-21](/color-shape-links-ai-competition/daily/2020-02-21)
-* [2020-02-20](/color-shape-links-ai-competition/daily/2020-02-20)
