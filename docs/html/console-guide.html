@@ -93,21 +93,21 @@ $(document).ready(function(){initNavTree('console-guide.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#autotoc_md6">Running the app</a><ul><li class="level2"><a href="#autotoc_md7">App options</a></li>
-<li class="level2"><a href="#autotoc_md8">The match verb</a></li>
-<li class="level2"><a href="#autotoc_md9">The session verb</a></li>
+<ul><li class="level1"><a href="#autotoc_md5">Running the app</a><ul><li class="level2"><a href="#autotoc_md6">App options</a></li>
+<li class="level2"><a href="#autotoc_md7">The match verb</a></li>
+<li class="level2"><a href="#autotoc_md8">The session verb</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#listeners">Event listeners</a><ul><li class="level2"><a href="#autotoc_md10">Listener architecture</a></li>
-<li class="level2"><a href="#autotoc_md11">The default listener</a></li>
-<li class="level2"><a href="#autotoc_md12">Custom listeners</a></li>
+<li class="level1"><a href="#listeners">Event listeners</a><ul><li class="level2"><a href="#autotoc_md9">Listener architecture</a></li>
+<li class="level2"><a href="#autotoc_md10">The default listener</a></li>
+<li class="level2"><a href="#autotoc_md11">Custom listeners</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="textblock"><p>A guide on how to run an AI thinker using the console app</p>
 <dl class="section remark"><dt>Remarks</dt><dd>All instructions in these guides are cross-platform and work in Linux, Windows, and macOS, requiring only that <a href="https://dotnet.microsoft.com/download">.NET Core</a> and/or <a href="https://unity.com/">Unity</a> are installed. On Windows, replace slashes <code>/</code> with backslashes <code>\</code> when referencing local paths.</dd></dl>
-<h1><a class="anchor" id="autotoc_md6"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Running the app</h1>
 <p>In order to run the console app, <code>cd</code> into its folder (i.e., <code>ConsoleApp/ColorShapeLinks/TextBased/App</code>) and run the following command:</p>
 <div class="fragment"><div class="line">$ dotnet run</div>
@@ -121,7 +121,7 @@ Running the app</h1>
 </div><!-- fragment --><p>In this case, command-line options are passed directly:</p>
 <div class="fragment"><div class="line">$ ./bin/Release/netcoreapp3.1/ColorShapeLinks.TextBased.App info</div>
 </div><!-- fragment --><p>For the remainder of this document, we will use the first approach, i.e., the <code>dotnet run</code> command in default <em>debug</em> mode.</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 App options</h2>
 <p>The console applications has the following main options (or verbs):</p>
 <table class="markdownTable">
@@ -156,7 +156,7 @@ App options</h2>
 <li><code>--match-listeners</code>: Match event listeners, space separated (default is <a class="el" href="class_color_shape_links_1_1_text_based_1_1_app_1_1_simple_rendering_listener.html" title="Simple event listener which renders thinker, match and session information on the console.">ColorShapeLinks.TextBased.App.SimpleRenderingListener</a>).</li>
 </ul>
 <p>These options define the board configuration for matches, the maximum and minimum apparent play times, as well as alternative thinker and match <a class="el" href="console-guide.html#listeners">listeners</a>.</p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 The match verb</h2>
 <p>The <code>match</code> verb runs a single match of <a class="el" href="namespace_color_shape_links.html" title="The ColorShapeLinks game, an unbounded version of the Simplexity board game.">ColorShapeLinks</a>. The following command list all <code>match</code> verb options:</p>
 <div class="fragment"><div class="line">$ dotnet run -- help match</div>
@@ -181,7 +181,7 @@ The match verb</h2>
 <div class="fragment"><div class="line">dotnet run -- match -W MyAI.MyThinker -R ColorShapeLinks.Common.AI.Examples.RandomAIThinker --white-params &quot;depth=4&quot;</div>
 </div><!-- fragment --><p>Different board configurations can also be specified. The following command starts a match between two human players with a 10x10 board, a winning sequence of 7 pieces, with each player starting with 24 round pieces and 25 square pieces:</p>
 <div class="fragment"><div class="line">dotnet run -- match -r 10 -c 10 -w 7 -o 24 -s 25</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md8"></a>
 The session verb</h2>
 <p>The <code>session</code> verb runs a complete session/tournament between the AI thinkers specified in a configuration file. The following command list all <code>session</code> verb options:</p>
 <div class="fragment"><div class="line">$ dotnet run -- help session</div>
@@ -205,7 +205,7 @@ The session verb</h2>
 <div class="fragment"><div class="line">$ dotnet run -- session -g test-competition.txt -a /full/path/to/my/thinker/assembly.dll /full/path/to/awesome/assembly.dll</div>
 </div><!-- fragment --><h1><a class="anchor" id="listeners"></a>
 Event listeners</h1>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
 Listener architecture</h2>
 <p>Listeners are responsible for handling:</p>
 <ul>
@@ -226,13 +226,13 @@ Listener architecture</h2>
 <div class="fragment"><div class="line">$ dotnet run -- info</div>
 </div><!-- fragment --><p>If listeners are defined in an external assembly, the assembly also needs to be specified, e.g.:</p>
 <div class="fragment"><div class="line">$ dotnet run -- info -a /full/path/to/listener/assembly.dll</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md11"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md10"></a>
 The default listener</h2>
 <p>The <a class="el" href="class_color_shape_links_1_1_text_based_1_1_app_1_1_simple_rendering_listener.html">SimpleRenderingListener</a> implements all three listener interfaces, namely <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_thinker_listener.html">IThinkerListener</a>, <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_match_listener.html">IMatchListener</a> and <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_session_listener.html">ISessionListener</a>. As such, it is able to listen to <a class="el" href="interface_color_shape_links_1_1_common_1_1_a_i_1_1_i_thinker.html">thinker</a>, <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_match_subject.html">match</a> and <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_session_subject.html">session</a> events, and is used as the default listener in the configurations described in the following paragraphs.</p>
 <p>When running simple matches (i.e., using the <code>match</code> verb), the <a class="el" href="class_color_shape_links_1_1_text_based_1_1_app_1_1_simple_rendering_listener.html">SimpleRenderingListener</a> is registered as a <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_thinker_listener.html">thinker listener</a> and a <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_match_listener.html">match listener</a>. There are no <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_session_subject.html">session events</a> when running simple matches.</p>
 <p>Similarly, <a class="el" href="class_color_shape_links_1_1_text_based_1_1_app_1_1_simple_rendering_listener.html">SimpleRenderingListener</a> is registered as a <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_session_listener.html">session listener</a> when running complete sessions/tournaments with the <code>session</code> verb. By default, no <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_thinker_listener.html">thinker</a> and <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_match_listener.html">match</a> listeners are registered during complete sessions.</p>
 <p>The <a class="el" href="class_color_shape_links_1_1_text_based_1_1_app_1_1_simple_rendering_listener.html">SimpleRenderingListener</a> works according to its name, outputting <a class="el" href="interface_color_shape_links_1_1_common_1_1_a_i_1_1_i_thinker.html">thinker</a>, <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_match_subject.html">match</a> and <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_session_subject.html">session</a> events to the console in the simplest possible fashion.</p>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Custom listeners</h2>
 <p>A custom listener can listen to several events of one or more types. Depending on the types of event to listen, the custom listener must implement one or more of the following interfaces:</p>
 <ul>
@@ -371,7 +371,7 @@ Custom listeners</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Mar 16 2020 23:51:20 for ColorShapeLinks AI by
+    <li class="footer">Generated on Mon Apr 13 2020 23:29:09 for ColorShapeLinks AI by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
   </ul>

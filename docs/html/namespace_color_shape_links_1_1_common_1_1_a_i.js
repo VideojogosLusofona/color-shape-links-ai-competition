@@ -6,5 +6,6 @@ var namespace_color_shape_links_1_1_common_1_1_a_i =
     [ "IThinker", "interface_color_shape_links_1_1_common_1_1_a_i_1_1_i_thinker.html", "interface_color_shape_links_1_1_common_1_1_a_i_1_1_i_thinker" ],
     [ "IThinkerPrototype", "interface_color_shape_links_1_1_common_1_1_a_i_1_1_i_thinker_prototype.html", "interface_color_shape_links_1_1_common_1_1_a_i_1_1_i_thinker_prototype" ],
     [ "ThinkerManager", "class_color_shape_links_1_1_common_1_1_a_i_1_1_thinker_manager.html", "class_color_shape_links_1_1_common_1_1_a_i_1_1_thinker_manager" ],
-    [ "ThinkerPrototype", "class_color_shape_links_1_1_common_1_1_a_i_1_1_thinker_prototype.html", "class_color_shape_links_1_1_common_1_1_a_i_1_1_thinker_prototype" ]
+    [ "ThinkerPrototype", "class_color_shape_links_1_1_common_1_1_a_i_1_1_thinker_prototype.html", "class_color_shape_links_1_1_common_1_1_a_i_1_1_thinker_prototype" ],
+    [ "UncooperativeThinkerException", "class_color_shape_links_1_1_common_1_1_a_i_1_1_uncooperative_thinker_exception.html", "class_color_shape_links_1_1_common_1_1_a_i_1_1_uncooperative_thinker_exception" ]
 ];

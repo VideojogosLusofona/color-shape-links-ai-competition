@@ -1,0 +1,142 @@
+=> Random (White) vs MinimaxD2 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+Random (White) turn
+Random (White) placed a Square piece at column 6 after 0ms
+.......
+.......
+.......
+.......
+.......
+......W
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 6 after 3ms
+.......
+.......
+.......
+.......
+......R
+......W
+
+Random (White) turn
+Random (White) placed a Square piece at column 4 after 0ms
+.......
+.......
+.......
+.......
+......R
+....W.W
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 4 after 4ms
+.......
+.......
+.......
+.......
+....R.R
+....W.W
+
+Random (White) turn
+Random (White) placed a Round piece at column 2 after 0ms
+.......
+.......
+.......
+.......
+....R.R
+..w.W.W
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 4 after 4ms
+.......
+.......
+.......
+....R..
+....R.R
+..w.W.W
+
+Random (White) turn
+Random (White) placed a Round piece at column 4 after 0ms
+.......
+.......
+....w..
+....R..
+....R.R
+..w.W.W
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 4 after 4ms
+.......
+....R..
+....w..
+....R..
+....R.R
+..w.W.W
+
+Random (White) turn
+Random (White) placed a Round piece at column 4 after 0ms
+....w..
+....R..
+....w..
+....R..
+....R.R
+..w.W.W
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 2 after 3ms
+....w..
+....R..
+....w..
+....R..
+..R.R.R
+..w.W.W
+
+Random (White) turn
+Random (White) placed a Round piece at column 1 after 0ms
+....w..
+....R..
+....w..
+....R..
+..R.R.R
+.ww.W.W
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 3 after 3ms
+....w..
+....R..
+....w..
+....R..
+..R.R.R
+.wwRW.W
+
+Random (White) turn
+Random (White) placed a Square piece at column 0 after 0ms
+....w..
+....R..
+....w..
+....R..
+..R.R.R
+WwwRW.W
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 5 after 3ms
+....w..
+....R..
+....w..
+....R..
+..R.R.R
+WwwRWRW
+
+Winner is MinimaxD2 (Red)
+Solution=(0,3)(0,4)(0,5)(0,6)

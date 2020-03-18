@@ -1,0 +1,232 @@
+=> MinimaxD2 (White) vs BasicNegamax (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.......
+.......
+.......
+.......
+.......
+.....w.
+
+BasicNegamax (Red) turn
+BasicNegamax (Red) placed a Square piece at column 3 after 67ms
+.......
+.......
+.......
+.......
+.......
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.......
+.......
+.......
+.......
+.....w.
+...R.w.
+
+BasicNegamax (Red) turn
+BasicNegamax (Red) placed a Square piece at column 5 after 68ms
+.......
+.......
+.......
+.....R.
+.....w.
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 4ms
+.......
+.......
+.....w.
+.....R.
+.....w.
+...R.w.
+
+BasicNegamax (Red) turn
+BasicNegamax (Red) placed a Square piece at column 3 after 70ms
+.......
+.......
+.....w.
+.....R.
+...R.w.
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 4ms
+.......
+.......
+.....w.
+...w.R.
+...R.w.
+...R.w.
+
+BasicNegamax (Red) turn
+BasicNegamax (Red) placed a Square piece at column 3 after 72ms
+.......
+.......
+...R.w.
+...w.R.
+...R.w.
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 4ms
+.......
+...w...
+...R.w.
+...w.R.
+...R.w.
+...R.w.
+
+BasicNegamax (Red) turn
+BasicNegamax (Red) placed a Square piece at column 3 after 70ms
+...R...
+...w...
+...R.w.
+...w.R.
+...R.w.
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+...R...
+...w.w.
+...R.w.
+...w.R.
+...R.w.
+...R.w.
+
+BasicNegamax (Red) turn
+BasicNegamax (Red) placed a Square piece at column 0 after 45ms
+...R...
+...w.w.
+...R.w.
+...w.R.
+...R.w.
+R..R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+...R.w.
+...w.w.
+...R.w.
+...w.R.
+...R.w.
+R..R.w.
+
+BasicNegamax (Red) turn
+BasicNegamax (Red) placed a Square piece at column 1 after 27ms
+...R.w.
+...w.w.
+...R.w.
+...w.R.
+...R.w.
+RR.R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 2 after 2ms
+...R.w.
+...w.w.
+...R.w.
+...w.R.
+...R.w.
+RRwR.w.
+
+BasicNegamax (Red) turn
+BasicNegamax (Red) placed a Square piece at column 2 after 30ms
+...R.w.
+...w.w.
+...R.w.
+...w.R.
+..RR.w.
+RRwR.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 2 after 2ms
+...R.w.
+...w.w.
+...R.w.
+..ww.R.
+..RR.w.
+RRwR.w.
+
+BasicNegamax (Red) turn
+BasicNegamax (Red) placed a Square piece at column 1 after 29ms
+...R.w.
+...w.w.
+...R.w.
+..ww.R.
+.RRR.w.
+RRwR.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 0 after 2ms
+...R.w.
+...w.w.
+...R.w.
+..ww.R.
+wRRR.w.
+RRwR.w.
+
+BasicNegamax (Red) turn
+BasicNegamax (Red) placed a Square piece at column 1 after 14ms
+...R.w.
+...w.w.
+...R.w.
+.Rww.R.
+wRRR.w.
+RRwR.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 6 after 1ms
+...R.w.
+...w.w.
+...R.w.
+.Rww.R.
+wRRR.w.
+RRwR.wW
+
+BasicNegamax (Red) turn
+BasicNegamax (Red) placed a Round piece at column 0 after 6ms
+...R.w.
+...w.w.
+...R.w.
+rRww.R.
+wRRR.w.
+RRwR.wW
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 6 after 0ms
+...R.w.
+...w.w.
+...R.w.
+rRww.R.
+wRRR.wW
+RRwR.wW
+
+BasicNegamax (Red) turn
+BasicNegamax (Red) placed a Round piece at column 0 after 3ms
+...R.w.
+...w.w.
+r..R.w.
+rRww.R.
+wRRR.wW
+RRwR.wW
+
+Winner is BasicNegamax (Red)
+Solution=(0,3)(1,2)(2,1)(3,0)

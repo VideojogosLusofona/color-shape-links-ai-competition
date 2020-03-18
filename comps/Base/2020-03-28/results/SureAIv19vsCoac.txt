@@ -1,0 +1,287 @@
+=> SureAIv19 (White) vs Coac (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+SureAIv19 (White) turn
+Depth = 5
+Did 3980 evals
+SureAIv19 (White) placed a Round piece at column 2 after 186ms
+.......
+.......
+.......
+.......
+.......
+..w....
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 2 after 33ms
+.......
+.......
+.......
+.......
+..R....
+..w....
+
+SureAIv19 (White) turn
+Depth = 6
+Did 3106 evals
+SureAIv19 (White) placed a Round piece at column 3 after 186ms
+.......
+.......
+.......
+.......
+..R....
+..ww...
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 1 after 36ms
+.......
+.......
+.......
+.......
+..R....
+.Rww...
+
+SureAIv19 (White) turn
+Depth = 6
+Did 2976 evals
+SureAIv19 (White) placed a Round piece at column 4 after 186ms
+.......
+.......
+.......
+.......
+..R....
+.Rwww..
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 5 after 116ms
+.......
+.......
+.......
+.......
+..R....
+.RwwwR.
+
+SureAIv19 (White) turn
+Depth = 5
+Did 3104 evals
+SureAIv19 (White) placed a Round piece at column 4 after 186ms
+.......
+.......
+.......
+.......
+..R.w..
+.RwwwR.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 3 after 97ms
+.......
+.......
+.......
+.......
+..RRw..
+.RwwwR.
+
+SureAIv19 (White) turn
+Depth = 5
+Did 2853 evals
+SureAIv19 (White) placed a Round piece at column 4 after 186ms
+.......
+.......
+.......
+....w..
+..RRw..
+.RwwwR.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 4 after 80ms
+.......
+.......
+....R..
+....w..
+..RRw..
+.RwwwR.
+
+SureAIv19 (White) turn
+Depth = 6
+Did 2488 evals
+SureAIv19 (White) placed a Round piece at column 3 after 186ms
+.......
+.......
+....R..
+...ww..
+..RRw..
+.RwwwR.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 1 after 93ms
+.......
+.......
+....R..
+...ww..
+.RRRw..
+.RwwwR.
+
+SureAIv19 (White) turn
+Depth = 5
+Did 2235 evals
+SureAIv19 (White) placed a Round piece at column 1 after 186ms
+.......
+.......
+....R..
+.w.ww..
+.RRRw..
+.RwwwR.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 2 after 30ms
+.......
+.......
+....R..
+.wRww..
+.RRRw..
+.RwwwR.
+
+SureAIv19 (White) turn
+Depth = 6
+Did 2193 evals
+SureAIv19 (White) placed a Round piece at column 3 after 186ms
+.......
+.......
+...wR..
+.wRww..
+.RRRw..
+.RwwwR.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 0 after 75ms
+.......
+.......
+...wR..
+.wRww..
+.RRRw..
+RRwwwR.
+
+SureAIv19 (White) turn
+Depth = 6
+Did 2462 evals
+SureAIv19 (White) placed a Round piece at column 0 after 186ms
+.......
+.......
+...wR..
+.wRww..
+wRRRw..
+RRwwwR.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 2 after 83ms
+.......
+.......
+..RwR..
+.wRww..
+wRRRw..
+RRwwwR.
+
+SureAIv19 (White) turn
+Depth = 7
+Did 1963 evals
+SureAIv19 (White) placed a Round piece at column 2 after 186ms
+.......
+..w....
+..RwR..
+.wRww..
+wRRRw..
+RRwwwR.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 5 after 93ms
+.......
+..w....
+..RwR..
+.wRww..
+wRRRwR.
+RRwwwR.
+
+SureAIv19 (White) turn
+Depth = 5
+Did 2121 evals
+SureAIv19 (White) placed a Square piece at column 3 after 186ms
+.......
+..wW...
+..RwR..
+.wRww..
+wRRRwR.
+RRwwwR.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 3 after 48ms
+...R...
+..wW...
+..RwR..
+.wRww..
+wRRRwR.
+RRwwwR.
+
+SureAIv19 (White) turn
+Depth = 6
+Did 2300 evals
+SureAIv19 (White) placed a Square piece at column 4 after 186ms
+...R...
+..wWW..
+..RwR..
+.wRww..
+wRRRwR.
+RRwwwR.
+
+Coac (Red) turn
+Coac (Red) placed a Round piece at column 5 after 13ms
+...R...
+..wWW..
+..RwR..
+.wRwwr.
+wRRRwR.
+RRwwwR.
+
+SureAIv19 (White) turn
+Depth = 7
+Did 2636 evals
+SureAIv19 (White) placed a Square piece at column 5 after 186ms
+...R...
+..wWW..
+..RwRW.
+.wRwwr.
+wRRRwR.
+RRwwwR.
+
+Coac (Red) turn
+Coac (Red) placed a Round piece at column 0 after 11ms
+...R...
+..wWW..
+..RwRW.
+rwRwwr.
+wRRRwR.
+RRwwwR.
+
+SureAIv19 (White) turn
+Depth = 12
+Did 3832 evals
+SureAIv19 (White) placed a Square piece at column 5 after 186ms
+...R...
+..wWWW.
+..RwRW.
+rwRwwr.
+wRRRwR.
+RRwwwR.
+
+Winner is SureAIv19 (White)
+Solution=(4,2)(4,3)(4,4)(4,5)

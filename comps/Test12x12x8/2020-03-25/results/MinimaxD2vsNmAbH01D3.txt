@@ -1,0 +1,642 @@
+=> MinimaxD2 (White) vs NmAbH01D3 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 30ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.........w..
+
+NmAbH01D3 (Red) turn
+Did 1980 evals
+NmAbH01D3 (Red) placed a Square piece at column 9 after 127ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.........R..
+.........w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 30ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.........w..
+.........R..
+.........w..
+
+NmAbH01D3 (Red) turn
+Did 2333 evals
+NmAbH01D3 (Red) placed a Square piece at column 9 after 154ms
+............
+............
+............
+............
+............
+............
+............
+............
+.........R..
+.........w..
+.........R..
+.........w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 30ms
+............
+............
+............
+............
+............
+............
+............
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+
+NmAbH01D3 (Red) turn
+Did 2191 evals
+NmAbH01D3 (Red) placed a Square piece at column 9 after 142ms
+............
+............
+............
+............
+............
+............
+.........R..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 31ms
+............
+............
+............
+............
+............
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+
+NmAbH01D3 (Red) turn
+Did 1969 evals
+NmAbH01D3 (Red) placed a Square piece at column 6 after 129ms
+............
+............
+............
+............
+............
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+.........R..
+......R..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 31ms
+............
+............
+............
+............
+.........w..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+.........R..
+......R..w..
+
+NmAbH01D3 (Red) turn
+Did 2101 evals
+NmAbH01D3 (Red) placed a Square piece at column 9 after 138ms
+............
+............
+............
+.........R..
+.........w..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+.........R..
+......R..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 31ms
+............
+............
+.........w..
+.........R..
+.........w..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+.........R..
+......R..w..
+
+NmAbH01D3 (Red) turn
+Did 1701 evals
+NmAbH01D3 (Red) placed a Square piece at column 6 after 113ms
+............
+............
+.........w..
+.........R..
+.........w..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+......R..R..
+......R..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 32ms
+............
+.........w..
+.........w..
+.........R..
+.........w..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+......R..R..
+......R..w..
+
+NmAbH01D3 (Red) turn
+Did 2345 evals
+NmAbH01D3 (Red) placed a Square piece at column 0 after 159ms
+............
+.........w..
+.........w..
+.........R..
+.........w..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+......R..R..
+R.....R..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 6 after 32ms
+............
+.........w..
+.........w..
+.........R..
+.........w..
+.........w..
+.........R..
+.........w..
+.........R..
+......w..w..
+......R..R..
+R.....R..w..
+
+NmAbH01D3 (Red) turn
+Did 1562 evals
+NmAbH01D3 (Red) placed a Square piece at column 6 after 108ms
+............
+.........w..
+.........w..
+.........R..
+.........w..
+.........w..
+.........R..
+.........w..
+......R..R..
+......w..w..
+......R..R..
+R.....R..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 6 after 33ms
+............
+.........w..
+.........w..
+.........R..
+.........w..
+.........w..
+.........R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+R.....R..w..
+
+NmAbH01D3 (Red) turn
+Did 1422 evals
+NmAbH01D3 (Red) placed a Square piece at column 6 after 98ms
+............
+.........w..
+.........w..
+.........R..
+.........w..
+.........w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+R.....R..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 6 after 33ms
+............
+.........w..
+.........w..
+.........R..
+.........w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+R.....R..w..
+
+NmAbH01D3 (Red) turn
+Did 1525 evals
+NmAbH01D3 (Red) placed a Square piece at column 6 after 107ms
+............
+.........w..
+.........w..
+.........R..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+R.....R..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 6 after 33ms
+............
+.........w..
+.........w..
+......w..R..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+R.....R..w..
+
+NmAbH01D3 (Red) turn
+Did 1461 evals
+NmAbH01D3 (Red) placed a Square piece at column 6 after 104ms
+............
+.........w..
+......R..w..
+......w..R..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+R.....R..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 6 after 34ms
+............
+......w..w..
+......R..w..
+......w..R..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+R.....R..w..
+
+NmAbH01D3 (Red) turn
+Did 1423 evals
+NmAbH01D3 (Red) placed a Square piece at column 3 after 101ms
+............
+......w..w..
+......R..w..
+......w..R..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+R..R..R..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 6 after 34ms
+......w.....
+......w..w..
+......R..w..
+......w..R..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+R..R..R..w..
+
+NmAbH01D3 (Red) turn
+Did 1371 evals
+NmAbH01D3 (Red) placed a Square piece at column 5 after 100ms
+......w.....
+......w..w..
+......R..w..
+......w..R..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+R..R.RR..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 30ms
+......w..w..
+......w..w..
+......R..w..
+......w..R..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+R..R.RR..w..
+
+NmAbH01D3 (Red) turn
+Did 1168 evals
+NmAbH01D3 (Red) placed a Square piece at column 4 after 85ms
+......w..w..
+......w..w..
+......R..w..
+......w..R..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+R..RRRR..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 25ms
+......w..w..
+......w..w..
+......R..w..
+......w..R..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+...w..R..R..
+R..RRRR..w..
+
+NmAbH01D3 (Red) turn
+Did 435 evals
+NmAbH01D3 (Red) placed a Round piece at column 2 after 31ms
+......w..w..
+......w..w..
+......R..w..
+......w..R..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+...w..R..R..
+R.rRRRR..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 11 after 24ms
+......w..w..
+......w..w..
+......R..w..
+......w..R..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+...w..R..R..
+R.rRRRR..w.W
+
+NmAbH01D3 (Red) turn
+Did 102 evals
+NmAbH01D3 (Red) placed a Round piece at column 0 after 7ms
+......w..w..
+......w..w..
+......R..w..
+......w..R..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+r..w..R..R..
+R.rRRRR..w.W
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 11 after 25ms
+......w..w..
+......w..w..
+......R..w..
+......w..R..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+r..w..R..R.W
+R.rRRRR..w.W
+
+NmAbH01D3 (Red) turn
+Did 102 evals
+NmAbH01D3 (Red) placed a Round piece at column 0 after 7ms
+......w..w..
+......w..w..
+......R..w..
+......w..R..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+r.....w..w..
+r..w..R..R.W
+R.rRRRR..w.W
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 11 after 25ms
+......w..w..
+......w..w..
+......R..w..
+......w..R..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+r.....w..w.W
+r..w..R..R.W
+R.rRRRR..w.W
+
+NmAbH01D3 (Red) turn
+Did 102 evals
+NmAbH01D3 (Red) placed a Round piece at column 0 after 7ms
+......w..w..
+......w..w..
+......R..w..
+......w..R..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+r.....R..R..
+r.....w..w.W
+r..w..R..R.W
+R.rRRRR..w.W
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 11 after 26ms
+......w..w..
+......w..w..
+......R..w..
+......w..R..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+r.....R..R.W
+r.....w..w.W
+r..w..R..R.W
+R.rRRRR..w.W
+
+NmAbH01D3 (Red) turn
+Did 46 evals
+NmAbH01D3 (Red) placed a Round piece at column 0 after 3ms
+......w..w..
+......w..w..
+......R..w..
+......w..R..
+......R..w..
+......w..w..
+......R..R..
+r.....w..w..
+r.....R..R.W
+r.....w..w.W
+r..w..R..R.W
+R.rRRRR..w.W
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 11 after 26ms
+......w..w..
+......w..w..
+......R..w..
+......w..R..
+......R..w..
+......w..w..
+......R..R..
+r.....w..w.W
+r.....R..R.W
+r.....w..w.W
+r..w..R..R.W
+R.rRRRR..w.W
+
+NmAbH01D3 (Red) turn
+Did 2 evals
+NmAbH01D3 (Red) placed a Round piece at column 0 after 0ms
+......w..w..
+......w..w..
+......R..w..
+......w..R..
+......R..w..
+......w..w..
+r.....R..R..
+r.....w..w.W
+r.....R..R.W
+r.....w..w.W
+r..w..R..R.W
+R.rRRRR..w.W
+
+Winner is NmAbH01D3 (Red)
+Solution=(0,0)(1,0)(2,0)(3,0)(4,0)(5,0)

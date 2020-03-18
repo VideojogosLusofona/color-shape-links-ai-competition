@@ -1,0 +1,206 @@
+=> Random (White) vs TheBenchmark (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+Random (White) turn
+Random (White) placed a Round piece at column 2 after 0ms
+.......
+.......
+.......
+.......
+.......
+..w....
+
+TheBenchmark (Red) turn
+Did 3976 total evals
+TheBenchmark (Red) placed a Square piece at column 2 after 153ms
+.......
+.......
+.......
+.......
+..R....
+..w....
+
+Random (White) turn
+Random (White) placed a Round piece at column 4 after 0ms
+.......
+.......
+.......
+.......
+..R....
+..w.w..
+
+TheBenchmark (Red) turn
+Did 3587 total evals
+TheBenchmark (Red) placed a Square piece at column 4 after 153ms
+.......
+.......
+.......
+.......
+..R.R..
+..w.w..
+
+Random (White) turn
+Random (White) placed a Square piece at column 5 after 0ms
+.......
+.......
+.......
+.......
+..R.R..
+..w.wW.
+
+TheBenchmark (Red) turn
+Did 3220 total evals
+TheBenchmark (Red) placed a Square piece at column 3 after 151ms
+.......
+.......
+.......
+.......
+..R.R..
+..wRwW.
+
+Random (White) turn
+Random (White) placed a Round piece at column 5 after 0ms
+.......
+.......
+.......
+.......
+..R.Rw.
+..wRwW.
+
+TheBenchmark (Red) turn
+Did 3450 total evals
+TheBenchmark (Red) placed a Square piece at column 4 after 154ms
+.......
+.......
+.......
+....R..
+..R.Rw.
+..wRwW.
+
+Random (White) turn
+Random (White) placed a Round piece at column 4 after 0ms
+.......
+.......
+....w..
+....R..
+..R.Rw.
+..wRwW.
+
+TheBenchmark (Red) turn
+Did 3512 total evals
+TheBenchmark (Red) placed a Square piece at column 5 after 154ms
+.......
+.......
+....w..
+....RR.
+..R.Rw.
+..wRwW.
+
+Random (White) turn
+Random (White) placed a Square piece at column 0 after 0ms
+.......
+.......
+....w..
+....RR.
+..R.Rw.
+W.wRwW.
+
+TheBenchmark (Red) turn
+Did 3385 total evals
+TheBenchmark (Red) placed a Square piece at column 2 after 154ms
+.......
+.......
+....w..
+..R.RR.
+..R.Rw.
+W.wRwW.
+
+Random (White) turn
+Random (White) placed a Square piece at column 5 after 0ms
+.......
+.......
+....wW.
+..R.RR.
+..R.Rw.
+W.wRwW.
+
+TheBenchmark (Red) turn
+Did 3011 total evals
+TheBenchmark (Red) placed a Square piece at column 2 after 154ms
+.......
+.......
+..R.wW.
+..R.RR.
+..R.Rw.
+W.wRwW.
+
+Random (White) turn
+Random (White) placed a Round piece at column 2 after 0ms
+.......
+..w....
+..R.wW.
+..R.RR.
+..R.Rw.
+W.wRwW.
+
+TheBenchmark (Red) turn
+Did 3035 total evals
+TheBenchmark (Red) placed a Square piece at column 0 after 154ms
+.......
+..w....
+..R.wW.
+..R.RR.
+R.R.Rw.
+W.wRwW.
+
+Random (White) turn
+Random (White) placed a Round piece at column 4 after 0ms
+.......
+..w.w..
+..R.wW.
+..R.RR.
+R.R.Rw.
+W.wRwW.
+
+TheBenchmark (Red) turn
+Did 2937 total evals
+TheBenchmark (Red) placed a Square piece at column 0 after 154ms
+.......
+..w.w..
+..R.wW.
+R.R.RR.
+R.R.Rw.
+W.wRwW.
+
+Random (White) turn
+Random (White) placed a Round piece at column 4 after 0ms
+....w..
+..w.w..
+..R.wW.
+R.R.RR.
+R.R.Rw.
+W.wRwW.
+
+TheBenchmark (Red) turn
+Did 2946 total evals
+TheBenchmark (Red) placed a Square piece at column 0 after 153ms
+....w..
+..w.w..
+R.R.wW.
+R.R.RR.
+R.R.Rw.
+W.wRwW.
+
+Winner is TheBenchmark (Red)
+Solution=(0,0)(1,0)(2,0)(3,0)

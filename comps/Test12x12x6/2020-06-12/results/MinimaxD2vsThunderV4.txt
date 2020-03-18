@@ -1,0 +1,1372 @@
+=> MinimaxD2 (White) vs ThunderV4 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 31ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.........w..
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Round piece at column 0 after 271ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+r........w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 29ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.........w..
+r........w..
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Round piece at column 7 after 272ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.........w..
+r......r.w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 29ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.........w..
+.........w..
+r......r.w..
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Round piece at column 1 after 272ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.........w..
+.........w..
+rr.....r.w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 30ms
+............
+............
+............
+............
+............
+............
+............
+............
+.........w..
+.........w..
+.........w..
+rr.....r.w..
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 10 after 272ms
+............
+............
+............
+............
+............
+............
+............
+............
+.........w..
+.........w..
+.........w..
+rr.....r.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 36ms
+............
+............
+............
+............
+............
+............
+............
+.........w..
+.........w..
+.........w..
+.........w..
+rr.....r.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 9 after 271ms
+............
+............
+............
+............
+............
+............
+.........R..
+.........w..
+.........w..
+.........w..
+.........w..
+rr.....r.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 32ms
+............
+............
+............
+............
+............
+.........w..
+.........R..
+.........w..
+.........w..
+.........w..
+.........w..
+rr.....r.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Round piece at column 2 after 272ms
+............
+............
+............
+............
+............
+.........w..
+.........R..
+.........w..
+.........w..
+.........w..
+.........w..
+rrr....r.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 40ms
+............
+............
+............
+............
+.........w..
+.........w..
+.........R..
+.........w..
+.........w..
+.........w..
+.........w..
+rrr....r.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 4 after 271ms
+............
+............
+............
+............
+.........w..
+.........w..
+.........R..
+.........w..
+.........w..
+.........w..
+.........w..
+rrr.R..r.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 32ms
+............
+............
+............
+.........w..
+.........w..
+.........w..
+.........R..
+.........w..
+.........w..
+.........w..
+.........w..
+rrr.R..r.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 3 after 271ms
+............
+............
+............
+.........w..
+.........w..
+.........w..
+.........R..
+.........w..
+.........w..
+.........w..
+.........w..
+rrrRR..r.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 33ms
+............
+............
+............
+.........w..
+.........w..
+.........w..
+.........R..
+.........w..
+.........w..
+.........w..
+.........w..
+rrrRRw.r.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 0 after 271ms
+............
+............
+............
+.........w..
+.........w..
+.........w..
+.........R..
+.........w..
+.........w..
+.........w..
+R........w..
+rrrRRw.r.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 34ms
+............
+............
+.........w..
+.........w..
+.........w..
+.........w..
+.........R..
+.........w..
+.........w..
+.........w..
+R........w..
+rrrRRw.r.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 4 after 272ms
+............
+............
+.........w..
+.........w..
+.........w..
+.........w..
+.........R..
+.........w..
+.........w..
+.........w..
+R...R....w..
+rrrRRw.r.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 34ms
+............
+.........w..
+.........w..
+.........w..
+.........w..
+.........w..
+.........R..
+.........w..
+.........w..
+.........w..
+R...R....w..
+rrrRRw.r.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 9 after 272ms
+.........R..
+.........w..
+.........w..
+.........w..
+.........w..
+.........w..
+.........R..
+.........w..
+.........w..
+.........w..
+R...R....w..
+rrrRRw.r.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 29ms
+.........R..
+.........w..
+.........w..
+.........w..
+.........w..
+.........w..
+.........R..
+.........w..
+.........w..
+....w....w..
+R...R....w..
+rrrRRw.r.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 7 after 272ms
+.........R..
+.........w..
+.........w..
+.........w..
+.........w..
+.........w..
+.........R..
+.........w..
+.........w..
+....w....w..
+R...R..R.w..
+rrrRRw.r.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 30ms
+.........R..
+.........w..
+.........w..
+.........w..
+.........w..
+.........w..
+.........R..
+.........w..
+....w....w..
+....w....w..
+R...R..R.w..
+rrrRRw.r.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 3 after 272ms
+.........R..
+.........w..
+.........w..
+.........w..
+.........w..
+.........w..
+.........R..
+.........w..
+....w....w..
+....w....w..
+R..RR..R.w..
+rrrRRw.r.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 30ms
+.........R..
+.........w..
+.........w..
+.........w..
+.........w..
+.........w..
+.........R..
+....w....w..
+....w....w..
+....w....w..
+R..RR..R.w..
+rrrRRw.r.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 5 after 272ms
+.........R..
+.........w..
+.........w..
+.........w..
+.........w..
+.........w..
+.........R..
+....w....w..
+....w....w..
+....w....w..
+R..RRR.R.w..
+rrrRRw.r.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 38ms
+.........R..
+.........w..
+.........w..
+.........w..
+.........w..
+.........w..
+....w....R..
+....w....w..
+....w....w..
+....w....w..
+R..RRR.R.w..
+rrrRRw.r.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 2 after 272ms
+.........R..
+.........w..
+.........w..
+.........w..
+.........w..
+.........w..
+....w....R..
+....w....w..
+....w....w..
+....w....w..
+R.RRRR.R.w..
+rrrRRw.r.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 1 after 29ms
+.........R..
+.........w..
+.........w..
+.........w..
+.........w..
+.........w..
+....w....R..
+....w....w..
+....w....w..
+....w....w..
+RwRRRR.R.w..
+rrrRRw.r.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 4 after 271ms
+.........R..
+.........w..
+.........w..
+.........w..
+.........w..
+....R....w..
+....w....R..
+....w....w..
+....w....w..
+....w....w..
+RwRRRR.R.w..
+rrrRRw.r.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 31ms
+.........R..
+.........w..
+.........w..
+.........w..
+....w....w..
+....R....w..
+....w....R..
+....w....w..
+....w....w..
+....w....w..
+RwRRRR.R.w..
+rrrRRw.r.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 0 after 272ms
+.........R..
+.........w..
+.........w..
+.........w..
+....w....w..
+....R....w..
+....w....R..
+....w....w..
+....w....w..
+R...w....w..
+RwRRRR.R.w..
+rrrRRw.r.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 32ms
+.........R..
+.........w..
+.........w..
+....w....w..
+....w....w..
+....R....w..
+....w....R..
+....w....w..
+....w....w..
+R...w....w..
+RwRRRR.R.w..
+rrrRRw.r.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 7 after 272ms
+.........R..
+.........w..
+.........w..
+....w....w..
+....w....w..
+....R....w..
+....w....R..
+....w....w..
+....w....w..
+R...w..R.w..
+RwRRRR.R.w..
+rrrRRw.r.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 40ms
+.........R..
+.........w..
+....w....w..
+....w....w..
+....w....w..
+....R....w..
+....w....R..
+....w....w..
+....w....w..
+R...w..R.w..
+RwRRRR.R.w..
+rrrRRw.r.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 1 after 271ms
+.........R..
+.........w..
+....w....w..
+....w....w..
+....w....w..
+....R....w..
+....w....R..
+....w....w..
+....w....w..
+RR..w..R.w..
+RwRRRR.R.w..
+rrrRRw.r.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 7 after 33ms
+.........R..
+.........w..
+....w....w..
+....w....w..
+....w....w..
+....R....w..
+....w....R..
+....w....w..
+....w..w.w..
+RR..w..R.w..
+RwRRRR.R.w..
+rrrRRw.r.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 6 after 273ms
+.........R..
+.........w..
+....w....w..
+....w....w..
+....w....w..
+....R....w..
+....w....R..
+....w....w..
+....w..w.w..
+RR..w..R.w..
+RwRRRR.R.w..
+rrrRRwRr.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 6 after 31ms
+.........R..
+.........w..
+....w....w..
+....w....w..
+....w....w..
+....R....w..
+....w....R..
+....w....w..
+....w..w.w..
+RR..w..R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 1 after 272ms
+.........R..
+.........w..
+....w....w..
+....w....w..
+....w....w..
+....R....w..
+....w....R..
+....w....w..
+.R..w..w.w..
+RR..w..R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 7 after 33ms
+.........R..
+.........w..
+....w....w..
+....w....w..
+....w....w..
+....R....w..
+....w....R..
+....w..w.w..
+.R..w..w.w..
+RR..w..R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Round piece at column 2 after 272ms
+.........R..
+.........w..
+....w....w..
+....w....w..
+....w....w..
+....R....w..
+....w....R..
+....w..w.w..
+.R..w..w.w..
+RRr.w..R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 7 after 34ms
+.........R..
+.........w..
+....w....w..
+....w....w..
+....w....w..
+....R....w..
+....w..w.R..
+....w..w.w..
+.R..w..w.w..
+RRr.w..R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 1 after 271ms
+.........R..
+.........w..
+....w....w..
+....w....w..
+....w....w..
+....R....w..
+....w..w.R..
+.R..w..w.w..
+.R..w..w.w..
+RRr.w..R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 7 after 34ms
+.........R..
+.........w..
+....w....w..
+....w....w..
+....w....w..
+....R..w.w..
+....w..w.R..
+.R..w..w.w..
+.R..w..w.w..
+RRr.w..R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 4 after 271ms
+.........R..
+....R....w..
+....w....w..
+....w....w..
+....w....w..
+....R..w.w..
+....w..w.R..
+.R..w..w.w..
+.R..w..w.w..
+RRr.w..R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 7 after 35ms
+.........R..
+....R....w..
+....w....w..
+....w....w..
+....w..w.w..
+....R..w.w..
+....w..w.R..
+.R..w..w.w..
+.R..w..w.w..
+RRr.w..R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 7 after 271ms
+.........R..
+....R....w..
+....w....w..
+....w..R.w..
+....w..w.w..
+....R..w.w..
+....w..w.R..
+.R..w..w.w..
+.R..w..w.w..
+RRr.w..R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 7 after 35ms
+.........R..
+....R....w..
+....w..w.w..
+....w..R.w..
+....w..w.w..
+....R..w.w..
+....w..w.R..
+.R..w..w.w..
+.R..w..w.w..
+RRr.w..R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 1 after 271ms
+.........R..
+....R....w..
+....w..w.w..
+....w..R.w..
+....w..w.w..
+....R..w.w..
+.R..w..w.R..
+.R..w..w.w..
+.R..w..w.w..
+RRr.w..R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 7 after 35ms
+.........R..
+....R..w.w..
+....w..w.w..
+....w..R.w..
+....w..w.w..
+....R..w.w..
+.R..w..w.R..
+.R..w..w.w..
+.R..w..w.w..
+RRr.w..R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 1 after 271ms
+.........R..
+....R..w.w..
+....w..w.w..
+....w..R.w..
+....w..w.w..
+.R..R..w.w..
+.R..w..w.R..
+.R..w..w.w..
+.R..w..w.w..
+RRr.w..R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 1 after 33ms
+.........R..
+....R..w.w..
+....w..w.w..
+....w..R.w..
+.w..w..w.w..
+.R..R..w.w..
+.R..w..w.R..
+.R..w..w.w..
+.R..w..w.w..
+RRr.w..R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Round piece at column 0 after 272ms
+.........R..
+....R..w.w..
+....w..w.w..
+....w..R.w..
+.w..w..w.w..
+.R..R..w.w..
+.R..w..w.R..
+.R..w..w.w..
+rR..w..w.w..
+RRr.w..R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 37ms
+.........R..
+....R..w.w..
+....w..w.w..
+....w..R.w..
+.w..w..w.w..
+.R..R..w.w..
+.R..w..w.R..
+.R..w..w.w..
+rR..w..w.w..
+RRr.ww.R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 5 after 272ms
+.........R..
+....R..w.w..
+....w..w.w..
+....w..R.w..
+.w..w..w.w..
+.R..R..w.w..
+.R..w..w.R..
+.R..w..w.w..
+rR..wR.w.w..
+RRr.ww.R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 39ms
+.........R..
+....R..w.w..
+....w..w.w..
+....w..R.w..
+.w..w..w.w..
+.R..R..w.w..
+.R..w..w.R..
+.R..ww.w.w..
+rR..wR.w.w..
+RRr.ww.R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 0 after 272ms
+.........R..
+....R..w.w..
+....w..w.w..
+....w..R.w..
+.w..w..w.w..
+.R..R..w.w..
+.R..w..w.R..
+RR..ww.w.w..
+rR..wR.w.w..
+RRr.ww.R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 0 after 38ms
+.........R..
+....R..w.w..
+....w..w.w..
+....w..R.w..
+.w..w..w.w..
+.R..R..w.w..
+wR..w..w.R..
+RR..ww.w.w..
+rR..wR.w.w..
+RRr.ww.R.w..
+RwRRRRwR.w..
+rrrRRwRr.wR.
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Round piece at column 11 after 272ms
+.........R..
+....R..w.w..
+....w..w.w..
+....w..R.w..
+.w..w..w.w..
+.R..R..w.w..
+wR..w..w.R..
+RR..ww.w.w..
+rR..wR.w.w..
+RRr.ww.R.w..
+RwRRRRwR.w..
+rrrRRwRr.wRr
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 39ms
+.........R..
+....R..w.w..
+....w..w.w..
+....w..R.w..
+.w..w..w.w..
+.R..R..w.w..
+wR..ww.w.R..
+RR..ww.w.w..
+rR..wR.w.w..
+RRr.ww.R.w..
+RwRRRRwR.w..
+rrrRRwRr.wRr
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Round piece at column 0 after 271ms
+.........R..
+....R..w.w..
+....w..w.w..
+....w..R.w..
+.w..w..w.w..
+rR..R..w.w..
+wR..ww.w.R..
+RR..ww.w.w..
+rR..wR.w.w..
+RRr.ww.R.w..
+RwRRRRwR.w..
+rrrRRwRr.wRr
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 39ms
+.........R..
+....R..w.w..
+....w..w.w..
+....w..R.w..
+.w..w..w.w..
+rR..Rw.w.w..
+wR..ww.w.R..
+RR..ww.w.w..
+rR..wR.w.w..
+RRr.ww.R.w..
+RwRRRRwR.w..
+rrrRRwRr.wRr
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 5 after 273ms
+.........R..
+....R..w.w..
+....w..w.w..
+....w..R.w..
+.w..wR.w.w..
+rR..Rw.w.w..
+wR..ww.w.R..
+RR..ww.w.w..
+rR..wR.w.w..
+RRr.ww.R.w..
+RwRRRRwR.w..
+rrrRRwRr.wRr
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 41ms
+.........R..
+....R..w.w..
+....w..w.w..
+....ww.R.w..
+.w..wR.w.w..
+rR..Rw.w.w..
+wR..ww.w.R..
+RR..ww.w.w..
+rR..wR.w.w..
+RRr.ww.R.w..
+RwRRRRwR.w..
+rrrRRwRr.wRr
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 1 after 271ms
+.........R..
+....R..w.w..
+....w..w.w..
+.R..ww.R.w..
+.w..wR.w.w..
+rR..Rw.w.w..
+wR..ww.w.R..
+RR..ww.w.w..
+rR..wR.w.w..
+RRr.ww.R.w..
+RwRRRRwR.w..
+rrrRRwRr.wRr
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 41ms
+.........R..
+....R..w.w..
+....ww.w.w..
+.R..ww.R.w..
+.w..wR.w.w..
+rR..Rw.w.w..
+wR..ww.w.R..
+RR..ww.w.w..
+rR..wR.w.w..
+RRr.ww.R.w..
+RwRRRRwR.w..
+rrrRRwRr.wRr
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 6 after 271ms
+.........R..
+....R..w.w..
+....ww.w.w..
+.R..ww.R.w..
+.w..wR.w.w..
+rR..Rw.w.w..
+wR..ww.w.R..
+RR..ww.w.w..
+rR..wR.w.w..
+RRr.wwRR.w..
+RwRRRRwR.w..
+rrrRRwRr.wRr
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 11 after 20ms
+.........R..
+....R..w.w..
+....ww.w.w..
+.R..ww.R.w..
+.w..wR.w.w..
+rR..Rw.w.w..
+wR..ww.w.R..
+RR..ww.w.w..
+rR..wR.w.w..
+RRr.wwRR.w..
+RwRRRRwR.w.W
+rrrRRwRr.wRr
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 10 after 271ms
+.........R..
+....R..w.w..
+....ww.w.w..
+.R..ww.R.w..
+.w..wR.w.w..
+rR..Rw.w.w..
+wR..ww.w.R..
+RR..ww.w.w..
+rR..wR.w.w..
+RRr.wwRR.w..
+RwRRRRwR.wRW
+rrrRRwRr.wRr
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 11 after 21ms
+.........R..
+....R..w.w..
+....ww.w.w..
+.R..ww.R.w..
+.w..wR.w.w..
+rR..Rw.w.w..
+wR..ww.w.R..
+RR..ww.w.w..
+rR..wR.w.w..
+RRr.wwRR.w.W
+RwRRRRwR.wRW
+rrrRRwRr.wRr
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Round piece at column 0 after 271ms
+.........R..
+....R..w.w..
+....ww.w.w..
+.R..ww.R.w..
+rw..wR.w.w..
+rR..Rw.w.w..
+wR..ww.w.R..
+RR..ww.w.w..
+rR..wR.w.w..
+RRr.wwRR.w.W
+RwRRRRwR.wRW
+rrrRRwRr.wRr
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 11 after 21ms
+.........R..
+....R..w.w..
+....ww.w.w..
+.R..ww.R.w..
+rw..wR.w.w..
+rR..Rw.w.w..
+wR..ww.w.R..
+RR..ww.w.w..
+rR..wR.w.w.W
+RRr.wwRR.w.W
+RwRRRRwR.wRW
+rrrRRwRr.wRr
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 3 after 272ms
+.........R..
+....R..w.w..
+....ww.w.w..
+.R..ww.R.w..
+rw..wR.w.w..
+rR..Rw.w.w..
+wR..ww.w.R..
+RR..ww.w.w..
+rR..wR.w.w.W
+RRrRwwRR.w.W
+RwRRRRwR.wRW
+rrrRRwRr.wRr
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 11 after 21ms
+.........R..
+....R..w.w..
+....ww.w.w..
+.R..ww.R.w..
+rw..wR.w.w..
+rR..Rw.w.w..
+wR..ww.w.R..
+RR..ww.w.w.W
+rR..wR.w.w.W
+RRrRwwRR.w.W
+RwRRRRwR.wRW
+rrrRRwRr.wRr
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 3 after 271ms
+.........R..
+....R..w.w..
+....ww.w.w..
+.R..ww.R.w..
+rw..wR.w.w..
+rR..Rw.w.w..
+wR..ww.w.R..
+RR..ww.w.w.W
+rR.RwR.w.w.W
+RRrRwwRR.w.W
+RwRRRRwR.wRW
+rrrRRwRr.wRr
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 10 after 21ms
+.........R..
+....R..w.w..
+....ww.w.w..
+.R..ww.R.w..
+rw..wR.w.w..
+rR..Rw.w.w..
+wR..ww.w.R..
+RR..ww.w.w.W
+rR.RwR.w.w.W
+RRrRwwRR.wWW
+RwRRRRwR.wRW
+rrrRRwRr.wRr
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Round piece at column 3 after 271ms
+.........R..
+....R..w.w..
+....ww.w.w..
+.R..ww.R.w..
+rw..wR.w.w..
+rR..Rw.w.w..
+wR..ww.w.R..
+RR.rww.w.w.W
+rR.RwR.w.w.W
+RRrRwwRR.wWW
+RwRRRRwR.wRW
+rrrRRwRr.wRr
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 3 after 21ms
+.........R..
+....R..w.w..
+....ww.w.w..
+.R..ww.R.w..
+rw..wR.w.w..
+rR..Rw.w.w..
+wR.Www.w.R..
+RR.rww.w.w.W
+rR.RwR.w.w.W
+RRrRwwRR.wWW
+RwRRRRwR.wRW
+rrrRRwRr.wRr
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Round piece at column 0 after 271ms
+.........R..
+....R..w.w..
+....ww.w.w..
+rR..ww.R.w..
+rw..wR.w.w..
+rR..Rw.w.w..
+wR.Www.w.R..
+RR.rww.w.w.W
+rR.RwR.w.w.W
+RRrRwwRR.wWW
+RwRRRRwR.wRW
+rrrRRwRr.wRr
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 10 after 22ms
+.........R..
+....R..w.w..
+....ww.w.w..
+rR..ww.R.w..
+rw..wR.w.w..
+rR..Rw.w.w..
+wR.Www.w.R..
+RR.rww.w.w.W
+rR.RwR.w.wWW
+RRrRwwRR.wWW
+RwRRRRwR.wRW
+rrrRRwRr.wRr
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 0 after 272ms
+.........R..
+....R..w.w..
+R...ww.w.w..
+rR..ww.R.w..
+rw..wR.w.w..
+rR..Rw.w.w..
+wR.Www.w.R..
+RR.rww.w.w.W
+rR.RwR.w.wWW
+RRrRwwRR.wWW
+RwRRRRwR.wRW
+rrrRRwRr.wRr
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 8 after 22ms
+.........R..
+....R..w.w..
+R...ww.w.w..
+rR..ww.R.w..
+rw..wR.w.w..
+rR..Rw.w.w..
+wR.Www.w.R..
+RR.rww.w.w.W
+rR.RwR.w.wWW
+RRrRwwRR.wWW
+RwRRRRwR.wRW
+rrrRRwRrWwRr
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 0 after 271ms
+.........R..
+R...R..w.w..
+R...ww.w.w..
+rR..ww.R.w..
+rw..wR.w.w..
+rR..Rw.w.w..
+wR.Www.w.R..
+RR.rww.w.w.W
+rR.RwR.w.wWW
+RRrRwwRR.wWW
+RwRRRRwR.wRW
+rrrRRwRrWwRr
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 0 after 21ms
+W........R..
+R...R..w.w..
+R...ww.w.w..
+rR..ww.R.w..
+rw..wR.w.w..
+rR..Rw.w.w..
+wR.Www.w.R..
+RR.rww.w.w.W
+rR.RwR.w.wWW
+RRrRwwRR.wWW
+RwRRRRwR.wRW
+rrrRRwRrWwRr
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Round piece at column 2 after 271ms
+W........R..
+R...R..w.w..
+R...ww.w.w..
+rR..ww.R.w..
+rw..wR.w.w..
+rR..Rw.w.w..
+wR.Www.w.R..
+RR.rww.w.w.W
+rRrRwR.w.wWW
+RRrRwwRR.wWW
+RwRRRRwR.wRW
+rrrRRwRrWwRr
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 11 after 16ms
+W........R..
+R...R..w.w..
+R...ww.w.w..
+rR..ww.R.w..
+rw..wR.w.w..
+rR..Rw.w.w..
+wR.Www.w.R.W
+RR.rww.w.w.W
+rRrRwR.w.wWW
+RRrRwwRR.wWW
+RwRRRRwR.wRW
+rrrRRwRrWwRr
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 2 after 271ms
+W........R..
+R...R..w.w..
+R...ww.w.w..
+rR..ww.R.w..
+rw..wR.w.w..
+rR..Rw.w.w..
+wR.Www.w.R.W
+RRRrww.w.w.W
+rRrRwR.w.wWW
+RRrRwwRR.wWW
+RwRRRRwR.wRW
+rrrRRwRrWwRr
+
+Winner is ThunderV4 (Red)
+Solution=(2,0)(3,1)(4,2)(5,3)(6,4)(7,5)

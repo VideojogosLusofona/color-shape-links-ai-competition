@@ -1,0 +1,223 @@
+=> MinimaxD2 (White) vs SureAIv10 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.......
+.......
+.......
+.......
+.......
+.....w.
+
+SureAIv10 (Red) turn
+SureAIv10 (Red) placed a Square piece at column 2 after 191ms
+.......
+.......
+.......
+.......
+.......
+..R..w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.......
+.......
+.......
+.......
+.....w.
+..R..w.
+
+SureAIv10 (Red) turn
+SureAIv10 (Red) placed a Square piece at column 2 after 191ms
+.......
+.......
+.......
+.......
+..R..w.
+..R..w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 2 after 3ms
+.......
+.......
+.......
+..w....
+..R..w.
+..R..w.
+
+SureAIv10 (Red) turn
+SureAIv10 (Red) placed a Square piece at column 4 after 191ms
+.......
+.......
+.......
+..w....
+..R..w.
+..R.Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 2 after 9ms
+.......
+.......
+..w....
+..w....
+..R..w.
+..R.Rw.
+
+SureAIv10 (Red) turn
+SureAIv10 (Red) placed a Square piece at column 5 after 191ms
+.......
+.......
+..w....
+..w..R.
+..R..w.
+..R.Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 2 after 4ms
+.......
+..w....
+..w....
+..w..R.
+..R..w.
+..R.Rw.
+
+SureAIv10 (Red) turn
+SureAIv10 (Red) placed a Square piece at column 2 after 191ms
+..R....
+..w....
+..w....
+..w..R.
+..R..w.
+..R.Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+..R....
+..w....
+..w..w.
+..w..R.
+..R..w.
+..R.Rw.
+
+SureAIv10 (Red) turn
+SureAIv10 (Red) placed a Square piece at column 3 after 191ms
+..R....
+..w....
+..w..w.
+..w..R.
+..R..w.
+..RRRw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 1 after 7ms
+..R....
+..w....
+..w..w.
+..w..R.
+..R..w.
+.wRRRw.
+
+SureAIv10 (Red) turn
+SureAIv10 (Red) placed a Square piece at column 4 after 191ms
+..R....
+..w....
+..w..w.
+..w..R.
+..R.Rw.
+.wRRRw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 4ms
+..R....
+..w....
+..w..w.
+..w.wR.
+..R.Rw.
+.wRRRw.
+
+SureAIv10 (Red) turn
+SureAIv10 (Red) placed a Square piece at column 4 after 191ms
+..R....
+..w....
+..w.Rw.
+..w.wR.
+..R.Rw.
+.wRRRw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 6ms
+..R....
+..w.w..
+..w.Rw.
+..w.wR.
+..R.Rw.
+.wRRRw.
+
+SureAIv10 (Red) turn
+SureAIv10 (Red) placed a Square piece at column 1 after 191ms
+..R....
+..w.w..
+..w.Rw.
+..w.wR.
+.RR.Rw.
+.wRRRw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 3ms
+..R....
+..w.w..
+..w.Rw.
+..w.wR.
+.RRwRw.
+.wRRRw.
+
+SureAIv10 (Red) turn
+SureAIv10 (Red) placed a Square piece at column 6 after 191ms
+..R....
+..w.w..
+..w.Rw.
+..w.wR.
+.RRwRw.
+.wRRRwR
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 6 after 6ms
+..R....
+..w.w..
+..w.Rw.
+..w.wR.
+.RRwRwW
+.wRRRwR
+
+SureAIv10 (Red) turn
+SureAIv10 (Red) placed a Square piece at column 6 after 191ms
+..R....
+..w.w..
+..w.Rw.
+..w.wRR
+.RRwRwW
+.wRRRwR
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 6 after 3ms
+..R....
+..w.w..
+..w.RwW
+..w.wRR
+.RRwRwW
+.wRRRwR
+
+Winner is SureAIv10 (Red)
+Solution=(0,6)(1,6)(2,6)(3,6)

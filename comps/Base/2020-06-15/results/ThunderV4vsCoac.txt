@@ -1,0 +1,241 @@
+=> ThunderV4 (White) vs Coac (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+ThunderV4 (White) turn
+ThunderV4 (White) placed a Round piece at column 3 after 181ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 1 after 37ms
+.......
+.......
+.......
+.......
+.......
+.R.w...
+
+ThunderV4 (White) turn
+ThunderV4 (White) placed a Round piece at column 5 after 181ms
+.......
+.......
+.......
+.......
+.......
+.R.w.w.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 4 after 85ms
+.......
+.......
+.......
+.......
+.......
+.R.wRw.
+
+ThunderV4 (White) turn
+ThunderV4 (White) placed a Round piece at column 3 after 181ms
+.......
+.......
+.......
+.......
+...w...
+.R.wRw.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 3 after 88ms
+.......
+.......
+.......
+...R...
+...w...
+.R.wRw.
+
+ThunderV4 (White) turn
+ThunderV4 (White) placed a Round piece at column 5 after 181ms
+.......
+.......
+.......
+...R...
+...w.w.
+.R.wRw.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 4 after 125ms
+.......
+.......
+.......
+...R...
+...wRw.
+.R.wRw.
+
+ThunderV4 (White) turn
+ThunderV4 (White) placed a Round piece at column 4 after 181ms
+.......
+.......
+.......
+...Rw..
+...wRw.
+.R.wRw.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 4 after 136ms
+.......
+.......
+....R..
+...Rw..
+...wRw.
+.R.wRw.
+
+ThunderV4 (White) turn
+ThunderV4 (White) placed a Round piece at column 5 after 181ms
+.......
+.......
+....R..
+...Rww.
+...wRw.
+.R.wRw.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 5 after 89ms
+.......
+.......
+....RR.
+...Rww.
+...wRw.
+.R.wRw.
+
+ThunderV4 (White) turn
+ThunderV4 (White) placed a Round piece at column 3 after 181ms
+.......
+.......
+...wRR.
+...Rww.
+...wRw.
+.R.wRw.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 6 after 154ms
+.......
+.......
+...wRR.
+...Rww.
+...wRw.
+.R.wRwR
+
+ThunderV4 (White) turn
+ThunderV4 (White) placed a Square piece at column 0 after 181ms
+.......
+.......
+...wRR.
+...Rww.
+...wRw.
+WR.wRwR
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 4 after 101ms
+.......
+....R..
+...wRR.
+...Rww.
+...wRw.
+WR.wRwR
+
+ThunderV4 (White) turn
+ThunderV4 (White) placed a Round piece at column 0 after 181ms
+.......
+....R..
+...wRR.
+...Rww.
+w..wRw.
+WR.wRwR
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 5 after 71ms
+.......
+....RR.
+...wRR.
+...Rww.
+w..wRw.
+WR.wRwR
+
+ThunderV4 (White) turn
+ThunderV4 (White) placed a Round piece at column 1 after 181ms
+.......
+....RR.
+...wRR.
+...Rww.
+ww.wRw.
+WR.wRwR
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 4 after 58ms
+....R..
+....RR.
+...wRR.
+...Rww.
+ww.wRw.
+WR.wRwR
+
+ThunderV4 (White) turn
+ThunderV4 (White) placed a Square piece at column 0 after 181ms
+....R..
+....RR.
+...wRR.
+W..Rww.
+ww.wRw.
+WR.wRwR
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 0 after 18ms
+....R..
+....RR.
+R..wRR.
+W..Rww.
+ww.wRw.
+WR.wRwR
+
+ThunderV4 (White) turn
+ThunderV4 (White) placed a Square piece at column 2 after 181ms
+....R..
+....RR.
+R..wRR.
+W..Rww.
+ww.wRw.
+WRWwRwR
+
+Coac (Red) turn
+Coac (Red) placed a Round piece at column 0 after 14ms
+....R..
+r...RR.
+R..wRR.
+W..Rww.
+ww.wRw.
+WRWwRwR
+
+ThunderV4 (White) turn
+ThunderV4 (White) placed a Round piece at column 2 after 181ms
+....R..
+r...RR.
+R..wRR.
+W..Rww.
+wwwwRw.
+WRWwRwR
+
+Winner is ThunderV4 (White)
+Solution=(1,0)(1,1)(1,2)(1,3)

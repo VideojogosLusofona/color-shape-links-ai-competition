@@ -95,9 +95,9 @@ $(document).ready(function(){initNavTree('thinker-implementation-guide.html','')
 <div class="toc"><h3>Table of Contents</h3>
 <ul><li class="level1"><a href="#autotoc_md2">Introduction</a></li>
 <li class="level1"><a href="#rules">Rules and restrictions for the AI source code</a></li>
-<li class="level1"><a href="#abstractthinker">The AbstractThinker base class</a><ul><li class="level2"><a href="#autotoc_md3">Overriding the Setup() method</a></li>
-<li class="level2"><a href="#autotoc_md4">Overriding the Think() method</a></li>
-<li class="level2"><a href="#autotoc_md5">Overriding the ToString() method</a></li>
+<li class="level1"><a href="#abstractthinker">The AbstractThinker base class</a><ul><li class="level2"><a href="#setup">Overriding the Setup() method</a></li>
+<li class="level2"><a href="#autotoc_md3">Overriding the Think() method</a></li>
+<li class="level2"><a href="#autotoc_md4">Overriding the ToString() method</a></li>
 </ul>
 </li>
 <li class="level1"><a href="#devenv">Setting up the development environment</a></li>
@@ -121,9 +121,10 @@ Rules and restrictions for the AI source code</h1>
 <li>Cannot <em>think</em> in its opponent time (e.g., by using a background thread).</li>
 <li>Must acknowledge <a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">cancellation requests</a>, in which case it should terminate quickly and in an orderly fashion.</li>
 <li>Can only probe the environment for the number of processor cores. It cannot search or use any other information, besides what is already available in the <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html">AbstractThinker</a> class or passed to the <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#ac8039cba1e4ececb04322fb8e7610f0e">Think()</a> method, e.g., such as using reflection to probe the capabilities of its opponents.</li>
+<li>Cannot use and/or communicate with external data sources.</li>
 <li>Cannot use more than 2GB of memory during the course of a match.</li>
-<li>Cannot be more than 250kb in size (including libraries, excluding comments).</li>
-<li>Cannot save or load data from disk.</li>
+<li>Must have a reasonable size in disk, including libraries. For example, source code, project files and compiled binaries should not exceed 1 Mb.</li>
+<li>The same <a class="el" href="thinker-implementation-guide.html#setup">setup</a> parameters should be used for all competition tracks.</li>
 </ul>
 <h1><a class="anchor" id="abstractthinker"></a>
 The AbstractThinker base class</h1>
@@ -141,12 +142,12 @@ The AbstractThinker base class</h1>
 <p>There's also the non-overridable <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#a3610cd145e44a055a68076043d7b6cdc">OnThinkingInfo()</a> method, which can be invoked for producing thinking information, mainly for debugging purposes. In the <a class="el" href="unity-guide.html">Unity</a> frontend this information is printed on Unity's console, while in the <a class="el" href="console-guide.html">console</a> frontend the information is forwarded to the registered <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_thinker_listener.html">thinker listeners</a>.</p>
 <p>Classes extending <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html">AbstractThinker</a> also inherit a number of useful read-only properties, namely board/match configuration properties (<a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#aacd84fe3991a31360df9315e81a5759a">No. of rows</a>, <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#ab52455671cd68f3d2d744fb7df40b5fb">No. of columns</a>, <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#affb43992a9e0eea81dfae30ec703fefc">No. of pieces in sequence to win a game</a>, <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#a4e93097d0d2a22894ffd3e0afbaf679d">No. of initial round pieces per player</a> and <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#a84fc3b394aa124400d20a9b85b47e365">No. of initial square pieces per player</a>) and the <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#a674bbef040e3de89fabd008aec84935a">time limit for the AI to play</a>. Concerning the board/match configuration properties, these are also available in the <a class="el" href="class_color_shape_links_1_1_common_1_1_board.html">board</a> object given as a parameter to the <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#ac8039cba1e4ececb04322fb8e7610f0e">Think()</a> method. However, the <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#aa0f63b1df3274e6ef69f4a060869d7c0">Setup()</a> method can only access them via the inherited properties.</p>
 <p>The following subsections address the overriding of each of these three methods.</p>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="setup"></a>
 Overriding the Setup() method</h2>
 <p>If an AI thinker needs to be configured before starting to play, the <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#aa0f63b1df3274e6ef69f4a060869d7c0">Setup()</a> method is the place to do it. This method receives a single argument, a <code>string</code>, which can contain thinker-specific parameters, such as maximum search depth, heuristic to use, and so on. It is the thinker's responsibility to parse this string. In the <a class="el" href="unity-guide.html">Unity</a> frontend, the string is specified in the "Thinker params" field of the <a class="el" href="class_color_shape_links_1_1_unity_app_1_1_a_i_player.html">AIPlayer</a> component. When using the <a class="el" href="console-guide.html">console</a> frontend, the string is passed via the <code>--white/red-params</code> option for simple matches, or after the thinker's fully qualified name in the configuration file of a complete session. Besides the parameters string, the <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#aa0f63b1df3274e6ef69f4a060869d7c0">Setup()</a> method also has access to board/match properties inherited from the <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html">base class</a>.</p>
 <p>The same AI thinker can represent both players in matches, as well as more than one player in sessions/tournaments. Additionally, separate instances of the same AI thinker can be configured with different parameters. In such a case it might be useful to also override the <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#aa73e7c4dd1df5fd5fbf81c7764ee1533">ToString()</a> method for discriminating between the instances configured differently.</p>
 <p>Note that concrete AI thinkers require a parameterless constructor in order to be found by the various frontends. Such constructor <a href="https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/constructors#parameterless-constructors">exists by default in C# classes if no other constructors are defined</a>. However, it is not advisable to use a parameterless constructor to setup an AI thinker, since the various board/match properties will not be initialized at that time. This is yet another good reason to perform all thinker configuration tasks in the <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#aa0f63b1df3274e6ef69f4a060869d7c0">Setup()</a> method. In any case, concrete AI thinkers don't need to provide an implementation of this method if they are not parameterizable.</p>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md3"></a>
 Overriding the Think() method</h2>
 <p>The <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#ac8039cba1e4ececb04322fb8e7610f0e">Think()</a> method is where the AI actually does its job and is the only mandatory override when extending the <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html">AbstractThinker</a> class. This method accepts the <a class="el" href="class_color_shape_links_1_1_common_1_1_board.html">game board</a> and a <a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">cancellation token</a>, returning a <a class="el" href="struct_color_shape_links_1_1_common_1_1_a_i_1_1_future_move.html">FutureMove</a>. In other words, the <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#ac8039cba1e4ececb04322fb8e7610f0e">Think()</a> method accepts the game board, the AI decides the best move to perform, returning it. The selected move will eventually be executed by the match engine.</p>
 <p>The <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#ac8039cba1e4ececb04322fb8e7610f0e">Think()</a> method is called in a separate thread. As such, it should only access local instance data. The main thread may ask the AI to stop <em>thinking</em>, for example if the thinking time limit has expired. Thus, while <em>thinking</em>, the AI should frequently test if a cancellation request was made to the <a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">cancellation token</a>. If so, it should return immediately with no move performed, as exemplified in the following code:</p>
@@ -165,7 +166,7 @@ Overriding the Think() method</h2>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md4"></a>
 Overriding the ToString() method</h2>
 <p>By default, the <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#aa73e7c4dd1df5fd5fbf81c7764ee1533">ToString()</a> method removes the namespace from the thinkers' fully qualified name, as well as the "thinker", "aithinker" or "thinkerai" suffixes. However, this method can be overriden in order to behave differently. One such case is when thinkers are parameterizable, and differentiating between specific parametrizations during matches and sessions becomes important. For example, if an AI thinker is configurable with a <code>maxDepth</code> parameter, the following would keep the base method behavior, while adding the value of the maximum depth to the thinkers' name:</p>
 <div class="fragment"><div class="line"><span class="comment">// If the FQN of this class is My.SuperAIThinker and maxDepth is 6, this</span></div>
@@ -682,7 +683,7 @@ Implementing a simple Minimax player</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Mar 16 2020 23:51:20 for ColorShapeLinks AI by
+    <li class="footer">Generated on Mon Apr 13 2020 23:29:09 for ColorShapeLinks AI by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
   </ul>

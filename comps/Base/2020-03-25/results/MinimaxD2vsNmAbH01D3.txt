@@ -1,0 +1,111 @@
+=> MinimaxD2 (White) vs NmAbH01D3 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.......
+.......
+.......
+.......
+.......
+.....w.
+
+NmAbH01D3 (Red) turn
+Did 623 evals
+NmAbH01D3 (Red) placed a Square piece at column 3 after 14ms
+.......
+.......
+.......
+.......
+.......
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.......
+.......
+.......
+.......
+.....w.
+...R.w.
+
+NmAbH01D3 (Red) turn
+Did 654 evals
+NmAbH01D3 (Red) placed a Square piece at column 5 after 14ms
+.......
+.......
+.......
+.....R.
+.....w.
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.......
+.......
+.....w.
+.....R.
+.....w.
+...R.w.
+
+NmAbH01D3 (Red) turn
+Did 622 evals
+NmAbH01D3 (Red) placed a Square piece at column 1 after 14ms
+.......
+.......
+.....w.
+.....R.
+.....w.
+.R.R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.......
+.....w.
+.....w.
+.....R.
+.....w.
+.R.R.w.
+
+NmAbH01D3 (Red) turn
+Did 238 evals
+NmAbH01D3 (Red) placed a Round piece at column 2 after 5ms
+.......
+.....w.
+.....w.
+.....R.
+.....w.
+.RrR.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 6 after 3ms
+.......
+.....w.
+.....w.
+.....R.
+.....w.
+.RrR.wW
+
+NmAbH01D3 (Red) turn
+Did 2 evals
+NmAbH01D3 (Red) placed a Round piece at column 0 after 0ms
+.......
+.....w.
+.....w.
+.....R.
+.....w.
+rRrR.wW
+
+Winner is NmAbH01D3 (Red)
+Solution=(0,0)(0,1)(0,2)(0,3)

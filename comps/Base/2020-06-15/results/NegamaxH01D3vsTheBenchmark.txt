@@ -1,0 +1,366 @@
+=> NegamaxH01D3 (White) vs TheBenchmark (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+NegamaxH01D3 (White) turn
+Did 2955 total evals
+NegamaxH01D3 (White) placed a Round piece at column 3 after 66ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+TheBenchmark (Red) turn
+Did 3713 total evals
+TheBenchmark (Red) placed a Square piece at column 3 after 153ms
+.......
+.......
+.......
+.......
+...R...
+...w...
+
+NegamaxH01D3 (White) turn
+Did 2955 total evals
+NegamaxH01D3 (White) placed a Round piece at column 3 after 68ms
+.......
+.......
+.......
+...w...
+...R...
+...w...
+
+TheBenchmark (Red) turn
+Did 3572 total evals
+TheBenchmark (Red) placed a Square piece at column 3 after 153ms
+.......
+.......
+...R...
+...w...
+...R...
+...w...
+
+NegamaxH01D3 (White) turn
+Did 2947 total evals
+NegamaxH01D3 (White) placed a Round piece at column 5 after 70ms
+.......
+.......
+...R...
+...w...
+...R...
+...w.w.
+
+TheBenchmark (Red) turn
+Did 3473 total evals
+TheBenchmark (Red) placed a Square piece at column 6 after 155ms
+.......
+.......
+...R...
+...w...
+...R...
+...w.wR
+
+NegamaxH01D3 (White) turn
+Did 2919 total evals
+NegamaxH01D3 (White) placed a Round piece at column 2 after 71ms
+.......
+.......
+...R...
+...w...
+...R...
+..ww.wR
+
+TheBenchmark (Red) turn
+Did 2667 total evals
+TheBenchmark (Red) placed a Square piece at column 4 after 151ms
+.......
+.......
+...R...
+...w...
+...R...
+..wwRwR
+
+NegamaxH01D3 (White) turn
+Did 2919 total evals
+NegamaxH01D3 (White) placed a Round piece at column 4 after 73ms
+.......
+.......
+...R...
+...w...
+...Rw..
+..wwRwR
+
+TheBenchmark (Red) turn
+Did 3200 total evals
+TheBenchmark (Red) placed a Square piece at column 4 after 154ms
+.......
+.......
+...R...
+...wR..
+...Rw..
+..wwRwR
+
+NegamaxH01D3 (White) turn
+Did 2373 total evals
+NegamaxH01D3 (White) placed a Round piece at column 5 after 58ms
+.......
+.......
+...R...
+...wR..
+...Rww.
+..wwRwR
+
+TheBenchmark (Red) turn
+Did 3240 total evals
+TheBenchmark (Red) placed a Square piece at column 5 after 158ms
+.......
+.......
+...R...
+...wRR.
+...Rww.
+..wwRwR
+
+NegamaxH01D3 (White) turn
+Did 2919 total evals
+NegamaxH01D3 (White) placed a Round piece at column 2 after 76ms
+.......
+.......
+...R...
+...wRR.
+..wRww.
+..wwRwR
+
+TheBenchmark (Red) turn
+Did 2968 total evals
+TheBenchmark (Red) placed a Square piece at column 4 after 153ms
+.......
+.......
+...RR..
+...wRR.
+..wRww.
+..wwRwR
+
+NegamaxH01D3 (White) turn
+Did 2843 total evals
+NegamaxH01D3 (White) placed a Round piece at column 5 after 72ms
+.......
+.......
+...RRw.
+...wRR.
+..wRww.
+..wwRwR
+
+TheBenchmark (Red) turn
+Did 2630 total evals
+TheBenchmark (Red) placed a Square piece at column 3 after 153ms
+.......
+...R...
+...RRw.
+...wRR.
+..wRww.
+..wwRwR
+
+NegamaxH01D3 (White) turn
+Did 2181 total evals
+NegamaxH01D3 (White) placed a Round piece at column 6 after 56ms
+.......
+...R...
+...RRw.
+...wRR.
+..wRwww
+..wwRwR
+
+TheBenchmark (Red) turn
+Did 2815 total evals
+TheBenchmark (Red) placed a Square piece at column 0 after 153ms
+.......
+...R...
+...RRw.
+...wRR.
+..wRwww
+R.wwRwR
+
+NegamaxH01D3 (White) turn
+Did 2106 total evals
+NegamaxH01D3 (White) placed a Square piece at column 1 after 57ms
+.......
+...R...
+...RRw.
+...wRR.
+..wRwww
+RWwwRwR
+
+TheBenchmark (Red) turn
+Did 2819 total evals
+TheBenchmark (Red) placed a Square piece at column 4 after 154ms
+.......
+...RR..
+...RRw.
+...wRR.
+..wRwww
+RWwwRwR
+
+NegamaxH01D3 (White) turn
+Did 1616 total evals
+NegamaxH01D3 (White) placed a Round piece at column 4 after 42ms
+....w..
+...RR..
+...RRw.
+...wRR.
+..wRwww
+RWwwRwR
+
+TheBenchmark (Red) turn
+Did 2562 total evals
+TheBenchmark (Red) placed a Square piece at column 1 after 151ms
+....w..
+...RR..
+...RRw.
+...wRR.
+.RwRwww
+RWwwRwR
+
+NegamaxH01D3 (White) turn
+Did 171 total evals and ended up playing randomly
+NegamaxH01D3 (White) placed a Square piece at column 6 after 4ms
+....w..
+...RR..
+...RRw.
+...wRRW
+.RwRwww
+RWwwRwR
+
+TheBenchmark (Red) turn
+Did 1820 total evals
+TheBenchmark (Red) placed a Round piece at column 0 after 151ms
+....w..
+...RR..
+...RRw.
+...wRRW
+rRwRwww
+RWwwRwR
+
+NegamaxH01D3 (White) turn
+Did 171 total evals and ended up playing randomly
+NegamaxH01D3 (White) placed a Square piece at column 1 after 4ms
+....w..
+...RR..
+...RRw.
+.W.wRRW
+rRwRwww
+RWwwRwR
+
+TheBenchmark (Red) turn
+Did 2022 total evals
+TheBenchmark (Red) placed a Round piece at column 1 after 152ms
+....w..
+...RR..
+.r.RRw.
+.W.wRRW
+rRwRwww
+RWwwRwR
+
+NegamaxH01D3 (White) turn
+Did 170 total evals and ended up playing randomly
+NegamaxH01D3 (White) placed a Square piece at column 5 after 4ms
+....w..
+...RRW.
+.r.RRw.
+.W.wRRW
+rRwRwww
+RWwwRwR
+
+TheBenchmark (Red) turn
+Did 1942 total evals
+TheBenchmark (Red) placed a Round piece at column 1 after 151ms
+....w..
+.r.RRW.
+.r.RRw.
+.W.wRRW
+rRwRwww
+RWwwRwR
+
+NegamaxH01D3 (White) turn
+Did 142 total evals and ended up playing randomly
+NegamaxH01D3 (White) placed a Square piece at column 5 after 3ms
+....wW.
+.r.RRW.
+.r.RRw.
+.W.wRRW
+rRwRwww
+RWwwRwR
+
+TheBenchmark (Red) turn
+Did 2231 total evals
+TheBenchmark (Red) placed a Round piece at column 1 after 151ms
+.r..wW.
+.r.RRW.
+.r.RRw.
+.W.wRRW
+rRwRwww
+RWwwRwR
+
+NegamaxH01D3 (White) turn
+Did 44 total evals and ended up playing randomly
+NegamaxH01D3 (White) placed a Square piece at column 0 after 1ms
+.r..wW.
+.r.RRW.
+.r.RRw.
+WW.wRRW
+rRwRwww
+RWwwRwR
+
+TheBenchmark (Red) turn
+Did 2324 total evals
+TheBenchmark (Red) placed a Round piece at column 0 after 151ms
+.r..wW.
+.r.RRW.
+rr.RRw.
+WW.wRRW
+rRwRwww
+RWwwRwR
+
+NegamaxH01D3 (White) turn
+Did 43 total evals and ended up playing randomly
+NegamaxH01D3 (White) placed a Square piece at column 3 after 1ms
+.r.WwW.
+.r.RRW.
+rr.RRw.
+WW.wRRW
+rRwRwww
+RWwwRwR
+
+TheBenchmark (Red) turn
+Did 2443 total evals
+TheBenchmark (Red) placed a Round piece at column 0 after 151ms
+.r.WwW.
+rr.RRW.
+rr.RRw.
+WW.wRRW
+rRwRwww
+RWwwRwR
+
+NegamaxH01D3 (White) turn
+Did 16 total evals and ended up playing randomly
+NegamaxH01D3 (White) placed a Square piece at column 2 after 0ms
+.r.WwW.
+rr.RRW.
+rr.RRw.
+WWWwRRW
+rRwRwww
+RWwwRwR
+
+Winner is TheBenchmark (Red)
+Solution=(0,0)(1,1)(2,2)(3,3)

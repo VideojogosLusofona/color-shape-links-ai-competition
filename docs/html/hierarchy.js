@@ -7,6 +7,9 @@ var hierarchy =
       ] ]
     ] ],
     [ "Board", "class_color_shape_links_1_1_common_1_1_board.html", null ],
+    [ "Exception", null, [
+      [ "UncooperativeThinkerException", "class_color_shape_links_1_1_common_1_1_a_i_1_1_uncooperative_thinker_exception.html", null ]
+    ] ],
     [ "FutureMove", "struct_color_shape_links_1_1_common_1_1_a_i_1_1_future_move.html", null ],
     [ "IEnumerable", null, [
       [ "Session", "class_color_shape_links_1_1_common_1_1_session_1_1_session.html", null ]

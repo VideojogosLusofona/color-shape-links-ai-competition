@@ -1,0 +1,244 @@
+=> TheBenchmark (White) vs ThunderV4 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+TheBenchmark (White) turn
+Did 3921 total evals
+TheBenchmark (White) placed a Round piece at column 3 after 155ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 4 after 181ms
+.......
+.......
+.......
+.......
+.......
+...wR..
+
+TheBenchmark (White) turn
+Did 3752 total evals
+TheBenchmark (White) placed a Round piece at column 4 after 153ms
+.......
+.......
+.......
+.......
+....w..
+...wR..
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 4 after 181ms
+.......
+.......
+.......
+....R..
+....w..
+...wR..
+
+TheBenchmark (White) turn
+Did 3675 total evals
+TheBenchmark (White) placed a Round piece at column 4 after 158ms
+.......
+.......
+....w..
+....R..
+....w..
+...wR..
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 1 after 181ms
+.......
+.......
+....w..
+....R..
+....w..
+.R.wR..
+
+TheBenchmark (White) turn
+Did 3275 total evals
+TheBenchmark (White) placed a Round piece at column 1 after 154ms
+.......
+.......
+....w..
+....R..
+.w..w..
+.R.wR..
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 3 after 181ms
+.......
+.......
+....w..
+....R..
+.w.Rw..
+.R.wR..
+
+TheBenchmark (White) turn
+Did 3211 total evals
+TheBenchmark (White) placed a Round piece at column 3 after 154ms
+.......
+.......
+....w..
+...wR..
+.w.Rw..
+.R.wR..
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 1 after 181ms
+.......
+.......
+....w..
+.R.wR..
+.w.Rw..
+.R.wR..
+
+TheBenchmark (White) turn
+Did 3238 total evals
+TheBenchmark (White) placed a Round piece at column 3 after 154ms
+.......
+.......
+...ww..
+.R.wR..
+.w.Rw..
+.R.wR..
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 1 after 181ms
+.......
+.......
+.R.ww..
+.R.wR..
+.w.Rw..
+.R.wR..
+
+TheBenchmark (White) turn
+Did 3158 total evals
+TheBenchmark (White) placed a Round piece at column 3 after 154ms
+.......
+...w...
+.R.ww..
+.R.wR..
+.w.Rw..
+.R.wR..
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 3 after 181ms
+...R...
+...w...
+.R.ww..
+.R.wR..
+.w.Rw..
+.R.wR..
+
+TheBenchmark (White) turn
+Did 2969 total evals
+TheBenchmark (White) placed a Round piece at column 1 after 153ms
+...R...
+.w.w...
+.R.ww..
+.R.wR..
+.w.Rw..
+.R.wR..
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Round piece at column 2 after 181ms
+...R...
+.w.w...
+.R.ww..
+.R.wR..
+.w.Rw..
+.RrwR..
+
+TheBenchmark (White) turn
+Did 2880 total evals
+TheBenchmark (White) placed a Round piece at column 4 after 152ms
+...R...
+.w.ww..
+.R.ww..
+.R.wR..
+.w.Rw..
+.RrwR..
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Round piece at column 4 after 181ms
+...Rr..
+.w.ww..
+.R.ww..
+.R.wR..
+.w.Rw..
+.RrwR..
+
+TheBenchmark (White) turn
+Did 3122 total evals
+TheBenchmark (White) placed a Square piece at column 0 after 151ms
+...Rr..
+.w.ww..
+.R.ww..
+.R.wR..
+.w.Rw..
+WRrwR..
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 0 after 181ms
+...Rr..
+.w.ww..
+.R.ww..
+.R.wR..
+Rw.Rw..
+WRrwR..
+
+TheBenchmark (White) turn
+Did 3144 total evals
+TheBenchmark (White) placed a Round piece at column 0 after 151ms
+...Rr..
+.w.ww..
+.R.ww..
+wR.wR..
+Rw.Rw..
+WRrwR..
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Round piece at column 2 after 181ms
+...Rr..
+.w.ww..
+.R.ww..
+wR.wR..
+RwrRw..
+WRrwR..
+
+TheBenchmark (White) turn
+Did 3003 total evals
+TheBenchmark (White) placed a Square piece at column 0 after 151ms
+...Rr..
+.w.ww..
+WR.ww..
+wR.wR..
+RwrRw..
+WRrwR..
+
+ThunderV4 (Red) turn
+ThunderV4 (Red) placed a Square piece at column 2 after 181ms
+...Rr..
+.w.ww..
+WR.ww..
+wRRwR..
+RwrRw..
+WRrwR..
+
+Winner is ThunderV4 (Red)
+Solution=(0,4)(1,3)(2,2)(3,1)

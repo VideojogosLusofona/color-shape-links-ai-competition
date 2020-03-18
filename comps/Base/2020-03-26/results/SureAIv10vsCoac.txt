@@ -1,0 +1,223 @@
+=> SureAIv10 (White) vs Coac (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+SureAIv10 (White) turn
+SureAIv10 (White) placed a Round piece at column 3 after 191ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 1 after 36ms
+.......
+.......
+.......
+.......
+.......
+.R.w...
+
+SureAIv10 (White) turn
+SureAIv10 (White) placed a Round piece at column 3 after 191ms
+.......
+.......
+.......
+.......
+...w...
+.R.w...
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 3 after 86ms
+.......
+.......
+.......
+...R...
+...w...
+.R.w...
+
+SureAIv10 (White) turn
+SureAIv10 (White) placed a Round piece at column 5 after 191ms
+.......
+.......
+.......
+...R...
+...w...
+.R.w.w.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 4 after 82ms
+.......
+.......
+.......
+...R...
+...w...
+.R.wRw.
+
+SureAIv10 (White) turn
+SureAIv10 (White) placed a Round piece at column 1 after 191ms
+.......
+.......
+.......
+...R...
+.w.w...
+.R.wRw.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 4 after 102ms
+.......
+.......
+.......
+...R...
+.w.wR..
+.R.wRw.
+
+SureAIv10 (White) turn
+SureAIv10 (White) placed a Round piece at column 4 after 191ms
+.......
+.......
+.......
+...Rw..
+.w.wR..
+.R.wRw.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 4 after 99ms
+.......
+.......
+....R..
+...Rw..
+.w.wR..
+.R.wRw.
+
+SureAIv10 (White) turn
+SureAIv10 (White) placed a Round piece at column 5 after 191ms
+.......
+.......
+....R..
+...Rw..
+.w.wRw.
+.R.wRw.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 3 after 114ms
+.......
+.......
+...RR..
+...Rw..
+.w.wRw.
+.R.wRw.
+
+SureAIv10 (White) turn
+SureAIv10 (White) placed a Round piece at column 3 after 191ms
+.......
+...w...
+...RR..
+...Rw..
+.w.wRw.
+.R.wRw.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 4 after 105ms
+.......
+...wR..
+...RR..
+...Rw..
+.w.wRw.
+.R.wRw.
+
+SureAIv10 (White) turn
+SureAIv10 (White) placed a Round piece at column 4 after 191ms
+....w..
+...wR..
+...RR..
+...Rw..
+.w.wRw.
+.R.wRw.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 1 after 58ms
+....w..
+...wR..
+...RR..
+.R.Rw..
+.w.wRw.
+.R.wRw.
+
+SureAIv10 (White) turn
+SureAIv10 (White) placed a Round piece at column 5 after 191ms
+....w..
+...wR..
+...RR..
+.R.Rww.
+.w.wRw.
+.R.wRw.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 5 after 50ms
+....w..
+...wR..
+...RRR.
+.R.Rww.
+.w.wRw.
+.R.wRw.
+
+SureAIv10 (White) turn
+SureAIv10 (White) placed a Round piece at column 5 after 191ms
+....w..
+...wRw.
+...RRR.
+.R.Rww.
+.w.wRw.
+.R.wRw.
+
+Coac (Red) turn
+Coac (Red) placed a Round piece at column 2 after 53ms
+....w..
+...wRw.
+...RRR.
+.R.Rww.
+.w.wRw.
+.RrwRw.
+
+SureAIv10 (White) turn
+SureAIv10 (White) placed a Square piece at column 6 after 191ms
+....w..
+...wRw.
+...RRR.
+.R.Rww.
+.w.wRw.
+.RrwRwW
+
+Coac (Red) turn
+Coac (Red) placed a Round piece at column 0 after 31ms
+....w..
+...wRw.
+...RRR.
+.R.Rww.
+.w.wRw.
+rRrwRwW
+
+SureAIv10 (White) turn
+SureAIv10 (White) placed a Square piece at column 2 after 191ms
+....w..
+...wRw.
+...RRR.
+.R.Rww.
+.wWwRw.
+rRrwRwW
+
+Winner is Coac (Red)
+Solution=(0,1)(1,2)(2,3)(3,4)

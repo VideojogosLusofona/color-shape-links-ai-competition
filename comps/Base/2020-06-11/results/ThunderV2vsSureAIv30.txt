@@ -1,0 +1,225 @@
+=> ThunderV2 (White) vs SureAIv30 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+ThunderV2 (White) turn
+ThunderV2 (White) placed a Round piece at column 4 after 161ms
+.......
+.......
+.......
+.......
+.......
+....w..
+
+SureAIv30 (Red) turn
+depth = 6
+Did 3585 evals
+SureAIv30 (Red) placed a Square piece at column 3 after 186ms
+.......
+.......
+.......
+.......
+.......
+...Rw..
+
+ThunderV2 (White) turn
+ThunderV2 (White) placed a Round piece at column 3 after 161ms
+.......
+.......
+.......
+.......
+...w...
+...Rw..
+
+SureAIv30 (Red) turn
+depth = 5
+Did 3306 evals
+SureAIv30 (Red) placed a Square piece at column 4 after 186ms
+.......
+.......
+.......
+.......
+...wR..
+...Rw..
+
+ThunderV2 (White) turn
+ThunderV2 (White) placed a Round piece at column 3 after 161ms
+.......
+.......
+.......
+...w...
+...wR..
+...Rw..
+
+SureAIv30 (Red) turn
+depth = 5
+Did 3409 evals
+SureAIv30 (Red) placed a Square piece at column 3 after 186ms
+.......
+.......
+...R...
+...w...
+...wR..
+...Rw..
+
+ThunderV2 (White) turn
+ThunderV2 (White) placed a Round piece at column 4 after 161ms
+.......
+.......
+...R...
+...ww..
+...wR..
+...Rw..
+
+SureAIv30 (Red) turn
+depth = 5
+Did 2811 evals
+SureAIv30 (Red) placed a Square piece at column 2 after 186ms
+.......
+.......
+...R...
+...ww..
+...wR..
+..RRw..
+
+ThunderV2 (White) turn
+ThunderV2 (White) placed a Round piece at column 1 after 161ms
+.......
+.......
+...R...
+...ww..
+...wR..
+.wRRw..
+
+SureAIv30 (Red) turn
+depth = 5
+Did 2705 evals
+SureAIv30 (Red) placed a Square piece at column 4 after 186ms
+.......
+.......
+...RR..
+...ww..
+...wR..
+.wRRw..
+
+ThunderV2 (White) turn
+ThunderV2 (White) placed a Round piece at column 1 after 161ms
+.......
+.......
+...RR..
+...ww..
+.w.wR..
+.wRRw..
+
+SureAIv30 (Red) turn
+depth = 5
+Did 2532 evals
+SureAIv30 (Red) placed a Square piece at column 1 after 186ms
+.......
+.......
+...RR..
+.R.ww..
+.w.wR..
+.wRRw..
+
+ThunderV2 (White) turn
+ThunderV2 (White) placed a Round piece at column 1 after 161ms
+.......
+.......
+.w.RR..
+.R.ww..
+.w.wR..
+.wRRw..
+
+SureAIv30 (Red) turn
+depth = 5
+Did 2240 evals
+SureAIv30 (Red) placed a Square piece at column 3 after 186ms
+.......
+...R...
+.w.RR..
+.R.ww..
+.w.wR..
+.wRRw..
+
+ThunderV2 (White) turn
+ThunderV2 (White) placed a Square piece at column 0 after 161ms
+.......
+...R...
+.w.RR..
+.R.ww..
+.w.wR..
+WwRRw..
+
+SureAIv30 (Red) turn
+depth = 6
+Did 2159 evals
+SureAIv30 (Red) placed a Square piece at column 0 after 186ms
+.......
+...R...
+.w.RR..
+.R.ww..
+Rw.wR..
+WwRRw..
+
+ThunderV2 (White) turn
+ThunderV2 (White) placed a Square piece at column 6 after 161ms
+.......
+...R...
+.w.RR..
+.R.ww..
+Rw.wR..
+WwRRw.W
+
+SureAIv30 (Red) turn
+depth = 5
+Did 2139 evals
+SureAIv30 (Red) placed a Square piece at column 4 after 186ms
+.......
+...RR..
+.w.RR..
+.R.ww..
+Rw.wR..
+WwRRw.W
+
+ThunderV2 (White) turn
+ThunderV2 (White) placed a Square piece at column 4 after 161ms
+....W..
+...RR..
+.w.RR..
+.R.ww..
+Rw.wR..
+WwRRw.W
+
+SureAIv30 (Red) turn
+depth = 7
+Did 2192 evals
+SureAIv30 (Red) placed a Square piece at column 2 after 186ms
+....W..
+...RR..
+.w.RR..
+.R.ww..
+RwRwR..
+WwRRw.W
+
+ThunderV2 (White) turn
+ThunderV2 (White) placed a Round piece at column 2 after 161ms
+....W..
+...RR..
+.w.RR..
+.Rwww..
+RwRwR..
+WwRRw.W
+
+Winner is ThunderV2 (White)
+Solution=(0,4)(1,3)(2,2)(3,1)

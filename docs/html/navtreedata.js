@@ -34,41 +34,41 @@ var NAVTREE =
       [ "Introduction", "thinker-implementation-guide.html#autotoc_md2", null ],
       [ "Rules and restrictions for the AI source code", "thinker-implementation-guide.html#rules", null ],
       [ "The AbstractThinker base class", "thinker-implementation-guide.html#abstractthinker", [
-        [ "Overriding the Setup() method", "thinker-implementation-guide.html#autotoc_md3", null ],
-        [ "Overriding the Think() method", "thinker-implementation-guide.html#autotoc_md4", null ],
-        [ "Overriding the ToString() method", "thinker-implementation-guide.html#autotoc_md5", null ]
+        [ "Overriding the Setup() method", "thinker-implementation-guide.html#setup", null ],
+        [ "Overriding the Think() method", "thinker-implementation-guide.html#autotoc_md3", null ],
+        [ "Overriding the ToString() method", "thinker-implementation-guide.html#autotoc_md4", null ]
       ] ],
       [ "Setting up the development environment", "thinker-implementation-guide.html#devenv", null ],
       [ "Testing an AI thinker in isolation", "thinker-implementation-guide.html#testing", null ],
       [ "Implementing a simple Minimax player", "thinker-implementation-guide.html#minimax", null ]
     ] ],
     [ "Console guide", "console-guide.html", [
-      [ "Running the app", "console-guide.html#autotoc_md6", [
-        [ "App options", "console-guide.html#autotoc_md7", null ],
-        [ "The match verb", "console-guide.html#autotoc_md8", null ],
-        [ "The session verb", "console-guide.html#autotoc_md9", null ]
+      [ "Running the app", "console-guide.html#autotoc_md5", [
+        [ "App options", "console-guide.html#autotoc_md6", null ],
+        [ "The match verb", "console-guide.html#autotoc_md7", null ],
+        [ "The session verb", "console-guide.html#autotoc_md8", null ]
       ] ],
       [ "Event listeners", "console-guide.html#listeners", [
-        [ "Listener architecture", "console-guide.html#autotoc_md10", null ],
-        [ "The default listener", "console-guide.html#autotoc_md11", null ],
-        [ "Custom listeners", "console-guide.html#autotoc_md12", null ]
+        [ "Listener architecture", "console-guide.html#autotoc_md9", null ],
+        [ "The default listener", "console-guide.html#autotoc_md10", null ],
+        [ "Custom listeners", "console-guide.html#autotoc_md11", null ]
       ] ]
     ] ],
     [ "Unity guide", "unity-guide.html", [
-      [ "Introduction", "unity-guide.html#autotoc_md13", null ],
-      [ "Adding an AI thinker to Unity", "unity-guide.html#autotoc_md14", null ],
-      [ "Opening the MainScene", "unity-guide.html#autotoc_md15", null ],
-      [ "Configuring matches and tournaments", "unity-guide.html#autotoc_md16", [
-        [ "Fields of the SessionController game object", "unity-guide.html#autotoc_md17", null ],
-        [ "Adding and removing AIPlayer instances", "unity-guide.html#autotoc_md18", null ]
+      [ "Introduction", "unity-guide.html#autotoc_md12", null ],
+      [ "Adding an AI thinker to Unity", "unity-guide.html#autotoc_md13", null ],
+      [ "Opening the MainScene", "unity-guide.html#autotoc_md14", null ],
+      [ "Configuring matches and tournaments", "unity-guide.html#autotoc_md15", [
+        [ "Fields of the SessionController game object", "unity-guide.html#autotoc_md16", null ],
+        [ "Adding and removing AIPlayer instances", "unity-guide.html#autotoc_md17", null ]
       ] ],
-      [ "Running a match or tournament", "unity-guide.html#autotoc_md19", null ]
+      [ "Running a match or tournament", "unity-guide.html#autotoc_md18", null ]
     ] ],
     [ "Framework architecture", "architecture.html", [
-      [ "Overview", "architecture.html#autotoc_md20", null ],
-      [ "The Common project", "architecture.html#autotoc_md21", null ],
-      [ "The ConsoleApp projects", "architecture.html#autotoc_md22", null ],
-      [ "The UnityApp project", "architecture.html#autotoc_md23", null ]
+      [ "Overview", "architecture.html#autotoc_md19", null ],
+      [ "The Common project", "architecture.html#autotoc_md20", null ],
+      [ "The ConsoleApp projects", "architecture.html#autotoc_md21", null ],
+      [ "The UnityApp project", "architecture.html#autotoc_md22", null ]
     ] ],
     [ "Frequently asked questions", "faq.html", null ],
     [ "Namespaces", "namespaces.html", [
@@ -97,7 +97,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"console-guide.html#autotoc_md8"
+"console-guide.html#autotoc_md11"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
