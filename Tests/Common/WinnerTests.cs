@@ -1,3 +1,10 @@
+/// @file
+/// @brief This file contains the ::ColorShapeLinks.Common.Board class.
+///
+/// @author Nuno Fachada
+/// @date 2020
+/// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
+
 using ColorShapeLinks.Common;
 using Xunit;
 
