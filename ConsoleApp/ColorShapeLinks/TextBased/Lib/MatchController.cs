@@ -8,6 +8,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using ColorShapeLinks.Common;
@@ -36,6 +37,9 @@ namespace ColorShapeLinks.TextBased.Lib
         // A cancellation token so thinker threads can be ordered to stop
         private readonly CancellationTokenSource ts;
 
+        // A stopwatch, to measure playing time
+        private Stopwatch stopwatch;
+
         // A reference to the game board
         private readonly Board board;
 
@@ -62,6 +66,9 @@ namespace ColorShapeLinks.TextBased.Lib
 
             // Initialize the cancellation token
             ts = new CancellationTokenSource();
+
+            // Instantiate the stopwatch
+            stopwatch = new Stopwatch();
 
             // Get a reference to the game board
             board = matchData.Board;
@@ -123,9 +130,6 @@ namespace ColorShapeLinks.TextBased.Lib
             // Match result so far
             Winner winner = Winner.None;
 
-            // Thinking start time
-            DateTime startTime = DateTime.Now;
-
             // Real think time in milliseconds
             int thinkTimeMillis;
 
@@ -134,6 +138,9 @@ namespace ColorShapeLinks.TextBased.Lib
 
             // Task to execute the thinker in a separate thread
             Task<FutureMove> thinkTask;
+
+            // Start stopwatch
+            stopwatch.Restart();
 
             // Notify listeners that next turn is about to start
             NextTurn?.Invoke(color, thinker.ToString());
@@ -177,8 +184,8 @@ namespace ColorShapeLinks.TextBased.Lib
                         if (row >= 0)
                         {
                             // Obtain thinking end time
-                            thinkTimeMillis = (int)(DateTime.Now - startTime)
-                                .TotalMilliseconds;
+                            thinkTimeMillis =
+                                (int)stopwatch.ElapsedMilliseconds;
 
                             // How much time left for the minimum apparent move
                             // time?
