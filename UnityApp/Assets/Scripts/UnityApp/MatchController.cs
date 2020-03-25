@@ -7,6 +7,7 @@
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using System;
+using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -59,8 +60,8 @@ namespace ColorShapeLinks.UnityApp
         // The cancellation token to pass the AI
         private CancellationTokenSource ts;
 
-        // Task start time (native C# system time)
-        private DateTime taskStartSysTime;
+        // Stopwatch for measuring native C# system time
+        private Stopwatch stopwatch;
 
         // Task start time and duration (Unity time)
         private float taskStartGameTime, lastTaskDuration = float.NaN;
@@ -110,6 +111,9 @@ namespace ColorShapeLinks.UnityApp
             aiTimeLimit = new TimeSpan(
                 (long)(matchConfig.TimeLimitMillis
                     * TimeSpan.TicksPerMillisecond));
+
+            // Instantiate the stopwatch
+            stopwatch = new Stopwatch();
         }
 
         // This function is called when the object becomes enabled and active
@@ -159,7 +163,7 @@ namespace ColorShapeLinks.UnityApp
 
                     // Keep note of task start time (both system time and game
                     // time)
-                    taskStartSysTime = DateTime.Now;
+                    stopwatch.Restart();
                     taskStartGameTime = Time.time;
 
                     // Create a new task cancellation token, so task can be
@@ -202,10 +206,10 @@ namespace ColorShapeLinks.UnityApp
                         // Register task duration, if we haven't done so yet
                         if (float.IsNaN(lastTaskDuration))
                         {
-                            lastTaskDuration =
-                                (float)((DateTime.Now - taskStartSysTime).Ticks
-                                /
-                                (double)(TimeSpan.TicksPerSecond));
+                            lastTaskDuration = (float)(
+                                    stopwatch.ElapsedTicks
+                                    /
+                                    (double)(TimeSpan.TicksPerSecond));
                         }
 
                         // Did we pass the minimum time between AI moves?
@@ -271,7 +275,7 @@ namespace ColorShapeLinks.UnityApp
                         }
                     }
                     // Is the task overdue?
-                    else if (DateTime.Now - taskStartSysTime > aiTimeLimit)
+                    else if (stopwatch.Elapsed > aiTimeLimit)
                     {
                         // If so, notify user
                         view.SubmitMessage(
