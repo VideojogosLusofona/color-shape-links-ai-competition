@@ -49,6 +49,11 @@ namespace ColorShapeLinks.Common.AI.Examples
             Timeout,
 
             /// <summary>
+            /// Refuses to terminate execution.
+            /// </summary>
+            Uncooperative,
+
+            /// <summary>
             /// Throw an exception.
             /// </summary>
             Exception
@@ -117,6 +122,9 @@ namespace ColorShapeLinks.Common.AI.Examples
                         if (ct.IsCancellationRequested) break;
                     }
                     break;
+                case BadMove.Uncooperative:
+                    // Refuse to terminate
+                    while (true) { }
                 case BadMove.Exception:
                     // Throw an exception on purpose
                     throw new Exception(String.Format(
