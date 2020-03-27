@@ -213,6 +213,7 @@ namespace ColorShapeLinks.TextBased.Lib
                             // move, which means that thinker made an invalid
                             // move and should lose the game
 
+
                             // Raise an invalid play event and set the other
                             // thinker as the winner of the match
                             winner = OnInvalidPlay(
@@ -227,11 +228,25 @@ namespace ColorShapeLinks.TextBased.Lib
                     // Notify thinker to voluntarily stop thinking
                     ts.Cancel();
 
+                    // Try to wait a bit more
+                    if (!thinkTask.Wait(
+                        UncooperativeThinkerException.HardThinkingLimitMs))
+                    {
+                        // If the thinker didn't terminate, throw an
+                        // exception which will eventually terminate the app
+                        throw new UncooperativeThinkerException(thinker);
+                    }
+
                     // Raise an invalid play event and set the other thinker
                     // as the winner of the match
                     winner = OnInvalidPlay(
                         color, thinker, "Time limit expired");
                 }
+            }
+            catch (UncooperativeThinkerException)
+            {
+                // This exception is bubbled up, terminating the app
+                throw;
             }
             catch (Exception e)
             {
