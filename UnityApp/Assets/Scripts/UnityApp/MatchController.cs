@@ -51,6 +51,9 @@ namespace ColorShapeLinks.UnityApp
         // Reference to a solution
         private Pos[] solution;
 
+        // Thinker currently thinking
+        private IThinker thinker;
+
         // Task to execute AI search in a separate thread
         private Task<FutureMove> aiTask;
 
@@ -62,6 +65,10 @@ namespace ColorShapeLinks.UnityApp
 
         // Stopwatch for measuring native C# system time
         private Stopwatch stopwatch;
+
+        // Stopwatch to measure time after a cancellation request was
+        // submitted to a thinker
+        private Stopwatch cancellationStopwatch;
 
         // Task start time and duration (Unity time)
         private float taskStartGameTime, lastTaskDuration = float.NaN;
@@ -114,6 +121,9 @@ namespace ColorShapeLinks.UnityApp
 
             // Instantiate the stopwatch
             stopwatch = new Stopwatch();
+
+            // Set cancellation stopwatch to null
+            cancellationStopwatch = null;
         }
 
         // This function is called when the object becomes enabled and active
@@ -171,7 +181,7 @@ namespace ColorShapeLinks.UnityApp
                     ts = new CancellationTokenSource();
 
                     // Get this AI's thinker
-                    IThinker thinker = matchData.CurrentThinker;
+                    thinker = matchData.CurrentThinker;
 
                     // Start task in a separate thread using a copy of the
                     // board
@@ -200,8 +210,9 @@ namespace ColorShapeLinks.UnityApp
                         // the game, sorry
                         OnMatchOver(board.Turn.Other().ToWinner());
                     }
-                    // Is the AI thinking task completed?
-                    else if (aiTask.IsCompleted)
+                    // Is the AI thinking task completed in time?
+                    else if (aiTask.IsCompleted
+                        && cancellationStopwatch == null)
                     {
                         // Register task duration, if we haven't done so yet
                         if (float.IsNaN(lastTaskDuration))
@@ -277,18 +288,47 @@ namespace ColorShapeLinks.UnityApp
                     // Is the task overdue?
                     else if (stopwatch.Elapsed > aiTimeLimit)
                     {
-                        // If so, notify user
-                        view.SubmitMessage(
-                            $"Time limit exceeded for {CurrPlrNameColor}!");
+                        // If so, check the status of the thinking cancellation
+                        // process
+                        if (cancellationStopwatch is null)
+                        {
+                            // The thinking cancellation process has not yet
+                            // been started, so let's start it
 
-                        // Inform the task it should cancel its thinking
-                        ts.Cancel();
+                            // Inform user that the time limit for
+                            // the current thinker has been exceeded
+                            view.SubmitMessage(
+                                $"Time limit exceeded for {CurrPlrNameColor}!");
 
-                        // Set task to null
-                        aiTask = null;
+                            // Notify task it should cancel its thinking
+                            ts.Cancel();
 
-                        // The AI player that was overdue loses the game
-                        OnMatchOver(board.Turn.Other().ToWinner());
+                            // Start cancellation stopwatch
+                            cancellationStopwatch = Stopwatch.StartNew();
+                        }
+                        else if (aiTask.IsCompleted)
+                        {
+                            // The thinking task is completed after the
+                            // cancelation request, terminate match normally
+
+                            // Set task to null
+                            aiTask = null;
+
+                            // Set cancellation stopwatch to null
+                            cancellationStopwatch = null;
+
+                            // The AI player that was overdue loses the game
+                            OnMatchOver(board.Turn.Other().ToWinner());
+                        }
+                        else if (cancellationStopwatch.ElapsedMilliseconds >
+                            UncooperativeThinkerException.HardThinkingLimitMs)
+                        {
+                            UnityEngine.Debug.LogWarning($"{cancellationStopwatch.ElapsedMilliseconds}ms have passed :(");
+
+                            // If the hard thinking process time limit has been
+                            // reached, throw an exception to terminate the app
+                            throw new UncooperativeThinkerException(thinker);
+                        }
                     }
                 }
             }

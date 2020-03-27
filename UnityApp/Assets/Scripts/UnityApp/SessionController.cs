@@ -228,6 +228,7 @@ namespace ColorShapeLinks.UnityApp
             view.StartNextMatch += StartNextMatchCallback;
             view.MatchClear += DestroyAndIterateMatchCallback;
             view.EndSession += EndSessionCallback;
+            Application.logMessageReceived += HandleFatalErrors;
         }
 
         // This function is called when the behaviour becomes disabled
@@ -239,6 +240,17 @@ namespace ColorShapeLinks.UnityApp
             view.StartNextMatch -= StartNextMatchCallback;
             view.MatchClear -= DestroyAndIterateMatchCallback;
             view.EndSession -= EndSessionCallback;
+            Application.logMessageReceived -= HandleFatalErrors;
+        }
+
+        // Terminate app if a fatal error or exception occurs
+        private void HandleFatalErrors(
+            string logString, string stackTrace, LogType type)
+        {
+            if (type == LogType.Error || type == LogType.Exception)
+            {
+                UnityEditor.EditorApplication.isPlaying = false;
+            }
         }
 
         // Change the session state to PreMatch
