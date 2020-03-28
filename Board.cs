@@ -442,9 +442,6 @@ namespace ColorShapeLinks.Common
                     "Array for placing solution " +
                     $"must have at least length {piecesInSequence}");
 
-            // Is the board full? Then we have a draw
-            if (numMoves == cols * rows || PiecesLeft == 0) return Winner.Draw;
-
             // Check for all different pieces
             foreach (PieceFuncPlayer funcPlayer in pieceFuncsPlayers)
             {
@@ -477,6 +474,9 @@ namespace ColorShapeLinks.Common
                     }
                 }
             }
+
+            // Is the board full? Then we have a draw
+            if (numMoves == cols * rows || PiecesLeft == 0) return Winner.Draw;
 
             // No winner found
             return Winner.None;
