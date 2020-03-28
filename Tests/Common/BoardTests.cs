@@ -20,6 +20,7 @@ namespace Tests.Common
 
         private static readonly object[][] boardData =
         {
+            // Winner is red, standard board
             new object[] {
                 new MatchConfig(),
                 new (int, PShape)[] {
@@ -32,7 +33,30 @@ namespace Tests.Common
                 Winner.Red,
                 new Pos[] {
                     new Pos(3, 0), new Pos(3, 1), new Pos(3, 2), new Pos(3, 3) }
-            }
+            },
+
+            // Very small board, winner is white on the last possible move
+            // with a full board
+            new object[] {
+                new MatchConfig(rows: 2, cols: 3, winSequence: 3),
+                new (int, PShape)[] {
+                    (0, o), (1, o), (2, o) },
+                new (int, PShape)[] {
+                    (1, s), (2, s), (0, o) },
+                Winner.White,
+                new Pos[] {
+                    new Pos(1, 0), new Pos(1, 1), new Pos(1, 2) }
+            },
+
+            // Very small board, final result is a tie
+            new object[] {
+                new MatchConfig(rows: 2, cols: 3, winSequence: 3),
+                new (int, PShape)[] {
+                    (0, o), (1, o), (2, o) },
+                new (int, PShape)[] {
+                    (1, s), (2, s), (0, s) },
+                Winner.Draw,
+                new Pos[3] }
         };
 
         public static IEnumerable<object[]> GetBoardsNoSolution()
