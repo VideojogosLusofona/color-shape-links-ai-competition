@@ -39,8 +39,10 @@ The source code of AI thinkers must follow these rules and restrictions:
   [AbstractThinker] class or passed to the [Think()] method, e.g., such as
   using reflection to probe the capabilities of its opponents.
 - Cannot use more than 2GB of memory during the course of a match.
-- Cannot be more than 250kb in size (including libraries, excluding comments).
-- Cannot save or load data from disk.
+- Must have a reasonable size in disk, including libraries. For example,
+  source code, project files and compiled binaries should not exceed 1 Mb.
+- The same [setup](@ref setup) parameters should be used for all competition
+  tracks.
 
 ## The AbstractThinker base class {#abstractthinker}
 
@@ -81,7 +83,7 @@ via the inherited properties.
 The following subsections address the overriding of each of these three
 methods.
 
-### Overriding the Setup() method
+### Overriding the Setup() method {#setup}
 
 If an AI thinker needs to be configured before starting to play, the [Setup()]
 method is the place to do it. This method receives a single argument,

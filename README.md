@@ -125,8 +125,9 @@ The AI source code must follow these rules:
   [`AbstractThinker`] class or passed to the [`Think()`] method, e.g., such as
   using reflection to probe the capabilities of its opponents.
 - Cannot use more than 2GB of memory during the course of a match.
-- Cannot be more than 250kb in size (including libraries, excluding comments).
-- Cannot save or load data from disk.
+- Must have a reasonable size in disk, including libraries. For example,
+  source code, project files and compiled binaries should not exceed 1 Mb.
+- The same [setup] parameters should be used for both [tracks](#tracks).
 
 ## Resources and guides
 
@@ -168,3 +169,4 @@ License][CC BY-NC-SA 4.0].
 [.NET Core]:https://dotnet.microsoft.com/download
 [`AbstractThinker`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html
 [`Think()`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#ac8039cba1e4ececb04322fb8e7610f0e
+[setup]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/thinker-implementation-guide.html#autotoc_md3
