@@ -124,6 +124,7 @@ The AI source code must follow these rules:
   search or use any other information, besides what is already available in the
   [`AbstractThinker`] class or passed to the [`Think()`] method, e.g., such as
   using reflection to probe the capabilities of its opponents.
+- Cannot use and/or communicate with external data sources.
 - Cannot use more than 2GB of memory during the course of a match.
 - Must have a reasonable size in disk, including libraries. For example,
   source code, project files and compiled binaries should not exceed 1 Mb.
