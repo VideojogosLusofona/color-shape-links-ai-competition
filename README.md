@@ -13,9 +13,9 @@ work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 This competition has been accepted for the [IEEE CoG 2020] conference and is
 officially open!
 
-* [Implementation guide][APIDocs] and [tutorial video](https://www.youtube.com/watch?v=ELrsLzX3qBY)
-* [Standings]
-* **Deadline**: 15th May
+* [Implementation guide][APIDocs] and
+  [tutorial video](https://www.youtube.com/watch?v=ELrsLzX3qBY)
+* [Daily standings][Standings]
 
 ## Description
 
@@ -54,8 +54,8 @@ The competition runs on two distinct tracks:
 2. The **Unknown Track** competition will be played on a multi-core
    processor under conditions that will only be revealed after the competition
    deadline. These conditions will be derived from the first [EuroMillions]
-   draw that takes place after the deadline, most likely at May 19, 2020, as
-   follows:
+   draw that takes place after the [final submission
+   deadline](#important-dates), most likely at August 18, 2020, as follows:
    * NumberOfRows = Lowest [EuroMillions] ball number higher than 6
      (ascending order).
    * NumberOfCols = Next [EuroMillions] ball (ascending order).
@@ -64,11 +64,11 @@ The competition runs on two distinct tracks:
    * InitialNumberOfSquarePiecesPerPlayer = Ceil(NumberOfRows * NumberOfCols / 4.0)
    * TimeLimit (milliseconds) = 25 * Max(NumberOfRows, NumberOfCols)
 
-### Classification
+### Standings
 
 All AIs will play against each other two times, so each AI has the opportunity
 to play first. Players will be awarded 3 points per win, 1 point per draw and
-0 points per loss. The [classification][standings] for each track will be based
+0 points per loss. The [standings] for each track will be based
 on the total number of points obtained per AI, sorted in descending order.
 
 Tie-breaks are performed only when there are two or more AIs with the same
@@ -84,20 +84,30 @@ following criteria (from most to least important):
 4. If the tie persists, the AIs are considered officially tied and *ex aequo*
    winners of the competition.
 
-Classification for the base track is updated daily, and is available
-[here][standings].
+Standings for the base track and two other test configurations are updated
+daily and available [here][standings]. These offer a good idea of how each AI
+is faring, but may not entirely reflect the end results for the base track,
+since: i) the actual competition will run on a slightly more powerful
+computer, with possibly newer software (e.g., a more recent OS kernel
+or .NET Core version); ii) after the [first deadline](#important-dates),
+submissions may require changes in order to
+[comply with the rules](#rules-for-the-ai-code), which may impact their
+performance.
 
 ### Submissions
 
 AIs should be submitted via email to
 [colorshapelinks@ulusofona.pt](mailto:colorshapelinks@ulusofona.pt). Only one
-AI is allowed per team, but multiple submissions are encouraged as the AI is
-being developed and improved. Upon submission, the submitted code is:
+AI is allowed per team, but multiple submissions are encouraged (within
+reasonable frequency) as the AI is being developed and improved. A person may
+only be affiliated to one team, except for teachers or supervisors of student
+teams. Upon submission, the submitted code is:
 
-1. Checked and tested for [rule](#rules-for-the-ai-code) compliance, though
-   not otherwise studied or analysed.
-2. Added to the base track competition, the [classification][standings] of
-   which is updated daily.
+1. Superficially checked for [rule](#rules-for-the-ai-code) compliance,
+   though not otherwise studied or analysed. Thorough tests will be performed
+   only after the [first deadline for AI submissions](#important-dates).
+2. Added to the automated competitions, the [standings] of which are
+   updated daily.
 
 All submitted codes are considered private and will not be
 shared, discussed or analyzed by the organization before the competition
@@ -106,9 +116,25 @@ this repository. If code authors do not specify a
 [valid open source license][ossl] upon submission, the organization will make
 the code available under the [Mozilla Public License 2.0][MPLv2].
 
-### Rules for the AI code
+### Important dates
 
-The AI source code must follow these rules:
+* **May 22** _(optional)_ - [IEEE CoG competition papers deadline], e.g., for
+  participants that wish to submit a paper about their entry for this
+  competition.
+* **July 31** - First deadline for AI submissions. Submissions will be
+  thoroughly checked for [rule compliance](#rules-for-the-ai-code) and
+  technical issues.
+* **August 7** - Author notification of any issues encountered with the submissions.
+* **August 14** - Final deadline for AI submissions + short description of the
+  methods used for implementing the AI.
+* **August 18** - [EuroMillions] draw which will determine the conditions for
+  the [Unknown track](#tracks).
+* **August 24-27** - [IEEE CoG 2020] takes place, final competition
+  results are announced.
+
+## Rules
+
+### Rules for the AI code
 
 - Can only use cross-platform [.NET Standard 2.0] API calls in C#.
 - Can use additional libraries which abide by these same rules.
@@ -129,6 +155,12 @@ The AI source code must follow these rules:
 - Must have a reasonable size in disk, including libraries. For example,
   source code, project files and compiled binaries should not exceed 1 Mb.
 - The same [setup] parameters should be used for both [tracks](#tracks).
+
+### General competition rules
+
+- Submissions automatically compete in both tracks.
+- A person may only be affiliated to one team, except for teachers or
+  supervisors of student teams.
 
 ## Resources and guides
 
@@ -171,3 +203,4 @@ License][CC BY-NC-SA 4.0].
 [`AbstractThinker`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html
 [`Think()`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#ac8039cba1e4ececb04322fb8e7610f0e
 [setup]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/thinker-implementation-guide.html#autotoc_md3
+[IEEE CoG competition papers deadline]:http://www.ieee-cog.org/2020/cfp
