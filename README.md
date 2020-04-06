@@ -10,12 +10,11 @@ work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 
 # ColorShapeLinks AI competition
 
-This competition has been accepted for the [IEEE CoG 2020] conference and is
-officially open!
+_An AI competition for the [IEEE CoG 2020] conference_
 
-* [Implementation guide][APIDocs] and
-  [tutorial video](https://www.youtube.com/watch?v=ELrsLzX3qBY)
-* [Daily standings][Standings]
+[Important dates](#important-dates) | [Daily standings][Standings] |
+[Implementation guide][APIDocs] |
+[Tutorial video](https://www.youtube.com/watch?v=ELrsLzX3qBY)
 
 ## Description
 
@@ -44,7 +43,7 @@ developing an AI for ColorShapeLinks.
 
 ## The competition
 
-### Tracks
+### Tracks and prize money
 
 The competition runs on two distinct tracks:
 
@@ -63,6 +62,9 @@ The competition runs on two distinct tracks:
    * InitialNumberOfRoundPiecesPerPlayer = Floor(NumberOfRows * NumberOfCols / 4.0)
    * InitialNumberOfSquarePiecesPerPlayer = Ceil(NumberOfRows * NumberOfCols / 4.0)
    * TimeLimit (milliseconds) = 25 * Max(NumberOfRows, NumberOfCols)
+
+The winner of each track will receive a prize money of 500$ (USD), sponsored
+by the [IEEE CIS Competition Subcommittee].
 
 ### Standings
 
@@ -89,7 +91,7 @@ daily and available [here][standings]. These offer a good idea of how each AI
 is faring, but may not entirely reflect the end results for the base track,
 since: i) the actual competition will run on a slightly more powerful
 computer, with possibly newer software (e.g., a more recent OS kernel
-or .NET Core version); ii) after the [first deadline](#important-dates),
+or [.NET Core] version); ii) after the [first deadline](#important-dates),
 submissions may require changes in order to
 [comply with the rules](#rules-for-the-ai-code), which may impact their
 performance.
@@ -99,9 +101,9 @@ performance.
 AIs should be submitted via email to
 [colorshapelinks@ulusofona.pt](mailto:colorshapelinks@ulusofona.pt). Only one
 AI is allowed per team, but multiple submissions are encouraged (within
-reasonable frequency) as the AI is being developed and improved. A person may
-only be affiliated to one team, except for teachers or supervisors of student
-teams. Upon submission, the submitted code is:
+reasonable frequency) as the AI is being developed and improved. An individual
+may only be affiliated with one team, except for teachers or supervisors of
+student teams. Upon submission, the submitted code is:
 
 1. Superficially checked for [rule](#rules-for-the-ai-code) compliance,
    though not otherwise studied or analysed. Thorough tests will be performed
@@ -110,11 +112,9 @@ teams. Upon submission, the submitted code is:
    updated daily.
 
 All submitted codes are considered private and will not be
-shared, discussed or analyzed by the organization before the competition
-deadline. After this deadline, all the submitted codes will be made public at
-this repository. If code authors do not specify a
-[valid open source license][ossl] upon submission, the organization will make
-the code available under the [Mozilla Public License 2.0][MPLv2].
+shared, discussed or analyzed by the organization before the [final deadline
+for AI submissions](#important-dates). After this deadline, the
+submitted codes should be [open sourced][ossl] by the respective authors.
 
 ### Important dates
 
@@ -140,7 +140,7 @@ the code available under the [Mozilla Public License 2.0][MPLv2].
 - Can use additional libraries which abide by these same rules.
 - Both the AI code and libraries must be made available under a
   [valid open source license][ossl], although AI codes can be open-sourced
-  only after the competition deadline.
+  only after the [final submission deadline](#important-dates).
 - Must run in the same process that invokes it.
 - Can be multithreaded and use [`unsafe`] contexts.
 - Cannot *think* in its opponent time (e.g., by using a background thread).
@@ -154,18 +154,19 @@ the code available under the [Mozilla Public License 2.0][MPLv2].
 - Cannot use more than 2GB of memory during the course of a match.
 - Must have a reasonable size in disk, including libraries. For example,
   source code, project files and compiled binaries should not exceed 1 Mb.
-- The same [setup] parameters should be used for both [tracks](#tracks).
 
 ### General competition rules
 
-- Submissions automatically compete in both tracks.
-- A person may only be affiliated to one team, except for teachers or
+- Submissions automatically compete in both tracks with the same [setup]
+  parameters, if any.
+- An individual may only be affiliated with one team, except for teachers or
   supervisors of student teams.
 
 ## Resources and guides
 
 * [Implementation guide][APIDocs]
-* [Classification and Results for the Base Track (updated daily)][standings]
+* [Tutorial video](https://www.youtube.com/watch?v=ELrsLzX3qBY)
+* [Standings (updated daily)][standings]
 
 ## Licenses
 
@@ -204,3 +205,4 @@ License][CC BY-NC-SA 4.0].
 [`Think()`]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#ac8039cba1e4ececb04322fb8e7610f0e
 [setup]:https://videojogoslusofona.github.io/color-shape-links-ai-competition/docs/html/thinker-implementation-guide.html#autotoc_md3
 [IEEE CoG competition papers deadline]:http://www.ieee-cog.org/2020/cfp
+[IEEE CIS Competition Subcommittee]:https://cis.ieee.org/conferences/student-games-based-competition
