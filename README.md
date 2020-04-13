@@ -28,8 +28,7 @@ do the same for player 2. Contrary to color, players start the game with
 pieces of both shapes. This means that a less observant player
 can lose in its turn, especially since shape has priority over color as a
 winning condition. Given this fact, as well as the arbitrary game dimensions,
-the challenges for the AI, namely at the level of the heuristic evaluation
-function, are multifold.
+the challenges for the AI are multifold.
 
 The AI must be implemented in C# ([.NET Standard 2.0]) by extending
 [one class][`AbstractThinker`] and overriding [one method][`Think()`].
@@ -63,8 +62,8 @@ The competition runs on two distinct tracks:
    * InitialNumberOfSquarePiecesPerPlayer = Ceil(NumberOfRows * NumberOfCols / 4.0)
    * TimeLimit (milliseconds) = 25 * Max(NumberOfRows, NumberOfCols)
 
-The winner of each track will receive a prize money of 500$ (USD), sponsored
-by the [IEEE CIS Competition Subcommittee].
+The winner of each track will receive a prize money of **500$ (USD)**,
+sponsored by the [IEEE CIS Competition Subcommittee].
 
 ### Standings
 
@@ -86,24 +85,23 @@ following criteria (from most to least important):
 4. If the tie persists, the AIs are considered officially tied and *ex aequo*
    winners of the competition.
 
-Standings for the base track and two other test configurations are updated
-daily and available [here][standings]. These offer a good idea of how each AI
-is faring, but may not entirely reflect the end results for the base track,
-since: i) the actual competition will run on a slightly more powerful
-computer, with possibly newer software (e.g., a more recent OS kernel
-or [.NET Core] version); ii) after the [first deadline](#important-dates),
-submissions may require changes in order to
-[comply with the rules](#rules-for-the-ai-code), which may impact their
-performance.
+Standings for the base track and two other test configurations are [updated
+daily][standings]. These offer a good idea of how each AI is faring. However,
+there are two issues which may impact final results:
+
+1. The actual competition will run on a slightly more powerful computer,
+   with possibly newer software (e.g., a more recent OS kernel or
+   [.NET Core] version).
+2. After the [first deadline](#important-dates), submissions may require
+   changes in order to [comply with the rules](#rules-for-the-ai-code).
 
 ### Submissions
 
 AIs should be submitted via email to
 [colorshapelinks@ulusofona.pt](mailto:colorshapelinks@ulusofona.pt). Only one
 AI is allowed per team, but multiple submissions are encouraged (within
-reasonable frequency) as the AI is being developed and improved. An individual
-may only be affiliated with one team, except for teachers or supervisors of
-student teams. Upon submission, the submitted code is:
+reasonable frequency) as the AI is being developed and improved. Upon
+submission, the submitted code is:
 
 1. Superficially checked for [rule](#rules-for-the-ai-code) compliance,
    though not otherwise studied or analysed. Thorough tests will be performed
@@ -114,7 +112,7 @@ student teams. Upon submission, the submitted code is:
 All submitted codes are considered private and will not be
 shared, discussed or analyzed by the organization before the [final deadline
 for AI submissions](#important-dates). After this deadline, the
-submitted codes should be [open sourced][ossl] by the respective authors.
+submitted codes should be [open-sourced][ossl] by the respective authors.
 
 ### Important dates
 
@@ -124,13 +122,17 @@ submitted codes should be [open sourced][ossl] by the respective authors.
 * **July 31** - First deadline for AI submissions. Submissions will be
   thoroughly checked for [rule compliance](#rules-for-the-ai-code) and
   technical issues.
-* **August 7** - Author notification of any issues encountered with the submissions.
+* **August 7** - Author notification of any issues encountered with the
+  submissions.
 * **August 14** - Final deadline for AI submissions + short description of the
   methods used for implementing the AI.
 * **August 18** - [EuroMillions] draw which will determine the conditions for
   the [Unknown track](#tracks).
 * **August 24-27** - [IEEE CoG 2020] takes place, final competition
   results are announced.
+
+These dates are
+[anywhere in the world](https://www.timeanddate.com/time/zones/aoe).
 
 ## Rules
 
@@ -158,9 +160,13 @@ submitted codes should be [open sourced][ossl] by the respective authors.
 ### General competition rules
 
 - Submissions automatically compete in both tracks with the same [setup]
-  parameters, if any.
+  parameters (if any are specified).
 - An individual may only be affiliated with one team, except for teachers or
-  supervisors of student teams.
+  supervisors of student teams, which may be affiliated with more than one
+  team.
+- Attending [IEEE CoG 2020] is not mandatory for participating in the
+  competition. However, all participants are invited to submit a
+  [Competition paper][IEEE CoG competition papers deadline] about their entry.
 
 ## Resources and guides
 
