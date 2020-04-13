@@ -62,7 +62,7 @@ The competition runs on two distinct tracks:
    * InitialNumberOfSquarePiecesPerPlayer = Ceil(NumberOfRows * NumberOfCols / 4.0)
    * TimeLimit (milliseconds) = 25 * Max(NumberOfRows, NumberOfCols)
 
-The winner of each track will receive a prize money of **500$ (USD)**,
+The winner of each track will receive a prize money of **$500 (USD)**,
 sponsored by the [IEEE CIS Competition Subcommittee].
 
 ### Standings
