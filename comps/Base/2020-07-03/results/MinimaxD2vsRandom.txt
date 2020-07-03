@@ -22,13 +22,13 @@ MinimaxD2 (White) placed a Round piece at column 5 after 3ms
 .....w.
 
 Random (Red) turn
-Random (Red) placed a Square piece at column 0 after 0ms
+Random (Red) placed a Square piece at column 6 after 0ms
 .......
 .......
 .......
 .......
 .......
-R....w.
+.....wR
 
 MinimaxD2 (White) turn
 MinimaxD2 (White) placed a Round piece at column 5 after 3ms
@@ -37,16 +37,16 @@ MinimaxD2 (White) placed a Round piece at column 5 after 3ms
 .......
 .......
 .....w.
-R....w.
+.....wR
 
 Random (Red) turn
-Random (Red) placed a Round piece at column 2 after 0ms
+Random (Red) placed a Round piece at column 4 after 0ms
 .......
 .......
 .......
 .......
 .....w.
-R.r..w.
+....rwR
 
 MinimaxD2 (White) turn
 MinimaxD2 (White) placed a Round piece at column 5 after 3ms
@@ -55,7 +55,7 @@ MinimaxD2 (White) placed a Round piece at column 5 after 3ms
 .......
 .....w.
 .....w.
-R.r..w.
+....rwR
 
 Random (Red) turn
 Random (Red) placed a Round piece at column 2 after 0ms
@@ -63,17 +63,17 @@ Random (Red) placed a Round piece at column 2 after 0ms
 .......
 .......
 .....w.
-..r..w.
-R.r..w.
+.....w.
+..r.rwR
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Square piece at column 5 after 3ms
+MinimaxD2 (White) placed a Square piece at column 5 after 2ms
 .......
 .......
 .....W.
 .....w.
-..r..w.
-R.r..w.
+.....w.
+..r.rwR
 
 Winner is MinimaxD2 (White)
 Solution=(0,5)(1,5)(2,5)(3,5)

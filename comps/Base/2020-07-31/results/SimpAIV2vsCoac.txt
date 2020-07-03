@@ -1,0 +1,327 @@
+=> SimpAIV2 (White) vs Coac (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+SimpAIV2 (White) turn
+hashtable entries: 6247
+depth: 3
+SimpAIV2 (White) placed a Round piece at column 3 after 180ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 1 after 36ms
+.......
+.......
+.......
+.......
+.......
+.R.w...
+
+SimpAIV2 (White) turn
+hashtable entries: 5316
+depth: 5
+SimpAIV2 (White) placed a Round piece at column 5 after 180ms
+.......
+.......
+.......
+.......
+.......
+.R.w.w.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 4 after 83ms
+.......
+.......
+.......
+.......
+.......
+.R.wRw.
+
+SimpAIV2 (White) turn
+hashtable entries: 196
+depth: 63
+SimpAIV2 (White) placed a Round piece at column 6 after 180ms
+.......
+.......
+.......
+.......
+.......
+.R.wRww
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 4 after 97ms
+.......
+.......
+.......
+.......
+....R..
+.R.wRww
+
+SimpAIV2 (White) turn
+hashtable entries: 0
+depth: 10895
+SimpAIV2 (White) placed a Round piece at column 0 after 180ms
+.......
+.......
+.......
+.......
+....R..
+wR.wRww
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 4 after 97ms
+.......
+.......
+.......
+....R..
+....R..
+wR.wRww
+
+SimpAIV2 (White) turn
+hashtable entries: 0
+depth: 9870
+SimpAIV2 (White) placed a Round piece at column 4 after 180ms
+.......
+.......
+....w..
+....R..
+....R..
+wR.wRww
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 3 after 99ms
+.......
+.......
+....w..
+....R..
+...RR..
+wR.wRww
+
+SimpAIV2 (White) turn
+hashtable entries: 0
+depth: 9325
+SimpAIV2 (White) placed a Round piece at column 4 after 180ms
+.......
+....w..
+....w..
+....R..
+...RR..
+wR.wRww
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 5 after 90ms
+.......
+....w..
+....w..
+....R..
+...RRR.
+wR.wRww
+
+SimpAIV2 (White) turn
+hashtable entries: 0
+depth: 9663
+SimpAIV2 (White) placed a Round piece at column 0 after 180ms
+.......
+....w..
+....w..
+....R..
+w..RRR.
+wR.wRww
+
+Coac (Red) turn
+Coac (Red) placed a Round piece at column 2 after 73ms
+.......
+....w..
+....w..
+....R..
+w..RRR.
+wRrwRww
+
+SimpAIV2 (White) turn
+hashtable entries: 0
+depth: 9329
+SimpAIV2 (White) placed a Round piece at column 1 after 180ms
+.......
+....w..
+....w..
+....R..
+ww.RRR.
+wRrwRww
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 0 after 45ms
+.......
+....w..
+....w..
+R...R..
+ww.RRR.
+wRrwRww
+
+SimpAIV2 (White) turn
+hashtable entries: 0
+depth: 9525
+SimpAIV2 (White) placed a Round piece at column 2 after 180ms
+.......
+....w..
+....w..
+R...R..
+wwwRRR.
+wRrwRww
+
+Coac (Red) turn
+Coac (Red) placed a Round piece at column 5 after 76ms
+.......
+....w..
+....w..
+R...Rr.
+wwwRRR.
+wRrwRww
+
+SimpAIV2 (White) turn
+hashtable entries: 0
+depth: 10319
+SimpAIV2 (White) placed a Round piece at column 6 after 180ms
+.......
+....w..
+....w..
+R...Rr.
+wwwRRRw
+wRrwRww
+
+Coac (Red) turn
+Coac (Red) placed a Round piece at column 2 after 85ms
+.......
+....w..
+....w..
+R.r.Rr.
+wwwRRRw
+wRrwRww
+
+SimpAIV2 (White) turn
+hashtable entries: 0
+depth: 8864
+SimpAIV2 (White) placed a Square piece at column 2 after 180ms
+.......
+....w..
+..W.w..
+R.r.Rr.
+wwwRRRw
+wRrwRww
+
+Coac (Red) turn
+Coac (Red) placed a Round piece at column 0 after 59ms
+.......
+....w..
+r.W.w..
+R.r.Rr.
+wwwRRRw
+wRrwRww
+
+SimpAIV2 (White) turn
+hashtable entries: 0
+depth: 8476
+SimpAIV2 (White) placed a Square piece at column 0 after 180ms
+.......
+W...w..
+r.W.w..
+R.r.Rr.
+wwwRRRw
+wRrwRww
+
+Coac (Red) turn
+Coac (Red) placed a Round piece at column 0 after 40ms
+r......
+W...w..
+r.W.w..
+R.r.Rr.
+wwwRRRw
+wRrwRww
+
+SimpAIV2 (White) turn
+hashtable entries: 0
+depth: 8035
+SimpAIV2 (White) placed a Square piece at column 2 after 180ms
+r......
+W.W.w..
+r.W.w..
+R.r.Rr.
+wwwRRRw
+wRrwRww
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 1 after 11ms
+r......
+W.W.w..
+r.W.w..
+RRr.Rr.
+wwwRRRw
+wRrwRww
+
+SimpAIV2 (White) turn
+hashtable entries: 0
+depth: 8973
+SimpAIV2 (White) placed a Square piece at column 1 after 180ms
+r......
+W.W.w..
+rWW.w..
+RRr.Rr.
+wwwRRRw
+wRrwRww
+
+Coac (Red) turn
+Coac (Red) placed a Round piece at column 1 after 19ms
+r......
+WrW.w..
+rWW.w..
+RRr.Rr.
+wwwRRRw
+wRrwRww
+
+SimpAIV2 (White) turn
+hashtable entries: 0
+depth: 8688
+SimpAIV2 (White) placed a Square piece at column 3 after 180ms
+r......
+WrW.w..
+rWW.w..
+RRrWRr.
+wwwRRRw
+wRrwRww
+
+Coac (Red) turn
+Coac (Red) placed a Round piece at column 1 after 13ms
+rr.....
+WrW.w..
+rWW.w..
+RRrWRr.
+wwwRRRw
+wRrwRww
+
+SimpAIV2 (White) turn
+hashtable entries: 0
+depth: 7843
+SimpAIV2 (White) placed a Square piece at column 3 after 180ms
+rr.....
+WrW.w..
+rWWWw..
+RRrWRr.
+wwwRRRw
+wRrwRww
+
+Winner is Coac (Red)
+Solution=(1,5)(2,4)(3,3)(4,2)

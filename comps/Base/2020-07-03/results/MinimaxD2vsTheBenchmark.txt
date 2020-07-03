@@ -22,8 +22,8 @@ MinimaxD2 (White) placed a Round piece at column 5 after 3ms
 .....w.
 
 TheBenchmark (Red) turn
-Did 3845 total evals
-TheBenchmark (Red) placed a Square piece at column 3 after 154ms
+Did 3919 total evals
+TheBenchmark (Red) placed a Square piece at column 3 after 153ms
 .......
 .......
 .......
@@ -41,8 +41,8 @@ MinimaxD2 (White) placed a Round piece at column 5 after 3ms
 ...R.w.
 
 TheBenchmark (Red) turn
-Did 3607 total evals
-TheBenchmark (Red) placed a Square piece at column 5 after 153ms
+Did 3569 total evals
+TheBenchmark (Red) placed a Square piece at column 5 after 156ms
 .......
 .......
 .......
@@ -51,7 +51,7 @@ TheBenchmark (Red) placed a Square piece at column 5 after 153ms
 ...R.w.
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 5 after 4ms
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
 .......
 .......
 .....w.
@@ -60,8 +60,8 @@ MinimaxD2 (White) placed a Round piece at column 5 after 4ms
 ...R.w.
 
 TheBenchmark (Red) turn
-Did 3755 total evals
-TheBenchmark (Red) placed a Square piece at column 1 after 153ms
+Did 3739 total evals
+TheBenchmark (Red) placed a Square piece at column 1 after 154ms
 .......
 .......
 .....w.
@@ -79,7 +79,7 @@ MinimaxD2 (White) placed a Round piece at column 5 after 4ms
 .R.R.w.
 
 TheBenchmark (Red) turn
-Did 3291 total evals
+Did 3193 total evals
 TheBenchmark (Red) placed a Round piece at column 2 after 153ms
 .......
 .....w.
@@ -89,7 +89,7 @@ TheBenchmark (Red) placed a Round piece at column 2 after 153ms
 .RrR.w.
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Square piece at column 6 after 3ms
+MinimaxD2 (White) placed a Square piece at column 6 after 4ms
 .......
 .....w.
 .....w.
@@ -98,8 +98,8 @@ MinimaxD2 (White) placed a Square piece at column 6 after 3ms
 .RrR.wW
 
 TheBenchmark (Red) turn
-Did 2962 total evals
-TheBenchmark (Red) placed a Round piece at column 0 after 153ms
+Did 2977 total evals
+TheBenchmark (Red) placed a Round piece at column 0 after 156ms
 .......
 .....w.
 .....w.

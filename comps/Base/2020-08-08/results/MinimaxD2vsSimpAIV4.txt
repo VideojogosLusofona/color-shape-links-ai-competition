@@ -1,0 +1,180 @@
+=> MinimaxD2 (White) vs SimpAIV4 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 6ms
+.......
+.......
+.......
+.......
+.......
+.....w.
+
+SimpAIV4 (Red) turn
+hashtable entries: 7319
+depth: 3
+Column Played: 1
+SimpAIV4 (Red) placed a Round piece at column 1 after 180ms
+.......
+.......
+.......
+.......
+.......
+.r...w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.......
+.....w.
+.r...w.
+
+SimpAIV4 (Red) turn
+hashtable entries: 6713
+depth: 3
+Column Played: 1
+SimpAIV4 (Red) placed a Round piece at column 1 after 180ms
+.......
+.......
+.......
+.......
+.r...w.
+.r...w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.......
+.......
+.......
+.....w.
+.r...w.
+.r...w.
+
+SimpAIV4 (Red) turn
+Prevent Loss
+SimpAIV4 (Red) placed a Square piece at column 5 after 0ms
+.......
+.......
+.....R.
+.....w.
+.r...w.
+.r...w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.......
+.....w.
+.....R.
+.....w.
+.r...w.
+.r...w.
+
+SimpAIV4 (Red) turn
+hashtable entries: 6547
+depth: 3
+Column Played: 1
+SimpAIV4 (Red) placed a Square piece at column 1 after 180ms
+.......
+.....w.
+.....R.
+.R...w.
+.r...w.
+.r...w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 1 after 3ms
+.......
+.....w.
+.w...R.
+.R...w.
+.r...w.
+.r...w.
+
+SimpAIV4 (Red) turn
+hashtable entries: 6176
+depth: 3
+Column Played: 5
+SimpAIV4 (Red) placed a Round piece at column 5 after 180ms
+.....r.
+.....w.
+.w...R.
+.R...w.
+.r...w.
+.r...w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 1 after 2ms
+.....r.
+.w...w.
+.w...R.
+.R...w.
+.r...w.
+.r...w.
+
+SimpAIV4 (Red) turn
+hashtable entries: 5753
+depth: 3
+Column Played: 3
+SimpAIV4 (Red) placed a Square piece at column 3 after 180ms
+.....r.
+.w...w.
+.w...R.
+.R...w.
+.r...w.
+.r.R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 1 after 2ms
+.w...r.
+.w...w.
+.w...R.
+.R...w.
+.r...w.
+.r.R.w.
+
+SimpAIV4 (Red) turn
+hashtable entries: 5864
+depth: 4
+Column Played: 2
+SimpAIV4 (Red) placed a Square piece at column 2 after 180ms
+.w...r.
+.w...w.
+.w...R.
+.R...w.
+.r...w.
+.rRR.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 6 after 1ms
+.w...r.
+.w...w.
+.w...R.
+.R...w.
+.r...w.
+.rRR.wW
+
+SimpAIV4 (Red) turn
+Guarantee Win
+SimpAIV4 (Red) placed a Square piece at column 0 after 0ms
+.w...r.
+.w...w.
+.w...R.
+.R...w.
+.r...w.
+RrRR.wW
+
+Winner is SimpAIV4 (Red)
+Solution=(0,0)(0,1)(0,2)(0,3)

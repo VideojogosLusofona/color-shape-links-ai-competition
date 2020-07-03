@@ -42,7 +42,7 @@ MinimaxD2 (White) placed a Round piece at column 5 after 3ms
 ...R.w.
 
 Omega Thonk Tank (Red) turn
-4682
+4716
 depth = 3
 Omega Thonk Tank (Red) placed a Square piece at column 3 after 180ms
 .......
@@ -82,7 +82,7 @@ MinimaxD2 (White) placed a Round piece at column 3 after 3ms
 ...RRw.
 
 Omega Thonk Tank (Red) turn
-4506
+4541
 depth = 3
 Omega Thonk Tank (Red) placed a Square piece at column 4 after 180ms
 .......
@@ -102,7 +102,7 @@ MinimaxD2 (White) placed a Round piece at column 3 after 4ms
 ...RRw.
 
 Omega Thonk Tank (Red) turn
-4721
+4677
 depth = 3
 Omega Thonk Tank (Red) placed a Square piece at column 3 after 180ms
 ...R...
@@ -122,7 +122,7 @@ MinimaxD2 (White) placed a Round piece at column 4 after 3ms
 ...RRw.
 
 Omega Thonk Tank (Red) turn
-4223
+4176
 depth = 4
 Omega Thonk Tank (Red) placed a Square piece at column 6 after 180ms
 ...R...
@@ -142,7 +142,7 @@ MinimaxD2 (White) placed a Round piece at column 4 after 3ms
 ...RRwR
 
 Omega Thonk Tank (Red) turn
-4353
+4343
 depth = 3
 Omega Thonk Tank (Red) placed a Square piece at column 1 after 180ms
 ...R...
@@ -153,7 +153,7 @@ Omega Thonk Tank (Red) placed a Square piece at column 1 after 180ms
 .R.RRwR
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 2 after 2ms
+MinimaxD2 (White) placed a Round piece at column 2 after 3ms
 ...R...
 ...w...
 ...ww..
@@ -162,7 +162,7 @@ MinimaxD2 (White) placed a Round piece at column 2 after 2ms
 .RwRRwR
 
 Omega Thonk Tank (Red) turn
-4171
+4149
 depth = 3
 Omega Thonk Tank (Red) placed a Square piece at column 1 after 180ms
 ...R...
@@ -173,7 +173,7 @@ Omega Thonk Tank (Red) placed a Square piece at column 1 after 180ms
 .RwRRwR
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 2 after 3ms
+MinimaxD2 (White) placed a Round piece at column 2 after 2ms
 ...R...
 ...w...
 ...ww..
@@ -182,7 +182,7 @@ MinimaxD2 (White) placed a Round piece at column 2 after 3ms
 .RwRRwR
 
 Omega Thonk Tank (Red) turn
-4165
+4134
 depth = 3
 Omega Thonk Tank (Red) placed a Square piece at column 1 after 180ms
 ...R...
@@ -202,7 +202,7 @@ MinimaxD2 (White) placed a Round piece at column 1 after 3ms
 .RwRRwR
 
 Omega Thonk Tank (Red) turn
-3337
+3264
 depth = 4
 Omega Thonk Tank (Red) loses match! Reason: Thinker unable to perform move
 ...R...

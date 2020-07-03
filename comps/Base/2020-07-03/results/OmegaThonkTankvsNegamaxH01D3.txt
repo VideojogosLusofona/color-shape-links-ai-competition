@@ -13,7 +13,7 @@
 .......
 
 Omega Thonk Tank (White) turn
-4964
+5135
 depth = 3
 Omega Thonk Tank (White) placed a Round piece at column 3 after 180ms
 .......
@@ -25,7 +25,7 @@ Omega Thonk Tank (White) placed a Round piece at column 3 after 180ms
 
 NegamaxH01D3 (Red) turn
 Did 2955 total evals
-NegamaxH01D3 (Red) placed a Square piece at column 3 after 64ms
+NegamaxH01D3 (Red) placed a Square piece at column 3 after 65ms
 .......
 .......
 .......
@@ -34,7 +34,7 @@ NegamaxH01D3 (Red) placed a Square piece at column 3 after 64ms
 ...w...
 
 Omega Thonk Tank (White) turn
-4840
+4884
 depth = 3
 Omega Thonk Tank (White) placed a Round piece at column 2 after 180ms
 .......
@@ -46,7 +46,7 @@ Omega Thonk Tank (White) placed a Round piece at column 2 after 180ms
 
 NegamaxH01D3 (Red) turn
 Did 2871 total evals
-NegamaxH01D3 (Red) placed a Square piece at column 3 after 64ms
+NegamaxH01D3 (Red) placed a Square piece at column 3 after 63ms
 .......
 .......
 .......
@@ -55,7 +55,7 @@ NegamaxH01D3 (Red) placed a Square piece at column 3 after 64ms
 ..ww...
 
 Omega Thonk Tank (White) turn
-5120
+5134
 depth = 6
 Omega Thonk Tank (White) placed a Square piece at column 4 after 180ms
 .......
@@ -67,24 +67,24 @@ Omega Thonk Tank (White) placed a Square piece at column 4 after 180ms
 
 NegamaxH01D3 (Red) turn
 Did 2255 total evals and ended up playing randomly
-NegamaxH01D3 (Red) placed a Round piece at column 5 after 53ms
+NegamaxH01D3 (Red) placed a Square piece at column 4 after 52ms
 .......
 .......
 .......
 ...R...
-...R...
-..wwWr.
+...RR..
+..wwW..
 
 Omega Thonk Tank (White) turn
-14
-depth = 962
+4271
+depth = 6
 Omega Thonk Tank (White) placed a Square piece at column 1 after 180ms
 .......
 .......
 .......
 ...R...
-...R...
-.WwwWr.
+...RR..
+.WwwW..
 
 Winner is Omega Thonk Tank (White)
 Solution=(0,1)(0,2)(0,3)(0,4)

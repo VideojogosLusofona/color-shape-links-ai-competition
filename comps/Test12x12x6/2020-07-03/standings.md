@@ -1,6 +1,6 @@
 # Standings
 
-Last update: Fri, 03 Jul 2020 15:33:36 GMT
+Last update: Fri, 03 Jul 2020 20:42:47 GMT
 
 ## Configuration
 
@@ -17,10 +17,10 @@ Last update: Fri, 03 Jul 2020 15:33:36 GMT
 
 | Pos. | AI Thinker | Points |
 |:----:| ---------- | -----: |
-| 1 | ThunderV7 | 45 |
+| 1 | ThunderV7 | 42 |
 | 2 | TheBenchmark | 42 |
-| 3 | SureAIv30 | 36 |
-| 4 | Omega Thonk Tank | 33 |
+| 3 | Omega Thonk Tank | 36 |
+| 4 | SureAIv30 | 36 |
 | 5 | MinimaxD2 | 24 |
 | 6 | Random | 15 |
 | 7 | Sequential | 15 |
@@ -52,7 +52,7 @@ _Winner, if any, shown in bold_
 | **`MinimaxD2`** | `Coac` | [+](results/MinimaxD2vsCoac.txt) |
 | `Coac` | **`MinimaxD2`** | [+](results/CoacvsMinimaxD2.txt) |
 | **`ThunderV7`** | `Omega Thonk Tank` | [+](results/ThunderV7vsOmegaThonkTank.txt) |
-| `Omega Thonk Tank` | **`ThunderV7`** | [+](results/OmegaThonkTankvsThunderV7.txt) |
+| **`Omega Thonk Tank`** | `ThunderV7` | [+](results/OmegaThonkTankvsThunderV7.txt) |
 | `NegamaxH01D3` | **`Sequential`** | [+](results/NegamaxH01D3vsSequential.txt) |
 | **`Sequential`** | `NegamaxH01D3` | [+](results/SequentialvsNegamaxH01D3.txt) |
 | **`TheBenchmark`** | `Random` | [+](results/TheBenchmarkvsRandom.txt) |

@@ -1,0 +1,265 @@
+=> ThunderV8 (White) vs SureAIv30 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+ThunderV8 (White) turn
+ThunderV8 (White) placed a Round piece at column 3 after 181ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+SureAIv30 (Red) turn
+depth = 5
+Did 3822 evals
+SureAIv30 (Red) placed a Square piece at column 3 after 186ms
+.......
+.......
+.......
+.......
+...R...
+...w...
+
+ThunderV8 (White) turn
+ThunderV8 (White) placed a Round piece at column 2 after 181ms
+.......
+.......
+.......
+.......
+...R...
+..ww...
+
+SureAIv30 (Red) turn
+depth = 6
+Did 3482 evals
+SureAIv30 (Red) placed a Square piece at column 1 after 186ms
+.......
+.......
+.......
+.......
+...R...
+.Rww...
+
+ThunderV8 (White) turn
+ThunderV8 (White) placed a Round piece at column 3 after 181ms
+.......
+.......
+.......
+...w...
+...R...
+.Rww...
+
+SureAIv30 (Red) turn
+depth = 5
+Did 3199 evals
+SureAIv30 (Red) placed a Square piece at column 2 after 186ms
+.......
+.......
+.......
+...w...
+..RR...
+.Rww...
+
+ThunderV8 (White) turn
+ThunderV8 (White) placed a Round piece at column 5 after 181ms
+.......
+.......
+.......
+...w...
+..RR...
+.Rww.w.
+
+SureAIv30 (Red) turn
+depth = 6
+Did 2765 evals
+SureAIv30 (Red) placed a Square piece at column 4 after 186ms
+.......
+.......
+.......
+...w...
+..RR...
+.RwwRw.
+
+ThunderV8 (White) turn
+ThunderV8 (White) placed a Round piece at column 4 after 181ms
+.......
+.......
+.......
+...w...
+..RRw..
+.RwwRw.
+
+SureAIv30 (Red) turn
+depth = 5
+Did 2733 evals
+SureAIv30 (Red) placed a Square piece at column 4 after 186ms
+.......
+.......
+.......
+...wR..
+..RRw..
+.RwwRw.
+
+ThunderV8 (White) turn
+ThunderV8 (White) placed a Round piece at column 1 after 181ms
+.......
+.......
+.......
+...wR..
+.wRRw..
+.RwwRw.
+
+SureAIv30 (Red) turn
+depth = 6
+Did 2457 evals
+SureAIv30 (Red) placed a Square piece at column 3 after 186ms
+.......
+.......
+...R...
+...wR..
+.wRRw..
+.RwwRw.
+
+ThunderV8 (White) turn
+ThunderV8 (White) placed a Round piece at column 6 after 181ms
+.......
+.......
+...R...
+...wR..
+.wRRw..
+.RwwRww
+
+SureAIv30 (Red) turn
+depth = 5
+Did 2424 evals
+SureAIv30 (Red) placed a Square piece at column 4 after 186ms
+.......
+.......
+...RR..
+...wR..
+.wRRw..
+.RwwRww
+
+ThunderV8 (White) turn
+ThunderV8 (White) placed a Round piece at column 6 after 181ms
+.......
+.......
+...RR..
+...wR..
+.wRRw.w
+.RwwRww
+
+SureAIv30 (Red) turn
+depth = 5
+Did 2475 evals
+SureAIv30 (Red) placed a Square piece at column 5 after 186ms
+.......
+.......
+...RR..
+...wR..
+.wRRwRw
+.RwwRww
+
+ThunderV8 (White) turn
+ThunderV8 (White) placed a Square piece at column 0 after 181ms
+.......
+.......
+...RR..
+...wR..
+.wRRwRw
+WRwwRww
+
+SureAIv30 (Red) turn
+depth = 5
+Did 2534 evals
+SureAIv30 (Red) placed a Square piece at column 4 after 186ms
+.......
+....R..
+...RR..
+...wR..
+.wRRwRw
+WRwwRww
+
+ThunderV8 (White) turn
+ThunderV8 (White) placed a Round piece at column 4 after 181ms
+....w..
+....R..
+...RR..
+...wR..
+.wRRwRw
+WRwwRww
+
+SureAIv30 (Red) turn
+depth = 5
+Did 2039 evals
+SureAIv30 (Red) placed a Square piece at column 6 after 186ms
+....w..
+....R..
+...RR..
+...wR.R
+.wRRwRw
+WRwwRww
+
+ThunderV8 (White) turn
+ThunderV8 (White) placed a Round piece at column 6 after 181ms
+....w..
+....R..
+...RR.w
+...wR.R
+.wRRwRw
+WRwwRww
+
+SureAIv30 (Red) turn
+depth = 6
+Did 2415 evals
+SureAIv30 (Red) placed a Square piece at column 5 after 186ms
+....w..
+....R..
+...RR.w
+...wRRR
+.wRRwRw
+WRwwRww
+
+ThunderV8 (White) turn
+ThunderV8 (White) placed a Square piece at column 2 after 181ms
+....w..
+....R..
+...RR.w
+..WwRRR
+.wRRwRw
+WRwwRww
+
+SureAIv30 (Red) turn
+depth = 6
+Did 2619 evals
+SureAIv30 (Red) placed a Round piece at column 5 after 186ms
+....w..
+....R..
+...RRrw
+..WwRRR
+.wRRwRw
+WRwwRww
+
+ThunderV8 (White) turn
+ThunderV8 (White) placed a Square piece at column 2 after 181ms
+....w..
+....R..
+..WRRrw
+..WwRRR
+.wRRwRw
+WRwwRww
+
+Winner is ThunderV8 (White)
+Solution=(0,5)(1,4)(2,3)(3,2)

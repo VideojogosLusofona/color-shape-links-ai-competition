@@ -19,7 +19,7 @@
 ............
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 9 after 30ms
+MinimaxD2 (White) placed a Round piece at column 9 after 29ms
 ............
 ............
 ............
@@ -34,8 +34,8 @@ MinimaxD2 (White) placed a Round piece at column 9 after 30ms
 .........w..
 
 TheBenchmark (Red) turn
-Did 13165 total evals
-TheBenchmark (Red) placed a Square piece at column 9 after 252ms
+Did 11949 total evals
+TheBenchmark (Red) placed a Square piece at column 9 after 253ms
 ............
 ............
 ............
@@ -65,8 +65,8 @@ MinimaxD2 (White) placed a Round piece at column 9 after 28ms
 .........w..
 
 TheBenchmark (Red) turn
-Did 13231 total evals
-TheBenchmark (Red) placed a Square piece at column 9 after 251ms
+Did 12086 total evals
+TheBenchmark (Red) placed a Square piece at column 9 after 257ms
 ............
 ............
 ............
@@ -81,7 +81,7 @@ TheBenchmark (Red) placed a Square piece at column 9 after 251ms
 .........w..
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 9 after 29ms
+MinimaxD2 (White) placed a Round piece at column 9 after 32ms
 ............
 ............
 ............
@@ -96,8 +96,8 @@ MinimaxD2 (White) placed a Round piece at column 9 after 29ms
 .........w..
 
 TheBenchmark (Red) turn
-Did 13046 total evals
-TheBenchmark (Red) placed a Square piece at column 9 after 251ms
+Did 11983 total evals
+TheBenchmark (Red) placed a Square piece at column 9 after 253ms
 ............
 ............
 ............
@@ -112,7 +112,7 @@ TheBenchmark (Red) placed a Square piece at column 9 after 251ms
 .........w..
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 9 after 29ms
+MinimaxD2 (White) placed a Round piece at column 9 after 30ms
 ............
 ............
 ............
@@ -127,8 +127,8 @@ MinimaxD2 (White) placed a Round piece at column 9 after 29ms
 .........w..
 
 TheBenchmark (Red) turn
-Did 13032 total evals
-TheBenchmark (Red) placed a Square piece at column 9 after 252ms
+Did 11743 total evals
+TheBenchmark (Red) placed a Square piece at column 9 after 253ms
 ............
 ............
 ............
@@ -158,256 +158,287 @@ MinimaxD2 (White) placed a Round piece at column 9 after 30ms
 .........w..
 
 TheBenchmark (Red) turn
-Did 11430 total evals
+Did 11174 total evals
+TheBenchmark (Red) placed a Square piece at column 8 after 254ms
+............
+............
+............
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+.........R..
+........Rw..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 31ms
+............
+............
+.........w..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+.........R..
+........Rw..
+
+TheBenchmark (Red) turn
+Did 11356 total evals
+TheBenchmark (Red) placed a Square piece at column 2 after 252ms
+............
+............
+.........w..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+.........R..
+..R.....Rw..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 35ms
+............
+.........w..
+.........w..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+.........R..
+..R.....Rw..
+
+TheBenchmark (Red) turn
+Did 12475 total evals
+TheBenchmark (Red) placed a Square piece at column 6 after 252ms
+............
+.........w..
+.........w..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+.........R..
+..R...R.Rw..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 32ms
+.........w..
+.........w..
+.........w..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+.........R..
+..R...R.Rw..
+
+TheBenchmark (Red) turn
+Did 11637 total evals
+TheBenchmark (Red) placed a Square piece at column 6 after 251ms
+.........w..
+.........w..
+.........w..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+......R..R..
+..R...R.Rw..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 6 after 28ms
+.........w..
+.........w..
+.........w..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+.........R..
+......w..w..
+......R..R..
+..R...R.Rw..
+
+TheBenchmark (Red) turn
+Did 11506 total evals
+TheBenchmark (Red) placed a Square piece at column 6 after 252ms
+.........w..
+.........w..
+.........w..
+.........w..
+.........R..
+.........w..
+.........R..
+.........w..
+......R..R..
+......w..w..
+......R..R..
+..R...R.Rw..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 6 after 33ms
+.........w..
+.........w..
+.........w..
+.........w..
+.........R..
+.........w..
+.........R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+..R...R.Rw..
+
+TheBenchmark (Red) turn
+Did 11431 total evals
+TheBenchmark (Red) placed a Square piece at column 6 after 251ms
+.........w..
+.........w..
+.........w..
+.........w..
+.........R..
+.........w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+..R...R.Rw..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 6 after 28ms
+.........w..
+.........w..
+.........w..
+.........w..
+.........R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+..R...R.Rw..
+
+TheBenchmark (Red) turn
+Did 10925 total evals
+TheBenchmark (Red) placed a Square piece at column 6 after 252ms
+.........w..
+.........w..
+.........w..
+.........w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+..R...R.Rw..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 6 after 28ms
+.........w..
+.........w..
+.........w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+..R...R.Rw..
+
+TheBenchmark (Red) turn
+Did 10563 total evals
+TheBenchmark (Red) placed a Square piece at column 6 after 252ms
+.........w..
+.........w..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+..R...R.Rw..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 6 after 29ms
+.........w..
+......w..w..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+..R...R.Rw..
+
+TheBenchmark (Red) turn
+Did 11080 total evals
+TheBenchmark (Red) placed a Square piece at column 6 after 251ms
+......R..w..
+......w..w..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+..R...R.Rw..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 8 after 29ms
+......R..w..
+......w..w..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R.wR..
+..R...R.Rw..
+
+TheBenchmark (Red) turn
+Did 10554 total evals
 TheBenchmark (Red) placed a Square piece at column 8 after 253ms
-............
-............
-............
-.........w..
-.........R..
-.........w..
-.........R..
-.........w..
-.........R..
-.........w..
-.........R..
-........Rw..
-
-MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 9 after 31ms
-............
-............
-.........w..
-.........w..
-.........R..
-.........w..
-.........R..
-.........w..
-.........R..
-.........w..
-.........R..
-........Rw..
-
-TheBenchmark (Red) turn
-Did 11239 total evals
-TheBenchmark (Red) placed a Square piece at column 2 after 255ms
-............
-............
-.........w..
-.........w..
-.........R..
-.........w..
-.........R..
-.........w..
-.........R..
-.........w..
-.........R..
-..R.....Rw..
-
-MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 9 after 33ms
-............
-.........w..
-.........w..
-.........w..
-.........R..
-.........w..
-.........R..
-.........w..
-.........R..
-.........w..
-.........R..
-..R.....Rw..
-
-TheBenchmark (Red) turn
-Did 11451 total evals
-TheBenchmark (Red) placed a Square piece at column 6 after 253ms
-............
-.........w..
-.........w..
-.........w..
-.........R..
-.........w..
-.........R..
-.........w..
-.........R..
-.........w..
-.........R..
-..R...R.Rw..
-
-MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 9 after 31ms
-.........w..
-.........w..
-.........w..
-.........w..
-.........R..
-.........w..
-.........R..
-.........w..
-.........R..
-.........w..
-.........R..
-..R...R.Rw..
-
-TheBenchmark (Red) turn
-Did 11444 total evals
-TheBenchmark (Red) placed a Square piece at column 6 after 251ms
-.........w..
-.........w..
-.........w..
-.........w..
-.........R..
-.........w..
-.........R..
-.........w..
-.........R..
-.........w..
-......R..R..
-..R...R.Rw..
-
-MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 6 after 27ms
-.........w..
-.........w..
-.........w..
-.........w..
-.........R..
-.........w..
-.........R..
-.........w..
-.........R..
-......w..w..
-......R..R..
-..R...R.Rw..
-
-TheBenchmark (Red) turn
-Did 11311 total evals
-TheBenchmark (Red) placed a Square piece at column 6 after 252ms
-.........w..
-.........w..
-.........w..
-.........w..
-.........R..
-.........w..
-.........R..
-.........w..
-......R..R..
-......w..w..
-......R..R..
-..R...R.Rw..
-
-MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 6 after 28ms
-.........w..
-.........w..
-.........w..
-.........w..
-.........R..
-.........w..
-.........R..
-......w..w..
-......R..R..
-......w..w..
-......R..R..
-..R...R.Rw..
-
-TheBenchmark (Red) turn
-Did 11331 total evals
-TheBenchmark (Red) placed a Square piece at column 6 after 252ms
-.........w..
-.........w..
-.........w..
-.........w..
-.........R..
-.........w..
-......R..R..
-......w..w..
-......R..R..
-......w..w..
-......R..R..
-..R...R.Rw..
-
-MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 6 after 28ms
-.........w..
-.........w..
-.........w..
-.........w..
-.........R..
-......w..w..
-......R..R..
-......w..w..
-......R..R..
-......w..w..
-......R..R..
-..R...R.Rw..
-
-TheBenchmark (Red) turn
-Did 11055 total evals
-TheBenchmark (Red) placed a Square piece at column 6 after 252ms
-.........w..
-.........w..
-.........w..
-.........w..
-......R..R..
-......w..w..
-......R..R..
-......w..w..
-......R..R..
-......w..w..
-......R..R..
-..R...R.Rw..
-
-MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 6 after 28ms
-.........w..
-.........w..
-.........w..
-......w..w..
-......R..R..
-......w..w..
-......R..R..
-......w..w..
-......R..R..
-......w..w..
-......R..R..
-..R...R.Rw..
-
-TheBenchmark (Red) turn
-Did 11357 total evals
-TheBenchmark (Red) placed a Square piece at column 6 after 251ms
-.........w..
-.........w..
-......R..w..
-......w..w..
-......R..R..
-......w..w..
-......R..R..
-......w..w..
-......R..R..
-......w..w..
-......R..R..
-..R...R.Rw..
-
-MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 6 after 28ms
-.........w..
-......w..w..
-......R..w..
-......w..w..
-......R..R..
-......w..w..
-......R..R..
-......w..w..
-......R..R..
-......w..w..
-......R..R..
-..R...R.Rw..
-
-TheBenchmark (Red) turn
-Did 11299 total evals
-TheBenchmark (Red) placed a Square piece at column 6 after 252ms
 ......R..w..
 ......w..w..
 ......R..w..
@@ -417,8 +448,39 @@ TheBenchmark (Red) placed a Square piece at column 6 after 252ms
 ......R..R..
 ......w..w..
 ......R..R..
+......w.Rw..
+......R.wR..
+..R...R.Rw..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 8 after 24ms
+......R..w..
+......w..w..
+......R..w..
 ......w..w..
 ......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R.wR..
+......w.Rw..
+......R.wR..
+..R...R.Rw..
+
+TheBenchmark (Red) turn
+Did 9908 total evals
+TheBenchmark (Red) placed a Square piece at column 2 after 257ms
+......R..w..
+......w..w..
+......R..w..
+......w..w..
+......R..R..
+......w..w..
+......R..R..
+......w..w..
+......R.wR..
+......w.Rw..
+..R...R.wR..
 ..R...R.Rw..
 
 MinimaxD2 (White) turn
@@ -430,68 +492,6 @@ MinimaxD2 (White) placed a Round piece at column 8 after 28ms
 ......R..R..
 ......w..w..
 ......R..R..
-......w..w..
-......R..R..
-......w..w..
-......R.wR..
-..R...R.Rw..
-
-TheBenchmark (Red) turn
-Did 10415 total evals
-TheBenchmark (Red) placed a Square piece at column 8 after 253ms
-......R..w..
-......w..w..
-......R..w..
-......w..w..
-......R..R..
-......w..w..
-......R..R..
-......w..w..
-......R..R..
-......w.Rw..
-......R.wR..
-..R...R.Rw..
-
-MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 8 after 24ms
-......R..w..
-......w..w..
-......R..w..
-......w..w..
-......R..R..
-......w..w..
-......R..R..
-......w..w..
-......R.wR..
-......w.Rw..
-......R.wR..
-..R...R.Rw..
-
-TheBenchmark (Red) turn
-Did 10188 total evals
-TheBenchmark (Red) placed a Square piece at column 2 after 253ms
-......R..w..
-......w..w..
-......R..w..
-......w..w..
-......R..R..
-......w..w..
-......R..R..
-......w..w..
-......R.wR..
-......w.Rw..
-..R...R.wR..
-..R...R.Rw..
-
-MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 8 after 24ms
-......R..w..
-......w..w..
-......R..w..
-......w..w..
-......R..R..
-......w..w..
-......R..R..
 ......w.ww..
 ......R.wR..
 ......w.Rw..
@@ -499,8 +499,8 @@ MinimaxD2 (White) placed a Round piece at column 8 after 24ms
 ..R...R.Rw..
 
 TheBenchmark (Red) turn
-Did 10229 total evals
-TheBenchmark (Red) placed a Square piece at column 8 after 253ms
+Did 9865 total evals
+TheBenchmark (Red) placed a Square piece at column 8 after 252ms
 ......R..w..
 ......w..w..
 ......R..w..
@@ -515,7 +515,7 @@ TheBenchmark (Red) placed a Square piece at column 8 after 253ms
 ..R...R.Rw..
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 8 after 25ms
+MinimaxD2 (White) placed a Round piece at column 8 after 26ms
 ......R..w..
 ......w..w..
 ......R..w..
@@ -530,8 +530,8 @@ MinimaxD2 (White) placed a Round piece at column 8 after 25ms
 ..R...R.Rw..
 
 TheBenchmark (Red) turn
-Did 9722 total evals
-TheBenchmark (Red) placed a Square piece at column 8 after 253ms
+Did 9912 total evals
+TheBenchmark (Red) placed a Square piece at column 8 after 252ms
 ......R..w..
 ......w..w..
 ......R..w..
@@ -546,7 +546,7 @@ TheBenchmark (Red) placed a Square piece at column 8 after 253ms
 ..R...R.Rw..
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 8 after 25ms
+MinimaxD2 (White) placed a Round piece at column 8 after 26ms
 ......R..w..
 ......w..w..
 ......R..w..
@@ -561,7 +561,7 @@ MinimaxD2 (White) placed a Round piece at column 8 after 25ms
 ..R...R.Rw..
 
 TheBenchmark (Red) turn
-Did 10225 total evals
+Did 9858 total evals
 TheBenchmark (Red) placed a Square piece at column 1 after 253ms
 ......R..w..
 ......w..w..
@@ -592,8 +592,8 @@ MinimaxD2 (White) placed a Round piece at column 8 after 26ms
 .RR...R.Rw..
 
 TheBenchmark (Red) turn
-Did 9707 total evals
-TheBenchmark (Red) placed a Square piece at column 1 after 252ms
+Did 9788 total evals
+TheBenchmark (Red) placed a Square piece at column 1 after 253ms
 ......R..w..
 ......w..w..
 ......R.ww..
@@ -623,8 +623,8 @@ MinimaxD2 (White) placed a Round piece at column 8 after 26ms
 .RR...R.Rw..
 
 TheBenchmark (Red) turn
-Did 9234 total evals
-TheBenchmark (Red) placed a Square piece at column 2 after 253ms
+Did 9625 total evals
+TheBenchmark (Red) placed a Square piece at column 2 after 254ms
 ......R..w..
 ......w.ww..
 ......R.ww..
@@ -654,8 +654,8 @@ MinimaxD2 (White) placed a Round piece at column 8 after 26ms
 .RR...R.Rw..
 
 TheBenchmark (Red) turn
-Did 9996 total evals
-TheBenchmark (Red) placed a Square piece at column 1 after 252ms
+Did 9483 total evals
+TheBenchmark (Red) placed a Square piece at column 1 after 253ms
 ......R.ww..
 ......w.ww..
 ......R.ww..
@@ -670,7 +670,7 @@ TheBenchmark (Red) placed a Square piece at column 1 after 252ms
 .RR...R.Rw..
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 2 after 21ms
+MinimaxD2 (White) placed a Round piece at column 2 after 22ms
 ......R.ww..
 ......w.ww..
 ......R.ww..
@@ -685,7 +685,7 @@ MinimaxD2 (White) placed a Round piece at column 2 after 21ms
 .RR...R.Rw..
 
 TheBenchmark (Red) turn
-Did 9793 total evals
+Did 9825 total evals
 TheBenchmark (Red) placed a Square piece at column 2 after 252ms
 ......R.ww..
 ......w.ww..
@@ -716,8 +716,8 @@ MinimaxD2 (White) placed a Round piece at column 2 after 22ms
 .RR...R.Rw..
 
 TheBenchmark (Red) turn
-Did 10162 total evals
-TheBenchmark (Red) placed a Square piece at column 2 after 253ms
+Did 9352 total evals
+TheBenchmark (Red) placed a Square piece at column 2 after 254ms
 ......R.ww..
 ......w.ww..
 ......R.ww..
@@ -747,8 +747,8 @@ MinimaxD2 (White) placed a Round piece at column 2 after 22ms
 .RR...R.Rw..
 
 TheBenchmark (Red) turn
-Did 9740 total evals
-TheBenchmark (Red) placed a Square piece at column 3 after 253ms
+Did 9380 total evals
+TheBenchmark (Red) placed a Square piece at column 3 after 252ms
 ......R.ww..
 ......w.ww..
 ......R.ww..
@@ -763,7 +763,7 @@ TheBenchmark (Red) placed a Square piece at column 3 after 253ms
 .RRR..R.Rw..
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 2 after 22ms
+MinimaxD2 (White) placed a Round piece at column 2 after 23ms
 ......R.ww..
 ......w.ww..
 ......R.ww..
@@ -778,8 +778,8 @@ MinimaxD2 (White) placed a Round piece at column 2 after 22ms
 .RRR..R.Rw..
 
 TheBenchmark (Red) turn
-Did 8656 total evals
-TheBenchmark (Red) placed a Square piece at column 3 after 253ms
+Did 9206 total evals
+TheBenchmark (Red) placed a Square piece at column 3 after 252ms
 ......R.ww..
 ......w.ww..
 ......R.ww..
@@ -809,8 +809,8 @@ MinimaxD2 (White) placed a Round piece at column 2 after 23ms
 .RRR..R.Rw..
 
 TheBenchmark (Red) turn
-Did 8934 total evals
-TheBenchmark (Red) placed a Square piece at column 3 after 253ms
+Did 9148 total evals
+TheBenchmark (Red) placed a Square piece at column 3 after 252ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -840,7 +840,7 @@ MinimaxD2 (White) placed a Round piece at column 3 after 23ms
 .RRR..R.Rw..
 
 TheBenchmark (Red) turn
-Did 8621 total evals
+Did 8801 total evals
 TheBenchmark (Red) placed a Square piece at column 1 after 253ms
 ......R.ww..
 ......w.ww..
@@ -856,7 +856,7 @@ TheBenchmark (Red) placed a Square piece at column 1 after 253ms
 .RRR..R.Rw..
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 3 after 23ms
+MinimaxD2 (White) placed a Round piece at column 3 after 24ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -871,8 +871,8 @@ MinimaxD2 (White) placed a Round piece at column 3 after 23ms
 .RRR..R.Rw..
 
 TheBenchmark (Red) turn
-Did 8722 total evals
-TheBenchmark (Red) placed a Square piece at column 3 after 253ms
+Did 8561 total evals
+TheBenchmark (Red) placed a Square piece at column 3 after 252ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -902,8 +902,8 @@ MinimaxD2 (White) placed a Round piece at column 3 after 24ms
 .RRR..R.Rw..
 
 TheBenchmark (Red) turn
-Did 8796 total evals
-TheBenchmark (Red) placed a Square piece at column 3 after 252ms
+Did 8815 total evals
+TheBenchmark (Red) placed a Square piece at column 3 after 253ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -933,8 +933,8 @@ MinimaxD2 (White) placed a Round piece at column 3 after 24ms
 .RRR..R.Rw..
 
 TheBenchmark (Red) turn
-Did 8567 total evals
-TheBenchmark (Red) placed a Square piece at column 5 after 252ms
+Did 8081 total evals
+TheBenchmark (Red) placed a Square piece at column 5 after 254ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -949,7 +949,7 @@ TheBenchmark (Red) placed a Square piece at column 5 after 252ms
 .RRR.RR.Rw..
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 4 after 22ms
+MinimaxD2 (White) placed a Round piece at column 4 after 23ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -964,8 +964,8 @@ MinimaxD2 (White) placed a Round piece at column 4 after 22ms
 .RRRwRR.Rw..
 
 TheBenchmark (Red) turn
-Did 8547 total evals
-TheBenchmark (Red) placed a Square piece at column 4 after 252ms
+Did 8217 total evals
+TheBenchmark (Red) placed a Square piece at column 4 after 253ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -980,7 +980,7 @@ TheBenchmark (Red) placed a Square piece at column 4 after 252ms
 .RRRwRR.Rw..
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 5 after 22ms
+MinimaxD2 (White) placed a Round piece at column 5 after 23ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -995,8 +995,8 @@ MinimaxD2 (White) placed a Round piece at column 5 after 22ms
 .RRRwRR.Rw..
 
 TheBenchmark (Red) turn
-Did 9093 total evals
-TheBenchmark (Red) placed a Square piece at column 5 after 252ms
+Did 7948 total evals
+TheBenchmark (Red) placed a Square piece at column 5 after 253ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -1011,7 +1011,7 @@ TheBenchmark (Red) placed a Square piece at column 5 after 252ms
 .RRRwRR.Rw..
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 5 after 25ms
+MinimaxD2 (White) placed a Round piece at column 5 after 26ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -1026,7 +1026,7 @@ MinimaxD2 (White) placed a Round piece at column 5 after 25ms
 .RRRwRR.Rw..
 
 TheBenchmark (Red) turn
-Did 8834 total evals
+Did 9120 total evals
 TheBenchmark (Red) placed a Square piece at column 5 after 253ms
 ......R.ww..
 ......w.ww..
@@ -1042,7 +1042,7 @@ TheBenchmark (Red) placed a Square piece at column 5 after 253ms
 .RRRwRR.Rw..
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 5 after 25ms
+MinimaxD2 (White) placed a Round piece at column 5 after 26ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -1057,8 +1057,8 @@ MinimaxD2 (White) placed a Round piece at column 5 after 25ms
 .RRRwRR.Rw..
 
 TheBenchmark (Red) turn
-Did 8312 total evals
-TheBenchmark (Red) placed a Square piece at column 5 after 253ms
+Did 8068 total evals
+TheBenchmark (Red) placed a Square piece at column 5 after 256ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -1073,7 +1073,7 @@ TheBenchmark (Red) placed a Square piece at column 5 after 253ms
 .RRRwRR.Rw..
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Round piece at column 5 after 25ms
+MinimaxD2 (White) placed a Round piece at column 5 after 27ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -1088,7 +1088,7 @@ MinimaxD2 (White) placed a Round piece at column 5 after 25ms
 .RRRwRR.Rw..
 
 TheBenchmark (Red) turn
-Did 8754 total evals
+Did 8905 total evals
 TheBenchmark (Red) placed a Square piece at column 1 after 252ms
 ......R.ww..
 ......w.ww..
@@ -1104,7 +1104,7 @@ TheBenchmark (Red) placed a Square piece at column 1 after 252ms
 .RRRwRR.Rw..
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Square piece at column 11 after 11ms
+MinimaxD2 (White) placed a Square piece at column 11 after 12ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -1119,8 +1119,8 @@ MinimaxD2 (White) placed a Square piece at column 11 after 11ms
 .RRRwRR.Rw.W
 
 TheBenchmark (Red) turn
-Did 2196 total evals
-TheBenchmark (Red) placed a Round piece at column 0 after 253ms
+Did 2419 total evals
+TheBenchmark (Red) placed a Round piece at column 0 after 252ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -1135,7 +1135,7 @@ TheBenchmark (Red) placed a Round piece at column 0 after 253ms
 rRRRwRR.Rw.W
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Square piece at column 11 after 16ms
+MinimaxD2 (White) placed a Square piece at column 11 after 11ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -1150,8 +1150,8 @@ MinimaxD2 (White) placed a Square piece at column 11 after 16ms
 rRRRwRR.Rw.W
 
 TheBenchmark (Red) turn
-Did 2103 total evals
-TheBenchmark (Red) placed a Round piece at column 0 after 252ms
+Did 2153 total evals
+TheBenchmark (Red) placed a Round piece at column 0 after 253ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -1166,7 +1166,7 @@ rRRRRwR.wR.W
 rRRRwRR.Rw.W
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Square piece at column 11 after 11ms
+MinimaxD2 (White) placed a Square piece at column 11 after 12ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -1181,8 +1181,8 @@ rRRRRwR.wR.W
 rRRRwRR.Rw.W
 
 TheBenchmark (Red) turn
-Did 1759 total evals
-TheBenchmark (Red) placed a Round piece at column 0 after 252ms
+Did 1580 total evals
+TheBenchmark (Red) placed a Round piece at column 0 after 251ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -1197,7 +1197,7 @@ rRRRRwR.wR.W
 rRRRwRR.Rw.W
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Square piece at column 11 after 11ms
+MinimaxD2 (White) placed a Square piece at column 11 after 12ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -1212,7 +1212,7 @@ rRRRRwR.wR.W
 rRRRwRR.Rw.W
 
 TheBenchmark (Red) turn
-Did 1442 total evals
+Did 1133 total evals
 TheBenchmark (Red) placed a Round piece at column 0 after 252ms
 ......R.ww..
 ......w.ww..
@@ -1228,7 +1228,7 @@ rRRRRwR.wR.W
 rRRRwRR.Rw.W
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Square piece at column 11 after 11ms
+MinimaxD2 (White) placed a Square piece at column 11 after 16ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..
@@ -1243,7 +1243,7 @@ rRRRRwR.wR.W
 rRRRwRR.Rw.W
 
 TheBenchmark (Red) turn
-Did 2492 total evals
+Did 2439 total evals
 TheBenchmark (Red) placed a Round piece at column 0 after 253ms
 ......R.ww..
 ......w.ww..
@@ -1259,7 +1259,7 @@ rRRRRwR.wR.W
 rRRRwRR.Rw.W
 
 MinimaxD2 (White) turn
-MinimaxD2 (White) placed a Square piece at column 11 after 18ms
+MinimaxD2 (White) placed a Square piece at column 11 after 10ms
 ......R.ww..
 ......w.ww..
 ..w...R.ww..

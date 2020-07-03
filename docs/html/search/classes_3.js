@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gameoptions_215',['GameOptions',['../class_color_shape_links_1_1_text_based_1_1_app_1_1_game_options.html',1,'ColorShapeLinks::TextBased::App']]]
+  ['futuremove_222',['FutureMove',['../struct_color_shape_links_1_1_common_1_1_a_i_1_1_future_move.html',1,'ColorShapeLinks::Common::AI']]]
 ];

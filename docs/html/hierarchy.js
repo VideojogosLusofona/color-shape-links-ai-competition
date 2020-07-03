@@ -48,7 +48,9 @@ var hierarchy =
     ] ],
     [ "ISessionListener", "interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_session_listener.html", [
       [ "MarkdownSessionListener", "class_color_shape_links_1_1_text_based_1_1_app_1_1_markdown_session_listener.html", null ],
-      [ "SimpleRenderingListener", "class_color_shape_links_1_1_text_based_1_1_app_1_1_simple_rendering_listener.html", null ]
+      [ "SimpleRenderingListener", "class_color_shape_links_1_1_text_based_1_1_app_1_1_simple_rendering_listener.html", null ],
+      [ "CompSessionListener", "class_color_shape_links_1_1_text_based_1_1_lib_1_1_comp_session_listener.html", null ],
+      [ "RankingSessionListener", "class_color_shape_links_1_1_text_based_1_1_lib_1_1_ranking_session_listener.html", null ]
     ] ],
     [ "ISessionSubject", "interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_session_subject.html", [
       [ "SessionController", "class_color_shape_links_1_1_text_based_1_1_lib_1_1_session_controller.html", null ]
@@ -58,6 +60,7 @@ var hierarchy =
         [ "BadMoveAIThinker", "class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_bad_move_a_i_thinker.html", null ],
         [ "MinimaxAIThinker", "class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_minimax_a_i_thinker.html", null ],
         [ "RandomAIThinker", "class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_random_a_i_thinker.html", null ],
+        [ "RandomMemoryHoarderThinker", "class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_random_memory_hoarder_thinker.html", null ],
         [ "SequentialAIThinker", "class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_sequential_a_i_thinker.html", null ],
         [ "HumanThinker", "class_color_shape_links_1_1_text_based_1_1_app_1_1_human_thinker.html", null ]
       ] ],
@@ -94,6 +97,6 @@ var hierarchy =
     [ "UnityEvent", null, [
       [ "HumanMoveButton.IntEvent", "class_color_shape_links_1_1_unity_app_1_1_human_move_button_1_1_int_event.html", null ]
     ] ],
-    [ "WinnerExtensions", "class_color_shape_links_1_1_text_based_1_1_lib_1_1_winner_extensions.html", null ],
-    [ "WinnerExtensions", "class_color_shape_links_1_1_common_1_1_winner_extensions.html", null ]
+    [ "WinnerExtensions", "class_color_shape_links_1_1_common_1_1_winner_extensions.html", null ],
+    [ "WinnerExtensions", "class_color_shape_links_1_1_text_based_1_1_lib_1_1_winner_extensions.html", null ]
 ];

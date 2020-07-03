@@ -108,13 +108,14 @@ $(document).ready(function(){initNavTree('class_color_shape_links_1_1_common_1_1
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker__inherit__graph.png" border="0" usemap="#_abstract_thinker_inherit__map" alt="Inheritance graph"/></div>
 <map name="_abstract_thinker_inherit__map" id="_abstract_thinker_inherit__map">
-<area shape="rect" title="The actual AI code of specific AIs should be placed in classes which extend this class." alt="" coords="315,131,453,325"/>
+<area shape="rect" title="The actual AI code of specific AIs should be placed in classes which extend this class." alt="" coords="409,131,548,325"/>
 <area shape="rect" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_bad_move_a_i_thinker.html" title="This thinker always tries to make an invalid or illogical move. Used for testing purposes only." alt="" coords="5,381,139,473"/>
 <area shape="rect" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_minimax_a_i_thinker.html" title="Sample AI thinker using a basic Minimax algorithm with a naive heuristic which previledges center boa..." alt="" coords="163,373,296,480"/>
 <area shape="rect" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_random_a_i_thinker.html" title="Implementation of an AI that will play randomly." alt="" coords="321,381,447,473"/>
-<area shape="rect" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_sequential_a_i_thinker.html" title="Implementation of an AI that will always play in sequence, from the first to the last column...." alt="" coords="472,388,611,465"/>
-<area shape="rect" href="class_color_shape_links_1_1_text_based_1_1_app_1_1_human_thinker.html" title="A human thinker for testing the console app." alt="" coords="635,381,741,473"/>
-<area shape="rect" href="interface_color_shape_links_1_1_common_1_1_a_i_1_1_i_thinker.html" title="The actual AI code of specific thinkers should be placed in classes which implement this interface." alt="" coords="347,5,421,83"/>
+<area shape="rect" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_random_memory_hoarder_thinker.html" title="This thinker plays randomly and hoards memory for testing purposes." alt="" coords="471,381,678,473"/>
+<area shape="rect" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_sequential_a_i_thinker.html" title="Implementation of an AI that will always play in sequence, from the first to the last column...." alt="" coords="703,388,841,465"/>
+<area shape="rect" href="class_color_shape_links_1_1_text_based_1_1_app_1_1_human_thinker.html" title="A human thinker for testing the console app." alt="" coords="865,381,972,473"/>
+<area shape="rect" href="interface_color_shape_links_1_1_common_1_1_a_i_1_1_i_thinker.html" title="The actual AI code of specific thinkers should be placed in classes which implement this interface." alt="" coords="441,5,516,83"/>
 </map>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -248,7 +249,7 @@ Events</h2></td></tr>
 </dl>
 <p>By default, this method does nothing and its implementation by the concrete thinkers is entirely optional. </p>
 
-<p>Reimplemented in <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_bad_move_a_i_thinker.html#a945d9abe0a82454045fad4bbe5edcdf2">BadMoveAIThinker</a>, <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_minimax_a_i_thinker.html#a945d9abe0a82454045fad4bbe5edcdf2">MinimaxAIThinker</a>, <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_random_a_i_thinker.html#a945d9abe0a82454045fad4bbe5edcdf2">RandomAIThinker</a>, and <a class="el" href="class_color_shape_links_1_1_text_based_1_1_app_1_1_human_thinker.html#a945d9abe0a82454045fad4bbe5edcdf2">HumanThinker</a>.</p>
+<p>Reimplemented in <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_bad_move_a_i_thinker.html#a945d9abe0a82454045fad4bbe5edcdf2">BadMoveAIThinker</a>, <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_minimax_a_i_thinker.html#a945d9abe0a82454045fad4bbe5edcdf2">MinimaxAIThinker</a>, <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_random_memory_hoarder_thinker.html#a945d9abe0a82454045fad4bbe5edcdf2">RandomMemoryHoarderThinker</a>, <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_random_a_i_thinker.html#a945d9abe0a82454045fad4bbe5edcdf2">RandomAIThinker</a>, and <a class="el" href="class_color_shape_links_1_1_text_based_1_1_app_1_1_human_thinker.html#a945d9abe0a82454045fad4bbe5edcdf2">HumanThinker</a>.</p>
 
 </div>
 </div>
@@ -301,7 +302,7 @@ Events</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_color_shape_links_1_1_common_1_1_a_i_1_1_i_thinker.html#ab278da43bed0efa81d8102d179cb50e6">IThinker</a>.</p>
 
-<p>Implemented in <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_bad_move_a_i_thinker.html#a774d8abf1902a05e5836cb4ccfad32af">BadMoveAIThinker</a>, <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_minimax_a_i_thinker.html#a774d8abf1902a05e5836cb4ccfad32af">MinimaxAIThinker</a>, <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_random_a_i_thinker.html#a774d8abf1902a05e5836cb4ccfad32af">RandomAIThinker</a>, <a class="el" href="class_color_shape_links_1_1_text_based_1_1_app_1_1_human_thinker.html#a774d8abf1902a05e5836cb4ccfad32af">HumanThinker</a>, and <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_sequential_a_i_thinker.html#a774d8abf1902a05e5836cb4ccfad32af">SequentialAIThinker</a>.</p>
+<p>Implemented in <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_bad_move_a_i_thinker.html#a774d8abf1902a05e5836cb4ccfad32af">BadMoveAIThinker</a>, <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_minimax_a_i_thinker.html#a774d8abf1902a05e5836cb4ccfad32af">MinimaxAIThinker</a>, <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_random_memory_hoarder_thinker.html#a774d8abf1902a05e5836cb4ccfad32af">RandomMemoryHoarderThinker</a>, <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_random_a_i_thinker.html#a774d8abf1902a05e5836cb4ccfad32af">RandomAIThinker</a>, <a class="el" href="class_color_shape_links_1_1_text_based_1_1_app_1_1_human_thinker.html#a774d8abf1902a05e5836cb4ccfad32af">HumanThinker</a>, and <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_sequential_a_i_thinker.html#a774d8abf1902a05e5836cb4ccfad32af">SequentialAIThinker</a>.</p>
 
 </div>
 </div>
@@ -516,7 +517,7 @@ Events</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_color_shape_links.html">ColorShapeLinks</a></li><li class="navelem"><a class="el" href="namespace_color_shape_links_1_1_common.html">Common</a></li><li class="navelem"><a class="el" href="namespace_color_shape_links_1_1_common_1_1_a_i.html">AI</a></li><li class="navelem"><a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html">AbstractThinker</a></li>
-    <li class="footer">Generated on Mon Apr 13 2020 23:29:09 for ColorShapeLinks AI by
+    <li class="footer">Generated on Tue Mar 23 2021 00:34:19 for ColorShapeLinks AI by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
   </ul>

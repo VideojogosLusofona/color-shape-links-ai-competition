@@ -22,7 +22,7 @@ Sequential (White) placed a Round piece at column 0 after 0ms
 w......
 
 TheBenchmark (Red) turn
-Did 3815 total evals
+Did 3868 total evals
 TheBenchmark (Red) placed a Square piece at column 0 after 153ms
 .......
 .......
@@ -41,7 +41,7 @@ R......
 ww.....
 
 TheBenchmark (Red) turn
-Did 3696 total evals
+Did 3775 total evals
 TheBenchmark (Red) placed a Square piece at column 1 after 153ms
 .......
 .......
@@ -60,7 +60,7 @@ RR.....
 www....
 
 TheBenchmark (Red) turn
-Did 3608 total evals
+Did 3540 total evals
 TheBenchmark (Red) placed a Square piece at column 3 after 151ms
 .......
 .......
@@ -79,8 +79,8 @@ RR.w...
 wwwR...
 
 TheBenchmark (Red) turn
-Did 3640 total evals
-TheBenchmark (Red) placed a Square piece at column 3 after 154ms
+Did 3552 total evals
+TheBenchmark (Red) placed a Square piece at column 3 after 153ms
 .......
 .......
 .......
@@ -98,7 +98,7 @@ RR.w...
 wwwRw..
 
 TheBenchmark (Red) turn
-Did 3623 total evals
+Did 3483 total evals
 TheBenchmark (Red) placed a Square piece at column 4 after 154ms
 .......
 .......
@@ -117,7 +117,7 @@ RR.wR..
 wwwRww.
 
 TheBenchmark (Red) turn
-Did 3277 total evals
+Did 3526 total evals
 TheBenchmark (Red) placed a Square piece at column 4 after 154ms
 .......
 .......
@@ -136,7 +136,7 @@ RR.wR..
 wwwRwww
 
 TheBenchmark (Red) turn
-Did 3308 total evals
+Did 3200 total evals
 TheBenchmark (Red) placed a Square piece at column 1 after 154ms
 .......
 .......
@@ -155,7 +155,7 @@ RR.wR..
 wwwRwww
 
 TheBenchmark (Red) turn
-Did 2700 total evals
+Did 2542 total evals
 TheBenchmark (Red) placed a Round piece at column 0 after 153ms
 .......
 .......
@@ -174,7 +174,7 @@ RR.wR..
 wwwRwww
 
 TheBenchmark (Red) turn
-Did 2806 total evals
+Did 2586 total evals
 TheBenchmark (Red) placed a Square piece at column 0 after 153ms
 .......
 R......
@@ -193,7 +193,7 @@ RRwwR..
 wwwRwww
 
 TheBenchmark (Red) turn
-Did 3292 total evals
+Did 3087 total evals
 TheBenchmark (Red) placed a Round piece at column 0 after 152ms
 r......
 R......
@@ -212,8 +212,8 @@ RRwwR..
 wwwRwww
 
 TheBenchmark (Red) turn
-Did 3304 total evals
-TheBenchmark (Red) placed a Round piece at column 1 after 151ms
+Did 3113 total evals
+TheBenchmark (Red) placed a Round piece at column 1 after 153ms
 r......
 Rr.....
 rw.W...
@@ -231,8 +231,8 @@ RRwwR..
 wwwRwww
 
 TheBenchmark (Red) turn
-Did 3220 total evals
-TheBenchmark (Red) placed a Round piece at column 1 after 151ms
+Did 2881 total evals
+TheBenchmark (Red) placed a Round piece at column 1 after 152ms
 rr.....
 Rr.....
 rw.WW..
@@ -250,7 +250,7 @@ RRwwRW.
 wwwRwww
 
 TheBenchmark (Red) turn
-Did 3176 total evals
+Did 2994 total evals
 TheBenchmark (Red) placed a Square piece at column 2 after 151ms
 rr.....
 Rr.....

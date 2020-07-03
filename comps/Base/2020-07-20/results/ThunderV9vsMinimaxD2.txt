@@ -1,0 +1,277 @@
+=> ThunderV9 (White) vs MinimaxD2 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+ThunderV9 (White) turn
+ThunderV9 (White) placed a Round piece at column 3 after 181ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 3 after 4ms
+.......
+.......
+.......
+.......
+...R...
+...w...
+
+ThunderV9 (White) turn
+ThunderV9 (White) placed a Round piece at column 3 after 181ms
+.......
+.......
+.......
+...w...
+...R...
+...w...
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 3 after 6ms
+.......
+.......
+...R...
+...w...
+...R...
+...w...
+
+ThunderV9 (White) turn
+ThunderV9 (White) placed a Round piece at column 6 after 181ms
+.......
+.......
+...R...
+...w...
+...R...
+...w..w
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 3 after 3ms
+.......
+...R...
+...R...
+...w...
+...R...
+...w..w
+
+ThunderV9 (White) turn
+ThunderV9 (White) placed a Round piece at column 6 after 181ms
+.......
+...R...
+...R...
+...w...
+...R..w
+...w..w
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 3 after 6ms
+...R...
+...R...
+...R...
+...w...
+...R..w
+...w..w
+
+ThunderV9 (White) turn
+ThunderV9 (White) placed a Round piece at column 0 after 181ms
+...R...
+...R...
+...R...
+...w...
+...R..w
+w..w..w
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 6 after 5ms
+...R...
+...R...
+...R...
+...w..R
+...R..w
+w..w..w
+
+ThunderV9 (White) turn
+ThunderV9 (White) placed a Round piece at column 0 after 181ms
+...R...
+...R...
+...R...
+...w..R
+w..R..w
+w..w..w
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 6 after 3ms
+...R...
+...R...
+...R..R
+...w..R
+w..R..w
+w..w..w
+
+ThunderV9 (White) turn
+ThunderV9 (White) placed a Round piece at column 0 after 181ms
+...R...
+...R...
+...R..R
+w..w..R
+w..R..w
+w..w..w
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 0 after 3ms
+...R...
+...R...
+R..R..R
+w..w..R
+w..R..w
+w..w..w
+
+ThunderV9 (White) turn
+ThunderV9 (White) placed a Round piece at column 6 after 181ms
+...R...
+...R..w
+R..R..R
+w..w..R
+w..R..w
+w..w..w
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 0 after 5ms
+...R...
+R..R..w
+R..R..R
+w..w..R
+w..R..w
+w..w..w
+
+ThunderV9 (White) turn
+ThunderV9 (White) placed a Square piece at column 1 after 183ms
+...R...
+R..R..w
+R..R..R
+w..w..R
+w..R..w
+wW.w..w
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 2 after 4ms
+...R...
+R..R..w
+R..R..R
+w..w..R
+w..R..w
+wWRw..w
+
+ThunderV9 (White) turn
+ThunderV9 (White) placed a Round piece at column 5 after 182ms
+...R...
+R..R..w
+R..R..R
+w..w..R
+w..R..w
+wWRw.ww
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 4 after 3ms
+...R...
+R..R..w
+R..R..R
+w..w..R
+w..R..w
+wWRwRww
+
+ThunderV9 (White) turn
+ThunderV9 (White) placed a Square piece at column 0 after 181ms
+W..R...
+R..R..w
+R..R..R
+w..w..R
+w..R..w
+wWRwRww
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 5 after 3ms
+W..R...
+R..R..w
+R..R..R
+w..w..R
+w..R.Rw
+wWRwRww
+
+ThunderV9 (White) turn
+ThunderV9 (White) placed a Square piece at column 2 after 183ms
+W..R...
+R..R..w
+R..R..R
+w..w..R
+w.WR.Rw
+wWRwRww
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Round piece at column 4 after 4ms
+W..R...
+R..R..w
+R..R..R
+w..w..R
+w.WRrRw
+wWRwRww
+
+ThunderV9 (White) turn
+ThunderV9 (White) placed a Round piece at column 2 after 181ms
+W..R...
+R..R..w
+R..R..R
+w.ww..R
+w.WRrRw
+wWRwRww
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Round piece at column 6 after 0ms
+W..R..r
+R..R..w
+R..R..R
+w.ww..R
+w.WRrRw
+wWRwRww
+
+ThunderV9 (White) turn
+ThunderV9 (White) placed a Square piece at column 1 after 184ms
+W..R..r
+R..R..w
+R..R..R
+w.ww..R
+wWWRrRw
+wWRwRww
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Round piece at column 5 after 0ms
+W..R..r
+R..R..w
+R..R..R
+w.ww.rR
+wWWRrRw
+wWRwRww
+
+ThunderV9 (White) turn
+ThunderV9 (White) placed a Square piece at column 1 after 181ms
+W..R..r
+R..R..w
+R..R..R
+wWww.rR
+wWWRrRw
+wWRwRww
+
+Winner is ThunderV9 (White)
+Solution=(2,0)(2,1)(2,2)(2,3)
