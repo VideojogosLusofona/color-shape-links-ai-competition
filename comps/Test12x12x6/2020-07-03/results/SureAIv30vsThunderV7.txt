@@ -20,7 +20,7 @@
 
 SureAIv30 (White) turn
 depth = 4
-Did 1874 evals
+Did 1838 evals
 SureAIv30 (White) placed a Round piece at column 5 after 286ms
 ............
 ............
@@ -36,7 +36,7 @@ SureAIv30 (White) placed a Round piece at column 5 after 286ms
 .....w......
 
 ThunderV7 (Red) turn
-Thunder3008
+Thunder3044
 ThunderV7 (Red) placed a Round piece at column 11 after 271ms
 ............
 ............
@@ -53,7 +53,7 @@ ThunderV7 (Red) placed a Round piece at column 11 after 271ms
 
 SureAIv30 (White) turn
 depth = 4
-Did 1781 evals
+Did 1771 evals
 SureAIv30 (White) placed a Round piece at column 8 after 286ms
 ............
 ............
@@ -69,7 +69,7 @@ SureAIv30 (White) placed a Round piece at column 8 after 286ms
 .....w..w..r
 
 ThunderV7 (Red) turn
-Thunder3082
+Thunder3008
 ThunderV7 (Red) placed a Round piece at column 0 after 271ms
 ............
 ............
@@ -86,7 +86,7 @@ r....w..w..r
 
 SureAIv30 (White) turn
 depth = 4
-Did 1886 evals
+Did 1859 evals
 SureAIv30 (White) placed a Round piece at column 9 after 286ms
 ............
 ............
@@ -102,7 +102,7 @@ SureAIv30 (White) placed a Round piece at column 9 after 286ms
 r....w..ww.r
 
 ThunderV7 (Red) turn
-Thunder3088
+Thunder3082
 ThunderV7 (Red) placed a Round piece at column 0 after 271ms
 ............
 ............
@@ -119,7 +119,7 @@ r....w..ww.r
 
 SureAIv30 (White) turn
 depth = 4
-Did 1668 evals
+Did 1590 evals
 SureAIv30 (White) placed a Round piece at column 7 after 286ms
 ............
 ............
@@ -135,7 +135,7 @@ r...........
 r....w.www.r
 
 ThunderV7 (Red) turn
-Thunder3017
+Thunder3088
 ThunderV7 (Red) placed a Square piece at column 6 after 271ms
 ............
 ............
@@ -152,7 +152,7 @@ r....wRwww.r
 
 SureAIv30 (White) turn
 depth = 4
-Did 1655 evals
+Did 1654 evals
 SureAIv30 (White) placed a Round piece at column 6 after 286ms
 ............
 ............
@@ -168,7 +168,7 @@ r.....w.....
 r....wRwww.r
 
 ThunderV7 (Red) turn
-Thunder3038
+Thunder3017
 ThunderV7 (Red) placed a Round piece at column 11 after 271ms
 ............
 ............
@@ -185,7 +185,7 @@ r....wRwww.r
 
 SureAIv30 (White) turn
 depth = 4
-Did 1444 evals
+Did 1435 evals
 SureAIv30 (White) placed a Round piece at column 10 after 286ms
 ............
 ............
@@ -201,7 +201,7 @@ r.....w....r
 r....wRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3058
+Thunder3038
 ThunderV7 (Red) placed a Round piece at column 11 after 271ms
 ............
 ............
@@ -218,7 +218,7 @@ r....wRwwwwr
 
 SureAIv30 (White) turn
 depth = 4
-Did 1418 evals
+Did 1417 evals
 SureAIv30 (White) placed a Round piece at column 7 after 286ms
 ............
 ............
@@ -234,7 +234,7 @@ r.....ww...r
 r....wRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3083
+Thunder3058
 ThunderV7 (Red) placed a Square piece at column 5 after 271ms
 ............
 ............
@@ -251,7 +251,7 @@ r....wRwwwwr
 
 SureAIv30 (White) turn
 depth = 4
-Did 1523 evals
+Did 1517 evals
 SureAIv30 (White) placed a Round piece at column 7 after 286ms
 ............
 ............
@@ -267,7 +267,7 @@ r....Rww...r
 r....wRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3015
+Thunder3083
 ThunderV7 (Red) placed a Round piece at column 0 after 271ms
 ............
 ............
@@ -300,6 +300,39 @@ r....Rww...r
 r....wRwwwwr
 
 ThunderV7 (Red) turn
+Thunder3015
+ThunderV7 (Red) placed a Square piece at column 5 after 271ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+r....Rww...r
+r....Rww...r
+r....wRwwwwr
+
+SureAIv30 (White) turn
+depth = 4
+Did 1246 evals
+SureAIv30 (White) placed a Round piece at column 8 after 286ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+r....Rww...r
+r....Rwww..r
+r....wRwwwwr
+
+ThunderV7 (Red) turn
 Thunder3005
 ThunderV7 (Red) placed a Square piece at column 5 after 271ms
 ............
@@ -310,14 +343,14 @@ ThunderV7 (Red) placed a Square piece at column 5 after 271ms
 ............
 ............
 ............
-............
+.....R......
 r....Rww...r
-r....Rww...r
+r....Rwww..r
 r....wRwwwwr
 
 SureAIv30 (White) turn
 depth = 4
-Did 1248 evals
+Did 1264 evals
 SureAIv30 (White) placed a Round piece at column 8 after 286ms
 ............
 ............
@@ -327,46 +360,13 @@ SureAIv30 (White) placed a Round piece at column 8 after 286ms
 ............
 ............
 ............
-............
-r....Rww...r
+.....R......
+r....Rwww..r
 r....Rwww..r
 r....wRwwwwr
 
 ThunderV7 (Red) turn
 Thunder3072
-ThunderV7 (Red) placed a Square piece at column 5 after 271ms
-............
-............
-............
-............
-............
-............
-............
-............
-.....R......
-r....Rww...r
-r....Rwww..r
-r....wRwwwwr
-
-SureAIv30 (White) turn
-depth = 4
-Did 1267 evals
-SureAIv30 (White) placed a Round piece at column 8 after 286ms
-............
-............
-............
-............
-............
-............
-............
-............
-.....R......
-r....Rwww..r
-r....Rwww..r
-r....wRwwwwr
-
-ThunderV7 (Red) turn
-Thunder3020
 ThunderV7 (Red) placed a Square piece at column 8 after 271ms
 ............
 ............
@@ -399,7 +399,7 @@ r....Rwww..r
 r....wRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3065
+Thunder3020
 ThunderV7 (Red) placed a Square piece at column 5 after 271ms
 ............
 ............
@@ -416,7 +416,7 @@ r....wRwwwwr
 
 SureAIv30 (White) turn
 depth = 4
-Did 1243 evals
+Did 1231 evals
 SureAIv30 (White) placed a Round piece at column 9 after 286ms
 ............
 ............
@@ -429,6 +429,39 @@ SureAIv30 (White) placed a Round piece at column 9 after 286ms
 .....Rw.R...
 r....Rwww..r
 r....Rwwww.r
+r....wRwwwwr
+
+ThunderV7 (Red) turn
+Thunder3065
+ThunderV7 (Red) placed a Square piece at column 10 after 271ms
+............
+............
+............
+............
+............
+............
+............
+.....R......
+.....Rw.R...
+r....Rwww..r
+r....RwwwwRr
+r....wRwwwwr
+
+SureAIv30 (White) turn
+depth = 4
+Did 1023 evals
+SureAIv30 (White) placed a Round piece at column 9 after 286ms
+............
+............
+............
+............
+............
+............
+............
+.....R......
+.....Rw.R...
+r....Rwwww.r
+r....RwwwwRr
 r....wRwwwwr
 
 ThunderV7 (Red) turn
@@ -443,46 +476,13 @@ ThunderV7 (Red) placed a Square piece at column 10 after 271ms
 ............
 .....R......
 .....Rw.R...
-r....Rwww..r
-r....RwwwwRr
-r....wRwwwwr
-
-SureAIv30 (White) turn
-depth = 4
-Did 1022 evals
-SureAIv30 (White) placed a Round piece at column 9 after 286ms
-............
-............
-............
-............
-............
-............
-............
-.....R......
-.....Rw.R...
-r....Rwwww.r
-r....RwwwwRr
-r....wRwwwwr
-
-ThunderV7 (Red) turn
-Thunder3001
-ThunderV7 (Red) placed a Square piece at column 10 after 271ms
-............
-............
-............
-............
-............
-............
-............
-.....R......
-.....Rw.R...
 r....RwwwwRr
 r....RwwwwRr
 r....wRwwwwr
 
 SureAIv30 (White) turn
 depth = 4
-Did 1040 evals
+Did 1038 evals
 SureAIv30 (White) placed a Round piece at column 7 after 286ms
 ............
 ............
@@ -498,7 +498,7 @@ r....RwwwwRr
 r....wRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3031
+Thunder3001
 ThunderV7 (Red) placed a Square piece at column 6 after 271ms
 ............
 ............
@@ -515,7 +515,7 @@ r....wRwwwwr
 
 SureAIv30 (White) turn
 depth = 3
-Did 1034 evals
+Did 1036 evals
 SureAIv30 (White) placed a Round piece at column 7 after 286ms
 ............
 ............
@@ -531,7 +531,7 @@ r....RwwwwRr
 r....wRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3048
+Thunder3031
 ThunderV7 (Red) placed a Square piece at column 7 after 271ms
 ............
 ............
@@ -548,7 +548,7 @@ r....wRwwwwr
 
 SureAIv30 (White) turn
 depth = 3
-Did 978 evals
+Did 976 evals
 SureAIv30 (White) placed a Round piece at column 9 after 286ms
 ............
 ............
@@ -564,7 +564,7 @@ r....RwwwwRr
 r....wRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3075
+Thunder3048
 ThunderV7 (Red) placed a Round piece at column 7 after 271ms
 ............
 ............
@@ -581,7 +581,7 @@ r....wRwwwwr
 
 SureAIv30 (White) turn
 depth = 3
-Did 978 evals
+Did 980 evals
 SureAIv30 (White) placed a Round piece at column 9 after 286ms
 ............
 ............
@@ -597,7 +597,7 @@ r....RwwwwRr
 r....wRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3068
+Thunder3075
 ThunderV7 (Red) placed a Square piece at column 9 after 271ms
 ............
 ............
@@ -614,7 +614,7 @@ r....wRwwwwr
 
 SureAIv30 (White) turn
 depth = 3
-Did 793 evals
+Did 794 evals
 SureAIv30 (White) placed a Round piece at column 10 after 286ms
 ............
 ............
@@ -630,7 +630,7 @@ r....RwwwwRr
 r....wRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3008
+Thunder3068
 ThunderV7 (Red) placed a Square piece at column 5 after 271ms
 ............
 ............
@@ -647,7 +647,7 @@ r....wRwwwwr
 
 SureAIv30 (White) turn
 depth = 3
-Did 1028 evals
+Did 1032 evals
 SureAIv30 (White) placed a Round piece at column 5 after 286ms
 ............
 ............
@@ -663,7 +663,7 @@ r....RwwwwRr
 r....wRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3007
+Thunder3008
 ThunderV7 (Red) placed a Square piece at column 6 after 271ms
 ............
 ............
@@ -680,7 +680,7 @@ r....wRwwwwr
 
 SureAIv30 (White) turn
 depth = 3
-Did 736 evals
+Did 739 evals
 SureAIv30 (White) placed a Round piece at column 6 after 286ms
 ............
 ............
@@ -696,7 +696,7 @@ r....RwwwwRr
 r....wRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3014
+Thunder3007
 ThunderV7 (Red) placed a Square piece at column 6 after 271ms
 ............
 ............
@@ -729,7 +729,7 @@ r....RwwwwRr
 r....wRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3043
+Thunder3014
 ThunderV7 (Red) placed a Round piece at column 3 after 271ms
 ............
 ............
@@ -746,7 +746,7 @@ r..r.wRwwwwr
 
 SureAIv30 (White) turn
 depth = 3
-Did 742 evals
+Did 746 evals
 SureAIv30 (White) placed a Round piece at column 11 after 286ms
 ............
 ............
@@ -762,7 +762,7 @@ r....RwwwwRr
 r..r.wRwwwwr
 
 ThunderV7 (Red) turn
-Thunder2045
+Thunder2043
 ThunderV7 (Red) placed a Square piece at column 11 after 271ms
 ............
 ............
@@ -779,7 +779,7 @@ r..r.wRwwwwr
 
 SureAIv30 (White) turn
 depth = 3
-Did 869 evals
+Did 882 evals
 SureAIv30 (White) placed a Round piece at column 2 after 286ms
 ............
 ............
@@ -795,7 +795,7 @@ r....RwwwwRr
 r.wr.wRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3022
+Thunder3045
 ThunderV7 (Red) placed a Round piece at column 2 after 271ms
 ............
 ............
@@ -812,7 +812,7 @@ r.wr.wRwwwwr
 
 SureAIv30 (White) turn
 depth = 3
-Did 692 evals
+Did 695 evals
 SureAIv30 (White) placed a Round piece at column 1 after 286ms
 ............
 ............
@@ -828,7 +828,7 @@ r.r..RwwwwRr
 rwwr.wRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3020
+Thunder3022
 ThunderV7 (Red) placed a Square piece at column 4 after 271ms
 ............
 ............
@@ -861,7 +861,7 @@ rwr..RwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3034
+Thunder3020
 ThunderV7 (Red) placed a Round piece at column 4 after 271ms
 ............
 ............
@@ -878,7 +878,7 @@ rwwrRwRwwwwr
 
 SureAIv30 (White) turn
 depth = 3
-Did 840 evals
+Did 842 evals
 SureAIv30 (White) placed a Round piece at column 4 after 286ms
 ............
 ............
@@ -894,7 +894,7 @@ rwr.rRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3021
+Thunder3034
 ThunderV7 (Red) placed a Round piece at column 4 after 271ms
 ............
 ............
@@ -911,7 +911,7 @@ rwwrRwRwwwwr
 
 SureAIv30 (White) turn
 depth = 3
-Did 938 evals
+Did 939 evals
 SureAIv30 (White) placed a Round piece at column 1 after 286ms
 ............
 ............
@@ -927,7 +927,7 @@ rwr.rRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3018
+Thunder3021
 ThunderV7 (Red) placed a Round piece at column 4 after 271ms
 ............
 ............
@@ -944,7 +944,7 @@ rwwrRwRwwwwr
 
 SureAIv30 (White) turn
 depth = 3
-Did 617 evals
+Did 624 evals
 SureAIv30 (White) placed a Round piece at column 4 after 286ms
 ............
 ............
@@ -960,7 +960,7 @@ rwr.rRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3023
+Thunder3018
 ThunderV7 (Red) placed a Square piece at column 4 after 271ms
 ............
 ............
@@ -977,7 +977,7 @@ rwwrRwRwwwwr
 
 SureAIv30 (White) turn
 depth = 3
-Did 921 evals
+Did 922 evals
 SureAIv30 (White) placed a Round piece at column 1 after 286ms
 ............
 ............
@@ -993,7 +993,7 @@ rwr.rRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder2073
+Thunder2023
 ThunderV7 (Red) placed a Square piece at column 1 after 271ms
 ............
 ............
@@ -1010,7 +1010,7 @@ rwwrRwRwwwwr
 
 SureAIv30 (White) turn
 depth = 3
-Did 694 evals
+Did 696 evals
 SureAIv30 (White) placed a Round piece at column 0 after 286ms
 ............
 ............
@@ -1026,7 +1026,7 @@ rwr.rRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3080
+Thunder3073
 ThunderV7 (Red) placed a Round piece at column 6 after 271ms
 ............
 ............
@@ -1043,7 +1043,7 @@ rwwrRwRwwwwr
 
 SureAIv30 (White) turn
 depth = 3
-Did 689 evals
+Did 691 evals
 SureAIv30 (White) placed a Round piece at column 0 after 286ms
 ............
 ............
@@ -1059,7 +1059,7 @@ rwr.rRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder2042
+Thunder2080
 ThunderV7 (Red) placed a Square piece at column 0 after 271ms
 ............
 ............
@@ -1076,7 +1076,7 @@ rwwrRwRwwwwr
 
 SureAIv30 (White) turn
 depth = 3
-Did 774 evals
+Did 772 evals
 SureAIv30 (White) placed a Round piece at column 9 after 286ms
 ............
 ............
@@ -1092,7 +1092,7 @@ rwr.rRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3036
+Thunder3042
 ThunderV7 (Red) placed a Round piece at column 1 after 271ms
 ............
 ............
@@ -1125,7 +1125,7 @@ rwr.rRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3002
+Thunder3036
 ThunderV7 (Red) placed a Round piece at column 5 after 271ms
 ............
 ............
@@ -1158,7 +1158,7 @@ rwr.rRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3051
+Thunder3002
 ThunderV7 (Red) placed a Round piece at column 8 after 271ms
 ............
 ............
@@ -1175,7 +1175,7 @@ rwwrRwRwwwwr
 
 SureAIv30 (White) turn
 depth = 3
-Did 616 evals
+Did 621 evals
 SureAIv30 (White) placed a Square piece at column 2 after 286ms
 ............
 ............
@@ -1191,7 +1191,7 @@ rwr.rRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3041
+Thunder3051
 ThunderV7 (Red) placed a Square piece at column 8 after 271ms
 ............
 ............
@@ -1224,7 +1224,7 @@ rwr.rRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder3058
+Thunder3041
 ThunderV7 (Red) placed a Round piece at column 6 after 271ms
 ............
 ............
@@ -1257,7 +1257,7 @@ rwrWrRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder4017
+Thunder4058
 ThunderV7 (Red) placed a Round piece at column 6 after 271ms
 ............
 ......r.....
@@ -1290,7 +1290,7 @@ rwrWrRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder4053
+Thunder4017
 ThunderV7 (Red) placed a Round piece at column 6 after 271ms
 ......r.....
 ......r.....
@@ -1323,7 +1323,7 @@ rwrWrRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder4007
+Thunder4053
 ThunderV7 (Red) placed a Round piece at column 5 after 271ms
 ......r.....
 ......r.....
@@ -1340,7 +1340,7 @@ rwwrRwRwwwwr
 
 SureAIv30 (White) turn
 depth = 3
-Did 556 evals
+Did 555 evals
 SureAIv30 (White) placed a Square piece at column 5 after 286ms
 ......r.....
 ......r.....
@@ -1356,7 +1356,7 @@ rwrWrRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder4016
+Thunder4007
 ThunderV7 (Red) placed a Round piece at column 5 after 271ms
 ......r.....
 .....rr.....
@@ -1389,7 +1389,7 @@ rwrWrRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder4072
+Thunder4016
 ThunderV7 (Red) placed a Round piece at column 5 after 271ms
 .....rr.....
 .....rr.....
@@ -1422,7 +1422,7 @@ rwrWrRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder4068
+Thunder4072
 ThunderV7 (Red) placed a Round piece at column 7 after 271ms
 .....rr.....
 .....rr.....
@@ -1455,7 +1455,7 @@ rwrWrRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder4066
+Thunder4068
 ThunderV7 (Red) placed a Round piece at column 7 after 271ms
 .....rrr....
 .....rrW....
@@ -1472,7 +1472,7 @@ rwwrRwRwwwwr
 
 SureAIv30 (White) turn
 depth = 4
-Did 464 evals
+Did 466 evals
 SureAIv30 (White) placed a Square piece at column 11 after 286ms
 .....rrr....
 .....rrW....
@@ -1488,7 +1488,7 @@ rwrWrRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder4046
+Thunder4066
 ThunderV7 (Red) placed a Round piece at column 4 after 271ms
 .....rrr....
 .....rrW....
@@ -1505,11 +1505,44 @@ rwwrRwRwwwwr
 
 SureAIv30 (White) turn
 depth = 4
-Did 461 evals
+Did 509 evals
 SureAIv30 (White) placed a Square piece at column 4 after 286ms
 .....rrr....
 .....rrW....
 .....Wrr....
+....WrrW....
+....rrRw....
+....Rwwr.w.W
+Rr..wRRRRR.R
+wR.WrRRwrwww
+wwWWrRwwRwww
+rwWWwRwwwwRr
+rwrWrRwwwwRr
+rwwrRwRwwwwr
+
+ThunderV7 (Red) turn
+Thunder4046
+ThunderV7 (Red) placed a Round piece at column 4 after 271ms
+.....rrr....
+.....rrW....
+....rWrr....
+....WrrW....
+....rrRw....
+....Rwwr.w.W
+Rr..wRRRRR.R
+wR.WrRRwrwww
+wwWWrRwwRwww
+rwWWwRwwwwRr
+rwrWrRwwwwRr
+rwwrRwRwwwwr
+
+SureAIv30 (White) turn
+depth = 4
+Did 521 evals
+SureAIv30 (White) placed a Square piece at column 4 after 286ms
+.....rrr....
+....WrrW....
+....rWrr....
 ....WrrW....
 ....rrRw....
 ....Rwwr.w.W
@@ -1522,39 +1555,6 @@ rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
 Thunder4066
-ThunderV7 (Red) placed a Round piece at column 4 after 271ms
-.....rrr....
-.....rrW....
-....rWrr....
-....WrrW....
-....rrRw....
-....Rwwr.w.W
-Rr..wRRRRR.R
-wR.WrRRwrwww
-wwWWrRwwRwww
-rwWWwRwwwwRr
-rwrWrRwwwwRr
-rwwrRwRwwwwr
-
-SureAIv30 (White) turn
-depth = 4
-Did 451 evals
-SureAIv30 (White) placed a Square piece at column 4 after 286ms
-.....rrr....
-....WrrW....
-....rWrr....
-....WrrW....
-....rrRw....
-....Rwwr.w.W
-Rr..wRRRRR.R
-wR.WrRRwrwww
-wwWWrRwwRwww
-rwWWwRwwwwRr
-rwrWrRwwwwRr
-rwwrRwRwwwwr
-
-ThunderV7 (Red) turn
-Thunder4005
 ThunderV7 (Red) placed a Round piece at column 4 after 271ms
 ....rrrr....
 ....WrrW....
@@ -1571,7 +1571,7 @@ rwwrRwRwwwwr
 
 SureAIv30 (White) turn
 depth = 5
-Did 613 evals
+Did 617 evals
 SureAIv30 (White) placed a Square piece at column 8 after 286ms
 ....rrrr....
 ....WrrW....
@@ -1587,7 +1587,7 @@ rwrWrRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder4071
+Thunder4005
 ThunderV7 (Red) placed a Round piece at column 8 after 271ms
 ....rrrr....
 ....WrrW....
@@ -1604,7 +1604,7 @@ rwwrRwRwwwwr
 
 SureAIv30 (White) turn
 depth = 7
-Did 760 evals
+Did 762 evals
 SureAIv30 (White) placed a Square piece at column 8 after 286ms
 ....rrrr....
 ....WrrW....
@@ -1620,7 +1620,7 @@ rwrWrRwwwwRr
 rwwrRwRwwwwr
 
 ThunderV7 (Red) turn
-Thunder4082
+Thunder4071
 ThunderV7 (Red) placed a Round piece at column 8 after 271ms
 ....rrrr....
 ....WrrW....
@@ -1636,8 +1636,8 @@ rwrWrRwwwwRr
 rwwrRwRwwwwr
 
 SureAIv30 (White) turn
-depth = 68
-Did 1091 evals
+depth = 67
+Did 1079 evals
 SureAIv30 (White) placed a Square piece at column 10 after 286ms
 ....rrrr....
 ....WrrW....

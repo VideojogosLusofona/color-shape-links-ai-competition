@@ -1,5 +1,7 @@
 <map id="ISessionListener" name="ISessionListener">
-<area shape="rect" id="node1" title="Interface to be implemented by classes who wish to listen to session events." alt="" coords="131,5,249,83"/>
-<area shape="rect" id="node2" href="$class_color_shape_links_1_1_text_based_1_1_app_1_1_markdown_session_listener.html" title="Session event listener which outputs session information in Markdown format." alt="" coords="5,145,180,223"/>
+<area shape="rect" id="node1" title="Interface to be implemented by classes who wish to listen to session events." alt="" coords="319,5,437,83"/>
+<area shape="rect" id="node2" href="$class_color_shape_links_1_1_text_based_1_1_app_1_1_markdown_session_listener.html" title="Session event listener which outputs session information to the standard output in Markdown format." alt="" coords="5,145,180,223"/>
 <area shape="rect" id="node3" href="$class_color_shape_links_1_1_text_based_1_1_app_1_1_simple_rendering_listener.html" title="Simple event listener which renders thinker, match and session information on the console." alt="" coords="204,131,371,237"/>
+<area shape="rect" id="node4" href="$class_color_shape_links_1_1_text_based_1_1_lib_1_1_comp_session_listener.html" title="Session event listener which outputs complete session information in Markdown format with links text ..." alt="" coords="395,138,545,230"/>
+<area shape="rect" id="node5" href="$class_color_shape_links_1_1_text_based_1_1_lib_1_1_ranking_session_listener.html" title="Session event listener which outputs session final results into a TSV file." alt="" coords="570,145,733,223"/>
 </map>

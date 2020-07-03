@@ -1,0 +1,1912 @@
+=> TheBenchmark (White) vs SimpAI V4.5 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+
+TheBenchmark (White) turn
+Did 22531 total evals
+TheBenchmark (White) placed a Round piece at column 5 after 252ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.....w......
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 5228
+depth: 2
+Column Played: 10
+SimpAI V4.5 (Red) placed a Round piece at column 10 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.....w....r.
+
+TheBenchmark (White) turn
+Did 22741 total evals
+TheBenchmark (White) placed a Round piece at column 0 after 252ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+w....w....r.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 5099
+depth: 2
+Column Played: 9
+SimpAI V4.5 (Red) placed a Round piece at column 9 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+w....w...rr.
+
+TheBenchmark (White) turn
+Did 22333 total evals
+TheBenchmark (White) placed a Round piece at column 6 after 252ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+w....ww..rr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 4994
+depth: 2
+Column Played: 6
+SimpAI V4.5 (Red) placed a Square piece at column 6 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+......R.....
+w....ww..rr.
+
+TheBenchmark (White) turn
+Did 21191 total evals
+TheBenchmark (White) placed a Round piece at column 5 after 252ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.....wR.....
+w....ww..rr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 4922
+depth: 2
+Column Played: 6
+SimpAI V4.5 (Red) placed a Square piece at column 6 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+......R.....
+.....wR.....
+w....ww..rr.
+
+TheBenchmark (White) turn
+Did 22457 total evals
+TheBenchmark (White) placed a Round piece at column 6 after 252ms
+............
+............
+............
+............
+............
+............
+............
+............
+......w.....
+......R.....
+.....wR.....
+w....ww..rr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 4616
+depth: 2
+Column Played: 5
+SimpAI V4.5 (Red) placed a Square piece at column 5 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+......w.....
+.....RR.....
+.....wR.....
+w....ww..rr.
+
+TheBenchmark (White) turn
+Did 22643 total evals
+TheBenchmark (White) placed a Round piece at column 7 after 251ms
+............
+............
+............
+............
+............
+............
+............
+............
+......w.....
+.....RR.....
+.....wR.....
+w....www.rr.
+
+SimpAI V4.5 (Red) turn
+Prevent Loss
+SimpAI V4.5 (Red) placed a Square piece at column 8 after 0ms
+............
+............
+............
+............
+............
+............
+............
+............
+......w.....
+.....RR.....
+.....wR.....
+w....wwwRrr.
+
+TheBenchmark (White) turn
+Did 23166 total evals
+TheBenchmark (White) placed a Round piece at column 5 after 252ms
+............
+............
+............
+............
+............
+............
+............
+............
+.....ww.....
+.....RR.....
+.....wR.....
+w....wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 4682
+depth: 2
+Column Played: 10
+SimpAI V4.5 (Red) placed a Round piece at column 10 after 272ms
+............
+............
+............
+............
+............
+............
+............
+............
+.....ww.....
+.....RR.....
+.....wR...r.
+w....wwwRrr.
+
+TheBenchmark (White) turn
+Did 22749 total evals
+TheBenchmark (White) placed a Round piece at column 6 after 252ms
+............
+............
+............
+............
+............
+............
+............
+......w.....
+.....ww.....
+.....RR.....
+.....wR...r.
+w....wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 4511
+depth: 2
+Column Played: 6
+SimpAI V4.5 (Red) placed a Square piece at column 6 after 270ms
+............
+............
+............
+............
+............
+............
+......R.....
+......w.....
+.....ww.....
+.....RR.....
+.....wR...r.
+w....wwwRrr.
+
+TheBenchmark (White) turn
+Did 22842 total evals
+TheBenchmark (White) placed a Round piece at column 6 after 252ms
+............
+............
+............
+............
+............
+......w.....
+......R.....
+......w.....
+.....ww.....
+.....RR.....
+.....wR...r.
+w....wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 4565
+depth: 2
+Column Played: 6
+SimpAI V4.5 (Red) placed a Square piece at column 6 after 270ms
+............
+............
+............
+............
+......R.....
+......w.....
+......R.....
+......w.....
+.....ww.....
+.....RR.....
+.....wR...r.
+w....wwwRrr.
+
+TheBenchmark (White) turn
+Did 20874 total evals
+TheBenchmark (White) placed a Round piece at column 5 after 252ms
+............
+............
+............
+............
+......R.....
+......w.....
+......R.....
+.....ww.....
+.....ww.....
+.....RR.....
+.....wR...r.
+w....wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 4212
+depth: 2
+Column Played: 5
+SimpAI V4.5 (Red) placed a Square piece at column 5 after 270ms
+............
+............
+............
+............
+......R.....
+......w.....
+.....RR.....
+.....ww.....
+.....ww.....
+.....RR.....
+.....wR...r.
+w....wwwRrr.
+
+TheBenchmark (White) turn
+Did 22778 total evals
+TheBenchmark (White) placed a Round piece at column 5 after 252ms
+............
+............
+............
+............
+......R.....
+.....ww.....
+.....RR.....
+.....ww.....
+.....ww.....
+.....RR.....
+.....wR...r.
+w....wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 4452
+depth: 2
+Column Played: 5
+SimpAI V4.5 (Red) placed a Square piece at column 5 after 270ms
+............
+............
+............
+............
+.....RR.....
+.....ww.....
+.....RR.....
+.....ww.....
+.....ww.....
+.....RR.....
+.....wR...r.
+w....wwwRrr.
+
+TheBenchmark (White) turn
+Did 20988 total evals
+TheBenchmark (White) placed a Round piece at column 8 after 252ms
+............
+............
+............
+............
+.....RR.....
+.....ww.....
+.....RR.....
+.....ww.....
+.....ww.....
+.....RR.....
+.....wR.w.r.
+w....wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 4339
+depth: 2
+Column Played: 6
+SimpAI V4.5 (Red) placed a Square piece at column 6 after 270ms
+............
+............
+............
+......R.....
+.....RR.....
+.....ww.....
+.....RR.....
+.....ww.....
+.....ww.....
+.....RR.....
+.....wR.w.r.
+w....wwwRrr.
+
+TheBenchmark (White) turn
+Did 19361 total evals
+TheBenchmark (White) placed a Round piece at column 10 after 252ms
+............
+............
+............
+......R.....
+.....RR.....
+.....ww.....
+.....RR.....
+.....ww.....
+.....ww.....
+.....RR...w.
+.....wR.w.r.
+w....wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 4294
+depth: 2
+Column Played: 5
+SimpAI V4.5 (Red) placed a Square piece at column 5 after 270ms
+............
+............
+............
+.....RR.....
+.....RR.....
+.....ww.....
+.....RR.....
+.....ww.....
+.....ww.....
+.....RR...w.
+.....wR.w.r.
+w....wwwRrr.
+
+TheBenchmark (White) turn
+Did 19356 total evals
+TheBenchmark (White) placed a Round piece at column 10 after 253ms
+............
+............
+............
+.....RR.....
+.....RR.....
+.....ww.....
+.....RR.....
+.....ww.....
+.....ww...w.
+.....RR...w.
+.....wR.w.r.
+w....wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 4281
+depth: 2
+Column Played: 9
+SimpAI V4.5 (Red) placed a Round piece at column 9 after 270ms
+............
+............
+............
+.....RR.....
+.....RR.....
+.....ww.....
+.....RR.....
+.....ww.....
+.....ww...w.
+.....RR...w.
+.....wR.wrr.
+w....wwwRrr.
+
+TheBenchmark (White) turn
+Did 20250 total evals
+TheBenchmark (White) placed a Round piece at column 2 after 252ms
+............
+............
+............
+.....RR.....
+.....RR.....
+.....ww.....
+.....RR.....
+.....ww.....
+.....ww...w.
+.....RR...w.
+.....wR.wrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 4173
+depth: 2
+Column Played: 10
+SimpAI V4.5 (Red) placed a Square piece at column 10 after 270ms
+............
+............
+............
+.....RR.....
+.....RR.....
+.....ww.....
+.....RR.....
+.....ww...R.
+.....ww...w.
+.....RR...w.
+.....wR.wrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 19976 total evals
+TheBenchmark (White) placed a Round piece at column 9 after 251ms
+............
+............
+............
+.....RR.....
+.....RR.....
+.....ww.....
+.....RR.....
+.....ww...R.
+.....ww...w.
+.....RR..ww.
+.....wR.wrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 4055
+depth: 2
+Column Played: 10
+SimpAI V4.5 (Red) placed a Square piece at column 10 after 270ms
+............
+............
+............
+.....RR.....
+.....RR.....
+.....ww.....
+.....RR...R.
+.....ww...R.
+.....ww...w.
+.....RR..ww.
+.....wR.wrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 20074 total evals
+TheBenchmark (White) placed a Round piece at column 9 after 256ms
+............
+............
+............
+.....RR.....
+.....RR.....
+.....ww.....
+.....RR...R.
+.....ww...R.
+.....ww..ww.
+.....RR..ww.
+.....wR.wrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 3986
+depth: 2
+Column Played: 10
+SimpAI V4.5 (Red) placed a Square piece at column 10 after 270ms
+............
+............
+............
+.....RR.....
+.....RR.....
+.....ww...R.
+.....RR...R.
+.....ww...R.
+.....ww..ww.
+.....RR..ww.
+.....wR.wrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 19893 total evals
+TheBenchmark (White) placed a Round piece at column 10 after 252ms
+............
+............
+............
+.....RR.....
+.....RR...w.
+.....ww...R.
+.....RR...R.
+.....ww...R.
+.....ww..ww.
+.....RR..ww.
+.....wR.wrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 4064
+depth: 2
+Column Played: 9
+SimpAI V4.5 (Red) placed a Square piece at column 9 after 270ms
+............
+............
+............
+.....RR.....
+.....RR...w.
+.....ww...R.
+.....RR...R.
+.....ww..RR.
+.....ww..ww.
+.....RR..ww.
+.....wR.wrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 19695 total evals
+TheBenchmark (White) placed a Round piece at column 9 after 252ms
+............
+............
+............
+.....RR.....
+.....RR...w.
+.....ww...R.
+.....RR..wR.
+.....ww..RR.
+.....ww..ww.
+.....RR..ww.
+.....wR.wrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 3946
+depth: 2
+Column Played: 9
+SimpAI V4.5 (Red) placed a Square piece at column 9 after 270ms
+............
+............
+............
+.....RR.....
+.....RR...w.
+.....ww..RR.
+.....RR..wR.
+.....ww..RR.
+.....ww..ww.
+.....RR..ww.
+.....wR.wrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 20009 total evals
+TheBenchmark (White) placed a Round piece at column 9 after 252ms
+............
+............
+............
+.....RR.....
+.....RR..ww.
+.....ww..RR.
+.....RR..wR.
+.....ww..RR.
+.....ww..ww.
+.....RR..ww.
+.....wR.wrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 3970
+depth: 2
+Column Played: 8
+SimpAI V4.5 (Red) placed a Square piece at column 8 after 270ms
+............
+............
+............
+.....RR.....
+.....RR..ww.
+.....ww..RR.
+.....RR..wR.
+.....ww..RR.
+.....ww..ww.
+.....RR.Rww.
+.....wR.wrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 18493 total evals
+TheBenchmark (White) placed a Round piece at column 8 after 252ms
+............
+............
+............
+.....RR.....
+.....RR..ww.
+.....ww..RR.
+.....RR..wR.
+.....ww..RR.
+.....ww.www.
+.....RR.Rww.
+.....wR.wrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 3887
+depth: 2
+Column Played: 8
+SimpAI V4.5 (Red) placed a Square piece at column 8 after 270ms
+............
+............
+............
+.....RR.....
+.....RR..ww.
+.....ww..RR.
+.....RR..wR.
+.....ww.RRR.
+.....ww.www.
+.....RR.Rww.
+.....wR.wrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 19916 total evals
+TheBenchmark (White) placed a Round piece at column 8 after 252ms
+............
+............
+............
+.....RR.....
+.....RR..ww.
+.....ww..RR.
+.....RR.wwR.
+.....ww.RRR.
+.....ww.www.
+.....RR.Rww.
+.....wR.wrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 3774
+depth: 2
+Column Played: 8
+SimpAI V4.5 (Red) placed a Square piece at column 8 after 270ms
+............
+............
+............
+.....RR.....
+.....RR..ww.
+.....ww.RRR.
+.....RR.wwR.
+.....ww.RRR.
+.....ww.www.
+.....RR.Rww.
+.....wR.wrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 17046 total evals
+TheBenchmark (White) placed a Round piece at column 0 after 252ms
+............
+............
+............
+.....RR.....
+.....RR..ww.
+.....ww.RRR.
+.....RR.wwR.
+.....ww.RRR.
+.....ww.www.
+.....RR.Rww.
+w....wR.wrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 3823
+depth: 2
+Column Played: 8
+SimpAI V4.5 (Red) placed a Square piece at column 8 after 270ms
+............
+............
+............
+.....RR.....
+.....RR.Rww.
+.....ww.RRR.
+.....RR.wwR.
+.....ww.RRR.
+.....ww.www.
+.....RR.Rww.
+w....wR.wrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 16752 total evals
+TheBenchmark (White) placed a Round piece at column 6 after 252ms
+............
+............
+......w.....
+.....RR.....
+.....RR.Rww.
+.....ww.RRR.
+.....RR.wwR.
+.....ww.RRR.
+.....ww.www.
+.....RR.Rww.
+w....wR.wrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 3727
+depth: 2
+Column Played: 5
+SimpAI V4.5 (Red) placed a Square piece at column 5 after 270ms
+............
+............
+.....Rw.....
+.....RR.....
+.....RR.Rww.
+.....ww.RRR.
+.....RR.wwR.
+.....ww.RRR.
+.....ww.www.
+.....RR.Rww.
+w....wR.wrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 16890 total evals
+TheBenchmark (White) placed a Round piece at column 0 after 252ms
+............
+............
+.....Rw.....
+.....RR.....
+.....RR.Rww.
+.....ww.RRR.
+.....RR.wwR.
+.....ww.RRR.
+.....ww.www.
+w....RR.Rww.
+w....wR.wrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 3743
+depth: 2
+Column Played: 7
+SimpAI V4.5 (Red) placed a Square piece at column 7 after 270ms
+............
+............
+.....Rw.....
+.....RR.....
+.....RR.Rww.
+.....ww.RRR.
+.....RR.wwR.
+.....ww.RRR.
+.....ww.www.
+w....RR.Rww.
+w....wRRwrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 16079 total evals
+TheBenchmark (White) placed a Round piece at column 0 after 253ms
+............
+............
+.....Rw.....
+.....RR.....
+.....RR.Rww.
+.....ww.RRR.
+.....RR.wwR.
+.....ww.RRR.
+w....ww.www.
+w....RR.Rww.
+w....wRRwrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 3642
+depth: 2
+Column Played: 8
+SimpAI V4.5 (Red) placed a Square piece at column 8 after 270ms
+............
+............
+.....Rw.....
+.....RR.R...
+.....RR.Rww.
+.....ww.RRR.
+.....RR.wwR.
+.....ww.RRR.
+w....ww.www.
+w....RR.Rww.
+w....wRRwrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 16318 total evals
+TheBenchmark (White) placed a Round piece at column 8 after 253ms
+............
+............
+.....Rw.w...
+.....RR.R...
+.....RR.Rww.
+.....ww.RRR.
+.....RR.wwR.
+.....ww.RRR.
+w....ww.www.
+w....RR.Rww.
+w....wRRwrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 3663
+depth: 2
+Column Played: 2
+SimpAI V4.5 (Red) placed a Square piece at column 2 after 270ms
+............
+............
+.....Rw.w...
+.....RR.R...
+.....RR.Rww.
+.....ww.RRR.
+.....RR.wwR.
+.....ww.RRR.
+w....ww.www.
+w....RR.Rww.
+w.R..wRRwrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 17149 total evals
+TheBenchmark (White) placed a Round piece at column 2 after 252ms
+............
+............
+.....Rw.w...
+.....RR.R...
+.....RR.Rww.
+.....ww.RRR.
+.....RR.wwR.
+.....ww.RRR.
+w....ww.www.
+w.w..RR.Rww.
+w.R..wRRwrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 3497
+depth: 2
+Column Played: 2
+SimpAI V4.5 (Red) placed a Square piece at column 2 after 270ms
+............
+............
+.....Rw.w...
+.....RR.R...
+.....RR.Rww.
+.....ww.RRR.
+.....RR.wwR.
+.....ww.RRR.
+w.R..ww.www.
+w.w..RR.Rww.
+w.R..wRRwrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 16751 total evals
+TheBenchmark (White) placed a Round piece at column 2 after 252ms
+............
+............
+.....Rw.w...
+.....RR.R...
+.....RR.Rww.
+.....ww.RRR.
+.....RR.wwR.
+..w..ww.RRR.
+w.R..ww.www.
+w.w..RR.Rww.
+w.R..wRRwrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 3358
+depth: 2
+Column Played: 2
+SimpAI V4.5 (Red) placed a Square piece at column 2 after 270ms
+............
+............
+.....Rw.w...
+.....RR.R...
+.....RR.Rww.
+.....ww.RRR.
+..R..RR.wwR.
+..w..ww.RRR.
+w.R..ww.www.
+w.w..RR.Rww.
+w.R..wRRwrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 15871 total evals
+TheBenchmark (White) placed a Round piece at column 2 after 252ms
+............
+............
+.....Rw.w...
+.....RR.R...
+.....RR.Rww.
+..w..ww.RRR.
+..R..RR.wwR.
+..w..ww.RRR.
+w.R..ww.www.
+w.w..RR.Rww.
+w.R..wRRwrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 3418
+depth: 2
+Column Played: 2
+SimpAI V4.5 (Red) placed a Square piece at column 2 after 270ms
+............
+............
+.....Rw.w...
+.....RR.R...
+..R..RR.Rww.
+..w..ww.RRR.
+..R..RR.wwR.
+..w..ww.RRR.
+w.R..ww.www.
+w.w..RR.Rww.
+w.R..wRRwrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 16560 total evals
+TheBenchmark (White) placed a Round piece at column 7 after 253ms
+............
+............
+.....Rw.w...
+.....RR.R...
+..R..RR.Rww.
+..w..ww.RRR.
+..R..RR.wwR.
+..w..ww.RRR.
+w.R..ww.www.
+w.w..RRwRww.
+w.R..wRRwrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+Prevent Loss
+SimpAI V4.5 (Red) placed a Square piece at column 7 after 0ms
+............
+............
+.....Rw.w...
+.....RR.R...
+..R..RR.Rww.
+..w..ww.RRR.
+..R..RR.wwR.
+..w..ww.RRR.
+w.R..wwRwww.
+w.w..RRwRww.
+w.R..wRRwrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 17198 total evals
+TheBenchmark (White) placed a Round piece at column 7 after 259ms
+............
+............
+.....Rw.w...
+.....RR.R...
+..R..RR.Rww.
+..w..ww.RRR.
+..R..RR.wwR.
+..w..wwwRRR.
+w.R..wwRwww.
+w.w..RRwRww.
+w.R..wRRwrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 3280
+depth: 2
+Column Played: 7
+SimpAI V4.5 (Red) placed a Square piece at column 7 after 270ms
+............
+............
+.....Rw.w...
+.....RR.R...
+..R..RR.Rww.
+..w..ww.RRR.
+..R..RRRwwR.
+..w..wwwRRR.
+w.R..wwRwww.
+w.w..RRwRww.
+w.R..wRRwrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 16963 total evals
+TheBenchmark (White) placed a Round piece at column 7 after 252ms
+............
+............
+.....Rw.w...
+.....RR.R...
+..R..RR.Rww.
+..w..wwwRRR.
+..R..RRRwwR.
+..w..wwwRRR.
+w.R..wwRwww.
+w.w..RRwRww.
+w.R..wRRwrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 3357
+depth: 2
+Column Played: 7
+SimpAI V4.5 (Red) placed a Square piece at column 7 after 270ms
+............
+............
+.....Rw.w...
+.....RR.R...
+..R..RRRRww.
+..w..wwwRRR.
+..R..RRRwwR.
+..w..wwwRRR.
+w.R..wwRwww.
+w.w..RRwRww.
+w.R..wRRwrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 14396 total evals
+TheBenchmark (White) placed a Round piece at column 0 after 253ms
+............
+............
+.....Rw.w...
+.....RR.R...
+..R..RRRRww.
+..w..wwwRRR.
+..R..RRRwwR.
+w.w..wwwRRR.
+w.R..wwRwww.
+w.w..RRwRww.
+w.R..wRRwrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+Prevent Loss
+SimpAI V4.5 (Red) placed a Square piece at column 0 after 0ms
+............
+............
+.....Rw.w...
+.....RR.R...
+..R..RRRRww.
+..w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.R..wwRwww.
+w.w..RRwRww.
+w.R..wRRwrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 16346 total evals
+TheBenchmark (White) placed a Round piece at column 0 after 252ms
+............
+............
+.....Rw.w...
+.....RR.R...
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.R..wwRwww.
+w.w..RRwRww.
+w.R..wRRwrr.
+w.w..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 2999
+depth: 2
+Column Played: 2
+SimpAI V4.5 (Red) placed a Square piece at column 2 after 270ms
+............
+............
+.....Rw.w...
+..R..RR.R...
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.R..wwRwww.
+w.w..RRwRww.
+w.R..wRRwrr.
+w.w..wwwRrr.
+
+TheBenchmark (White) turn
+Did 17112 total evals
+TheBenchmark (White) placed a Square piece at column 1 after 252ms
+............
+............
+.....Rw.w...
+..R..RR.R...
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.R..wwRwww.
+w.w..RRwRww.
+w.R..wRRwrr.
+wWw..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 2813
+depth: 3
+Column Played: 6
+SimpAI V4.5 (Red) placed a Square piece at column 6 after 270ms
+............
+......R.....
+.....Rw.w...
+..R..RR.R...
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.R..wwRwww.
+w.w..RRwRww.
+w.R..wRRwrr.
+wWw..wwwRrr.
+
+TheBenchmark (White) turn
+Did 16855 total evals
+TheBenchmark (White) placed a Square piece at column 1 after 252ms
+............
+......R.....
+.....Rw.w...
+..R..RR.R...
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.R..wwRwww.
+w.w..RRwRww.
+wWR..wRRwrr.
+wWw..wwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 2643
+depth: 3
+Column Played: 5
+SimpAI V4.5 (Red) placed a Square piece at column 5 after 270ms
+............
+.....RR.....
+.....Rw.w...
+..R..RR.R...
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.R..wwRwww.
+w.w..RRwRww.
+wWR..wRRwrr.
+wWw..wwwRrr.
+
+TheBenchmark (White) turn
+Did 16175 total evals
+TheBenchmark (White) placed a Square piece at column 3 after 251ms
+............
+.....RR.....
+.....Rw.w...
+..R..RR.R...
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.R..wwRwww.
+w.w..RRwRww.
+wWR..wRRwrr.
+wWwW.wwwRrr.
+
+SimpAI V4.5 (Red) turn
+Prevent Loss
+SimpAI V4.5 (Red) placed a Square piece at column 4 after 0ms
+............
+.....RR.....
+.....Rw.w...
+..R..RR.R...
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.R..wwRwww.
+w.w..RRwRww.
+wWR..wRRwrr.
+wWwWRwwwRrr.
+
+TheBenchmark (White) turn
+Did 16748 total evals
+TheBenchmark (White) placed a Square piece at column 3 after 251ms
+............
+.....RR.....
+.....Rw.w...
+..R..RR.R...
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.R..wwRwww.
+w.w..RRwRww.
+wWRW.wRRwrr.
+wWwWRwwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 2745
+depth: 2
+Column Played: 3
+SimpAI V4.5 (Red) placed a Square piece at column 3 after 270ms
+............
+.....RR.....
+.....Rw.w...
+..R..RR.R...
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.R..wwRwww.
+w.wR.RRwRww.
+wWRW.wRRwrr.
+wWwWRwwwRrr.
+
+TheBenchmark (White) turn
+Did 16174 total evals
+TheBenchmark (White) placed a Square piece at column 4 after 251ms
+............
+.....RR.....
+.....Rw.w...
+..R..RR.R...
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.R..wwRwww.
+w.wR.RRwRww.
+wWRWWwRRwrr.
+wWwWRwwwRrr.
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 2619
+depth: 2
+Column Played: 3
+SimpAI V4.5 (Red) placed a Square piece at column 3 after 270ms
+............
+.....RR.....
+.....Rw.w...
+..R..RR.R...
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.RR.wwRwww.
+w.wR.RRwRww.
+wWRWWwRRwrr.
+wWwWRwwwRrr.
+
+TheBenchmark (White) turn
+Did 16067 total evals
+TheBenchmark (White) placed a Square piece at column 11 after 252ms
+............
+.....RR.....
+.....Rw.w...
+..R..RR.R...
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.RR.wwRwww.
+w.wR.RRwRww.
+wWRWWwRRwrr.
+wWwWRwwwRrrW
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 2459
+depth: 2
+Column Played: 7
+SimpAI V4.5 (Red) placed a Square piece at column 7 after 270ms
+............
+.....RR.....
+.....Rw.w...
+..R..RRRR...
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.RR.wwRwww.
+w.wR.RRwRww.
+wWRWWwRRwrr.
+wWwWRwwwRrrW
+
+TheBenchmark (White) turn
+Did 16187 total evals
+TheBenchmark (White) placed a Square piece at column 5 after 251ms
+.....W......
+.....RR.....
+.....Rw.w...
+..R..RRRR...
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.RR.wwRwww.
+w.wR.RRwRww.
+wWRWWwRRwrr.
+wWwWRwwwRrrW
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 2166
+depth: 3
+Column Played: 8
+SimpAI V4.5 (Red) placed a Round piece at column 8 after 270ms
+.....W......
+.....RR.r...
+.....Rw.w...
+..R..RRRR...
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.RR.wwRwww.
+w.wR.RRwRww.
+wWRWWwRRwrr.
+wWwWRwwwRrrW
+
+TheBenchmark (White) turn
+Did 15213 total evals
+TheBenchmark (White) placed a Square piece at column 7 after 251ms
+.....W......
+.....RR.r...
+.....RwWw...
+..R..RRRR...
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.RR.wwRwww.
+w.wR.RRwRww.
+wWRWWwRRwrr.
+wWwWRwwwRrrW
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 2156
+depth: 3
+Column Played: 8
+SimpAI V4.5 (Red) placed a Round piece at column 8 after 270ms
+.....W..r...
+.....RR.r...
+.....RwWw...
+..R..RRRR...
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.RR.wwRwww.
+w.wR.RRwRww.
+wWRWWwRRwrr.
+wWwWRwwwRrrW
+
+TheBenchmark (White) turn
+Did 12417 total evals
+TheBenchmark (White) placed a Square piece at column 10 after 251ms
+.....W..r...
+.....RR.r...
+.....RwWw...
+..R..RRRR.W.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.RR.wwRwww.
+w.wR.RRwRww.
+wWRWWwRRwrr.
+wWwWRwwwRrrW
+
+SimpAI V4.5 (Red) turn
+Guarantee Win
+SimpAI V4.5 (Red) placed a Round piece at column 9 after 0ms
+.....W..r...
+.....RR.r...
+.....RwWw...
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.RR.wwRwww.
+w.wR.RRwRww.
+wWRWWwRRwrr.
+wWwWRwwwRrrW
+
+TheBenchmark (White) turn
+Did 12859 total evals
+TheBenchmark (White) placed a Square piece at column 9 after 251ms
+.....W..r...
+.....RR.r...
+.....RwWwW..
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.RR.wwRwww.
+w.wR.RRwRww.
+wWRWWwRRwrr.
+wWwWRwwwRrrW
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 1953
+depth: 3
+Column Played: 11
+SimpAI V4.5 (Red) placed a Round piece at column 11 after 270ms
+.....W..r...
+.....RR.r...
+.....RwWwW..
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.RR.wwRwww.
+w.wR.RRwRww.
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+TheBenchmark (White) turn
+Did 12423 total evals
+TheBenchmark (White) placed a Square piece at column 10 after 251ms
+.....W..r...
+.....RR.r...
+.....RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.RR.wwRwww.
+w.wR.RRwRww.
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 2060
+depth: 3
+Column Played: 4
+SimpAI V4.5 (Red) placed a Round piece at column 4 after 270ms
+.....W..r...
+.....RR.r...
+.....RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.RR.wwRwww.
+w.wRrRRwRww.
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+TheBenchmark (White) turn
+Did 12506 total evals
+TheBenchmark (White) placed a Square piece at column 9 after 251ms
+.....W..r...
+.....RR.rW..
+.....RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.RR.wwRwww.
+w.wRrRRwRww.
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 1973
+depth: 3
+Column Played: 1
+SimpAI V4.5 (Red) placed a Round piece at column 1 after 270ms
+.....W..r...
+.....RR.rW..
+.....RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.RR.wwRwww.
+wrwRrRRwRww.
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+TheBenchmark (White) turn
+Did 13312 total evals
+TheBenchmark (White) placed a Square piece at column 9 after 251ms
+.....W..rW..
+.....RR.rW..
+.....RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.RR.wwRwww.
+wrwRrRRwRww.
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 1746
+depth: 3
+Column Played: 2
+SimpAI V4.5 (Red) placed a Round piece at column 2 after 270ms
+.....W..rW..
+.....RR.rW..
+..r..RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+w.RR.wwRwww.
+wrwRrRRwRww.
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+TheBenchmark (White) turn
+Did 12134 total evals
+TheBenchmark (White) placed a Square piece at column 1 after 251ms
+.....W..rW..
+.....RR.rW..
+..r..RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+wWRR.wwRwww.
+wrwRrRRwRww.
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 1853
+depth: 3
+Column Played: 10
+SimpAI V4.5 (Red) placed a Round piece at column 10 after 270ms
+.....W..rW..
+.....RR.rWr.
+..r..RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+wWRR.wwRwww.
+wrwRrRRwRww.
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+TheBenchmark (White) turn
+Did 12129 total evals
+TheBenchmark (White) placed a Square piece at column 10 after 251ms
+.....W..rWW.
+.....RR.rWr.
+..r..RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+wWRR.wwRwww.
+wrwRrRRwRww.
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 1588
+depth: 3
+Column Played: 7
+SimpAI V4.5 (Red) placed a Round piece at column 7 after 270ms
+.....W..rWW.
+.....RRrrWr.
+..r..RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+wWRR.wwRwww.
+wrwRrRRwRww.
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+TheBenchmark (White) turn
+Did 11304 total evals
+TheBenchmark (White) placed a Square piece at column 7 after 251ms
+.....W.WrWW.
+.....RRrrWr.
+..r..RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+wWRR.wwRwww.
+wrwRrRRwRww.
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 1594
+depth: 4
+Column Played: 2
+SimpAI V4.5 (Red) placed a Round piece at column 2 after 270ms
+.....W.WrWW.
+..r..RRrrWr.
+..r..RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+wWRR.wwRwww.
+wrwRrRRwRww.
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+TheBenchmark (White) turn
+Did 10917 total evals
+TheBenchmark (White) placed a Square piece at column 11 after 251ms
+.....W.WrWW.
+..r..RRrrWr.
+..r..RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+wWRR.wwRwww.
+wrwRrRRwRwwW
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 1577
+depth: 4
+Column Played: 11
+SimpAI V4.5 (Red) placed a Round piece at column 11 after 270ms
+.....W.WrWW.
+..r..RRrrWr.
+..r..RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRR.
+wWRR.wwRwwwr
+wrwRrRRwRwwW
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+TheBenchmark (White) turn
+Did 11416 total evals
+TheBenchmark (White) placed a Square piece at column 11 after 251ms
+.....W.WrWW.
+..r..RRrrWr.
+..r..RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRRW
+wWRR.wwRwwwr
+wrwRrRRwRwwW
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 1532
+depth: 4
+Column Played: 2
+SimpAI V4.5 (Red) placed a Round piece at column 2 after 270ms
+..r..W.WrWW.
+..r..RRrrWr.
+..r..RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRRW
+wWRR.wwRwwwr
+wrwRrRRwRwwW
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+TheBenchmark (White) turn
+Did 7779 total evals
+TheBenchmark (White) placed a Square piece at column 4 after 251ms
+..r..W.WrWW.
+..r..RRrrWr.
+..r..RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+w.w..wwwRRRW
+wWRRWwwRwwwr
+wrwRrRRwRwwW
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+SimpAI V4.5 (Red) turn
+hashtable entries: 1430
+depth: 4
+Column Played: 1
+SimpAI V4.5 (Red) placed a Round piece at column 1 after 270ms
+..r..W.WrWW.
+..r..RRrrWr.
+..r..RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+wrw..wwwRRRW
+wWRRWwwRwwwr
+wrwRrRRwRwwW
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+TheBenchmark (White) turn
+Did 9620 total evals
+TheBenchmark (White) placed a Square piece at column 4 after 251ms
+..r..W.WrWW.
+..r..RRrrWr.
+..r..RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+wrw.WwwwRRRW
+wWRRWwwRwwwr
+wrwRrRRwRwwW
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+SimpAI V4.5 (Red) turn
+Prevent Loss
+SimpAI V4.5 (Red) placed a Round piece at column 3 after 0ms
+..r..W.WrWW.
+..r..RRrrWr.
+..r..RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwR.
+wrwrWwwwRRRW
+wWRRWwwRwwwr
+wrwRrRRwRwwW
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+TheBenchmark (White) turn
+Did 9790 total evals
+TheBenchmark (White) placed a Square piece at column 11 after 251ms
+..r..W.WrWW.
+..r..RRrrWr.
+..r..RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R..RRRwwRW
+wrwrWwwwRRRW
+wWRRWwwRwwwr
+wrwRrRRwRwwW
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+SimpAI V4.5 (Red) turn
+Prevent Loss
+SimpAI V4.5 (Red) placed a Round piece at column 4 after 0ms
+..r..W.WrWW.
+..r..RRrrWr.
+..r..RwWwWW.
+..R..RRRRrW.
+..R..RRRRww.
+w.w..wwwRRR.
+R.R.rRRRwwRW
+wrwrWwwwRRRW
+wWRRWwwRwwwr
+wrwRrRRwRwwW
+wWRWWwRRwrrr
+wWwWRwwwRrrW
+
+Winner is TheBenchmark (White)
+Solution=(0,9)(1,8)(2,7)(3,6)(4,5)(5,4)

@@ -14,7 +14,7 @@
 
 NegamaxH01D3 (White) turn
 Did 2955 total evals
-NegamaxH01D3 (White) placed a Round piece at column 3 after 65ms
+NegamaxH01D3 (White) placed a Round piece at column 3 after 63ms
 .......
 .......
 .......
@@ -23,118 +23,42 @@ NegamaxH01D3 (White) placed a Round piece at column 3 after 65ms
 ...w...
 
 Random (Red) turn
-Random (Red) placed a Square piece at column 4 after 0ms
+Random (Red) placed a Round piece at column 1 after 0ms
 .......
 .......
 .......
 .......
 .......
-...wR..
+.r.w...
 
 NegamaxH01D3 (White) turn
-Did 2955 total evals
-NegamaxH01D3 (White) placed a Round piece at column 4 after 66ms
+Did 2899 total evals
+NegamaxH01D3 (White) placed a Round piece at column 2 after 63ms
 .......
 .......
 .......
 .......
-....w..
-...wR..
-
-Random (Red) turn
-Random (Red) placed a Square piece at column 0 after 0ms
 .......
-.......
-.......
-.......
-....w..
-R..wR..
-
-NegamaxH01D3 (White) turn
-Did 2955 total evals
-NegamaxH01D3 (White) placed a Round piece at column 4 after 70ms
-.......
-.......
-.......
-....w..
-....w..
-R..wR..
-
-Random (Red) turn
-Random (Red) placed a Square piece at column 2 after 0ms
-.......
-.......
-.......
-....w..
-....w..
-R.RwR..
-
-NegamaxH01D3 (White) turn
-Did 2941 total evals
-NegamaxH01D3 (White) placed a Round piece at column 2 after 72ms
-.......
-.......
-.......
-....w..
-..w.w..
-R.RwR..
+.rww...
 
 Random (Red) turn
 Random (Red) placed a Square piece at column 6 after 0ms
 .......
 .......
 .......
-....w..
-..w.w..
-R.RwR.R
+.......
+.......
+.rww..R
 
 NegamaxH01D3 (White) turn
-Did 2941 total evals
-NegamaxH01D3 (White) placed a Round piece at column 2 after 72ms
+Did 2227 total evals
+NegamaxH01D3 (White) placed a Round piece at column 0 after 47ms
 .......
 .......
 .......
-..w.w..
-..w.w..
-R.RwR.R
-
-Random (Red) turn
-Random (Red) placed a Square piece at column 4 after 0ms
 .......
 .......
-....R..
-..w.w..
-..w.w..
-R.RwR.R
-
-NegamaxH01D3 (White) turn
-Did 2933 total evals
-NegamaxH01D3 (White) placed a Round piece at column 2 after 74ms
-.......
-.......
-..w.R..
-..w.w..
-..w.w..
-R.RwR.R
-
-Random (Red) turn
-Random (Red) placed a Round piece at column 4 after 0ms
-.......
-....r..
-..w.R..
-..w.w..
-..w.w..
-R.RwR.R
-
-NegamaxH01D3 (White) turn
-Did 2223 total evals
-NegamaxH01D3 (White) placed a Round piece at column 2 after 54ms
-.......
-..w.r..
-..w.R..
-..w.w..
-..w.w..
-R.RwR.R
+wrww..R
 
 Winner is NegamaxH01D3 (White)
-Solution=(1,2)(2,2)(3,2)(4,2)
+Solution=(0,0)(0,1)(0,2)(0,3)

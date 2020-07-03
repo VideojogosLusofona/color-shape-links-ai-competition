@@ -122,11 +122,11 @@ submitted codes should be [open-sourced][ossl] by the respective authors.
 * **July 31** - First deadline for AI submissions. Submissions will be
   thoroughly checked for [rule compliance](#rules-for-the-ai-code) and
   technical issues.
-* **August 7** - Author notification of any issues encountered with the
+* **August 3** - Author notification of any issues encountered with the
   submissions.
-* **August 14** - Final deadline for AI submissions + short description of the
+* **August 8** - Final deadline for AI submissions + short description of the
   methods used for implementing the AI.
-* **August 18** - [EuroMillions] draw which will determine the conditions for
+* **August 11** - [EuroMillions] draw which will determine the conditions for
   the [Unknown track](#tracks).
 * **August 24-27** - [IEEE CoG 2020] takes place, final competition
   results are announced.

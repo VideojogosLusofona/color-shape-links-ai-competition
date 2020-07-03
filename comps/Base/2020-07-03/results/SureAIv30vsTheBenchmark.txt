@@ -14,7 +14,7 @@
 
 SureAIv30 (White) turn
 depth = 5
-Did 3829 evals
+Did 3817 evals
 SureAIv30 (White) placed a Round piece at column 3 after 186ms
 .......
 .......
@@ -24,8 +24,8 @@ SureAIv30 (White) placed a Round piece at column 3 after 186ms
 ...w...
 
 TheBenchmark (Red) turn
-Did 4067 total evals
-TheBenchmark (Red) placed a Square piece at column 3 after 153ms
+Did 3875 total evals
+TheBenchmark (Red) placed a Square piece at column 3 after 154ms
 .......
 .......
 .......
@@ -35,7 +35,7 @@ TheBenchmark (Red) placed a Square piece at column 3 after 153ms
 
 SureAIv30 (White) turn
 depth = 5
-Did 3275 evals
+Did 3229 evals
 SureAIv30 (White) placed a Round piece at column 2 after 186ms
 .......
 .......
@@ -45,8 +45,8 @@ SureAIv30 (White) placed a Round piece at column 2 after 186ms
 ..ww...
 
 TheBenchmark (Red) turn
-Did 3692 total evals
-TheBenchmark (Red) placed a Square piece at column 3 after 154ms
+Did 3571 total evals
+TheBenchmark (Red) placed a Square piece at column 3 after 153ms
 .......
 .......
 .......
@@ -56,7 +56,7 @@ TheBenchmark (Red) placed a Square piece at column 3 after 154ms
 
 SureAIv30 (White) turn
 depth = 6
-Did 3215 evals
+Did 3179 evals
 SureAIv30 (White) placed a Round piece at column 1 after 186ms
 .......
 .......
@@ -66,7 +66,7 @@ SureAIv30 (White) placed a Round piece at column 1 after 186ms
 .www...
 
 TheBenchmark (Red) turn
-Did 2874 total evals
+Did 2877 total evals
 TheBenchmark (Red) placed a Round piece at column 0 after 151ms
 .......
 .......

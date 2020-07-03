@@ -1,0 +1,1710 @@
+=> SimpAI V4.5 (White) vs SureAIv30 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+
+SimpAI V4.5 (White) turn
+hashtable entries: 5354
+depth: 2
+Column Played: 10
+SimpAI V4.5 (White) placed a Square piece at column 10 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..........W.
+
+SureAIv30 (Red) turn
+depth = 4
+Did 2918 evals
+SureAIv30 (Red) placed a Square piece at column 9 after 286ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.........RW.
+
+SimpAI V4.5 (White) turn
+hashtable entries: 5198
+depth: 2
+Column Played: 8
+SimpAI V4.5 (White) placed a Square piece at column 8 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+........WRW.
+
+SureAIv30 (Red) turn
+depth = 4
+Did 2803 evals
+SureAIv30 (Red) placed a Square piece at column 7 after 286ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.......RWRW.
+
+SimpAI V4.5 (White) turn
+hashtable entries: 5143
+depth: 2
+Column Played: 6
+SimpAI V4.5 (White) placed a Round piece at column 6 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+......wRWRW.
+
+SureAIv30 (Red) turn
+depth = 4
+Did 2405 evals
+SureAIv30 (Red) placed a Square piece at column 7 after 286ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.......R....
+......wRWRW.
+
+SimpAI V4.5 (White) turn
+hashtable entries: 4708
+depth: 2
+Column Played: 11
+SimpAI V4.5 (White) placed a Square piece at column 11 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.......R....
+......wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 2088 evals
+SureAIv30 (Red) placed a Square piece at column 9 after 286ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.......R.R..
+......wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 4675
+depth: 2
+Column Played: 6
+SimpAI V4.5 (White) placed a Round piece at column 6 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+......wR.R..
+......wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 2332 evals
+SureAIv30 (Red) placed a Square piece at column 8 after 286ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+......wRRR..
+......wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 4606
+depth: 2
+Column Played: 11
+SimpAI V4.5 (White) placed a Square piece at column 11 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+......wRRR.W
+......wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 2369 evals
+SureAIv30 (Red) placed a Square piece at column 10 after 286ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+......wRRRRW
+......wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 4450
+depth: 2
+Column Played: 6
+SimpAI V4.5 (White) placed a Round piece at column 6 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+......w.....
+......wRRRRW
+......wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 1978 evals
+SureAIv30 (Red) placed a Square piece at column 7 after 286ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+......wR....
+......wRRRRW
+......wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 4365
+depth: 2
+Column Played: 6
+SimpAI V4.5 (White) placed a Round piece at column 6 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+......w.....
+......wR....
+......wRRRRW
+......wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 1717 evals
+SureAIv30 (Red) placed a Square piece at column 9 after 286ms
+............
+............
+............
+............
+............
+............
+............
+............
+......w.....
+......wR.R..
+......wRRRRW
+......wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 4692
+depth: 2
+Column Played: 11
+SimpAI V4.5 (White) placed a Square piece at column 11 after 271ms
+............
+............
+............
+............
+............
+............
+............
+............
+......w.....
+......wR.R.W
+......wRRRRW
+......wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 1702 evals
+SureAIv30 (Red) placed a Square piece at column 10 after 286ms
+............
+............
+............
+............
+............
+............
+............
+............
+......w.....
+......wR.RRW
+......wRRRRW
+......wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 4507
+depth: 2
+Column Played: 8
+SimpAI V4.5 (White) placed a Round piece at column 8 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+......w.....
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 1817 evals
+SureAIv30 (Red) placed a Square piece at column 8 after 286ms
+............
+............
+............
+............
+............
+............
+............
+............
+......w.R...
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 4597
+depth: 2
+Column Played: 6
+SimpAI V4.5 (White) placed a Round piece at column 6 after 270ms
+............
+............
+............
+............
+............
+............
+............
+......w.....
+......w.R...
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 1910 evals
+SureAIv30 (Red) placed a Square piece at column 6 after 286ms
+............
+............
+............
+............
+............
+............
+......R.....
+......w.....
+......w.R...
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 4383
+depth: 2
+Column Played: 6
+SimpAI V4.5 (White) placed a Round piece at column 6 after 270ms
+............
+............
+............
+............
+............
+......w.....
+......R.....
+......w.....
+......w.R...
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 1706 evals
+SureAIv30 (Red) placed a Square piece at column 9 after 286ms
+............
+............
+............
+............
+............
+......w.....
+......R.....
+......w.....
+......w.RR..
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 4395
+depth: 2
+Column Played: 6
+SimpAI V4.5 (White) placed a Round piece at column 6 after 270ms
+............
+............
+............
+............
+......w.....
+......w.....
+......R.....
+......w.....
+......w.RR..
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 1745 evals
+SureAIv30 (Red) placed a Square piece at column 9 after 286ms
+............
+............
+............
+............
+......w.....
+......w.....
+......R.....
+......w..R..
+......w.RR..
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SimpAI V4.5 (White) turn
+Prevent Loss
+SimpAI V4.5 (White) placed a Round piece at column 9 after 0ms
+............
+............
+............
+............
+......w.....
+......w.....
+......R..w..
+......w..R..
+......w.RR..
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 1389 evals
+SureAIv30 (Red) placed a Square piece at column 10 after 286ms
+............
+............
+............
+............
+......w.....
+......w.....
+......R..w..
+......w..R..
+......w.RRR.
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 4332
+depth: 2
+Column Played: 9
+SimpAI V4.5 (White) placed a Round piece at column 9 after 270ms
+............
+............
+............
+............
+......w.....
+......w..w..
+......R..w..
+......w..R..
+......w.RRR.
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SureAIv30 (Red) turn
+depth = 3
+Did 1372 evals
+SureAIv30 (Red) placed a Square piece at column 11 after 286ms
+............
+............
+............
+............
+......w.....
+......w..w..
+......R..w..
+......w..R..
+......w.RRRR
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 4144
+depth: 2
+Column Played: 6
+SimpAI V4.5 (White) placed a Round piece at column 6 after 270ms
+............
+............
+............
+......w.....
+......w.....
+......w..w..
+......R..w..
+......w..R..
+......w.RRRR
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SureAIv30 (Red) turn
+depth = 3
+Did 1453 evals
+SureAIv30 (Red) placed a Square piece at column 11 after 286ms
+............
+............
+............
+......w.....
+......w.....
+......w..w..
+......R..w..
+......w..R.R
+......w.RRRR
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SimpAI V4.5 (White) turn
+Prevent Loss
+SimpAI V4.5 (White) placed a Round piece at column 11 after 0ms
+............
+............
+............
+......w.....
+......w.....
+......w..w..
+......R..w.w
+......w..R.R
+......w.RRRR
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 1253 evals
+SureAIv30 (Red) placed a Square piece at column 8 after 286ms
+............
+............
+............
+......w.....
+......w.....
+......w..w..
+......R..w.w
+......w.RR.R
+......w.RRRR
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 4181
+depth: 2
+Column Played: 8
+SimpAI V4.5 (White) placed a Round piece at column 8 after 270ms
+............
+............
+............
+......w.....
+......w.....
+......w..w..
+......R.ww.w
+......w.RR.R
+......w.RRRR
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 1313 evals
+SureAIv30 (Red) placed a Square piece at column 8 after 286ms
+............
+............
+............
+......w.....
+......w.....
+......w.Rw..
+......R.ww.w
+......w.RR.R
+......w.RRRR
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 4028
+depth: 2
+Column Played: 11
+SimpAI V4.5 (White) placed a Round piece at column 11 after 270ms
+............
+............
+............
+......w.....
+......w.....
+......w.Rw.w
+......R.ww.w
+......w.RR.R
+......w.RRRR
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 1036 evals
+SureAIv30 (Red) placed a Square piece at column 7 after 286ms
+............
+............
+............
+......w.....
+......w.....
+......w.Rw.w
+......R.ww.w
+......w.RR.R
+......wRRRRR
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SimpAI V4.5 (White) turn
+Prevent Loss
+SimpAI V4.5 (White) placed a Round piece at column 7 after 0ms
+............
+............
+............
+......w.....
+......w.....
+......w.Rw.w
+......R.ww.w
+......wwRR.R
+......wRRRRR
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 1111 evals
+SureAIv30 (Red) placed a Square piece at column 7 after 286ms
+............
+............
+............
+......w.....
+......w.....
+......w.Rw.w
+......RRww.w
+......wwRR.R
+......wRRRRR
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 4132
+depth: 2
+Column Played: 7
+SimpAI V4.5 (White) placed a Round piece at column 7 after 270ms
+............
+............
+............
+......w.....
+......w.....
+......wwRw.w
+......RRww.w
+......wwRR.R
+......wRRRRR
+......wRwRRW
+......wRRRRW
+......wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 1099 evals
+SureAIv30 (Red) placed a Square piece at column 3 after 286ms
+............
+............
+............
+......w.....
+......w.....
+......wwRw.w
+......RRww.w
+......wwRR.R
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R..wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 3627
+depth: 2
+Column Played: 10
+SimpAI V4.5 (White) placed a Round piece at column 10 after 270ms
+............
+............
+............
+......w.....
+......w.....
+......wwRw.w
+......RRww.w
+......wwRRwR
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R..wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 1183 evals
+SureAIv30 (Red) placed a Square piece at column 10 after 286ms
+............
+............
+............
+......w.....
+......w.....
+......wwRw.w
+......RRwwRw
+......wwRRwR
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R..wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 3894
+depth: 2
+Column Played: 10
+SimpAI V4.5 (White) placed a Round piece at column 10 after 270ms
+............
+............
+............
+......w.....
+......w.....
+......wwRwww
+......RRwwRw
+......wwRRwR
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R..wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 1105 evals
+SureAIv30 (Red) placed a Square piece at column 9 after 286ms
+............
+............
+............
+......w.....
+......w..R..
+......wwRwww
+......RRwwRw
+......wwRRwR
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R..wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 3480
+depth: 2
+Column Played: 7
+SimpAI V4.5 (White) placed a Round piece at column 7 after 270ms
+............
+............
+............
+......w.....
+......ww.R..
+......wwRwww
+......RRwwRw
+......wwRRwR
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R..wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 1017 evals
+SureAIv30 (Red) placed a Square piece at column 10 after 286ms
+............
+............
+............
+......w.....
+......ww.RR.
+......wwRwww
+......RRwwRw
+......wwRRwR
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R..wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 3462
+depth: 2
+Column Played: 8
+SimpAI V4.5 (White) placed a Round piece at column 8 after 270ms
+............
+............
+............
+......w.....
+......wwwRR.
+......wwRwww
+......RRwwRw
+......wwRRwR
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R..wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 1003 evals
+SureAIv30 (Red) placed a Square piece at column 7 after 286ms
+............
+............
+............
+......wR....
+......wwwRR.
+......wwRwww
+......RRwwRw
+......wwRRwR
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R..wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 3485
+depth: 2
+Column Played: 11
+SimpAI V4.5 (White) placed a Round piece at column 11 after 270ms
+............
+............
+............
+......wR....
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R..wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 902 evals
+SureAIv30 (Red) placed a Square piece at column 8 after 286ms
+............
+............
+............
+......wRR...
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R..wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 3387
+depth: 2
+Column Played: 9
+SimpAI V4.5 (White) placed a Round piece at column 9 after 270ms
+............
+............
+............
+......wRRw..
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R..wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 1013 evals
+SureAIv30 (Red) placed a Square piece at column 10 after 286ms
+............
+............
+............
+......wRRwR.
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R..wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 3406
+depth: 2
+Column Played: 11
+SimpAI V4.5 (White) placed a Round piece at column 11 after 270ms
+............
+............
+............
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R..wRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 959 evals
+SureAIv30 (Red) placed a Square piece at column 11 after 286ms
+............
+............
+...........R
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R..wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 3398
+depth: 2
+Column Played: 6
+SimpAI V4.5 (White) placed a Round piece at column 6 after 270ms
+............
+............
+......w....R
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R..wRWRWW
+
+SureAIv30 (Red) turn
+depth = 3
+Did 828 evals
+SureAIv30 (Red) placed a Square piece at column 10 after 286ms
+............
+............
+......w...RR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R..wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 3406
+depth: 3
+Column Played: 6
+SimpAI V4.5 (White) placed a Round piece at column 6 after 270ms
+............
+......w.....
+......w...RR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R..wRWRWW
+
+SureAIv30 (Red) turn
+depth = 3
+Did 1111 evals
+SureAIv30 (Red) placed a Square piece at column 6 after 286ms
+......R.....
+......w.....
+......w...RR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R..wRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 3243
+depth: 3
+Column Played: 5
+SimpAI V4.5 (White) placed a Round piece at column 5 after 270ms
+......R.....
+......w.....
+......w...RR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R.wwRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 964 evals
+SureAIv30 (Red) placed a Square piece at column 7 after 286ms
+......R.....
+......w.....
+......wR..RR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+......wRRRRR
+......wRwRRW
+......wRRRRW
+...R.wwRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 3435
+depth: 2
+Column Played: 5
+SimpAI V4.5 (White) placed a Round piece at column 5 after 270ms
+......R.....
+......w.....
+......wR..RR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+......wRRRRR
+......wRwRRW
+.....wwRRRRW
+...R.wwRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 943 evals
+SureAIv30 (Red) placed a Square piece at column 5 after 286ms
+......R.....
+......w.....
+......wR..RR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+......wRRRRR
+.....RwRwRRW
+.....wwRRRRW
+...R.wwRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 3629
+depth: 2
+Column Played: 5
+SimpAI V4.5 (White) placed a Round piece at column 5 after 270ms
+......R.....
+......w.....
+......wR..RR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+.....wwRRRRR
+.....RwRwRRW
+.....wwRRRRW
+...R.wwRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 884 evals
+SureAIv30 (Red) placed a Square piece at column 8 after 286ms
+......R.....
+......w.....
+......wRR.RR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+.....wwRRRRR
+.....RwRwRRW
+.....wwRRRRW
+...R.wwRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 3305
+depth: 2
+Column Played: 9
+SimpAI V4.5 (White) placed a Round piece at column 9 after 270ms
+......R.....
+......w.....
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+.....wwRRRRR
+.....RwRwRRW
+.....wwRRRRW
+...R.wwRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 790 evals
+SureAIv30 (Red) placed a Square piece at column 7 after 286ms
+......R.....
+......wR....
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+.....wwRRRRR
+.....RwRwRRW
+.....wwRRRRW
+...R.wwRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 3178
+depth: 2
+Column Played: 3
+SimpAI V4.5 (White) placed a Round piece at column 3 after 270ms
+......R.....
+......wR....
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+.....wwRRRRR
+.....RwRwRRW
+...w.wwRRRRW
+...R.wwRWRWW
+
+SureAIv30 (Red) turn
+depth = 3
+Did 782 evals
+SureAIv30 (Red) placed a Square piece at column 9 after 286ms
+......R.....
+......wR.R..
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+.....wwRRRRR
+.....RwRwRRW
+...w.wwRRRRW
+...R.wwRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 3228
+depth: 2
+Column Played: 3
+SimpAI V4.5 (White) placed a Round piece at column 3 after 270ms
+......R.....
+......wR.R..
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+.....wwRRRRR
+...w.RwRwRRW
+...w.wwRRRRW
+...R.wwRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 775 evals
+SureAIv30 (Red) placed a Square piece at column 10 after 286ms
+......R.....
+......wR.RR.
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+.....wwRRRRR
+...w.RwRwRRW
+...w.wwRRRRW
+...R.wwRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 3201
+depth: 2
+Column Played: 3
+SimpAI V4.5 (White) placed a Round piece at column 3 after 270ms
+......R.....
+......wR.RR.
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+...w.wwRRRRR
+...w.RwRwRRW
+...w.wwRRRRW
+...R.wwRWRWW
+
+SureAIv30 (Red) turn
+depth = 3
+Did 786 evals
+SureAIv30 (Red) placed a Square piece at column 8 after 286ms
+......R.....
+......wRRRR.
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+...w.wwRRRRR
+...w.RwRwRRW
+...w.wwRRRRW
+...R.wwRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 2580
+depth: 2
+Column Played: 11
+SimpAI V4.5 (White) placed a Square piece at column 11 after 270ms
+......R.....
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+...w.wwRRRRR
+...w.RwRwRRW
+...w.wwRRRRW
+...R.wwRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 774 evals
+SureAIv30 (Red) placed a Round piece at column 10 after 286ms
+......R...r.
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+......wwRRwR
+...w.wwRRRRR
+...w.RwRwRRW
+...w.wwRRRRW
+...R.wwRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 2386
+depth: 3
+Column Played: 5
+SimpAI V4.5 (White) placed a Round piece at column 5 after 270ms
+......R...r.
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+.....wwwRRwR
+...w.wwRRRRR
+...w.RwRwRRW
+...w.wwRRRRW
+...R.wwRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 893 evals
+SureAIv30 (Red) placed a Round piece at column 8 after 286ms
+......R.r.r.
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+......RRwwRw
+.....wwwRRwR
+...w.wwRRRRR
+...w.RwRwRRW
+...w.wwRRRRW
+...R.wwRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 2316
+depth: 3
+Column Played: 5
+SimpAI V4.5 (White) placed a Round piece at column 5 after 270ms
+......R.r.r.
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+.....wRRwwRw
+.....wwwRRwR
+...w.wwRRRRR
+...w.RwRwRRW
+...w.wwRRRRW
+...R.wwRWRWW
+
+SureAIv30 (Red) turn
+depth = 4
+Did 1124 evals
+SureAIv30 (Red) placed a Round piece at column 9 after 287ms
+......R.rrr.
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+.....wRRwwRw
+.....wwwRRwR
+...w.wwRRRRR
+...w.RwRwRRW
+...w.wwRRRRW
+...R.wwRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 2320
+depth: 3
+Column Played: 11
+SimpAI V4.5 (White) placed a Square piece at column 11 after 270ms
+......R.rrrW
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+.....wRRwwRw
+.....wwwRRwR
+...w.wwRRRRR
+...w.RwRwRRW
+...w.wwRRRRW
+...R.wwRWRWW
+
+SureAIv30 (Red) turn
+depth = 5
+Did 1286 evals
+SureAIv30 (Red) placed a Round piece at column 7 after 286ms
+......RrrrrW
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+.....wRRwwRw
+.....wwwRRwR
+...w.wwRRRRR
+...w.RwRwRRW
+...w.wwRRRRW
+...R.wwRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 2126
+depth: 3
+Column Played: 1
+SimpAI V4.5 (White) placed a Square piece at column 1 after 270ms
+......RrrrrW
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+.....wRRwwRw
+.....wwwRRwR
+...w.wwRRRRR
+...w.RwRwRRW
+...w.wwRRRRW
+.W.R.wwRWRWW
+
+SureAIv30 (Red) turn
+depth = 5
+Did 1168 evals
+SureAIv30 (Red) placed a Round piece at column 0 after 286ms
+......RrrrrW
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+.....wRRwwRw
+.....wwwRRwR
+...w.wwRRRRR
+...w.RwRwRRW
+...w.wwRRRRW
+rW.R.wwRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 2139
+depth: 4
+Column Played: 1
+SimpAI V4.5 (White) placed a Square piece at column 1 after 270ms
+......RrrrrW
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+.....wRRwwRw
+.....wwwRRwR
+...w.wwRRRRR
+...w.RwRwRRW
+.W.w.wwRRRRW
+rW.R.wwRWRWW
+
+SureAIv30 (Red) turn
+depth = 5
+Did 1114 evals
+SureAIv30 (Red) placed a Round piece at column 2 after 286ms
+......RrrrrW
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+.....wRRwwRw
+.....wwwRRwR
+...w.wwRRRRR
+...w.RwRwRRW
+.W.w.wwRRRRW
+rWrR.wwRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 2076
+depth: 3
+Column Played: 4
+SimpAI V4.5 (White) placed a Square piece at column 4 after 270ms
+......RrrrrW
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+.....wRRwwRw
+.....wwwRRwR
+...w.wwRRRRR
+...w.RwRwRRW
+.W.w.wwRRRRW
+rWrRWwwRWRWW
+
+SureAIv30 (Red) turn
+depth = 5
+Did 1217 evals
+SureAIv30 (Red) placed a Round piece at column 2 after 286ms
+......RrrrrW
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+.....wRRwwRw
+.....wwwRRwR
+...w.wwRRRRR
+...w.RwRwRRW
+.Wrw.wwRRRRW
+rWrRWwwRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 2060
+depth: 3
+Column Played: 1
+SimpAI V4.5 (White) placed a Square piece at column 1 after 270ms
+......RrrrrW
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+.....wRRwwRw
+.....wwwRRwR
+...w.wwRRRRR
+.W.w.RwRwRRW
+.Wrw.wwRRRRW
+rWrRWwwRWRWW
+
+SureAIv30 (Red) turn
+depth = 5
+Did 1162 evals
+SureAIv30 (Red) placed a Round piece at column 0 after 286ms
+......RrrrrW
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+.....wRRwwRw
+.....wwwRRwR
+...w.wwRRRRR
+.W.w.RwRwRRW
+rWrw.wwRRRRW
+rWrRWwwRWRWW
+
+SimpAI V4.5 (White) turn
+Guarantee Win
+SimpAI V4.5 (White) placed a Round piece at column 4 after 0ms
+......RrrrrW
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+.....wRRwwRw
+.....wwwRRwR
+...w.wwRRRRR
+.W.w.RwRwRRW
+rWrwwwwRRRRW
+rWrRWwwRWRWW
+
+SureAIv30 (Red) turn
+depth = 5
+Did 1282 evals
+SureAIv30 (Red) placed a Round piece at column 0 after 286ms
+......RrrrrW
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+.....wRRwwRw
+.....wwwRRwR
+...w.wwRRRRR
+rW.w.RwRwRRW
+rWrwwwwRRRRW
+rWrRWwwRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 1714
+depth: 4
+Column Played: 1
+SimpAI V4.5 (White) placed a Square piece at column 1 after 270ms
+......RrrrrW
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+.....wRRwwRw
+.....wwwRRwR
+.W.w.wwRRRRR
+rW.w.RwRwRRW
+rWrwwwwRRRRW
+rWrRWwwRWRWW
+
+SureAIv30 (Red) turn
+depth = 5
+Did 1239 evals
+SureAIv30 (Red) placed a Round piece at column 0 after 286ms
+......RrrrrW
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+.....wRRwwRw
+.....wwwRRwR
+rW.w.wwRRRRR
+rW.w.RwRwRRW
+rWrwwwwRRRRW
+rWrRWwwRWRWW
+
+SimpAI V4.5 (White) turn
+hashtable entries: 1700
+depth: 4
+Column Played: 1
+SimpAI V4.5 (White) placed a Square piece at column 1 after 270ms
+......RrrrrW
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+.....wRRwwRw
+.W...wwwRRwR
+rW.w.wwRRRRR
+rW.w.RwRwRRW
+rWrwwwwRRRRW
+rWrRWwwRWRWW
+
+SureAIv30 (Red) turn
+depth = 5
+Did 1184 evals
+SureAIv30 (Red) placed a Round piece at column 3 after 286ms
+......RrrrrW
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+.....wRRwwRw
+.W.r.wwwRRwR
+rW.w.wwRRRRR
+rW.w.RwRwRRW
+rWrwwwwRRRRW
+rWrRWwwRWRWW
+
+SimpAI V4.5 (White) turn
+Guarantee Win
+SimpAI V4.5 (White) placed a Square piece at column 1 after 0ms
+......RrrrrW
+......wRRRRW
+......wRRwRR
+......wRRwRw
+......wwwRRw
+......wwRwww
+.W...wRRwwRw
+.W.r.wwwRRwR
+rW.w.wwRRRRR
+rW.w.RwRwRRW
+rWrwwwwRRRRW
+rWrRWwwRWRWW
+
+Winner is SureAIv30 (Red)
+Solution=(0,1)(1,1)(2,1)(3,1)(4,1)(5,1)

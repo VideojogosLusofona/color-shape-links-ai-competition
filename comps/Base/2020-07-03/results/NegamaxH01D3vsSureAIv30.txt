@@ -14,7 +14,7 @@
 
 NegamaxH01D3 (White) turn
 Did 2955 total evals
-NegamaxH01D3 (White) placed a Round piece at column 3 after 64ms
+NegamaxH01D3 (White) placed a Round piece at column 3 after 63ms
 .......
 .......
 .......
@@ -24,7 +24,7 @@ NegamaxH01D3 (White) placed a Round piece at column 3 after 64ms
 
 SureAIv30 (Red) turn
 depth = 5
-Did 3805 evals
+Did 3794 evals
 SureAIv30 (Red) placed a Square piece at column 3 after 186ms
 .......
 .......
@@ -45,7 +45,7 @@ NegamaxH01D3 (White) placed a Round piece at column 3 after 66ms
 
 SureAIv30 (Red) turn
 depth = 5
-Did 3455 evals
+Did 3456 evals
 SureAIv30 (Red) placed a Square piece at column 0 after 186ms
 .......
 .......
@@ -66,7 +66,7 @@ Rw.w...
 
 SureAIv30 (Red) turn
 depth = 5
-Did 3195 evals
+Did 3211 evals
 SureAIv30 (Red) placed a Square piece at column 1 after 186ms
 .......
 .......
@@ -87,7 +87,7 @@ Rw.w...
 
 SureAIv30 (Red) turn
 depth = 5
-Did 2997 evals
+Did 2979 evals
 SureAIv30 (Red) placed a Square piece at column 1 after 186ms
 .......
 .......
@@ -108,7 +108,7 @@ Rw.w...
 
 SureAIv30 (Red) turn
 depth = 5
-Did 2798 evals
+Did 2776 evals
 SureAIv30 (Red) placed a Square piece at column 0 after 186ms
 .......
 .......
@@ -119,7 +119,7 @@ Rw.w...
 
 NegamaxH01D3 (White) turn
 Did 2829 total evals
-NegamaxH01D3 (White) placed a Round piece at column 4 after 69ms
+NegamaxH01D3 (White) placed a Round piece at column 4 after 70ms
 .......
 .......
 .w.w...
@@ -129,7 +129,7 @@ Rw.ww..
 
 SureAIv30 (Red) turn
 depth = 6
-Did 2532 evals
+Did 2489 evals
 SureAIv30 (Red) placed a Square piece at column 2 after 186ms
 .......
 .......
@@ -140,7 +140,7 @@ RwRww..
 
 NegamaxH01D3 (White) turn
 Did 2339 total evals
-NegamaxH01D3 (White) placed a Round piece at column 2 after 56ms
+NegamaxH01D3 (White) placed a Round piece at column 2 after 57ms
 .......
 .......
 .w.w...
@@ -150,7 +150,7 @@ RwRww..
 
 SureAIv30 (Red) turn
 depth = 5
-Did 2650 evals
+Did 2626 evals
 SureAIv30 (Red) placed a Square piece at column 0 after 186ms
 .......
 .......
@@ -171,7 +171,7 @@ RwRww..
 
 SureAIv30 (Red) turn
 depth = 5
-Did 2313 evals
+Did 2304 evals
 SureAIv30 (Red) placed a Square piece at column 3 after 186ms
 .......
 ...R...
@@ -192,7 +192,7 @@ RwRww..
 
 SureAIv30 (Red) turn
 depth = 6
-Did 2090 evals
+Did 2043 evals
 SureAIv30 (Red) placed a Square piece at column 6 after 186ms
 .......
 ...R...
@@ -203,7 +203,7 @@ RwRww.R
 
 NegamaxH01D3 (White) turn
 Did 2076 total evals
-NegamaxH01D3 (White) placed a Square piece at column 5 after 55ms
+NegamaxH01D3 (White) placed a Square piece at column 5 after 57ms
 .......
 ...R...
 ww.w...
@@ -213,7 +213,7 @@ RwRwwWR
 
 SureAIv30 (Red) turn
 depth = 5
-Did 2040 evals
+Did 1982 evals
 SureAIv30 (Red) placed a Square piece at column 5 after 186ms
 .......
 ...R...
@@ -224,7 +224,7 @@ RwRwwWR
 
 NegamaxH01D3 (White) turn
 Did 2062 total evals
-NegamaxH01D3 (White) placed a Square piece at column 3 after 55ms
+NegamaxH01D3 (White) placed a Square piece at column 3 after 56ms
 ...W...
 ...R...
 ww.w...
@@ -234,7 +234,7 @@ RwRwwWR
 
 SureAIv30 (Red) turn
 depth = 6
-Did 2445 evals
+Did 2401 evals
 SureAIv30 (Red) placed a Square piece at column 4 after 186ms
 ...W...
 ...R...
@@ -255,7 +255,7 @@ RwRwwWR
 
 SureAIv30 (Red) turn
 depth = 9
-Did 3615 evals
+Did 3503 evals
 SureAIv30 (Red) placed a Round piece at column 6 after 186ms
 ...W...
 w..R...
@@ -266,7 +266,7 @@ RwRwwWR
 
 NegamaxH01D3 (White) turn
 Did 159 total evals
-NegamaxH01D3 (White) placed a Square piece at column 0 after 3ms
+NegamaxH01D3 (White) placed a Square piece at column 0 after 4ms
 W..W...
 w..R...
 ww.w...
@@ -275,8 +275,8 @@ RRwRwRr
 RwRwwWR
 
 SureAIv30 (Red) turn
-depth = 18
-Did 4015 evals
+depth = 17
+Did 3883 evals
 SureAIv30 (Red) placed a Round piece at column 5 after 186ms
 W..W...
 w..R...

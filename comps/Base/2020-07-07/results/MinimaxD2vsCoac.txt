@@ -1,0 +1,124 @@
+=> MinimaxD2 (White) vs Coac (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 7ms
+.......
+.......
+.......
+.......
+.......
+.....w.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 3 after 50ms
+.......
+.......
+.......
+.......
+.......
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.......
+.......
+.......
+.......
+.....w.
+...R.w.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 5 after 107ms
+.......
+.......
+.......
+.....R.
+.....w.
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.......
+.......
+.....w.
+.....R.
+.....w.
+...R.w.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 5 after 108ms
+.......
+.....R.
+.....w.
+.....R.
+.....w.
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.....w.
+.....R.
+.....w.
+.....R.
+.....w.
+...R.w.
+
+Coac (Red) turn
+Coac (Red) placed a Square piece at column 2 after 60ms
+.....w.
+.....R.
+.....w.
+.....R.
+.....w.
+..RR.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 2 after 3ms
+.....w.
+.....R.
+.....w.
+.....R.
+..w..w.
+..RR.w.
+
+Coac (Red) turn
+Coac (Red) placed a Round piece at column 1 after 48ms
+.....w.
+.....R.
+.....w.
+.....R.
+..w..w.
+.rRR.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 6 after 2ms
+.....w.
+.....R.
+.....w.
+.....R.
+..w..w.
+.rRR.wW
+
+Coac (Red) turn
+Coac (Red) placed a Round piece at column 0 after 10ms
+.....w.
+.....R.
+.....w.
+.....R.
+..w..w.
+rrRR.wW
+
+Winner is Coac (Red)
+Solution=(0,0)(0,1)(0,2)(0,3)

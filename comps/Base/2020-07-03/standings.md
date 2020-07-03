@@ -1,6 +1,6 @@
 # Standings
 
-Last update: Fri, 03 Jul 2020 15:27:41 GMT
+Last update: Fri, 03 Jul 2020 20:36:52 GMT
 
 ## Configuration
 
@@ -17,15 +17,15 @@ Last update: Fri, 03 Jul 2020 15:27:41 GMT
 
 | Pos. | AI Thinker | Points |
 |:----:| ---------- | -----: |
-| 1 | ThunderV7 | 48 |
+| 1 | ThunderV7 | 45 |
 | 2 | SureAIv30 | 36 |
 | 3 | NegamaxH01D3 | 33 |
-| 4 | TheBenchmark | 30 |
-| 5 | Omega Thonk Tank | 27 |
-| 6 | Coac | 21 |
+| 4 | Omega Thonk Tank | 30 |
+| 5 | TheBenchmark | 27 |
+| 6 | Coac | 24 |
 | 7 | MinimaxD2 | 15 |
-| 8 | Sequential | 6 |
-| 9 | Random | 0 |
+| 8 | Random | 3 |
+| 9 | Sequential | 3 |
 
 ## Results
 
@@ -47,7 +47,7 @@ _Winner, if any, shown in bold_
 | **`Omega Thonk Tank`** | `NegamaxH01D3` | [+](results/OmegaThonkTankvsNegamaxH01D3.txt) |
 | **`TheBenchmark`** | `SureAIv30` | [+](results/TheBenchmarkvsSureAIv30.txt) |
 | **`SureAIv30`** | `TheBenchmark` | [+](results/SureAIv30vsTheBenchmark.txt) |
-| `Random` | **`Sequential`** | [+](results/RandomvsSequential.txt) |
+| **`Random`** | `Sequential` | [+](results/RandomvsSequential.txt) |
 | **`Sequential`** | `Random` | [+](results/SequentialvsRandom.txt) |
 | `MinimaxD2` | **`Coac`** | [+](results/MinimaxD2vsCoac.txt) |
 | **`Coac`** | `MinimaxD2` | [+](results/CoacvsMinimaxD2.txt) |
@@ -78,7 +78,7 @@ _Winner, if any, shown in bold_
 | **`SureAIv30`** | `Random` | [+](results/SureAIv30vsRandom.txt) |
 | `Random` | **`SureAIv30`** | [+](results/RandomvsSureAIv30.txt) |
 | **`Omega Thonk Tank`** | `TheBenchmark` | [+](results/OmegaThonkTankvsTheBenchmark.txt) |
-| **`TheBenchmark`** | `Omega Thonk Tank` | [+](results/TheBenchmarkvsOmegaThonkTank.txt) |
+| `TheBenchmark` | **`Omega Thonk Tank`** | [+](results/TheBenchmarkvsOmegaThonkTank.txt) |
 | `Coac` | **`NegamaxH01D3`** | [+](results/CoacvsNegamaxH01D3.txt) |
 | **`NegamaxH01D3`** | `Coac` | [+](results/NegamaxH01D3vsCoac.txt) |
 | **`MinimaxD2`** | `Random` | [+](results/MinimaxD2vsRandom.txt) |
@@ -88,7 +88,7 @@ _Winner, if any, shown in bold_
 | **`SureAIv30`** | `NegamaxH01D3` | [+](results/SureAIv30vsNegamaxH01D3.txt) |
 | **`NegamaxH01D3`** | `SureAIv30` | [+](results/NegamaxH01D3vsSureAIv30.txt) |
 | `Coac` | **`ThunderV7`** | [+](results/CoacvsThunderV7.txt) |
-| **`ThunderV7`** | `Coac` | [+](results/ThunderV7vsCoac.txt) |
+| `ThunderV7` | **`Coac`** | [+](results/ThunderV7vsCoac.txt) |
 | `MinimaxD2` | **`TheBenchmark`** | [+](results/MinimaxD2vsTheBenchmark.txt) |
 | **`TheBenchmark`** | `MinimaxD2` | [+](results/TheBenchmarkvsMinimaxD2.txt) |
 | `Random` | **`NegamaxH01D3`** | [+](results/RandomvsNegamaxH01D3.txt) |

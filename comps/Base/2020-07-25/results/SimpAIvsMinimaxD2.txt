@@ -1,0 +1,207 @@
+=> SimpAI (White) vs MinimaxD2 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+SimpAI (White) turn
+6230
+depth = 3
+SimpAI (White) placed a Round piece at column 3 after 180ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 3 after 3ms
+.......
+.......
+.......
+.......
+...R...
+...w...
+
+SimpAI (White) turn
+6247
+depth = 3
+SimpAI (White) placed a Round piece at column 2 after 180ms
+.......
+.......
+.......
+.......
+...R...
+..ww...
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 3 after 3ms
+.......
+.......
+.......
+...R...
+...R...
+..ww...
+
+SimpAI (White) turn
+5619
+depth = 4
+SimpAI (White) placed a Square piece at column 1 after 180ms
+.......
+.......
+.......
+...R...
+...R...
+.Www...
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 6 after 3ms
+.......
+.......
+.......
+...R...
+...R...
+.Www..R
+
+SimpAI (White) turn
+5413
+depth = 4
+SimpAI (White) placed a Round piece at column 6 after 180ms
+.......
+.......
+.......
+...R...
+...R..w
+.Www..R
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 6 after 4ms
+.......
+.......
+.......
+...R..R
+...R..w
+.Www..R
+
+SimpAI (White) turn
+5106
+depth = 4
+SimpAI (White) placed a Round piece at column 6 after 180ms
+.......
+.......
+......w
+...R..R
+...R..w
+.Www..R
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 6 after 4ms
+.......
+......R
+......w
+...R..R
+...R..w
+.Www..R
+
+SimpAI (White) turn
+5198
+depth = 5
+SimpAI (White) placed a Round piece at column 6 after 180ms
+......w
+......R
+......w
+...R..R
+...R..w
+.Www..R
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 5 after 2ms
+......w
+......R
+......w
+...R..R
+...R..w
+.Www.RR
+
+SimpAI (White) turn
+4673
+depth = 5
+SimpAI (White) placed a Square piece at column 5 after 180ms
+......w
+......R
+......w
+...R..R
+...R.Ww
+.Www.RR
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 5 after 3ms
+......w
+......R
+......w
+...R.RR
+...R.Ww
+.Www.RR
+
+SimpAI (White) turn
+4416
+depth = 4
+SimpAI (White) placed a Round piece at column 5 after 180ms
+......w
+......R
+.....ww
+...R.RR
+...R.Ww
+.Www.RR
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 5 after 3ms
+......w
+.....RR
+.....ww
+...R.RR
+...R.Ww
+.Www.RR
+
+SimpAI (White) turn
+4341
+depth = 5
+SimpAI (White) placed a Square piece at column 5 after 180ms
+.....Ww
+.....RR
+.....ww
+...R.RR
+...R.Ww
+.Www.RR
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 4 after 2ms
+.....Ww
+.....RR
+.....ww
+...R.RR
+...R.Ww
+.WwwRRR
+
+SimpAI (White) turn
+4165
+depth = 4
+SimpAI (White) placed a Square piece at column 0 after 180ms
+.....Ww
+.....RR
+.....ww
+...R.RR
+...R.Ww
+WWwwRRR
+
+Winner is SimpAI (White)
+Solution=(0,0)(0,1)(0,2)(0,3)
