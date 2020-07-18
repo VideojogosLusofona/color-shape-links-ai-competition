@@ -7,6 +7,7 @@
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using ColorShapeLinks.Common.AI;
@@ -33,7 +34,7 @@ namespace ColorShapeLinks.Common.Session
         private IDictionary<Match, Winner> results;
 
         // Current points for each thinker
-        private IDictionary<string, int> thinkerPoints;
+        private IDictionary<IThinkerPrototype, int> thinkerPoints;
 
         // Points per win, loss and draw
         private int pointsPerWin, pointsPerLoss, pointsPerDraw;
@@ -74,7 +75,8 @@ namespace ColorShapeLinks.Common.Session
             this.pointsPerDraw = sessionConfig.PointsPerDraw;
 
             // Initialize the table of thinker points
-            thinkerPoints = new Dictionary<string, int>(numThinkers);
+            thinkerPoints =
+                new Dictionary<IThinkerPrototype, int>(numThinkers);
 
             // Initialize the list of matches
             matches = new List<Match>();
@@ -150,12 +152,11 @@ namespace ColorShapeLinks.Common.Session
         /// <returns>The current standings/classification.</returns>
         public IEnumerable<KeyValuePair<string, int>> GetStandings()
         {
-            // Create an array to place thinkers and their points
+            // Populate an array with thinker names and their points
             KeyValuePair<string, int>[] standings =
-                new KeyValuePair<string, int>[thinkerPoints.Count];
-
-            // Populate the array with thinkers and their points
-            thinkerPoints.CopyTo(standings, 0);
+                (from tp in thinkerPoints
+                select new KeyValuePair<string, int>(
+                    tp.Key.ThinkerName, tp.Value)).ToArray();
 
             // Sort the array in descending order according to thinker points
             Array.Sort(standings, (a, b) => b.Value - a.Value);
@@ -226,33 +227,33 @@ namespace ColorShapeLinks.Common.Session
             results.Add(match, result);
 
             // If these thinkers are not yet in the points table, add them
-            if (!thinkerPoints.ContainsKey(match.thinkerWhite.ThinkerName))
-                thinkerPoints.Add(match.thinkerWhite.ThinkerName, 0);
-            if (!thinkerPoints.ContainsKey(match.thinkerRed.ThinkerName))
-                thinkerPoints.Add(match.thinkerRed.ThinkerName, 0);
+            if (!thinkerPoints.ContainsKey(match.thinkerWhite))
+                thinkerPoints.Add(match.thinkerWhite, 0);
+            if (!thinkerPoints.ContainsKey(match.thinkerRed))
+                thinkerPoints.Add(match.thinkerRed, 0);
 
             // Update thinker points
             switch (result)
             {
                 // White won
                 case Winner.White:
-                    thinkerPoints[match.thinkerWhite.ThinkerName]
+                    thinkerPoints[match.thinkerWhite]
                         += pointsPerWin;
-                    thinkerPoints[match.thinkerRed.ThinkerName]
+                    thinkerPoints[match.thinkerRed]
                         += pointsPerLoss;
                     break;
                 // Red won
                 case Winner.Red:
-                    thinkerPoints[match.thinkerRed.ThinkerName]
+                    thinkerPoints[match.thinkerRed]
                         += pointsPerWin;
-                    thinkerPoints[match.thinkerWhite.ThinkerName]
+                    thinkerPoints[match.thinkerWhite]
                         += pointsPerLoss;
                     break;
                 // Game ended in a draw
                 case Winner.Draw:
-                    thinkerPoints[match.thinkerWhite.ThinkerName]
+                    thinkerPoints[match.thinkerWhite]
                         += pointsPerDraw;
-                    thinkerPoints[match.thinkerRed.ThinkerName]
+                    thinkerPoints[match.thinkerRed]
                         += pointsPerDraw;
                     break;
                 // Invalid situation
