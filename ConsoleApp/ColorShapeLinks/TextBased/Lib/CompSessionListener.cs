@@ -26,11 +26,15 @@ namespace ColorShapeLinks.TextBased.Lib
     /// </remarks>
     public class CompSessionListener : ISessionListener
     {
-        // The folder where complete match play outs will be placed
-        private const string playoutsFolder = "results";
+        /// <summary>
+        /// The folder where complete match play outs will be placed.
+        /// </summary>
+        public const string PlayoutsFolder = "results";
 
-        // The name of the Markdown file containing the standings
-        private const string standingsFile = "standings.md";
+        /// <summary>
+        /// The name of the Markdown file containing the standings.
+        /// </summary>
+        public const string StandingsFile = "standings.md";
 
         // Current play out file
         private StreamWriter currPlayoutFile;
@@ -65,7 +69,7 @@ namespace ColorShapeLinks.TextBased.Lib
         // Called before the session starts
         private void BeforeSession(ISessionDataProvider sessionData)
         {
-            Directory.CreateDirectory(playoutsFolder);
+            Directory.CreateDirectory(PlayoutsFolder);
         }
 
         // Create a new match play out file and redirects the standard output
@@ -74,7 +78,7 @@ namespace ColorShapeLinks.TextBased.Lib
         private void BeforeMatch(Match match)
         {
             currPlayoutFile = new StreamWriter(
-                Path.Combine(playoutsFolder, MatchPlayoutFileName(match)));
+                Path.Combine(PlayoutsFolder, MatchPlayoutFileName(match)));
             stdOutput = Console.Out;
             Console.SetOut(currPlayoutFile);
         }
@@ -92,7 +96,7 @@ namespace ColorShapeLinks.TextBased.Lib
         // Called after the session is over
         private void AfterSession(ISessionDataProvider sessionData)
         {
-            using (StreamWriter outFile = new StreamWriter(standingsFile))
+            using (StreamWriter outFile = new StreamWriter(StandingsFile))
             {
                 int i = 0;
                 IMatchConfig cfg = sessionData.MatchConfig;
@@ -139,7 +143,7 @@ namespace ColorShapeLinks.TextBased.Lib
                     if (mw.Value == Winner.White) white = $"**{white}**";
                     else if (mw.Value == Winner.Red) red = $"**{red}**";
                     outFile.WriteLine("| {0} | {1} | [+]({2}/{3}) |",
-                        white, red, playoutsFolder,
+                        white, red, PlayoutsFolder,
                         MatchPlayoutFileName(mw.Key));
                 }
             }

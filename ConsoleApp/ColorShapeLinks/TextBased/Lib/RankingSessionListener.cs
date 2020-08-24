@@ -23,8 +23,10 @@ namespace ColorShapeLinks.TextBased.Lib
     /// </remarks>
     public class RankingSessionListener : ISessionListener
     {
-        // File to where results will be saved
-        private const string rankingFile = "results.tsv";
+        /// <summary>
+        /// File to where results will be saved.
+        /// </summary>
+        public const string RankingFile = "results.tsv";
 
         /// @copydoc ColorShapeLinks.TextBased.Lib.ISessionListener.ListenTo
         /// <seealso cref="ColorShapeLinks.TextBased.Lib.ISessionListener.ListenTo"/>
@@ -40,7 +42,7 @@ namespace ColorShapeLinks.TextBased.Lib
         // Outputs the final ranking after the session is over
         private void AfterSession(ISessionDataProvider sessionData)
         {
-            using (StreamWriter outFile = new StreamWriter(rankingFile))
+            using (StreamWriter outFile = new StreamWriter(RankingFile))
             {
                 // Classification
                 foreach (KeyValuePair<string, int> tp in sessionData.Standings)
