@@ -22,8 +22,10 @@ namespace ColorShapeLinks.Common.AI.Examples
         // Auxiliary random number generator
         private Random rnd;
 
-        // Array where to place stuff that will occupy memory
-        // Leave it public so compiler doesn't optimize it out
+        /// <summary>
+        /// Array where to place stuff that will occupy memory. Leave it
+        /// public so compiler doesn't optimize it out.
+        /// </summary>
         public ulong[] memory;
 
         /// <summary>
