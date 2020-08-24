@@ -1,6 +1,6 @@
 ﻿/// @file
 /// @brief This file contains the
-/// ::ColorShapeLinks.Plumbing.CompSessionListener class.
+/// ::ColorShapeLinks.TextBased.Lib.CompSessionListener class.
 ///
 /// @author Nuno Fachada
 /// @date 2020

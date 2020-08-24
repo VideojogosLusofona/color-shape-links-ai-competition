@@ -1,6 +1,6 @@
 /// @file
 /// @brief This file contains the
-/// ::ColorShapeLinks.Plumbing.RankingSessionListener class.
+/// ::ColorShapeLinks.TextBased.Lib.RankingSessionListener class.
 ///
 /// @author Nuno Fachada
 /// @date 2020
