@@ -15,8 +15,8 @@ using ColorShapeLinks.TextBased.Lib;
 namespace ColorShapeLinks.TextBased.App
 {
     /// <summary>
-    /// Session event listener which outputs session information in Markdown
-    /// format.
+    /// Session event listener which outputs session information to the
+    /// standard output in Markdown format.
     /// </summary>
     public class MarkdownSessionListener : ISessionListener
     {
