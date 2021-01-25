@@ -10,7 +10,8 @@ work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 
 # ColorShapeLinks AI competition
 
-_An AI competition for the [IEEE CoG 2020] conference_
+_An AI competition for the [IEEE CoG 2020] conference
+(and [IEEE CoG 2021], more information soon)_
 
 [Important dates](#important-dates) | [Daily standings][Standings] |
 [Implementation guide][APIDocs] |
@@ -36,6 +37,11 @@ The development framework includes both console and [Unity] frontends and can
 be downloaded with the following command (requires [Git] and [Git LFS]):
 
 `git clone --recurse-submodules https://github.com/VideojogosLusofona/color-shape-links-ai-competition.git`
+
+If you did a regular `clone` and are missing the submodule folders, these can be
+populated and/or updated with:
+
+`git submodule update --init --recursive`
 
 The [implementation guide][APIDocs] contains the required documentation for
 developing an AI for ColorShapeLinks.
@@ -194,6 +200,7 @@ License][CC BY-NC-SA 4.0].
 [CC BY-NC-SA 4.0]:https://creativecommons.org/licenses/by-nc-sa/4.0/
 [licvideo]:https://www.ulusofona.pt/en/undergraduate/videogames
 [IEEE CoG 2020]:http://ieee-cog.org/2020/
+[IEEE CoG 2021]:http://ieee-cog.org/2021/
 [Nuno Fachada]:https://github.com/fakenmc
 [ULHT]:https://www.ulusofona.pt/
 [Simplexity]:https://boardgamegeek.com/boardgame/55810/simplexity
