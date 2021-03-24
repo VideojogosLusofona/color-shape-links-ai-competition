@@ -1,26 +1,26 @@
 # Standings
 
-Last update: Wed, 24 Mar 2021 17:02:29 GMT
+Last update: Wed, 24 Mar 2021 17:08:46 GMT
 
 ## Configuration
 
 | Parameter      | Value             |
 |:-------------- | ----------------: |
-| Rows          | 12        |
-| Cols          | 12        |
-| Win sequence  | 6 |
-| Round pieces  | 35  |
-| Square pieces | 37 |
-| Time limit    | 300ms     |
+| Rows          | 18        |
+| Cols          | 22        |
+| Win sequence  | 9 |
+| Round pieces  | 99  |
+| Square pieces | 99 |
+| Time limit    | 550ms     |
 
 ## Classification
 
 | Pos. | AI Thinker | Points |
 |:----:| ---------- | -----: |
 | 1 | BenchmarkA | 24 |
-| 2 | MinimaxD2 | 15 |
-| 3 | BenchmarkB | 12 |
-| 4 | Sequential | 9 |
+| 2 | MinimaxD2 | 18 |
+| 3 | Sequential | 12 |
+| 4 | BenchmarkB | 6 |
 | 5 | Random | 0 |
 
 ## Results
@@ -30,7 +30,7 @@ _Winner, if any, shown in bold_
 | White |   Red   | Details |
 | -----:|:------- | :-----: |
 | **`Sequential`** | `BenchmarkB` | [+](results/SequentialvsBenchmarkB.txt) |
-| **`BenchmarkB`** | `Sequential` | [+](results/BenchmarkBvsSequential.txt) |
+| `BenchmarkB` | **`Sequential`** | [+](results/BenchmarkBvsSequential.txt) |
 | `MinimaxD2` | **`BenchmarkA`** | [+](results/MinimaxD2vsBenchmarkA.txt) |
 | **`BenchmarkA`** | `MinimaxD2` | [+](results/BenchmarkAvsMinimaxD2.txt) |
 | `Random` | **`BenchmarkB`** | [+](results/RandomvsBenchmarkB.txt) |
@@ -39,7 +39,7 @@ _Winner, if any, shown in bold_
 | **`MinimaxD2`** | `Sequential` | [+](results/MinimaxD2vsSequential.txt) |
 | `Random` | **`BenchmarkA`** | [+](results/RandomvsBenchmarkA.txt) |
 | **`BenchmarkA`** | `Random` | [+](results/BenchmarkAvsRandom.txt) |
-| **`BenchmarkB`** | `MinimaxD2` | [+](results/BenchmarkBvsMinimaxD2.txt) |
+| `BenchmarkB` | **`MinimaxD2`** | [+](results/BenchmarkBvsMinimaxD2.txt) |
 | **`MinimaxD2`** | `BenchmarkB` | [+](results/MinimaxD2vsBenchmarkB.txt) |
 | `Random` | **`MinimaxD2`** | [+](results/RandomvsMinimaxD2.txt) |
 | **`MinimaxD2`** | `Random` | [+](results/MinimaxD2vsRandom.txt) |
@@ -183,3 +183,15 @@ _Winner, if any, shown in bold_
 * [2020-04-01](../2020-04-01/standings.md)
 * [2020-03-31](../2020-03-31/standings.md)
 * [2020-03-30](../2020-03-30/standings.md)
+* [2020-03-29](../2020-03-29/standings.md)
+* [2020-03-28](../2020-03-28/standings.md)
+* [2020-03-27](../2020-03-27/standings.md)
+* [2020-03-26](../2020-03-26/standings.md)
+* [2020-03-25](../2020-03-25/standings.md)
+* [2020-03-24](../2020-03-24/standings.md)
+* [2020-03-23](../2020-03-23/standings.md)
+* [2020-03-22](../2020-03-22/standings.md)
+* [2020-03-21](../2020-03-21/standings.md)
+* [2020-03-20](../2020-03-20/standings.md)
+* [2020-03-19](../2020-03-19/standings.md)
+* [2020-03-18](../2020-03-18/standings.md)

@@ -1,6 +1,6 @@
 # Standings
 
-Last update: Wed, 24 Mar 2021 16:19:29 GMT
+Last update: Wed, 24 Mar 2021 17:01:14 GMT
 
 ## Configuration
 
@@ -18,10 +18,10 @@ Last update: Wed, 24 Mar 2021 16:19:29 GMT
 | Pos. | AI Thinker | Points |
 |:----:| ---------- | -----: |
 | 1 | BenchmarkB | 24 |
-| 2 | MinimaxD2 | 15 |
-| 3 | BenchmarkA | 15 |
+| 2 | BenchmarkA | 15 |
+| 3 | MinimaxD2 | 12 |
 | 4 | Sequential | 6 |
-| 5 | Random | 0 |
+| 5 | Random | 3 |
 
 ## Results
 
@@ -31,13 +31,13 @@ _Winner, if any, shown in bold_
 | -----:|:------- | :-----: |
 | `Sequential` | **`BenchmarkB`** | [+](results/SequentialvsBenchmarkB.txt) |
 | **`BenchmarkB`** | `Sequential` | [+](results/BenchmarkBvsSequential.txt) |
-| **`MinimaxD2`** | `BenchmarkA` | [+](results/MinimaxD2vsBenchmarkA.txt) |
+| `MinimaxD2` | **`BenchmarkA`** | [+](results/MinimaxD2vsBenchmarkA.txt) |
 | **`BenchmarkA`** | `MinimaxD2` | [+](results/BenchmarkAvsMinimaxD2.txt) |
 | `Random` | **`BenchmarkB`** | [+](results/RandomvsBenchmarkB.txt) |
 | **`BenchmarkB`** | `Random` | [+](results/BenchmarkBvsRandom.txt) |
 | `Sequential` | **`MinimaxD2`** | [+](results/SequentialvsMinimaxD2.txt) |
 | **`MinimaxD2`** | `Sequential` | [+](results/MinimaxD2vsSequential.txt) |
-| `Random` | **`BenchmarkA`** | [+](results/RandomvsBenchmarkA.txt) |
+| **`Random`** | `BenchmarkA` | [+](results/RandomvsBenchmarkA.txt) |
 | **`BenchmarkA`** | `Random` | [+](results/BenchmarkAvsRandom.txt) |
 | **`BenchmarkB`** | `MinimaxD2` | [+](results/BenchmarkBvsMinimaxD2.txt) |
 | `MinimaxD2` | **`BenchmarkB`** | [+](results/MinimaxD2vsBenchmarkB.txt) |
