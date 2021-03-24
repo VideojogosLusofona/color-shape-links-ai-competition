@@ -36,10 +36,11 @@ if [[ ! -x $1 ]]; then
 fi
 
 # Leave these untouched
+COMPFLDR="$(dirname "$(readlink -f "$0")")"
 THEGAME="color-shape-links-ai-competition"
 MASTER="${HOME}/workspace/${THEGAME}"
 TODAY=$(date +%F)
-OUTPUTFLDR="${MASTER}/output"
+OUTPUTFLDR="${COMPFLDR}/output"
 CSPPROJ="${MASTER}/ConsoleApp/ColorShapeLinks/TextBased/App/App.csproj"
 
 # Include the competition parameters script
@@ -60,7 +61,7 @@ echo "[COMP] Building project..." \
 && for (( i=0; i<${numcomps}; i+=2 )) \
 do
     echo "[COMP] Running ${comps[$i]}"
-    ${MASTER}/aux/runsession.sh ${comps[$i+1]} ${OUTPUTFLDR}/${comps[$i]} \
+    ${COMPFLDR}/runsession.sh ${comps[$i+1]} ${OUTPUTFLDR}/${comps[$i]} \
         ${SUBMISSDLL} ${COMPCONFIG}
     if [ $? -ne 3 ]
     then
