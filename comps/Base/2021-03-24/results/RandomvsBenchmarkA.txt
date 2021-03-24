@@ -1,0 +1,136 @@
+=> Random (White) vs BenchmarkA (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+Random (White) turn
+Random (White) placed a Round piece at column 4 after 0ms
+.......
+.......
+.......
+.......
+.......
+....w..
+
+BenchmarkA (Red) turn
+Best score = 26.400002. Did 3169 useful evals at depth 3
+Did 4085 total evals
+BenchmarkA (Red) placed a Square piece at column 4 after 153ms
+.......
+.......
+.......
+.......
+....R..
+....w..
+
+Random (White) turn
+Random (White) placed a Square piece at column 4 after 0ms
+.......
+.......
+.......
+....W..
+....R..
+....w..
+
+BenchmarkA (Red) turn
+Best score = 110.20002. Did 3139 useful evals at depth 3
+Did 4121 total evals
+BenchmarkA (Red) placed a Square piece at column 3 after 153ms
+.......
+.......
+.......
+....W..
+....R..
+...Rw..
+
+Random (White) turn
+Random (White) placed a Round piece at column 2 after 0ms
+.......
+.......
+.......
+....W..
+....R..
+..wRw..
+
+BenchmarkA (Red) turn
+Best score = 150.6. Did 3107 useful evals at depth 3
+Did 4010 total evals
+BenchmarkA (Red) placed a Square piece at column 2 after 153ms
+.......
+.......
+.......
+....W..
+..R.R..
+..wRw..
+
+Random (White) turn
+Random (White) placed a Square piece at column 0 after 0ms
+.......
+.......
+.......
+....W..
+..R.R..
+W.wRw..
+
+BenchmarkA (Red) turn
+Best score = 254.80002. Did 3042 useful evals at depth 3
+Did 3991 total evals
+BenchmarkA (Red) placed a Square piece at column 2 after 153ms
+.......
+.......
+.......
+..R.W..
+..R.R..
+W.wRw..
+
+Random (White) turn
+Random (White) placed a Round piece at column 4 after 0ms
+.......
+.......
+....w..
+..R.W..
+..R.R..
+W.wRw..
+
+BenchmarkA (Red) turn
+Best score = 242.79999. Did 2762 useful evals at depth 3
+Did 3755 total evals
+BenchmarkA (Red) placed a Square piece at column 2 after 153ms
+.......
+.......
+..R.w..
+..R.W..
+..R.R..
+W.wRw..
+
+Random (White) turn
+Random (White) placed a Round piece at column 3 after 0ms
+.......
+.......
+..R.w..
+..R.W..
+..RwR..
+W.wRw..
+
+BenchmarkA (Red) turn
+Best score = ∞. Did 732 useful evals at depth 3
+Did 2643 total evals
+BenchmarkA (Red) placed a Round piece at column 2 after 155ms
+.......
+..r....
+..R.w..
+..R.W..
+..RwR..
+W.wRw..
+
+Winner is BenchmarkA (Red)
+Solution=(1,2)(2,2)(3,2)(4,2)
