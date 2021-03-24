@@ -1,6 +1,6 @@
 # Standings
 
-Last update: Wed, 24 Mar 2021 16:00:50 GMT
+Last update: Wed, 24 Mar 2021 16:19:29 GMT
 
 ## Configuration
 
