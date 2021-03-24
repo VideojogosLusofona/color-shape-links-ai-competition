@@ -13,9 +13,7 @@
 .......
 
 BenchmarkA (White) turn
-Best score = 44.399998. Did 3157 useful evals at depth 3
-Did 7179 total evals
-BenchmarkA (White) placed a Round piece at column 3 after 155ms
+BenchmarkA (White) placed a Round piece at column 3 after 153ms
 .......
 .......
 .......
@@ -24,7 +22,7 @@ BenchmarkA (White) placed a Round piece at column 3 after 155ms
 ...w...
 
 Sequential (Red) turn
-Sequential (Red) placed a Square piece at column 0 after 1ms
+Sequential (Red) placed a Square piece at column 0 after 0ms
 .......
 .......
 .......
@@ -33,8 +31,6 @@ Sequential (Red) placed a Square piece at column 0 after 1ms
 R..w...
 
 BenchmarkA (White) turn
-Best score = 64.8. Did 3117 useful evals at depth 3
-Did 7039 total evals
 BenchmarkA (White) placed a Round piece at column 1 after 152ms
 .......
 .......
@@ -53,8 +49,6 @@ Sequential (Red) placed a Square piece at column 1 after 0ms
 Rw.w...
 
 BenchmarkA (White) turn
-Best score = 85.20001. Did 2597 useful evals at depth 3
-Did 6561 total evals
 BenchmarkA (White) placed a Round piece at column 4 after 152ms
 .......
 .......
@@ -73,9 +67,7 @@ Sequential (Red) placed a Square piece at column 2 after 0ms
 RwRww..
 
 BenchmarkA (White) turn
-Best score = 78.000015. Did 2596 useful evals at depth 3
-Did 6398 total evals
-BenchmarkA (White) placed a Round piece at column 1 after 153ms
+BenchmarkA (White) placed a Round piece at column 1 after 152ms
 .......
 .......
 .......
@@ -93,9 +85,7 @@ Sequential (Red) placed a Square piece at column 3 after 0ms
 RwRww..
 
 BenchmarkA (White) turn
-Best score = 79.20002. Did 2559 useful evals at depth 3
-Did 5492 total evals
-BenchmarkA (White) placed a Round piece at column 3 after 156ms
+BenchmarkA (White) placed a Round piece at column 3 after 151ms
 .......
 .......
 .......
@@ -113,8 +103,6 @@ Sequential (Red) placed a Square piece at column 4 after 0ms
 RwRww..
 
 BenchmarkA (White) turn
-Best score = 50.40001. Did 2085 useful evals at depth 4
-Did 4706 total evals
 BenchmarkA (White) placed a Round piece at column 2 after 151ms
 .......
 .......
@@ -133,8 +121,6 @@ Sequential (Red) placed a Square piece at column 5 after 0ms
 RwRwwR.
 
 BenchmarkA (White) turn
-Best score = ∞. Did 1948 useful evals at depth 3
-Did 5310 total evals
 BenchmarkA (White) placed a Round piece at column 2 after 152ms
 .......
 .......
@@ -153,8 +139,6 @@ Sequential (Red) placed a Square piece at column 6 after 0ms
 RwRwwRR
 
 BenchmarkA (White) turn
-Best score = ∞. Did 3650 useful evals at depth 4
-Did 4167 total evals
 BenchmarkA (White) placed a Round piece at column 0 after 152ms
 .......
 .......
@@ -173,8 +157,6 @@ wRwRR..
 RwRwwRR
 
 BenchmarkA (White) turn
-Best score = ∞. Did 1951 useful evals at depth 8
-Did 2103 total evals
 BenchmarkA (White) placed a Round piece at column 0 after 151ms
 .......
 .......

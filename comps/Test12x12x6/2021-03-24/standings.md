@@ -1,6 +1,6 @@
 # Standings
 
-Last update: Wed, 24 Mar 2021 15:48:10 GMT
+Last update: Wed, 24 Mar 2021 16:01:56 GMT
 
 ## Configuration
 
@@ -17,10 +17,10 @@ Last update: Wed, 24 Mar 2021 15:48:10 GMT
 
 | Pos. | AI Thinker | Points |
 |:----:| ---------- | -----: |
-| 1 | BenchmarkA | 24 |
-| 2 | BenchmarkB | 18 |
-| 3 | MinimaxD2 | 12 |
-| 4 | Sequential | 6 |
+| 1 | BenchmarkA | 21 |
+| 2 | BenchmarkB | 15 |
+| 3 | MinimaxD2 | 15 |
+| 4 | Sequential | 9 |
 | 5 | Random | 0 |
 
 ## Results
@@ -29,7 +29,7 @@ _Winner, if any, shown in bold_
 
 | White |   Red   | Details |
 | -----:|:------- | :-----: |
-| `Sequential` | **`BenchmarkB`** | [+](results/SequentialvsBenchmarkB.txt) |
+| **`Sequential`** | `BenchmarkB` | [+](results/SequentialvsBenchmarkB.txt) |
 | **`BenchmarkB`** | `Sequential` | [+](results/BenchmarkBvsSequential.txt) |
 | `MinimaxD2` | **`BenchmarkA`** | [+](results/MinimaxD2vsBenchmarkA.txt) |
 | **`BenchmarkA`** | `MinimaxD2` | [+](results/BenchmarkAvsMinimaxD2.txt) |
@@ -39,7 +39,7 @@ _Winner, if any, shown in bold_
 | **`MinimaxD2`** | `Sequential` | [+](results/MinimaxD2vsSequential.txt) |
 | `Random` | **`BenchmarkA`** | [+](results/RandomvsBenchmarkA.txt) |
 | **`BenchmarkA`** | `Random` | [+](results/BenchmarkAvsRandom.txt) |
-| **`BenchmarkB`** | `MinimaxD2` | [+](results/BenchmarkBvsMinimaxD2.txt) |
+| `BenchmarkB` | **`MinimaxD2`** | [+](results/BenchmarkBvsMinimaxD2.txt) |
 | `MinimaxD2` | **`BenchmarkB`** | [+](results/MinimaxD2vsBenchmarkB.txt) |
 | `Random` | **`MinimaxD2`** | [+](results/RandomvsMinimaxD2.txt) |
 | **`MinimaxD2`** | `Random` | [+](results/MinimaxD2vsRandom.txt) |
@@ -48,7 +48,7 @@ _Winner, if any, shown in bold_
 | `Random` | **`Sequential`** | [+](results/RandomvsSequential.txt) |
 | **`Sequential`** | `Random` | [+](results/SequentialvsRandom.txt) |
 | **`BenchmarkA`** | `BenchmarkB` | [+](results/BenchmarkAvsBenchmarkB.txt) |
-| `BenchmarkB` | **`BenchmarkA`** | [+](results/BenchmarkBvsBenchmarkA.txt) |
+| **`BenchmarkB`** | `BenchmarkA` | [+](results/BenchmarkBvsBenchmarkA.txt) |
 
 ## Previous days
 
