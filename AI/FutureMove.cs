@@ -49,5 +49,13 @@ namespace ColorShapeLinks.Common.AI
             this.column = column;
             this.shape = shape;
         }
+
+        /// <summary>
+        /// Provides a string representation of the future move in the form
+        /// &quot;&lt;round|square&gt; piece at column &lt;col&gt;&quot;.
+        /// </summary>
+        /// <returns>A string representation of the future move.</returns>
+        public override string ToString() =>
+            $"{shape.ToString().ToLower()} piece at column {column}";
     }
 }
