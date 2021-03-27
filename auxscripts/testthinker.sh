@@ -11,13 +11,14 @@
 # Usage example:
 # ./testthinker.sh ../ConsoleApp/ColorShapeLinks/Common/AI/Examples \
 #    ColorShapeLinks.Common.AI.Examples.RandomAIThinker \
-#    ${HOME}/workspace/color-shape-links-ai-competition/ConsoleApp/ColorShapeLinks/Common/bin/Release/netstandard2.0/ColorShapeLinks.Common.dll
+#    ${HOME}/workspace/color-shape-links-ai-competition/ConsoleApp/ColorShapeLinks/Common/bin/Release/netstandard2.0/ColorShapeLinks.Common.dll \
+#    --white-params=2 --red-params=3
 #
 # Requires: grep dotnet /usr/bin/time
 #
 # Author: Nuno Fachada <nuno.fachada@ulusofona.pt>
 # Licence: Mozilla Public License version 2 (MPLv2)
-# Date: 2020
+# Date: 2020, 2021
 #
 
 # Need at least three parameters
@@ -39,11 +40,31 @@ if [[ $? -ne 0 || ! -e ${ASSEMBL} ]]; then
     exit 1
 fi
 
-# Check for Console.Writes
-grep -q "Console\.Write" $1/*.cs
-if [[ $? -eq 0 ]]; then
-   echo "Code contains Console.Writes, aborting test..."
-   exit 1
+# Check for invalid code
+declare -a codechecks=(
+    "Console.Write" "System.Console" "System.IO" "System.Net")
+
+# Number of checks to perform
+numcodechecks=${#codechecks[@]}
+badcode=0
+
+# Perform tests
+for (( i=0; i<${numcodechecks}; i++ )) \
+do
+    grep -q ${codechecks[$i]} $1/*.cs
+    if [[ $? -eq 0 ]]; then
+        echo -e "\e[31mCode contains '${codechecks[$i]}\e[0m'"
+        badcode=1
+    fi
+done
+
+if [[ ${badcode} -eq 1 ]]; then
+    echo -e -n "\e[1;31mInvalid code detected, keep going? (y/n) \e[0m"
+    read -n 1 badcodeaction
+    echo ""
+    if [ ${badcodeaction} != "y" ]; then
+        exit -1
+    fi
 fi
 
 # Path variables: edit these according to your setup
@@ -69,10 +90,14 @@ declare -a tests=(
 numtests=${#tests[@]}
 
 # Build console app
-dotnet build ${CONSOLEAPP} -c Release -v q
+dotnet build ${CONSOLEAPP} -c Release -v q > ${OUTPUTFLDR}/app-build.log 2>&1
+if [[ $? -ne 0 ]]; then
+    echo "\e[31mUnable to build console app, aborting test...\e[0m"
+    exit 1
+fi
 
 # Check if thinker exists
-${CONSOLEAPPEXE} info -a ${ASSEMBL} | grep "$2"
+${CONSOLEAPPEXE} info -a ${ASSEMBL} | grep -q "$2"
 if [[ $? -ne 0 ]]; then
     echo "Thinker '$2' not found, aborting test..."
     exit 1
@@ -87,7 +112,7 @@ mkdir -p ${OUTPUTFLDR}
 # Perform tests
 for (( i=0; i<${numtests}; i+=2 )) \
 do
-    echo "[ Running test '${tests[$i]}']"
+    echo -e "\e[1m[ Running test '${tests[$i]}']\e[0m"
 
     # Run match against itself
     /usr/bin/time -f "%M" ${CONSOLEAPPEXE} \
@@ -103,17 +128,17 @@ do
 
     # Check memory usage
     if [[ $MEMUSAGE -lt $MAXMEM ]]; then
-        MEMUSAGETEST="OK"
+        MEMUSAGETEST="\e[32mOK\e[0m"
     else
-        MEMUSAGETEST="FAIL"
+        MEMUSAGETEST="\e[31mFAIL\e[0m"
     fi
-    echo "    Memory usage... ${MEMUSAGETEST} (${MEMUSAGE}Kb < ${MAXMEM}Kb)"
+    echo -e "    Memory usage... ${MEMUSAGETEST} (${MEMUSAGE}Kb < ${MAXMEM}Kb)"
 
     # Check exit status
     if [[ $EXITSTATUS -ge 0 && $EXITSTATUS -le 2 ]]; then
-        EXITSTATUSTEST="OK"
+        EXITSTATUSTEST="\e[32mOK\e[0m"
     else
-        EXITSTATUSTEST="FAIL"
+        EXITSTATUSTEST="\e[31mFAIL\e[0m"
     fi
-    echo "    Exit status... ${EXITSTATUSTEST} (exit status was ${EXITSTATUS})"
+    echo -e "    Exit status... ${EXITSTATUSTEST} (exit status was ${EXITSTATUS})"
 done
