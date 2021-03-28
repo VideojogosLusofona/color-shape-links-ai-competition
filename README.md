@@ -136,7 +136,7 @@ These dates are
 ### Rules for the AI code
 
 - Can only use cross-platform [.NET Standard 2.0] API calls in C#.
-- Can use additional libraries which abide by these same rules.
+- Can use additional (open-source) libraries which abide by these same rules.
 - Must run in the same process that invokes it.
 - Can be multithreaded and use [`unsafe`] contexts.
 - Cannot *think* in its opponent time (e.g., by using a background thread).
