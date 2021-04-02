@@ -25,25 +25,20 @@ with a very simple heuristic.
 The source code of AI thinkers must follow these rules and restrictions:
 
 - Can only use cross-platform [.NET Standard 2.0] API calls in C#.
-- Can use additional libraries which abide by these same rules.
-- Both the AI code and libraries must be made available under a
-  [valid open source license][ossl], although AI codes can be open-sourced
-  only after the competition deadline.
+- Can use additional (open-source) libraries which abide by these same rules.
 - Must run in the same process that invokes it.
 - Can be multithreaded and use [`unsafe`] contexts.
 - Cannot *think* in its opponent time (e.g., by using a background thread).
 - Must acknowledge [cancellation requests][`CancellationToken`], in which case
   it should terminate quickly and in an orderly fashion.
-- Can only probe the environment for the number of processor cores. It cannot
+- Can only probe the environment for the number of processor cores. Cannot
   search or use any other information, besides what is already available in the
-  [AbstractThinker] class or passed to the [Think()] method, e.g., such as
+  [`AbstractThinker`] class or passed to the [`Think()`] method, e.g., such as
   using reflection to probe the capabilities of its opponents.
 - Cannot use and/or communicate with external data sources.
 - Cannot use more than 2GB of memory during the course of a match.
 - Must have a reasonable size in disk, including libraries. For example,
-  source code, project files and compiled binaries should not exceed 1 Mb.
-- The same [setup](@ref setup) parameters should be used for all competition
-  tracks.
+  source code, project files and compiled binaries should not exceed 1 MB.
 
 ## The AbstractThinker base class {#abstractthinker}
 
@@ -64,7 +59,8 @@ There's also the non-overridable [OnThinkingInfo()] method, which can be
 invoked for producing thinking information, mainly for debugging purposes.
 In the [Unity] frontend this information is printed on Unity's console, while
 in the [console] frontend the information is forwarded to the registered
-@ref ColorShapeLinks.TextBased.Lib.IThinkerListener "thinker listeners".
+@ref ColorShapeLinks.TextBased.Lib.IThinkerListener "thinker listeners" (which
+by default print to the console).
 
 Classes extending [AbstractThinker] also inherit a number of useful read-only
 properties, namely board/match configuration properties
@@ -188,16 +184,16 @@ the [console app][console_folder] or [Unity app][unity_folder] project
 folders. This is not practical, however, especially when using a version
 control system. Furthermore, although AI thinkers can be tested in [Unity],
 serious development is much simpler within the context of the [console]
-frontend. As such, this section focuses on setting up a development
-environment within that context. Nonetheless, testing in [Unity] can
-still be done by copying the project folder to the
-[Unity app scripts folder][unity_folder].
+frontend, which also allows thinkers to be [tested in isolation](#testing).
+Thus, this section focuses on setting up a development environment within that
+context. Nonetheless, testing in [Unity] can still be done by copying the
+thinker code to the [Unity app scripts folder][unity_folder].
 
-The following commands are cross-platform and work in Linux, Windows
-(PowerShell), and macOS, requiring only [.NET Core] ≥ 3.1 to be installed.
-On Windows, replace slashes `/` with backslashes `\` when referencing
-local paths. The steps for setting up a development environment are as
-follows:
+The following commands are cross-platform and work in Linux, Windows and macOS,
+requiring only [.NET Core] ≥ 3.1 to be installed.
+On Windows, when not using Git Bash, replace slashes `/` with backslashes `\`
+when referencing local paths. The steps for setting up a development environment
+are as follows:
 
 1. Create a development folder and `cd` into it:
    ```
@@ -208,18 +204,18 @@ follows:
    ```
    $ git clone --recurse-submodules https://github.com/VideojogosLusofona/color-shape-links-ai-competition.git
    ```
-3. Create a new .NET Standard class library, `cd` into the project's folder
-   and remove the default class:
+3. Create a development folder and `cd` into it:
    ```
-   $ dotnet new classlib -n MyAIThinkerProjectName
-   $ cd MyAIThinkerProjectName
-   $ rm Class1.cs
+   $ mkdir my-ai-solution
+   $ cd my-ai-solution
    ```
-4. Add the ColorShapeLinks.Common project as a dependency:
+   Currently, the folder structure should be as follows:
    ```
-   $ dotnet add reference ../color-shape-links-ai-competition/ConsoleApp/ColorShapeLinks/Common
+   └──color-shape-links-ai-dev/
+      ├──color-shape-links-ai-competition/
+      └──my-ai-solution/
    ```
-5. _Optional:_ Initialize a Git repository, add a `.gitignore` file and make
+4. _Optional:_ Initialize a Git repository, add a `.gitignore` file and make
    the first commit:
    ```
    $ git init
@@ -227,40 +223,60 @@ follows:
    $ git add .
    $ git commit -m "First commit"
    ```
-6. Using a code editor or IDE (e.g. [VS Code]), create a new class which
-   extends [AbstractThinker] and implements the [Think()] method:
+5. Create a new .NET Standard 2.0 class library and remove the default class:
+   ```
+   $ dotnet new classlib -n MyAI -f netstandard2.0
+   $ rm MyAI/Class1.cs
+   ```
+   The folder structure should now be:
+   ```
+   └──color-shape-links-ai-dev/
+      ├──color-shape-links-ai-competition/
+      └──my-ai-solution/
+         ├──.gitignore
+         └──MyAI/
+   ```
+6. Add the ::ColorShapeLinks.Common project as a dependency:
+   ```
+   $ dotnet add MyAI reference ../color-shape-links-ai-competition/ConsoleApp/ColorShapeLinks/Common
+   ```
+7. In the `MyAI/` folder, create a new class which extends [AbstractThinker] and
+   implements the [Think()] method:
    ```cs
     using System.Threading;
     using ColorShapeLinks.Common;
     using ColorShapeLinks.Common.AI;
 
-    public class MyAIThinker : AbstractThinker
+    namespace MyAISolution.MyAI
     {
-        public override FutureMove Think(Board board, CancellationToken ct)
+        public class MyThinker : AbstractThinker
         {
-            // Will always lose by making a "No move"
-            return FutureMove.NoMove;
+            public override FutureMove Think(Board board, CancellationToken ct)
+            {
+                // Will always lose by making a "No move"
+                return FutureMove.NoMove;
+            }
         }
     }
    ```
-7. Build the code:
+8. Build the code:
    ```
-   $ dotnet build
+   $ dotnet build MyAI
    ```
-8. Using the [console] app, check if the `MyAIThinker` class appears in the
-   "Known thinkers:" section (on Windows replace `$``(pwd)` with the full path
-   to the current folder):
+9.  Using the [console] app, check if the `MyAISolution.MyAI.MyThinker` class
+   appears in the "Known thinkers:" section (on Windows replace `$``(pwd)` with
+   `$pwd` or with the full path to the current folder):
    ```
-   $ dotnet run -p ../color-shape-links-ai-competition/ConsoleApp/ColorShapeLinks/TextBased/App -- info -a $(pwd)/bin/Debug/netstandard2.0/MyAIThinkerProjectName.dll
+   $ dotnet run -p ../color-shape-links-ai-competition/ConsoleApp/ColorShapeLinks/TextBased/App -- info -a $(pwd)/MyAI/bin/Debug/netstandard2.0/MyAI.dll
    ```
-9. Using the [console] app, run a match between `MyAIThinker` and the
+10. Using the [console] app, run a match between `MyThinker` and the
    @ref ColorShapeLinks.Common.AI.Examples.RandomAIThinker "random AI"
-   provided with the development framework  (on Windows replace
-   `$``(pwd)` with the full path to the current folder):
+   provided with the development framework  (on Windows PowerShell replace
+   `$``(pwd)` with `$pwd` or with the full path to the current folder):
    ```
-   $ dotnet run -p ../color-shape-links-ai-competition/ConsoleApp/ColorShapeLinks/TextBased/App -- match -a $(pwd)/bin/Debug/netstandard2.0/MyAIThinkerProjectName.dll -W ColorShapeLinks.Common.AI.Examples.RandomAIThinker -R MyAIThinker
+   $ dotnet run -p ../color-shape-links-ai-competition/ConsoleApp/ColorShapeLinks/TextBased/App -- match -a $(pwd)/MyAI/bin/Debug/netstandard2.0/MyAI.dll -W ColorShapeLinks.Common.AI.Examples.RandomAIThinker -R MyAISolution.MyAI.MyThinker
    ```
-   The `MyAIThinker` will lose, since it doesn't make a valid move. The
+   _MyThinker_ will lose, since it doesn't make a valid move. The
    @ref minimax "Implementing a simple Minimax player" section describes
    the implementation of a basic AI which can beat the random player (most
    of the time).
@@ -273,21 +289,57 @@ console app, in particular the ones used in the above steps.
 During development, it is crucial to be able to test the AI thinker in
 isolation, i.e., outside of running matches and sessions. This is easy to
 accomplish, requiring the creation of a test project which references
-the [Common] project, as well as the AI thinker-specific
-project (which we called `MyAIThinkerProjectName` in the previous section).
+the AI thinker-specific project (which we called `MyAI` in the previous
+section). Continuing with the setup created in the previous section, and
+assuming we're in the `my-ai-solution` folder, let's create a console project
+for testing our AI in isolation:
+
+```
+$ dotnet new console -n TestMyAI
+```
+
+We also need to add a reference to the `MyAI` project:
+
+```
+$ dotnet add TestMyAI reference MyAI
+```
+
+At this stage, it's a good idea to create a .NET solution to includes both the
+`MyAI` and `TestMyAI` projects (which allows, for example, to have both projects
+open at the same time in Visual Studio):
+
+```
+$ dotnet new sln
+$ dotnet sln add TestMyAI
+$ dotnet sln add MyAI
+```
+
+The folder structure should now be:
+```
+└──color-shape-links-ai-dev/
+   ├──color-shape-links-ai-competition/
+   └──my-ai-solution/
+      ├──.gitignore
+      ├──my-ai-solution.sln
+      ├──MyAI/
+      └──TestMyAI/
+```
+
+We can now edit `TestMyAI/Program.cs`, create an instance of `MyThinker`,
+manipulate it and test it as we see fit, and run our test project with:
+
+```
+$ dotnet run -p TestMyAI
+```
+
 However, there is an important caveat to be aware of:
 
 @attention Properties inherited from [AbstractThinker] will not be
 automatically initialized if the concrete thinker is instantiated directly.
 
-There are two ways to solve this problem:
-
-1. Use reflection to initialize the private instance variables in the base
-   class which provide the property values.
-2. Use a [ThinkerPrototype] to [create] an instance of the concrete AI thinker.
-
-The second option is preferred, since it not only initializes the base class
-properties, as it also invokes the [Setup()] method. The
+Thus, a [ThinkerPrototype] should instead be used to [create] an instance of the
+concrete AI thinker. This initializes the base class properties, as it also
+invokes the [Setup()] method. The
 [ThinkerPrototype constructor][ThinkerPrototypeCtor] requires three parameters:
 
 1. A string containing the thinker's fully qualified name.
@@ -296,14 +348,30 @@ properties, as it also invokes the [Setup()] method. The
 
 The last parameter is generally a frontend-dependent type. However, the
 [Common] assembly contains the [MatchConfig] helper class, a simple
-container of match properties which can be used for this purpose. As such,
-instatiating an AI thinker in isolation can be done as follows:
+container of match properties which can be used for this purpose. Thus,
+instantiating our basic AI thinker in isolation can be done as follows in the
+`TestMyAI/Program.cs` file:
 
 ```cs
-MatchConfig mc = new MatchConfig(); // Use default values
-ThinkerPrototype tp = new ThinkerPrototype("MyAIThinker", "", mc);
-IThinker thinker = tp.Create();
+using ColorShapeLinks.Common.AI;
+using ColorShapeLinks.Common.Session;
+using MyAISolution.MyAI;
+
+namespace MyAISolution.TestMyAI
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            MatchConfig mc = new MatchConfig(); // Use default values
+            ThinkerPrototype tp = new ThinkerPrototype(typeof(MyThinker).FullName, "", mc);
+            IThinker thinker = tp.Create();
+        }
+    }
+}
 ```
+
+A more complete example is available [here](https://github.com/VideojogosLusofona/ia_2020_p1_exemplo/blob/main/TestUltron/Program.cs).
 
 ## Implementing a simple Minimax player {#minimax}
 
@@ -327,12 +395,15 @@ using System.Threading;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
 
-public class MyAIThinker : AbstractThinker
+namespace MyAISolution.MyAI
 {
-    public override FutureMove Think(Board board, CancellationToken ct)
-    {
-        // Will always lose by making a "No move"
-        return FutureMove.NoMove;
+    public class MyThinker : AbstractThinker
+   {
+        public override FutureMove Think(Board board, CancellationToken ct)
+        {
+            // Will always lose by making a "No move"
+            return FutureMove.NoMove;
+        }
     }
 }
 ```
@@ -355,28 +426,31 @@ using System.Threading;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
 
-public class MyAIThinker : AbstractThinker
+namespace MyAISolution.MyAI
 {
-    // Maximum depth, set it at 3 for now
-    private int maxDepth = 3;
-
-    // The Think() method (mandatory override) is invoked by the game engine
-    public override FutureMove Think(Board board, CancellationToken ct)
+    public class MyThinker : AbstractThinker
     {
-        // Invoke minimax, starting with zero depth
-        (FutureMove move, float score) decision =
-            Minimax(board, ct, board.Turn, board.Turn, 0);
+        // Maximum depth, set it at 3 for now
+        private int maxDepth = 3;
 
-        // Return best move
-        return decision.move;
-    }
+        // The Think() method (mandatory override) is invoked by the game engine
+        public override FutureMove Think(Board board, CancellationToken ct)
+        {
+            // Invoke minimax, starting with zero depth
+            (FutureMove move, float score) decision =
+                Minimax(board, ct, board.Turn, board.Turn, 0);
 
-    // Our minimax implementation
-    private (FutureMove move, float score) Minimax(
-        Board board, CancellationToken ct, PColor player, PColor turn, int depth)
-    {
-        // Return invalid move, will always lose
-        return (FutureMove.NoMove, float.NaN);
+            // Return best move
+            return decision.move;
+        }
+
+        // Our minimax implementation
+        private (FutureMove move, float score) Minimax(
+            Board board, CancellationToken ct, PColor player, PColor turn, int depth)
+        {
+            // Return invalid move, will always lose
+            return (FutureMove.NoMove, float.NaN);
+        }
     }
 }
 ```
@@ -615,194 +689,197 @@ using System.Threading;
 using ColorShapeLinks.Common;
 using ColorShapeLinks.Common.AI;
 
-public class MyAIThinker : AbstractThinker
+namespace MyAISolution.MyAI
 {
-    // Maximum depth
-    private int maxDepth;
-
-    // The Setup() method, optional override
-    public override void Setup(string str)
+    public class MyThinker : AbstractThinker
     {
-        // Try to get the maximum depth from the parameters
-        if (!int.TryParse(str, out maxDepth))
+        // Maximum depth
+        private int maxDepth;
+
+        // The Setup() method, optional override
+        public override void Setup(string str)
         {
-            // If not possible, set it to 3 by default
-            maxDepth = 3;
-        }
-    }
-
-    // The ToString() method, optional override
-    public override string ToString()
-    {
-        return base.ToString() + "D" + maxDepth;
-    }
-
-    // The Think() method (mandatory override) is invoked by the game engine
-    public override FutureMove Think(Board board, CancellationToken ct)
-    {
-
-        // Invoke minimax, starting with zero depth
-        (FutureMove move, float score) decision =
-            Minimax(board, ct, board.Turn, board.Turn, 0);
-
-        // Return best move
-        return decision.move;
-    }
-
-    // Minimax implementation
-    private (FutureMove move, float score) Minimax(
-        Board board, CancellationToken ct,
-        PColor player, PColor turn, int depth)
-    {
-        // Move to return and its heuristic value
-        (FutureMove move, float score) selectedMove;
-
-        // Current board state
-        Winner winner;
-
-        // If a cancellation request was made...
-        if (ct.IsCancellationRequested)
-        {
-            // ...set a "no move" and skip the remaining part of the algorithm
-            selectedMove = (FutureMove.NoMove, float.NaN);
-        }
-        // Otherwise, if it's a final board, return the appropriate evaluation
-        else if ((winner = board.CheckWinner()) != Winner.None)
-        {
-            if (winner.ToPColor() == player)
+            // Try to get the maximum depth from the parameters
+            if (!int.TryParse(str, out maxDepth))
             {
-                // AI player wins, return highest possible score
-                selectedMove = (FutureMove.NoMove, float.PositiveInfinity);
-            }
-            else if (winner.ToPColor() == player.Other())
-            {
-                // Opponent wins, return lowest possible score
-                selectedMove = (FutureMove.NoMove, float.NegativeInfinity);
-            }
-            else
-            {
-                // A draw, return zero
-                selectedMove = (FutureMove.NoMove, 0f);
+                // If not possible, set it to 3 by default
+                maxDepth = 3;
             }
         }
-        // If we're at maximum depth and don't have a final board, use
-        // the heuristic
-        else if (depth == maxDepth)
+
+        // The ToString() method, optional override
+        public override string ToString()
         {
-            selectedMove = (FutureMove.NoMove, Heuristic(board, player));
+            return base.ToString() + "D" + maxDepth;
         }
-        else // Board not final and depth not at max...
+
+        // The Think() method (mandatory override) is invoked by the game engine
+        public override FutureMove Think(Board board, CancellationToken ct)
         {
-            //...so let's test all possible moves and recursively call Minimax()
-            // for each one of them, maximizing or minimizing depending on who's
-            // turn it is
 
-            // Initialize the selected move...
-            selectedMove = turn == player
-                // ...with negative infinity if it's the AI's turn and we're
-                // maximizing (so anything except defeat will be better than this)
-                ? (FutureMove.NoMove, float.NegativeInfinity)
-                // ...or with positive infinity if it's the opponent's turn and we're
-                // minimizing (so anything except victory will be worse than this)
-                : (FutureMove.NoMove, float.PositiveInfinity);
+            // Invoke minimax, starting with zero depth
+            (FutureMove move, float score) decision =
+                Minimax(board, ct, board.Turn, board.Turn, 0);
 
-            // Test each column
-            for (int i = 0; i < Cols; i++)
+            // Return best move
+            return decision.move;
+        }
+
+        // Minimax implementation
+        private (FutureMove move, float score) Minimax(
+            Board board, CancellationToken ct,
+            PColor player, PColor turn, int depth)
+        {
+            // Move to return and its heuristic value
+            (FutureMove move, float score) selectedMove;
+
+            // Current board state
+            Winner winner;
+
+            // If a cancellation request was made...
+            if (ct.IsCancellationRequested)
             {
-                // Skip full columns
-                if (board.IsColumnFull(i)) continue;
-
-                // Test shapes
-                for (int j = 0; j < 2; j++)
+                // ...set a "no move" and skip the remaining part of the algorithm
+                selectedMove = (FutureMove.NoMove, float.NaN);
+            }
+            // Otherwise, if it's a final board, return the appropriate evaluation
+            else if ((winner = board.CheckWinner()) != Winner.None)
+            {
+                if (winner.ToPColor() == player)
                 {
-                    // Get current shape
-                    PShape shape = (PShape)j;
+                    // AI player wins, return highest possible score
+                    selectedMove = (FutureMove.NoMove, float.PositiveInfinity);
+                }
+                else if (winner.ToPColor() == player.Other())
+                {
+                    // Opponent wins, return lowest possible score
+                    selectedMove = (FutureMove.NoMove, float.NegativeInfinity);
+                }
+                else
+                {
+                    // A draw, return zero
+                    selectedMove = (FutureMove.NoMove, 0f);
+                }
+            }
+            // If we're at maximum depth and don't have a final board, use
+            // the heuristic
+            else if (depth == maxDepth)
+            {
+                selectedMove = (FutureMove.NoMove, Heuristic(board, player));
+            }
+            else // Board not final and depth not at max...
+            {
+                //...so let's test all possible moves and recursively call Minimax()
+                // for each one of them, maximizing or minimizing depending on who's
+                // turn it is
 
-                    // Use this variable to keep the current board's score
-                    float eval;
+                // Initialize the selected move...
+                selectedMove = turn == player
+                    // ...with negative infinity if it's the AI's turn and we're
+                    // maximizing (so anything except defeat will be better than this)
+                    ? (FutureMove.NoMove, float.NegativeInfinity)
+                    // ...or with positive infinity if it's the opponent's turn and we're
+                    // minimizing (so anything except victory will be worse than this)
+                    : (FutureMove.NoMove, float.PositiveInfinity);
 
-                    // Skip unavailable shapes
-                    if (board.PieceCount(turn, shape) == 0) continue;
+                // Test each column
+                for (int i = 0; i < Cols; i++)
+                {
+                    // Skip full columns
+                    if (board.IsColumnFull(i)) continue;
 
-                    // Test move, call minimax and undo move
-                    board.DoMove(shape, i);
-                    eval = Minimax(board, ct, player, turn.Other(), depth + 1).score;
-                    board.UndoMove();
-
-                    // If we're maximizing, is this the best move so far?
-                    if (turn == player
-                        && eval >= selectedMove.score)
+                    // Test shapes
+                    for (int j = 0; j < 2; j++)
                     {
-                        // If so, keep it
-                        selectedMove = (new FutureMove(i, shape), eval);
-                    }
-                    // Otherwise, if we're minimizing, is this the worst move so far?
-                    else if (turn == player.Other()
-                        && eval <= selectedMove.score)
-                    {
-                        // If so, keep it
-                        selectedMove = (new FutureMove(i, shape), eval);
+                        // Get current shape
+                        PShape shape = (PShape)j;
+
+                        // Use this variable to keep the current board's score
+                        float eval;
+
+                        // Skip unavailable shapes
+                        if (board.PieceCount(turn, shape) == 0) continue;
+
+                        // Test move, call minimax and undo move
+                        board.DoMove(shape, i);
+                        eval = Minimax(board, ct, player, turn.Other(), depth + 1).score;
+                        board.UndoMove();
+
+                        // If we're maximizing, is this the best move so far?
+                        if (turn == player
+                            && eval >= selectedMove.score)
+                        {
+                            // If so, keep it
+                            selectedMove = (new FutureMove(i, shape), eval);
+                        }
+                        // Otherwise, if we're minimizing, is this the worst move so far?
+                        else if (turn == player.Other()
+                            && eval <= selectedMove.score)
+                        {
+                            // If so, keep it
+                            selectedMove = (new FutureMove(i, shape), eval);
+                        }
                     }
                 }
             }
+
+            // Return movement and its heuristic value
+            return selectedMove;
         }
 
-        // Return movement and its heuristic value
-        return selectedMove;
-    }
-
-    // Heuristic function
-    private float Heuristic(Board board, PColor color)
-    {
-        // Distance between two points
-        float Dist(float x1, float y1, float x2, float y2)
+        // Heuristic function
+        private float Heuristic(Board board, PColor color)
         {
-            return (float)Math.Sqrt(
-                Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2));
-        }
-
-        // Determine the center row
-        float centerRow = board.rows / 2;
-        float centerCol = board.cols / 2;
-
-        // Maximum points a piece can be awarded when it's at the center
-        float maxPoints = Dist(centerRow, centerCol, 0, 0);
-
-        // Current heuristic value
-        float h = 0;
-
-        // Loop through the board looking for pieces
-        for (int i = 0; i < board.rows; i++)
-        {
-            for (int j = 0; j < board.cols; j++)
+            // Distance between two points
+            float Dist(float x1, float y1, float x2, float y2)
             {
-                // Get piece in current board position
-                Piece? piece = board[i, j];
+                return (float)Math.Sqrt(
+                    Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2));
+            }
 
-                // Is there any piece there?
-                if (piece.HasValue)
+            // Determine the center row
+            float centerRow = board.rows / 2;
+            float centerCol = board.cols / 2;
+
+            // Maximum points a piece can be awarded when it's at the center
+            float maxPoints = Dist(centerRow, centerCol, 0, 0);
+
+            // Current heuristic value
+            float h = 0;
+
+            // Loop through the board looking for pieces
+            for (int i = 0; i < board.rows; i++)
+            {
+                for (int j = 0; j < board.cols; j++)
                 {
-                    // If the piece is of our color, increment the
-                    // heuristic inversely to the distance from the center
-                    if (piece.Value.color == color)
-                        h += maxPoints - Dist(centerRow, centerCol, i, j);
-                    // Otherwise decrement the heuristic value using the
-                    // same criteria
-                    else
-                        h -= maxPoints - Dist(centerRow, centerCol, i, j);
-                    // If the piece is of our shape, increment the
-                    // heuristic inversely to the distance from the center
-                    if (piece.Value.shape == color.Shape())
-                        h += maxPoints - Dist(centerRow, centerCol, i, j);
-                    // Otherwise decrement the heuristic value using the
-                    // same criteria
-                    else
-                        h -= maxPoints - Dist(centerRow, centerCol, i, j);
+                    // Get piece in current board position
+                    Piece? piece = board[i, j];
+
+                    // Is there any piece there?
+                    if (piece.HasValue)
+                    {
+                        // If the piece is of our color, increment the
+                        // heuristic inversely to the distance from the center
+                        if (piece.Value.color == color)
+                            h += maxPoints - Dist(centerRow, centerCol, i, j);
+                        // Otherwise decrement the heuristic value using the
+                        // same criteria
+                        else
+                            h -= maxPoints - Dist(centerRow, centerCol, i, j);
+                        // If the piece is of our shape, increment the
+                        // heuristic inversely to the distance from the center
+                        if (piece.Value.shape == color.Shape())
+                            h += maxPoints - Dist(centerRow, centerCol, i, j);
+                        // Otherwise decrement the heuristic value using the
+                        // same criteria
+                        else
+                            h -= maxPoints - Dist(centerRow, centerCol, i, j);
+                    }
                 }
             }
+            // Return the final heuristic score for the given board
+            return h;
         }
-        // Return the final heuristic score for the given board
-        return h;
     }
 }
 ```

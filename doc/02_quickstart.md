@@ -6,8 +6,8 @@
 
 @remark All instructions in these guides are cross-platform and work in Linux,
 Windows, and macOS, requiring only that [.NET Core] and/or [Unity] are
-installed. On Windows, replace slashes `/` with backslashes `\` when
-referencing local paths.
+installed. On Windows, when not using Git Bash, replace slashes `/` with
+backslashes `\` when referencing local paths.
 
 @htmlonly
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ELrsLzX3qBY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
