@@ -88,15 +88,15 @@ $(document).ready(function(){initNavTree('architecture.html',''); initResizable(
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#autotoc_md19">Overview</a></li>
-<li class="level1"><a href="#autotoc_md20">The Common project</a></li>
-<li class="level1"><a href="#autotoc_md21">The ConsoleApp projects</a></li>
-<li class="level1"><a href="#autotoc_md22">The UnityApp project</a></li>
+<ul><li class="level1"><a href="#autotoc_md20">Overview</a></li>
+<li class="level1"><a href="#autotoc_md21">The Common project</a></li>
+<li class="level1"><a href="#autotoc_md22">The ConsoleApp projects</a></li>
+<li class="level1"><a href="#autotoc_md23">The UnityApp project</a></li>
 </ul>
 </div>
 <div class="textblock"><p>Architecture of the <a class="el" href="namespace_color_shape_links.html" title="The ColorShapeLinks game, an unbounded version of the Simplexity board game.">ColorShapeLinks</a> development framework</p>
 <p><a class="anchor" id="md_doc_10_architecture"></a></p>
-<h1><a class="anchor" id="autotoc_md19"></a>
+<h1><a class="anchor" id="autotoc_md20"></a>
 Overview</h1>
 <p>The <a class="el" href="namespace_color_shape_links.html" title="The ColorShapeLinks game, an unbounded version of the Simplexity board game.">ColorShapeLinks</a> development framework offers two application frontends: the <a class="el" href="console-guide.html">ConsoleApp</a> and the <a class="el" href="unity-guide.html">UnityApp</a>. However, the framework is internally composed of four .NET projects, namely <a class="el" href="namespace_color_shape_links_1_1_common.html">Common</a>, <a class="el" href="namespace_color_shape_links_1_1_text_based_1_1_app.html">App</a>, <a class="el" href="namespace_color_shape_links_1_1_text_based_1_1_lib.html">Lib</a> and <a class="el" href="namespace_color_shape_links_1_1_unity_app.html">UnityApp</a>, as shown in Figure 1.</p>
 <div class="dotgraph">
@@ -112,7 +112,7 @@ Overview</h1>
 <div class="caption">
 Figure 1. Internal framework organization. Arrows represent dependencies between projects.</div>
 </div>
-<h1><a class="anchor" id="autotoc_md20"></a>
+<h1><a class="anchor" id="autotoc_md21"></a>
 The Common project</h1>
 <p>The <a class="el" href="namespace_color_shape_links_1_1_common.html">Common</a> project is a .NET Standard 2.0 class library which constitutes the core of the framework. It defines fundamental models of the <a class="el" href="namespace_color_shape_links.html" title="The ColorShapeLinks game, an unbounded version of the Simplexity board game.">ColorShapeLinks</a> game (i.e., of the unbounded Simplexity game), such as the <a class="el" href="class_color_shape_links_1_1_common_1_1_board.html">board</a>, its <a class="el" href="struct_color_shape_links_1_1_common_1_1_piece.html">pieces</a> or performed <a class="el" href="struct_color_shape_links_1_1_common_1_1_move.html">moves</a>, and is a dependency of the remaining projects. It is further subdivided in the <a class="el" href="namespace_color_shape_links_1_1_common_1_1_a_i.html">AI</a> and <a class="el" href="namespace_color_shape_links_1_1_common_1_1_session.html">Session</a> namespaces. The former defines AI-related abstractions, such as the <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html">AbstractThinker</a> class, which other AI thinkers must extend, as well as a manager for finding and instantiating concrete AI thinkers. The latter specifies a number of match and session-related interfaces, as well as concrete <a class="el" href="class_color_shape_links_1_1_common_1_1_session_1_1_match.html">match</a> and <a class="el" href="class_color_shape_links_1_1_common_1_1_session_1_1_session.html">session</a> models.</p>
 <p>The <a class="el" href="namespace_color_shape_links_1_1_common.html">Common</a> project is hosted <a href="https://github.com/VideojogosLusofona/color-shape-links-ai-competition/tree/common">in its own branch</a> branch of the Git repository, and is included as a <a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">submodule</a> in both the <a href="https://github.com/VideojogosLusofona/color-shape-links-ai-competition/tree/master/ConsoleApp">ConsoleApp</a> and <a href="https://github.com/VideojogosLusofona/color-shape-links-ai-competition/tree/master/UnityApp">UnityApp</a> folders of the <code>master</code> branch, which is why the framework needs to be cloned with the <code>--recurse-submodules</code> Git clone option.</p>
@@ -128,7 +128,7 @@ The Common project</h1>
 </li>
 </ul>
 <p>Namespaces follow the folder organization. For example, code in the <a href="https://github.com/VideojogosLusofona/color-shape-links-ai-competition/tree/common/Session">Session</a> folder is under the <a class="el" href="namespace_color_shape_links_1_1_common_1_1_session.html" title="Common match and session setup code for ColorShapeLinks games.">ColorShapeLinks.Common.Session</a> namespace.</p>
-<h1><a class="anchor" id="autotoc_md21"></a>
+<h1><a class="anchor" id="autotoc_md22"></a>
 The ConsoleApp projects</h1>
 <p>The <a class="el" href="console-guide.html">ConsoleApp</a> is composed of two projects, <a class="el" href="namespace_color_shape_links_1_1_text_based_1_1_app.html">App</a> and <a class="el" href="namespace_color_shape_links_1_1_text_based_1_1_lib.html">Lib</a>, both of which depend on the <a class="el" href="namespace_color_shape_links_1_1_common.html">Common</a> class library, as shown in Figure 1. The <a class="el" href="namespace_color_shape_links_1_1_text_based_1_1_app.html">App</a> project is a .NET Core console application with an external dependency on the <a href="https://github.com/commandlineparser/commandline">CommandLineParser</a> library and an internal dependency on the <a class="el" href="namespace_color_shape_links_1_1_text_based_1_1_lib.html">Lib</a> project – itself a .NET Standard 2.0 class library. The <a class="el" href="namespace_color_shape_links_1_1_text_based_1_1_app.html">App</a> project provides the actual console frontend, namely the text user interface (TUI) with which the user interacts in order to run <a class="el" href="namespace_color_shape_links.html" title="The ColorShapeLinks game, an unbounded version of the Simplexity board game.">ColorShapeLinks</a> matches and sessions.</p>
 <p>The <a class="el" href="namespace_color_shape_links_1_1_text_based_1_1_lib.html">Lib</a> class library acts as an UI-independent "game engine", offering <a class="el" href="class_color_shape_links_1_1_text_based_1_1_lib_1_1_match_controller.html">match</a> and <a class="el" href="class_color_shape_links_1_1_text_based_1_1_lib_1_1_session_controller.html">session controllers</a>, as well as interfaces for the associated event system, allowing to plug-in renderers (<em>views</em>, in <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC</a> parlance) or other event handling code at runtime. It serves as a middleware between the <a class="el" href="namespace_color_shape_links_1_1_common.html">Common</a> library and frontend applications, such as the one implemented in the <a class="el" href="namespace_color_shape_links_1_1_text_based_1_1_app.html">App</a> project. It is not used by the <a class="el" href="unity-guide.html">Unity implementation</a>, since Unity already provides its own game engine logic, forcing <a class="el" href="class_color_shape_links_1_1_unity_app_1_1_match_controller.html">match</a> and <a class="el" href="class_color_shape_links_1_1_unity_app_1_1_session_controller.html">session</a> controllers to be tightly integrated with its way of doing things. Nonetheless, the <a class="el" href="namespace_color_shape_links_1_1_text_based_1_1_lib.html">Lib</a> class library makes the creation of new <a class="el" href="namespace_color_shape_links.html" title="The ColorShapeLinks game, an unbounded version of the Simplexity board game.">ColorShapeLinks</a> TUIs or GUIs very simple, as long as they're not based on highly prescriptive frameworks such as Unity.</p>
@@ -149,7 +149,7 @@ The ConsoleApp projects</h1>
 </li>
 </ul>
 <p>As in the case of the <a class="el" href="namespace_color_shape_links_1_1_common.html">Common</a> project, namespaces follow folder organization. For example, code in the <a href="https://github.com/VideojogosLusofona/color-shape-links-ai-competition/tree/master/ConsoleApp/ColorShapeLinks/TextBased/Lib">Lib</a> folder is under the <a class="el" href="namespace_color_shape_links_1_1_text_based_1_1_lib.html" title="Library &quot;engine&quot; code for console or third-party implementations of ColorShapeLinks.">ColorShapeLinks.TextBased.Lib</a> namespace.</p>
-<h1><a class="anchor" id="autotoc_md22"></a>
+<h1><a class="anchor" id="autotoc_md23"></a>
 The UnityApp project</h1>
 <p>The <a class="el" href="unity-guide.html">UnityApp</a> is a <a class="el" href="namespace_color_shape_links.html" title="The ColorShapeLinks game, an unbounded version of the Simplexity board game.">ColorShapeLinks</a> frontend implemented in the <a href="https://unity.com/">Unity</a> game engine. Like the <a class="el" href="console-guide.html">ConsoleApp</a>, it is designed around the <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC</a> pattern, making use of the models provided by the <a class="el" href="namespace_color_shape_links_1_1_common.html">Common</a> library. In this case, however, the views and controllers are tightly integrated with the Unity engine. The <a class="el" href="unity-guide.html">UnityApp</a> project is organized as follows:</p>
 <ul>
@@ -173,7 +173,7 @@ The UnityApp project</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Apr 2 2021 21:40:24 for ColorShapeLinks AI by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Apr 3 2021 00:53:39 for ColorShapeLinks AI by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

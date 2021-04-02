@@ -91,46 +91,53 @@ $(document).ready(function(){initNavTree('console-guide.html',''); initResizable
 <ul><li class="level1"><a href="#autotoc_md5">Running the app</a><ul><li class="level2"><a href="#autotoc_md6">App options</a></li>
 <li class="level2"><a href="#autotoc_md7">The match verb</a></li>
 <li class="level2"><a href="#autotoc_md8">The session verb</a></li>
+<li class="level2"><a href="#autotoc_md9">Exit codes and capturing results</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#listeners">Event listeners</a><ul><li class="level2"><a href="#autotoc_md9">Listener architecture</a></li>
-<li class="level2"><a href="#autotoc_md10">The default listener</a></li>
-<li class="level2"><a href="#autotoc_md11">Custom listeners</a></li>
+<li class="level1"><a href="#listeners">Event listeners</a><ul><li class="level2"><a href="#autotoc_md10">Listener architecture</a></li>
+<li class="level2"><a href="#autotoc_md11">The default listener</a></li>
+<li class="level2"><a href="#autotoc_md12">Custom listeners</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="textblock"><p>A guide on how to run an AI thinker using the console app</p>
 <p><a class="anchor" id="md_doc_06_console"></a></p>
-<dl class="section remark"><dt>Remarks</dt><dd>All instructions in these guides are cross-platform and work in Linux, Windows, and macOS, requiring only that <a href="https://dotnet.microsoft.com/download">.NET Core</a> and/or <a href="https://unity.com/">Unity</a> are installed. On Windows, replace slashes <code>/</code> with backslashes <code>\</code> when referencing local paths.</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>All instructions in these guides are cross-platform and work in Linux, Windows, and macOS, requiring only that <a href="https://dotnet.microsoft.com/download">.NET Core 3.1</a> is installed. On Windows, when not using Git Bash, replace slashes <code>/</code> with backslashes <code>\</code> when referencing local paths.</dd></dl>
 <h1><a class="anchor" id="autotoc_md5"></a>
 Running the app</h1>
 <p>In order to run the console app, <code>cd</code> into its folder (i.e., <code>ConsoleApp/ColorShapeLinks/TextBased/App</code>) and run the following command:</p>
 <div class="fragment"><div class="line">$ dotnet run</div>
-</div><!-- fragment --><p>Since no options were specified, the app will exit with an error message, although showing the main options. By default the app is built and executed in <em>debug</em> mode. To build and run it in <em>release</em> mode, use the following command instead:</p>
+</div><!-- fragment --><p>The console app can also be invoked from other folders. For example, consider the following folder structure (as discussed <a class="el" href="thinker-implementation-guide.html#devenv">in the previous section</a>):</p>
+<div class="fragment"><div class="line">└──color-shape-links-ai-dev/</div>
+<div class="line">   ├──color-shape-links-ai-competition/</div>
+<div class="line">   └──my-ai-solution/</div>
+</div><!-- fragment --><p>If we're developing our thinker in the <code>my-ai-solution</code> folder, we could invoke the console app using the <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run#options"><code>-p</code> option of the <code>dotnet run</code> command</a>, as follows:</p>
+<div class="fragment"><div class="line">$ dotnet run -p ../color-shape-links-ai-competition/ConsoleApp/ColorShapeLinks/TextBased/App</div>
+</div><!-- fragment --><p>In either case, since no options were passed to the app, it will terminate with an error message, although showing the main options. By default the app is built and executed in <em>debug</em> mode. To build and run it in <em>release</em> mode, use the <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run#options">following command instead</a>:</p>
 <div class="fragment"><div class="line">$ dotnet run -c Release</div>
-</div><!-- fragment --><p>Command-line arguments are passed to app after two dashes, <code>--</code>, since these separate options to the <code>dotnet</code> command from the options to the app being executed. For example, the <code>info</code> option shows important environment info for running <a class="el" href="namespace_color_shape_links.html" title="The ColorShapeLinks game, an unbounded version of the Simplexity board game.">ColorShapeLinks</a> matches, for example known assemblies (units of compiled C# code) and AI thinkers. Running the console app with this options can be accomplished as follows:</p>
+</div><!-- fragment --><p>Command-line arguments are passed to app after two dashes, <code>--</code>, since these separate options to the <code>dotnet</code> command from the options to the app being executed. For example, the <code>info</code> option shows important environment info for running <a class="el" href="namespace_color_shape_links.html" title="The ColorShapeLinks game, an unbounded version of the Simplexity board game.">ColorShapeLinks</a> matches, such as known assemblies (units of compiled C# code) and AI thinkers. Running the console app with this option can be accomplished as follows:</p>
 <div class="fragment"><div class="line">$ dotnet run -c Release -- info</div>
-</div><!-- fragment --><p>Alternatively, the app can be built and executed separately:</p>
+</div><!-- fragment --><p>Alternatively, the app can be <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build">built</a> and executed separately:</p>
 <div class="fragment"><div class="line">$ dotnet build -c Release</div>
 <div class="line">$ ./bin/Release/netcoreapp3.1/ColorShapeLinks.TextBased.App</div>
 </div><!-- fragment --><p>In this case, command-line options are passed directly:</p>
 <div class="fragment"><div class="line">$ ./bin/Release/netcoreapp3.1/ColorShapeLinks.TextBased.App info</div>
-</div><!-- fragment --><p>For the remainder of this document, we will use the first approach, i.e., the <code>dotnet run</code> command in default <em>debug</em> mode.</p>
+</div><!-- fragment --><p>For the remainder of this section we'll consider that the <code>dotnet run</code> command in executed within the <code>ConsoleApp/ColorShapeLinks/TextBased/App</code> folder and using the default <em>debug</em> mode (i.e. no need for the <code>-p</code> and <code>-c</code> options, respectively).</p>
 <h2><a class="anchor" id="autotoc_md6"></a>
 App options</h2>
-<p>The console applications has the following main options (or verbs):</p>
+<p>The console application has the following main options (or verbs):</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Option/Verb   </th><th class="markdownTableHeadNone">Description    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>session</code>   </td><td class="markdownTableBodyNone">Run a complete session (tournament) between AIs    </td></tr>
+<td class="markdownTableBodyNone"><code>session</code>   </td><td class="markdownTableBodyNone">Run a complete session (tournament) between AIs.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>match</code>   </td><td class="markdownTableBodyNone">Run a single match between two thinkers    </td></tr>
+<td class="markdownTableBodyNone"><code>match</code>   </td><td class="markdownTableBodyNone">Run a single match between two thinkers.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>info</code>   </td><td class="markdownTableBodyNone">Show known assemblies, thinkers and listeners, and exit    </td></tr>
+<td class="markdownTableBodyNone"><code>info</code>   </td><td class="markdownTableBodyNone">Show known assemblies, thinkers and listeners, and exit.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>help</code>   </td><td class="markdownTableBodyNone">Display more information on a specific command   </td></tr>
+<td class="markdownTableBodyNone"><code>help</code>   </td><td class="markdownTableBodyNone">Display more information on a specific command.   </td></tr>
 </table>
 <p>There are two sub-options available for <b>all</b> verbs:</p>
 <ul>
@@ -154,9 +161,9 @@ App options</h2>
 <p>These options define the board configuration for matches, the maximum and minimum apparent play times, as well as alternative thinker and match <a class="el" href="console-guide.html#listeners">listeners</a>.</p>
 <h2><a class="anchor" id="autotoc_md7"></a>
 The match verb</h2>
-<p>The <code>match</code> verb runs a single match of <a class="el" href="namespace_color_shape_links.html" title="The ColorShapeLinks game, an unbounded version of the Simplexity board game.">ColorShapeLinks</a>. The following command list all <code>match</code> verb options:</p>
+<p>The <code>match</code> verb runs a single match of <a class="el" href="namespace_color_shape_links.html" title="The ColorShapeLinks game, an unbounded version of the Simplexity board game.">ColorShapeLinks</a>. The following command lists all <code>match</code> verb options:</p>
 <div class="fragment"><div class="line">$ dotnet run -- help match</div>
-</div><!-- fragment --><p>Of these, the following are <code>match</code> specific:</p>
+</div><!-- fragment --><p>Of these, the following are <code>match</code>-specific:</p>
 <ul>
 <li><code>-W</code>, <code>--white</code>: Fully qualified name of player 1 thinker class (default is <a class="el" href="class_color_shape_links_1_1_text_based_1_1_app_1_1_human_thinker.html" title="A human thinker for testing the console app.">ColorShapeLinks.TextBased.App.HumanThinker</a>).</li>
 <li><code>-R</code>, <code>--red</code>: Fully qualified name of player 2 thinker class (default is <a class="el" href="class_color_shape_links_1_1_text_based_1_1_app_1_1_human_thinker.html" title="A human thinker for testing the console app.">ColorShapeLinks.TextBased.App.HumanThinker</a>).</li>
@@ -167,14 +174,14 @@ The match verb</h2>
 <div class="fragment"><div class="line">$ dotnet run -- match</div>
 </div><!-- fragment --><p>The following command runs a match between a human player, playing as white, and a random move AI player:</p>
 <div class="fragment"><div class="line">$ dotnet run -- match -R ColorShapeLinks.Common.AI.Examples.RandomAIThinker</div>
-</div><!-- fragment --><p>If a third-party AI thinker named <code>MyAI.MyThinker</code> (in file <code>MyThinker.cs</code>) is placed in the <code>ConsoleApp/ColorShapeLinks/TextBased/App</code> folder, the following command runs a match between <code>MyThinker</code>, playing as white, and a random move player, playing as red, with a time limit of one second:</p>
-<div class="fragment"><div class="line">dotnet run -- match -W MyAI.MyThinker -R ColorShapeLinks.Common.AI.Examples.RandomAIThinker -t 1000</div>
+</div><!-- fragment --><p>If a third-party AI thinker named <code>MyAISolution.MyAI.MyThinker</code> (in file <code>MyThinker.cs</code>) is placed in the <code>ConsoleApp/ColorShapeLinks/TextBased/App</code> folder, the following command runs a match between <code>MyThinker</code>, playing as white, and a random move player, playing as red, with a time limit of one second:</p>
+<div class="fragment"><div class="line">dotnet run -- match -W MyAISolution.MyAI.MyThinker -R ColorShapeLinks.Common.AI.Examples.RandomAIThinker -t 1000</div>
 </div><!-- fragment --><p>If the AIs are playing too fast for human observation, a minimum apparent play time can be set, for example two seconds:</p>
-<div class="fragment"><div class="line">dotnet run -- match -W MyAI.MyThinker -R ColorShapeLinks.Common.AI.Examples.RandomAIThinker -t 1000 -m 2000</div>
-</div><!-- fragment --><p>In case the third-party AI thinker is developed outside the <a class="el" href="namespace_color_shape_links.html" title="The ColorShapeLinks game, an unbounded version of the Simplexity board game.">ColorShapeLinks</a> framework, which is the preferred way to do development anyway, its assembly can be specified with the <code>--assemblies</code> option:</p>
-<div class="fragment"><div class="line">dotnet run -- match -W MyAI.MyThinker -R ColorShapeLinks.Common.AI.Examples.RandomAIThinker -t 1000 -m 2000 --assemblies /full/path/to/my/thinker/assembly.dll</div>
+<div class="fragment"><div class="line">dotnet run -- match -W MyAISolution.MyAI.MyThinker -R ColorShapeLinks.Common.AI.Examples.RandomAIThinker -t 1000 -m 2000</div>
+</div><!-- fragment --><p>In case the third-party AI thinker is developed outside the <a class="el" href="namespace_color_shape_links.html" title="The ColorShapeLinks game, an unbounded version of the Simplexity board game.">ColorShapeLinks</a> framework, which is <a class="el" href="thinker-implementation-guide.html#devenv">the preferred way to do development anyway</a>, its assembly can be specified with the <code>--assemblies</code> (or <code>-a</code>) option:</p>
+<div class="fragment"><div class="line">dotnet run -- match -W MyAISolution.MyAI.MyThinker -R ColorShapeLinks.Common.AI.Examples.RandomAIThinker -t 1000 -m 2000 --assemblies /full/path/to/my/thinker/assembly.dll</div>
 </div><!-- fragment --><p>If an AI thinker requires additional configuration parameters, these can be specified with the <code>--white-params</code>/<code>--red-params</code> options. For example, perhaps the <code>MyThinker</code> AI could accept a search depth parameter. Such a parameter could be passed as follows (note the thinkers themselves are responsible for parsing the string containing these parameters):</p>
-<div class="fragment"><div class="line">dotnet run -- match -W MyAI.MyThinker -R ColorShapeLinks.Common.AI.Examples.RandomAIThinker --white-params &quot;depth=4&quot;</div>
+<div class="fragment"><div class="line">dotnet run -- match -W MyAISolution.MyAI.MyThinker -R ColorShapeLinks.Common.AI.Examples.RandomAIThinker --white-params &quot;depth=4&quot;</div>
 </div><!-- fragment --><p>Different board configurations can also be specified. The following command starts a match between two human players with a 10x10 board, a winning sequence of 7 pieces, with each player starting with 24 round pieces and 25 square pieces:</p>
 <div class="fragment"><div class="line">dotnet run -- match -r 10 -c 10 -w 7 -o 24 -s 25</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md8"></a>
@@ -193,15 +200,52 @@ The session verb</h2>
 <div class="fragment"><div class="line"># Lines starting with # are ignored</div>
 <div class="line"># Blank lines are also ignored</div>
 <div class="line">ColorShapeLinks.Common.AI.Examples.RandomAIThinker</div>
-<div class="line">MyAI.MyThinker depth=5</div>
-<div class="line">Awesome.AwesomeAIThinker depth=7, turbo=boost, win=always</div>
+<div class="line">MyAISolution.MyAI.MyThinker depth=5</div>
+<div class="line">Awesome.AwesomeAIThinker depth=7,turbo=boost,win=always</div>
 </div><!-- fragment --><p>If this file is named "test-competition.txt", a complete session/tournament between the specified AI thinkers can be started as follows:</p>
 <div class="fragment"><div class="line">$ dotnet run -- session -g test-competition.txt</div>
 </div><!-- fragment --><p>If any of the AI thinkers are in external assemblies, these also need to be specified, for example:</p>
 <div class="fragment"><div class="line">$ dotnet run -- session -g test-competition.txt -a /full/path/to/my/thinker/assembly.dll /full/path/to/awesome/assembly.dll</div>
-</div><!-- fragment --><h1><a class="anchor" id="listeners"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
+Exit codes and capturing results</h2>
+<p>The console app returns the following exits codes to the operating system, based on the <a class="el" href="namespace_color_shape_links_1_1_text_based_1_1_lib.html#ae189a3c432aa37137a55df8c91c579ed">ExitStatus</a> enumeration:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Code   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">A <code>match</code> was played and ended in a draw.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">A <code>match</code> was played, white wins.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">2   </td><td class="markdownTableBodyNone">A <code>match</code> was played, red wins.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">3   </td><td class="markdownTableBodyNone">A <code>session</code> was executed successfully.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">4   </td><td class="markdownTableBodyNone">An <code>info</code> request was executed successfully.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">5   </td><td class="markdownTableBodyNone">An exception occurred while executing the console app.   </td></tr>
+</table>
+<p>This exit code allows, for instance, to plug-in the console app to machine learning frameworks. For example, capturing the exit code with a Python script could be done as follows:</p>
+<div class="fragment"><div class="line"><span class="keyword">import</span> subprocess</div>
+<div class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</div>
+<div class="line"> </div>
+<div class="line"><span class="comment"># Assume the ColorShapeLinks framework is in the source/repos folder in the</span></div>
+<div class="line"><span class="comment"># home folder</span></div>
+<div class="line">csl_path = str(Path.home().joinpath(<span class="stringliteral">&quot;source&quot;</span>, <span class="stringliteral">&quot;repos&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;color-shape-links-ai-competition&quot;</span>, <span class="stringliteral">&quot;ConsoleApp&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;ColorShapeLinks&quot;</span>, <span class="stringliteral">&quot;TextBased&quot;</span>, <span class="stringliteral">&quot;App&quot;</span>))</div>
+<div class="line"> </div>
+<div class="line"><span class="comment"># Run a match between two of the included thinkers</span></div>
+<div class="line">cp = subprocess.run([<span class="stringliteral">&quot;dotnet&quot;</span>, <span class="stringliteral">&quot;run&quot;</span>, <span class="stringliteral">&quot;-p&quot;</span>, csl_path, <span class="stringliteral">&quot;--&quot;</span>, <span class="stringliteral">&quot;match&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;-W&quot;</span>, <span class="stringliteral">&quot;ColorShapeLinks.Common.AI.Examples.RandomAIThinker&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;-R&quot;</span>, <span class="stringliteral">&quot;ColorShapeLinks.Common.AI.Examples.MinimaxAIThinker&quot;</span>])</div>
+<div class="line"> </div>
+<div class="line"><span class="comment"># Show captured exit code</span></div>
+<div class="line">print(<span class="stringliteral">&quot;Return value is {0}&quot;</span>.format(cp.returncode))</div>
+</div><!-- fragment --><p>However, sessions/tournaments are probably more practical for certain machine learning contexts, for example when using evolutionary algorithms. While exit codes cannot return <code>session</code> results, the <a class="el" href="class_color_shape_links_1_1_text_based_1_1_lib_1_1_ranking_session_listener.html">RankingSessionListener</a> was developed for this purpose. It exports <code>session</code> results to a CSV file, allowing for setups in which the machine learning algorithm continuosly defines the session roster and captures the session's results.</p>
+<h1><a class="anchor" id="listeners"></a>
 Event listeners</h1>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 Listener architecture</h2>
 <p>Listeners are responsible for handling:</p>
 <ul>
@@ -222,13 +266,13 @@ Listener architecture</h2>
 <div class="fragment"><div class="line">$ dotnet run -- info</div>
 </div><!-- fragment --><p>If listeners are defined in an external assembly, the assembly also needs to be specified, e.g.:</p>
 <div class="fragment"><div class="line">$ dotnet run -- info -a /full/path/to/listener/assembly.dll</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md10"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md11"></a>
 The default listener</h2>
 <p>The <a class="el" href="class_color_shape_links_1_1_text_based_1_1_app_1_1_simple_rendering_listener.html">SimpleRenderingListener</a> implements all three listener interfaces, namely <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_thinker_listener.html">IThinkerListener</a>, <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_match_listener.html">IMatchListener</a> and <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_session_listener.html">ISessionListener</a>. As such, it is able to listen to <a class="el" href="interface_color_shape_links_1_1_common_1_1_a_i_1_1_i_thinker.html">thinker</a>, <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_match_subject.html">match</a> and <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_session_subject.html">session</a> events, and is used as the default listener in the configurations described in the following paragraphs.</p>
 <p>When running simple matches (i.e., using the <code>match</code> verb), the <a class="el" href="class_color_shape_links_1_1_text_based_1_1_app_1_1_simple_rendering_listener.html">SimpleRenderingListener</a> is registered as a <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_thinker_listener.html">thinker listener</a> and a <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_match_listener.html">match listener</a>. There are no <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_session_subject.html">session events</a> when running simple matches.</p>
 <p>Similarly, <a class="el" href="class_color_shape_links_1_1_text_based_1_1_app_1_1_simple_rendering_listener.html">SimpleRenderingListener</a> is registered as a <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_session_listener.html">session listener</a> when running complete sessions/tournaments with the <code>session</code> verb. By default, no <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_thinker_listener.html">thinker</a> and <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_match_listener.html">match</a> listeners are registered during complete sessions.</p>
 <p>The <a class="el" href="class_color_shape_links_1_1_text_based_1_1_app_1_1_simple_rendering_listener.html">SimpleRenderingListener</a> works according to its name, outputting <a class="el" href="interface_color_shape_links_1_1_common_1_1_a_i_1_1_i_thinker.html">thinker</a>, <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_match_subject.html">match</a> and <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_session_subject.html">session</a> events to the console in the simplest possible fashion.</p>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
 Custom listeners</h2>
 <p>A custom listener can listen to several events of one or more types. Depending on the types of event to listen, the custom listener must implement one or more of the following interfaces:</p>
 <ul>
@@ -367,7 +411,7 @@ Custom listeners</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Apr 2 2021 21:40:24 for ColorShapeLinks AI by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Apr 3 2021 00:53:39 for ColorShapeLinks AI by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
