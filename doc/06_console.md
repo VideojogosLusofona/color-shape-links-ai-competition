@@ -4,9 +4,9 @@
 
 [TOC]
 
-@remark All instructions in these guides are cross-platform and work in Linux, Windows, and macOS, requiring only that [.NET Core] and/or [Unity] are
-installed. On Windows, replace slashes `/` with backslashes `\` when
-referencing local paths.
+@remark All instructions in these guides are cross-platform and work in Linux, Windows, and macOS, requiring only that [.NET Core 3.1][.NET Core] is
+installed. On Windows, when not using Git Bash, replace slashes `/` with
+backslashes `\` when referencing local paths.
 
 ## Running the app
 
@@ -17,10 +17,27 @@ In order to run the console app, `cd` into its folder (i.e.,
 $ dotnet run
 ```
 
-Since no options were specified, the app will exit with an error message,
-although showing the main options. By default the app is built and executed in
-_debug_ mode. To build and run it in _release_ mode, use the following
-command instead:
+The console app can also be invoked from other folders. For example, consider
+the following folder structure (as discussed
+[in the previous section](@ref devenv)):
+
+```
+└──color-shape-links-ai-dev/
+   ├──color-shape-links-ai-competition/
+   └──my-ai-solution/
+```
+
+If we're developing our thinker in the `my-ai-solution` folder, we could invoke
+the console app using the [`-p` option of the `dotnet run` command][dotnet-run],
+as follows:
+
+```
+$ dotnet run -p ../color-shape-links-ai-competition/ConsoleApp/ColorShapeLinks/TextBased/App
+```
+
+In either case, since no options were passed to the app, it will terminate with
+an error message, although showing the main options. By default the app is built
+and executed in _debug_ mode. To build and run it in _release_ mode, use the [following command instead][dotnet-run]:
 
 ```
 $ dotnet run -c Release
@@ -29,15 +46,15 @@ $ dotnet run -c Release
 Command-line arguments are passed to app after two dashes, `--`, since these
 separate options to the `dotnet` command from the options to the app being
 executed. For example, the `info` option shows important environment info
-for running ColorShapeLinks matches, for example known assemblies (units of
-compiled C# code) and AI thinkers. Running the console app with this options
+for running ColorShapeLinks matches, such as known assemblies (units of
+compiled C# code) and AI thinkers. Running the console app with this option
 can be accomplished as follows:
 
 ```
 $ dotnet run -c Release -- info
 ```
 
-Alternatively, the app can be built and executed separately:
+Alternatively, the app can be [built][dotnet-build] and executed separately:
 
 ```
 $ dotnet build -c Release
@@ -50,19 +67,21 @@ In this case, command-line options are passed directly:
 $ ./bin/Release/netcoreapp3.1/ColorShapeLinks.TextBased.App info
 ```
 
-For the remainder of this document, we will use the first approach, i.e.,
-the `dotnet run` command in default _debug_ mode.
+For the remainder of this section we'll consider that the `dotnet run` command
+in executed within the `ConsoleApp/ColorShapeLinks/TextBased/App` folder and
+using the default _debug_ mode (i.e. no need for the `-p` and `-c` options,
+respectively).
 
 ### App options
 
-The console applications has the following main options (or verbs):
+The console application has the following main options (or verbs):
 
-| Option/Verb | Description                                             |
-| ----------- | ------------------------------------------------------- |
-| `session`   | Run a complete session (tournament) between AIs         |
-| `match`     | Run a single match between two thinkers                 |
-| `info`      | Show known assemblies, thinkers and listeners, and exit |
-| `help`      | Display more information on a specific command          |
+| Option/Verb | Description                                              |
+| ----------- | -------------------------------------------------------- |
+| `session`   | Run a complete session (tournament) between AIs.         |
+| `match`     | Run a single match between two thinkers.                 |
+| `info`      | Show known assemblies, thinkers and listeners, and exit. |
+| `help`      | Display more information on a specific command.          |
 
 There are two sub-options available for **all** verbs:
 
@@ -105,13 +124,13 @@ minimum apparent play times, as well as alternative thinker and match
 ### The match verb
 
 The `match` verb runs a single match of ColorShapeLinks. The following command
-list all `match` verb options:
+lists all `match` verb options:
 
 ```
 $ dotnet run -- help match
 ```
 
-Of these, the following are `match` specific:
+Of these, the following are `match`-specific:
 
 * `-W`, `--white`: Fully qualified name of player 1 thinker class (default is
   ColorShapeLinks.TextBased.App.HumanThinker).
@@ -136,28 +155,29 @@ and a random move AI player:
 $ dotnet run -- match -R ColorShapeLinks.Common.AI.Examples.RandomAIThinker
 ```
 
-If a third-party AI thinker named `MyAI.MyThinker` (in file `MyThinker.cs`) is
-placed in the `ConsoleApp/ColorShapeLinks/TextBased/App` folder, the following
-command runs a match between `MyThinker`, playing as white, and a random move
-player, playing as red, with a time limit of one second:
+If a third-party AI thinker named `MyAISolution.MyAI.MyThinker` (in file
+`MyThinker.cs`) is placed in the `ConsoleApp/ColorShapeLinks/TextBased/App`
+folder, the following command runs a match between `MyThinker`, playing as
+white, and a random move player, playing as red, with a time limit of one
+second:
 
 ```
-dotnet run -- match -W MyAI.MyThinker -R ColorShapeLinks.Common.AI.Examples.RandomAIThinker -t 1000
+dotnet run -- match -W MyAISolution.MyAI.MyThinker -R ColorShapeLinks.Common.AI.Examples.RandomAIThinker -t 1000
 ```
 
 If the AIs are playing too fast for human observation, a minimum apparent play
 time can be set, for example two seconds:
 
 ```
-dotnet run -- match -W MyAI.MyThinker -R ColorShapeLinks.Common.AI.Examples.RandomAIThinker -t 1000 -m 2000
+dotnet run -- match -W MyAISolution.MyAI.MyThinker -R ColorShapeLinks.Common.AI.Examples.RandomAIThinker -t 1000 -m 2000
 ```
 
 In case the third-party AI thinker is developed outside the ColorShapeLinks
-framework, which is the preferred way to do development anyway, its assembly
-can be specified with the `--assemblies` option:
+framework, which is [the preferred way to do development anyway](@ref devenv),
+its assembly can be specified with the `--assemblies` (or `-a`) option:
 
 ```
-dotnet run -- match -W MyAI.MyThinker -R ColorShapeLinks.Common.AI.Examples.RandomAIThinker -t 1000 -m 2000 --assemblies /full/path/to/my/thinker/assembly.dll
+dotnet run -- match -W MyAISolution.MyAI.MyThinker -R ColorShapeLinks.Common.AI.Examples.RandomAIThinker -t 1000 -m 2000 --assemblies /full/path/to/my/thinker/assembly.dll
 ```
 
 If an AI thinker requires additional configuration parameters, these can be
@@ -167,7 +187,7 @@ parameter could be passed as follows (note the thinkers themselves are
 responsible for parsing the string containing these parameters):
 
 ```
-dotnet run -- match -W MyAI.MyThinker -R ColorShapeLinks.Common.AI.Examples.RandomAIThinker --white-params "depth=4"
+dotnet run -- match -W MyAISolution.MyAI.MyThinker -R ColorShapeLinks.Common.AI.Examples.RandomAIThinker --white-params "depth=4"
 ```
 
 Different board configurations can also be specified. The following command
@@ -208,8 +228,8 @@ parameters, if any, as shown in the following example:
 # Lines starting with # are ignored
 # Blank lines are also ignored
 ColorShapeLinks.Common.AI.Examples.RandomAIThinker
-MyAI.MyThinker depth=5
-Awesome.AwesomeAIThinker depth=7, turbo=boost, win=always
+MyAISolution.MyAI.MyThinker depth=5
+Awesome.AwesomeAIThinker depth=7,turbo=boost,win=always
 ```
 
 If this file is named "test-competition.txt", a complete session/tournament
@@ -225,6 +245,52 @@ specified, for example:
 ```
 $ dotnet run -- session -g test-competition.txt -a /full/path/to/my/thinker/assembly.dll /full/path/to/awesome/assembly.dll
 ```
+
+### Exit codes and capturing results
+
+The console app returns the following exits codes to the operating system,
+based on the [ExitStatus](@ref ColorShapeLinks.TextBased.Lib.ExitStatus)
+enumeration:
+
+| Code | Description                                            |
+| ---- | ------------------------------------------------------ |
+| 0    | A `match` was played and ended in a draw.              |
+| 1    | A `match` was played, white wins.                      |
+| 2    | A `match` was played, red wins.                        |
+| 3    | A `session` was executed successfully.                 |
+| 4    | An `info` request was executed successfully.           |
+| 5    | An exception occurred while executing the console app. |
+
+This exit code allows, for instance, to plug-in the console app to machine
+learning frameworks. For example, capturing the exit code with a Python script
+could be done as follows:
+
+```py
+import subprocess
+from pathlib import Path
+
+# Assume the ColorShapeLinks framework is in the source/repos folder in the
+# home folder
+csl_path = str(Path.home().joinpath("source", "repos",
+    "color-shape-links-ai-competition", "ConsoleApp",
+    "ColorShapeLinks", "TextBased", "App"))
+
+# Run a match between two of the included thinkers
+cp = subprocess.run(["dotnet", "run", "-p", csl_path, "--", "match",
+    "-W", "ColorShapeLinks.Common.AI.Examples.RandomAIThinker",
+    "-R", "ColorShapeLinks.Common.AI.Examples.MinimaxAIThinker"])
+
+# Show captured exit code
+print("Return value is {0}".format(cp.returncode))
+```
+
+However, sessions/tournaments are probably more practical for certain machine
+learning contexts, for example when using evolutionary algorithms.
+While exit codes cannot return `session` results, the
+[RankingSessionListener](@ref ColorShapeLinks.TextBased.Lib.RankingSessionListener)
+was developed for this purpose. It exports `session` results to a CSV file,
+allowing for setups in which the machine learning algorithm continuosly defines
+the session roster and captures the session's results.
 
 ## Event listeners {#listeners}
 
@@ -508,3 +574,5 @@ knowledge of what events are produced by
 
 [.NET Core]:https://dotnet.microsoft.com/download
 [Unity]:https://unity.com/
+[dotnet-run]:https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run#options
+[dotnet-build]:https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build

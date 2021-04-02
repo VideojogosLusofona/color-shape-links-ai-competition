@@ -14,8 +14,8 @@ git clone --recurse-submodules https://github.com/VideojogosLusofona/color-shape
 
 #### What are the software requirements for developing and testing an AI?
 
-* [.NET Core][.NET Core] ≥ 3.1 for testing the AI in the console.
-* [Unity] ≥ 2019.2 for testing the AI in Unity.
+* [.NET Core 3.1][.NET Core] for testing the AI in the console.
+* [Unity] ≥ 2019.4 for testing the AI in Unity.
 
 [Git]:https://git-scm.com/downloads
 [Git LFS]:https://git-lfs.github.com/
