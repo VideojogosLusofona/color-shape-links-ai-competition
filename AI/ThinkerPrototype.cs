@@ -3,7 +3,7 @@
 /// class.
 ///
 /// @author Nuno Fachada
-/// @date 2020
+/// @date 2020, 2021
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using System;
@@ -54,7 +54,7 @@ namespace ColorShapeLinks.Common.AI
         /// <param name="matchConfig">
         /// The configuration for matches where created thinkers will play.
         /// </param>
-        /// <exception cref="System.ArgumentException">
+        /// <exception cref="ArgumentException">
         /// Thrown when the <paramref name="thinkerFQN"/> is empty or does not
         /// correspond to a known thinker.
         /// </exception>

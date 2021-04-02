@@ -3,7 +3,7 @@
 /// class.
 ///
 /// @author Nuno Fachada
-/// @date 2020
+/// @date 2020, 2021
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 namespace ColorShapeLinks.Common
@@ -26,8 +26,16 @@ namespace ColorShapeLinks.Common
         /// </summary>
         /// <param name="color">This color.</param>
         /// <returns>
-        /// * Returns ::PColor.White if this color is ::PColor.Red.
-        /// * Returns ::PColor.Red if this color is ::PColor.White.
+        /// <list type="bullet">
+        /// <item><description>
+        /// Returns <see cref="PColor.White"/> if this color is
+        /// <see cref="PColor.Red"/>.
+        /// </description></item>
+        /// <item><description>
+        /// Returns <see cref="PColor.Red"/> if this color is
+        /// <see cref="PColor.White"/>.
+        /// </description></item>
+        /// </list>
         /// </returns>
         public static PColor Other(this PColor color) =>
             color == PColor.White ? PColor.Red : PColor.White;
@@ -38,8 +46,16 @@ namespace ColorShapeLinks.Common
         /// </summary>
         /// <param name="color">This color.</param>
         /// <returns>
-        /// * Returns ::PShape.Round if color is PColor.White.
-        /// * Returns ::PShape.Square if color is PColor.Red.
+        /// <list type="bullet">
+        /// <item><description>
+        /// Returns <see cref="PShape.Round"/> if color is
+        /// <see cref="PColor.White"/>.
+        /// </description></item>
+        /// <item><description>
+        /// Returns <see cref="PShape.Square"/> if color is
+        /// <see cref="PColor.Red"/>.
+        /// </description></item>
+        /// </list>
         /// </returns>
         public static PShape Shape(this PColor color) =>
             color == PColor.White ? PShape.Round : PShape.Square;
@@ -52,18 +68,26 @@ namespace ColorShapeLinks.Common
         /// <param name="color">This color.</param>
         /// <param name="piece">The piece to check for friendship.</param>
         /// <returns>
-        /// `true` is given piece is a friend, `false` otherwise.
+        /// <c>true</c> is given piece is a friend, <c>false</c> otherwise.
         /// </returns>
         public static bool FriendOf(this PColor color, Piece piece) =>
             color == piece.color || color.Shape() == piece.shape;
 
         /// <summary>
-        /// Returns the ::Winner associated with this color.
+        /// Returns the <see cref="Winner"/> associated with this color.
         /// </summary>
         /// <param name="color">This color.</param>
         /// <returns>
-        /// * Winner.White if <paramref name="color"/> is PColor.White.
-        /// * Winner.Red if <paramref name="color"/> is PColor.Red.
+        /// <list type="bullet">
+        /// <item><description>
+        /// Returns <see cref="Winner.White"/> if <paramref name="color"/> is
+        /// <see cref="PColor.White"/>.
+        /// </description></item>
+        /// <item><description>
+        /// Returns <see cref="Winner.Red"/> if <paramref name="color"/> is
+        /// <see cref="PColor.Red"/>.
+        /// </description></item>
+        /// </list>
         /// </returns>
         public static Winner ToWinner(this PColor color) =>
             color == PColor.White ? Winner.White : Winner.Red;

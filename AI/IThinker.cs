@@ -3,7 +3,7 @@
 /// interface.
 ///
 /// @author Nuno Fachada
-/// @date 2019, 2020
+/// @date 2019-2021
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using System;
@@ -27,10 +27,9 @@ namespace ColorShapeLinks.Common.AI
         /// made to the cancellation token (<paramref name="ct"/>). If so,
         /// it should return immediately with no move performed, as
         /// exemplified in the following code:
-        ///
-        /// ```cs
+        /// <code>
         /// if (ct.IsCancellationRequested) return FutureMove.NoMove;
-        /// ```
+        /// </code>
         /// </remarks>
         FutureMove Think(Board board, CancellationToken ct);
 
@@ -38,9 +37,15 @@ namespace ColorShapeLinks.Common.AI
         /// Event raised when thinkers produce information while thinking.
         /// </summary>
         /// <remarks>
-        /// * Listeners receive a string containing the thinking information.
-        /// * It is not mandatory that thinkers produce any information while
-        ///   thinking.
+        /// <list type="bullet">
+        /// <item><description>
+        /// Listeners receive a string containing the thinking information.
+        /// </description></item>
+        /// <item><description>
+        /// It is not mandatory that thinkers produce any information while
+        /// thinking.
+        /// </description></item>
+        /// </list>
         /// </remarks>
         event Action<string> ThinkingInfo;
     }

@@ -3,7 +3,7 @@
 /// class.
 ///
 /// @author Nuno Fachada
-/// @date 2019, 2020
+/// @date 2019-2021
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 namespace ColorShapeLinks.Common
@@ -15,7 +15,7 @@ namespace ColorShapeLinks.Common
         /// Converts a <see cref="Winner"/> instance into a <see cref="PColor"/>
         /// instance. If conversion is not possible (i.e., if winner not
         /// <see cref="Winner.White"/> or <see cref="Winner.Red"/>), returns
-        /// `(PColor)(-1)`, which is an invalid color.
+        /// <c>(PColor)(-1)</c>, which is an invalid color.
         /// </summary>
         /// <param name="winner">A <see cref="Winner"/> instance.</param>
         /// <returns>A <see cref="PColor"/> instance.</returns>

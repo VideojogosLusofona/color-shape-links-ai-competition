@@ -3,7 +3,7 @@
 /// class.
 ///
 /// @author Nuno Fachada
-/// @date 2020
+/// @date 2020, 2021
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using System;
@@ -36,27 +36,21 @@ namespace ColorShapeLinks.Common.AI
         private int timeLimitMillis = 0;
 
         /// <summary>Number of board rows.</summary>
-        /// <value>Number of board rows.</value>
         protected int Rows =>  rows;
 
         /// <summary>Number of board columns.</summary>
-        /// <value>Number of board columns.</value>
         protected int Cols =>  cols;
 
         /// <summary>How many pieces in sequence to find a winner.</summary>
-        /// <value>How many pieces in sequence to find a winner.</value>
         protected int WinSequence => winSequence;
 
         /// <summary>Number of initial round pieces per player.</summary>
-        /// <value>Number of initial round pieces per player.</value>
         protected int RoundsPerPlayer => roundPiecesPerPlayer;
 
         /// <summary>Number of initial square round pieces per player</summary>
-        /// <value>Number of initial square round pieces per player</value>
         protected int SquaresPerPlayer => squarePiecesPerPlayer;
 
         /// <summary>Time limit for the AI to play.</summary>
-        /// <value>Time limit for the AI to play.</value>
         protected int TimeLimitMillis => timeLimitMillis;
 
         /// <summary>
@@ -109,11 +103,24 @@ namespace ColorShapeLinks.Common.AI
         }
 
         /// <summary>
-        /// Thinker should raise the thinking info event using this method.
+        /// Outputs thinking information.
         /// </summary>
         /// <param name="info">
         /// String containing the thinking information.
         /// </param>
+        /// <remarks>
+        /// <para>
+        /// In the Unity frontend this information is shown in Unity's console,
+        /// while in the console frontend it is forwarded to the registered
+        /// <see cref="ColorShapeLinks.TextBased.Lib.IThinkerListener">thinker
+        /// listeners</see> (which by default print to the terminal).
+        /// </para>
+        /// <para>
+        /// This method raises the <see cref="ThinkingInfo"/> event in order to
+        /// output thinking information. Thinkers should use this method instead
+        /// of raising the event directly.
+        /// </para>
+        /// </remarks>
         protected void OnThinkingInfo(string info)
         {
             ThinkingInfo?.Invoke(info);

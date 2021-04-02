@@ -2,7 +2,7 @@
 /// @brief This file contains the ::ColorShapeLinks.Common.Board class.
 ///
 /// @author Nuno Fachada
-/// @date 2019, 2020
+/// @date 2019-2021
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using System;
@@ -23,7 +23,7 @@ namespace ColorShapeLinks.Common
         /// The piece in the specified board position, or `null` if no piece is
         /// in the given position.
         /// </returns>
-        /// <exception cref="System.IndexOutOfRangeException">
+        /// <exception cref="IndexOutOfRangeException">
         /// Thrown when the given position is invalid (outside the board).
         /// </exception>
         public Piece? this[int row, int col]
@@ -300,7 +300,7 @@ namespace ColorShapeLinks.Common
         /// </summary>
         /// <param name="shape">
         /// Shape of piece used in move (color is obtained from
-        /// <see cref="Board.Turn"/>).
+        /// <see cref="Turn"/>).
         /// </param>
         /// <param name="col">Column where to drop piece.</param>
         /// <returns>
@@ -308,9 +308,17 @@ namespace ColorShapeLinks.Common
         /// </returns>
         /// <exception cref="InvalidOperationException">
         /// Thrown when:
-        /// * <paramref name="col"/> is is not a valid column.
-        /// * Game is already over when this method is invoked.
-        /// * There are no more pieces of the specified type available.
+        /// <list type="bullet">
+        /// <item><description>
+        /// <paramref name="col"/> is not a valid column.
+        /// </description></item>
+        /// <item><description>
+        /// Game is already over when this method is invoked.
+        /// </description></item>
+        /// <item><description>
+        /// There are no more pieces of the specified type available.
+        /// </description></item>
+        /// </list>
         /// </exception>
         public int DoMove(PShape shape, int col)
         {
@@ -525,7 +533,9 @@ namespace ColorShapeLinks.Common
         /// Is the specified column full?
         /// </summary>
         /// <param name="col">The column to check if it's full.</param>
-        /// <returns>`true` if the column is full, `false` otherwise.</returns>
+        /// <returns>
+        /// <c>true</c> if the column is full, <c>false</c> otherwise.
+        /// </returns>
         public bool IsColumnFull(int col) => board[col, rows - 1].HasValue;
     }
 }

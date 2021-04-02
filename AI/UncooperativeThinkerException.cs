@@ -3,7 +3,7 @@
 /// ::ColorShapeLinks.Common.AI.UncooperativeThinkerException class.
 ///
 /// @author Nuno Fachada
-/// @date 2020
+/// @date 2020, 2021
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using System;
@@ -29,7 +29,7 @@ namespace ColorShapeLinks.Common.AI
         /// The thinker that is being uncooperative.
         /// </param>
         public UncooperativeThinkerException(IThinker thinker)
-            : base($"{thinker.ToString()} refused to terminate execution")
+            : base($"{thinker} refused to terminate execution")
         { }
     }
 }

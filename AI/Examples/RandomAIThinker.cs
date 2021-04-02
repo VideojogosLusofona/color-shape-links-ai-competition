@@ -3,7 +3,7 @@
 /// ::ColorShapeLinks.Common.AI.Examples.RandomAIThinker class.
 ///
 /// @author Nuno Fachada
-/// @date 2019, 2020
+/// @date 2019-2021
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using System;
@@ -24,9 +24,9 @@ namespace ColorShapeLinks.Common.AI.Examples
         /// thinker.
         /// </summary>
         /// <param name="str">
-        /// If the string is convertible to `int`, this `int` value is used
-        /// as a seed for the random number generator. Otherwise, a
-        /// time-dependent default seed value is used instead.
+        /// If the string is convertible to <c>int</c>, this <c>int</c> value
+        /// is sed as a seed for the random number generator. Otherwise, a
+        /// random seed value is used instead.
         /// </param>
         /// <seealso cref="AbstractThinker.Setup"/>
         public override void Setup(string str)

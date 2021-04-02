@@ -3,7 +3,7 @@
 /// class.
 ///
 /// @author Nuno Fachada
-/// @date 2020
+/// @date 2020, 2021
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using System;
@@ -44,8 +44,8 @@ namespace ColorShapeLinks.Common.AI
         /// Fully qualified name of thinker.
         /// </param>
         /// <returns>
-        /// `true` if the thinker class exists in the loaded assemblies,
-        /// `false` otherwise.
+        /// <c>true</c> if the thinker class exists in the loaded
+        /// assemblies, <c>false</c> otherwise.
         /// </returns>
         public bool IsKnown(string thinkerFQN) =>
             thinkerTable.ContainsKey(thinkerFQN);

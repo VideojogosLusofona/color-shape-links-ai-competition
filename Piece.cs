@@ -2,7 +2,7 @@
 /// @brief This file contains the ::ColorShapeLinks.Common.Piece enum.
 ///
 /// @author Nuno Fachada
-/// @date 2019, 2020
+/// @date 2019-2021
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 namespace ColorShapeLinks.Common
@@ -29,8 +29,8 @@ namespace ColorShapeLinks.Common
         /// <param name="color">The piece color.</param>
         /// <param name="shape">The piece shape.</param>
         /// <returns>
-        /// `true` if the piece has the specified color and shape, `false`
-        /// otherwise.
+        /// <c>true</c> if the piece has the specified color and shape,
+        /// <c>false</c> otherwise.
         /// </returns>
         public bool Is(PColor color, PShape shape) =>
             this.color == color && this.shape == shape;

@@ -3,7 +3,7 @@
 /// ::ColorShapeLinks.Common.AI.Examples.MinimaxAIThinker class.
 ///
 /// @author Nuno Fachada
-/// @date 2020
+/// @date 2020, 2021
 /// @copyright [MPLv2](http://mozilla.org/MPL/2.0/)
 
 using System;
@@ -88,9 +88,20 @@ namespace ColorShapeLinks.Common.AI.Examples
         /// <param name="depth">Current search depth.</param>
         /// <returns>
         /// A value tuple with:
-        /// * `move` - The best move from the perspective of who's playing in
-        ///   this turn.
-        /// * `score` - The heuristic score associated with `move`.
+        /// <list type="bullet">
+        /// <item>
+        /// <term><c>move</c></term>
+        /// <description>
+        /// The best move from the perspective of who's playing in this turn.
+        /// </description>
+        /// </item>
+        /// <item>
+        /// <term><c>score</c></term>
+        /// <description>
+        /// The heuristic score associated with <c>move</c>.
+        /// </description>
+        /// </item>
+        /// </list>
         /// </returns>
         private (FutureMove move, float score) Minimax(
             Board board, CancellationToken ct,
