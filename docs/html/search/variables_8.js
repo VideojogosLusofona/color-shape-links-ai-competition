@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['name_353',['Name',['../class_color_shape_links_1_1_unity_app_1_1_human_thinker.html#abb8a07a49b37d9cebccfe6a346629643',1,'ColorShapeLinks::UnityApp::HumanThinker']]],
-  ['nomove_354',['NoMove',['../struct_color_shape_links_1_1_common_1_1_a_i_1_1_future_move.html#a99a1757fcd25cffdd18cf8bc5c46ac8a',1,'ColorShapeLinks::Common::AI::FutureMove']]]
+  ['thinkerred_353',['thinkerRed',['../class_color_shape_links_1_1_common_1_1_session_1_1_match.html#a019ea69d894d8ce4911034ad75fb01fa',1,'ColorShapeLinks::Common::Session::Match']]],
+  ['thinkerwhite_354',['thinkerWhite',['../class_color_shape_links_1_1_common_1_1_session_1_1_match.html#a85ed072c3dbbf10bf3ca98352d291930',1,'ColorShapeLinks::Common::Session::Match']]]
 ];

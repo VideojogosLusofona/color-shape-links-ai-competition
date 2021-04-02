@@ -9,8 +9,8 @@ var class_color_shape_links_1_1_text_based_1_1_app_1_1_game_options =
     [ "Rows", "class_color_shape_links_1_1_text_based_1_1_app_1_1_game_options.html#aacd84fe3991a31360df9315e81a5759a", null ],
     [ "SquarePiecesPerPlayer", "class_color_shape_links_1_1_text_based_1_1_app_1_1_game_options.html#a1435fef2f6dc68607209a4e78ff9e812", null ],
     [ "ThinkerListeners", "class_color_shape_links_1_1_text_based_1_1_app_1_1_game_options.html#a003e428b778f5a0d02761aeda8b6197e", null ],
+    [ "ThinkerPrototypes", "class_color_shape_links_1_1_text_based_1_1_app_1_1_game_options.html#a87a75b4f451b5d7c505353e9bfade6f4", null ],
     [ "TimeLimitMillis", "class_color_shape_links_1_1_text_based_1_1_app_1_1_game_options.html#a674bbef040e3de89fabd008aec84935a", null ],
     [ "TimeLimitSeconds", "class_color_shape_links_1_1_text_based_1_1_app_1_1_game_options.html#a08b1496260b29450b338d6e179158349", null ],
-    [ "WinSequence", "class_color_shape_links_1_1_text_based_1_1_app_1_1_game_options.html#affb43992a9e0eea81dfae30ec703fefc", null ],
-    [ "ThinkerPrototypes", "class_color_shape_links_1_1_text_based_1_1_app_1_1_game_options.html#a87a75b4f451b5d7c505353e9bfade6f4", null ]
+    [ "WinSequence", "class_color_shape_links_1_1_text_based_1_1_app_1_1_game_options.html#affb43992a9e0eea81dfae30ec703fefc", null ]
 ];

@@ -32,8 +32,9 @@ the challenges for the AI are multifold.
 
 AI agents must be implemented in C# ([.NET Standard 2.0]) by extending
 [one class][`AbstractThinker`] and overriding [one method][`Think()`].
-The development framework includes both console and [Unity] frontends and can
-be downloaded with the following command (requires [Git] and [Git LFS]):
+The development framework includes both console and [Unity] frontends
+([.NET Core 3.1] and [Unity 2019.4 LTS], respectively) and can be downloaded
+with the following command (requires [Git] and [Git LFS]):
 
 `git clone --recurse-submodules https://github.com/VideojogosLusofona/color-shape-links-ai-competition.git`
 
@@ -43,7 +44,7 @@ populated and/or updated with:
 `git submodule update --init --recursive`
 
 The [implementation guide][APIDocs] contains the required documentation for
-developing an AI agent for ColorShapeLinks.
+developing an AI agent for ColorShapeLinks. Th
 
 ## The competition
 
@@ -135,7 +136,7 @@ These dates are
 ### Rules for the AI code
 
 - Can only use cross-platform [.NET Standard 2.0] API calls in C#.
-- Can use additional libraries which abide by these same rules.
+- Can use additional (open-source) libraries which abide by these same rules.
 - Must run in the same process that invokes it.
 - Can be multithreaded and use [`unsafe`] contexts.
 - Cannot *think* in its opponent time (e.g., by using a background thread).
@@ -195,7 +196,9 @@ License][CC BY-NC-SA 4.0].
 [Connect Four]:https://www.boardgamegeek.com/boardgame/2719/connect-four
 [EuroMillions]:https://www.euro-millions.com/
 [.NET Standard 2.0]:https://docs.microsoft.com/dotnet/standard/net-standard
+[.NET Core 3.1]:https://dotnet.microsoft.com/download/dotnet/3.1
 [Unity]:https://unity.com/
+[Unity 2019.4 LTS]:https://unity.com/releases/2019-lts
 [ossl]:https://opensource.org/licenses
 [`unsafe`]:https://docs.microsoft.com/dotnet/csharp/programming-guide/unsafe-code-pointers/
 [`CancellationToken`]:https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken
@@ -208,3 +211,4 @@ License][CC BY-NC-SA 4.0].
 [IEEE CoG competition papers deadline]:https://ieee-cog.org/2021/#call_papers
 [IEEE CIS Competition Subcommittee]:https://cis.ieee.org/conferences/student-games-based-competition
 [paper]:https://www.sciencedirect.com/science/article/pii/S2666920X21000084
+
