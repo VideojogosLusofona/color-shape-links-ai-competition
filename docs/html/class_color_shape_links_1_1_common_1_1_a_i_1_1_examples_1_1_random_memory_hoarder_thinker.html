@@ -27,9 +27,8 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ColorShapeLinks AI
-   &#160;<span id="projectnumber">v1.0.0-beta</span>
    </div>
-   <div id="projectbrief">An AI competition for the IEEE Conference on Games</div>
+   <div id="projectbrief">An AI competition for the IEEE Conference on Games 2021</div>
   </td>
  </tr>
  </tbody>
@@ -143,7 +142,7 @@ Public Attributes</h2></td></tr>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html">AbstractThinker</a></td></tr>
 <tr class="memitem:a3610cd145e44a055a68076043d7b6cdc inherit pro_methods_class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#a3610cd145e44a055a68076043d7b6cdc">OnThinkingInfo</a> (string info)</td></tr>
-<tr class="memdesc:a3610cd145e44a055a68076043d7b6cdc inherit pro_methods_class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thinker should raise the thinking info event using this method.  <a href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#a3610cd145e44a055a68076043d7b6cdc">More...</a><br /></td></tr>
+<tr class="memdesc:a3610cd145e44a055a68076043d7b6cdc inherit pro_methods_class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs thinking information.  <a href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#a3610cd145e44a055a68076043d7b6cdc">More...</a><br /></td></tr>
 <tr class="separator:a3610cd145e44a055a68076043d7b6cdc inherit pro_methods_class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker"><td colspan="2" onclick="javascript:toggleInherit('properties_class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html">AbstractThinker</a></td></tr>
 <tr class="memitem:aacd84fe3991a31360df9315e81a5759a inherit properties_class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#aacd84fe3991a31360df9315e81a5759a">Rows</a><code> [get]</code></td></tr>
@@ -262,8 +261,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The move to be performed.</dd></dl>
-<p>The main thread may ask the thinker to stop <em>thinking</em>. As such, this method should frequently test if a cancellation request was made to the cancellation token (<em>ct</em> ). If so, it should return immediately with no move performed, as exemplified in the following code:</p>
-<div class="fragment"><div class="line"><span class="keywordflow">if</span> (ct.IsCancellationRequested) <span class="keywordflow">return</span> FutureMove.NoMove;</div>
+<p>The main thread may ask the thinker to stop <em>thinking</em>. As such, this method should frequently test if a cancellation request was made to the cancellation token (<em>ct</em> ). If so, it should return immediately with no move performed, as exemplified in the following code: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (ct.IsCancellationRequested) <span class="keywordflow">return</span> FutureMove.NoMove;</div>
 </div><!-- fragment --> <dl class="section see"><dt>See also</dt><dd><a class="el" href="interface_color_shape_links_1_1_common_1_1_a_i_1_1_i_thinker.html#ab278da43bed0efa81d8102d179cb50e6" title="Perform a move.">IThinker.Think</a></dd></dl>
 
 <p>Implements <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#ac8039cba1e4ececb04322fb8e7610f0e">AbstractThinker</a>.</p>
@@ -296,7 +294,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_color_shape_links.html">ColorShapeLinks</a></li><li class="navelem"><a class="el" href="namespace_color_shape_links_1_1_common.html">Common</a></li><li class="navelem"><a class="el" href="namespace_color_shape_links_1_1_common_1_1_a_i.html">AI</a></li><li class="navelem"><a class="el" href="namespace_color_shape_links_1_1_common_1_1_a_i_1_1_examples.html">Examples</a></li><li class="navelem"><a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_random_memory_hoarder_thinker.html">RandomMemoryHoarderThinker</a></li>
-    <li class="footer">Generated on Fri Apr 2 2021 16:33:42 for ColorShapeLinks AI by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Apr 2 2021 21:40:24 for ColorShapeLinks AI by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

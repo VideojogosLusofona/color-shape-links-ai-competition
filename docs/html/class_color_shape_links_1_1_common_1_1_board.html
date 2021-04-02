@@ -27,9 +27,8 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ColorShapeLinks AI
-   &#160;<span id="projectnumber">v1.0.0-beta</span>
    </div>
-   <div id="projectbrief">An AI competition for the IEEE Conference on Games</div>
+   <div id="projectbrief">An AI competition for the IEEE Conference on Games 2021</div>
   </td>
  </tr>
  </tbody>
@@ -332,7 +331,7 @@ Properties</h2></td></tr>
 <p>Make a move, return row </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">shape</td><td>Shape of piece used in move (color is obtained from <a class="el" href="class_color_shape_links_1_1_common_1_1_board.html#a6f6e34654d5eaea2a4b0f6c0553ea0ae" title="Who&#39;s turn is it?">Board.Turn</a>). </td></tr>
+    <tr><td class="paramname">shape</td><td>Shape of piece used in move (color is obtained from <a class="el" href="class_color_shape_links_1_1_common_1_1_board.html#a6f6e34654d5eaea2a4b0f6c0553ea0ae" title="Who&#39;s turn is it?">Turn</a>). </td></tr>
     <tr><td class="paramname">col</td><td>Column where to drop piece.</td></tr>
   </table>
   </dd>
@@ -340,10 +339,13 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Row where piece was placed or -1 if move is invalid. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">InvalidOperationException</td><td>Thrown when:<ul>
-<li><em>col</em>  is is not a valid column.</li>
-<li>Game is already over when this method is invoked.</li>
-<li>There are no more pieces of the specified type available. </li>
+    <tr><td class="paramname">InvalidOperationException</td><td>Thrown when: <ul>
+<li>
+<em>col</em>  is not a valid column.  </li>
+<li>
+Game is already over when this method is invoked.  </li>
+<li>
+There are no more pieces of the specified type available.  </li>
 </ul>
 </td></tr>
   </table>
@@ -375,7 +377,7 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the column is full, <code>false</code> otherwise.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the column is full, <code>false</code> otherwise. </dd></dl>
 
 </div>
 </div>
@@ -574,7 +576,7 @@ Properties</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The piece in the specified board position, or <code>null</code> if no piece is in the given position. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">System.IndexOutOfRangeException</td><td>Thrown when the given position is invalid (outside the board). </td></tr>
+    <tr><td class="paramname">IndexOutOfRangeException</td><td>Thrown when the given position is invalid (outside the board). </td></tr>
   </table>
   </dd>
 </dl>
@@ -615,7 +617,7 @@ Properties</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_color_shape_links.html">ColorShapeLinks</a></li><li class="navelem"><a class="el" href="namespace_color_shape_links_1_1_common.html">Common</a></li><li class="navelem"><a class="el" href="class_color_shape_links_1_1_common_1_1_board.html">Board</a></li>
-    <li class="footer">Generated on Fri Apr 2 2021 16:33:42 for ColorShapeLinks AI by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Apr 2 2021 21:40:24 for ColorShapeLinks AI by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

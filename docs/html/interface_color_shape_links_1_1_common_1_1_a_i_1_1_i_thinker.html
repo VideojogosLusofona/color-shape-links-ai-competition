@@ -27,9 +27,8 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ColorShapeLinks AI
-   &#160;<span id="projectnumber">v1.0.0-beta</span>
    </div>
-   <div id="projectbrief">An AI competition for the IEEE Conference on Games</div>
+   <div id="projectbrief">An AI competition for the IEEE Conference on Games 2021</div>
   </td>
  </tr>
  </tbody>
@@ -173,8 +172,7 @@ Events</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The move to be performed.</dd></dl>
-<p>The main thread may ask the thinker to stop <em>thinking</em>. As such, this method should frequently test if a cancellation request was made to the cancellation token (<em>ct</em> ). If so, it should return immediately with no move performed, as exemplified in the following code:</p>
-<div class="fragment"><div class="line"><span class="keywordflow">if</span> (ct.IsCancellationRequested) <span class="keywordflow">return</span> FutureMove.NoMove;</div>
+<p>The main thread may ask the thinker to stop <em>thinking</em>. As such, this method should frequently test if a cancellation request was made to the cancellation token (<em>ct</em> ). If so, it should return immediately with no move performed, as exemplified in the following code: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (ct.IsCancellationRequested) <span class="keywordflow">return</span> FutureMove.NoMove;</div>
 </div><!-- fragment --> 
 <p>Implemented in <a class="el" href="class_color_shape_links_1_1_unity_app_1_1_human_thinker.html#ab278da43bed0efa81d8102d179cb50e6">HumanThinker</a>, <a class="el" href="class_color_shape_links_1_1_text_based_1_1_app_1_1_human_thinker.html#a774d8abf1902a05e5836cb4ccfad32af">HumanThinker</a>, <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_sequential_a_i_thinker.html#a774d8abf1902a05e5836cb4ccfad32af">SequentialAIThinker</a>, <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_random_memory_hoarder_thinker.html#a774d8abf1902a05e5836cb4ccfad32af">RandomMemoryHoarderThinker</a>, <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_random_a_i_thinker.html#a774d8abf1902a05e5836cb4ccfad32af">RandomAIThinker</a>, <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_minimax_a_i_thinker.html#a774d8abf1902a05e5836cb4ccfad32af">MinimaxAIThinker</a>, <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_examples_1_1_bad_move_a_i_thinker.html#a774d8abf1902a05e5836cb4ccfad32af">BadMoveAIThinker</a>, and <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#ac8039cba1e4ececb04322fb8e7610f0e">AbstractThinker</a>.</p>
 
@@ -195,8 +193,10 @@ Events</h2></td></tr>
 
 <p>Event raised when thinkers produce information while thinking. </p>
 <ul>
-<li>Listeners receive a string containing the thinking information.</li>
-<li>It is not mandatory that thinkers produce any information while thinking. </li>
+<li>
+Listeners receive a string containing the thinking information.  </li>
+<li>
+It is not mandatory that thinkers produce any information while thinking.  </li>
 </ul>
 
 </div>
@@ -210,7 +210,7 @@ Events</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_color_shape_links.html">ColorShapeLinks</a></li><li class="navelem"><a class="el" href="namespace_color_shape_links_1_1_common.html">Common</a></li><li class="navelem"><a class="el" href="namespace_color_shape_links_1_1_common_1_1_a_i.html">AI</a></li><li class="navelem"><a class="el" href="interface_color_shape_links_1_1_common_1_1_a_i_1_1_i_thinker.html">IThinker</a></li>
-    <li class="footer">Generated on Fri Apr 2 2021 16:33:42 for ColorShapeLinks AI by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Apr 2 2021 21:40:24 for ColorShapeLinks AI by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

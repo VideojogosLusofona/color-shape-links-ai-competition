@@ -27,9 +27,8 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">ColorShapeLinks AI
-   &#160;<span id="projectnumber">v1.0.0-beta</span>
    </div>
-   <div id="projectbrief">An AI competition for the IEEE Conference on Games</div>
+   <div id="projectbrief">An AI competition for the IEEE Conference on Games 2021</div>
   </td>
  </tr>
  </tbody>
@@ -141,7 +140,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a3610cd145e44a055a68076043d7b6cdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#a3610cd145e44a055a68076043d7b6cdc">OnThinkingInfo</a> (string info)</td></tr>
-<tr class="memdesc:a3610cd145e44a055a68076043d7b6cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thinker should raise the thinking info event using this method.  <a href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#a3610cd145e44a055a68076043d7b6cdc">More...</a><br /></td></tr>
+<tr class="memdesc:a3610cd145e44a055a68076043d7b6cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs thinking information.  <a href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#a3610cd145e44a055a68076043d7b6cdc">More...</a><br /></td></tr>
 <tr class="separator:a3610cd145e44a055a68076043d7b6cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -202,13 +201,15 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Thinker should raise the thinking info event using this method. </p>
+<p>Outputs thinking information. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">info</td><td>String containing the thinking information. </td></tr>
   </table>
   </dd>
 </dl>
+<p>In the Unity frontend this information is shown in Unity's console, while in the console frontend it is forwarded to the registered <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_thinker_listener.html">thinker listeners</a> (which by default print to the terminal). </p>
+<p>This method raises the <a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html#a9e760c28716a0532d1376f6a47ade4d0" title="Event raised when thinkers produce information while thinking.">ThinkingInfo</a> event in order to output thinking information. Thinkers should use this method instead of raising the event directly. </p>
 
 </div>
 </div>
@@ -292,8 +293,7 @@ Events</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The move to be performed.</dd></dl>
-<p>The main thread may ask the thinker to stop <em>thinking</em>. As such, this method should frequently test if a cancellation request was made to the cancellation token (<em>ct</em> ). If so, it should return immediately with no move performed, as exemplified in the following code:</p>
-<div class="fragment"><div class="line"><span class="keywordflow">if</span> (ct.IsCancellationRequested) <span class="keywordflow">return</span> FutureMove.NoMove;</div>
+<p>The main thread may ask the thinker to stop <em>thinking</em>. As such, this method should frequently test if a cancellation request was made to the cancellation token (<em>ct</em> ). If so, it should return immediately with no move performed, as exemplified in the following code: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (ct.IsCancellationRequested) <span class="keywordflow">return</span> FutureMove.NoMove;</div>
 </div><!-- fragment --> <dl class="section see"><dt>See also</dt><dd><a class="el" href="interface_color_shape_links_1_1_common_1_1_a_i_1_1_i_thinker.html#ab278da43bed0efa81d8102d179cb50e6" title="Perform a move.">IThinker.Think</a></dd></dl>
 
 <p>Implements <a class="el" href="interface_color_shape_links_1_1_common_1_1_a_i_1_1_i_thinker.html#ab278da43bed0efa81d8102d179cb50e6">IThinker</a>.</p>
@@ -353,7 +353,6 @@ Events</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Number of board columns. </p>
-<p>Number of board columns.</p>
 
 </div>
 </div>
@@ -378,7 +377,6 @@ Events</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Number of initial round pieces per player. </p>
-<p>Number of initial round pieces per player.</p>
 
 </div>
 </div>
@@ -403,7 +401,6 @@ Events</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Number of board rows. </p>
-<p>Number of board rows.</p>
 
 </div>
 </div>
@@ -428,7 +425,6 @@ Events</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Number of initial square round pieces per player </p>
-<p>Number of initial square round pieces per player</p>
 
 </div>
 </div>
@@ -453,7 +449,6 @@ Events</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Time limit for the <a class="el" href="namespace_color_shape_links_1_1_common_1_1_a_i.html" title="Common AI-related types between all ColorShapeLinks implementations.">AI</a> to play. </p>
-<p>Time limit for the <a class="el" href="namespace_color_shape_links_1_1_common_1_1_a_i.html" title="Common AI-related types between all ColorShapeLinks implementations.">AI</a> to play.</p>
 
 </div>
 </div>
@@ -478,7 +473,6 @@ Events</h2></td></tr>
 </div><div class="memdoc">
 
 <p>How many pieces in sequence to find a winner. </p>
-<p>How many pieces in sequence to find a winner.</p>
 
 </div>
 </div>
@@ -497,8 +491,10 @@ Events</h2></td></tr>
 
 <p>Event raised when thinkers produce information while thinking. </p>
 <ul>
-<li>Listeners receive a string containing the thinking information.</li>
-<li>It is not mandatory that thinkers produce any information while thinking. </li>
+<li>
+Listeners receive a string containing the thinking information.  </li>
+<li>
+It is not mandatory that thinkers produce any information while thinking.  </li>
 </ul>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="interface_color_shape_links_1_1_common_1_1_a_i_1_1_i_thinker.html#a9e760c28716a0532d1376f6a47ade4d0" title="Event raised when thinkers produce information while thinking.">IThinker.ThinkingInfo</a></dd></dl>
 
@@ -513,7 +509,7 @@ Events</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_color_shape_links.html">ColorShapeLinks</a></li><li class="navelem"><a class="el" href="namespace_color_shape_links_1_1_common.html">Common</a></li><li class="navelem"><a class="el" href="namespace_color_shape_links_1_1_common_1_1_a_i.html">AI</a></li><li class="navelem"><a class="el" href="class_color_shape_links_1_1_common_1_1_a_i_1_1_abstract_thinker.html">AbstractThinker</a></li>
-    <li class="footer">Generated on Fri Apr 2 2021 16:33:42 for ColorShapeLinks AI by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Apr 2 2021 21:40:24 for ColorShapeLinks AI by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
