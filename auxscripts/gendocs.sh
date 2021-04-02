@@ -7,7 +7,7 @@
 #
 # Author: Nuno Fachada <nuno.fachada@ulusofona.pt>
 # Licence: Mozilla Public License version 2 (MPLv2)
-# Date: 2020
+# Date: 2020, 2021
 #
 
 ### Change these according to your setup
@@ -17,7 +17,7 @@ MASTER="${HOME}/workspace/color-shape-links-ai-competition"
 # Path to the ColorShapeLinks repo, gh-pages branch
 GHPAGES="${HOME}/workspace/color-shape-links-ai-competition-ghpages"
 # Path to Doxygen binary
-DOXYBIN="${HOME}/bin/doxygen.1.8.16"
+DOXYBIN="${HOME}/bin/doxygen.1.9.1"
 
 ### Don't change these unless you really know what you're doing
 
@@ -35,7 +35,11 @@ echo "[CSL] Removing docs from ${MASTER}" \
 && cp ${MASTER}/README.md ${GHPAGES}/README.md \
 && echo "[CSL] Adding markdown files and updated docs" \
 && (cd ${GHPAGES} && exec git add *.md docs) \
-&& echo "[CSL] Commiting with amend" \
-&& (cd ${GHPAGES} && exec git commit --amend --no-edit) \
+&& echo "[CSL] Commiting..." \
+&& (cd ${GHPAGES} && exec git commit -m "Documentation updates") \
 && echo "[CSL] Pushing..." \
-&& (cd ${GHPAGES} && git push -f) \
+&& (cd ${GHPAGES} && git push) \
+#&& echo "[CSL] Commiting with amend" \
+#&& (cd ${GHPAGES} && exec git commit --amend --no-edit) \
+#&& echo "[CSL] Pushing..." \
+#&& (cd ${GHPAGES} && git push -f) \
