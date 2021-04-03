@@ -288,7 +288,7 @@ However, sessions/tournaments are probably more practical for certain machine
 learning contexts, for example when using evolutionary algorithms.
 While exit codes cannot return `session` results, the
 [RankingSessionListener](@ref ColorShapeLinks.TextBased.Lib.RankingSessionListener)
-was developed for this purpose. It exports `session` results to a CSV file,
+was developed for this purpose. It exports `session` results to a [TSV] file,
 allowing for setups in which the machine learning algorithm continuosly defines
 the session roster and captures the session's results.
 
@@ -576,3 +576,4 @@ knowledge of what events are produced by
 [Unity]:https://unity.com/
 [dotnet-run]:https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run#options
 [dotnet-build]:https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build
+[TSV]:https://en.wikipedia.org/wiki/Tab-separated_values
