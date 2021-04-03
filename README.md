@@ -9,6 +9,7 @@ work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 -->
 
 # ColorShapeLinks AI competition
+![Build](https://github.com/VideojogosLusofona/color-shape-links-ai-competition/actions/workflows/dotnet.yml/badge.svg)
 
 _An AI competition for the [IEEE CoG 2021] conference_
 
