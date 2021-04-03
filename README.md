@@ -10,6 +10,10 @@ work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 
 # ColorShapeLinks AI competition
 
+![Build](https://github.com/VideojogosLusofona/color-shape-links-ai-competition/actions/workflows/dotnet.yml/badge.svg)
+[![LGPL Licence](https://img.shields.io/badge/license-MPLv2-blue.svg)](https://opensource.org/licenses/MPL-2.0)
+[![Supported platforms](https://img.shields.io/badge/platform-windows%20%7C%20macos%20%7C%20linux-orange.svg)](https://en.wikipedia.org/wiki/Cross-platform)
+
 _An AI competition for the [IEEE CoG 2021] conference_
 
 [Important dates](#important-dates) | [Daily standings][Standings] |
