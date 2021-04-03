@@ -23,9 +23,13 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.x
-    - name: Restore dependencies
+    - name: Restore dependencies on ConsoleApp
       run: dotnet restore ${{ env.consoleapp_folder }}
-    - name: Build
+    - name: Build ConsoleApp
       run: dotnet build --no-restore ${{ env.consoleapp_folder }}
-    - name: Test
+    - name: Restore dependencies on Tests
+      run: dotnet restore ${{ env.tests_folder }}
+    - name: Build Tests
+      run: dotnet build --no-restore ${{ env.tests_folder }}
+    - name: Perform Tests
       run: dotnet test --no-build --verbosity normal ${{ env.tests_folder }}
