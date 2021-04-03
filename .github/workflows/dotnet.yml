@@ -11,12 +11,12 @@ env:
   tests_folder: Tests
 
 jobs:
-  build:
+  build-test:
 
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [windows-latest, macos-latest]
 
     steps:
     - uses: actions/checkout@v2
@@ -36,3 +36,23 @@ jobs:
       run: dotnet build --no-restore ${{ env.tests_folder }}
     - name: Perform Tests
       run: dotnet test --no-build --verbosity normal ${{ env.tests_folder }}
+
+  test-coverage:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.x
+    - name: Install dependencies
+      run: dotnet tool install -g dotnet-reportgenerator-globaltool
+    - name: Perform tests and generate coverage
+      run: dotnet test --collect:"XPlat Code Coverage" ${{ env.tests_folder }}
+    - name: Consolidate tests reports
+      run: reportgenerator "-reports:${{ env.tests_folder }}/**/coverage.cobertura.xml" "-targetdir:coveragereport" -reporttypes:lcov
+
