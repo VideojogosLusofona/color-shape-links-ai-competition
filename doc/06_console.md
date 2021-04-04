@@ -401,7 +401,7 @@ library project, removing the temporary C# class that is created:
 ```
 $ mkdir CSVListeners
 $ cd CSVListeners
-$ dotnet new classlib
+$ dotnet new classlib -f netstandard2.0
 $ rm Class1.cs
 ```
 
@@ -556,15 +556,15 @@ completely dumb) AI. Note we need to specify the assembly containing our
 custom listener:
 
 ```
-$ dotnet run -- match -W ColorShapeLinks.Common.AI.Examples.SequentialAIThinker -R ColorShapeLinks.Test.BasicNegamax --thinker-listeners "" --match-listeners CSVListeners.MatchListener -a /path/to/CSVListener/bin/Debug/netstandard2.0/CSVListener.dll
+$ dotnet run -- match -W ColorShapeLinks.Common.AI.Examples.SequentialAIThinker -R ColorShapeLinks.Common.AI.Examples.MinimaxAIThinker --thinker-listeners "" --match-listeners CSVListeners.MatchListener -a /path/to/CSVListeners/bin/Debug/netstandard2.0/CSVListeners.dll
 ```
 
 Nothing appears on screen, since the only enabled listener is our custom one,
 which only outputs content to a file. If everything goes well, a file named
-`SequentialvsBasicNegamax.csv` will appear in the app folder. Opening the file
-with LibreOffice Calc or Microsoft Excel yields something similar to:
+`SequentialvsMinimaxD3.csv` will appear in the app folder. Opening or importing
+the file with LibreOffice Calc or Microsoft Excel yields something similar to:
 
-![image](https://user-images.githubusercontent.com/3018963/75799140-8a398580-5d6f-11ea-97d9-65bba3a5bd28.png)
+![image](https://user-images.githubusercontent.com/3018963/113517844-5afcd580-957a-11eb-9c51-a0661df1123c.png)
 
 The process of writing other types of listener is similar, requiring only a
 knowledge of what events are produced by

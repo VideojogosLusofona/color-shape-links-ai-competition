@@ -55,7 +55,7 @@ jobs:
       run: dotnet test --verbosity normal --collect:"XPlat Code Coverage" ${{ env.tests_folder }}
     - name: Consolidate tests reports
       run: reportgenerator "-reports:${{ env.tests_folder }}/**/coverage.cobertura.xml" "-targetdir:coveragereport" -reporttypes:cobertura
-    - name: Publish coverage report to coveralls.io
+    - name: Publish coverage report to codecov
       uses: codecov/codecov-action@v1
       with:
         files: ./coveragereport/Cobertura.xml

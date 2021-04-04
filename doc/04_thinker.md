@@ -13,7 +13,7 @@ and overrides [one of its methods][Think()]. The @ref quick-start "Quick start"
 guide shows how to get started quickly by simply dropping the new AI class in
 the [console app][console_folder] or [Unity app][unity_folder] folders.
 However, implementing a competitive AI thinker will most likely require to
-know a bit more about the @ref rules "source code rules and restriction"
+know a bit more about the @ref rules "source code rules and restrictions"
 and about the @ref abstractthinker "AbstractThinker base class". Setting up a
 proper @ref devenv "development environment" and being able to adequately
 @ref testing "test" the developed code is also essential. This guide
@@ -264,8 +264,8 @@ are as follows:
    $ dotnet build MyAI
    ```
 9.  Using the [console] app, check if the `MyAISolution.MyAI.MyThinker` class
-   appears in the "Known thinkers:" section (on Windows replace `$``(pwd)` with
-   `$pwd` or with the full path to the current folder):
+   appears in the "Known thinkers:" section (on Windows PowerShell replace
+   `$``(pwd)` with `$pwd` or with the full path to the current folder):
    ```
    $ dotnet run -p ../color-shape-links-ai-competition/ConsoleApp/ColorShapeLinks/TextBased/App -- info -a $(pwd)/MyAI/bin/Debug/netstandard2.0/MyAI.dll
    ```
@@ -304,7 +304,7 @@ We also need to add a reference to the `MyAI` project:
 $ dotnet add TestMyAI reference MyAI
 ```
 
-At this stage, it's a good idea to create a .NET solution to includes both the
+At this stage, it's a good idea to create a .NET solution to include both the
 `MyAI` and `TestMyAI` projects (which allows, for example, to have both projects
 open at the same time in Visual Studio):
 
