@@ -284,7 +284,7 @@ Custom listeners</h2>
 <p>First, create a project folder, <code>cd</code> into the folder and create a new class library project, removing the temporary C# class that is created:</p>
 <div class="fragment"><div class="line">$ mkdir CSVListeners</div>
 <div class="line">$ cd CSVListeners</div>
-<div class="line">$ dotnet new classlib</div>
+<div class="line">$ dotnet new classlib -f netstandard2.0</div>
 <div class="line">$ rm Class1.cs</div>
 </div><!-- fragment --><p>The new project needs to reference the <a class="el" href="namespace_color_shape_links_1_1_common.html" title="The common code between all ColorShapeLinks implementations.">ColorShapeLinks.Common</a> and <a class="el" href="namespace_color_shape_links_1_1_text_based_1_1_lib.html" title="Library &quot;engine&quot; code for console or third-party implementations of ColorShapeLinks.">ColorShapeLinks.TextBased.Lib</a> projects:</p>
 <div class="fragment"><div class="line">$ dotnet add reference /path/to/color-shape-links-ai-competition/ConsoleApp/ColorShapeLinks/Common</div>
@@ -401,9 +401,9 @@ Custom listeners</h2>
 </div><!-- fragment --><p>Now build the project:</p>
 <div class="fragment"><div class="line">$ dotnet build</div>
 </div><!-- fragment --><p>Open another terminal and <code>cd</code> into the <code>ConsoleApp/ColorShapeLinks/TextBased/App</code> folder. Run the console app specifying our custom match listener and disabling the default thinker listener, running a match between a sequential AI player and a basic (but not completely dumb) AI. Note we need to specify the assembly containing our custom listener:</p>
-<div class="fragment"><div class="line">$ dotnet run -- match -W ColorShapeLinks.Common.AI.Examples.SequentialAIThinker -R ColorShapeLinks.Test.BasicNegamax --thinker-listeners &quot;&quot; --match-listeners CSVListeners.MatchListener -a /path/to/CSVListener/bin/Debug/netstandard2.0/CSVListener.dll</div>
-</div><!-- fragment --><p>Nothing appears on screen, since the only enabled listener is our custom one, which only outputs content to a file. If everything goes well, a file named <code>SequentialvsBasicNegamax.csv</code> will appear in the app folder. Opening the file with LibreOffice Calc or Microsoft Excel yields something similar to:</p>
-<p><img src="https://user-images.githubusercontent.com/3018963/75799140-8a398580-5d6f-11ea-97d9-65bba3a5bd28.png" alt="image" class="inline"/></p>
+<div class="fragment"><div class="line">$ dotnet run -- match -W ColorShapeLinks.Common.AI.Examples.SequentialAIThinker -R ColorShapeLinks.Common.AI.Examples.MinimaxAIThinker --thinker-listeners &quot;&quot; --match-listeners CSVListeners.MatchListener -a /path/to/CSVListeners/bin/Debug/netstandard2.0/CSVListeners.dll</div>
+</div><!-- fragment --><p>Nothing appears on screen, since the only enabled listener is our custom one, which only outputs content to a file. If everything goes well, a file named <code>SequentialvsMinimaxD3.csv</code> will appear in the app folder. Opening or importing the file with LibreOffice Calc or Microsoft Excel yields something similar to:</p>
+<p><img src="https://user-images.githubusercontent.com/3018963/113517844-5afcd580-957a-11eb-9c51-a0661df1123c.png" alt="image" class="inline"/></p>
 <p>The process of writing other types of listener is similar, requiring only a knowledge of what events are produced by <a class="el" href="interface_color_shape_links_1_1_common_1_1_a_i_1_1_i_thinker.html">thinkers</a>, <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_match_subject.html">matches</a> and <a class="el" href="interface_color_shape_links_1_1_text_based_1_1_lib_1_1_i_session_subject.html">sessions</a>. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
@@ -411,7 +411,7 @@ Custom listeners</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Apr 3 2021 21:49:41 for ColorShapeLinks AI by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sun Apr 4 2021 19:23:21 for ColorShapeLinks AI by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
