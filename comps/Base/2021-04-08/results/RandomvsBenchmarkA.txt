@@ -1,0 +1,124 @@
+=> Random (White) vs BenchmarkA (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+Random (White) turn
+Random (White) placed a Round piece at column 4 after 0ms
+.......
+.......
+.......
+.......
+.......
+....w..
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Square piece at column 4 after 157ms
+.......
+.......
+.......
+.......
+....R..
+....w..
+
+Random (White) turn
+Random (White) placed a Round piece at column 4 after 0ms
+.......
+.......
+.......
+....w..
+....R..
+....w..
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Square piece at column 4 after 154ms
+.......
+.......
+....R..
+....w..
+....R..
+....w..
+
+Random (White) turn
+Random (White) placed a Square piece at column 1 after 0ms
+.......
+.......
+....R..
+....w..
+....R..
+.W..w..
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Square piece at column 3 after 154ms
+.......
+.......
+....R..
+....w..
+....R..
+.W.Rw..
+
+Random (White) turn
+Random (White) placed a Round piece at column 5 after 0ms
+.......
+.......
+....R..
+....w..
+....R..
+.W.Rww.
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Square piece at column 0 after 151ms
+.......
+.......
+....R..
+....w..
+....R..
+RW.Rww.
+
+Random (White) turn
+Random (White) placed a Square piece at column 0 after 0ms
+.......
+.......
+....R..
+....w..
+W...R..
+RW.Rww.
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Square piece at column 0 after 153ms
+.......
+.......
+....R..
+R...w..
+W...R..
+RW.Rww.
+
+Random (White) turn
+Random (White) placed a Round piece at column 1 after 1ms
+.......
+.......
+....R..
+R...w..
+Ww..R..
+RW.Rww.
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Square piece at column 0 after 153ms
+.......
+.......
+R...R..
+R...w..
+Ww..R..
+RW.Rww.
+
+Winner is BenchmarkA (Red)
+Solution=(0,0)(1,0)(2,0)(3,0)

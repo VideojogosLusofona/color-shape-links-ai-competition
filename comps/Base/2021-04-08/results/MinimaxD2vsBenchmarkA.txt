@@ -1,0 +1,106 @@
+=> MinimaxD2 (White) vs BenchmarkA (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 5ms
+.......
+.......
+.......
+.......
+.......
+.....w.
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Square piece at column 3 after 151ms
+.......
+.......
+.......
+.......
+.......
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 4ms
+.......
+.......
+.......
+.......
+.....w.
+...R.w.
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Square piece at column 5 after 154ms
+.......
+.......
+.......
+.....R.
+.....w.
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 4ms
+.......
+.......
+.....w.
+.....R.
+.....w.
+...R.w.
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Square piece at column 1 after 154ms
+.......
+.......
+.....w.
+.....R.
+.....w.
+.R.R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 4ms
+.......
+.....w.
+.....w.
+.....R.
+.....w.
+.R.R.w.
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Round piece at column 2 after 154ms
+.......
+.....w.
+.....w.
+.....R.
+.....w.
+.RrR.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 6 after 4ms
+.......
+.....w.
+.....w.
+.....R.
+.....w.
+.RrR.wW
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Round piece at column 0 after 153ms
+.......
+.....w.
+.....w.
+.....R.
+.....w.
+rRrR.wW
+
+Winner is BenchmarkA (Red)
+Solution=(0,0)(0,1)(0,2)(0,3)
