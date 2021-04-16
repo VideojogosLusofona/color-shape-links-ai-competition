@@ -21,9 +21,7 @@ git clone --recurse-submodules https://github.com/VideojogosLusofona/color-shape
 
 The ColorShapeLinks competition can be cited as follows:
 
-> Fachada, N. (2021). ColorShapeLinks: A Board Game AI Competition Framework for
-> Educators and Students. Computers & Education: Artificial Intelligence, 2.
-> 100014. https://doi.org/10.1016/j.caeai.2021.100014
+> Fachada, N. (2021). ColorShapeLinks: A Board Game AI Competition Framework for Educators and Students. Computers & Education: Artificial Intelligence, 2. 100014. https://doi.org/10.1016/j.caeai.2021.100014
 
 Or if you use BibTeX:
 
