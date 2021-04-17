@@ -27,7 +27,7 @@ namespace Tests.Lib
         [MemberData(nameof(GetRelations))]
         public void ToExitStatus_ReturnExpected_Yes(Winner winner, ExitStatus es)
         {
-            Assert.Equal(winner.ToExitStatus(), es);
+            Assert.Equal(es, winner.ToExitStatus());
         }
     }
 }
