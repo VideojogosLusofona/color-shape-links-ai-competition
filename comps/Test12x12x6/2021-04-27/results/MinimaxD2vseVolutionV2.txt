@@ -1,0 +1,1171 @@
+=> MinimaxD2 (White) vs eVolutionV2 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 28ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.........w..
+
+eVolutionV2 (Red) turn
+hashtable entries: 9008
+depth: 2
+eVolutionV2 (Red) placed a Square piece at column 5 after 251ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.....R...w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 24ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.........w..
+.....R...w..
+
+eVolutionV2 (Red) turn
+hashtable entries: 11767
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 5 after 251ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.....R...w..
+.....R...w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 27ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.........w..
+.....R...w..
+.....R...w..
+
+eVolutionV2 (Red) turn
+hashtable entries: 11715
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 6 after 251ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.........w..
+.....R...w..
+.....RR..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 26ms
+............
+............
+............
+............
+............
+............
+............
+............
+.........w..
+.........w..
+.....R...w..
+.....RR..w..
+
+eVolutionV2 (Red) turn
+hashtable entries: 12182
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 6 after 252ms
+............
+............
+............
+............
+............
+............
+............
+............
+.........w..
+.........w..
+.....RR..w..
+.....RR..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 28ms
+............
+............
+............
+............
+............
+............
+............
+.........w..
+.........w..
+.........w..
+.....RR..w..
+.....RR..w..
+
+eVolutionV2 (Red) turn
+Prevent Loss
+eVolutionV2 (Red) placed a Square piece at column 9 after 0ms
+............
+............
+............
+............
+............
+............
+.........R..
+.........w..
+.........w..
+.........w..
+.....RR..w..
+.....RR..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 24ms
+............
+............
+............
+............
+............
+.........w..
+.........R..
+.........w..
+.........w..
+.........w..
+.....RR..w..
+.....RR..w..
+
+eVolutionV2 (Red) turn
+hashtable entries: 11187
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 6 after 251ms
+............
+............
+............
+............
+............
+.........w..
+.........R..
+.........w..
+.........w..
+......R..w..
+.....RR..w..
+.....RR..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 29ms
+............
+............
+............
+............
+.........w..
+.........w..
+.........R..
+.........w..
+.........w..
+......R..w..
+.....RR..w..
+.....RR..w..
+
+eVolutionV2 (Red) turn
+hashtable entries: 11261
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 6 after 251ms
+............
+............
+............
+............
+.........w..
+.........w..
+.........R..
+.........w..
+......R..w..
+......R..w..
+.....RR..w..
+.....RR..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 6 after 25ms
+............
+............
+............
+............
+.........w..
+.........w..
+.........R..
+......w..w..
+......R..w..
+......R..w..
+.....RR..w..
+.....RR..w..
+
+eVolutionV2 (Red) turn
+hashtable entries: 10004
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 0 after 251ms
+............
+............
+............
+............
+.........w..
+.........w..
+.........R..
+......w..w..
+......R..w..
+......R..w..
+.....RR..w..
+R....RR..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 6 after 30ms
+............
+............
+............
+............
+.........w..
+.........w..
+......w..R..
+......w..w..
+......R..w..
+......R..w..
+.....RR..w..
+R....RR..w..
+
+eVolutionV2 (Red) turn
+hashtable entries: 10100
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 6 after 251ms
+............
+............
+............
+............
+.........w..
+......R..w..
+......w..R..
+......w..w..
+......R..w..
+......R..w..
+.....RR..w..
+R....RR..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 6 after 26ms
+............
+............
+............
+............
+......w..w..
+......R..w..
+......w..R..
+......w..w..
+......R..w..
+......R..w..
+.....RR..w..
+R....RR..w..
+
+eVolutionV2 (Red) turn
+hashtable entries: 9757
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 5 after 251ms
+............
+............
+............
+............
+......w..w..
+......R..w..
+......w..R..
+......w..w..
+......R..w..
+.....RR..w..
+.....RR..w..
+R....RR..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 6 after 28ms
+............
+............
+............
+......w.....
+......w..w..
+......R..w..
+......w..R..
+......w..w..
+......R..w..
+.....RR..w..
+.....RR..w..
+R....RR..w..
+
+eVolutionV2 (Red) turn
+hashtable entries: 10162
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 5 after 250ms
+............
+............
+............
+......w.....
+......w..w..
+......R..w..
+......w..R..
+......w..w..
+.....RR..w..
+.....RR..w..
+.....RR..w..
+R....RR..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 6 after 32ms
+............
+............
+......w.....
+......w.....
+......w..w..
+......R..w..
+......w..R..
+......w..w..
+.....RR..w..
+.....RR..w..
+.....RR..w..
+R....RR..w..
+
+eVolutionV2 (Red) turn
+hashtable entries: 9813
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 1 after 251ms
+............
+............
+......w.....
+......w.....
+......w..w..
+......R..w..
+......w..R..
+......w..w..
+.....RR..w..
+.....RR..w..
+.....RR..w..
+RR...RR..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 28ms
+............
+............
+......w.....
+......w.....
+......w..w..
+......R..w..
+......w..R..
+.....ww..w..
+.....RR..w..
+.....RR..w..
+.....RR..w..
+RR...RR..w..
+
+eVolutionV2 (Red) turn
+hashtable entries: 9086
+depth: 2
+eVolutionV2 (Red) placed a Square piece at column 6 after 250ms
+............
+......R.....
+......w.....
+......w.....
+......w..w..
+......R..w..
+......w..R..
+.....ww..w..
+.....RR..w..
+.....RR..w..
+.....RR..w..
+RR...RR..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 31ms
+............
+......R.....
+......w.....
+......w.....
+......w..w..
+......R..w..
+.....ww..R..
+.....ww..w..
+.....RR..w..
+.....RR..w..
+.....RR..w..
+RR...RR..w..
+
+eVolutionV2 (Red) turn
+hashtable entries: 10302
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 5 after 251ms
+............
+......R.....
+......w.....
+......w.....
+......w..w..
+.....RR..w..
+.....ww..R..
+.....ww..w..
+.....RR..w..
+.....RR..w..
+.....RR..w..
+RR...RR..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 32ms
+............
+......R.....
+......w.....
+......w.....
+.....ww..w..
+.....RR..w..
+.....ww..R..
+.....ww..w..
+.....RR..w..
+.....RR..w..
+.....RR..w..
+RR...RR..w..
+
+eVolutionV2 (Red) turn
+hashtable entries: 9305
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 6 after 251ms
+......R.....
+......R.....
+......w.....
+......w.....
+.....ww..w..
+.....RR..w..
+.....ww..R..
+.....ww..w..
+.....RR..w..
+.....RR..w..
+.....RR..w..
+RR...RR..w..
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 26ms
+......R.....
+......R.....
+......w.....
+.....ww.....
+.....ww..w..
+.....RR..w..
+.....ww..R..
+.....ww..w..
+.....RR..w..
+.....RR..w..
+.....RR..w..
+RR...RR..w..
+
+eVolutionV2 (Red) turn
+hashtable entries: 9936
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 11 after 252ms
+......R.....
+......R.....
+......w.....
+.....ww.....
+.....ww..w..
+.....RR..w..
+.....ww..R..
+.....ww..w..
+.....RR..w..
+.....RR..w..
+.....RR..w..
+RR...RR..w.R
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 24ms
+......R.....
+......R.....
+.....ww.....
+.....ww.....
+.....ww..w..
+.....RR..w..
+.....ww..R..
+.....ww..w..
+.....RR..w..
+.....RR..w..
+.....RR..w..
+RR...RR..w.R
+
+eVolutionV2 (Red) turn
+hashtable entries: 10396
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 0 after 251ms
+......R.....
+......R.....
+.....ww.....
+.....ww.....
+.....ww..w..
+.....RR..w..
+.....ww..R..
+.....ww..w..
+.....RR..w..
+.....RR..w..
+R....RR..w..
+RR...RR..w.R
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 24ms
+......R.....
+......R.....
+.....ww.....
+.....ww..w..
+.....ww..w..
+.....RR..w..
+.....ww..R..
+.....ww..w..
+.....RR..w..
+.....RR..w..
+R....RR..w..
+RR...RR..w.R
+
+eVolutionV2 (Red) turn
+hashtable entries: 10055
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 11 after 250ms
+......R.....
+......R.....
+.....ww.....
+.....ww..w..
+.....ww..w..
+.....RR..w..
+.....ww..R..
+.....ww..w..
+.....RR..w..
+.....RR..w..
+R....RR..w.R
+RR...RR..w.R
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 24ms
+......R.....
+.....wR.....
+.....ww.....
+.....ww..w..
+.....ww..w..
+.....RR..w..
+.....ww..R..
+.....ww..w..
+.....RR..w..
+.....RR..w..
+R....RR..w.R
+RR...RR..w.R
+
+eVolutionV2 (Red) turn
+hashtable entries: 10437
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 11 after 251ms
+......R.....
+.....wR.....
+.....ww.....
+.....ww..w..
+.....ww..w..
+.....RR..w..
+.....ww..R..
+.....ww..w..
+.....RR..w..
+.....RR..w.R
+R....RR..w.R
+RR...RR..w.R
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 28ms
+......R.....
+.....wR.....
+.....ww..w..
+.....ww..w..
+.....ww..w..
+.....RR..w..
+.....ww..R..
+.....ww..w..
+.....RR..w..
+.....RR..w.R
+R....RR..w.R
+RR...RR..w.R
+
+eVolutionV2 (Red) turn
+hashtable entries: 10537
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 11 after 251ms
+......R.....
+.....wR.....
+.....ww..w..
+.....ww..w..
+.....ww..w..
+.....RR..w..
+.....ww..R..
+.....ww..w..
+.....RR..w.R
+.....RR..w.R
+R....RR..w.R
+RR...RR..w.R
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 9 after 26ms
+......R.....
+.....wR..w..
+.....ww..w..
+.....ww..w..
+.....ww..w..
+.....RR..w..
+.....ww..R..
+.....ww..w..
+.....RR..w.R
+.....RR..w.R
+R....RR..w.R
+RR...RR..w.R
+
+eVolutionV2 (Red) turn
+Prevent Loss
+eVolutionV2 (Red) placed a Square piece at column 9 after 0ms
+......R..R..
+.....wR..w..
+.....ww..w..
+.....ww..w..
+.....ww..w..
+.....RR..w..
+.....ww..R..
+.....ww..w..
+.....RR..w.R
+.....RR..w.R
+R....RR..w.R
+RR...RR..w.R
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 21ms
+.....wR..R..
+.....wR..w..
+.....ww..w..
+.....ww..w..
+.....ww..w..
+.....RR..w..
+.....ww..R..
+.....ww..w..
+.....RR..w.R
+.....RR..w.R
+R....RR..w.R
+RR...RR..w.R
+
+eVolutionV2 (Red) turn
+hashtable entries: 11527
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 0 after 251ms
+.....wR..R..
+.....wR..w..
+.....ww..w..
+.....ww..w..
+.....ww..w..
+.....RR..w..
+.....ww..R..
+.....ww..w..
+.....RR..w.R
+R....RR..w.R
+R....RR..w.R
+RR...RR..w.R
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 11 after 21ms
+.....wR..R..
+.....wR..w..
+.....ww..w..
+.....ww..w..
+.....ww..w..
+.....RR..w..
+.....ww..R..
+.....ww..w.w
+.....RR..w.R
+R....RR..w.R
+R....RR..w.R
+RR...RR..w.R
+
+eVolutionV2 (Red) turn
+hashtable entries: 11399
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 2 after 251ms
+.....wR..R..
+.....wR..w..
+.....ww..w..
+.....ww..w..
+.....ww..w..
+.....RR..w..
+.....ww..R..
+.....ww..w.w
+.....RR..w.R
+R....RR..w.R
+R....RR..w.R
+RRR..RR..w.R
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 11 after 21ms
+.....wR..R..
+.....wR..w..
+.....ww..w..
+.....ww..w..
+.....ww..w..
+.....RR..w..
+.....ww..R.w
+.....ww..w.w
+.....RR..w.R
+R....RR..w.R
+R....RR..w.R
+RRR..RR..w.R
+
+eVolutionV2 (Red) turn
+hashtable entries: 9712
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 11 after 251ms
+.....wR..R..
+.....wR..w..
+.....ww..w..
+.....ww..w..
+.....ww..w..
+.....RR..w.R
+.....ww..R.w
+.....ww..w.w
+.....RR..w.R
+R....RR..w.R
+R....RR..w.R
+RRR..RR..w.R
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 11 after 20ms
+.....wR..R..
+.....wR..w..
+.....ww..w..
+.....ww..w..
+.....ww..w.w
+.....RR..w.R
+.....ww..R.w
+.....ww..w.w
+.....RR..w.R
+R....RR..w.R
+R....RR..w.R
+RRR..RR..w.R
+
+eVolutionV2 (Red) turn
+hashtable entries: 9439
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 0 after 250ms
+.....wR..R..
+.....wR..w..
+.....ww..w..
+.....ww..w..
+.....ww..w.w
+.....RR..w.R
+.....ww..R.w
+.....ww..w.w
+R....RR..w.R
+R....RR..w.R
+R....RR..w.R
+RRR..RR..w.R
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 11 after 21ms
+.....wR..R..
+.....wR..w..
+.....ww..w..
+.....ww..w.w
+.....ww..w.w
+.....RR..w.R
+.....ww..R.w
+.....ww..w.w
+R....RR..w.R
+R....RR..w.R
+R....RR..w.R
+RRR..RR..w.R
+
+eVolutionV2 (Red) turn
+hashtable entries: 10370
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 0 after 251ms
+.....wR..R..
+.....wR..w..
+.....ww..w..
+.....ww..w.w
+.....ww..w.w
+.....RR..w.R
+.....ww..R.w
+R....ww..w.w
+R....RR..w.R
+R....RR..w.R
+R....RR..w.R
+RRR..RR..w.R
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 0 after 19ms
+.....wR..R..
+.....wR..w..
+.....ww..w..
+.....ww..w.w
+.....ww..w.w
+.....RR..w.R
+w....ww..R.w
+R....ww..w.w
+R....RR..w.R
+R....RR..w.R
+R....RR..w.R
+RRR..RR..w.R
+
+eVolutionV2 (Red) turn
+hashtable entries: 9475
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 7 after 252ms
+.....wR..R..
+.....wR..w..
+.....ww..w..
+.....ww..w.w
+.....ww..w.w
+.....RR..w.R
+w....ww..R.w
+R....ww..w.w
+R....RR..w.R
+R....RR..w.R
+R....RR..w.R
+RRR..RRR.w.R
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 11 after 17ms
+.....wR..R..
+.....wR..w..
+.....ww..w.w
+.....ww..w.w
+.....ww..w.w
+.....RR..w.R
+w....ww..R.w
+R....ww..w.w
+R....RR..w.R
+R....RR..w.R
+R....RR..w.R
+RRR..RRR.w.R
+
+eVolutionV2 (Red) turn
+hashtable entries: 9437
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 8 after 250ms
+.....wR..R..
+.....wR..w..
+.....ww..w.w
+.....ww..w.w
+.....ww..w.w
+.....RR..w.R
+w....ww..R.w
+R....ww..w.w
+R....RR..w.R
+R....RR..w.R
+R....RR..w.R
+RRR..RRRRw.R
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 0 after 18ms
+.....wR..R..
+.....wR..w..
+.....ww..w.w
+.....ww..w.w
+.....ww..w.w
+w....RR..w.R
+w....ww..R.w
+R....ww..w.w
+R....RR..w.R
+R....RR..w.R
+R....RR..w.R
+RRR..RRRRw.R
+
+eVolutionV2 (Red) turn
+hashtable entries: 9693
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 11 after 253ms
+.....wR..R..
+.....wR..w.R
+.....ww..w.w
+.....ww..w.w
+.....ww..w.w
+w....RR..w.R
+w....ww..R.w
+R....ww..w.w
+R....RR..w.R
+R....RR..w.R
+R....RR..w.R
+RRR..RRRRw.R
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 8 after 21ms
+.....wR..R..
+.....wR..w.R
+.....ww..w.w
+.....ww..w.w
+.....ww..w.w
+w....RR..w.R
+w....ww..R.w
+R....ww..w.w
+R....RR..w.R
+R....RR..w.R
+R....RR.ww.R
+RRR..RRRRw.R
+
+eVolutionV2 (Red) turn
+hashtable entries: 9757
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 8 after 252ms
+.....wR..R..
+.....wR..w.R
+.....ww..w.w
+.....ww..w.w
+.....ww..w.w
+w....RR..w.R
+w....ww..R.w
+R....ww..w.w
+R....RR..w.R
+R....RR.Rw.R
+R....RR.ww.R
+RRR..RRRRw.R
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 8 after 17ms
+.....wR..R..
+.....wR..w.R
+.....ww..w.w
+.....ww..w.w
+.....ww..w.w
+w....RR..w.R
+w....ww..R.w
+R....ww..w.w
+R....RR.ww.R
+R....RR.Rw.R
+R....RR.ww.R
+RRR..RRRRw.R
+
+eVolutionV2 (Red) turn
+hashtable entries: 9638
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 7 after 251ms
+.....wR..R..
+.....wR..w.R
+.....ww..w.w
+.....ww..w.w
+.....ww..w.w
+w....RR..w.R
+w....ww..R.w
+R....ww..w.w
+R....RR.ww.R
+R....RR.Rw.R
+R....RRRww.R
+RRR..RRRRw.R
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 8 after 21ms
+.....wR..R..
+.....wR..w.R
+.....ww..w.w
+.....ww..w.w
+.....ww..w.w
+w....RR..w.R
+w....ww..R.w
+R....ww.ww.w
+R....RR.ww.R
+R....RR.Rw.R
+R....RRRww.R
+RRR..RRRRw.R
+
+eVolutionV2 (Red) turn
+hashtable entries: 9103
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 8 after 255ms
+.....wR..R..
+.....wR..w.R
+.....ww..w.w
+.....ww..w.w
+.....ww..w.w
+w....RR..w.R
+w....ww.RR.w
+R....ww.ww.w
+R....RR.ww.R
+R....RR.Rw.R
+R....RRRww.R
+RRR..RRRRw.R
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 8 after 22ms
+.....wR..R..
+.....wR..w.R
+.....ww..w.w
+.....ww..w.w
+.....ww..w.w
+w....RR.ww.R
+w....ww.RR.w
+R....ww.ww.w
+R....RR.ww.R
+R....RR.Rw.R
+R....RRRww.R
+RRR..RRRRw.R
+
+eVolutionV2 (Red) turn
+hashtable entries: 9076
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 7 after 252ms
+.....wR..R..
+.....wR..w.R
+.....ww..w.w
+.....ww..w.w
+.....ww..w.w
+w....RR.ww.R
+w....ww.RR.w
+R....ww.ww.w
+R....RR.ww.R
+R....RRRRw.R
+R....RRRww.R
+RRR..RRRRw.R
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 8 after 23ms
+.....wR..R..
+.....wR..w.R
+.....ww..w.w
+.....ww..w.w
+.....ww.ww.w
+w....RR.ww.R
+w....ww.RR.w
+R....ww.ww.w
+R....RR.ww.R
+R....RRRRw.R
+R....RRRww.R
+RRR..RRRRw.R
+
+eVolutionV2 (Red) turn
+hashtable entries: 8533
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 10 after 250ms
+.....wR..R..
+.....wR..w.R
+.....ww..w.w
+.....ww..w.w
+.....ww.ww.w
+w....RR.ww.R
+w....ww.RR.w
+R....ww.ww.w
+R....RR.ww.R
+R....RRRRw.R
+R....RRRww.R
+RRR..RRRRwRR
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 8 after 18ms
+.....wR..R..
+.....wR..w.R
+.....ww..w.w
+.....ww.ww.w
+.....ww.ww.w
+w....RR.ww.R
+w....ww.RR.w
+R....ww.ww.w
+R....RR.ww.R
+R....RRRRw.R
+R....RRRww.R
+RRR..RRRRwRR
+
+eVolutionV2 (Red) turn
+hashtable entries: 8099
+depth: 4
+eVolutionV2 (Red) placed a Square piece at column 4 after 252ms
+.....wR..R..
+.....wR..w.R
+.....ww..w.w
+.....ww.ww.w
+.....ww.ww.w
+w....RR.ww.R
+w....ww.RR.w
+R....ww.ww.w
+R....RR.ww.R
+R....RRRRw.R
+R....RRRww.R
+RRR.RRRRRwRR
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 11 after 8ms
+.....wR..R.W
+.....wR..w.R
+.....ww..w.w
+.....ww.ww.w
+.....ww.ww.w
+w....RR.ww.R
+w....ww.RR.w
+R....ww.ww.w
+R....RR.ww.R
+R....RRRRw.R
+R....RRRww.R
+RRR.RRRRRwRR
+
+eVolutionV2 (Red) turn
+Guarantee Win
+eVolutionV2 (Red) placed a Square piece at column 3 after 0ms
+.....wR..R.W
+.....wR..w.R
+.....ww..w.w
+.....ww.ww.w
+.....ww.ww.w
+w....RR.ww.R
+w....ww.RR.w
+R....ww.ww.w
+R....RR.ww.R
+R....RRRRw.R
+R....RRRww.R
+RRRRRRRRRwRR
+
+Winner is eVolutionV2 (Red)
+Solution=(0,0)(0,1)(0,2)(0,3)(0,4)(0,5)
