@@ -1,0 +1,154 @@
+=> MinimaxD2 (White) vs eVolutionV2 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 5ms
+.......
+.......
+.......
+.......
+.......
+.....w.
+
+eVolutionV2 (Red) turn
+hashtable entries: 3985
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 3 after 168ms
+.......
+.......
+.......
+.......
+.......
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 4ms
+.......
+.......
+.......
+.......
+.....w.
+...R.w.
+
+eVolutionV2 (Red) turn
+hashtable entries: 4018
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 0 after 167ms
+.......
+.......
+.......
+.......
+.....w.
+R..R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 4ms
+.......
+.......
+.......
+.....w.
+.....w.
+R..R.w.
+
+eVolutionV2 (Red) turn
+Prevent Loss
+eVolutionV2 (Red) placed a Square piece at column 5 after 0ms
+.......
+.......
+.....R.
+.....w.
+.....w.
+R..R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 4ms
+.......
+.....w.
+.....R.
+.....w.
+.....w.
+R..R.w.
+
+eVolutionV2 (Red) turn
+hashtable entries: 4038
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 6 after 167ms
+.......
+.....w.
+.....R.
+.....w.
+.....w.
+R..R.wR
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 4ms
+.....w.
+.....w.
+.....R.
+.....w.
+.....w.
+R..R.wR
+
+eVolutionV2 (Red) turn
+hashtable entries: 4154
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 0 after 167ms
+.....w.
+.....w.
+.....R.
+.....w.
+R....w.
+R..R.wR
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 3ms
+.....w.
+.....w.
+.....R.
+.....w.
+R..w.w.
+R..R.wR
+
+eVolutionV2 (Red) turn
+hashtable entries: 3826
+depth: 3
+eVolutionV2 (Red) placed a Square piece at column 3 after 167ms
+.....w.
+.....w.
+.....R.
+...R.w.
+R..w.w.
+R..R.wR
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 3ms
+.....w.
+.....w.
+...w.R.
+...R.w.
+R..w.w.
+R..R.wR
+
+eVolutionV2 (Red) turn
+hashtable entries: 296
+depth: 2
+eVolutionV2 (Red) loses match! Reason: Time limit expired
+.....w.
+.....w.
+...w.R.
+...R.w.
+R..w.w.
+R..R.wR
+
+Winner is MinimaxD2 (White)
