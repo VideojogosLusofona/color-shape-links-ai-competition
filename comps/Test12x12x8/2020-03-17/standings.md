@@ -1,1 +1,0 @@
-No competition this day.
