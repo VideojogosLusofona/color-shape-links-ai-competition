@@ -1,0 +1,187 @@
+=> MinimaxD2 (White) vs Random (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.......
+.......
+.....w.
+
+Random (Red) turn
+Random (Red) placed a Square piece at column 3 after 0ms
+.......
+.......
+.......
+.......
+.......
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.......
+.....w.
+...R.w.
+
+Random (Red) turn
+Random (Red) placed a Square piece at column 4 after 0ms
+.......
+.......
+.......
+.......
+.....w.
+...RRw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.....w.
+.....w.
+...RRw.
+
+Random (Red) turn
+Random (Red) placed a Square piece at column 5 after 0ms
+.......
+.......
+.....R.
+.....w.
+.....w.
+...RRw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.....w.
+.....R.
+.....w.
+.....w.
+...RRw.
+
+Random (Red) turn
+Random (Red) placed a Round piece at column 1 after 0ms
+.......
+.....w.
+.....R.
+.....w.
+.....w.
+.r.RRw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 2 after 2ms
+.......
+.....w.
+.....R.
+.....w.
+.....w.
+.rwRRw.
+
+Random (Red) turn
+Random (Red) placed a Square piece at column 6 after 0ms
+.......
+.....w.
+.....R.
+.....w.
+.....w.
+.rwRRwR
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 3ms
+.......
+.....w.
+.....R.
+.....w.
+....ww.
+.rwRRwR
+
+Random (Red) turn
+Random (Red) placed a Square piece at column 6 after 0ms
+.......
+.....w.
+.....R.
+.....w.
+....wwR
+.rwRRwR
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 4ms
+.......
+.....w.
+.....R.
+....ww.
+....wwR
+.rwRRwR
+
+Random (Red) turn
+Random (Red) placed a Round piece at column 6 after 0ms
+.......
+.....w.
+.....R.
+....wwr
+....wwR
+.rwRRwR
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 6 after 3ms
+.......
+.....w.
+.....Rw
+....wwr
+....wwR
+.rwRRwR
+
+Random (Red) turn
+Random (Red) placed a Square piece at column 4 after 0ms
+.......
+.....w.
+....RRw
+....wwr
+....wwR
+.rwRRwR
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 3ms
+.......
+....ww.
+....RRw
+....wwr
+....wwR
+.rwRRwR
+
+Random (Red) turn
+Random (Red) placed a Round piece at column 6 after 0ms
+.......
+....wwr
+....RRw
+....wwr
+....wwR
+.rwRRwR
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 6 after 2ms
+......w
+....wwr
+....RRw
+....wwr
+....wwR
+.rwRRwR
+
+Winner is MinimaxD2 (White)
+Solution=(2,6)(3,6)(4,6)(5,6)
