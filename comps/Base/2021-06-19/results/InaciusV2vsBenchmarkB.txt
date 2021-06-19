@@ -1,0 +1,258 @@
+=> InaciusV2 (White) vs BenchmarkB (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+InaciusV2 (White) turn
+InaciusV2 (White) placed a Round piece at column 3 after 1ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 4 after 180ms
+.......
+.......
+.......
+.......
+.......
+...wR..
+
+InaciusV2 (White) turn
+InaciusV2 (White) placed a Round piece at column 3 after 1ms
+.......
+.......
+.......
+.......
+...w...
+...wR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 3 after 180ms
+.......
+.......
+.......
+...R...
+...w...
+...wR..
+
+InaciusV2 (White) turn
+InaciusV2 (White) placed a Round piece at column 3 after 1ms
+.......
+.......
+...w...
+...R...
+...w...
+...wR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 2 after 180ms
+.......
+.......
+...w...
+...R...
+...w...
+..RwR..
+
+InaciusV2 (White) turn
+InaciusV2 (White) placed a Round piece at column 3 after 1ms
+.......
+...w...
+...w...
+...R...
+...w...
+..RwR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 4 after 180ms
+.......
+...w...
+...w...
+...R...
+...wR..
+..RwR..
+
+InaciusV2 (White) turn
+InaciusV2 (White) placed a Round piece at column 3 after 1ms
+...w...
+...w...
+...w...
+...R...
+...wR..
+..RwR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 4 after 180ms
+...w...
+...w...
+...w...
+...RR..
+...wR..
+..RwR..
+
+InaciusV2 (White) turn
+InaciusV2 (White) placed a Round piece at column 4 after 1ms
+...w...
+...w...
+...ww..
+...RR..
+...wR..
+..RwR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 2 after 180ms
+...w...
+...w...
+...ww..
+...RR..
+..RwR..
+..RwR..
+
+InaciusV2 (White) turn
+InaciusV2 (White) placed a Round piece at column 2 after 1ms
+...w...
+...w...
+...ww..
+..wRR..
+..RwR..
+..RwR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 2 after 180ms
+...w...
+...w...
+..Rww..
+..wRR..
+..RwR..
+..RwR..
+
+InaciusV2 (White) turn
+InaciusV2 (White) placed a Round piece at column 5 after 1ms
+...w...
+...w...
+..Rww..
+..wRR..
+..RwR..
+..RwRw.
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 4 after 180ms
+...w...
+...wR..
+..Rww..
+..wRR..
+..RwR..
+..RwRw.
+
+InaciusV2 (White) turn
+InaciusV2 (White) placed a Round piece at column 5 after 1ms
+...w...
+...wR..
+..Rww..
+..wRR..
+..RwRw.
+..RwRw.
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 5 after 180ms
+...w...
+...wR..
+..Rww..
+..wRRR.
+..RwRw.
+..RwRw.
+
+InaciusV2 (White) turn
+InaciusV2 (White) placed a Round piece at column 5 after 1ms
+...w...
+...wR..
+..Rwww.
+..wRRR.
+..RwRw.
+..RwRw.
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 0 after 180ms
+...w...
+...wR..
+..Rwww.
+..wRRR.
+..RwRw.
+R.RwRw.
+
+InaciusV2 (White) turn
+InaciusV2 (White) placed a Square piece at column 5 after 1ms
+...w...
+...wRW.
+..Rwww.
+..wRRR.
+..RwRw.
+R.RwRw.
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Round piece at column 6 after 180ms
+...w...
+...wRW.
+..Rwww.
+..wRRR.
+..RwRw.
+R.RwRwr
+
+InaciusV2 (White) turn
+InaciusV2 (White) placed a Square piece at column 5 after 1ms
+...w.W.
+...wRW.
+..Rwww.
+..wRRR.
+..RwRw.
+R.RwRwr
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Round piece at column 4 after 180ms
+...wrW.
+...wRW.
+..Rwww.
+..wRRR.
+..RwRw.
+R.RwRwr
+
+InaciusV2 (White) turn
+InaciusV2 (White) placed a Square piece at column 2 after 0ms
+...wrW.
+..WwRW.
+..Rwww.
+..wRRR.
+..RwRw.
+R.RwRwr
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 6 after 180ms
+...wrW.
+..WwRW.
+..Rwww.
+..wRRR.
+..RwRwR
+R.RwRwr
+
+InaciusV2 (White) turn
+InaciusV2 (White) loses match! Reason: Thinker unable to perform move
+...wrW.
+..WwRW.
+..Rwww.
+..wRRR.
+..RwRwR
+R.RwRwr
+
+Winner is BenchmarkB (Red)
