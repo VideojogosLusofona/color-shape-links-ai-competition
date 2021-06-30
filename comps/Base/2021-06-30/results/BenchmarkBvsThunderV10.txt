@@ -1,0 +1,286 @@
+=> BenchmarkB (White) vs ThunderV10 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 3 after 180ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+ThunderV10 (Red) turn
+ThunderV10 (Red) placed a Square piece at column 2 after 181ms
+.......
+.......
+.......
+.......
+.......
+..Rw...
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 3 after 180ms
+.......
+.......
+.......
+.......
+...w...
+..Rw...
+
+ThunderV10 (Red) turn
+ThunderV10 (Red) placed a Square piece at column 3 after 181ms
+.......
+.......
+.......
+...R...
+...w...
+..Rw...
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 3 after 180ms
+.......
+.......
+...w...
+...R...
+...w...
+..Rw...
+
+ThunderV10 (Red) turn
+ThunderV10 (Red) placed a Square piece at column 5 after 181ms
+.......
+.......
+...w...
+...R...
+...w...
+..Rw.R.
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 2 after 180ms
+.......
+.......
+...w...
+...R...
+..ww...
+..Rw.R.
+
+ThunderV10 (Red) turn
+ThunderV10 (Red) placed a Square piece at column 5 after 181ms
+.......
+.......
+...w...
+...R...
+..ww.R.
+..Rw.R.
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 5 after 180ms
+.......
+.......
+...w...
+...R.w.
+..ww.R.
+..Rw.R.
+
+ThunderV10 (Red) turn
+ThunderV10 (Red) placed a Square piece at column 5 after 181ms
+.......
+.......
+...w.R.
+...R.w.
+..ww.R.
+..Rw.R.
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Square piece at column 0 after 180ms
+.......
+.......
+...w.R.
+...R.w.
+..ww.R.
+W.Rw.R.
+
+ThunderV10 (Red) turn
+ThunderV10 (Red) placed a Square piece at column 0 after 181ms
+.......
+.......
+...w.R.
+...R.w.
+R.ww.R.
+W.Rw.R.
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 0 after 180ms
+.......
+.......
+...w.R.
+w..R.w.
+R.ww.R.
+W.Rw.R.
+
+ThunderV10 (Red) turn
+ThunderV10 (Red) placed a Square piece at column 0 after 181ms
+.......
+.......
+R..w.R.
+w..R.w.
+R.ww.R.
+W.Rw.R.
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 3 after 180ms
+.......
+...w...
+R..w.R.
+w..R.w.
+R.ww.R.
+W.Rw.R.
+
+ThunderV10 (Red) turn
+ThunderV10 (Red) placed a Round piece at column 5 after 181ms
+.......
+...w.r.
+R..w.R.
+w..R.w.
+R.ww.R.
+W.Rw.R.
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 2 after 180ms
+.......
+...w.r.
+R..w.R.
+w.wR.w.
+R.ww.R.
+W.Rw.R.
+
+ThunderV10 (Red) turn
+ThunderV10 (Red) placed a Square piece at column 2 after 181ms
+.......
+...w.r.
+R.Rw.R.
+w.wR.w.
+R.ww.R.
+W.Rw.R.
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Square piece at column 1 after 180ms
+.......
+...w.r.
+R.Rw.R.
+w.wR.w.
+R.ww.R.
+WWRw.R.
+
+ThunderV10 (Red) turn
+ThunderV10 (Red) placed a Square piece at column 1 after 181ms
+.......
+...w.r.
+R.Rw.R.
+w.wR.w.
+RRww.R.
+WWRw.R.
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 1 after 180ms
+.......
+...w.r.
+R.Rw.R.
+wwwR.w.
+RRww.R.
+WWRw.R.
+
+ThunderV10 (Red) turn
+ThunderV10 (Red) placed a Square piece at column 1 after 181ms
+.......
+...w.r.
+RRRw.R.
+wwwR.w.
+RRww.R.
+WWRw.R.
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Square piece at column 3 after 180ms
+...W...
+...w.r.
+RRRw.R.
+wwwR.w.
+RRww.R.
+WWRw.R.
+
+ThunderV10 (Red) turn
+ThunderV10 (Red) placed a Square piece at column 1 after 181ms
+...W...
+.R.w.r.
+RRRw.R.
+wwwR.w.
+RRww.R.
+WWRw.R.
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Square piece at column 1 after 180ms
+.W.W...
+.R.w.r.
+RRRw.R.
+wwwR.w.
+RRww.R.
+WWRw.R.
+
+ThunderV10 (Red) turn
+ThunderV10 (Red) placed a Round piece at column 0 after 181ms
+.W.W...
+rR.w.r.
+RRRw.R.
+wwwR.w.
+RRww.R.
+WWRw.R.
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 0 after 180ms
+wW.W...
+rR.w.r.
+RRRw.R.
+wwwR.w.
+RRww.R.
+WWRw.R.
+
+ThunderV10 (Red) turn
+ThunderV10 (Red) placed a Round piece at column 4 after 181ms
+wW.W...
+rR.w.r.
+RRRw.R.
+wwwR.w.
+RRww.R.
+WWRwrR.
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Square piece at column 6 after 180ms
+wW.W...
+rR.w.r.
+RRRw.R.
+wwwR.w.
+RRww.R.
+WWRwrRW
+
+ThunderV10 (Red) turn
+ThunderV10 (Red) placed a Round piece at column 4 after 181ms
+wW.W...
+rR.w.r.
+RRRw.R.
+wwwR.w.
+RRwwrR.
+WWRwrRW
+
+Winner is ThunderV10 (Red)
+Solution=(0,5)(1,4)(2,3)(3,2)
