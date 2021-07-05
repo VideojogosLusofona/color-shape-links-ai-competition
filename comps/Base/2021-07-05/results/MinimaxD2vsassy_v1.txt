@@ -1,0 +1,159 @@
+=> MinimaxD2 (White) vs assy_v1 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 5ms
+.......
+.......
+.......
+.......
+.......
+.....w.
+
+assy_v1 (Red) turn
+assy_v1 (Red) placed a Square piece at column 4 after 0ms
+.......
+.......
+.......
+.......
+.......
+....Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.......
+.....w.
+....Rw.
+
+assy_v1 (Red) turn
+assy_v1 (Red) placed a Square piece at column 5 after 0ms
+.......
+.......
+.......
+.....R.
+.....w.
+....Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.......
+.......
+.....w.
+.....R.
+.....w.
+....Rw.
+
+assy_v1 (Red) turn
+assy_v1 (Red) placed a Square piece at column 4 after 0ms
+.......
+.......
+.....w.
+.....R.
+....Rw.
+....Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 3ms
+.......
+.......
+.....w.
+....wR.
+....Rw.
+....Rw.
+
+assy_v1 (Red) turn
+assy_v1 (Red) placed a Square piece at column 4 after 0ms
+.......
+.......
+....Rw.
+....wR.
+....Rw.
+....Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 3ms
+.......
+....w..
+....Rw.
+....wR.
+....Rw.
+....Rw.
+
+assy_v1 (Red) turn
+assy_v1 (Red) placed a Square piece at column 5 after 0ms
+.......
+....wR.
+....Rw.
+....wR.
+....Rw.
+....Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 3ms
+....w..
+....wR.
+....Rw.
+....wR.
+....Rw.
+....Rw.
+
+assy_v1 (Red) turn
+assy_v1 (Red) placed a Square piece at column 2 after 180ms
+....w..
+....wR.
+....Rw.
+....wR.
+....Rw.
+..R.Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+....ww.
+....wR.
+....Rw.
+....wR.
+....Rw.
+..R.Rw.
+
+assy_v1 (Red) turn
+assy_v1 (Red) placed a Square piece at column 2 after 180ms
+....ww.
+....wR.
+....Rw.
+....wR.
+..R.Rw.
+..R.Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 2 after 1ms
+....ww.
+....wR.
+....Rw.
+..w.wR.
+..R.Rw.
+..R.Rw.
+
+assy_v1 (Red) turn
+assy_v1 (Red) loses match! Reason: Time limit expired
+....ww.
+....wR.
+....Rw.
+..w.wR.
+..R.Rw.
+..R.Rw.
+
+Winner is MinimaxD2 (White)
