@@ -1,0 +1,263 @@
+=> assy_v2 (White) vs eVolutionV6 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+assy_v2 (White) turn
+assy_v2 (White) placed a Round piece at column 3 after 0ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+eVolutionV6 (Red) turn
+hashtable entries: 6721
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 3 after 172ms
+.......
+.......
+.......
+.......
+...R...
+...w...
+
+assy_v2 (White) turn
+assy_v2 (White) placed a Round piece at column 3 after 0ms
+.......
+.......
+.......
+...w...
+...R...
+...w...
+
+eVolutionV6 (Red) turn
+hashtable entries: 6491
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 3 after 173ms
+.......
+.......
+...R...
+...w...
+...R...
+...w...
+
+assy_v2 (White) turn
+assy_v2 (White) placed a Round piece at column 3 after 0ms
+.......
+...w...
+...R...
+...w...
+...R...
+...w...
+
+eVolutionV6 (Red) turn
+hashtable entries: 5459
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 6 after 169ms
+.......
+...w...
+...R...
+...w...
+...R...
+...w..R
+
+assy_v2 (White) turn
+assy_v2 (White) placed a Round piece at column 6 after 0ms
+.......
+...w...
+...R...
+...w...
+...R..w
+...w..R
+
+eVolutionV6 (Red) turn
+hashtable entries: 5907
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 0 after 167ms
+.......
+...w...
+...R...
+...w...
+...R..w
+R..w..R
+
+assy_v2 (White) turn
+assy_v2 (White) placed a Round piece at column 0 after 0ms
+.......
+...w...
+...R...
+...w...
+w..R..w
+R..w..R
+
+eVolutionV6 (Red) turn
+hashtable entries: 6125
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 0 after 167ms
+.......
+...w...
+...R...
+R..w...
+w..R..w
+R..w..R
+
+assy_v2 (White) turn
+assy_v2 (White) placed a Round piece at column 6 after 180ms
+.......
+...w...
+...R...
+R..w..w
+w..R..w
+R..w..R
+
+eVolutionV6 (Red) turn
+hashtable entries: 5477
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 0 after 167ms
+.......
+...w...
+R..R...
+R..w..w
+w..R..w
+R..w..R
+
+assy_v2 (White) turn
+assy_v2 (White) placed a Round piece at column 5 after 180ms
+.......
+...w...
+R..R...
+R..w..w
+w..R..w
+R..w.wR
+
+eVolutionV6 (Red) turn
+hashtable entries: 3745
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 6 after 167ms
+.......
+...w...
+R..R..R
+R..w..w
+w..R..w
+R..w.wR
+
+assy_v2 (White) turn
+assy_v2 (White) placed a Round piece at column 5 after 180ms
+.......
+...w...
+R..R..R
+R..w..w
+w..R.ww
+R..w.wR
+
+eVolutionV6 (Red) turn
+hashtable entries: 3094
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 6 after 167ms
+.......
+...w..R
+R..R..R
+R..w..w
+w..R.ww
+R..w.wR
+
+assy_v2 (White) turn
+assy_v2 (White) placed a Square piece at column 3 after 180ms
+...W...
+...w..R
+R..R..R
+R..w..w
+w..R.ww
+R..w.wR
+
+eVolutionV6 (Red) turn
+hashtable entries: 4618
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 6 after 167ms
+...W..R
+...w..R
+R..R..R
+R..w..w
+w..R.ww
+R..w.wR
+
+assy_v2 (White) turn
+assy_v2 (White) placed a Round piece at column 4 after 180ms
+...W..R
+...w..R
+R..R..R
+R..w..w
+w..R.ww
+R..wwwR
+
+eVolutionV6 (Red) turn
+Prevent Loss
+eVolutionV6 (Red) placed a Square piece at column 2 after 0ms
+...W..R
+...w..R
+R..R..R
+R..w..w
+w..R.ww
+R.RwwwR
+
+assy_v2 (White) turn
+assy_v2 (White) placed a Square piece at column 4 after 8ms
+...W..R
+...w..R
+R..R..R
+R..w..w
+w..RWww
+R.RwwwR
+
+eVolutionV6 (Red) turn
+hashtable entries: 4104
+depth: 4
+eVolutionV6 (Red) placed a Round piece at column 2 after 167ms
+...W..R
+...w..R
+R..R..R
+R..w..w
+w.rRWww
+R.RwwwR
+
+assy_v2 (White) turn
+assy_v2 (White) placed a Round piece at column 4 after 0ms
+...W..R
+...w..R
+R..R..R
+R..ww.w
+w.rRWww
+R.RwwwR
+
+eVolutionV6 (Red) turn
+Prevent Loss
+eVolutionV6 (Red) placed a Square piece at column 5 after 0ms
+...W..R
+...w..R
+R..R..R
+R..wwRw
+w.rRWww
+R.RwwwR
+
+assy_v2 (White) turn
+assy_v2 (White) placed a Square piece at column 4 after 0ms
+...W..R
+...w..R
+R..RW.R
+R..wwRw
+w.rRWww
+R.RwwwR
+
+Winner is assy_v2 (White)
+Solution=(0,4)(1,4)(2,4)(3,4)

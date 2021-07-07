@@ -1,0 +1,450 @@
+=> Panzer_v1.1 (White) vs eVolutionV6 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+Panzer_v1.1 (White) turn
+6918
+depth = 3
+Panzer_v1.1 (White) placed a Round piece at column 3 after 180ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+eVolutionV6 (Red) turn
+hashtable entries: 7185
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 0 after 174ms
+.......
+.......
+.......
+.......
+.......
+R..w...
+
+Panzer_v1.1 (White) turn
+6549
+depth = 3
+Panzer_v1.1 (White) placed a Round piece at column 3 after 180ms
+.......
+.......
+.......
+.......
+...w...
+R..w...
+
+eVolutionV6 (Red) turn
+hashtable entries: 6341
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 3 after 167ms
+.......
+.......
+.......
+...R...
+...w...
+R..w...
+
+Panzer_v1.1 (White) turn
+6254
+depth = 3
+Panzer_v1.1 (White) placed a Round piece at column 4 after 180ms
+.......
+.......
+.......
+...R...
+...w...
+R..ww..
+
+eVolutionV6 (Red) turn
+Prevent 3 Loss PART 1
+eVolutionV6 (Red) placed a Square piece at column 2 after 0ms
+.......
+.......
+.......
+...R...
+...w...
+R.Rww..
+
+Panzer_v1.1 (White) turn
+6141
+depth = 3
+Panzer_v1.1 (White) placed a Round piece at column 1 after 180ms
+.......
+.......
+.......
+...R...
+...w...
+RwRww..
+
+eVolutionV6 (Red) turn
+hashtable entries: 6534
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 6 after 167ms
+.......
+.......
+.......
+...R...
+...w...
+RwRww.R
+
+Panzer_v1.1 (White) turn
+5936
+depth = 3
+Panzer_v1.1 (White) placed a Round piece at column 0 after 180ms
+.......
+.......
+.......
+...R...
+w..w...
+RwRww.R
+
+eVolutionV6 (Red) turn
+hashtable entries: 5573
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 6 after 167ms
+.......
+.......
+.......
+...R...
+w..w..R
+RwRww.R
+
+Panzer_v1.1 (White) turn
+6112
+depth = 3
+Panzer_v1.1 (White) placed a Round piece at column 1 after 180ms
+.......
+.......
+.......
+...R...
+ww.w..R
+RwRww.R
+
+eVolutionV6 (Red) turn
+Prevent Loss
+eVolutionV6 (Red) placed a Square piece at column 2 after 0ms
+.......
+.......
+.......
+...R...
+wwRw..R
+RwRww.R
+
+Panzer_v1.1 (White) turn
+5857
+depth = 3
+Panzer_v1.1 (White) placed a Round piece at column 1 after 180ms
+.......
+.......
+.......
+.w.R...
+wwRw..R
+RwRww.R
+
+eVolutionV6 (Red) turn
+Prevent Loss
+eVolutionV6 (Red) placed a Square piece at column 1 after 0ms
+.......
+.......
+.R.....
+.w.R...
+wwRw..R
+RwRww.R
+
+Panzer_v1.1 (White) turn
+5729
+depth = 3
+Panzer_v1.1 (White) placed a Round piece at column 4 after 180ms
+.......
+.......
+.R.....
+.w.R...
+wwRww.R
+RwRww.R
+
+eVolutionV6 (Red) turn
+hashtable entries: 5622
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 0 after 167ms
+.......
+.......
+.R.....
+Rw.R...
+wwRww.R
+RwRww.R
+
+Panzer_v1.1 (White) turn
+5586
+depth = 3
+Panzer_v1.1 (White) placed a Round piece at column 6 after 180ms
+.......
+.......
+.R.....
+Rw.R..w
+wwRww.R
+RwRww.R
+
+eVolutionV6 (Red) turn
+hashtable entries: 5467
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 0 after 175ms
+.......
+.......
+RR.....
+Rw.R..w
+wwRww.R
+RwRww.R
+
+Panzer_v1.1 (White) turn
+5546
+depth = 3
+Panzer_v1.1 (White) placed a Square piece at column 1 after 180ms
+.......
+.W.....
+RR.....
+Rw.R..w
+wwRww.R
+RwRww.R
+
+eVolutionV6 (Red) turn
+hashtable entries: 4802
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 6 after 167ms
+.......
+.W.....
+RR....R
+Rw.R..w
+wwRww.R
+RwRww.R
+
+Panzer_v1.1 (White) turn
+5182
+depth = 3
+Panzer_v1.1 (White) placed a Square piece at column 4 after 180ms
+.......
+.W.....
+RR....R
+Rw.RW.w
+wwRww.R
+RwRww.R
+
+eVolutionV6 (Red) turn
+Prevent Loss
+eVolutionV6 (Red) placed a Square piece at column 4 after 0ms
+.......
+.W.....
+RR..R.R
+Rw.RW.w
+wwRww.R
+RwRww.R
+
+Panzer_v1.1 (White) turn
+3802
+depth = 4
+Panzer_v1.1 (White) placed a Square piece at column 0 after 180ms
+.......
+WW.....
+RR..R.R
+Rw.RW.w
+wwRww.R
+RwRww.R
+
+eVolutionV6 (Red) turn
+hashtable entries: 3802
+depth: 4
+eVolutionV6 (Red) placed a Round piece at column 4 after 168ms
+.......
+WW..r..
+RR..R.R
+Rw.RW.w
+wwRww.R
+RwRww.R
+
+Panzer_v1.1 (White) turn
+3743
+depth = 4
+Panzer_v1.1 (White) placed a Square piece at column 4 after 180ms
+....W..
+WW..r..
+RR..R.R
+Rw.RW.w
+wwRww.R
+RwRww.R
+
+eVolutionV6 (Red) turn
+hashtable entries: 3269
+depth: 4
+eVolutionV6 (Red) placed a Round piece at column 6 after 167ms
+....W..
+WW..r.r
+RR..R.R
+Rw.RW.w
+wwRww.R
+RwRww.R
+
+Panzer_v1.1 (White) turn
+2987
+depth = 5
+Panzer_v1.1 (White) placed a Square piece at column 1 after 180ms
+.W..W..
+WW..r.r
+RR..R.R
+Rw.RW.w
+wwRww.R
+RwRww.R
+
+eVolutionV6 (Red) turn
+Guarantee Win
+eVolutionV6 (Red) placed a Round piece at column 6 after 0ms
+.W..W.r
+WW..r.r
+RR..R.R
+Rw.RW.w
+wwRww.R
+RwRww.R
+
+Panzer_v1.1 (White) turn
+2187
+depth = 8
+Panzer_v1.1 (White) placed a Square piece at column 2 after 180ms
+.W..W.r
+WW..r.r
+RR..R.R
+RwWRW.w
+wwRww.R
+RwRww.R
+
+eVolutionV6 (Red) turn
+hashtable entries: 1096
+depth: 10
+eVolutionV6 (Red) placed a Round piece at column 2 after 167ms
+.W..W.r
+WW..r.r
+RRr.R.R
+RwWRW.w
+wwRww.R
+RwRww.R
+
+Panzer_v1.1 (White) turn
+771
+depth = 11
+Panzer_v1.1 (White) placed a Square piece at column 3 after 180ms
+.W..W.r
+WW..r.r
+RRrWR.R
+RwWRW.w
+wwRww.R
+RwRww.R
+
+eVolutionV6 (Red) turn
+hashtable entries: 320
+depth: 22
+eVolutionV6 (Red) placed a Round piece at column 0 after 167ms
+rW..W.r
+WW..r.r
+RRrWR.R
+RwWRW.w
+wwRww.R
+RwRww.R
+
+Panzer_v1.1 (White) turn
+91
+depth = 82
+Panzer_v1.1 (White) placed a Square piece at column 5 after 180ms
+rW..W.r
+WW..r.r
+RRrWR.R
+RwWRW.w
+wwRww.R
+RwRwwWR
+
+eVolutionV6 (Red) turn
+hashtable entries: 81
+depth: 79
+eVolutionV6 (Red) placed a Round piece at column 5 after 167ms
+rW..W.r
+WW..r.r
+RRrWR.R
+RwWRW.w
+wwRwwrR
+RwRwwWR
+
+Panzer_v1.1 (White) turn
+59
+depth = 137
+Panzer_v1.1 (White) placed a Round piece at column 5 after 180ms
+rW..W.r
+WW..r.r
+RRrWR.R
+RwWRWww
+wwRwwrR
+RwRwwWR
+
+eVolutionV6 (Red) turn
+hashtable entries: 22
+depth: 251
+eVolutionV6 (Red) placed a Round piece at column 2 after 167ms
+rW..W.r
+WWr.r.r
+RRrWR.R
+RwWRWww
+wwRwwrR
+RwRwwWR
+
+Panzer_v1.1 (White) turn
+12
+depth = 958
+Panzer_v1.1 (White) placed a Square piece at column 2 after 180ms
+rWW.W.r
+WWr.r.r
+RRrWR.R
+RwWRWww
+wwRwwrR
+RwRwwWR
+
+eVolutionV6 (Red) turn
+hashtable entries: 6
+depth: 993
+eVolutionV6 (Red) placed a Round piece at column 5 after 167ms
+rWW.W.r
+WWr.r.r
+RRrWRrR
+RwWRWww
+wwRwwrR
+RwRwwWR
+
+Panzer_v1.1 (White) turn
+4
+depth = 1899
+Panzer_v1.1 (White) placed a Square piece at column 3 after 180ms
+rWW.W.r
+WWrWr.r
+RRrWRrR
+RwWRWww
+wwRwwrR
+RwRwwWR
+
+eVolutionV6 (Red) turn
+Guarantee Win
+eVolutionV6 (Red) placed a Round piece at column 3 after 0ms
+rWWrW.r
+WWrWr.r
+RRrWRrR
+RwWRWww
+wwRwwrR
+RwRwwWR
+
+Winner is Panzer_v1.1 (White)
+Solution=(2,6)(3,5)(4,4)(5,3)
