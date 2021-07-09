@@ -1,0 +1,259 @@
+=> BenchmarkB (White) vs eVolutionV6 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 3 after 181ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+eVolutionV6 (Red) turn
+hashtable entries: 5916
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 3 after 168ms
+.......
+.......
+.......
+.......
+...R...
+...w...
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 4 after 180ms
+.......
+.......
+.......
+.......
+...R...
+...ww..
+
+eVolutionV6 (Red) turn
+Prevent 3 Loss PART 1
+eVolutionV6 (Red) placed a Square piece at column 2 after 0ms
+.......
+.......
+.......
+.......
+...R...
+..Rww..
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 6 after 180ms
+.......
+.......
+.......
+.......
+...R...
+..Rww.w
+
+eVolutionV6 (Red) turn
+Prevent Loss
+eVolutionV6 (Red) placed a Square piece at column 5 after 0ms
+.......
+.......
+.......
+.......
+...R...
+..RwwRw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 4 after 180ms
+.......
+.......
+.......
+.......
+...Rw..
+..RwwRw
+
+eVolutionV6 (Red) turn
+hashtable entries: 5403
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 0 after 167ms
+.......
+.......
+.......
+.......
+...Rw..
+R.RwwRw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 4 after 180ms
+.......
+.......
+.......
+....w..
+...Rw..
+R.RwwRw
+
+eVolutionV6 (Red) turn
+Prevent Loss
+eVolutionV6 (Red) placed a Square piece at column 4 after 0ms
+.......
+.......
+....R..
+....w..
+...Rw..
+R.RwwRw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 3 after 180ms
+.......
+.......
+....R..
+...ww..
+...Rw..
+R.RwwRw
+
+eVolutionV6 (Red) turn
+hashtable entries: 5554
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 3 after 167ms
+.......
+.......
+...RR..
+...ww..
+...Rw..
+R.RwwRw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 6 after 180ms
+.......
+.......
+...RR..
+...ww..
+...Rw.w
+R.RwwRw
+
+eVolutionV6 (Red) turn
+hashtable entries: 5157
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 0 after 167ms
+.......
+.......
+...RR..
+...ww..
+R..Rw.w
+R.RwwRw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 6 after 180ms
+.......
+.......
+...RR..
+...ww.w
+R..Rw.w
+R.RwwRw
+
+eVolutionV6 (Red) turn
+Prevent Loss
+eVolutionV6 (Red) placed a Square piece at column 6 after 0ms
+.......
+.......
+...RR.R
+...ww.w
+R..Rw.w
+R.RwwRw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 0 after 180ms
+.......
+.......
+...RR.R
+w..ww.w
+R..Rw.w
+R.RwwRw
+
+eVolutionV6 (Red) turn
+hashtable entries: 4484
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 3 after 168ms
+.......
+...R...
+...RR.R
+w..ww.w
+R..Rw.w
+R.RwwRw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 2 after 180ms
+.......
+...R...
+...RR.R
+w..ww.w
+R.wRw.w
+R.RwwRw
+
+eVolutionV6 (Red) turn
+Prevent 3 Loss PART 1
+eVolutionV6 (Red) placed a Square piece at column 2 after 3ms
+.......
+...R...
+...RR.R
+w.Rww.w
+R.wRw.w
+R.RwwRw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Square piece at column 0 after 180ms
+.......
+...R...
+W..RR.R
+w.Rww.w
+R.wRw.w
+R.RwwRw
+
+eVolutionV6 (Red) turn
+Guarantee Win
+eVolutionV6 (Red) placed a Square piece at column 4 after 0ms
+.......
+...RR..
+W..RR.R
+w.Rww.w
+R.wRw.w
+R.RwwRw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Square piece at column 5 after 180ms
+.......
+...RR..
+W..RR.R
+w.Rww.w
+R.wRwWw
+R.RwwRw
+
+eVolutionV6 (Red) turn
+hashtable entries: 2090
+depth: 5
+eVolutionV6 (Red) placed a Round piece at column 0 after 167ms
+.......
+r..RR..
+W..RR.R
+w.Rww.w
+R.wRwWw
+R.RwwRw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Square piece at column 5 after 180ms
+.......
+r..RR..
+W..RR.R
+w.RwwWw
+R.wRwWw
+R.RwwRw
+
+Winner is BenchmarkB (White)
+Solution=(2,3)(2,4)(2,5)(2,6)
