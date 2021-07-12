@@ -16,7 +16,7 @@ work. If not, see <http://creativecommons.org/licenses/by-nc-sa/4.0/>.
 
 _An AI competition for the [IEEE CoG 2021] conference_
 
-[Important dates](#important-dates) | [Daily standings][Standings] |
+[Important dates (updated!)](#important-dates) | [Daily standings][Standings] |
 [Implementation guide][APIDocs] |
 [Tutorial video](https://www.youtube.com/watch?v=ELrsLzX3qBY)
 
@@ -120,14 +120,14 @@ purposes](#rules-for-the-ai-code).
 * **May 28** _(optional)_ - [IEEE CoG competition papers deadline], e.g., for
   participants that wish to submit a paper about their entry for this
   competition.
-* **July 15** - First deadline for AI submissions. Submissions will be
+* **~~July 15~~ July 29** - First deadline for AI submissions. Submissions will be
   thoroughly checked for [rule compliance](#rules-for-the-ai-code) and
   technical issues.
-* **July 20** - Author notification of any issues encountered with the
+* **~~July 20~~ August 3** - Author notification of any issues encountered with the
   submissions.
-* **July 25** - Final deadline for AI submissions + short description of the
+* **~~July 25~~ August 9** - Final deadline for AI submissions + short description of the
   methods used for implementing the AI.
-* **July 30** - [EuroMillions] draw which will determine the conditions for
+* **~~July 30~~ August 10** - [EuroMillions] draw which will determine the conditions for
   the [Unknown track](#tracks).
 * **August 17-20** - [IEEE CoG 2021] takes place, final competition
   results are announced.
