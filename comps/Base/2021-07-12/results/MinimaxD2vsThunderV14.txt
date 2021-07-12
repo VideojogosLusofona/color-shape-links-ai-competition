@@ -1,0 +1,196 @@
+=> MinimaxD2 (White) vs ThunderV14 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.......
+.......
+.....w.
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 4 after 181ms
+.......
+.......
+.......
+.......
+.......
+....Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.......
+.....w.
+....Rw.
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 5 after 181ms
+.......
+.......
+.......
+.....R.
+.....w.
+....Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.......
+.......
+.....w.
+.....R.
+.....w.
+....Rw.
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 1 after 181ms
+.......
+.......
+.....w.
+.....R.
+.....w.
+.R..Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.......
+.....w.
+.....w.
+.....R.
+.....w.
+.R..Rw.
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 1 after 181ms
+.......
+.....w.
+.....w.
+.....R.
+.R...w.
+.R..Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 1 after 3ms
+.......
+.....w.
+.....w.
+.w...R.
+.R...w.
+.R..Rw.
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 2 after 181ms
+.......
+.....w.
+.....w.
+.w...R.
+.R...w.
+.RR.Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 3ms
+.......
+.....w.
+.....w.
+.w...R.
+.R...w.
+.RRwRw.
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 3 after 181ms
+.......
+.....w.
+.....w.
+.w...R.
+.R.R.w.
+.RRwRw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 3ms
+.......
+.....w.
+.....w.
+.w.w.R.
+.R.R.w.
+.RRwRw.
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 3 after 181ms
+.......
+.....w.
+...R.w.
+.w.w.R.
+.R.R.w.
+.RRwRw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 3ms
+.......
+...w.w.
+...R.w.
+.w.w.R.
+.R.R.w.
+.RRwRw.
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 4 after 181ms
+.......
+...w.w.
+...R.w.
+.w.w.R.
+.R.RRw.
+.RRwRw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 2 after 3ms
+.......
+...w.w.
+...R.w.
+.w.w.R.
+.RwRRw.
+.RRwRw.
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 2 after 181ms
+.......
+...w.w.
+...R.w.
+.wRw.R.
+.RwRRw.
+.RRwRw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 6 after 2ms
+.......
+...w.w.
+...R.w.
+.wRw.R.
+.RwRRw.
+.RRwRwW
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Round piece at column 0 after 181ms
+.......
+...w.w.
+...R.w.
+.wRw.R.
+.RwRRw.
+rRRwRwW
+
+Winner is ThunderV14 (Red)
+Solution=(0,0)(1,1)(2,2)(3,3)
