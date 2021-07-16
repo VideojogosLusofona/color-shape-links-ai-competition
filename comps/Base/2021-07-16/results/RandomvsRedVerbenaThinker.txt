@@ -1,0 +1,241 @@
+=> Random (White) vs RedVerbenaThinker (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+Random (White) turn
+Random (White) placed a Round piece at column 0 after 0ms
+.......
+.......
+.......
+.......
+.......
+w......
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 3 after 14ms
+.......
+.......
+.......
+.......
+.......
+w..r...
+
+Random (White) turn
+Random (White) placed a Round piece at column 4 after 0ms
+.......
+.......
+.......
+.......
+.......
+w..rw..
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 4 after 13ms
+.......
+.......
+.......
+.......
+....r..
+w..rw..
+
+Random (White) turn
+Random (White) placed a Round piece at column 0 after 0ms
+.......
+.......
+.......
+.......
+w...r..
+w..rw..
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 4 after 12ms
+.......
+.......
+.......
+....R..
+w...r..
+w..rw..
+
+Random (White) turn
+Random (White) placed a Square piece at column 6 after 0ms
+.......
+.......
+.......
+....R..
+w...r..
+w..rw.W
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 4 after 14ms
+.......
+.......
+....r..
+....R..
+w...r..
+w..rw.W
+
+Random (White) turn
+Random (White) placed a Round piece at column 4 after 0ms
+.......
+....w..
+....r..
+....R..
+w...r..
+w..rw.W
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 3 after 16ms
+.......
+....w..
+....r..
+....R..
+w..rr..
+w..rw.W
+
+Random (White) turn
+Random (White) placed a Round piece at column 5 after 0ms
+.......
+....w..
+....r..
+....R..
+w..rr..
+w..rwwW
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 2 after 9ms
+.......
+....w..
+....r..
+....R..
+w..rr..
+w.RrwwW
+
+Random (White) turn
+Random (White) placed a Square piece at column 6 after 0ms
+.......
+....w..
+....r..
+....R..
+w..rr.W
+w.RrwwW
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 6 after 19ms
+.......
+....w..
+....r..
+....R.R
+w..rr.W
+w.RrwwW
+
+Random (White) turn
+Random (White) placed a Square piece at column 4 after 0ms
+....W..
+....w..
+....r..
+....R.R
+w..rr.W
+w.RrwwW
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 0 after 2ms
+....W..
+....w..
+....r..
+R...R.R
+w..rr.W
+w.RrwwW
+
+Random (White) turn
+Random (White) placed a Square piece at column 1 after 0ms
+....W..
+....w..
+....r..
+R...R.R
+w..rr.W
+wWRrwwW
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 0 after 2ms
+....W..
+....w..
+r...r..
+R...R.R
+w..rr.W
+wWRrwwW
+
+Random (White) turn
+Random (White) placed a Round piece at column 0 after 0ms
+....W..
+w...w..
+r...r..
+R...R.R
+w..rr.W
+wWRrwwW
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 0 after 1ms
+r...W..
+w...w..
+r...r..
+R...R.R
+w..rr.W
+wWRrwwW
+
+Random (White) turn
+Random (White) placed a Round piece at column 3 after 0ms
+r...W..
+w...w..
+r...r..
+R..wR.R
+w..rr.W
+wWRrwwW
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 3 after 2ms
+r...W..
+w...w..
+r..Rr..
+R..wR.R
+w..rr.W
+wWRrwwW
+
+Random (White) turn
+Random (White) placed a Square piece at column 1 after 0ms
+r...W..
+w...w..
+r..Rr..
+R..wR.R
+wW.rr.W
+wWRrwwW
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 1 after 0ms
+r...W..
+w...w..
+r..Rr..
+RR.wR.R
+wW.rr.W
+wWRrwwW
+
+Random (White) turn
+Random (White) placed a Square piece at column 6 after 0ms
+r...W..
+w...w..
+r..Rr.W
+RR.wR.R
+wW.rr.W
+wWRrwwW
+
+Winner is RedVerbenaThinker (Red)
+Solution=(0,6)(1,6)(2,6)(3,6)
