@@ -1,0 +1,196 @@
+=> Random (White) vs Panzer_v1.2 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+Random (White) turn
+Random (White) placed a Round piece at column 6 after 0ms
+.......
+.......
+.......
+.......
+.......
+......w
+
+Panzer_v1.2 (Red) turn
+5136
+depth = 3
+Panzer_v1.2 (Red) placed a Square piece at column 3 after 180ms
+.......
+.......
+.......
+.......
+.......
+...R..w
+
+Random (White) turn
+Random (White) placed a Square piece at column 2 after 0ms
+.......
+.......
+.......
+.......
+.......
+..WR..w
+
+Panzer_v1.2 (Red) turn
+6379
+depth = 3
+Panzer_v1.2 (Red) placed a Square piece at column 1 after 180ms
+.......
+.......
+.......
+.......
+.......
+.RWR..w
+
+Random (White) turn
+Random (White) placed a Square piece at column 1 after 0ms
+.......
+.......
+.......
+.......
+.W.....
+.RWR..w
+
+Panzer_v1.2 (Red) turn
+6618
+depth = 5
+Panzer_v1.2 (Red) placed a Round piece at column 6 after 180ms
+.......
+.......
+.......
+.......
+.W....r
+.RWR..w
+
+Random (White) turn
+Random (White) placed a Round piece at column 2 after 0ms
+.......
+.......
+.......
+.......
+.Ww...r
+.RWR..w
+
+Panzer_v1.2 (Red) turn
+6510
+depth = 5
+Panzer_v1.2 (Red) placed a Round piece at column 3 after 180ms
+.......
+.......
+.......
+.......
+.Wwr..r
+.RWR..w
+
+Random (White) turn
+Random (White) placed a Square piece at column 6 after 0ms
+.......
+.......
+.......
+......W
+.Wwr..r
+.RWR..w
+
+Panzer_v1.2 (Red) turn
+6257
+depth = 5
+Panzer_v1.2 (Red) placed a Round piece at column 6 after 180ms
+.......
+.......
+......r
+......W
+.Wwr..r
+.RWR..w
+
+Random (White) turn
+Random (White) placed a Round piece at column 6 after 0ms
+.......
+......w
+......r
+......W
+.Wwr..r
+.RWR..w
+
+Panzer_v1.2 (Red) turn
+5917
+depth = 5
+Panzer_v1.2 (Red) placed a Round piece at column 6 after 180ms
+......r
+......w
+......r
+......W
+.Wwr..r
+.RWR..w
+
+Random (White) turn
+Random (White) placed a Round piece at column 4 after 0ms
+......r
+......w
+......r
+......W
+.Wwr..r
+.RWRw.w
+
+Panzer_v1.2 (Red) turn
+5527
+depth = 4
+Panzer_v1.2 (Red) placed a Round piece at column 3 after 180ms
+......r
+......w
+......r
+...r..W
+.Wwr..r
+.RWRw.w
+
+Random (White) turn
+Random (White) placed a Round piece at column 1 after 0ms
+......r
+......w
+......r
+.w.r..W
+.Wwr..r
+.RWRw.w
+
+Panzer_v1.2 (Red) turn
+5115
+depth = 5
+Panzer_v1.2 (Red) placed a Round piece at column 4 after 180ms
+......r
+......w
+......r
+.w.r..W
+.Wwrr.r
+.RWRw.w
+
+Random (White) turn
+Random (White) placed a Square piece at column 1 after 0ms
+......r
+......w
+.W....r
+.w.r..W
+.Wwrr.r
+.RWRw.w
+
+Panzer_v1.2 (Red) turn
+4789
+depth = 6
+Panzer_v1.2 (Red) placed a Round piece at column 3 after 180ms
+......r
+......w
+.W.r..r
+.w.r..W
+.Wwrr.r
+.RWRw.w
+
+Winner is Panzer_v1.2 (Red)
+Solution=(0,3)(1,3)(2,3)(3,3)
