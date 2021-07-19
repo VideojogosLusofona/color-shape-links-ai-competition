@@ -1,0 +1,134 @@
+=> MinimaxD2 (White) vs eVolutionV6 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.......
+.......
+.....w.
+
+eVolutionV6 (Red) turn
+hashtable entries: 6667
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 3 after 167ms
+.......
+.......
+.......
+.......
+.......
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.......
+.....w.
+...R.w.
+
+eVolutionV6 (Red) turn
+hashtable entries: 7218
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 0 after 169ms
+.......
+.......
+.......
+.......
+.....w.
+R..R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.....w.
+.....w.
+R..R.w.
+
+eVolutionV6 (Red) turn
+Prevent Loss
+eVolutionV6 (Red) placed a Square piece at column 5 after 0ms
+.......
+.......
+.....R.
+.....w.
+.....w.
+R..R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.....w.
+.....R.
+.....w.
+.....w.
+R..R.w.
+
+eVolutionV6 (Red) turn
+hashtable entries: 6631
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 6 after 168ms
+.......
+.....w.
+.....R.
+.....w.
+.....w.
+R..R.wR
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.....w.
+.....w.
+.....R.
+.....w.
+.....w.
+R..R.wR
+
+eVolutionV6 (Red) turn
+hashtable entries: 6446
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 0 after 167ms
+.....w.
+.....w.
+.....R.
+.....w.
+R....w.
+R..R.wR
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 2ms
+.....w.
+.....w.
+.....R.
+.....w.
+R..w.w.
+R..R.wR
+
+eVolutionV6 (Red) turn
+hashtable entries: 5243
+depth: 3
+eVolutionV6 (Red) loses match! Reason: Time limit expired
+.....w.
+.....w.
+.....R.
+.....w.
+R..w.w.
+R..R.wR
+
+Winner is MinimaxD2 (White)

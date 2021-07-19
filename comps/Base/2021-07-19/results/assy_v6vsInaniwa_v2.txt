@@ -1,0 +1,366 @@
+=> assy_v6 (White) vs Inaniwa_v2 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+assy_v6 (White) turn
+assy_v6 (White) placed a Round piece at column 3 after 0ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+Inaniwa_v2 (Red) turn
+Inaniwa_v2 (Red) placed a Square piece at column 3 after 150ms
+.......
+.......
+.......
+.......
+...R...
+...w...
+
+assy_v6 (White) turn
+assy_v6 (White) placed a Round piece at column 3 after 0ms
+.......
+.......
+.......
+...w...
+...R...
+...w...
+
+Inaniwa_v2 (Red) turn
+Inaniwa_v2 (Red) placed a Square piece at column 3 after 150ms
+.......
+.......
+...R...
+...w...
+...R...
+...w...
+
+assy_v6 (White) turn
+assy_v6 (White) placed a Round piece at column 3 after 0ms
+.......
+...w...
+...R...
+...w...
+...R...
+...w...
+
+Inaniwa_v2 (Red) turn
+Inaniwa_v2 (Red) placed a Square piece at column 5 after 150ms
+.......
+...w...
+...R...
+...w...
+...R...
+...w.R.
+
+assy_v6 (White) turn
+assy_v6 (White) placed a Round piece at column 5 after 0ms
+.......
+...w...
+...R...
+...w...
+...R.w.
+...w.R.
+
+Inaniwa_v2 (Red) turn
+Inaniwa_v2 (Red) placed a Square piece at column 2 after 150ms
+.......
+...w...
+...R...
+...w...
+...R.w.
+..Rw.R.
+
+assy_v6 (White) turn
+assy_v6 (White) placed a Round piece at column 5 after 0ms
+.......
+...w...
+...R...
+...w.w.
+...R.w.
+..Rw.R.
+
+Inaniwa_v2 (Red) turn
+Inaniwa_v2 (Red) placed a Square piece at column 5 after 150ms
+.......
+...w...
+...R.R.
+...w.w.
+...R.w.
+..Rw.R.
+
+assy_v6 (White) turn
+assy_v6 (White) placed a Square piece at column 6 after 160ms
+.......
+...w...
+...R.R.
+...w.w.
+...R.w.
+..Rw.RW
+
+Inaniwa_v2 (Red) turn
+Inaniwa_v2 (Red) placed a Square piece at column 2 after 154ms
+.......
+...w...
+...R.R.
+...w.w.
+..RR.w.
+..Rw.RW
+
+assy_v6 (White) turn
+assy_v6 (White) placed a Round piece at column 2 after 160ms
+.......
+...w...
+...R.R.
+..ww.w.
+..RR.w.
+..Rw.RW
+
+Inaniwa_v2 (Red) turn
+Inaniwa_v2 (Red) placed a Square piece at column 2 after 151ms
+.......
+...w...
+..RR.R.
+..ww.w.
+..RR.w.
+..Rw.RW
+
+assy_v6 (White) turn
+assy_v6 (White) placed a Square piece at column 6 after 160ms
+.......
+...w...
+..RR.R.
+..ww.w.
+..RR.wW
+..Rw.RW
+
+Inaniwa_v2 (Red) turn
+Inaniwa_v2 (Red) placed a Round piece at column 4 after 168ms
+.......
+...w...
+..RR.R.
+..ww.w.
+..RR.wW
+..RwrRW
+
+assy_v6 (White) turn
+assy_v6 (White) placed a Square piece at column 5 after 160ms
+.......
+...w.W.
+..RR.R.
+..ww.w.
+..RR.wW
+..RwrRW
+
+Inaniwa_v2 (Red) turn
+Inaniwa_v2 (Red) placed a Round piece at column 2 after 151ms
+.......
+..rw.W.
+..RR.R.
+..ww.w.
+..RR.wW
+..RwrRW
+
+assy_v6 (White) turn
+assy_v6 (White) placed a Square piece at column 2 after 160ms
+..W....
+..rw.W.
+..RR.R.
+..ww.w.
+..RR.wW
+..RwrRW
+
+Inaniwa_v2 (Red) turn
+Inaniwa_v2 (Red) placed a Round piece at column 1 after 152ms
+..W....
+..rw.W.
+..RR.R.
+..ww.w.
+..RR.wW
+.rRwrRW
+
+assy_v6 (White) turn
+assy_v6 (White) placed a Round piece at column 1 after 160ms
+..W....
+..rw.W.
+..RR.R.
+..ww.w.
+.wRR.wW
+.rRwrRW
+
+Inaniwa_v2 (Red) turn
+Inaniwa_v2 (Red) placed a Round piece at column 3 after 150ms
+..Wr...
+..rw.W.
+..RR.R.
+..ww.w.
+.wRR.wW
+.rRwrRW
+
+assy_v6 (White) turn
+assy_v6 (White) placed a Square piece at column 0 after 2ms
+..Wr...
+..rw.W.
+..RR.R.
+..ww.w.
+.wRR.wW
+WrRwrRW
+
+Inaniwa_v2 (Red) turn
+Inaniwa_v2 (Red) placed a Square piece at column 1 after 150ms
+..Wr...
+..rw.W.
+..RR.R.
+.Rww.w.
+.wRR.wW
+WrRwrRW
+
+assy_v6 (White) turn
+assy_v6 (White) placed a Round piece at column 1 after 0ms
+..Wr...
+..rw.W.
+.wRR.R.
+.Rww.w.
+.wRR.wW
+WrRwrRW
+
+Inaniwa_v2 (Red) turn
+Inaniwa_v2 (Red) placed a Round piece at column 5 after 150ms
+..Wr.r.
+..rw.W.
+.wRR.R.
+.Rww.w.
+.wRR.wW
+WrRwrRW
+
+assy_v6 (White) turn
+assy_v6 (White) placed a Square piece at column 0 after 0ms
+..Wr.r.
+..rw.W.
+.wRR.R.
+.Rww.w.
+WwRR.wW
+WrRwrRW
+
+Inaniwa_v2 (Red) turn
+Inaniwa_v2 (Red) placed a Square piece at column 0 after 150ms
+..Wr.r.
+..rw.W.
+.wRR.R.
+RRww.w.
+WwRR.wW
+WrRwrRW
+
+assy_v6 (White) turn
+assy_v6 (White) placed a Round piece at column 0 after 0ms
+..Wr.r.
+..rw.W.
+wwRR.R.
+RRww.w.
+WwRR.wW
+WrRwrRW
+
+Inaniwa_v2 (Red) turn
+Inaniwa_v2 (Red) placed a Square piece at column 6 after 150ms
+..Wr.r.
+..rw.W.
+wwRR.R.
+RRww.wR
+WwRR.wW
+WrRwrRW
+
+assy_v6 (White) turn
+assy_v6 (White) placed a Round piece at column 6 after 0ms
+..Wr.r.
+..rw.W.
+wwRR.Rw
+RRww.wR
+WwRR.wW
+WrRwrRW
+
+Inaniwa_v2 (Red) turn
+Inaniwa_v2 (Red) placed a Square piece at column 4 after 150ms
+..Wr.r.
+..rw.W.
+wwRR.Rw
+RRww.wR
+WwRRRwW
+WrRwrRW
+
+assy_v6 (White) turn
+assy_v6 (White) placed a Square piece at column 0 after 0ms
+..Wr.r.
+W.rw.W.
+wwRR.Rw
+RRww.wR
+WwRRRwW
+WrRwrRW
+
+Inaniwa_v2 (Red) turn
+Inaniwa_v2 (Red) placed a Round piece at column 0 after 150ms
+r.Wr.r.
+W.rw.W.
+wwRR.Rw
+RRww.wR
+WwRRRwW
+WrRwrRW
+
+assy_v6 (White) turn
+assy_v6 (White) placed a Square piece at column 1 after 0ms
+r.Wr.r.
+WWrw.W.
+wwRR.Rw
+RRww.wR
+WwRRRwW
+WrRwrRW
+
+Inaniwa_v2 (Red) turn
+Inaniwa_v2 (Red) placed a Round piece at column 1 after 150ms
+rrWr.r.
+WWrw.W.
+wwRR.Rw
+RRww.wR
+WwRRRwW
+WrRwrRW
+
+assy_v6 (White) turn
+assy_v6 (White) placed a Square piece at column 6 after 0ms
+rrWr.r.
+WWrw.WW
+wwRR.Rw
+RRww.wR
+WwRRRwW
+WrRwrRW
+
+Inaniwa_v2 (Red) turn
+Inaniwa_v2 (Red) placed a Round piece at column 6 after 150ms
+rrWr.rr
+WWrw.WW
+wwRR.Rw
+RRww.wR
+WwRRRwW
+WrRwrRW
+
+assy_v6 (White) turn
+assy_v6 (White) loses match! Reason: Tried to place piece in column 6, which is full
+rrWr.rr
+WWrw.WW
+wwRR.Rw
+RRww.wR
+WwRRRwW
+WrRwrRW
+
+Winner is Inaniwa_v2 (Red)
