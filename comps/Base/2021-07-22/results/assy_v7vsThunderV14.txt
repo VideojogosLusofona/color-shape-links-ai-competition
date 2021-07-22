@@ -1,0 +1,267 @@
+=> assy_v7 (White) vs ThunderV14 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 3 after 0ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 4 after 181ms
+.......
+.......
+.......
+.......
+.......
+...wR..
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 3 after 0ms
+.......
+.......
+.......
+.......
+...w...
+...wR..
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 3 after 181ms
+.......
+.......
+.......
+...R...
+...w...
+...wR..
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 3 after 0ms
+.......
+.......
+...w...
+...R...
+...w...
+...wR..
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 2 after 181ms
+.......
+.......
+...w...
+...R...
+...w...
+..RwR..
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 2 after 0ms
+.......
+.......
+...w...
+...R...
+..ww...
+..RwR..
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 4 after 181ms
+.......
+.......
+...w...
+...R...
+..wwR..
+..RwR..
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 4 after 0ms
+.......
+.......
+...w...
+...Rw..
+..wwR..
+..RwR..
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 5 after 181ms
+.......
+.......
+...w...
+...Rw..
+..wwR..
+..RwRR.
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 4 after 160ms
+.......
+.......
+...ww..
+...Rw..
+..wwR..
+..RwRR.
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 4 after 181ms
+.......
+....R..
+...ww..
+...Rw..
+..wwR..
+..RwRR.
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Square piece at column 4 after 160ms
+....W..
+....R..
+...ww..
+...Rw..
+..wwR..
+..RwRR.
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 6 after 181ms
+....W..
+....R..
+...ww..
+...Rw..
+..wwR..
+..RwRRR
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Square piece at column 3 after 160ms
+....W..
+...WR..
+...ww..
+...Rw..
+..wwR..
+..RwRRR
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Round piece at column 6 after 181ms
+....W..
+...WR..
+...ww..
+...Rw..
+..wwR.r
+..RwRRR
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 6 after 160ms
+....W..
+...WR..
+...ww..
+...Rw.w
+..wwR.r
+..RwRRR
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 6 after 181ms
+....W..
+...WR..
+...ww.R
+...Rw.w
+..wwR.r
+..RwRRR
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Square piece at column 6 after 166ms
+....W..
+...WR.W
+...ww.R
+...Rw.w
+..wwR.r
+..RwRRR
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Round piece at column 3 after 181ms
+...rW..
+...WR.W
+...ww.R
+...Rw.w
+..wwR.r
+..RwRRR
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Square piece at column 6 after 83ms
+...rW.W
+...WR.W
+...ww.R
+...Rw.w
+..wwR.r
+..RwRRR
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Round piece at column 0 after 181ms
+...rW.W
+...WR.W
+...ww.R
+...Rw.w
+..wwR.r
+r.RwRRR
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Square piece at column 0 after 2ms
+...rW.W
+...WR.W
+...ww.R
+...Rw.w
+W.wwR.r
+r.RwRRR
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Round piece at column 0 after 181ms
+...rW.W
+...WR.W
+...ww.R
+r..Rw.w
+W.wwR.r
+r.RwRRR
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 0 after 0ms
+...rW.W
+...WR.W
+w..ww.R
+r..Rw.w
+W.wwR.r
+r.RwRRR
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 2 after 181ms
+...rW.W
+...WR.W
+w..ww.R
+r.RRw.w
+W.wwR.r
+r.RwRRR
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 2 after 0ms
+...rW.W
+...WR.W
+w.www.R
+r.RRw.w
+W.wwR.r
+r.RwRRR
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) loses match! Reason: Time limit expired
+...rW.W
+...WR.W
+w.www.R
+r.RRw.w
+W.wwR.r
+r.RwRRR
+
+Winner is assy_v7 (White)

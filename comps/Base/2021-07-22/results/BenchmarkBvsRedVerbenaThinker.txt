@@ -1,0 +1,151 @@
+=> BenchmarkB (White) vs RedVerbenaThinker (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 4 after 180ms
+.......
+.......
+.......
+.......
+.......
+....w..
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 4 after 15ms
+.......
+.......
+.......
+.......
+....r..
+....w..
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 4 after 180ms
+.......
+.......
+.......
+....w..
+....r..
+....w..
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 4 after 18ms
+.......
+.......
+....R..
+....w..
+....r..
+....w..
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 3 after 180ms
+.......
+.......
+....R..
+....w..
+....r..
+...ww..
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 2 after 18ms
+.......
+.......
+....R..
+....w..
+....r..
+..Rww..
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 2 after 180ms
+.......
+.......
+....R..
+....w..
+..w.r..
+..Rww..
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 2 after 18ms
+.......
+.......
+....R..
+..r.w..
+..w.r..
+..Rww..
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 6 after 180ms
+.......
+.......
+....R..
+..r.w..
+..w.r..
+..Rww.w
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 5 after 19ms
+.......
+.......
+....R..
+..r.w..
+..w.r..
+..RwwRw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 5 after 180ms
+.......
+.......
+....R..
+..r.w..
+..w.rw.
+..RwwRw
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 3 after 17ms
+.......
+.......
+....R..
+..r.w..
+..wRrw.
+..RwwRw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 5 after 180ms
+.......
+.......
+....R..
+..r.ww.
+..wRrw.
+..RwwRw
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 0 after 14ms
+.......
+.......
+....R..
+..r.ww.
+..wRrw.
+r.RwwRw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 3 after 180ms
+.......
+.......
+....R..
+..rwww.
+..wRrw.
+r.RwwRw
+
+Winner is BenchmarkB (White)
+Solution=(2,2)(2,3)(2,4)(2,5)
