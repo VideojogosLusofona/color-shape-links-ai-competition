@@ -1,0 +1,331 @@
+=> assy_v7 (White) vs ThunderV14 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 3 after 0ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 2 after 181ms
+.......
+.......
+.......
+.......
+.......
+..Rw...
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 3 after 0ms
+.......
+.......
+.......
+.......
+...w...
+..Rw...
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 3 after 181ms
+.......
+.......
+.......
+...R...
+...w...
+..Rw...
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 3 after 0ms
+.......
+.......
+...w...
+...R...
+...w...
+..Rw...
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 5 after 181ms
+.......
+.......
+...w...
+...R...
+...w...
+..Rw.R.
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 5 after 0ms
+.......
+.......
+...w...
+...R...
+...w.w.
+..Rw.R.
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 2 after 181ms
+.......
+.......
+...w...
+...R...
+..Rw.w.
+..Rw.R.
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 5 after 0ms
+.......
+.......
+...w...
+...R.w.
+..Rw.w.
+..Rw.R.
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 5 after 181ms
+.......
+.......
+...w.R.
+...R.w.
+..Rw.w.
+..Rw.R.
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Square piece at column 3 after 160ms
+.......
+...W...
+...w.R.
+...R.w.
+..Rw.w.
+..Rw.R.
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 0 after 181ms
+.......
+...W...
+...w.R.
+...R.w.
+..Rw.w.
+R.Rw.R.
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Square piece at column 5 after 160ms
+.......
+...W.W.
+...w.R.
+...R.w.
+..Rw.w.
+R.Rw.R.
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Round piece at column 1 after 181ms
+.......
+...W.W.
+...w.R.
+...R.w.
+..Rw.w.
+RrRw.R.
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Square piece at column 5 after 160ms
+.....W.
+...W.W.
+...w.R.
+...R.w.
+..Rw.w.
+RrRw.R.
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Round piece at column 1 after 181ms
+.....W.
+...W.W.
+...w.R.
+...R.w.
+.rRw.w.
+RrRw.R.
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 1 after 160ms
+.....W.
+...W.W.
+...w.R.
+.w.R.w.
+.rRw.w.
+RrRw.R.
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 1 after 181ms
+.....W.
+...W.W.
+.R.w.R.
+.w.R.w.
+.rRw.w.
+RrRw.R.
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Square piece at column 6 after 160ms
+.....W.
+...W.W.
+.R.w.R.
+.w.R.w.
+.rRw.w.
+RrRw.RW
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Round piece at column 0 after 181ms
+.....W.
+...W.W.
+.R.w.R.
+.w.R.w.
+rrRw.w.
+RrRw.RW
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 0 after 152ms
+.....W.
+...W.W.
+.R.w.R.
+ww.R.w.
+rrRw.w.
+RrRw.RW
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Square piece at column 6 after 181ms
+.....W.
+...W.W.
+.R.w.R.
+ww.R.w.
+rrRw.wR
+RrRw.RW
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Square piece at column 3 after 160ms
+...W.W.
+...W.W.
+.R.w.R.
+ww.R.w.
+rrRw.wR
+RrRw.RW
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Round piece at column 1 after 181ms
+...W.W.
+.r.W.W.
+.R.w.R.
+ww.R.w.
+rrRw.wR
+RrRw.RW
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 1 after 3ms
+.w.W.W.
+.r.W.W.
+.R.w.R.
+ww.R.w.
+rrRw.wR
+RrRw.RW
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Round piece at column 4 after 181ms
+.w.W.W.
+.r.W.W.
+.R.w.R.
+ww.R.w.
+rrRw.wR
+RrRwrRW
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Square piece at column 0 after 0ms
+.w.W.W.
+.r.W.W.
+WR.w.R.
+ww.R.w.
+rrRw.wR
+RrRwrRW
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Round piece at column 0 after 181ms
+.w.W.W.
+rr.W.W.
+WR.w.R.
+ww.R.w.
+rrRw.wR
+RrRwrRW
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Square piece at column 0 after 0ms
+Ww.W.W.
+rr.W.W.
+WR.w.R.
+ww.R.w.
+rrRw.wR
+RrRwrRW
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Round piece at column 2 after 181ms
+Ww.W.W.
+rr.W.W.
+WR.w.R.
+wwrR.w.
+rrRw.wR
+RrRwrRW
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 2 after 0ms
+Ww.W.W.
+rr.W.W.
+WRww.R.
+wwrR.w.
+rrRw.wR
+RrRwrRW
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Round piece at column 6 after 181ms
+Ww.W.W.
+rr.W.W.
+WRww.R.
+wwrR.wr
+rrRw.wR
+RrRwrRW
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 4 after 0ms
+Ww.W.W.
+rr.W.W.
+WRww.R.
+wwrR.wr
+rrRwwwR
+RrRwrRW
+
+ThunderV14 (Red) turn
+ThunderV14 (Red) placed a Round piece at column 4 after 181ms
+Ww.W.W.
+rr.W.W.
+WRww.R.
+wwrRrwr
+rrRwwwR
+RrRwrRW
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Square piece at column 6 after 0ms
+Ww.W.W.
+rr.W.W.
+WRww.RW
+wwrRrwr
+rrRwwwR
+RrRwrRW
+
+Winner is assy_v7 (White)
+Solution=(0,3)(1,4)(2,5)(3,6)
