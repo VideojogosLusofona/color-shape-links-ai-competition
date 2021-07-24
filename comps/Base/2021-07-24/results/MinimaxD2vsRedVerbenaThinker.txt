@@ -1,0 +1,160 @@
+=> MinimaxD2 (White) vs RedVerbenaThinker (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.......
+.......
+.....w.
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 5 after 17ms
+.......
+.......
+.......
+.......
+.....r.
+.....w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.....w.
+.....r.
+.....w.
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 5 after 20ms
+.......
+.......
+.....R.
+.....w.
+.....r.
+.....w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.......
+.....w.
+.....R.
+.....w.
+.....r.
+.....w.
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 1 after 13ms
+.......
+.....w.
+.....R.
+.....w.
+.....r.
+.r...w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.....w.
+.....w.
+.....R.
+.....w.
+.....r.
+.r...w.
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 1 after 5ms
+.....w.
+.....w.
+.....R.
+.....w.
+.r...r.
+.r...w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 1 after 2ms
+.....w.
+.....w.
+.....R.
+.w...w.
+.r...r.
+.r...w.
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 1 after 4ms
+.....w.
+.....w.
+.R...R.
+.w...w.
+.r...r.
+.r...w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 1 after 2ms
+.....w.
+.w...w.
+.R...R.
+.w...w.
+.r...r.
+.r...w.
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 3 after 7ms
+.....w.
+.w...w.
+.R...R.
+.w...w.
+.r...r.
+.r.r.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 1 after 2ms
+.w...w.
+.w...w.
+.R...R.
+.w...w.
+.r...r.
+.r.r.w.
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 2 after 1ms
+.w...w.
+.w...w.
+.R...R.
+.w...w.
+.r...r.
+.rRr.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 6 after 1ms
+.w...w.
+.w...w.
+.R...R.
+.w...w.
+.r...r.
+.rRr.wW
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 0 after 0ms
+.w...w.
+.w...w.
+.R...R.
+.w...w.
+.r...r.
+rrRr.wW
+
+Winner is RedVerbenaThinker (Red)
+Solution=(0,0)(0,1)(0,2)(0,3)

@@ -1,0 +1,142 @@
+=> Random (White) vs BenchmarkB (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+Random (White) turn
+Random (White) placed a Round piece at column 4 after 0ms
+.......
+.......
+.......
+.......
+.......
+....w..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 2 after 180ms
+.......
+.......
+.......
+.......
+.......
+..R.w..
+
+Random (White) turn
+Random (White) placed a Round piece at column 0 after 0ms
+.......
+.......
+.......
+.......
+.......
+w.R.w..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 4 after 180ms
+.......
+.......
+.......
+.......
+....R..
+w.R.w..
+
+Random (White) turn
+Random (White) placed a Square piece at column 4 after 0ms
+.......
+.......
+.......
+....W..
+....R..
+w.R.w..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 3 after 180ms
+.......
+.......
+.......
+....W..
+....R..
+w.RRw..
+
+Random (White) turn
+Random (White) placed a Round piece at column 4 after 0ms
+.......
+.......
+....w..
+....W..
+....R..
+w.RRw..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 2 after 180ms
+.......
+.......
+....w..
+....W..
+..R.R..
+w.RRw..
+
+Random (White) turn
+Random (White) placed a Square piece at column 0 after 0ms
+.......
+.......
+....w..
+....W..
+W.R.R..
+w.RRw..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Round piece at column 4 after 180ms
+.......
+....r..
+....w..
+....W..
+W.R.R..
+w.RRw..
+
+Random (White) turn
+Random (White) placed a Square piece at column 3 after 0ms
+.......
+....r..
+....w..
+....W..
+W.RWR..
+w.RRw..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 2 after 180ms
+.......
+....r..
+....w..
+..R.W..
+W.RWR..
+w.RRw..
+
+Random (White) turn
+Random (White) placed a Square piece at column 0 after 0ms
+.......
+....r..
+....w..
+W.R.W..
+W.RWR..
+w.RRw..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Round piece at column 2 after 180ms
+.......
+....r..
+..r.w..
+W.R.W..
+W.RWR..
+w.RRw..
+
+Winner is BenchmarkB (Red)
+Solution=(0,2)(1,2)(2,2)(3,2)
