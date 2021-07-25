@@ -1,0 +1,87 @@
+=> MinimaxD2 (White) vs DIABISMAID1 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.......
+.......
+.....w.
+
+DIABISMAID1 (Red) turn
+DIABISMAID1 (Red) placed a Square piece at column 5 after 0ms
+.......
+.......
+.......
+.......
+.....R.
+.....w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.....w.
+.....R.
+.....w.
+
+DIABISMAID1 (Red) turn
+DIABISMAID1 (Red) placed a Square piece at column 5 after 8ms
+.......
+.......
+.....R.
+.....w.
+.....R.
+.....w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.......
+.....w.
+.....R.
+.....w.
+.....R.
+.....w.
+
+DIABISMAID1 (Red) turn
+DIABISMAID1 (Red) placed a Square piece at column 5 after 0ms
+.....R.
+.....w.
+.....R.
+.....w.
+.....R.
+.....w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 1 after 2ms
+.....R.
+.....w.
+.....R.
+.....w.
+.....R.
+.w...w.
+
+DIABISMAID1 (Red) turn
+DIABISMAID1 (Red) loses match! Reason: Time limit expired
+.....R.
+.....w.
+.....R.
+.....w.
+.....R.
+.w...w.
+
+Winner is MinimaxD2 (White)
