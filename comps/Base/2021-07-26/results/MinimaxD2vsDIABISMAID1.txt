@@ -1,0 +1,205 @@
+=> MinimaxD2 (White) vs DIABISMAID1 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.......
+.......
+.....w.
+
+DIABISMAID1 (Red) turn
+DIABISMAID1 (Red) placed a Square piece at column 5 after 9ms
+.......
+.......
+.......
+.......
+.....R.
+.....w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.....w.
+.....R.
+.....w.
+
+DIABISMAID1 (Red) turn
+DIABISMAID1 (Red) placed a Square piece at column 5 after 6ms
+.......
+.......
+.....R.
+.....w.
+.....R.
+.....w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.......
+.....w.
+.....R.
+.....w.
+.....R.
+.....w.
+
+DIABISMAID1 (Red) turn
+DIABISMAID1 (Red) placed a Square piece at column 5 after 5ms
+.....R.
+.....w.
+.....R.
+.....w.
+.....R.
+.....w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 1 after 2ms
+.....R.
+.....w.
+.....R.
+.....w.
+.....R.
+.w...w.
+
+DIABISMAID1 (Red) turn
+DIABISMAID1 (Red) placed a Square piece at column 1 after 5ms
+.....R.
+.....w.
+.....R.
+.....w.
+.R...R.
+.w...w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 1 after 2ms
+.....R.
+.....w.
+.....R.
+.w...w.
+.R...R.
+.w...w.
+
+DIABISMAID1 (Red) turn
+DIABISMAID1 (Red) placed a Square piece at column 1 after 5ms
+.....R.
+.....w.
+.R...R.
+.w...w.
+.R...R.
+.w...w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 1 after 2ms
+.....R.
+.w...w.
+.R...R.
+.w...w.
+.R...R.
+.w...w.
+
+DIABISMAID1 (Red) turn
+DIABISMAID1 (Red) placed a Square piece at column 1 after 17ms
+.R...R.
+.w...w.
+.R...R.
+.w...w.
+.R...R.
+.w...w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 1ms
+.R...R.
+.w...w.
+.R...R.
+.w...w.
+.R...R.
+.w..ww.
+
+DIABISMAID1 (Red) turn
+DIABISMAID1 (Red) placed a Square piece at column 4 after 29ms
+.R...R.
+.w...w.
+.R...R.
+.w...w.
+.R..RR.
+.w..ww.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 1ms
+.R...R.
+.w...w.
+.R...R.
+.w..ww.
+.R..RR.
+.w..ww.
+
+DIABISMAID1 (Red) turn
+DIABISMAID1 (Red) placed a Square piece at column 3 after 6ms
+.R...R.
+.w...w.
+.R...R.
+.w..ww.
+.R..RR.
+.w.Rww.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 1ms
+.R...R.
+.w...w.
+.R..wR.
+.w..ww.
+.R..RR.
+.w.Rww.
+
+DIABISMAID1 (Red) turn
+DIABISMAID1 (Red) placed a Round piece at column 0 after 0ms
+.R...R.
+.w...w.
+.R..wR.
+.w..ww.
+.R..RR.
+rw.Rww.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 1ms
+.R...R.
+.w..ww.
+.R..wR.
+.w..ww.
+.R..RR.
+rw.Rww.
+
+DIABISMAID1 (Red) turn
+DIABISMAID1 (Red) placed a Round piece at column 0 after 3ms
+.R...R.
+.w..ww.
+.R..wR.
+.w..ww.
+rR..RR.
+rw.Rww.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 4 after 0ms
+.R..WR.
+.w..ww.
+.R..wR.
+.w..ww.
+rR..RR.
+rw.Rww.
+
+Winner is MinimaxD2 (White)
+Solution=(2,4)(3,4)(4,4)(5,4)

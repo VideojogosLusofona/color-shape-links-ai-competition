@@ -1,0 +1,259 @@
+=> Inaniwa_v3 (White) vs BenchmarkA (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+Inaniwa_v3 (White) turn
+Inaniwa_v3 (White) placed a Round piece at column 3 after 150ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Square piece at column 3 after 153ms
+.......
+.......
+.......
+.......
+...R...
+...w...
+
+Inaniwa_v3 (White) turn
+Inaniwa_v3 (White) placed a Round piece at column 3 after 150ms
+.......
+.......
+.......
+...w...
+...R...
+...w...
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Square piece at column 3 after 157ms
+.......
+.......
+...R...
+...w...
+...R...
+...w...
+
+Inaniwa_v3 (White) turn
+Inaniwa_v3 (White) placed a Round piece at column 3 after 151ms
+.......
+...w...
+...R...
+...w...
+...R...
+...w...
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Square piece at column 3 after 152ms
+...R...
+...w...
+...R...
+...w...
+...R...
+...w...
+
+Inaniwa_v3 (White) turn
+Inaniwa_v3 (White) placed a Round piece at column 6 after 151ms
+...R...
+...w...
+...R...
+...w...
+...R...
+...w..w
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Square piece at column 4 after 152ms
+...R...
+...w...
+...R...
+...w...
+...R...
+...wR.w
+
+Inaniwa_v3 (White) turn
+Inaniwa_v3 (White) placed a Round piece at column 4 after 150ms
+...R...
+...w...
+...R...
+...w...
+...Rw..
+...wR.w
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Square piece at column 4 after 152ms
+...R...
+...w...
+...R...
+...wR..
+...Rw..
+...wR.w
+
+Inaniwa_v3 (White) turn
+Inaniwa_v3 (White) placed a Round piece at column 0 after 151ms
+...R...
+...w...
+...R...
+...wR..
+...Rw..
+w..wR.w
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Square piece at column 2 after 152ms
+...R...
+...w...
+...R...
+...wR..
+...Rw..
+w.RwR.w
+
+Inaniwa_v3 (White) turn
+Inaniwa_v3 (White) placed a Square piece at column 5 after 151ms
+...R...
+...w...
+...R...
+...wR..
+...Rw..
+w.RwRWw
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Square piece at column 5 after 154ms
+...R...
+...w...
+...R...
+...wR..
+...RwR.
+w.RwRWw
+
+Inaniwa_v3 (White) turn
+Inaniwa_v3 (White) placed a Round piece at column 2 after 151ms
+...R...
+...w...
+...R...
+...wR..
+..wRwR.
+w.RwRWw
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Square piece at column 4 after 200ms
+...R...
+...w...
+...RR..
+...wR..
+..wRwR.
+w.RwRWw
+
+Inaniwa_v3 (White) turn
+Inaniwa_v3 (White) placed a Round piece at column 4 after 150ms
+...R...
+...ww..
+...RR..
+...wR..
+..wRwR.
+w.RwRWw
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Square piece at column 6 after 152ms
+...R...
+...ww..
+...RR..
+...wR..
+..wRwRR
+w.RwRWw
+
+Inaniwa_v3 (White) turn
+Inaniwa_v3 (White) placed a Square piece at column 4 after 166ms
+...RW..
+...ww..
+...RR..
+...wR..
+..wRwRR
+w.RwRWw
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Square piece at column 0 after 152ms
+...RW..
+...ww..
+...RR..
+...wR..
+R.wRwRR
+w.RwRWw
+
+Inaniwa_v3 (White) turn
+Inaniwa_v3 (White) placed a Square piece at column 1 after 150ms
+...RW..
+...ww..
+...RR..
+...wR..
+R.wRwRR
+wWRwRWw
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Round piece at column 1 after 156ms
+...RW..
+...ww..
+...RR..
+...wR..
+RrwRwRR
+wWRwRWw
+
+Inaniwa_v3 (White) turn
+Inaniwa_v3 (White) placed a Square piece at column 0 after 150ms
+...RW..
+...ww..
+...RR..
+W..wR..
+RrwRwRR
+wWRwRWw
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Round piece at column 5 after 151ms
+...RW..
+...ww..
+...RR..
+W..wRr.
+RrwRwRR
+wWRwRWw
+
+Inaniwa_v3 (White) turn
+Inaniwa_v3 (White) placed a Round piece at column 5 after 150ms
+...RW..
+...ww..
+...RRw.
+W..wRr.
+RrwRwRR
+wWRwRWw
+
+BenchmarkA (Red) turn
+BenchmarkA (Red) placed a Round piece at column 0 after 151ms
+...RW..
+...ww..
+r..RRw.
+W..wRr.
+RrwRwRR
+wWRwRWw
+
+Inaniwa_v3 (White) turn
+Inaniwa_v3 (White) placed a Round piece at column 1 after 150ms
+...RW..
+...ww..
+r..RRw.
+Ww.wRr.
+RrwRwRR
+wWRwRWw
+
+Winner is Inaniwa_v3 (White)
+Solution=(0,3)(1,2)(2,1)(3,0)
