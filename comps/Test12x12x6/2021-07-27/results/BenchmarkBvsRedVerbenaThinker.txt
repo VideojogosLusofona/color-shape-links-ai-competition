@@ -1,0 +1,817 @@
+=> BenchmarkB (White) vs RedVerbenaThinker (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 9 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.........w..
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 9 after 198ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.........r..
+.........w..
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 1 after 271ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.........r..
+.w.......w..
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 9 after 109ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.........r..
+.........r..
+.w.......w..
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 11 after 271ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.........r..
+.........r..
+.w.......w.w
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 9 after 113ms
+............
+............
+............
+............
+............
+............
+............
+............
+.........r..
+.........r..
+.........r..
+.w.......w.w
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 9 after 271ms
+............
+............
+............
+............
+............
+............
+............
+.........w..
+.........r..
+.........r..
+.........r..
+.w.......w.w
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 9 after 155ms
+............
+............
+............
+............
+............
+............
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.w.......w.w
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 6 after 271ms
+............
+............
+............
+............
+............
+............
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.w....w..w.w
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 9 after 150ms
+............
+............
+............
+............
+............
+.........r..
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.w....w..w.w
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 4 after 272ms
+............
+............
+............
+............
+............
+.........r..
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.w..w.w..w.w
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 9 after 161ms
+............
+............
+............
+............
+.........r..
+.........r..
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.w..w.w..w.w
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 2 after 271ms
+............
+............
+............
+............
+.........r..
+.........r..
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.ww.w.w..w.w
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 9 after 150ms
+............
+............
+............
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.ww.w.w..w.w
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Square piece at column 4 after 270ms
+............
+............
+............
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+.........r..
+.........r..
+....W....r..
+.ww.w.w..w.w
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 9 after 157ms
+............
+............
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+.........r..
+.........r..
+....W....r..
+.ww.w.w..w.w
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 9 after 270ms
+............
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+.........r..
+.........r..
+....W....r..
+.ww.w.w..w.w
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 9 after 185ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+.........r..
+.........r..
+....W....r..
+.ww.w.w..w.w
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Square piece at column 10 after 270ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+.........r..
+.........r..
+....W....r..
+.ww.w.w..wWw
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 4 after 73ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+.........r..
+....R....r..
+....W....r..
+.ww.w.w..wWw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 4 after 270ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+....w....r..
+....R....r..
+....W....r..
+.ww.w.w..wWw
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 6 after 80ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+....w....r..
+....R....r..
+....W.R..r..
+.ww.w.w..wWw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 5 after 272ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+....w....r..
+....R....r..
+....W.R..r..
+.ww.www..wWw
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 3 after 62ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+....w....r..
+....R....r..
+....W.R..r..
+.wwRwww..wWw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 8 after 272ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+....w....r..
+....R....r..
+....W.R..r..
+.wwRwww.wwWw
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 7 after 104ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+....w....r..
+....R....r..
+....W.R..r..
+.wwRwwwRwwWw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 8 after 272ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+....w....r..
+....R....r..
+....W.R.wr..
+.wwRwwwRwwWw
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 5 after 80ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+....w....r..
+....R....r..
+....WRR.wr..
+.wwRwwwRwwWw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 2 after 272ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+....w....r..
+....R....r..
+..w.WRR.wr..
+.wwRwwwRwwWw
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 1 after 59ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+....w....r..
+....R....r..
+.Rw.WRR.wr..
+.wwRwwwRwwWw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 11 after 272ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+....w....r..
+....R....r..
+.Rw.WRR.wr.w
+.wwRwwwRwwWw
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 2 after 66ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+....w....r..
+..R.R....r..
+.Rw.WRR.wr.w
+.wwRwwwRwwWw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 7 after 275ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+....w....r..
+..R.R....r..
+.Rw.WRRwwr.w
+.wwRwwwRwwWw
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 2 after 81ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+..R.w....r..
+..R.R....r..
+.Rw.WRRwwr.w
+.wwRwwwRwwWw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 7 after 271ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+..R.w....r..
+..R.R..w.r..
+.Rw.WRRwwr.w
+.wwRwwwRwwWw
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 1 after 118ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+..R.w....r..
+.rR.R..w.r..
+.Rw.WRRwwr.w
+.wwRwwwRwwWw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 8 after 271ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+.........w..
+..R.w....r..
+.rR.R..wwr..
+.Rw.WRRwwr.w
+.wwRwwwRwwWw
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 2 after 103ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+..r......w..
+..R.w....r..
+.rR.R..wwr..
+.Rw.WRRwwr.w
+.wwRwwwRwwWw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 7 after 273ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+.........R..
+..r......w..
+..R.w..w.r..
+.rR.R..wwr..
+.Rw.WRRwwr.w
+.wwRwwwRwwWw
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 2 after 90ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+..r......R..
+..r......w..
+..R.w..w.r..
+.rR.R..wwr..
+.Rw.WRRwwr.w
+.wwRwwwRwwWw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 0 after 273ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+.........r..
+..r......R..
+..r......w..
+..R.w..w.r..
+.rR.R..wwr..
+.Rw.WRRwwr.w
+wwwRwwwRwwWw
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 2 after 55ms
+.........R..
+.........w..
+.........r..
+.........r..
+.........r..
+..r......r..
+..r......R..
+..r......w..
+..R.w..w.r..
+.rR.R..wwr..
+.Rw.WRRwwr.w
+wwwRwwwRwwWw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 2 after 270ms
+.........R..
+.........w..
+.........r..
+.........r..
+..w......r..
+..r......r..
+..r......R..
+..r......w..
+..R.w..w.r..
+.rR.R..wwr..
+.Rw.WRRwwr.w
+wwwRwwwRwwWw
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 1 after 80ms
+.........R..
+.........w..
+.........r..
+.........r..
+..w......r..
+..r......r..
+..r......R..
+..r......w..
+.rR.w..w.r..
+.rR.R..wwr..
+.Rw.WRRwwr.w
+wwwRwwwRwwWw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 7 after 272ms
+.........R..
+.........w..
+.........r..
+.........r..
+..w......r..
+..r......r..
+..r......R..
+..r....w.w..
+.rR.w..w.r..
+.rR.R..wwr..
+.Rw.WRRwwr.w
+wwwRwwwRwwWw
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 6 after 71ms
+.........R..
+.........w..
+.........r..
+.........r..
+..w......r..
+..r......r..
+..r......R..
+..r....w.w..
+.rR.w..w.r..
+.rR.R.rwwr..
+.Rw.WRRwwr.w
+wwwRwwwRwwWw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 10 after 272ms
+.........R..
+.........w..
+.........r..
+.........r..
+..w......r..
+..r......r..
+..r......R..
+..r....w.w..
+.rR.w..w.r..
+.rR.R.rwwr..
+.Rw.WRRwwrww
+wwwRwwwRwwWw
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 1 after 66ms
+.........R..
+.........w..
+.........r..
+.........r..
+..w......r..
+..r......r..
+..r......R..
+.rr....w.w..
+.rR.w..w.r..
+.rR.R.rwwr..
+.Rw.WRRwwrww
+wwwRwwwRwwWw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 2 after 270ms
+.........R..
+.........w..
+.........r..
+..w......r..
+..w......r..
+..r......r..
+..r......R..
+.rr....w.w..
+.rR.w..w.r..
+.rR.R.rwwr..
+.Rw.WRRwwrww
+wwwRwwwRwwWw
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Square piece at column 2 after 89ms
+.........R..
+.........w..
+..R......r..
+..w......r..
+..w......r..
+..r......r..
+..r......R..
+.rr....w.w..
+.rR.w..w.r..
+.rR.R.rwwr..
+.Rw.WRRwwrww
+wwwRwwwRwwWw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 10 after 270ms
+.........R..
+.........w..
+..R......r..
+..w......r..
+..w......r..
+..r......r..
+..r......R..
+.rr....w.w..
+.rR.w..w.r..
+.rR.R.rwwrw.
+.Rw.WRRwwrww
+wwwRwwwRwwWw
+
+RedVerbenaThinker (Red) turn
+RedVerbenaThinker (Red) placed a Round piece at column 0 after 116ms
+.........R..
+.........w..
+..R......r..
+..w......r..
+..w......r..
+..r......r..
+..r......R..
+.rr....w.w..
+.rR.w..w.r..
+.rR.R.rwwrw.
+rRw.WRRwwrww
+wwwRwwwRwwWw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 11 after 270ms
+.........R..
+.........w..
+..R......r..
+..w......r..
+..w......r..
+..r......r..
+..r......R..
+.rr....w.w..
+.rR.w..w.r..
+.rR.R.rwwrww
+rRw.WRRwwrww
+wwwRwwwRwwWw
+
+Winner is BenchmarkB (White)
+Solution=(2,6)(2,7)(2,8)(2,9)(2,10)(2,11)
