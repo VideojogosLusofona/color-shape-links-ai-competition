@@ -1,7 +1,7 @@
 # Standings
 
-Last update: Tue Jul 27 21:30:34 GMT 2021
+Last update: Wed Jul 28 21:30:06 GMT 2021
 
-* [Base track](comps/Base/2021-07-27/standings.md)
-* [Test12x12x6 track](comps/Test12x12x6/2021-07-27/standings.md)
-* [Test18x22x9 track](comps/Test18x22x9/2021-07-27/standings.md)
+* [Base track](comps/Base/2021-07-28/standings.md)
+* [Test12x12x6 track](comps/Test12x12x6/2021-07-28/standings.md)
+* [Test18x22x9 track](comps/Test18x22x9/2021-07-28/standings.md)

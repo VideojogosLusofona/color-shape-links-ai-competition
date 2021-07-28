@@ -1,0 +1,226 @@
+=> Panzer_v1.4 (White) vs BenchmarkB (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+Panzer_v1.4 (White) turn
+7031
+depth = 3
+Panzer_v1.4 (White) placed a Round piece at column 3 after 180ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 4 after 180ms
+.......
+.......
+.......
+.......
+.......
+...wR..
+
+Panzer_v1.4 (White) turn
+6630
+depth = 3
+Panzer_v1.4 (White) placed a Round piece at column 3 after 180ms
+.......
+.......
+.......
+.......
+...w...
+...wR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 4 after 180ms
+.......
+.......
+.......
+.......
+...wR..
+...wR..
+
+Panzer_v1.4 (White) turn
+6523
+depth = 3
+Panzer_v1.4 (White) placed a Round piece at column 3 after 180ms
+.......
+.......
+.......
+...w...
+...wR..
+...wR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 3 after 180ms
+.......
+.......
+...R...
+...w...
+...wR..
+...wR..
+
+Panzer_v1.4 (White) turn
+5907
+depth = 3
+Panzer_v1.4 (White) placed a Round piece at column 2 after 180ms
+.......
+.......
+...R...
+...w...
+...wR..
+..wwR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 4 after 180ms
+.......
+.......
+...R...
+...wR..
+...wR..
+..wwR..
+
+Panzer_v1.4 (White) turn
+6174
+depth = 4
+Panzer_v1.4 (White) placed a Round piece at column 4 after 180ms
+.......
+.......
+...Rw..
+...wR..
+...wR..
+..wwR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 1 after 180ms
+.......
+.......
+...Rw..
+...wR..
+...wR..
+.RwwR..
+
+Panzer_v1.4 (White) turn
+5428
+depth = 3
+Panzer_v1.4 (White) placed a Round piece at column 0 after 180ms
+.......
+.......
+...Rw..
+...wR..
+...wR..
+wRwwR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 1 after 180ms
+.......
+.......
+...Rw..
+...wR..
+.R.wR..
+wRwwR..
+
+Panzer_v1.4 (White) turn
+5336
+depth = 3
+Panzer_v1.4 (White) placed a Round piece at column 0 after 180ms
+.......
+.......
+...Rw..
+...wR..
+wR.wR..
+wRwwR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 1 after 180ms
+.......
+.......
+...Rw..
+.R.wR..
+wR.wR..
+wRwwR..
+
+Panzer_v1.4 (White) turn
+5399
+depth = 3
+Panzer_v1.4 (White) placed a Round piece at column 1 after 180ms
+.......
+.......
+.w.Rw..
+.R.wR..
+wR.wR..
+wRwwR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 0 after 180ms
+.......
+.......
+.w.Rw..
+RR.wR..
+wR.wR..
+wRwwR..
+
+Panzer_v1.4 (White) turn
+5185
+depth = 3
+Panzer_v1.4 (White) placed a Round piece at column 6 after 180ms
+.......
+.......
+.w.Rw..
+RR.wR..
+wR.wR..
+wRwwR.w
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 4 after 180ms
+.......
+....R..
+.w.Rw..
+RR.wR..
+wR.wR..
+wRwwR.w
+
+Panzer_v1.4 (White) turn
+5078
+depth = 3
+Panzer_v1.4 (White) placed a Round piece at column 6 after 180ms
+.......
+....R..
+.w.Rw..
+RR.wR..
+wR.wR.w
+wRwwR.w
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Round piece at column 2 after 180ms
+.......
+....R..
+.w.Rw..
+RR.wR..
+wRrwR.w
+wRwwR.w
+
+Panzer_v1.4 (White) turn
+3518
+depth = 6
+Panzer_v1.4 (White) loses match! Reason: Thinker unable to perform move
+.......
+....R..
+.w.Rw..
+RR.wR..
+wRrwR.w
+wRwwR.w
+
+Winner is BenchmarkB (Red)
