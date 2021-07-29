@@ -1,0 +1,196 @@
+=> MinimaxD2 (White) vs assy_v7 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.......
+.......
+.....w.
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Square piece at column 4 after 0ms
+.......
+.......
+.......
+.......
+.......
+....Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.......
+.....w.
+....Rw.
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Square piece at column 5 after 0ms
+.......
+.......
+.......
+.....R.
+.....w.
+....Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.....w.
+.....R.
+.....w.
+....Rw.
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Square piece at column 4 after 0ms
+.......
+.......
+.....w.
+.....R.
+....Rw.
+....Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 3ms
+.......
+.......
+.....w.
+....wR.
+....Rw.
+....Rw.
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Square piece at column 4 after 0ms
+.......
+.......
+....Rw.
+....wR.
+....Rw.
+....Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 3ms
+.......
+....w..
+....Rw.
+....wR.
+....Rw.
+....Rw.
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Square piece at column 5 after 0ms
+.......
+....wR.
+....Rw.
+....wR.
+....Rw.
+....Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 4 after 3ms
+....w..
+....wR.
+....Rw.
+....wR.
+....Rw.
+....Rw.
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Square piece at column 2 after 160ms
+....w..
+....wR.
+....Rw.
+....wR.
+....Rw.
+..R.Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+....ww.
+....wR.
+....Rw.
+....wR.
+....Rw.
+..R.Rw.
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Square piece at column 2 after 108ms
+....ww.
+....wR.
+....Rw.
+....wR.
+..R.Rw.
+..R.Rw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 2 after 2ms
+....ww.
+....wR.
+....Rw.
+..w.wR.
+..R.Rw.
+..R.Rw.
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Square piece at column 3 after 79ms
+....ww.
+....wR.
+....Rw.
+..w.wR.
+..R.Rw.
+..RRRw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 1 after 1ms
+....ww.
+....wR.
+....Rw.
+..w.wR.
+..R.Rw.
+.wRRRw.
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Round piece at column 1 after 47ms
+....ww.
+....wR.
+....Rw.
+..w.wR.
+.rR.Rw.
+.wRRRw.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 6 after 1ms
+....ww.
+....wR.
+....Rw.
+..w.wR.
+.rR.Rw.
+.wRRRwW
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Round piece at column 3 after 3ms
+....ww.
+....wR.
+....Rw.
+..w.wR.
+.rRrRw.
+.wRRRwW
+
+Winner is assy_v7 (Red)
+Solution=(1,1)(1,2)(1,3)(1,4)

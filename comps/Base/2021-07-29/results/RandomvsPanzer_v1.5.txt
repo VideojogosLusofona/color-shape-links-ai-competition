@@ -1,0 +1,145 @@
+=> Random (White) vs Panzer_v1.5 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+Random (White) turn
+Random (White) placed a Square piece at column 5 after 0ms
+.......
+.......
+.......
+.......
+.......
+.....W.
+
+Panzer_v1.5 (Red) turn
+5533
+depth = 3
+Panzer_v1.5 (Red) placed a Square piece at column 5 after 180ms
+.......
+.......
+.......
+.......
+.....R.
+.....W.
+
+Random (White) turn
+Random (White) placed a Square piece at column 0 after 0ms
+.......
+.......
+.......
+.......
+.....R.
+W....W.
+
+Panzer_v1.5 (Red) turn
+6469
+depth = 3
+Panzer_v1.5 (Red) placed a Square piece at column 5 after 180ms
+.......
+.......
+.......
+.....R.
+.....R.
+W....W.
+
+Random (White) turn
+Random (White) placed a Round piece at column 5 after 0ms
+.......
+.......
+.....w.
+.....R.
+.....R.
+W....W.
+
+Panzer_v1.5 (Red) turn
+6098
+depth = 3
+Panzer_v1.5 (Red) placed a Square piece at column 3 after 180ms
+.......
+.......
+.....w.
+.....R.
+.....R.
+W..R.W.
+
+Random (White) turn
+Random (White) placed a Square piece at column 4 after 0ms
+.......
+.......
+.....w.
+.....R.
+.....R.
+W..RWW.
+
+Panzer_v1.5 (Red) turn
+6139
+depth = 5
+Panzer_v1.5 (Red) placed a Round piece at column 3 after 180ms
+.......
+.......
+.....w.
+.....R.
+...r.R.
+W..RWW.
+
+Random (White) turn
+Random (White) placed a Round piece at column 3 after 0ms
+.......
+.......
+.....w.
+...w.R.
+...r.R.
+W..RWW.
+
+Panzer_v1.5 (Red) turn
+5765
+depth = 4
+Panzer_v1.5 (Red) placed a Round piece at column 0 after 180ms
+.......
+.......
+.....w.
+...w.R.
+r..r.R.
+W..RWW.
+
+Random (White) turn
+Random (White) placed a Round piece at column 4 after 0ms
+.......
+.......
+.....w.
+...w.R.
+r..rwR.
+W..RWW.
+
+Panzer_v1.5 (Red) turn
+5734
+depth = 4
+Panzer_v1.5 (Red) placed a Round piece at column 0 after 180ms
+.......
+.......
+.....w.
+r..w.R.
+r..rwR.
+W..RWW.
+
+Random (White) turn
+Random (White) placed a Square piece at column 6 after 0ms
+.......
+.......
+.....w.
+r..w.R.
+r..rwR.
+W..RWWW
+
+Winner is Panzer_v1.5 (Red)
+Solution=(0,3)(0,4)(0,5)(0,6)

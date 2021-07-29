@@ -1,0 +1,1372 @@
+=> RedVerbenaThinker v3 (White) vs MinimaxD2 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 1 after 280ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.w..........
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 9 after 21ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.w.......R..
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 10 after 283ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+.w.......Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 10 after 23ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..........R.
+.w.......Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 7 after 281ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..........R.
+.w.....w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 10 after 23ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..........R.
+..........R.
+.w.....w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 0 after 280ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..........R.
+..........R.
+ww.....w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 10 after 30ms
+............
+............
+............
+............
+............
+............
+............
+............
+..........R.
+..........R.
+..........R.
+ww.....w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 9 after 283ms
+............
+............
+............
+............
+............
+............
+............
+............
+..........R.
+..........R.
+.........WR.
+ww.....w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 10 after 24ms
+............
+............
+............
+............
+............
+............
+............
+..........R.
+..........R.
+..........R.
+.........WR.
+ww.....w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 0 after 280ms
+............
+............
+............
+............
+............
+............
+............
+..........R.
+..........R.
+..........R.
+w........WR.
+ww.....w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 10 after 25ms
+............
+............
+............
+............
+............
+............
+..........R.
+..........R.
+..........R.
+..........R.
+w........WR.
+ww.....w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 10 after 281ms
+............
+............
+............
+............
+............
+..........w.
+..........R.
+..........R.
+..........R.
+..........R.
+w........WR.
+ww.....w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 10 after 24ms
+............
+............
+............
+............
+..........R.
+..........w.
+..........R.
+..........R.
+..........R.
+..........R.
+w........WR.
+ww.....w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 0 after 282ms
+............
+............
+............
+............
+..........R.
+..........w.
+..........R.
+..........R.
+..........R.
+w.........R.
+w........WR.
+ww.....w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 10 after 26ms
+............
+............
+............
+..........R.
+..........R.
+..........w.
+..........R.
+..........R.
+..........R.
+w.........R.
+w........WR.
+ww.....w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 3 after 283ms
+............
+............
+............
+..........R.
+..........R.
+..........w.
+..........R.
+..........R.
+..........R.
+w.........R.
+w........WR.
+ww.W...w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 10 after 25ms
+............
+............
+..........R.
+..........R.
+..........R.
+..........w.
+..........R.
+..........R.
+..........R.
+w.........R.
+w........WR.
+ww.W...w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 2 after 282ms
+............
+............
+..........R.
+..........R.
+..........R.
+..........w.
+..........R.
+..........R.
+..........R.
+w.........R.
+w........WR.
+wwwW...w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 10 after 27ms
+............
+..........R.
+..........R.
+..........R.
+..........R.
+..........w.
+..........R.
+..........R.
+..........R.
+w.........R.
+w........WR.
+wwwW...w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 4 after 282ms
+............
+..........R.
+..........R.
+..........R.
+..........R.
+..........w.
+..........R.
+..........R.
+..........R.
+w.........R.
+w........WR.
+wwwWW..w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 5 after 26ms
+............
+..........R.
+..........R.
+..........R.
+..........R.
+..........w.
+..........R.
+..........R.
+..........R.
+w.........R.
+w........WR.
+wwwWWR.w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 0 after 280ms
+............
+..........R.
+..........R.
+..........R.
+..........R.
+..........w.
+..........R.
+..........R.
+w.........R.
+w.........R.
+w........WR.
+wwwWWR.w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 9 after 35ms
+............
+..........R.
+..........R.
+..........R.
+..........R.
+..........w.
+..........R.
+..........R.
+w.........R.
+w........RR.
+w........WR.
+wwwWWR.w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 5 after 283ms
+............
+..........R.
+..........R.
+..........R.
+..........R.
+..........w.
+..........R.
+..........R.
+w.........R.
+w........RR.
+w....w...WR.
+wwwWWR.w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 9 after 27ms
+............
+..........R.
+..........R.
+..........R.
+..........R.
+..........w.
+..........R.
+..........R.
+w........RR.
+w........RR.
+w....w...WR.
+wwwWWR.w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 9 after 280ms
+............
+..........R.
+..........R.
+..........R.
+..........R.
+..........w.
+..........R.
+.........wR.
+w........RR.
+w........RR.
+w....w...WR.
+wwwWWR.w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 9 after 28ms
+............
+..........R.
+..........R.
+..........R.
+..........R.
+..........w.
+.........RR.
+.........wR.
+w........RR.
+w........RR.
+w....w...WR.
+wwwWWR.w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 1 after 282ms
+............
+..........R.
+..........R.
+..........R.
+..........R.
+..........w.
+.........RR.
+.........wR.
+w........RR.
+w........RR.
+wW...w...WR.
+wwwWWR.w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 9 after 28ms
+............
+..........R.
+..........R.
+..........R.
+..........R.
+.........Rw.
+.........RR.
+.........wR.
+w........RR.
+w........RR.
+wW...w...WR.
+wwwWWR.w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 3 after 280ms
+............
+..........R.
+..........R.
+..........R.
+..........R.
+.........Rw.
+.........RR.
+.........wR.
+w........RR.
+w........RR.
+wW.w.w...WR.
+wwwWWR.w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 9 after 37ms
+............
+..........R.
+..........R.
+..........R.
+.........RR.
+.........Rw.
+.........RR.
+.........wR.
+w........RR.
+w........RR.
+wW.w.w...WR.
+wwwWWR.w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 1 after 283ms
+............
+..........R.
+..........R.
+..........R.
+.........RR.
+.........Rw.
+.........RR.
+.........wR.
+w........RR.
+ww.......RR.
+wW.w.w...WR.
+wwwWWR.w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 9 after 29ms
+............
+..........R.
+..........R.
+.........RR.
+.........RR.
+.........Rw.
+.........RR.
+.........wR.
+w........RR.
+ww.......RR.
+wW.w.w...WR.
+wwwWWR.w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 0 after 282ms
+............
+..........R.
+..........R.
+.........RR.
+.........RR.
+.........Rw.
+.........RR.
+w........wR.
+w........RR.
+ww.......RR.
+wW.w.w...WR.
+wwwWWR.w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 0 after 27ms
+............
+..........R.
+..........R.
+.........RR.
+.........RR.
+.........Rw.
+R........RR.
+w........wR.
+w........RR.
+ww.......RR.
+wW.w.w...WR.
+wwwWWR.w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 3 after 281ms
+............
+..........R.
+..........R.
+.........RR.
+.........RR.
+.........Rw.
+R........RR.
+w........wR.
+w........RR.
+ww.W.....RR.
+wW.w.w...WR.
+wwwWWR.w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 9 after 29ms
+............
+..........R.
+.........RR.
+.........RR.
+.........RR.
+.........Rw.
+R........RR.
+w........wR.
+w........RR.
+ww.W.....RR.
+wW.w.w...WR.
+wwwWWR.w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 9 after 282ms
+............
+.........wR.
+.........RR.
+.........RR.
+.........RR.
+.........Rw.
+R........RR.
+w........wR.
+w........RR.
+ww.W.....RR.
+wW.w.w...WR.
+wwwWWR.w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 3 after 30ms
+............
+.........wR.
+.........RR.
+.........RR.
+.........RR.
+.........Rw.
+R........RR.
+w........wR.
+w..R.....RR.
+ww.W.....RR.
+wW.w.w...WR.
+wwwWWR.w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 2 after 284ms
+............
+.........wR.
+.........RR.
+.........RR.
+.........RR.
+.........Rw.
+R........RR.
+w........wR.
+w..R.....RR.
+ww.W.....RR.
+wWWw.w...WR.
+wwwWWR.w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 4 after 29ms
+............
+.........wR.
+.........RR.
+.........RR.
+.........RR.
+.........Rw.
+R........RR.
+w........wR.
+w..R.....RR.
+ww.W.....RR.
+wWWwRw...WR.
+wwwWWR.w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 3 after 283ms
+............
+.........wR.
+.........RR.
+.........RR.
+.........RR.
+.........Rw.
+R........RR.
+w..w.....wR.
+w..R.....RR.
+ww.W.....RR.
+wWWwRw...WR.
+wwwWWR.w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 3 after 31ms
+............
+.........wR.
+.........RR.
+.........RR.
+.........RR.
+.........Rw.
+R..R.....RR.
+w..w.....wR.
+w..R.....RR.
+ww.W.....RR.
+wWWwRw...WR.
+wwwWWR.w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 1 after 281ms
+............
+.........wR.
+.........RR.
+.........RR.
+.........RR.
+.........Rw.
+R..R.....RR.
+w..w.....wR.
+wW.R.....RR.
+ww.W.....RR.
+wWWwRw...WR.
+wwwWWR.w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 3 after 31ms
+............
+.........wR.
+.........RR.
+.........RR.
+.........RR.
+...R.....Rw.
+R..R.....RR.
+w..w.....wR.
+wW.R.....RR.
+ww.W.....RR.
+wWWwRw...WR.
+wwwWWR.w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 1 after 280ms
+............
+.........wR.
+.........RR.
+.........RR.
+.........RR.
+...R.....Rw.
+R..R.....RR.
+ww.w.....wR.
+wW.R.....RR.
+ww.W.....RR.
+wWWwRw...WR.
+wwwWWR.w.Rw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 1 after 38ms
+............
+.........wR.
+.........RR.
+.........RR.
+.........RR.
+...R.....Rw.
+RR.R.....RR.
+ww.w.....wR.
+wW.R.....RR.
+ww.W.....RR.
+wWWwRw...WR.
+wwwWWR.w.Rw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 8 after 281ms
+............
+.........wR.
+.........RR.
+.........RR.
+.........RR.
+...R.....Rw.
+RR.R.....RR.
+ww.w.....wR.
+wW.R.....RR.
+ww.W.....RR.
+wWWwRw...WR.
+wwwWWR.wwRw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 3 after 31ms
+............
+.........wR.
+.........RR.
+.........RR.
+...R.....RR.
+...R.....Rw.
+RR.R.....RR.
+ww.w.....wR.
+wW.R.....RR.
+ww.W.....RR.
+wWWwRw...WR.
+wwwWWR.wwRw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 3 after 283ms
+............
+.........wR.
+.........RR.
+...w.....RR.
+...R.....RR.
+...R.....Rw.
+RR.R.....RR.
+ww.w.....wR.
+wW.R.....RR.
+ww.W.....RR.
+wWWwRw...WR.
+wwwWWR.wwRw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 3 after 31ms
+............
+.........wR.
+...R.....RR.
+...w.....RR.
+...R.....RR.
+...R.....Rw.
+RR.R.....RR.
+ww.w.....wR.
+wW.R.....RR.
+ww.W.....RR.
+wWWwRw...WR.
+wwwWWR.wwRw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 1 after 282ms
+............
+.........wR.
+...R.....RR.
+...w.....RR.
+...R.....RR.
+.w.R.....Rw.
+RR.R.....RR.
+ww.w.....wR.
+wW.R.....RR.
+ww.W.....RR.
+wWWwRw...WR.
+wwwWWR.wwRw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 4 after 32ms
+............
+.........wR.
+...R.....RR.
+...w.....RR.
+...R.....RR.
+.w.R.....Rw.
+RR.R.....RR.
+ww.w.....wR.
+wW.R.....RR.
+ww.WR....RR.
+wWWwRw...WR.
+wwwWWR.wwRw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 7 after 282ms
+............
+.........wR.
+...R.....RR.
+...w.....RR.
+...R.....RR.
+.w.R.....Rw.
+RR.R.....RR.
+ww.w.....wR.
+wW.R.....RR.
+ww.WR....RR.
+wWWwRw.w.WR.
+wwwWWR.wwRw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 4 after 41ms
+............
+.........wR.
+...R.....RR.
+...w.....RR.
+...R.....RR.
+.w.R.....Rw.
+RR.R.....RR.
+ww.w.....wR.
+wW.RR....RR.
+ww.WR....RR.
+wWWwRw.w.WR.
+wwwWWR.wwRw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 7 after 281ms
+............
+.........wR.
+...R.....RR.
+...w.....RR.
+...R.....RR.
+.w.R.....Rw.
+RR.R.....RR.
+ww.w.....wR.
+wW.RR....RR.
+ww.WR..w.RR.
+wWWwRw.w.WR.
+wwwWWR.wwRw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 4 after 33ms
+............
+.........wR.
+...R.....RR.
+...w.....RR.
+...R.....RR.
+.w.R.....Rw.
+RR.R.....RR.
+ww.wR....wR.
+wW.RR....RR.
+ww.WR..w.RR.
+wWWwRw.w.WR.
+wwwWWR.wwRw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 4 after 284ms
+............
+.........wR.
+...R.....RR.
+...w.....RR.
+...R.....RR.
+.w.R.....Rw.
+RR.Rw....RR.
+ww.wR....wR.
+wW.RR....RR.
+ww.WR..w.RR.
+wWWwRw.w.WR.
+wwwWWR.wwRw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 4 after 33ms
+............
+.........wR.
+...R.....RR.
+...w.....RR.
+...R.....RR.
+.w.RR....Rw.
+RR.Rw....RR.
+ww.wR....wR.
+wW.RR....RR.
+ww.WR..w.RR.
+wWWwRw.w.WR.
+wwwWWR.wwRw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 5 after 284ms
+............
+.........wR.
+...R.....RR.
+...w.....RR.
+...R.....RR.
+.w.RR....Rw.
+RR.Rw....RR.
+ww.wR....wR.
+wW.RR....RR.
+ww.WRw.w.RR.
+wWWwRw.w.WR.
+wwwWWR.wwRw.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 4 after 34ms
+............
+.........wR.
+...R.....RR.
+...w.....RR.
+...RR....RR.
+.w.RR....Rw.
+RR.Rw....RR.
+ww.wR....wR.
+wW.RR....RR.
+ww.WRw.w.RR.
+wWWwRw.w.WR.
+wwwWWR.wwRw.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 11 after 281ms
+............
+.........wR.
+...R.....RR.
+...w.....RR.
+...RR....RR.
+.w.RR....Rw.
+RR.Rw....RR.
+ww.wR....wR.
+wW.RR....RR.
+ww.WRw.w.RR.
+wWWwRw.w.WR.
+wwwWWR.wwRwW
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 4 after 42ms
+............
+.........wR.
+...R.....RR.
+...wR....RR.
+...RR....RR.
+.w.RR....Rw.
+RR.Rw....RR.
+ww.wR....wR.
+wW.RR....RR.
+ww.WRw.w.RR.
+wWWwRw.w.WR.
+wwwWWR.wwRwW
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 3 after 282ms
+............
+...w.....wR.
+...R.....RR.
+...wR....RR.
+...RR....RR.
+.w.RR....Rw.
+RR.Rw....RR.
+ww.wR....wR.
+wW.RR....RR.
+ww.WRw.w.RR.
+wWWwRw.w.WR.
+wwwWWR.wwRwW
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 4 after 34ms
+............
+...w.....wR.
+...RR....RR.
+...wR....RR.
+...RR....RR.
+.w.RR....Rw.
+RR.Rw....RR.
+ww.wR....wR.
+wW.RR....RR.
+ww.WRw.w.RR.
+wWWwRw.w.WR.
+wwwWWR.wwRwW
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 4 after 280ms
+............
+...ww....wR.
+...RR....RR.
+...wR....RR.
+...RR....RR.
+.w.RR....Rw.
+RR.Rw....RR.
+ww.wR....wR.
+wW.RR....RR.
+ww.WRw.w.RR.
+wWWwRw.w.WR.
+wwwWWR.wwRwW
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 7 after 41ms
+............
+...ww....wR.
+...RR....RR.
+...wR....RR.
+...RR....RR.
+.w.RR....Rw.
+RR.Rw....RR.
+ww.wR....wR.
+wW.RR..R.RR.
+ww.WRw.w.RR.
+wWWwRw.w.WR.
+wwwWWR.wwRwW
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 8 after 284ms
+............
+...ww....wR.
+...RR....RR.
+...wR....RR.
+...RR....RR.
+.w.RR....Rw.
+RR.Rw....RR.
+ww.wR....wR.
+wW.RR..R.RR.
+ww.WRw.w.RR.
+wWWwRw.wwWR.
+wwwWWR.wwRwW
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 7 after 33ms
+............
+...ww....wR.
+...RR....RR.
+...wR....RR.
+...RR....RR.
+.w.RR....Rw.
+RR.Rw....RR.
+ww.wR..R.wR.
+wW.RR..R.RR.
+ww.WRw.w.RR.
+wWWwRw.wwWR.
+wwwWWR.wwRwW
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 1 after 281ms
+............
+...ww....wR.
+...RR....RR.
+...wR....RR.
+.W.RR....RR.
+.w.RR....Rw.
+RR.Rw....RR.
+ww.wR..R.wR.
+wW.RR..R.RR.
+ww.WRw.w.RR.
+wWWwRw.wwWR.
+wwwWWR.wwRwW
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 7 after 41ms
+............
+...ww....wR.
+...RR....RR.
+...wR....RR.
+.W.RR....RR.
+.w.RR....Rw.
+RR.Rw..R.RR.
+ww.wR..R.wR.
+wW.RR..R.RR.
+ww.WRw.w.RR.
+wWWwRw.wwWR.
+wwwWWR.wwRwW
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 4 after 282ms
+....W.......
+...ww....wR.
+...RR....RR.
+...wR....RR.
+.W.RR....RR.
+.w.RR....Rw.
+RR.Rw..R.RR.
+ww.wR..R.wR.
+wW.RR..R.RR.
+ww.WRw.w.RR.
+wWWwRw.wwWR.
+wwwWWR.wwRwW
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 7 after 29ms
+....W.......
+...ww....wR.
+...RR....RR.
+...wR....RR.
+.W.RR....RR.
+.w.RR..R.Rw.
+RR.Rw..R.RR.
+ww.wR..R.wR.
+wW.RR..R.RR.
+ww.WRw.w.RR.
+wWWwRw.wwWR.
+wwwWWR.wwRwW
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 2 after 281ms
+....W.......
+...ww....wR.
+...RR....RR.
+...wR....RR.
+.W.RR....RR.
+.w.RR..R.Rw.
+RR.Rw..R.RR.
+ww.wR..R.wR.
+wW.RR..R.RR.
+wwwWRw.w.RR.
+wWWwRw.wwWR.
+wwwWWR.wwRwW
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Round piece at column 7 after 23ms
+....W.......
+...ww....wR.
+...RR....RR.
+...wR....RR.
+.W.RR..r.RR.
+.w.RR..R.Rw.
+RR.Rw..R.RR.
+ww.wR..R.wR.
+wW.RR..R.RR.
+wwwWRw.w.RR.
+wWWwRw.wwWR.
+wwwWWR.wwRwW
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 7 after 281ms
+....W.......
+...ww....wR.
+...RR....RR.
+...wR..W.RR.
+.W.RR..r.RR.
+.w.RR..R.Rw.
+RR.Rw..R.RR.
+ww.wR..R.wR.
+wW.RR..R.RR.
+wwwWRw.w.RR.
+wWWwRw.wwWR.
+wwwWWR.wwRwW
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Round piece at column 11 after 16ms
+....W.......
+...ww....wR.
+...RR....RR.
+...wR..W.RR.
+.W.RR..r.RR.
+.w.RR..R.Rw.
+RR.Rw..R.RR.
+ww.wR..R.wR.
+wW.RR..R.RR.
+wwwWRw.w.RR.
+wWWwRw.wwWRr
+wwwWWR.wwRwW
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 9 after 280ms
+....W....W..
+...ww....wR.
+...RR....RR.
+...wR..W.RR.
+.W.RR..r.RR.
+.w.RR..R.Rw.
+RR.Rw..R.RR.
+ww.wR..R.wR.
+wW.RR..R.RR.
+wwwWRw.w.RR.
+wWWwRw.wwWRr
+wwwWWR.wwRwW
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Round piece at column 11 after 19ms
+....W....W..
+...ww....wR.
+...RR....RR.
+...wR..W.RR.
+.W.RR..r.RR.
+.w.RR..R.Rw.
+RR.Rw..R.RR.
+ww.wR..R.wR.
+wW.RR..R.RR.
+wwwWRw.w.RRr
+wWWwRw.wwWRr
+wwwWWR.wwRwW
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 10 after 282ms
+....W....Ww.
+...ww....wR.
+...RR....RR.
+...wR..W.RR.
+.W.RR..r.RR.
+.w.RR..R.Rw.
+RR.Rw..R.RR.
+ww.wR..R.wR.
+wW.RR..R.RR.
+wwwWRw.w.RRr
+wWWwRw.wwWRr
+wwwWWR.wwRwW
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Round piece at column 11 after 12ms
+....W....Ww.
+...ww....wR.
+...RR....RR.
+...wR..W.RR.
+.W.RR..r.RR.
+.w.RR..R.Rw.
+RR.Rw..R.RR.
+ww.wR..R.wR.
+wW.RR..R.RRr
+wwwWRw.w.RRr
+wWWwRw.wwWRr
+wwwWWR.wwRwW
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 8 after 280ms
+....W....Ww.
+...ww....wR.
+...RR....RR.
+...wR..W.RR.
+.W.RR..r.RR.
+.w.RR..R.Rw.
+RR.Rw..R.RR.
+ww.wR..R.wR.
+wW.RR..R.RRr
+wwwWRw.wwRRr
+wWWwRw.wwWRr
+wwwWWR.wwRwW
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Round piece at column 7 after 20ms
+....W....Ww.
+...ww....wR.
+...RR..r.RR.
+...wR..W.RR.
+.W.RR..r.RR.
+.w.RR..R.Rw.
+RR.Rw..R.RR.
+ww.wR..R.wR.
+wW.RR..R.RRr
+wwwWRw.wwRRr
+wWWwRw.wwWRr
+wwwWWR.wwRwW
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 5 after 281ms
+....W....Ww.
+...ww....wR.
+...RR..r.RR.
+...wR..W.RR.
+.W.RR..r.RR.
+.w.RR..R.Rw.
+RR.Rw..R.RR.
+ww.wR..R.wR.
+wW.RRw.R.RRr
+wwwWRw.wwRRr
+wWWwRw.wwWRr
+wwwWWR.wwRwW
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Round piece at column 11 after 12ms
+....W....Ww.
+...ww....wR.
+...RR..r.RR.
+...wR..W.RR.
+.W.RR..r.RR.
+.w.RR..R.Rw.
+RR.Rw..R.RR.
+ww.wR..R.wRr
+wW.RRw.R.RRr
+wwwWRw.wwRRr
+wWWwRw.wwWRr
+wwwWWR.wwRwW
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 0 after 280ms
+....W....Ww.
+...ww....wR.
+...RR..r.RR.
+...wR..W.RR.
+.W.RR..r.RR.
+Ww.RR..R.Rw.
+RR.Rw..R.RR.
+ww.wR..R.wRr
+wW.RRw.R.RRr
+wwwWRw.wwRRr
+wWWwRw.wwWRr
+wwwWWR.wwRwW
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Round piece at column 8 after 11ms
+....W....Ww.
+...ww....wR.
+...RR..r.RR.
+...wR..W.RR.
+.W.RR..r.RR.
+Ww.RR..R.Rw.
+RR.Rw..R.RR.
+ww.wR..R.wRr
+wW.RRw.RrRRr
+wwwWRw.wwRRr
+wWWwRw.wwWRr
+wwwWWR.wwRwW
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 11 after 281ms
+....W....Ww.
+...ww....wR.
+...RR..r.RR.
+...wR..W.RR.
+.W.RR..r.RR.
+Ww.RR..R.Rw.
+RR.Rw..R.RRw
+ww.wR..R.wRr
+wW.RRw.RrRRr
+wwwWRw.wwRRr
+wWWwRw.wwWRr
+wwwWWR.wwRwW
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Round piece at column 11 after 10ms
+....W....Ww.
+...ww....wR.
+...RR..r.RR.
+...wR..W.RR.
+.W.RR..r.RR.
+Ww.RR..R.Rwr
+RR.Rw..R.RRw
+ww.wR..R.wRr
+wW.RRw.RrRRr
+wwwWRw.wwRRr
+wWWwRw.wwWRr
+wwwWWR.wwRwW
+
+Winner is RedVerbenaThinker v3 (White)
+Solution=(1,11)(2,11)(3,11)(4,11)(5,11)(6,11)
