@@ -1,0 +1,253 @@
+=> eVolutionV6 (White) vs BenchmarkB (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+eVolutionV6 (White) turn
+hashtable entries: 6941
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 3 after 167ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 4 after 180ms
+.......
+.......
+.......
+.......
+.......
+...wR..
+
+eVolutionV6 (White) turn
+hashtable entries: 6800
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 0 after 167ms
+.......
+.......
+.......
+.......
+.......
+w..wR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 1 after 180ms
+.......
+.......
+.......
+.......
+.......
+wR.wR..
+
+eVolutionV6 (White) turn
+hashtable entries: 6326
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 6 after 167ms
+.......
+.......
+.......
+.......
+.......
+wR.wR.w
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 4 after 180ms
+.......
+.......
+.......
+.......
+....R..
+wR.wR.w
+
+eVolutionV6 (White) turn
+hashtable entries: 5714
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 0 after 167ms
+.......
+.......
+.......
+.......
+w...R..
+wR.wR.w
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 4 after 180ms
+.......
+.......
+.......
+....R..
+w...R..
+wR.wR.w
+
+eVolutionV6 (White) turn
+Prevent Loss
+eVolutionV6 (White) placed a Round piece at column 4 after 0ms
+.......
+.......
+....w..
+....R..
+w...R..
+wR.wR.w
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 1 after 180ms
+.......
+.......
+....w..
+....R..
+wR..R..
+wR.wR.w
+
+eVolutionV6 (White) turn
+hashtable entries: 5838
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 6 after 167ms
+.......
+.......
+....w..
+....R..
+wR..R.w
+wR.wR.w
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 1 after 180ms
+.......
+.......
+....w..
+.R..R..
+wR..R.w
+wR.wR.w
+
+eVolutionV6 (White) turn
+Prevent Loss
+eVolutionV6 (White) placed a Round piece at column 1 after 0ms
+.......
+.......
+.w..w..
+.R..R..
+wR..R.w
+wR.wR.w
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 6 after 180ms
+.......
+.......
+.w..w..
+.R..R.R
+wR..R.w
+wR.wR.w
+
+eVolutionV6 (White) turn
+hashtable entries: 5089
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 6 after 167ms
+.......
+.......
+.w..w.w
+.R..R.R
+wR..R.w
+wR.wR.w
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 0 after 180ms
+.......
+.......
+.w..w.w
+RR..R.R
+wR..R.w
+wR.wR.w
+
+eVolutionV6 (White) turn
+hashtable entries: 5112
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 6 after 167ms
+.......
+......w
+.w..w.w
+RR..R.R
+wR..R.w
+wR.wR.w
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 3 after 180ms
+.......
+......w
+.w..w.w
+RR..R.R
+wR.RR.w
+wR.wR.w
+
+eVolutionV6 (White) turn
+hashtable entries: 5572
+depth: 3
+eVolutionV6 (White) placed a Square piece at column 0 after 167ms
+.......
+......w
+Ww..w.w
+RR..R.R
+wR.RR.w
+wR.wR.w
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 2 after 180ms
+.......
+......w
+Ww..w.w
+RR..R.R
+wR.RR.w
+wRRwR.w
+
+eVolutionV6 (White) turn
+Prevent Loss
+eVolutionV6 (White) placed a Round piece at column 2 after 0ms
+.......
+......w
+Ww..w.w
+RR..R.R
+wRwRR.w
+wRRwR.w
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 3 after 180ms
+.......
+......w
+Ww..w.w
+RR.RR.R
+wRwRR.w
+wRRwR.w
+
+eVolutionV6 (White) turn
+hashtable entries: 2539
+depth: 5
+eVolutionV6 (White) placed a Square piece at column 6 after 167ms
+......W
+......w
+Ww..w.w
+RR.RR.R
+wRwRR.w
+wRRwR.w
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Round piece at column 2 after 180ms
+......W
+......w
+Ww..w.w
+RRrRR.R
+wRwRR.w
+wRRwR.w
+
+Winner is BenchmarkB (Red)
+Solution=(2,0)(2,1)(2,2)(2,3)

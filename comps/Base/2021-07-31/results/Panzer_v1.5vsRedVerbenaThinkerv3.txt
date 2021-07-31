@@ -1,0 +1,286 @@
+=> Panzer_v1.5 (White) vs RedVerbenaThinker v3 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+Panzer_v1.5 (White) turn
+7031
+depth = 3
+Panzer_v1.5 (White) placed a Round piece at column 3 after 180ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+RedVerbenaThinker v3 (Red) turn
+RedVerbenaThinker v3 (Red) placed a Square piece at column 4 after 180ms
+.......
+.......
+.......
+.......
+.......
+...wR..
+
+Panzer_v1.5 (White) turn
+6374
+depth = 3
+Panzer_v1.5 (White) placed a Round piece at column 3 after 180ms
+.......
+.......
+.......
+.......
+...w...
+...wR..
+
+RedVerbenaThinker v3 (Red) turn
+RedVerbenaThinker v3 (Red) placed a Square piece at column 3 after 180ms
+.......
+.......
+.......
+...R...
+...w...
+...wR..
+
+Panzer_v1.5 (White) turn
+6086
+depth = 3
+Panzer_v1.5 (White) placed a Round piece at column 4 after 180ms
+.......
+.......
+.......
+...R...
+...ww..
+...wR..
+
+RedVerbenaThinker v3 (Red) turn
+RedVerbenaThinker v3 (Red) placed a Square piece at column 3 after 180ms
+.......
+.......
+...R...
+...R...
+...ww..
+...wR..
+
+Panzer_v1.5 (White) turn
+6020
+depth = 3
+Panzer_v1.5 (White) placed a Round piece at column 6 after 180ms
+.......
+.......
+...R...
+...R...
+...ww..
+...wR.w
+
+RedVerbenaThinker v3 (Red) turn
+RedVerbenaThinker v3 (Red) placed a Square piece at column 3 after 180ms
+.......
+...R...
+...R...
+...R...
+...ww..
+...wR.w
+
+Panzer_v1.5 (White) turn
+6258
+depth = 3
+Panzer_v1.5 (White) placed a Round piece at column 3 after 180ms
+...w...
+...R...
+...R...
+...R...
+...ww..
+...wR.w
+
+RedVerbenaThinker v3 (Red) turn
+RedVerbenaThinker v3 (Red) placed a Square piece at column 2 after 180ms
+...w...
+...R...
+...R...
+...R...
+...ww..
+..RwR.w
+
+Panzer_v1.5 (White) turn
+5451
+depth = 3
+Panzer_v1.5 (White) placed a Round piece at column 2 after 180ms
+...w...
+...R...
+...R...
+...R...
+..www..
+..RwR.w
+
+RedVerbenaThinker v3 (Red) turn
+RedVerbenaThinker v3 (Red) placed a Square piece at column 4 after 180ms
+...w...
+...R...
+...R...
+...RR..
+..www..
+..RwR.w
+
+Panzer_v1.5 (White) turn
+5438
+depth = 3
+Panzer_v1.5 (White) placed a Round piece at column 6 after 180ms
+...w...
+...R...
+...R...
+...RR..
+..www.w
+..RwR.w
+
+RedVerbenaThinker v3 (Red) turn
+RedVerbenaThinker v3 (Red) placed a Square piece at column 2 after 180ms
+...w...
+...R...
+...R...
+..RRR..
+..www.w
+..RwR.w
+
+Panzer_v1.5 (White) turn
+5057
+depth = 3
+Panzer_v1.5 (White) placed a Round piece at column 6 after 180ms
+...w...
+...R...
+...R...
+..RRR.w
+..www.w
+..RwR.w
+
+RedVerbenaThinker v3 (Red) turn
+RedVerbenaThinker v3 (Red) placed a Square piece at column 6 after 180ms
+...w...
+...R...
+...R..R
+..RRR.w
+..www.w
+..RwR.w
+
+Panzer_v1.5 (White) turn
+5139
+depth = 3
+Panzer_v1.5 (White) placed a Round piece at column 2 after 180ms
+...w...
+...R...
+..wR..R
+..RRR.w
+..www.w
+..RwR.w
+
+RedVerbenaThinker v3 (Red) turn
+RedVerbenaThinker v3 (Red) placed a Square piece at column 2 after 180ms
+...w...
+..RR...
+..wR..R
+..RRR.w
+..www.w
+..RwR.w
+
+Panzer_v1.5 (White) turn
+4597
+depth = 3
+Panzer_v1.5 (White) placed a Square piece at column 2 after 180ms
+..Ww...
+..RR...
+..wR..R
+..RRR.w
+..www.w
+..RwR.w
+
+RedVerbenaThinker v3 (Red) turn
+RedVerbenaThinker v3 (Red) placed a Round piece at column 4 after 180ms
+..Ww...
+..RR...
+..wRr.R
+..RRR.w
+..www.w
+..RwR.w
+
+Panzer_v1.5 (White) turn
+4505
+depth = 4
+Panzer_v1.5 (White) placed a Square piece at column 4 after 180ms
+..Ww...
+..RRW..
+..wRr.R
+..RRR.w
+..www.w
+..RwR.w
+
+RedVerbenaThinker v3 (Red) turn
+RedVerbenaThinker v3 (Red) placed a Round piece at column 0 after 180ms
+..Ww...
+..RRW..
+..wRr.R
+..RRR.w
+..www.w
+r.RwR.w
+
+Panzer_v1.5 (White) turn
+3927
+depth = 4
+Panzer_v1.5 (White) placed a Square piece at column 0 after 180ms
+..Ww...
+..RRW..
+..wRr.R
+..RRR.w
+W.www.w
+r.RwR.w
+
+RedVerbenaThinker v3 (Red) turn
+RedVerbenaThinker v3 (Red) placed a Round piece at column 4 after 180ms
+..Wwr..
+..RRW..
+..wRr.R
+..RRR.w
+W.www.w
+r.RwR.w
+
+Panzer_v1.5 (White) turn
+3634
+depth = 5
+Panzer_v1.5 (White) placed a Square piece at column 6 after 180ms
+..Wwr..
+..RRW.W
+..wRr.R
+..RRR.w
+W.www.w
+r.RwR.w
+
+RedVerbenaThinker v3 (Red) turn
+RedVerbenaThinker v3 (Red) placed a Round piece at column 6 after 180ms
+..Wwr.r
+..RRW.W
+..wRr.R
+..RRR.w
+W.www.w
+r.RwR.w
+
+Panzer_v1.5 (White) turn
+990
+depth = 13
+Panzer_v1.5 (White) loses match! Reason: Thinker unable to perform move
+..Wwr.r
+..RRW.W
+..wRr.R
+..RRR.w
+W.www.w
+r.RwR.w
+
+Winner is RedVerbenaThinker v3 (Red)
