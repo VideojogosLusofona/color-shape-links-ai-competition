@@ -1,0 +1,246 @@
+=> eVolutionV6 (White) vs KoenAI_v1 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+eVolutionV6 (White) turn
+hashtable entries: 7483
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 3 after 167ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+KoenAI_v1 (Red) turn
+Win%: 44.08946%
+KoenAI_v1 (Red) placed a Square piece at column 0 after 181ms
+.......
+.......
+.......
+.......
+.......
+R..w...
+
+eVolutionV6 (White) turn
+hashtable entries: 6119
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 6 after 167ms
+.......
+.......
+.......
+.......
+.......
+R..w..w
+
+KoenAI_v1 (Red) turn
+Win%: 45.55874%
+KoenAI_v1 (Red) placed a Square piece at column 5 after 180ms
+.......
+.......
+.......
+.......
+.......
+R..w.Rw
+
+eVolutionV6 (White) turn
+hashtable entries: 6202
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 0 after 167ms
+.......
+.......
+.......
+.......
+w......
+R..w.Rw
+
+KoenAI_v1 (Red) turn
+Win%: 51.578945%
+KoenAI_v1 (Red) placed a Square piece at column 3 after 180ms
+.......
+.......
+.......
+.......
+w..R...
+R..w.Rw
+
+eVolutionV6 (White) turn
+hashtable entries: 5986
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 3 after 167ms
+.......
+.......
+.......
+...w...
+w..R...
+R..w.Rw
+
+KoenAI_v1 (Red) turn
+Win%: 56.857143%
+KoenAI_v1 (Red) placed a Square piece at column 5 after 180ms
+.......
+.......
+.......
+...w...
+w..R.R.
+R..w.Rw
+
+eVolutionV6 (White) turn
+hashtable entries: 5428
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 6 after 167ms
+.......
+.......
+.......
+...w...
+w..R.Rw
+R..w.Rw
+
+KoenAI_v1 (Red) turn
+Win%: 50%
+KoenAI_v1 (Red) placed a Square piece at column 6 after 180ms
+.......
+.......
+.......
+...w..R
+w..R.Rw
+R..w.Rw
+
+eVolutionV6 (White) turn
+hashtable entries: 5454
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 6 after 167ms
+.......
+.......
+......w
+...w..R
+w..R.Rw
+R..w.Rw
+
+KoenAI_v1 (Red) turn
+Win%: 60.062893%
+KoenAI_v1 (Red) placed a Square piece at column 5 after 180ms
+.......
+.......
+......w
+...w.RR
+w..R.Rw
+R..w.Rw
+
+eVolutionV6 (White) turn
+Prevent Loss
+eVolutionV6 (White) placed a Round piece at column 5 after 0ms
+.......
+.......
+.....ww
+...w.RR
+w..R.Rw
+R..w.Rw
+
+KoenAI_v1 (Red) turn
+Win%: 56.521736%
+KoenAI_v1 (Red) placed a Round piece at column 5 after 184ms
+.......
+.....r.
+.....ww
+...w.RR
+w..R.Rw
+R..w.Rw
+
+eVolutionV6 (White) turn
+hashtable entries: 5263
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 6 after 167ms
+.......
+.....rw
+.....ww
+...w.RR
+w..R.Rw
+R..w.Rw
+
+KoenAI_v1 (Red) turn
+Win%: 65.97938%
+KoenAI_v1 (Red) placed a Square piece at column 3 after 180ms
+.......
+.....rw
+...R.ww
+...w.RR
+w..R.Rw
+R..w.Rw
+
+eVolutionV6 (White) turn
+hashtable entries: 4790
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 6 after 171ms
+......w
+.....rw
+...R.ww
+...w.RR
+w..R.Rw
+R..w.Rw
+
+KoenAI_v1 (Red) turn
+Win%: 75.59055%
+KoenAI_v1 (Red) placed a Square piece at column 0 after 180ms
+......w
+.....rw
+...R.ww
+R..w.RR
+w..R.Rw
+R..w.Rw
+
+eVolutionV6 (White) turn
+hashtable entries: 5186
+depth: 3
+eVolutionV6 (White) placed a Square piece at column 0 after 167ms
+......w
+.....rw
+W..R.ww
+R..w.RR
+w..R.Rw
+R..w.Rw
+
+KoenAI_v1 (Red) turn
+Win%: 87.41611%
+KoenAI_v1 (Red) placed a Square piece at column 2 after 184ms
+......w
+.....rw
+W..R.ww
+R..w.RR
+w..R.Rw
+R.Rw.Rw
+
+eVolutionV6 (White) turn
+hashtable entries: 4892
+depth: 3
+eVolutionV6 (White) placed a Square piece at column 0 after 167ms
+......w
+W....rw
+W..R.ww
+R..w.RR
+w..R.Rw
+R.Rw.Rw
+
+KoenAI_v1 (Red) turn
+Win%: 100%
+KoenAI_v1 (Red) placed a Square piece at column 0 after 180ms
+R.....w
+W....rw
+W..R.ww
+R..w.RR
+w..R.Rw
+R.Rw.Rw
+
+Winner is KoenAI_v1 (Red)
+Solution=(2,0)(3,0)(4,0)(5,0)

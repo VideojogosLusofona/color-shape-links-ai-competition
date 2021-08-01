@@ -1,0 +1,255 @@
+=> eVolutionV6 (White) vs Inaniwa_v5 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+eVolutionV6 (White) turn
+hashtable entries: 6560
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 3 after 167ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+Inaniwa_v5 (Red) turn
+Inaniwa_v5 (Red) placed a Square piece at column 3 after 170ms
+.......
+.......
+.......
+.......
+...R...
+...w...
+
+eVolutionV6 (White) turn
+hashtable entries: 4810
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 3 after 171ms
+.......
+.......
+.......
+...w...
+...R...
+...w...
+
+Inaniwa_v5 (Red) turn
+Inaniwa_v5 (Red) placed a Square piece at column 3 after 170ms
+.......
+.......
+...R...
+...w...
+...R...
+...w...
+
+eVolutionV6 (White) turn
+hashtable entries: 3778
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 0 after 167ms
+.......
+.......
+...R...
+...w...
+...R...
+w..w...
+
+Inaniwa_v5 (Red) turn
+Inaniwa_v5 (Red) placed a Square piece at column 5 after 170ms
+.......
+.......
+...R...
+...w...
+...R...
+w..w.R.
+
+eVolutionV6 (White) turn
+hashtable entries: 4195
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 6 after 167ms
+.......
+.......
+...R...
+...w...
+...R...
+w..w.Rw
+
+Inaniwa_v5 (Red) turn
+Inaniwa_v5 (Red) placed a Square piece at column 1 after 170ms
+.......
+.......
+...R...
+...w...
+...R...
+wR.w.Rw
+
+eVolutionV6 (White) turn
+hashtable entries: 5022
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 0 after 167ms
+.......
+.......
+...R...
+...w...
+w..R...
+wR.w.Rw
+
+Inaniwa_v5 (Red) turn
+Inaniwa_v5 (Red) placed a Square piece at column 0 after 170ms
+.......
+.......
+...R...
+R..w...
+w..R...
+wR.w.Rw
+
+eVolutionV6 (White) turn
+hashtable entries: 3565
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 6 after 167ms
+.......
+.......
+...R...
+R..w...
+w..R..w
+wR.w.Rw
+
+Inaniwa_v5 (Red) turn
+Inaniwa_v5 (Red) placed a Square piece at column 6 after 175ms
+.......
+.......
+...R...
+R..w..R
+w..R..w
+wR.w.Rw
+
+eVolutionV6 (White) turn
+hashtable entries: 4795
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 0 after 167ms
+.......
+.......
+w..R...
+R..w..R
+w..R..w
+wR.w.Rw
+
+Inaniwa_v5 (Red) turn
+Inaniwa_v5 (Red) placed a Square piece at column 6 after 170ms
+.......
+.......
+w..R..R
+R..w..R
+w..R..w
+wR.w.Rw
+
+eVolutionV6 (White) turn
+hashtable entries: 4863
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 0 after 187ms
+.......
+w......
+w..R..R
+R..w..R
+w..R..w
+wR.w.Rw
+
+Inaniwa_v5 (Red) turn
+Inaniwa_v5 (Red) placed a Square piece at column 6 after 171ms
+.......
+w.....R
+w..R..R
+R..w..R
+w..R..w
+wR.w.Rw
+
+eVolutionV6 (White) turn
+Prevent Loss
+eVolutionV6 (White) placed a Round piece at column 6 after 0ms
+......w
+w.....R
+w..R..R
+R..w..R
+w..R..w
+wR.w.Rw
+
+Inaniwa_v5 (Red) turn
+Inaniwa_v5 (Red) placed a Round piece at column 4 after 170ms
+......w
+w.....R
+w..R..R
+R..w..R
+w..R..w
+wR.wrRw
+
+eVolutionV6 (White) turn
+hashtable entries: 2974
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 3 after 191ms
+......w
+w..w..R
+w..R..R
+R..w..R
+w..R..w
+wR.wrRw
+
+Inaniwa_v5 (Red) turn
+Inaniwa_v5 (Red) placed a Square piece at column 4 after 170ms
+......w
+w..w..R
+w..R..R
+R..w..R
+w..RR.w
+wR.wrRw
+
+eVolutionV6 (White) turn
+hashtable entries: 3521
+depth: 4
+eVolutionV6 (White) placed a Square piece at column 4 after 167ms
+......w
+w..w..R
+w..R..R
+R..wW.R
+w..RR.w
+wR.wrRw
+
+Inaniwa_v5 (Red) turn
+Inaniwa_v5 (Red) placed a Square piece at column 4 after 170ms
+......w
+w..w..R
+w..RR.R
+R..wW.R
+w..RR.w
+wR.wrRw
+
+eVolutionV6 (White) turn
+hashtable entries: 2670
+depth: 4
+eVolutionV6 (White) placed a Square piece at column 2 after 168ms
+......w
+w..w..R
+w..RR.R
+R..wW.R
+w..RR.w
+wRWwrRw
+
+Inaniwa_v5 (Red) turn
+Inaniwa_v5 (Red) placed a Square piece at column 4 after 170ms
+......w
+w..wR.R
+w..RR.R
+R..wW.R
+w..RR.w
+wRWwrRw
+
+Winner is Inaniwa_v5 (Red)
+Solution=(1,4)(2,4)(3,4)(4,4)
