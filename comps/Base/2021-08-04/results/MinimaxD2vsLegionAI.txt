@@ -1,0 +1,277 @@
+=> MinimaxD2 (White) vs LegionAI (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.......
+.......
+.......
+.......
+.......
+.....w.
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 3 after 195ms
+.......
+.......
+.......
+.......
+.......
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.......
+.....w.
+...R.w.
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 5 after 195ms
+.......
+.......
+.......
+.....R.
+.....w.
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.....w.
+.....R.
+.....w.
+...R.w.
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 3 after 195ms
+.......
+.......
+.....w.
+.....R.
+...R.w.
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 2ms
+.......
+.......
+.....w.
+...w.R.
+...R.w.
+...R.w.
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 0 after 195ms
+.......
+.......
+.....w.
+...w.R.
+...R.w.
+R..R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 3ms
+.......
+.......
+...w.w.
+...w.R.
+...R.w.
+R..R.w.
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 1 after 195ms
+.......
+.......
+...w.w.
+...w.R.
+...R.w.
+RR.R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 2 after 2ms
+.......
+.......
+...w.w.
+...w.R.
+...R.w.
+RRwR.w.
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 2 after 195ms
+.......
+.......
+...w.w.
+...w.R.
+..RR.w.
+RRwR.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 3ms
+.......
+...w...
+...w.w.
+...w.R.
+..RR.w.
+RRwR.w.
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 3 after 195ms
+...R...
+...w...
+...w.w.
+...w.R.
+..RR.w.
+RRwR.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 2 after 2ms
+...R...
+...w...
+...w.w.
+..ww.R.
+..RR.w.
+RRwR.w.
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 1 after 195ms
+...R...
+...w...
+...w.w.
+..ww.R.
+.RRR.w.
+RRwR.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 0 after 2ms
+...R...
+...w...
+...w.w.
+..ww.R.
+wRRR.w.
+RRwR.w.
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 1 after 195ms
+...R...
+...w...
+...w.w.
+.Rww.R.
+wRRR.w.
+RRwR.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 1 after 2ms
+...R...
+...w...
+.w.w.w.
+.Rww.R.
+wRRR.w.
+RRwR.w.
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 2 after 195ms
+...R...
+...w...
+.wRw.w.
+.Rww.R.
+wRRR.w.
+RRwR.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 2 after 1ms
+...R...
+..Ww...
+.wRw.w.
+.Rww.R.
+wRRR.w.
+RRwR.w.
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 5 after 195ms
+...R...
+..Ww.R.
+.wRw.w.
+.Rww.R.
+wRRR.w.
+RRwR.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 6 after 0ms
+...R...
+..Ww.R.
+.wRw.w.
+.Rww.R.
+wRRR.w.
+RRwR.wW
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Round piece at column 1 after 195ms
+...R...
+.rWw.R.
+.wRw.w.
+.Rww.R.
+wRRR.w.
+RRwR.wW
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 6 after 0ms
+...R...
+.rWw.R.
+.wRw.w.
+.Rww.R.
+wRRR.wW
+RRwR.wW
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Round piece at column 5 after 195ms
+...R.r.
+.rWw.R.
+.wRw.w.
+.Rww.R.
+wRRR.wW
+RRwR.wW
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 6 after 0ms
+...R.r.
+.rWw.R.
+.wRw.w.
+.Rww.RW
+wRRR.wW
+RRwR.wW
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Round piece at column 4 after 195ms
+...R.r.
+.rWw.R.
+.wRw.w.
+.Rww.RW
+wRRR.wW
+RRwRrwW
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 6 after 0ms
+...R.r.
+.rWw.R.
+.wRw.wW
+.Rww.RW
+wRRR.wW
+RRwRrwW
+
+Winner is LegionAI (Red)
+Solution=(0,6)(1,6)(2,6)(3,6)

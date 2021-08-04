@@ -1,0 +1,130 @@
+=> MinimaxD2 (White) vs KoenAI_v1 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.......
+.......
+.....w.
+
+KoenAI_v1 (Red) turn
+Win%: 63.76812%
+KoenAI_v1 (Red) placed a Square piece at column 3 after 182ms
+.......
+.......
+.......
+.......
+.......
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.......
+.....w.
+...R.w.
+
+KoenAI_v1 (Red) turn
+Win%: 64.8%
+KoenAI_v1 (Red) placed a Square piece at column 5 after 185ms
+.......
+.......
+.......
+.....R.
+.....w.
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 16ms
+.......
+.......
+.....w.
+.....R.
+.....w.
+...R.w.
+
+KoenAI_v1 (Red) turn
+Win%: 74.206345%
+KoenAI_v1 (Red) placed a Square piece at column 3 after 180ms
+.......
+.......
+.....w.
+.....R.
+...R.w.
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 2ms
+.......
+.......
+.....w.
+...w.R.
+...R.w.
+...R.w.
+
+KoenAI_v1 (Red) turn
+Win%: 67.36527%
+KoenAI_v1 (Red) placed a Square piece at column 1 after 183ms
+.......
+.......
+.....w.
+...w.R.
+...R.w.
+.R.R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 11ms
+.......
+.......
+...w.w.
+...w.R.
+...R.w.
+.R.R.w.
+
+KoenAI_v1 (Red) turn
+Win%: 99.66868%
+KoenAI_v1 (Red) placed a Square piece at column 2 after 180ms
+.......
+.......
+...w.w.
+...w.R.
+...R.w.
+.RRR.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 6 after 2ms
+.......
+.......
+...w.w.
+...w.R.
+...R.w.
+.RRR.wW
+
+KoenAI_v1 (Red) turn
+Win%: 100%
+KoenAI_v1 (Red) placed a Square piece at column 4 after 184ms
+.......
+.......
+...w.w.
+...w.R.
+...R.w.
+.RRRRwW
+
+Winner is KoenAI_v1 (Red)
+Solution=(0,1)(0,2)(0,3)(0,4)
