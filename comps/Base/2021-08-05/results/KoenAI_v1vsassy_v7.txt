@@ -1,0 +1,301 @@
+=> KoenAI_v1 (White) vs assy_v7 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+KoenAI_v1 (White) turn
+Win%: 74.0458%
+KoenAI_v1 (White) placed a Round piece at column 3 after 188ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Square piece at column 3 after 0ms
+.......
+.......
+.......
+.......
+...R...
+...w...
+
+KoenAI_v1 (White) turn
+Win%: 72.95082%
+KoenAI_v1 (White) placed a Round piece at column 3 after 188ms
+.......
+.......
+.......
+...w...
+...R...
+...w...
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Square piece at column 3 after 0ms
+.......
+.......
+...R...
+...w...
+...R...
+...w...
+
+KoenAI_v1 (White) turn
+Win%: 65.836296%
+KoenAI_v1 (White) placed a Round piece at column 0 after 188ms
+.......
+.......
+...R...
+...w...
+...R...
+w..w...
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Square piece at column 2 after 0ms
+.......
+.......
+...R...
+...w...
+...R...
+w.Rw...
+
+KoenAI_v1 (White) turn
+Win%: 64.72603%
+KoenAI_v1 (White) placed a Round piece at column 2 after 187ms
+.......
+.......
+...R...
+...w...
+..wR...
+w.Rw...
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Square piece at column 2 after 0ms
+.......
+.......
+...R...
+..Rw...
+..wR...
+w.Rw...
+
+KoenAI_v1 (White) turn
+Win%: 65.97938%
+KoenAI_v1 (White) placed a Round piece at column 5 after 187ms
+.......
+.......
+...R...
+..Rw...
+..wR...
+w.Rw.w.
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Square piece at column 2 after 0ms
+.......
+.......
+..RR...
+..Rw...
+..wR...
+w.Rw.w.
+
+KoenAI_v1 (White) turn
+Win%: 52.531647%
+KoenAI_v1 (White) placed a Round piece at column 2 after 183ms
+.......
+..w....
+..RR...
+..Rw...
+..wR...
+w.Rw.w.
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Square piece at column 4 after 160ms
+.......
+..w....
+..RR...
+..Rw...
+..wR...
+w.RwRw.
+
+KoenAI_v1 (White) turn
+Win%: 47.368423%
+KoenAI_v1 (White) placed a Round piece at column 5 after 183ms
+.......
+..w....
+..RR...
+..Rw...
+..wR.w.
+w.RwRw.
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Square piece at column 5 after 160ms
+.......
+..w....
+..RR...
+..Rw.R.
+..wR.w.
+w.RwRw.
+
+KoenAI_v1 (White) turn
+Win%: 35.92233%
+KoenAI_v1 (White) placed a Round piece at column 5 after 183ms
+.......
+..w....
+..RR.w.
+..Rw.R.
+..wR.w.
+w.RwRw.
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Square piece at column 5 after 160ms
+.......
+..w..R.
+..RR.w.
+..Rw.R.
+..wR.w.
+w.RwRw.
+
+KoenAI_v1 (White) turn
+Win%: 40.217392%
+KoenAI_v1 (White) placed a Round piece at column 0 after 183ms
+.......
+..w..R.
+..RR.w.
+..Rw.R.
+w.wR.w.
+w.RwRw.
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Round piece at column 5 after 160ms
+.....r.
+..w..R.
+..RR.w.
+..Rw.R.
+w.wR.w.
+w.RwRw.
+
+KoenAI_v1 (White) turn
+Win%: 46.153847%
+KoenAI_v1 (White) placed a Square piece at column 3 after 184ms
+.....r.
+..wW.R.
+..RR.w.
+..Rw.R.
+w.wR.w.
+w.RwRw.
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Round piece at column 3 after 160ms
+...r.r.
+..wW.R.
+..RR.w.
+..Rw.R.
+w.wR.w.
+w.RwRw.
+
+KoenAI_v1 (White) turn
+Win%: 45%
+KoenAI_v1 (White) placed a Square piece at column 6 after 195ms
+...r.r.
+..wW.R.
+..RR.w.
+..Rw.R.
+w.wR.w.
+w.RwRwW
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Round piece at column 1 after 8ms
+...r.r.
+..wW.R.
+..RR.w.
+..Rw.R.
+w.wR.w.
+wrRwRwW
+
+KoenAI_v1 (White) turn
+Win%: 42.990654%
+KoenAI_v1 (White) placed a Square piece at column 2 after 180ms
+..Wr.r.
+..wW.R.
+..RR.w.
+..Rw.R.
+w.wR.w.
+wrRwRwW
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Round piece at column 1 after 0ms
+..Wr.r.
+..wW.R.
+..RR.w.
+..Rw.R.
+wrwR.w.
+wrRwRwW
+
+KoenAI_v1 (White) turn
+Win%: 27.854454%
+KoenAI_v1 (White) placed a Square piece at column 4 after 186ms
+..Wr.r.
+..wW.R.
+..RR.w.
+..Rw.R.
+wrwRWw.
+wrRwRwW
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Square piece at column 1 after 0ms
+..Wr.r.
+..wW.R.
+..RR.w.
+.RRw.R.
+wrwRWw.
+wrRwRwW
+
+KoenAI_v1 (White) turn
+Win%: 1.6576165%
+KoenAI_v1 (White) placed a Round piece at column 1 after 183ms
+..Wr.r.
+..wW.R.
+.wRR.w.
+.RRw.R.
+wrwRWw.
+wrRwRwW
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Round piece at column 4 after 0ms
+..Wr.r.
+..wW.R.
+.wRR.w.
+.RRwrR.
+wrwRWw.
+wrRwRwW
+
+KoenAI_v1 (White) turn
+Win%: 0.08206138%
+KoenAI_v1 (White) placed a Square piece at column 1 after 187ms
+..Wr.r.
+.WwW.R.
+.wRR.w.
+.RRwrR.
+wrwRWw.
+wrRwRwW
+
+assy_v7 (Red) turn
+assy_v7 (Red) placed a Square piece at column 4 after 0ms
+..Wr.r.
+.WwW.R.
+.wRRRw.
+.RRwrR.
+wrwRWw.
+wrRwRwW
+
+Winner is assy_v7 (Red)
+Solution=(2,5)(3,4)(4,3)(5,2)

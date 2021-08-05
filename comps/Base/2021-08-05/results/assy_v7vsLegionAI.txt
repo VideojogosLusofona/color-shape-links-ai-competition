@@ -1,0 +1,241 @@
+=> assy_v7 (White) vs LegionAI (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 3 after 0ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 2 after 195ms
+.......
+.......
+.......
+.......
+.......
+..Rw...
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 3 after 0ms
+.......
+.......
+.......
+.......
+...w...
+..Rw...
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 3 after 195ms
+.......
+.......
+.......
+...R...
+...w...
+..Rw...
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 3 after 0ms
+.......
+.......
+...w...
+...R...
+...w...
+..Rw...
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 4 after 195ms
+.......
+.......
+...w...
+...R...
+...w...
+..RwR..
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 2 after 0ms
+.......
+.......
+...w...
+...R...
+..ww...
+..RwR..
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 4 after 195ms
+.......
+.......
+...w...
+...R...
+..wwR..
+..RwR..
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 4 after 0ms
+.......
+.......
+...w...
+...Rw..
+..wwR..
+..RwR..
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 5 after 195ms
+.......
+.......
+...w...
+...Rw..
+..wwR..
+..RwRR.
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 4 after 160ms
+.......
+.......
+...ww..
+...Rw..
+..wwR..
+..RwRR.
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 5 after 195ms
+.......
+.......
+...ww..
+...Rw..
+..wwRR.
+..RwRR.
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 5 after 160ms
+.......
+.......
+...ww..
+...Rww.
+..wwRR.
+..RwRR.
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 4 after 195ms
+.......
+....R..
+...ww..
+...Rww.
+..wwRR.
+..RwRR.
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 5 after 160ms
+.......
+....R..
+...www.
+...Rww.
+..wwRR.
+..RwRR.
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 0 after 195ms
+.......
+....R..
+...www.
+...Rww.
+..wwRR.
+R.RwRR.
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Square piece at column 6 after 135ms
+.......
+....R..
+...www.
+...Rww.
+..wwRR.
+R.RwRRW
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 3 after 195ms
+.......
+...RR..
+...www.
+...Rww.
+..wwRR.
+R.RwRRW
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Square piece at column 1 after 108ms
+.......
+...RR..
+...www.
+...Rww.
+..wwRR.
+RWRwRRW
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 1 after 195ms
+.......
+...RR..
+...www.
+...Rww.
+.RwwRR.
+RWRwRRW
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 5 after 66ms
+.......
+...RRw.
+...www.
+...Rww.
+.RwwRR.
+RWRwRRW
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Square piece at column 5 after 195ms
+.....R.
+...RRw.
+...www.
+...Rww.
+.RwwRR.
+RWRwRRW
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Square piece at column 2 after 0ms
+.....R.
+...RRw.
+...www.
+..WRww.
+.RwwRR.
+RWRwRRW
+
+LegionAI (Red) turn
+LegionAI (Red) placed a Round piece at column 6 after 195ms
+.....R.
+...RRw.
+...www.
+..WRww.
+.RwwRRr
+RWRwRRW
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 2 after 0ms
+.....R.
+...RRw.
+..wwww.
+..WRww.
+.RwwRRr
+RWRwRRW
+
+Winner is assy_v7 (White)
+Solution=(3,2)(3,3)(3,4)(3,5)

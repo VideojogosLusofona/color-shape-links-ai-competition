@@ -1,0 +1,206 @@
+=> MinimaxD2 (White) vs KoenAI_v1 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.......
+.......
+.....w.
+
+KoenAI_v1 (Red) turn
+Win%: 70.200005%
+KoenAI_v1 (Red) placed a Square piece at column 3 after 186ms
+.......
+.......
+.......
+.......
+.......
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 4ms
+.......
+.......
+.......
+.......
+.....w.
+...R.w.
+
+KoenAI_v1 (Red) turn
+Win%: 67.31449%
+KoenAI_v1 (Red) placed a Square piece at column 5 after 187ms
+.......
+.......
+.......
+.....R.
+.....w.
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.....w.
+.....R.
+.....w.
+...R.w.
+
+KoenAI_v1 (Red) turn
+Win%: 71.70418%
+KoenAI_v1 (Red) placed a Square piece at column 3 after 185ms
+.......
+.......
+.....w.
+.....R.
+...R.w.
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 4ms
+.......
+.......
+.....w.
+...w.R.
+...R.w.
+...R.w.
+
+KoenAI_v1 (Red) turn
+Win%: 65.98466%
+KoenAI_v1 (Red) placed a Square piece at column 3 after 187ms
+.......
+.......
+...R.w.
+...w.R.
+...R.w.
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 3ms
+.......
+...w...
+...R.w.
+...w.R.
+...R.w.
+...R.w.
+
+KoenAI_v1 (Red) turn
+Win%: 68.99225%
+KoenAI_v1 (Red) placed a Round piece at column 6 after 184ms
+.......
+...w...
+...R.w.
+...w.R.
+...R.w.
+...R.wr
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 3ms
+...w...
+...w...
+...R.w.
+...w.R.
+...R.w.
+...R.wr
+
+KoenAI_v1 (Red) turn
+Win%: 76.74897%
+KoenAI_v1 (Red) placed a Round piece at column 1 after 184ms
+...w...
+...w...
+...R.w.
+...w.R.
+...R.w.
+.r.R.wr
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 4ms
+...w...
+...w.w.
+...R.w.
+...w.R.
+...R.w.
+.r.R.wr
+
+KoenAI_v1 (Red) turn
+Win%: 89.62536%
+KoenAI_v1 (Red) placed a Square piece at column 1 after 187ms
+...w...
+...w.w.
+...R.w.
+...w.R.
+.R.R.w.
+.r.R.wr
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 1 after 2ms
+...w...
+...w.w.
+...R.w.
+.w.w.R.
+.R.R.w.
+.r.R.wr
+
+KoenAI_v1 (Red) turn
+Win%: 94.061134%
+KoenAI_v1 (Red) placed a Square piece at column 0 after 181ms
+...w...
+...w.w.
+...R.w.
+.w.w.R.
+.R.R.w.
+Rr.R.wr
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 2 after 2ms
+...w...
+...w.w.
+...R.w.
+.w.w.R.
+.R.R.w.
+RrwR.wr
+
+KoenAI_v1 (Red) turn
+Win%: 99.00398%
+KoenAI_v1 (Red) placed a Square piece at column 2 after 185ms
+...w...
+...w.w.
+...R.w.
+.w.w.R.
+.RRR.w.
+RrwR.wr
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 6 after 1ms
+...w...
+...w.w.
+...R.w.
+.w.w.R.
+.RRR.wW
+RrwR.wr
+
+KoenAI_v1 (Red) turn
+Win%: 100%
+KoenAI_v1 (Red) placed a Square piece at column 2 after 185ms
+...w...
+...w.w.
+...R.w.
+.wRw.R.
+.RRR.wW
+RrwR.wr
+
+Winner is KoenAI_v1 (Red)
+Solution=(0,0)(1,1)(2,2)(3,3)

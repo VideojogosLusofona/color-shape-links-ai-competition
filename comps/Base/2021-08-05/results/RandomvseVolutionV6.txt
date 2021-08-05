@@ -1,0 +1,173 @@
+=> Random (White) vs eVolutionV6 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+Random (White) turn
+Random (White) placed a Round piece at column 4 after 0ms
+.......
+.......
+.......
+.......
+.......
+....w..
+
+eVolutionV6 (Red) turn
+hashtable entries: 7340
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 3 after 167ms
+.......
+.......
+.......
+.......
+.......
+...Rw..
+
+Random (White) turn
+Random (White) placed a Round piece at column 5 after 0ms
+.......
+.......
+.......
+.......
+.......
+...Rww.
+
+eVolutionV6 (Red) turn
+hashtable entries: 6501
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 0 after 167ms
+.......
+.......
+.......
+.......
+.......
+R..Rww.
+
+Random (White) turn
+Random (White) placed a Square piece at column 3 after 0ms
+.......
+.......
+.......
+.......
+...W...
+R..Rww.
+
+eVolutionV6 (Red) turn
+hashtable entries: 6426
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 6 after 167ms
+.......
+.......
+.......
+.......
+...W...
+R..RwwR
+
+Random (White) turn
+Random (White) placed a Square piece at column 6 after 0ms
+.......
+.......
+.......
+.......
+...W..W
+R..RwwR
+
+eVolutionV6 (Red) turn
+hashtable entries: 6546
+depth: 3
+eVolutionV6 (Red) placed a Round piece at column 6 after 167ms
+.......
+.......
+.......
+......r
+...W..W
+R..RwwR
+
+Random (White) turn
+Random (White) placed a Square piece at column 6 after 0ms
+.......
+.......
+......W
+......r
+...W..W
+R..RwwR
+
+eVolutionV6 (Red) turn
+Guarantee Win
+eVolutionV6 (Red) placed a Square piece at column 6 after 0ms
+.......
+......R
+......W
+......r
+...W..W
+R..RwwR
+
+Random (White) turn
+Random (White) placed a Round piece at column 4 after 0ms
+.......
+......R
+......W
+......r
+...Ww.W
+R..RwwR
+
+eVolutionV6 (Red) turn
+Prevent Loss
+eVolutionV6 (Red) placed a Square piece at column 5 after 0ms
+.......
+......R
+......W
+......r
+...WwRW
+R..RwwR
+
+Random (White) turn
+Random (White) placed a Square piece at column 5 after 0ms
+.......
+......R
+......W
+.....Wr
+...WwRW
+R..RwwR
+
+eVolutionV6 (Red) turn
+hashtable entries: 5990
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 5 after 167ms
+.......
+......R
+.....RW
+.....Wr
+...WwRW
+R..RwwR
+
+Random (White) turn
+Random (White) placed a Square piece at column 6 after 0ms
+......W
+......R
+.....RW
+.....Wr
+...WwRW
+R..RwwR
+
+eVolutionV6 (Red) turn
+Guarantee Win
+eVolutionV6 (Red) placed a Square piece at column 5 after 0ms
+......W
+.....RR
+.....RW
+.....Wr
+...WwRW
+R..RwwR
+
+Winner is eVolutionV6 (Red)
+Solution=(1,5)(2,5)(3,5)(4,5)
