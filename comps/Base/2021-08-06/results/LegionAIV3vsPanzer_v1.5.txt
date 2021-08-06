@@ -1,0 +1,425 @@
+=> LegionAI V3 (White) vs Panzer_v1.5 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Round piece at column 3 after 190ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+Panzer_v1.5 (Red) turn
+6815
+depth = 3
+Panzer_v1.5 (Red) placed a Square piece at column 0 after 180ms
+.......
+.......
+.......
+.......
+.......
+R..w...
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Round piece at column 1 after 190ms
+.......
+.......
+.......
+.......
+.......
+Rw.w...
+
+Panzer_v1.5 (Red) turn
+6791
+depth = 3
+Panzer_v1.5 (Red) placed a Square piece at column 0 after 180ms
+.......
+.......
+.......
+.......
+R......
+Rw.w...
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Round piece at column 4 after 190ms
+.......
+.......
+.......
+.......
+R......
+Rw.ww..
+
+Panzer_v1.5 (Red) turn
+5674
+depth = 4
+Panzer_v1.5 (Red) placed a Square piece at column 2 after 180ms
+.......
+.......
+.......
+.......
+R......
+RwRww..
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Round piece at column 0 after 190ms
+.......
+.......
+.......
+w......
+R......
+RwRww..
+
+Panzer_v1.5 (Red) turn
+6241
+depth = 3
+Panzer_v1.5 (Red) placed a Square piece at column 2 after 180ms
+.......
+.......
+.......
+w......
+R.R....
+RwRww..
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Round piece at column 1 after 190ms
+.......
+.......
+.......
+w......
+RwR....
+RwRww..
+
+Panzer_v1.5 (Red) turn
+6217
+depth = 3
+Panzer_v1.5 (Red) placed a Square piece at column 2 after 180ms
+.......
+.......
+.......
+w.R....
+RwR....
+RwRww..
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Round piece at column 2 after 190ms
+.......
+.......
+..w....
+w.R....
+RwR....
+RwRww..
+
+Panzer_v1.5 (Red) turn
+6131
+depth = 3
+Panzer_v1.5 (Red) placed a Square piece at column 5 after 180ms
+.......
+.......
+..w....
+w.R....
+RwR....
+RwRwwR.
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Round piece at column 3 after 190ms
+.......
+.......
+..w....
+w.R....
+RwRw...
+RwRwwR.
+
+Panzer_v1.5 (Red) turn
+5322
+depth = 3
+Panzer_v1.5 (Red) placed a Square piece at column 5 after 180ms
+.......
+.......
+..w....
+w.R....
+RwRw.R.
+RwRwwR.
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Round piece at column 5 after 190ms
+.......
+.......
+..w....
+w.R..w.
+RwRw.R.
+RwRwwR.
+
+Panzer_v1.5 (Red) turn
+5382
+depth = 3
+Panzer_v1.5 (Red) placed a Square piece at column 4 after 180ms
+.......
+.......
+..w....
+w.R..w.
+RwRwRR.
+RwRwwR.
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Round piece at column 3 after 190ms
+.......
+.......
+..w....
+w.Rw.w.
+RwRwRR.
+RwRwwR.
+
+Panzer_v1.5 (Red) turn
+5728
+depth = 3
+Panzer_v1.5 (Red) placed a Square piece at column 3 after 180ms
+.......
+.......
+..wR...
+w.Rw.w.
+RwRwRR.
+RwRwwR.
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Round piece at column 4 after 190ms
+.......
+.......
+..wR...
+w.Rwww.
+RwRwRR.
+RwRwwR.
+
+Panzer_v1.5 (Red) turn
+4145
+depth = 4
+Panzer_v1.5 (Red) placed a Square piece at column 1 after 180ms
+.......
+.......
+..wR...
+wRRwww.
+RwRwRR.
+RwRwwR.
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Square piece at column 6 after 190ms
+.......
+.......
+..wR...
+wRRwww.
+RwRwRR.
+RwRwwRW
+
+Panzer_v1.5 (Red) turn
+4251
+depth = 4
+Panzer_v1.5 (Red) placed a Round piece at column 5 after 180ms
+.......
+.......
+..wR.r.
+wRRwww.
+RwRwRR.
+RwRwwRW
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Square piece at column 3 after 190ms
+.......
+...W...
+..wR.r.
+wRRwww.
+RwRwRR.
+RwRwwRW
+
+Panzer_v1.5 (Red) turn
+4014
+depth = 4
+Panzer_v1.5 (Red) placed a Round piece at column 4 after 180ms
+.......
+...W...
+..wRrr.
+wRRwww.
+RwRwRR.
+RwRwwRW
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Square piece at column 0 after 190ms
+.......
+...W...
+W.wRrr.
+wRRwww.
+RwRwRR.
+RwRwwRW
+
+Panzer_v1.5 (Red) turn
+3727
+depth = 4
+Panzer_v1.5 (Red) placed a Round piece at column 4 after 180ms
+.......
+...Wr..
+W.wRrr.
+wRRwww.
+RwRwRR.
+RwRwwRW
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Square piece at column 0 after 190ms
+.......
+W..Wr..
+W.wRrr.
+wRRwww.
+RwRwRR.
+RwRwwRW
+
+Panzer_v1.5 (Red) turn
+2971
+depth = 5
+Panzer_v1.5 (Red) placed a Round piece at column 0 after 180ms
+r......
+W..Wr..
+W.wRrr.
+wRRwww.
+RwRwRR.
+RwRwwRW
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Square piece at column 3 after 190ms
+r..W...
+W..Wr..
+W.wRrr.
+wRRwww.
+RwRwRR.
+RwRwwRW
+
+Panzer_v1.5 (Red) turn
+2048
+depth = 9
+Panzer_v1.5 (Red) placed a Round piece at column 1 after 180ms
+r..W...
+W..Wr..
+WrwRrr.
+wRRwww.
+RwRwRR.
+RwRwwRW
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Square piece at column 4 after 190ms
+r..WW..
+W..Wr..
+WrwRrr.
+wRRwww.
+RwRwRR.
+RwRwwRW
+
+Panzer_v1.5 (Red) turn
+521
+depth = 21
+Panzer_v1.5 (Red) placed a Round piece at column 2 after 180ms
+r..WW..
+W.rWr..
+WrwRrr.
+wRRwww.
+RwRwRR.
+RwRwwRW
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Square piece at column 1 after 190ms
+r..WW..
+WWrWr..
+WrwRrr.
+wRRwww.
+RwRwRR.
+RwRwwRW
+
+Panzer_v1.5 (Red) turn
+212
+depth = 65
+Panzer_v1.5 (Red) placed a Round piece at column 1 after 180ms
+rr.WW..
+WWrWr..
+WrwRrr.
+wRRwww.
+RwRwRR.
+RwRwwRW
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Square piece at column 6 after 190ms
+rr.WW..
+WWrWr..
+WrwRrr.
+wRRwww.
+RwRwRRW
+RwRwwRW
+
+Panzer_v1.5 (Red) turn
+38
+depth = 234
+Panzer_v1.5 (Red) placed a Square piece at column 6 after 180ms
+rr.WW..
+WWrWr..
+WrwRrr.
+wRRwwwR
+RwRwRRW
+RwRwwRW
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Square piece at column 2 after 190ms
+rrWWW..
+WWrWr..
+WrwRrr.
+wRRwwwR
+RwRwRRW
+RwRwwRW
+
+Panzer_v1.5 (Red) turn
+4
+depth = 1891
+Panzer_v1.5 (Red) placed a Round piece at column 5 after 180ms
+rrWWW..
+WWrWrr.
+WrwRrr.
+wRRwwwR
+RwRwRRW
+RwRwwRW
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Square piece at column 5 after 190ms
+rrWWWW.
+WWrWrr.
+WrwRrr.
+wRRwwwR
+RwRwRRW
+RwRwwRW
+
+Winner is Panzer_v1.5 (Red)
+Solution=(5,2)(5,3)(5,4)(5,5)

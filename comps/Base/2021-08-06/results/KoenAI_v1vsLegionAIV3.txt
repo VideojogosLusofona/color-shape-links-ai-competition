@@ -1,0 +1,256 @@
+=> KoenAI_v1 (White) vs LegionAI V3 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+KoenAI_v1 (White) turn
+Win%: 73.85321%
+KoenAI_v1 (White) placed a Round piece at column 3 after 181ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 2 after 190ms
+.......
+.......
+.......
+.......
+.......
+..Rw...
+
+KoenAI_v1 (White) turn
+Win%: 72.98245%
+KoenAI_v1 (White) placed a Round piece at column 3 after 187ms
+.......
+.......
+.......
+.......
+...w...
+..Rw...
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 3 after 190ms
+.......
+.......
+.......
+...R...
+...w...
+..Rw...
+
+KoenAI_v1 (White) turn
+Win%: 71.98642%
+KoenAI_v1 (White) placed a Round piece at column 5 after 185ms
+.......
+.......
+.......
+...R...
+...w...
+..Rw.w.
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 6 after 190ms
+.......
+.......
+.......
+...R...
+...w...
+..Rw.wR
+
+KoenAI_v1 (White) turn
+Win%: 65.2027%
+KoenAI_v1 (White) placed a Round piece at column 5 after 185ms
+.......
+.......
+.......
+...R...
+...w.w.
+..Rw.wR
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 6 after 190ms
+.......
+.......
+.......
+...R...
+...w.wR
+..Rw.wR
+
+KoenAI_v1 (White) turn
+Win%: 65.96386%
+KoenAI_v1 (White) placed a Round piece at column 6 after 194ms
+.......
+.......
+.......
+...R..w
+...w.wR
+..Rw.wR
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 2 after 190ms
+.......
+.......
+.......
+...R..w
+..Rw.wR
+..Rw.wR
+
+KoenAI_v1 (White) turn
+Win%: 65.811966%
+KoenAI_v1 (White) placed a Round piece at column 5 after 185ms
+.......
+.......
+.......
+...R.ww
+..Rw.wR
+..Rw.wR
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 5 after 190ms
+.......
+.......
+.....R.
+...R.ww
+..Rw.wR
+..Rw.wR
+
+KoenAI_v1 (White) turn
+Win%: 59.7254%
+KoenAI_v1 (White) placed a Round piece at column 6 after 183ms
+.......
+.......
+.....Rw
+...R.ww
+..Rw.wR
+..Rw.wR
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 2 after 190ms
+.......
+.......
+.....Rw
+..RR.ww
+..Rw.wR
+..Rw.wR
+
+KoenAI_v1 (White) turn
+Win%: 71.111115%
+KoenAI_v1 (White) placed a Round piece at column 2 after 184ms
+.......
+.......
+..w..Rw
+..RR.ww
+..Rw.wR
+..Rw.wR
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 3 after 190ms
+.......
+.......
+..wR.Rw
+..RR.ww
+..Rw.wR
+..Rw.wR
+
+KoenAI_v1 (White) turn
+Win%: 63.88889%
+KoenAI_v1 (White) placed a Round piece at column 6 after 185ms
+.......
+......w
+..wR.Rw
+..RR.ww
+..Rw.wR
+..Rw.wR
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 6 after 190ms
+......R
+......w
+..wR.Rw
+..RR.ww
+..Rw.wR
+..Rw.wR
+
+KoenAI_v1 (White) turn
+Win%: 50.239235%
+KoenAI_v1 (White) placed a Round piece at column 3 after 185ms
+......R
+...w..w
+..wR.Rw
+..RR.ww
+..Rw.wR
+..Rw.wR
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 0 after 190ms
+......R
+...w..w
+..wR.Rw
+..RR.ww
+..Rw.wR
+R.Rw.wR
+
+KoenAI_v1 (White) turn
+Win%: 9.230769%
+KoenAI_v1 (White) placed a Square piece at column 5 after 183ms
+......R
+...w.Ww
+..wR.Rw
+..RR.ww
+..Rw.wR
+R.Rw.wR
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 1 after 190ms
+......R
+...w.Ww
+..wR.Rw
+..RR.ww
+..Rw.wR
+RRRw.wR
+
+KoenAI_v1 (White) turn
+Win%: 0.20416495%
+KoenAI_v1 (White) placed a Square piece at column 4 after 181ms
+......R
+...w.Ww
+..wR.Rw
+..RR.ww
+..Rw.wR
+RRRwWwR
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Round piece at column 1 after 190ms
+......R
+...w.Ww
+..wR.Rw
+..RR.ww
+.rRw.wR
+RRRwWwR
+
+Winner is LegionAI V3 (Red)
+Solution=(0,0)(1,1)(2,2)(3,3)

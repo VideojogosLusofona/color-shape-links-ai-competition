@@ -1,0 +1,253 @@
+=> Inaniwa_v6 (White) vs eVolutionV6 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+Inaniwa_v6 (White) turn
+Inaniwa_v6 (White) placed a Round piece at column 3 after 160ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+eVolutionV6 (Red) turn
+hashtable entries: 5382
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 3 after 167ms
+.......
+.......
+.......
+.......
+...R...
+...w...
+
+Inaniwa_v6 (White) turn
+Inaniwa_v6 (White) placed a Round piece at column 3 after 160ms
+.......
+.......
+.......
+...w...
+...R...
+...w...
+
+eVolutionV6 (Red) turn
+hashtable entries: 4068
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 3 after 167ms
+.......
+.......
+...R...
+...w...
+...R...
+...w...
+
+Inaniwa_v6 (White) turn
+Inaniwa_v6 (White) placed a Round piece at column 0 after 161ms
+.......
+.......
+...R...
+...w...
+...R...
+w..w...
+
+eVolutionV6 (Red) turn
+hashtable entries: 5221
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 6 after 171ms
+.......
+.......
+...R...
+...w...
+...R...
+w..w..R
+
+Inaniwa_v6 (White) turn
+Inaniwa_v6 (White) placed a Round piece at column 6 after 162ms
+.......
+.......
+...R...
+...w...
+...R..w
+w..w..R
+
+eVolutionV6 (Red) turn
+hashtable entries: 5067
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 0 after 167ms
+.......
+.......
+...R...
+...w...
+R..R..w
+w..w..R
+
+Inaniwa_v6 (White) turn
+Inaniwa_v6 (White) placed a Round piece at column 6 after 161ms
+.......
+.......
+...R...
+...w..w
+R..R..w
+w..w..R
+
+eVolutionV6 (Red) turn
+hashtable entries: 4707
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 3 after 167ms
+.......
+...R...
+...R...
+...w..w
+R..R..w
+w..w..R
+
+Inaniwa_v6 (White) turn
+Inaniwa_v6 (White) placed a Square piece at column 3 after 161ms
+...W...
+...R...
+...R...
+...w..w
+R..R..w
+w..w..R
+
+eVolutionV6 (Red) turn
+hashtable entries: 4728
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 6 after 167ms
+...W...
+...R...
+...R..R
+...w..w
+R..R..w
+w..w..R
+
+Inaniwa_v6 (White) turn
+Inaniwa_v6 (White) placed a Round piece at column 0 after 161ms
+...W...
+...R...
+...R..R
+w..w..w
+R..R..w
+w..w..R
+
+eVolutionV6 (Red) turn
+hashtable entries: 4792
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 6 after 177ms
+...W...
+...R..R
+...R..R
+w..w..w
+R..R..w
+w..w..R
+
+Inaniwa_v6 (White) turn
+Inaniwa_v6 (White) placed a Square piece at column 6 after 167ms
+...W..W
+...R..R
+...R..R
+w..w..w
+R..R..w
+w..w..R
+
+eVolutionV6 (Red) turn
+hashtable entries: 4486
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 0 after 171ms
+...W..W
+...R..R
+R..R..R
+w..w..w
+R..R..w
+w..w..R
+
+Inaniwa_v6 (White) turn
+Inaniwa_v6 (White) placed a Round piece at column 2 after 160ms
+...W..W
+...R..R
+R..R..R
+w..w..w
+R..R..w
+w.ww..R
+
+eVolutionV6 (Red) turn
+Prevent Loss
+eVolutionV6 (Red) placed a Square piece at column 1 after 0ms
+...W..W
+...R..R
+R..R..R
+w..w..w
+R..R..w
+wRww..R
+
+Inaniwa_v6 (White) turn
+Inaniwa_v6 (White) placed a Round piece at column 2 after 160ms
+...W..W
+...R..R
+R..R..R
+w..w..w
+R.wR..w
+wRww..R
+
+eVolutionV6 (Red) turn
+hashtable entries: 4768
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 0 after 172ms
+...W..W
+R..R..R
+R..R..R
+w..w..w
+R.wR..w
+wRww..R
+
+Inaniwa_v6 (White) turn
+Inaniwa_v6 (White) placed a Round piece at column 2 after 160ms
+...W..W
+R..R..R
+R..R..R
+w.ww..w
+R.wR..w
+wRww..R
+
+eVolutionV6 (Red) turn
+Prevent Loss
+eVolutionV6 (Red) placed a Square piece at column 2 after 0ms
+...W..W
+R..R..R
+R.RR..R
+w.ww..w
+R.wR..w
+wRww..R
+
+Inaniwa_v6 (White) turn
+Inaniwa_v6 (White) placed a Square piece at column 1 after 160ms
+...W..W
+R..R..R
+R.RR..R
+w.ww..w
+RWwR..w
+wRww..R
+
+eVolutionV6 (Red) turn
+Guarantee Win
+eVolutionV6 (Red) placed a Round piece at column 1 after 0ms
+...W..W
+R..R..R
+R.RR..R
+wrww..w
+RWwR..w
+wRww..R
+
+Winner is Inaniwa_v6 (White)
+Solution=(2,0)(2,1)(2,2)(2,3)

@@ -1,0 +1,358 @@
+=> KoenAI_v1 (White) vs BenchmarkB (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+KoenAI_v1 (White) turn
+Win%: 78.46656%
+KoenAI_v1 (White) placed a Round piece at column 3 after 190ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 4 after 180ms
+.......
+.......
+.......
+.......
+.......
+...wR..
+
+KoenAI_v1 (White) turn
+Win%: 75.6654%
+KoenAI_v1 (White) placed a Round piece at column 3 after 185ms
+.......
+.......
+.......
+.......
+...w...
+...wR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 4 after 180ms
+.......
+.......
+.......
+.......
+...wR..
+...wR..
+
+KoenAI_v1 (White) turn
+Win%: 75.35353%
+KoenAI_v1 (White) placed a Round piece at column 4 after 184ms
+.......
+.......
+.......
+....w..
+...wR..
+...wR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 3 after 180ms
+.......
+.......
+.......
+...Rw..
+...wR..
+...wR..
+
+KoenAI_v1 (White) turn
+Win%: 67.745804%
+KoenAI_v1 (White) placed a Round piece at column 1 after 187ms
+.......
+.......
+.......
+...Rw..
+...wR..
+.w.wR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 2 after 180ms
+.......
+.......
+.......
+...Rw..
+...wR..
+.wRwR..
+
+KoenAI_v1 (White) turn
+Win%: 65.85366%
+KoenAI_v1 (White) placed a Round piece at column 1 after 187ms
+.......
+.......
+.......
+...Rw..
+.w.wR..
+.wRwR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 3 after 180ms
+.......
+.......
+...R...
+...Rw..
+.w.wR..
+.wRwR..
+
+KoenAI_v1 (White) turn
+Win%: 65.983604%
+KoenAI_v1 (White) placed a Round piece at column 3 after 183ms
+.......
+...w...
+...R...
+...Rw..
+.w.wR..
+.wRwR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 2 after 180ms
+.......
+...w...
+...R...
+...Rw..
+.wRwR..
+.wRwR..
+
+KoenAI_v1 (White) turn
+Win%: 50.81967%
+KoenAI_v1 (White) placed a Round piece at column 4 after 183ms
+.......
+...w...
+...Rw..
+...Rw..
+.wRwR..
+.wRwR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 1 after 180ms
+.......
+...w...
+...Rw..
+.R.Rw..
+.wRwR..
+.wRwR..
+
+KoenAI_v1 (White) turn
+Win%: 40.136055%
+KoenAI_v1 (White) placed a Round piece at column 1 after 187ms
+.......
+...w...
+.w.Rw..
+.R.Rw..
+.wRwR..
+.wRwR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 4 after 180ms
+.......
+...wR..
+.w.Rw..
+.R.Rw..
+.wRwR..
+.wRwR..
+
+KoenAI_v1 (White) turn
+Win%: 19.84127%
+KoenAI_v1 (White) placed a Square piece at column 6 after 187ms
+.......
+...wR..
+.w.Rw..
+.R.Rw..
+.wRwR..
+.wRwR.W
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 6 after 180ms
+.......
+...wR..
+.w.Rw..
+.R.Rw..
+.wRwR.R
+.wRwR.W
+
+KoenAI_v1 (White) turn
+Win%: 20%
+KoenAI_v1 (White) placed a Square piece at column 5 after 187ms
+.......
+...wR..
+.w.Rw..
+.R.Rw..
+.wRwR.R
+.wRwRWW
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 2 after 180ms
+.......
+...wR..
+.w.Rw..
+.RRRw..
+.wRwR.R
+.wRwRWW
+
+KoenAI_v1 (White) turn
+Win%: 31.905783%
+KoenAI_v1 (White) placed a Round piece at column 2 after 181ms
+.......
+...wR..
+.wwRw..
+.RRRw..
+.wRwR.R
+.wRwRWW
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Round piece at column 0 after 180ms
+.......
+...wR..
+.wwRw..
+.RRRw..
+.wRwR.R
+rwRwRWW
+
+KoenAI_v1 (White) turn
+Win%: 18.421053%
+KoenAI_v1 (White) placed a Square piece at column 1 after 182ms
+.......
+.W.wR..
+.wwRw..
+.RRRw..
+.wRwR.R
+rwRwRWW
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Round piece at column 4 after 180ms
+....r..
+.W.wR..
+.wwRw..
+.RRRw..
+.wRwR.R
+rwRwRWW
+
+KoenAI_v1 (White) turn
+Win%: 25.577557%
+KoenAI_v1 (White) placed a Square piece at column 2 after 187ms
+....r..
+.WWwR..
+.wwRw..
+.RRRw..
+.wRwR.R
+rwRwRWW
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 2 after 180ms
+..R.r..
+.WWwR..
+.wwRw..
+.RRRw..
+.wRwR.R
+rwRwRWW
+
+KoenAI_v1 (White) turn
+Win%: 16.137566%
+KoenAI_v1 (White) placed a Square piece at column 5 after 183ms
+..R.r..
+.WWwR..
+.wwRw..
+.RRRw..
+.wRwRWR
+rwRwRWW
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Round piece at column 3 after 180ms
+..Rrr..
+.WWwR..
+.wwRw..
+.RRRw..
+.wRwRWR
+rwRwRWW
+
+KoenAI_v1 (White) turn
+Win%: 1.4116137%
+KoenAI_v1 (White) placed a Square piece at column 1 after 183ms
+.WRrr..
+.WWwR..
+.wwRw..
+.RRRw..
+.wRwRWR
+rwRwRWW
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Round piece at column 5 after 180ms
+.WRrr..
+.WWwR..
+.wwRw..
+.RRRwr.
+.wRwRWR
+rwRwRWW
+
+KoenAI_v1 (White) turn
+Win%: 0.5540166%
+KoenAI_v1 (White) placed a Square piece at column 5 after 187ms
+.WRrr..
+.WWwR..
+.wwRwW.
+.RRRwr.
+.wRwRWR
+rwRwRWW
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Round piece at column 5 after 180ms
+.WRrr..
+.WWwRr.
+.wwRwW.
+.RRRwr.
+.wRwRWR
+rwRwRWW
+
+KoenAI_v1 (White) turn
+Win%: 0.15137753%
+KoenAI_v1 (White) placed a Round piece at column 5 after 183ms
+.WRrrw.
+.WWwRr.
+.wwRwW.
+.RRRwr.
+.wRwRWR
+rwRwRWW
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Round piece at column 0 after 180ms
+.WRrrw.
+.WWwRr.
+.wwRwW.
+.RRRwr.
+rwRwRWR
+rwRwRWW
+
+KoenAI_v1 (White) turn
+Win%: 0.0205381%
+KoenAI_v1 (White) placed a Square piece at column 6 after 183ms
+.WRrrw.
+.WWwRr.
+.wwRwW.
+.RRRwrW
+rwRwRWR
+rwRwRWW
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Round piece at column 0 after 180ms
+.WRrrw.
+.WWwRr.
+.wwRwW.
+rRRRwrW
+rwRwRWR
+rwRwRWW
+
+Winner is BenchmarkB (Red)
+Solution=(2,0)(2,1)(2,2)(2,3)
