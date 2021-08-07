@@ -1,0 +1,267 @@
+=> eVolutionV6 (White) vs KoenAI_v1 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+eVolutionV6 (White) turn
+hashtable entries: 7227
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 3 after 167ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+KoenAI_v1 (Red) turn
+Win%: 41.12426%
+KoenAI_v1 (Red) placed a Square piece at column 0 after 181ms
+.......
+.......
+.......
+.......
+.......
+R..w...
+
+eVolutionV6 (White) turn
+hashtable entries: 7101
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 6 after 167ms
+.......
+.......
+.......
+.......
+.......
+R..w..w
+
+KoenAI_v1 (Red) turn
+Win%: 50.34642%
+KoenAI_v1 (Red) placed a Square piece at column 5 after 180ms
+.......
+.......
+.......
+.......
+.......
+R..w.Rw
+
+eVolutionV6 (White) turn
+hashtable entries: 6040
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 0 after 167ms
+.......
+.......
+.......
+.......
+w......
+R..w.Rw
+
+KoenAI_v1 (Red) turn
+Win%: 49.415203%
+KoenAI_v1 (Red) placed a Square piece at column 5 after 180ms
+.......
+.......
+.......
+.......
+w....R.
+R..w.Rw
+
+eVolutionV6 (White) turn
+hashtable entries: 6379
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 6 after 167ms
+.......
+.......
+.......
+.......
+w....Rw
+R..w.Rw
+
+KoenAI_v1 (Red) turn
+Win%: 48.39572%
+KoenAI_v1 (Red) placed a Square piece at column 3 after 184ms
+.......
+.......
+.......
+.......
+w..R.Rw
+R..w.Rw
+
+eVolutionV6 (White) turn
+hashtable entries: 6004
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 3 after 167ms
+.......
+.......
+.......
+...w...
+w..R.Rw
+R..w.Rw
+
+KoenAI_v1 (Red) turn
+Win%: 55.555557%
+KoenAI_v1 (Red) placed a Square piece at column 5 after 180ms
+.......
+.......
+.......
+...w.R.
+w..R.Rw
+R..w.Rw
+
+eVolutionV6 (White) turn
+Prevent Loss
+eVolutionV6 (White) placed a Round piece at column 5 after 0ms
+.......
+.......
+.....w.
+...w.R.
+w..R.Rw
+R..w.Rw
+
+KoenAI_v1 (Red) turn
+Win%: 41.78082%
+KoenAI_v1 (Red) placed a Square piece at column 6 after 184ms
+.......
+.......
+.....w.
+...w.RR
+w..R.Rw
+R..w.Rw
+
+eVolutionV6 (White) turn
+hashtable entries: 4985
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 6 after 167ms
+.......
+.......
+.....ww
+...w.RR
+w..R.Rw
+R..w.Rw
+
+KoenAI_v1 (Red) turn
+Win%: 56.81818%
+KoenAI_v1 (Red) placed a Square piece at column 3 after 180ms
+.......
+.......
+...R.ww
+...w.RR
+w..R.Rw
+R..w.Rw
+
+eVolutionV6 (White) turn
+hashtable entries: 5256
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 6 after 167ms
+.......
+......w
+...R.ww
+...w.RR
+w..R.Rw
+R..w.Rw
+
+KoenAI_v1 (Red) turn
+Win%: 68.25397%
+KoenAI_v1 (Red) placed a Square piece at column 4 after 180ms
+.......
+......w
+...R.ww
+...w.RR
+w..R.Rw
+R..wRRw
+
+eVolutionV6 (White) turn
+hashtable entries: 4939
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 3 after 168ms
+.......
+...w..w
+...R.ww
+...w.RR
+w..R.Rw
+R..wRRw
+
+KoenAI_v1 (Red) turn
+Win%: 82.07071%
+KoenAI_v1 (Red) placed a Square piece at column 5 after 180ms
+.......
+...w.Rw
+...R.ww
+...w.RR
+w..R.Rw
+R..wRRw
+
+eVolutionV6 (White) turn
+hashtable entries: 5140
+depth: 3
+eVolutionV6 (White) placed a Square piece at column 0 after 167ms
+.......
+...w.Rw
+...R.ww
+W..w.RR
+w..R.Rw
+R..wRRw
+
+KoenAI_v1 (Red) turn
+Win%: 86.88363%
+KoenAI_v1 (Red) placed a Square piece at column 4 after 184ms
+.......
+...w.Rw
+...R.ww
+W..w.RR
+w..RRRw
+R..wRRw
+
+eVolutionV6 (White) turn
+hashtable entries: 4516
+depth: 3
+eVolutionV6 (White) placed a Round piece at column 6 after 167ms
+......w
+...w.Rw
+...R.ww
+W..w.RR
+w..RRRw
+R..wRRw
+
+KoenAI_v1 (Red) turn
+Win%: 99.993126%
+KoenAI_v1 (Red) placed a Square piece at column 4 after 188ms
+......w
+...w.Rw
+...R.ww
+W..wRRR
+w..RRRw
+R..wRRw
+
+eVolutionV6 (White) turn
+hashtable entries: 887
+depth: 8
+eVolutionV6 (White) placed a Square piece at column 5 after 167ms
+.....Ww
+...w.Rw
+...R.ww
+W..wRRR
+w..RRRw
+R..wRRw
+
+KoenAI_v1 (Red) turn
+Win%: 100%
+KoenAI_v1 (Red) placed a Round piece at column 4 after 180ms
+.....Ww
+...w.Rw
+...Rrww
+W..wRRR
+w..RRRw
+R..wRRw
+
+Winner is KoenAI_v1 (Red)
+Solution=(0,4)(1,4)(2,4)(3,4)

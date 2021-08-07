@@ -1,0 +1,290 @@
+=> InaciusV5 (White) vs LegionAI V3 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+InaciusV5 (White) turn
+InaciusV5 (White) placed a Round piece at column 3 after 1ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 4 after 190ms
+.......
+.......
+.......
+.......
+.......
+...wR..
+
+InaciusV5 (White) turn
+InaciusV5 (White) placed a Round piece at column 3 after 1ms
+.......
+.......
+.......
+.......
+...w...
+...wR..
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 4 after 190ms
+.......
+.......
+.......
+.......
+...wR..
+...wR..
+
+InaciusV5 (White) turn
+InaciusV5 (White) placed a Round piece at column 3 after 1ms
+.......
+.......
+.......
+...w...
+...wR..
+...wR..
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 3 after 190ms
+.......
+.......
+...R...
+...w...
+...wR..
+...wR..
+
+InaciusV5 (White) turn
+InaciusV5 (White) placed a Round piece at column 3 after 1ms
+.......
+...w...
+...R...
+...w...
+...wR..
+...wR..
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 4 after 190ms
+.......
+...w...
+...R...
+...wR..
+...wR..
+...wR..
+
+InaciusV5 (White) turn
+InaciusV5 (White) placed a Round piece at column 4 after 1ms
+.......
+...w...
+...Rw..
+...wR..
+...wR..
+...wR..
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 1 after 190ms
+.......
+...w...
+...Rw..
+...wR..
+...wR..
+.R.wR..
+
+InaciusV5 (White) turn
+InaciusV5 (White) placed a Round piece at column 3 after 1ms
+...w...
+...w...
+...Rw..
+...wR..
+...wR..
+.R.wR..
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 6 after 190ms
+...w...
+...w...
+...Rw..
+...wR..
+...wR..
+.R.wR.R
+
+InaciusV5 (White) turn
+InaciusV5 (White) placed a Round piece at column 4 after 1ms
+...w...
+...ww..
+...Rw..
+...wR..
+...wR..
+.R.wR.R
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 1 after 190ms
+...w...
+...ww..
+...Rw..
+...wR..
+.R.wR..
+.R.wR.R
+
+InaciusV5 (White) turn
+InaciusV5 (White) placed a Round piece at column 4 after 1ms
+...ww..
+...ww..
+...Rw..
+...wR..
+.R.wR..
+.R.wR.R
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 1 after 190ms
+...ww..
+...ww..
+...Rw..
+.R.wR..
+.R.wR..
+.R.wR.R
+
+InaciusV5 (White) turn
+InaciusV5 (White) placed a Round piece at column 1 after 0ms
+...ww..
+...ww..
+.w.Rw..
+.R.wR..
+.R.wR..
+.R.wR.R
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 0 after 190ms
+...ww..
+...ww..
+.w.Rw..
+.R.wR..
+.R.wR..
+RR.wR.R
+
+InaciusV5 (White) turn
+InaciusV5 (White) placed a Square piece at column 1 after 1ms
+...ww..
+.W.ww..
+.w.Rw..
+.R.wR..
+.R.wR..
+RR.wR.R
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Round piece at column 6 after 190ms
+...ww..
+.W.ww..
+.w.Rw..
+.R.wR..
+.R.wR.r
+RR.wR.R
+
+InaciusV5 (White) turn
+InaciusV5 (White) placed a Square piece at column 1 after 0ms
+.W.ww..
+.W.ww..
+.w.Rw..
+.R.wR..
+.R.wR.r
+RR.wR.R
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Round piece at column 2 after 190ms
+.W.ww..
+.W.ww..
+.w.Rw..
+.R.wR..
+.R.wR.r
+RRrwR.R
+
+InaciusV5 (White) turn
+InaciusV5 (White) placed a Round piece at column 6 after 0ms
+.W.ww..
+.W.ww..
+.w.Rw..
+.R.wR.w
+.R.wR.r
+RRrwR.R
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 6 after 190ms
+.W.ww..
+.W.ww..
+.w.Rw.R
+.R.wR.w
+.R.wR.r
+RRrwR.R
+
+InaciusV5 (White) turn
+InaciusV5 (White) placed a Square piece at column 6 after 0ms
+.W.ww..
+.W.ww.W
+.w.Rw.R
+.R.wR.w
+.R.wR.r
+RRrwR.R
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Round piece at column 6 after 190ms
+.W.ww.r
+.W.ww.W
+.w.Rw.R
+.R.wR.w
+.R.wR.r
+RRrwR.R
+
+InaciusV5 (White) turn
+InaciusV5 (White) placed a Square piece at column 0 after 0ms
+.W.ww.r
+.W.ww.W
+.w.Rw.R
+.R.wR.w
+WR.wR.r
+RRrwR.R
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Round piece at column 5 after 190ms
+.W.ww.r
+.W.ww.W
+.w.Rw.R
+.R.wR.w
+WR.wR.r
+RRrwRrR
+
+InaciusV5 (White) turn
+InaciusV5 (White) loses match! Reason: Thinker unable to perform move
+.W.ww.r
+.W.ww.W
+.w.Rw.R
+.R.wR.w
+WR.wR.r
+RRrwRrR
+
+Winner is LegionAI V3 (Red)

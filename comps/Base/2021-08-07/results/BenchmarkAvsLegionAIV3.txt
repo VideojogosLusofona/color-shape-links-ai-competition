@@ -1,0 +1,244 @@
+=> BenchmarkA (White) vs LegionAI V3 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+BenchmarkA (White) turn
+BenchmarkA (White) placed a Round piece at column 3 after 152ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 4 after 190ms
+.......
+.......
+.......
+.......
+.......
+...wR..
+
+BenchmarkA (White) turn
+BenchmarkA (White) placed a Round piece at column 4 after 152ms
+.......
+.......
+.......
+.......
+....w..
+...wR..
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 3 after 190ms
+.......
+.......
+.......
+.......
+...Rw..
+...wR..
+
+BenchmarkA (White) turn
+BenchmarkA (White) placed a Round piece at column 3 after 152ms
+.......
+.......
+.......
+...w...
+...Rw..
+...wR..
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 1 after 190ms
+.......
+.......
+.......
+...w...
+...Rw..
+.R.wR..
+
+BenchmarkA (White) turn
+BenchmarkA (White) placed a Round piece at column 4 after 152ms
+.......
+.......
+.......
+...ww..
+...Rw..
+.R.wR..
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 1 after 190ms
+.......
+.......
+.......
+...ww..
+.R.Rw..
+.R.wR..
+
+BenchmarkA (White) turn
+BenchmarkA (White) placed a Round piece at column 1 after 152ms
+.......
+.......
+.......
+.w.ww..
+.R.Rw..
+.R.wR..
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 3 after 190ms
+.......
+.......
+...R...
+.w.ww..
+.R.Rw..
+.R.wR..
+
+BenchmarkA (White) turn
+BenchmarkA (White) placed a Round piece at column 1 after 152ms
+.......
+.......
+.w.R...
+.w.ww..
+.R.Rw..
+.R.wR..
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 4 after 190ms
+.......
+.......
+.w.RR..
+.w.ww..
+.R.Rw..
+.R.wR..
+
+BenchmarkA (White) turn
+BenchmarkA (White) placed a Round piece at column 1 after 152ms
+.......
+.w.....
+.w.RR..
+.w.ww..
+.R.Rw..
+.R.wR..
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 1 after 190ms
+.R.....
+.w.....
+.w.RR..
+.w.ww..
+.R.Rw..
+.R.wR..
+
+BenchmarkA (White) turn
+BenchmarkA (White) placed a Round piece at column 3 after 152ms
+.R.....
+.w.w...
+.w.RR..
+.w.ww..
+.R.Rw..
+.R.wR..
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Round piece at column 3 after 190ms
+.R.r...
+.w.w...
+.w.RR..
+.w.ww..
+.R.Rw..
+.R.wR..
+
+BenchmarkA (White) turn
+BenchmarkA (White) placed a Round piece at column 4 after 152ms
+.R.r...
+.w.ww..
+.w.RR..
+.w.ww..
+.R.Rw..
+.R.wR..
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 0 after 190ms
+.R.r...
+.w.ww..
+.w.RR..
+.w.ww..
+.R.Rw..
+RR.wR..
+
+BenchmarkA (White) turn
+BenchmarkA (White) placed a Square piece at column 5 after 151ms
+.R.r...
+.w.ww..
+.w.RR..
+.w.ww..
+.R.Rw..
+RR.wRW.
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 0 after 190ms
+.R.r...
+.w.ww..
+.w.RR..
+.w.ww..
+RR.Rw..
+RR.wRW.
+
+BenchmarkA (White) turn
+BenchmarkA (White) placed a Round piece at column 0 after 151ms
+.R.r...
+.w.ww..
+.w.RR..
+ww.ww..
+RR.Rw..
+RR.wRW.
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 2 after 190ms
+.R.r...
+.w.ww..
+.w.RR..
+ww.ww..
+RR.Rw..
+RRRwRW.
+
+BenchmarkA (White) turn
+BenchmarkA (White) placed a Square piece at column 0 after 151ms
+.R.r...
+.w.ww..
+Ww.RR..
+ww.ww..
+RR.Rw..
+RRRwRW.
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Round piece at column 2 after 190ms
+.R.r...
+.w.ww..
+Ww.RR..
+ww.ww..
+RRrRw..
+RRRwRW.
+
+Winner is LegionAI V3 (Red)
+Solution=(1,0)(1,1)(1,2)(1,3)

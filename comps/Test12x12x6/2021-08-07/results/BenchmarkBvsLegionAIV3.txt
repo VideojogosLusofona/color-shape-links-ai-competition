@@ -1,0 +1,2067 @@
+=> BenchmarkB (White) vs LegionAI V3 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 11 after 273ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+...........w
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Round piece at column 2 after 285ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..r........w
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 2 after 273ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..w.........
+..r........w
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Round piece at column 10 after 285ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..w.........
+..r.......rw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 4 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..w.........
+..r.w.....rw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 5 after 285ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..w.........
+..r.wR....rw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 9 after 272ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..w.........
+..r.wR...wrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 10 after 285ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..w.......R.
+..r.wR...wrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Square piece at column 5 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..w..W....R.
+..r.wR...wrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 9 after 285ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..w..W...RR.
+..r.wR...wrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 0 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..w..W...RR.
+w.r.wR...wrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Round piece at column 10 after 285ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..........r.
+..w..W...RR.
+w.r.wR...wrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 2 after 271ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..w.......r.
+..w..W...RR.
+w.r.wR...wrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 5 after 285ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..w..R....r.
+..w..W...RR.
+w.r.wR...wrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 7 after 271ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..w..R....r.
+..w..W...RR.
+w.r.wR.w.wrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 11 after 285ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..w..R....r.
+..w..W...RRR
+w.r.wR.w.wrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 8 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..w..R....r.
+..w..W...RRR
+w.r.wR.wwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 6 after 285ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..w..R....r.
+..w..W...RRR
+w.r.wRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 4 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..w..R....r.
+..w.wW...RRR
+w.r.wRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 6 after 285ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..w..R....r.
+..w.wWR..RRR
+w.r.wRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 8 after 270ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..w..R....r.
+..w.wWR.wRRR
+w.r.wRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 2 after 285ms
+............
+............
+............
+............
+............
+............
+............
+............
+..R.........
+..w..R....r.
+..w.wWR.wRRR
+w.r.wRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 8 after 272ms
+............
+............
+............
+............
+............
+............
+............
+............
+..R.........
+..w..R..w.r.
+..w.wWR.wRRR
+w.r.wRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Round piece at column 10 after 285ms
+............
+............
+............
+............
+............
+............
+............
+............
+..R.......r.
+..w..R..w.r.
+..w.wWR.wRRR
+w.r.wRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 9 after 271ms
+............
+............
+............
+............
+............
+............
+............
+............
+..R.......r.
+..w..R..wwr.
+..w.wWR.wRRR
+w.r.wRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 10 after 285ms
+............
+............
+............
+............
+............
+............
+............
+..........R.
+..R.......r.
+..w..R..wwr.
+..w.wWR.wRRR
+w.r.wRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 10 after 271ms
+............
+............
+............
+............
+............
+............
+..........w.
+..........R.
+..R.......r.
+..w..R..wwr.
+..w.wWR.wRRR
+w.r.wRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 6 after 285ms
+............
+............
+............
+............
+............
+............
+..........w.
+..........R.
+..R.......r.
+..w..RR.wwr.
+..w.wWR.wRRR
+w.r.wRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Square piece at column 2 after 270ms
+............
+............
+............
+............
+............
+............
+..........w.
+..W.......R.
+..R.......r.
+..w..RR.wwr.
+..w.wWR.wRRR
+w.r.wRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 6 after 285ms
+............
+............
+............
+............
+............
+............
+..........w.
+..W.......R.
+..R...R...r.
+..w..RR.wwr.
+..w.wWR.wRRR
+w.r.wRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 5 after 271ms
+............
+............
+............
+............
+............
+............
+..........w.
+..W.......R.
+..R..wR...r.
+..w..RR.wwr.
+..w.wWR.wRRR
+w.r.wRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 6 after 285ms
+............
+............
+............
+............
+............
+............
+..........w.
+..W...R...R.
+..R..wR...r.
+..w..RR.wwr.
+..w.wWR.wRRR
+w.r.wRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 6 after 271ms
+............
+............
+............
+............
+............
+............
+......w...w.
+..W...R...R.
+..R..wR...r.
+..w..RR.wwr.
+..w.wWR.wRRR
+w.r.wRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 2 after 285ms
+............
+............
+............
+............
+............
+............
+..R...w...w.
+..W...R...R.
+..R..wR...r.
+..w..RR.wwr.
+..w.wWR.wRRR
+w.r.wRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 10 after 273ms
+............
+............
+............
+............
+............
+..........w.
+..R...w...w.
+..W...R...R.
+..R..wR...r.
+..w..RR.wwr.
+..w.wWR.wRRR
+w.r.wRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 6 after 285ms
+............
+............
+............
+............
+............
+......R...w.
+..R...w...w.
+..W...R...R.
+..R..wR...r.
+..w..RR.wwr.
+..w.wWR.wRRR
+w.r.wRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 8 after 272ms
+............
+............
+............
+............
+............
+......R...w.
+..R...w...w.
+..W...R...R.
+..R..wR.w.r.
+..w..RR.wwr.
+..w.wWR.wRRR
+w.r.wRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Round piece at column 9 after 285ms
+............
+............
+............
+............
+............
+......R...w.
+..R...w...w.
+..W...R...R.
+..R..wR.wrr.
+..w..RR.wwr.
+..w.wWR.wRRR
+w.r.wRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 8 after 270ms
+............
+............
+............
+............
+............
+......R...w.
+..R...w...w.
+..W...R.w.R.
+..R..wR.wrr.
+..w..RR.wwr.
+..w.wWR.wRRR
+w.r.wRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 8 after 285ms
+............
+............
+............
+............
+............
+......R...w.
+..R...w.R.w.
+..W...R.w.R.
+..R..wR.wrr.
+..w..RR.wwr.
+..w.wWR.wRRR
+w.r.wRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 0 after 272ms
+............
+............
+............
+............
+............
+......R...w.
+..R...w.R.w.
+..W...R.w.R.
+..R..wR.wrr.
+..w..RR.wwr.
+w.w.wWR.wRRR
+w.r.wRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Round piece at column 6 after 285ms
+............
+............
+............
+............
+......r.....
+......R...w.
+..R...w.R.w.
+..W...R.w.R.
+..R..wR.wrr.
+..w..RR.wwr.
+w.w.wWR.wRRR
+w.r.wRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 4 after 273ms
+............
+............
+............
+............
+......r.....
+......R...w.
+..R...w.R.w.
+..W...R.w.R.
+..R..wR.wrr.
+..w.wRR.wwr.
+w.w.wWR.wRRR
+w.r.wRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 2 after 285ms
+............
+............
+............
+............
+......r.....
+..R...R...w.
+..R...w.R.w.
+..W...R.w.R.
+..R..wR.wrr.
+..w.wRR.wwr.
+w.w.wWR.wRRR
+w.r.wRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 10 after 270ms
+............
+............
+............
+............
+......r...w.
+..R...R...w.
+..R...w.R.w.
+..W...R.w.R.
+..R..wR.wrr.
+..w.wRR.wwr.
+w.w.wWR.wRRR
+w.r.wRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 11 after 285ms
+............
+............
+............
+............
+......r...w.
+..R...R...w.
+..R...w.R.w.
+..W...R.w.R.
+..R..wR.wrr.
+..w.wRR.wwrR
+w.w.wWR.wRRR
+w.r.wRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 10 after 271ms
+............
+............
+............
+..........w.
+......r...w.
+..R...R...w.
+..R...w.R.w.
+..W...R.w.R.
+..R..wR.wrr.
+..w.wRR.wwrR
+w.w.wWR.wRRR
+w.r.wRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 10 after 285ms
+............
+............
+..........R.
+..........w.
+......r...w.
+..R...R...w.
+..R...w.R.w.
+..W...R.w.R.
+..R..wR.wrr.
+..w.wRR.wwrR
+w.w.wWR.wRRR
+w.r.wRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 2 after 271ms
+............
+............
+..........R.
+..........w.
+..w...r...w.
+..R...R...w.
+..R...w.R.w.
+..W...R.w.R.
+..R..wR.wrr.
+..w.wRR.wwrR
+w.w.wWR.wRRR
+w.r.wRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 0 after 285ms
+............
+............
+..........R.
+..........w.
+..w...r...w.
+..R...R...w.
+..R...w.R.w.
+..W...R.w.R.
+..R..wR.wrr.
+R.w.wRR.wwrR
+w.w.wWR.wRRR
+w.r.wRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 10 after 271ms
+............
+..........w.
+..........R.
+..........w.
+..w...r...w.
+..R...R...w.
+..R...w.R.w.
+..W...R.w.R.
+..R..wR.wrr.
+R.w.wRR.wwrR
+w.w.wWR.wRRR
+w.r.wRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Round piece at column 3 after 285ms
+............
+..........w.
+..........R.
+..........w.
+..w...r...w.
+..R...R...w.
+..R...w.R.w.
+..W...R.w.R.
+..R..wR.wrr.
+R.w.wRR.wwrR
+w.w.wWR.wRRR
+w.rrwRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 4 after 270ms
+............
+..........w.
+..........R.
+..........w.
+..w...r...w.
+..R...R...w.
+..R...w.R.w.
+..W...R.w.R.
+..R.wwR.wrr.
+R.w.wRR.wwrR
+w.w.wWR.wRRR
+w.rrwRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Round piece at column 5 after 285ms
+............
+..........w.
+..........R.
+..........w.
+..w...r...w.
+..R...R...w.
+..R...w.R.w.
+..W..rR.w.R.
+..R.wwR.wrr.
+R.w.wRR.wwrR
+w.w.wWR.wRRR
+w.rrwRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 4 after 270ms
+............
+..........w.
+..........R.
+..........w.
+..w...r...w.
+..R...R...w.
+..R...w.R.w.
+..W.wrR.w.R.
+..R.wwR.wrr.
+R.w.wRR.wwrR
+w.w.wWR.wRRR
+w.rrwRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 4 after 285ms
+............
+..........w.
+..........R.
+..........w.
+..w...r...w.
+..R...R...w.
+..R.R.w.R.w.
+..W.wrR.w.R.
+..R.wwR.wrr.
+R.w.wRR.wwrR
+w.w.wWR.wRRR
+w.rrwRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Square piece at column 3 after 270ms
+............
+..........w.
+..........R.
+..........w.
+..w...r...w.
+..R...R...w.
+..R.R.w.R.w.
+..W.wrR.w.R.
+..R.wwR.wrr.
+R.w.wRR.wwrR
+w.wWwWR.wRRR
+w.rrwRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Round piece at column 4 after 285ms
+............
+..........w.
+..........R.
+..........w.
+..w...r...w.
+..R.r.R...w.
+..R.R.w.R.w.
+..W.wrR.w.R.
+..R.wwR.wrr.
+R.w.wRR.wwrR
+w.wWwWR.wRRR
+w.rrwRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 11 after 270ms
+............
+..........w.
+..........R.
+..........w.
+..w...r...w.
+..R.r.R...w.
+..R.R.w.R.w.
+..W.wrR.w.R.
+..R.wwR.wrrw
+R.w.wRR.wwrR
+w.wWwWR.wRRR
+w.rrwRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Round piece at column 8 after 285ms
+............
+..........w.
+..........R.
+..........w.
+..w...r...w.
+..R.r.R.r.w.
+..R.R.w.R.w.
+..W.wrR.w.R.
+..R.wwR.wrrw
+R.w.wRR.wwrR
+w.wWwWR.wRRR
+w.rrwRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 4 after 270ms
+............
+..........w.
+..........R.
+..........w.
+..w.w.r...w.
+..R.r.R.r.w.
+..R.R.w.R.w.
+..W.wrR.w.R.
+..R.wwR.wrrw
+R.w.wRR.wwrR
+w.wWwWR.wRRR
+w.rrwRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 3 after 285ms
+............
+..........w.
+..........R.
+..........w.
+..w.w.r...w.
+..R.r.R.r.w.
+..R.R.w.R.w.
+..W.wrR.w.R.
+..R.wwR.wrrw
+R.wRwRR.wwrR
+w.wWwWR.wRRR
+w.rrwRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 4 after 271ms
+............
+..........w.
+..........R.
+....w.....w.
+..w.w.r...w.
+..R.r.R.r.w.
+..R.R.w.R.w.
+..W.wrR.w.R.
+..R.wwR.wrrw
+R.wRwRR.wwrR
+w.wWwWR.wRRR
+w.rrwRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Round piece at column 0 after 285ms
+............
+..........w.
+..........R.
+....w.....w.
+..w.w.r...w.
+..R.r.R.r.w.
+..R.R.w.R.w.
+..W.wrR.w.R.
+r.R.wwR.wrrw
+R.wRwRR.wwrR
+w.wWwWR.wRRR
+w.rrwRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 6 after 272ms
+............
+..........w.
+..........R.
+....w.w...w.
+..w.w.r...w.
+..R.r.R.r.w.
+..R.R.w.R.w.
+..W.wrR.w.R.
+r.R.wwR.wrrw
+R.wRwRR.wwrR
+w.wWwWR.wRRR
+w.rrwRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 3 after 285ms
+............
+..........w.
+..........R.
+....w.w...w.
+..w.w.r...w.
+..R.r.R.r.w.
+..R.R.w.R.w.
+..W.wrR.w.R.
+r.RRwwR.wrrw
+R.wRwRR.wwrR
+w.wWwWR.wRRR
+w.rrwRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 9 after 271ms
+............
+..........w.
+..........R.
+....w.w...w.
+..w.w.r...w.
+..R.r.R.r.w.
+..R.R.w.R.w.
+..W.wrR.wwR.
+r.RRwwR.wrrw
+R.wRwRR.wwrR
+w.wWwWR.wRRR
+w.rrwRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Round piece at column 2 after 285ms
+............
+..........w.
+..........R.
+..r.w.w...w.
+..w.w.r...w.
+..R.r.R.r.w.
+..R.R.w.R.w.
+..W.wrR.wwR.
+r.RRwwR.wrrw
+R.wRwRR.wwrR
+w.wWwWR.wRRR
+w.rrwRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Square piece at column 8 after 271ms
+............
+..........w.
+..........R.
+..r.w.w...w.
+..w.w.r.W.w.
+..R.r.R.r.w.
+..R.R.w.R.w.
+..W.wrR.wwR.
+r.RRwwR.wrrw
+R.wRwRR.wwrR
+w.wWwWR.wRRR
+w.rrwRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 3 after 285ms
+............
+..........w.
+..........R.
+..r.w.w...w.
+..w.w.r.W.w.
+..R.r.R.r.w.
+..R.R.w.R.w.
+..WRwrR.wwR.
+r.RRwwR.wrrw
+R.wRwRR.wwrR
+w.wWwWR.wRRR
+w.rrwRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Square piece at column 1 after 271ms
+............
+..........w.
+..........R.
+..r.w.w...w.
+..w.w.r.W.w.
+..R.r.R.r.w.
+..R.R.w.R.w.
+..WRwrR.wwR.
+r.RRwwR.wrrw
+R.wRwRR.wwrR
+w.wWwWR.wRRR
+wWrrwRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Round piece at column 1 after 285ms
+............
+..........w.
+..........R.
+..r.w.w...w.
+..w.w.r.W.w.
+..R.r.R.r.w.
+..R.R.w.R.w.
+..WRwrR.wwR.
+r.RRwwR.wrrw
+R.wRwRR.wwrR
+wrwWwWR.wRRR
+wWrrwRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 6 after 270ms
+............
+..........w.
+......w...R.
+..r.w.w...w.
+..w.w.r.W.w.
+..R.r.R.r.w.
+..R.R.w.R.w.
+..WRwrR.wwR.
+r.RRwwR.wrrw
+R.wRwRR.wwrR
+wrwWwWR.wRRR
+wWrrwRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Round piece at column 1 after 285ms
+............
+..........w.
+......w...R.
+..r.w.w...w.
+..w.w.r.W.w.
+..R.r.R.r.w.
+..R.R.w.R.w.
+..WRwrR.wwR.
+r.RRwwR.wrrw
+RrwRwRR.wwrR
+wrwWwWR.wRRR
+wWrrwRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Square piece at column 10 after 273ms
+..........W.
+..........w.
+......w...R.
+..r.w.w...w.
+..w.w.r.W.w.
+..R.r.R.r.w.
+..R.R.w.R.w.
+..WRwrR.wwR.
+r.RRwwR.wrrw
+RrwRwRR.wwrR
+wrwWwWR.wRRR
+wWrrwRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 3 after 285ms
+..........W.
+..........w.
+......w...R.
+..r.w.w...w.
+..w.w.r.W.w.
+..R.r.R.r.w.
+..RRR.w.R.w.
+..WRwrR.wwR.
+r.RRwwR.wrrw
+RrwRwRR.wwrR
+wrwWwWR.wRRR
+wWrrwRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Square piece at column 2 after 272ms
+..........W.
+..........w.
+..W...w...R.
+..r.w.w...w.
+..w.w.r.W.w.
+..R.r.R.r.w.
+..RRR.w.R.w.
+..WRwrR.wwR.
+r.RRwwR.wrrw
+RrwRwRR.wwrR
+wrwWwWR.wRRR
+wWrrwRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Round piece at column 8 after 285ms
+..........W.
+..........w.
+..W...w...R.
+..r.w.w.r.w.
+..w.w.r.W.w.
+..R.r.R.r.w.
+..RRR.w.R.w.
+..WRwrR.wwR.
+r.RRwwR.wrrw
+RrwRwRR.wwrR
+wrwWwWR.wRRR
+wWrrwRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 3 after 270ms
+..........W.
+..........w.
+..W...w...R.
+..r.w.w.r.w.
+..w.w.r.W.w.
+..Rwr.R.r.w.
+..RRR.w.R.w.
+..WRwrR.wwR.
+r.RRwwR.wrrw
+RrwRwRR.wwrR
+wrwWwWR.wRRR
+wWrrwRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Square piece at column 2 after 285ms
+..........W.
+..R.......w.
+..W...w...R.
+..r.w.w.r.w.
+..w.w.r.W.w.
+..Rwr.R.r.w.
+..RRR.w.R.w.
+..WRwrR.wwR.
+r.RRwwR.wrrw
+RrwRwRR.wwrR
+wrwWwWR.wRRR
+wWrrwRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 2 after 272ms
+..w.......W.
+..R.......w.
+..W...w...R.
+..r.w.w.r.w.
+..w.w.r.W.w.
+..Rwr.R.r.w.
+..RRR.w.R.w.
+..WRwrR.wwR.
+r.RRwwR.wrrw
+RrwRwRR.wwrR
+wrwWwWR.wRRR
+wWrrwRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+LegionAI V3 (Red) placed a Round piece at column 11 after 285ms
+..w.......W.
+..R.......w.
+..W...w...R.
+..r.w.w.r.w.
+..w.w.r.W.w.
+..Rwr.R.r.w.
+..RRR.w.R.w.
+..WRwrR.wwRr
+r.RRwwR.wrrw
+RrwRwRR.wwrR
+wrwWwWR.wRRR
+wWrrwRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Round piece at column 9 after 270ms
+..w.......W.
+..R.......w.
+..W...w...R.
+..r.w.w.r.w.
+..w.w.r.W.w.
+..Rwr.R.r.w.
+..RRR.w.Rww.
+..WRwrR.wwRr
+r.RRwwR.wrrw
+RrwRwRR.wwrR
+wrwWwWR.wRRR
+wWrrwRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+System.NullReferenceException
+System.NullReferenceException
+System.NullReferenceException
+Object reference not set to an instance of an object.
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+System.NullReferenceException
+Object reference not set to an instance of an object.
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+System.NullReferenceException
+Object reference not set to an instance of an object.
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+System.NullReferenceException
+Object reference not set to an instance of an object.
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+System.NullReferenceException
+Object reference not set to an instance of an object.
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+System.NullReferenceException
+Object reference not set to an instance of an object.
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+LegionAI V3 (Red) placed a Square piece at column 1 after 285ms
+..w.......W.
+..R.......w.
+..W...w...R.
+..r.w.w.r.w.
+..w.w.r.W.w.
+..Rwr.R.r.w.
+..RRR.w.Rww.
+..WRwrR.wwRr
+rRRRwwR.wrrw
+RrwRwRR.wwrR
+wrwWwWR.wRRR
+wWrrwRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Square piece at column 7 after 271ms
+..w.......W.
+..R.......w.
+..W...w...R.
+..r.w.w.r.w.
+..w.w.r.W.w.
+..Rwr.R.r.w.
+..RRR.w.Rww.
+..WRwrR.wwRr
+rRRRwwR.wrrw
+RrwRwRR.wwrR
+wrwWwWRWwRRR
+wWrrwRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+System.NullReferenceException
+Object reference not set to an instance of an object.
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+System.NullReferenceException
+Object reference not set to an instance of an object.
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+System.NullReferenceException
+Object reference not set to an instance of an object.
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+System.NullReferenceException
+Object reference not set to an instance of an object.
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+System.NullReferenceException
+Object reference not set to an instance of an object.
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+System.NullReferenceException
+Object reference not set to an instance of an object.
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+LegionAI V3 (Red) placed a Square piece at column 3 after 285ms
+..w.......W.
+..R.......w.
+..W...w...R.
+..r.w.w.r.w.
+..wRw.r.W.w.
+..Rwr.R.r.w.
+..RRR.w.Rww.
+..WRwrR.wwRr
+rRRRwwR.wrrw
+RrwRwRR.wwrR
+wrwWwWRWwRRR
+wWrrwRRwwwrw
+
+BenchmarkB (White) turn
+BenchmarkB (White) placed a Square piece at column 5 after 270ms
+..w.......W.
+..R.......w.
+..W...w...R.
+..r.w.w.r.w.
+..wRw.r.W.w.
+..Rwr.R.r.w.
+..RRRWw.Rww.
+..WRwrR.wwRr
+rRRRwwR.wrrw
+RrwRwRR.wwrR
+wrwWwWRWwRRR
+wWrrwRRwwwrw
+
+LegionAI V3 (Red) turn
+processor count: 16
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+System.NullReferenceException
+Object reference not set to an instance of an object.
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+System.NullReferenceException
+Object reference not set to an instance of an object.
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+System.NullReferenceException
+Object reference not set to an instance of an object.
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+   at LegionAI.MCTS_Thinker.MCTS(MCTS_Node root, CancellationToken ct) in /home/nfachada/workspace/color-shape-links-ai-competition-submissions/Submissions/LegionAI/MCTS_Thinker.cs:line 97
+LegionAI V3 (Red) placed a Round piece at column 5 after 285ms
+..w.......W.
+..R.......w.
+..W...w...R.
+..r.w.w.r.w.
+..wRw.r.W.w.
+..RwrrR.r.w.
+..RRRWw.Rww.
+..WRwrR.wwRr
+rRRRwwR.wrrw
+RrwRwRR.wwrR
+wrwWwWRWwRRR
+wWrrwRRwwwrw
+
+Winner is LegionAI V3 (Red)
+Solution=(2,1)(3,2)(4,3)(5,4)(6,5)(7,6)
