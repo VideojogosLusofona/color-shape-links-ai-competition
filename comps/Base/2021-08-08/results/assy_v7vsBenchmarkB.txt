@@ -1,0 +1,223 @@
+=> assy_v7 (White) vs BenchmarkB (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 3 after 0ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 4 after 180ms
+.......
+.......
+.......
+.......
+.......
+...wR..
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 3 after 0ms
+.......
+.......
+.......
+.......
+...w...
+...wR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 3 after 180ms
+.......
+.......
+.......
+...R...
+...w...
+...wR..
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 3 after 0ms
+.......
+.......
+...w...
+...R...
+...w...
+...wR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 4 after 180ms
+.......
+.......
+...w...
+...R...
+...wR..
+...wR..
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 4 after 0ms
+.......
+.......
+...w...
+...Rw..
+...wR..
+...wR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 1 after 180ms
+.......
+.......
+...w...
+...Rw..
+...wR..
+.R.wR..
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 4 after 0ms
+.......
+.......
+...ww..
+...Rw..
+...wR..
+.R.wR..
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 6 after 180ms
+.......
+.......
+...ww..
+...Rw..
+...wR..
+.R.wR.R
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 1 after 160ms
+.......
+.......
+...ww..
+...Rw..
+.w.wR..
+.R.wR.R
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 6 after 180ms
+.......
+.......
+...ww..
+...Rw..
+.w.wR.R
+.R.wR.R
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Square piece at column 4 after 160ms
+.......
+....W..
+...ww..
+...Rw..
+.w.wR.R
+.R.wR.R
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Round piece at column 4 after 180ms
+....r..
+....W..
+...ww..
+...Rw..
+.w.wR.R
+.R.wR.R
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 6 after 160ms
+....r..
+....W..
+...ww..
+...Rw.w
+.w.wR.R
+.R.wR.R
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 5 after 180ms
+....r..
+....W..
+...ww..
+...Rw.w
+.w.wR.R
+.R.wRRR
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Square piece at column 2 after 160ms
+....r..
+....W..
+...ww..
+...Rw.w
+.w.wR.R
+.RWwRRR
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 5 after 180ms
+....r..
+....W..
+...ww..
+...Rw.w
+.w.wRRR
+.RWwRRR
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Square piece at column 2 after 84ms
+....r..
+....W..
+...ww..
+...Rw.w
+.wWwRRR
+.RWwRRR
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 2 after 180ms
+....r..
+....W..
+...ww..
+..RRw.w
+.wWwRRR
+.RWwRRR
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 2 after 58ms
+....r..
+....W..
+..www..
+..RRw.w
+.wWwRRR
+.RWwRRR
+
+BenchmarkB (Red) turn
+BenchmarkB (Red) placed a Square piece at column 5 after 180ms
+....r..
+....W..
+..www..
+..RRwRw
+.wWwRRR
+.RWwRRR
+
+assy_v7 (White) turn
+assy_v7 (White) placed a Round piece at column 5 after 0ms
+....r..
+....W..
+..wwww.
+..RRwRw
+.wWwRRR
+.RWwRRR
+
+Winner is assy_v7 (White)
+Solution=(3,2)(3,3)(3,4)(3,5)

@@ -1,0 +1,348 @@
+=> LegionAI V3 (White) vs eVolutionV6 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Round piece at column 6 after 190ms
+.......
+.......
+.......
+.......
+.......
+......w
+
+eVolutionV6 (Red) turn
+hashtable entries: 6804
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 3 after 167ms
+.......
+.......
+.......
+.......
+.......
+...R..w
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Round piece at column 6 after 190ms
+.......
+.......
+.......
+.......
+......w
+...R..w
+
+eVolutionV6 (Red) turn
+hashtable entries: 6130
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 0 after 167ms
+.......
+.......
+.......
+.......
+......w
+R..R..w
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Round piece at column 2 after 190ms
+.......
+.......
+.......
+.......
+......w
+R.wR..w
+
+eVolutionV6 (Red) turn
+hashtable entries: 5902
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 0 after 167ms
+.......
+.......
+.......
+.......
+R.....w
+R.wR..w
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Round piece at column 6 after 190ms
+.......
+.......
+.......
+......w
+R.....w
+R.wR..w
+
+eVolutionV6 (Red) turn
+Prevent Loss
+eVolutionV6 (Red) placed a Square piece at column 6 after 0ms
+.......
+.......
+......R
+......w
+R.....w
+R.wR..w
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Round piece at column 0 after 190ms
+.......
+.......
+......R
+w.....w
+R.....w
+R.wR..w
+
+eVolutionV6 (Red) turn
+hashtable entries: 5490
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 6 after 167ms
+.......
+......R
+......R
+w.....w
+R.....w
+R.wR..w
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Round piece at column 0 after 190ms
+.......
+......R
+w.....R
+w.....w
+R.....w
+R.wR..w
+
+eVolutionV6 (Red) turn
+hashtable entries: 5161
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 6 after 167ms
+......R
+......R
+w.....R
+w.....w
+R.....w
+R.wR..w
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Round piece at column 2 after 190ms
+......R
+......R
+w.....R
+w.....w
+R.w...w
+R.wR..w
+
+eVolutionV6 (Red) turn
+hashtable entries: 5592
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 0 after 167ms
+......R
+R.....R
+w.....R
+w.....w
+R.w...w
+R.wR..w
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Round piece at column 2 after 190ms
+......R
+R.....R
+w.....R
+w.w...w
+R.w...w
+R.wR..w
+
+eVolutionV6 (Red) turn
+Prevent Loss
+eVolutionV6 (Red) placed a Square piece at column 2 after 0ms
+......R
+R.....R
+w.R...R
+w.w...w
+R.w...w
+R.wR..w
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Round piece at column 3 after 190ms
+......R
+R.....R
+w.R...R
+w.w...w
+R.ww..w
+R.wR..w
+
+eVolutionV6 (Red) turn
+hashtable entries: 4957
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 3 after 167ms
+......R
+R.....R
+w.R...R
+w.wR..w
+R.ww..w
+R.wR..w
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Square piece at column 0 after 190ms
+W.....R
+R.....R
+w.R...R
+w.wR..w
+R.ww..w
+R.wR..w
+
+eVolutionV6 (Red) turn
+hashtable entries: 4464
+depth: 4
+eVolutionV6 (Red) placed a Square piece at column 2 after 170ms
+W.....R
+R.R...R
+w.R...R
+w.wR..w
+R.ww..w
+R.wR..w
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Round piece at column 5 after 190ms
+W.....R
+R.R...R
+w.R...R
+w.wR..w
+R.ww..w
+R.wR.ww
+
+eVolutionV6 (Red) turn
+hashtable entries: 2874
+depth: 5
+eVolutionV6 (Red) placed a Round piece at column 4 after 167ms
+W.....R
+R.R...R
+w.R...R
+w.wR..w
+R.ww..w
+R.wRrww
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Square piece at column 4 after 190ms
+W.....R
+R.R...R
+w.R...R
+w.wR..w
+R.wwW.w
+R.wRrww
+
+eVolutionV6 (Red) turn
+Prevent Loss
+eVolutionV6 (Red) placed a Square piece at column 5 after 0ms
+W.....R
+R.R...R
+w.R...R
+w.wR..w
+R.wwWRw
+R.wRrww
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Square piece at column 4 after 190ms
+W.....R
+R.R...R
+w.R...R
+w.wRW.w
+R.wwWRw
+R.wRrww
+
+eVolutionV6 (Red) turn
+hashtable entries: 1335
+depth: 6
+eVolutionV6 (Red) placed a Round piece at column 3 after 167ms
+W.....R
+R.R...R
+w.Rr..R
+w.wRW.w
+R.wwWRw
+R.wRrww
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Square piece at column 2 after 190ms
+W.W...R
+R.R...R
+w.Rr..R
+w.wRW.w
+R.wwWRw
+R.wRrww
+
+eVolutionV6 (Red) turn
+hashtable entries: 801
+depth: 9
+eVolutionV6 (Red) placed a Round piece at column 4 after 167ms
+W.W...R
+R.R...R
+w.Rrr.R
+w.wRW.w
+R.wwWRw
+R.wRrww
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Square piece at column 1 after 190ms
+W.W...R
+R.R...R
+w.Rrr.R
+w.wRW.w
+R.wwWRw
+RWwRrww
+
+eVolutionV6 (Red) turn
+hashtable entries: 261
+depth: 18
+eVolutionV6 (Red) placed a Round piece at column 1 after 167ms
+W.W...R
+R.R...R
+w.Rrr.R
+w.wRW.w
+RrwwWRw
+RWwRrww
+
+LegionAI V3 (White) turn
+processor count: 1
+LegionAI V3 (White) placed a Square piece at column 1 after 190ms
+W.W...R
+R.R...R
+w.Rrr.R
+wWwRW.w
+RrwwWRw
+RWwRrww
+
+eVolutionV6 (Red) turn
+Guarantee Win
+eVolutionV6 (Red) placed a Round piece at column 1 after 0ms
+W.W...R
+R.R...R
+wrRrr.R
+wWwRW.w
+RrwwWRw
+RWwRrww
+
+Winner is LegionAI V3 (White)
+Solution=(0,4)(1,3)(2,2)(3,1)

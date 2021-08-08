@@ -1,0 +1,329 @@
+=> RedVerbenaThinker v3 (White) vs LegionAI V3 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 3 after 180ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 4 after 190ms
+.......
+.......
+.......
+.......
+.......
+...wR..
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 3 after 180ms
+.......
+.......
+.......
+.......
+...w...
+...wR..
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 4 after 190ms
+.......
+.......
+.......
+.......
+...wR..
+...wR..
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 3 after 180ms
+.......
+.......
+.......
+...w...
+...wR..
+...wR..
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 3 after 190ms
+.......
+.......
+...R...
+...w...
+...wR..
+...wR..
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 4 after 180ms
+.......
+.......
+...R...
+...ww..
+...wR..
+...wR..
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 4 after 190ms
+.......
+.......
+...RR..
+...ww..
+...wR..
+...wR..
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 4 after 180ms
+.......
+....W..
+...RR..
+...ww..
+...wR..
+...wR..
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 1 after 190ms
+.......
+....W..
+...RR..
+...ww..
+...wR..
+.R.wR..
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 1 after 180ms
+.......
+....W..
+...RR..
+...ww..
+.w.wR..
+.R.wR..
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 1 after 190ms
+.......
+....W..
+...RR..
+.R.ww..
+.w.wR..
+.R.wR..
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 5 after 180ms
+.......
+....W..
+...RR..
+.R.ww..
+.w.wR..
+.R.wRW.
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 1 after 190ms
+.......
+....W..
+.R.RR..
+.R.ww..
+.w.wR..
+.R.wRW.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 1 after 180ms
+.......
+.w..W..
+.R.RR..
+.R.ww..
+.w.wR..
+.R.wRW.
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Round piece at column 3 after 190ms
+.......
+.w.rW..
+.R.RR..
+.R.ww..
+.w.wR..
+.R.wRW.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 4 after 180ms
+....W..
+.w.rW..
+.R.RR..
+.R.ww..
+.w.wR..
+.R.wRW.
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Round piece at column 3 after 190ms
+...rW..
+.w.rW..
+.R.RR..
+.R.ww..
+.w.wR..
+.R.wRW.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 1 after 180ms
+.W.rW..
+.w.rW..
+.R.RR..
+.R.ww..
+.w.wR..
+.R.wRW.
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 2 after 190ms
+.W.rW..
+.w.rW..
+.R.RR..
+.R.ww..
+.w.wR..
+.RRwRW.
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 2 after 180ms
+.W.rW..
+.w.rW..
+.R.RR..
+.R.ww..
+.wwwR..
+.RRwRW.
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Round piece at column 6 after 190ms
+.W.rW..
+.w.rW..
+.R.RR..
+.R.ww..
+.wwwR..
+.RRwRWr
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 6 after 180ms
+.W.rW..
+.w.rW..
+.R.RR..
+.R.ww..
+.wwwR.W
+.RRwRWr
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 6 after 190ms
+.W.rW..
+.w.rW..
+.R.RR..
+.R.ww.R
+.wwwR.W
+.RRwRWr
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 5 after 180ms
+.W.rW..
+.w.rW..
+.R.RR..
+.R.ww.R
+.wwwRWW
+.RRwRWr
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 5 after 190ms
+.W.rW..
+.w.rW..
+.R.RR..
+.R.wwRR
+.wwwRWW
+.RRwRWr
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 5 after 180ms
+.W.rW..
+.w.rW..
+.R.RRw.
+.R.wwRR
+.wwwRWW
+.RRwRWr
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Round piece at column 5 after 190ms
+.W.rW..
+.w.rWr.
+.R.RRw.
+.R.wwRR
+.wwwRWW
+.RRwRWr
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 6 after 180ms
+.W.rW..
+.w.rWr.
+.R.RRww
+.R.wwRR
+.wwwRWW
+.RRwRWr
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Square piece at column 6 after 190ms
+.W.rW..
+.w.rWrR
+.R.RRww
+.R.wwRR
+.wwwRWW
+.RRwRWr
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 0 after 180ms
+.W.rW..
+.w.rWrR
+.R.RRww
+.R.wwRR
+.wwwRWW
+WRRwRWr
+
+LegionAI V3 (Red) turn
+processor count: 1
+LegionAI V3 (Red) placed a Round piece at column 2 after 190ms
+.W.rW..
+.w.rWrR
+.R.RRww
+.RrwwRR
+.wwwRWW
+WRRwRWr
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 0 after 180ms
+.W.rW..
+.w.rWrR
+.R.RRww
+.RrwwRR
+wwwwRWW
+WRRwRWr
+
+Winner is RedVerbenaThinker v3 (White)
+Solution=(1,0)(1,1)(1,2)(1,3)
