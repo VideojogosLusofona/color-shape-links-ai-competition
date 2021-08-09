@@ -1,0 +1,311 @@
+=> RedVerbenaThinker v3 (White) vs eVolutionV6 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 3 after 180ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+eVolutionV6 (Red) turn
+hashtable entries: 6691
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 3 after 167ms
+.......
+.......
+.......
+.......
+...R...
+...w...
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 4 after 180ms
+.......
+.......
+.......
+.......
+...R...
+...ww..
+
+eVolutionV6 (Red) turn
+Prevent 3 Loss PART 1
+eVolutionV6 (Red) placed a Square piece at column 2 after 0ms
+.......
+.......
+.......
+.......
+...R...
+..Rww..
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 2 after 180ms
+.......
+.......
+.......
+.......
+..wR...
+..Rww..
+
+eVolutionV6 (Red) turn
+hashtable entries: 6002
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 0 after 167ms
+.......
+.......
+.......
+.......
+..wR...
+R.Rww..
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 0 after 180ms
+.......
+.......
+.......
+.......
+w.wR...
+R.Rww..
+
+eVolutionV6 (Red) turn
+hashtable entries: 6394
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 6 after 167ms
+.......
+.......
+.......
+.......
+w.wR...
+R.Rww.R
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 6 after 180ms
+.......
+.......
+.......
+.......
+w.wR..w
+R.Rww.R
+
+eVolutionV6 (Red) turn
+hashtable entries: 5727
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 6 after 167ms
+.......
+.......
+.......
+......R
+w.wR..w
+R.Rww.R
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 0 after 180ms
+.......
+.......
+.......
+W.....R
+w.wR..w
+R.Rww.R
+
+eVolutionV6 (Red) turn
+hashtable entries: 5469
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 6 after 167ms
+.......
+.......
+......R
+W.....R
+w.wR..w
+R.Rww.R
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 0 after 180ms
+.......
+.......
+w.....R
+W.....R
+w.wR..w
+R.Rww.R
+
+eVolutionV6 (Red) turn
+Prevent Loss
+eVolutionV6 (Red) placed a Square piece at column 0 after 0ms
+.......
+R......
+w.....R
+W.....R
+w.wR..w
+R.Rww.R
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 1 after 180ms
+.......
+R......
+w.....R
+W.....R
+w.wR..w
+RwRww.R
+
+eVolutionV6 (Red) turn
+hashtable entries: 5463
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 0 after 167ms
+R......
+R......
+w.....R
+W.....R
+w.wR..w
+RwRww.R
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 2 after 180ms
+R......
+R......
+w.....R
+W.w...R
+w.wR..w
+RwRww.R
+
+eVolutionV6 (Red) turn
+hashtable entries: 5696
+depth: 3
+eVolutionV6 (Red) placed a Square piece at column 5 after 167ms
+R......
+R......
+w.....R
+W.w...R
+w.wR..w
+RwRwwRR
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 2 after 180ms
+R......
+R......
+w.w...R
+W.w...R
+w.wR..w
+RwRwwRR
+
+eVolutionV6 (Red) turn
+Prevent Loss
+eVolutionV6 (Red) placed a Square piece at column 2 after 0ms
+R......
+R.R....
+w.w...R
+W.w...R
+w.wR..w
+RwRwwRR
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Round piece at column 6 after 180ms
+R......
+R.R...w
+w.w...R
+W.w...R
+w.wR..w
+RwRwwRR
+
+eVolutionV6 (Red) turn
+hashtable entries: 3215
+depth: 4
+eVolutionV6 (Red) placed a Round piece at column 4 after 167ms
+R......
+R.R...w
+w.w...R
+W.w...R
+w.wRr.w
+RwRwwRR
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 1 after 180ms
+R......
+R.R...w
+w.w...R
+W.w...R
+wWwRr.w
+RwRwwRR
+
+eVolutionV6 (Red) turn
+Prevent Loss
+eVolutionV6 (Red) placed a Square piece at column 1 after 0ms
+R......
+R.R...w
+w.w...R
+WRw...R
+wWwRr.w
+RwRwwRR
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 5 after 180ms
+R......
+R.R...w
+w.w...R
+WRw...R
+wWwRrWw
+RwRwwRR
+
+eVolutionV6 (Red) turn
+hashtable entries: 2059
+depth: 5
+eVolutionV6 (Red) placed a Round piece at column 5 after 167ms
+R......
+R.R...w
+w.w...R
+WRw..rR
+wWwRrWw
+RwRwwRR
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 2 after 180ms
+R.W....
+R.R...w
+w.w...R
+WRw..rR
+wWwRrWw
+RwRwwRR
+
+eVolutionV6 (Red) turn
+hashtable entries: 2015
+depth: 6
+eVolutionV6 (Red) placed a Round piece at column 3 after 167ms
+R.W....
+R.R...w
+w.w...R
+WRwr.rR
+wWwRrWw
+RwRwwRR
+
+RedVerbenaThinker v3 (White) turn
+RedVerbenaThinker v3 (White) placed a Square piece at column 6 after 180ms
+R.W...W
+R.R...w
+w.w...R
+WRwr.rR
+wWwRrWw
+RwRwwRR
+
+eVolutionV6 (Red) turn
+Guarantee Win
+eVolutionV6 (Red) placed a Round piece at column 4 after 0ms
+R.W...W
+R.R...w
+w.w...R
+WRwrrrR
+wWwRrWw
+RwRwwRR
+
+Winner is RedVerbenaThinker v3 (White)
+Solution=(2,2)(2,3)(2,4)(2,5)

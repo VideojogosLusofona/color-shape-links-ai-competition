@@ -1,0 +1,288 @@
+=> KoenAI_v1 (White) vs Panzer_v1.5 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+KoenAI_v1 (White) turn
+Win%: 76.901405%
+KoenAI_v1 (White) placed a Round piece at column 3 after 180ms
+.......
+.......
+.......
+.......
+.......
+...w...
+
+Panzer_v1.5 (Red) turn
+6691
+depth = 3
+Panzer_v1.5 (Red) placed a Square piece at column 0 after 180ms
+.......
+.......
+.......
+.......
+.......
+R..w...
+
+KoenAI_v1 (White) turn
+Win%: 72.92929%
+KoenAI_v1 (White) placed a Round piece at column 5 after 187ms
+.......
+.......
+.......
+.......
+.......
+R..w.w.
+
+Panzer_v1.5 (Red) turn
+7271
+depth = 3
+Panzer_v1.5 (Red) placed a Square piece at column 0 after 180ms
+.......
+.......
+.......
+.......
+R......
+R..w.w.
+
+KoenAI_v1 (White) turn
+Win%: 73.16017%
+KoenAI_v1 (White) placed a Round piece at column 6 after 187ms
+.......
+.......
+.......
+.......
+R......
+R..w.ww
+
+Panzer_v1.5 (Red) turn
+6606
+depth = 4
+Panzer_v1.5 (Red) placed a Square piece at column 4 after 180ms
+.......
+.......
+.......
+.......
+R......
+R..wRww
+
+KoenAI_v1 (White) turn
+Win%: 52.68817%
+KoenAI_v1 (White) placed a Round piece at column 3 after 188ms
+.......
+.......
+.......
+.......
+R..w...
+R..wRww
+
+Panzer_v1.5 (Red) turn
+5948
+depth = 3
+Panzer_v1.5 (Red) placed a Square piece at column 0 after 180ms
+.......
+.......
+.......
+R......
+R..w...
+R..wRww
+
+KoenAI_v1 (White) turn
+Win%: 77.280266%
+KoenAI_v1 (White) placed a Round piece at column 0 after 183ms
+.......
+.......
+w......
+R......
+R..w...
+R..wRww
+
+Panzer_v1.5 (Red) turn
+5523
+depth = 3
+Panzer_v1.5 (Red) placed a Square piece at column 2 after 180ms
+.......
+.......
+w......
+R......
+R..w...
+R.RwRww
+
+KoenAI_v1 (White) turn
+Win%: 84.210526%
+KoenAI_v1 (White) placed a Round piece at column 2 after 187ms
+.......
+.......
+w......
+R......
+R.ww...
+R.RwRww
+
+Panzer_v1.5 (Red) turn
+6121
+depth = 3
+Panzer_v1.5 (Red) placed a Square piece at column 4 after 180ms
+.......
+.......
+w......
+R......
+R.wwR..
+R.RwRww
+
+KoenAI_v1 (White) turn
+Win%: 78.03571%
+KoenAI_v1 (White) placed a Round piece at column 4 after 189ms
+.......
+.......
+w......
+R...w..
+R.wwR..
+R.RwRww
+
+Panzer_v1.5 (Red) turn
+5248
+depth = 3
+Panzer_v1.5 (Red) placed a Square piece at column 2 after 180ms
+.......
+.......
+w......
+R.R.w..
+R.wwR..
+R.RwRww
+
+KoenAI_v1 (White) turn
+Win%: 75.46468%
+KoenAI_v1 (White) placed a Square piece at column 4 after 186ms
+.......
+.......
+w...W..
+R.R.w..
+R.wwR..
+R.RwRww
+
+Panzer_v1.5 (Red) turn
+5944
+depth = 3
+Panzer_v1.5 (Red) placed a Square piece at column 4 after 180ms
+.......
+....R..
+w...W..
+R.R.w..
+R.wwR..
+R.RwRww
+
+KoenAI_v1 (White) turn
+Win%: 78.68339%
+KoenAI_v1 (White) placed a Square piece at column 6 after 180ms
+.......
+....R..
+w...W..
+R.R.w..
+R.wwR.W
+R.RwRww
+
+Panzer_v1.5 (Red) turn
+5510
+depth = 3
+Panzer_v1.5 (Red) placed a Square piece at column 1 after 180ms
+.......
+....R..
+w...W..
+R.R.w..
+R.wwR.W
+RRRwRww
+
+KoenAI_v1 (White) turn
+Win%: 85.18519%
+KoenAI_v1 (White) placed a Round piece at column 5 after 182ms
+.......
+....R..
+w...W..
+R.R.w..
+R.wwRwW
+RRRwRww
+
+Panzer_v1.5 (Red) turn
+5478
+depth = 3
+Panzer_v1.5 (Red) placed a Square piece at column 6 after 180ms
+.......
+....R..
+w...W..
+R.R.w.R
+R.wwRwW
+RRRwRww
+
+KoenAI_v1 (White) turn
+Win%: 85.39157%
+KoenAI_v1 (White) placed a Square piece at column 0 after 181ms
+.......
+W...R..
+w...W..
+R.R.w.R
+R.wwRwW
+RRRwRww
+
+Panzer_v1.5 (Red) turn
+5052
+depth = 3
+Panzer_v1.5 (Red) placed a Round piece at column 4 after 180ms
+....r..
+W...R..
+w...W..
+R.R.w.R
+R.wwRwW
+RRRwRww
+
+KoenAI_v1 (White) turn
+Win%: 88.429115%
+KoenAI_v1 (White) placed a Round piece at column 6 after 182ms
+....r..
+W...R..
+w...W.w
+R.R.w.R
+R.wwRwW
+RRRwRww
+
+Panzer_v1.5 (Red) turn
+4375
+depth = 4
+Panzer_v1.5 (Red) placed a Round piece at column 6 after 180ms
+....r..
+W...R.r
+w...W.w
+R.R.w.R
+R.wwRwW
+RRRwRww
+
+KoenAI_v1 (White) turn
+Win%: 99.553795%
+KoenAI_v1 (White) placed a Square piece at column 5 after 180ms
+....r..
+W...R.r
+w...W.w
+R.R.wWR
+R.wwRwW
+RRRwRww
+
+Panzer_v1.5 (Red) turn
+1604
+depth = 10
+Panzer_v1.5 (Red) loses match! Reason: Thinker unable to perform move
+....r..
+W...R.r
+w...W.w
+R.R.wWR
+R.wwRwW
+RRRwRww
+
+Winner is KoenAI_v1 (White)

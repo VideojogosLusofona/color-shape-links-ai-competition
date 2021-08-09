@@ -1,0 +1,406 @@
+=> LegionAI V4 (White) vs MinimaxD2 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+
+LegionAI V4 (White) turn
+processor count: 16
+k: 1.4142135
+LegionAI V4 (White) placed a Round piece at column 10 after 285ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..........w.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 10 after 21ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..........R.
+..........w.
+
+LegionAI V4 (White) turn
+processor count: 16
+k: 1.4142135
+LegionAI V4 (White) placed a Round piece at column 4 after 285ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..........R.
+....w.....w.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 10 after 22ms
+............
+............
+............
+............
+............
+............
+............
+............
+............
+..........R.
+..........R.
+....w.....w.
+
+LegionAI V4 (White) turn
+processor count: 16
+k: 1.4142135
+LegionAI V4 (White) placed a Square piece at column 10 after 285ms
+............
+............
+............
+............
+............
+............
+............
+............
+..........W.
+..........R.
+..........R.
+....w.....w.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 10 after 22ms
+............
+............
+............
+............
+............
+............
+............
+..........R.
+..........W.
+..........R.
+..........R.
+....w.....w.
+
+LegionAI V4 (White) turn
+processor count: 16
+k: 1.4142135
+LegionAI V4 (White) placed a Square piece at column 8 after 285ms
+............
+............
+............
+............
+............
+............
+............
+..........R.
+..........W.
+..........R.
+..........R.
+....w...W.w.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 10 after 23ms
+............
+............
+............
+............
+............
+............
+..........R.
+..........R.
+..........W.
+..........R.
+..........R.
+....w...W.w.
+
+LegionAI V4 (White) turn
+processor count: 16
+k: 1.4142135
+LegionAI V4 (White) placed a Round piece at column 10 after 285ms
+............
+............
+............
+............
+............
+..........w.
+..........R.
+..........R.
+..........W.
+..........R.
+..........R.
+....w...W.w.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 10 after 23ms
+............
+............
+............
+............
+..........R.
+..........w.
+..........R.
+..........R.
+..........W.
+..........R.
+..........R.
+....w...W.w.
+
+LegionAI V4 (White) turn
+processor count: 16
+k: 1.4142135
+LegionAI V4 (White) placed a Round piece at column 4 after 285ms
+............
+............
+............
+............
+..........R.
+..........w.
+..........R.
+..........R.
+..........W.
+..........R.
+....w.....R.
+....w...W.w.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 10 after 27ms
+............
+............
+............
+..........R.
+..........R.
+..........w.
+..........R.
+..........R.
+..........W.
+..........R.
+....w.....R.
+....w...W.w.
+
+LegionAI V4 (White) turn
+processor count: 16
+k: 1.4142135
+LegionAI V4 (White) placed a Round piece at column 3 after 285ms
+............
+............
+............
+..........R.
+..........R.
+..........w.
+..........R.
+..........R.
+..........W.
+..........R.
+....w.....R.
+...ww...W.w.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 10 after 27ms
+............
+............
+..........R.
+..........R.
+..........R.
+..........w.
+..........R.
+..........R.
+..........W.
+..........R.
+....w.....R.
+...ww...W.w.
+
+LegionAI V4 (White) turn
+processor count: 16
+k: 1.4142135
+LegionAI V4 (White) placed a Square piece at column 4 after 285ms
+............
+............
+..........R.
+..........R.
+..........R.
+..........w.
+..........R.
+..........R.
+..........W.
+....W.....R.
+....w.....R.
+...ww...W.w.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 4 after 25ms
+............
+............
+..........R.
+..........R.
+..........R.
+..........w.
+..........R.
+..........R.
+....R.....W.
+....W.....R.
+....w.....R.
+...ww...W.w.
+
+LegionAI V4 (White) turn
+processor count: 16
+k: 1.4142135
+LegionAI V4 (White) placed a Square piece at column 1 after 285ms
+............
+............
+..........R.
+..........R.
+..........R.
+..........w.
+..........R.
+..........R.
+....R.....W.
+....W.....R.
+....w.....R.
+.W.ww...W.w.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 4 after 29ms
+............
+............
+..........R.
+..........R.
+..........R.
+..........w.
+..........R.
+....R.....R.
+....R.....W.
+....W.....R.
+....w.....R.
+.W.ww...W.w.
+
+LegionAI V4 (White) turn
+processor count: 16
+k: 1.4142135
+LegionAI V4 (White) placed a Square piece at column 5 after 285ms
+............
+............
+..........R.
+..........R.
+..........R.
+..........w.
+..........R.
+....R.....R.
+....R.....W.
+....W.....R.
+....w.....R.
+.W.wwW..W.w.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 4 after 26ms
+............
+............
+..........R.
+..........R.
+..........R.
+..........w.
+....R.....R.
+....R.....R.
+....R.....W.
+....W.....R.
+....w.....R.
+.W.wwW..W.w.
+
+LegionAI V4 (White) turn
+processor count: 16
+k: 1.4142135
+LegionAI V4 (White) placed a Square piece at column 10 after 286ms
+............
+..........W.
+..........R.
+..........R.
+..........R.
+..........w.
+....R.....R.
+....R.....R.
+....R.....W.
+....W.....R.
+....w.....R.
+.W.wwW..W.w.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 4 after 30ms
+............
+..........W.
+..........R.
+..........R.
+..........R.
+....R.....w.
+....R.....R.
+....R.....R.
+....R.....W.
+....W.....R.
+....w.....R.
+.W.wwW..W.w.
+
+LegionAI V4 (White) turn
+processor count: 16
+k: 1.4142135
+LegionAI V4 (White) placed a Round piece at column 2 after 285ms
+............
+..........W.
+..........R.
+..........R.
+..........R.
+....R.....w.
+....R.....R.
+....R.....R.
+....R.....W.
+....W.....R.
+....w.....R.
+.WwwwW..W.w.
+
+MinimaxD2 (Red) turn
+MinimaxD2 (Red) placed a Square piece at column 4 after 27ms
+............
+..........W.
+..........R.
+..........R.
+....R.....R.
+....R.....w.
+....R.....R.
+....R.....R.
+....R.....W.
+....W.....R.
+....w.....R.
+.WwwwW..W.w.
+
+Winner is MinimaxD2 (Red)
+Solution=(2,4)(3,4)(4,4)(5,4)(6,4)(7,4)

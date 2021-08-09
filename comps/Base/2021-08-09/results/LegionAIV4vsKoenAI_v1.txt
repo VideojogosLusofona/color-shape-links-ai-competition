@@ -1,0 +1,205 @@
+=> LegionAI V4 (White) vs KoenAI_v1 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+LegionAI V4 (White) turn
+processor count: 1
+k: 1.4142135
+LegionAI V4 (White) placed a Round piece at column 4 after 190ms
+.......
+.......
+.......
+.......
+.......
+....w..
+
+KoenAI_v1 (Red) turn
+Win%: 54.964535%
+KoenAI_v1 (Red) placed a Square piece at column 1 after 189ms
+.......
+.......
+.......
+.......
+.......
+.R..w..
+
+LegionAI V4 (White) turn
+processor count: 1
+k: 1.4142135
+LegionAI V4 (White) placed a Round piece at column 3 after 190ms
+.......
+.......
+.......
+.......
+.......
+.R.ww..
+
+KoenAI_v1 (Red) turn
+Win%: 50.10571%
+KoenAI_v1 (Red) placed a Square piece at column 5 after 191ms
+.......
+.......
+.......
+.......
+.......
+.R.wwR.
+
+LegionAI V4 (White) turn
+processor count: 1
+k: 1.4142135
+LegionAI V4 (White) placed a Round piece at column 1 after 190ms
+.......
+.......
+.......
+.......
+.w.....
+.R.wwR.
+
+KoenAI_v1 (Red) turn
+Win%: 61.21673%
+KoenAI_v1 (Red) placed a Square piece at column 3 after 187ms
+.......
+.......
+.......
+.......
+.w.R...
+.R.wwR.
+
+LegionAI V4 (White) turn
+processor count: 1
+k: 1.4142135
+LegionAI V4 (White) placed a Round piece at column 4 after 190ms
+.......
+.......
+.......
+.......
+.w.Rw..
+.R.wwR.
+
+KoenAI_v1 (Red) turn
+Win%: 58.317398%
+KoenAI_v1 (Red) placed a Square piece at column 4 after 184ms
+.......
+.......
+.......
+....R..
+.w.Rw..
+.R.wwR.
+
+LegionAI V4 (White) turn
+processor count: 1
+k: 1.4142135
+LegionAI V4 (White) placed a Round piece at column 4 after 190ms
+.......
+.......
+....w..
+....R..
+.w.Rw..
+.R.wwR.
+
+KoenAI_v1 (Red) turn
+Win%: 73.67459%
+KoenAI_v1 (Red) placed a Square piece at column 3 after 181ms
+.......
+.......
+....w..
+...RR..
+.w.Rw..
+.R.wwR.
+
+LegionAI V4 (White) turn
+processor count: 1
+k: 1.4142135
+LegionAI V4 (White) placed a Round piece at column 3 after 190ms
+.......
+.......
+...ww..
+...RR..
+.w.Rw..
+.R.wwR.
+
+KoenAI_v1 (Red) turn
+Win%: 69.87341%
+KoenAI_v1 (Red) placed a Square piece at column 1 after 181ms
+.......
+.......
+...ww..
+.R.RR..
+.w.Rw..
+.R.wwR.
+
+LegionAI V4 (White) turn
+processor count: 1
+k: 1.4142135
+LegionAI V4 (White) placed a Square piece at column 2 after 190ms
+.......
+.......
+...ww..
+.R.RR..
+.w.Rw..
+.RWwwR.
+
+KoenAI_v1 (Red) turn
+Win%: 72.97297%
+KoenAI_v1 (Red) placed a Round piece at column 5 after 186ms
+.......
+.......
+...ww..
+.R.RR..
+.w.Rwr.
+.RWwwR.
+
+LegionAI V4 (White) turn
+processor count: 1
+k: 1.4142135
+LegionAI V4 (White) placed a Square piece at column 3 after 190ms
+.......
+...W...
+...ww..
+.R.RR..
+.w.Rwr.
+.RWwwR.
+
+KoenAI_v1 (Red) turn
+Win%: 73.34906%
+KoenAI_v1 (Red) placed a Square piece at column 4 after 185ms
+.......
+...WR..
+...ww..
+.R.RR..
+.w.Rwr.
+.RWwwR.
+
+LegionAI V4 (White) turn
+processor count: 1
+k: 1.4142135
+LegionAI V4 (White) placed a Round piece at column 5 after 190ms
+.......
+...WR..
+...ww..
+.R.RRw.
+.w.Rwr.
+.RWwwR.
+
+KoenAI_v1 (Red) turn
+Win%: 100%
+KoenAI_v1 (Red) placed a Square piece at column 5 after 181ms
+.......
+...WR..
+...wwR.
+.R.RRw.
+.w.Rwr.
+.RWwwR.
+
+Winner is KoenAI_v1 (Red)
+Solution=(0,2)(1,3)(2,4)(3,5)

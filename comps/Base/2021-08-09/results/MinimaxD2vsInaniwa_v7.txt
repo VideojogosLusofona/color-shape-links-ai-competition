@@ -1,0 +1,196 @@
+=> MinimaxD2 (White) vs Inaniwa_v7 (Red) <=
+
+	w - White Round
+	W - White Square
+	r - Red   Round
+	R - Red   Square
+
+.......
+.......
+.......
+.......
+.......
+.......
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+.......
+.......
+.......
+.......
+.......
+.....w.
+
+Inaniwa_v7 (Red) turn
+Inaniwa_v7 (Red) placed a Square piece at column 3 after 150ms
+.......
+.......
+.......
+.......
+.......
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 3ms
+.......
+.......
+.......
+.......
+.....w.
+...R.w.
+
+Inaniwa_v7 (Red) turn
+Inaniwa_v7 (Red) placed a Square piece at column 3 after 150ms
+.......
+.......
+.......
+.......
+...R.w.
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 2ms
+.......
+.......
+.......
+...w...
+...R.w.
+...R.w.
+
+Inaniwa_v7 (Red) turn
+Inaniwa_v7 (Red) placed a Square piece at column 5 after 150ms
+.......
+.......
+.......
+...w.R.
+...R.w.
+...R.w.
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 3ms
+.......
+.......
+...w...
+...w.R.
+...R.w.
+...R.w.
+
+Inaniwa_v7 (Red) turn
+Inaniwa_v7 (Red) placed a Square piece at column 6 after 151ms
+.......
+.......
+...w...
+...w.R.
+...R.w.
+...R.wR
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 3 after 3ms
+.......
+...w...
+...w...
+...w.R.
+...R.w.
+...R.wR
+
+Inaniwa_v7 (Red) turn
+Inaniwa_v7 (Red) placed a Square piece at column 3 after 150ms
+...R...
+...w...
+...w...
+...w.R.
+...R.w.
+...R.wR
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+...R...
+...w...
+...w.w.
+...w.R.
+...R.w.
+...R.wR
+
+Inaniwa_v7 (Red) turn
+Inaniwa_v7 (Red) placed a Round piece at column 6 after 150ms
+...R...
+...w...
+...w.w.
+...w.R.
+...R.wr
+...R.wR
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 8ms
+...R...
+...w.w.
+...w.w.
+...w.R.
+...R.wr
+...R.wR
+
+Inaniwa_v7 (Red) turn
+Inaniwa_v7 (Red) placed a Square piece at column 6 after 150ms
+...R...
+...w.w.
+...w.w.
+...w.RR
+...R.wr
+...R.wR
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 6 after 2ms
+...R...
+...w.w.
+...w.ww
+...w.RR
+...R.wr
+...R.wR
+
+Inaniwa_v7 (Red) turn
+Inaniwa_v7 (Red) placed a Square piece at column 1 after 150ms
+...R...
+...w.w.
+...w.ww
+...w.RR
+...R.wr
+.R.R.wR
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Round piece at column 5 after 2ms
+...R.w.
+...w.w.
+...w.ww
+...w.RR
+...R.wr
+.R.R.wR
+
+Inaniwa_v7 (Red) turn
+Inaniwa_v7 (Red) placed a Round piece at column 2 after 150ms
+...R.w.
+...w.w.
+...w.ww
+...w.RR
+...R.wr
+.RrR.wR
+
+MinimaxD2 (White) turn
+MinimaxD2 (White) placed a Square piece at column 6 after 1ms
+...R.w.
+...w.wW
+...w.ww
+...w.RR
+...R.wr
+.RrR.wR
+
+Inaniwa_v7 (Red) turn
+Inaniwa_v7 (Red) placed a Round piece at column 0 after 150ms
+...R.w.
+...w.wW
+...w.ww
+...w.RR
+...R.wr
+rRrR.wR
+
+Winner is Inaniwa_v7 (Red)
+Solution=(0,0)(0,1)(0,2)(0,3)
